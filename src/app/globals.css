@@ -391,14 +391,21 @@ img {
   background-repeat: no-repeat;
   background-position: center top;
   background-size: 100% 100%;
-  padding: 64px 0 40px;
+  padding: 96px 0 40px;
 }
 .footer-top {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-end;
   gap: 48px;
   flex-wrap: wrap;
+}
+.footer-brand {
+  align-self: flex-end;
+}
+.footer-badges {
+  align-self: flex-end;
+  padding-bottom: 4px;
 }
 .footer-brand {
   max-width: 440px;
