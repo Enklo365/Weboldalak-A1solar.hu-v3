@@ -36,9 +36,9 @@ const Instagram = () => (
 
 export const Footer = () => (
   <footer className="site-footer">
-    <div className="container">
-      {/* Top: logo + mission (left), badges (right) */}
-      <div className="footer-top">
+    {/* Top: logo + mission (left), badges (right) — on the curved shape */}
+    <div className="footer-shape">
+      <div className="container footer-top">
         <div className="footer-brand">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img className="footer-logo-img" src={LOGO} alt="A1 Solar" />
@@ -53,9 +53,9 @@ export const Footer = () => (
           <img src={BADGES} alt="A1 Solar díjak és elismerések" />
         </div>
       </div>
+    </div>
 
-      <hr className="footer-divider" />
-
+    <div className="container">
       {/* Columns */}
       <div className="footer-grid">
         <div className="footer-col">
