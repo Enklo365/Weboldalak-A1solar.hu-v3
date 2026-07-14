@@ -30,15 +30,19 @@ export type NavEntry = {
   children?: NavChild[];
 };
 
+const OEP_PDF =
+  "/wp-content/uploads/2026/06/A1_Solar_Ajanlat_otthoni_energiatarolas_vegleges-0529.pdf";
+
 export const MAIN_NAV: NavEntry[] = [
-  { href: "/cegunkrol", label: "Cégünkről" },
+  {
+    href: "/cegunkrol",
+    label: "Cégünkről",
+    children: [{ href: "/karrier", label: "Karrier" }],
+  },
   {
     href: "#",
     label: "Szolgáltatásaink",
     children: [
-      { href: "/lakossagi-napelem", label: "Lakossági napelem" },
-      { href: "/vallalati-napelem", label: "Vállalati napelem" },
-      { href: "/vallalati-energiatarolas", label: "Vállalati energiatárolás" },
       {
         href: "/lakossagi-napelem-tisztitas-es-karbantartas",
         label: "Lakossági napelem tisztítás és karbantartás",
@@ -47,14 +51,26 @@ export const MAIN_NAV: NavEntry[] = [
         href: "/vallalati-napelem-tisztitas-es-karbantartas",
         label: "Vállalati napelem tisztítás és karbantartás",
       },
+      { href: "/vallalati-energiatarolas", label: "Vállalati energiatárolás" },
+      { href: "/vallalati-napelem", label: "Vállalati napelem" },
+      { href: "/lakossagi-napelem", label: "Lakossági napelem" },
       { href: "/palyazatok", label: "Pályázatok" },
-      { href: "/kepzeseink", label: "Képzéseink" },
-      { href: "/karrier", label: "Karrier" },
+      {
+        href: "/jedlik-anyos-energetikai-program",
+        label: "Jedlik Ányos Energetikai Program",
+      },
+      {
+        href: "/jedlik-anyos-finanszirozasi-segitseg",
+        label: "Jedlik Ányos finanszírozási segítség",
+      },
     ],
   },
   {
     href: "/lakossagi-energiatarolo-tamogatas",
     label: "Otthoni Energiatároló Program",
+    children: [
+      { href: OEP_PDF, label: "OEP csomagajánlatok", external: true },
+    ],
   },
   { href: "/tudastar-blog", label: "Cikkek" },
   { href: "https://energrosso.hu/", label: "Nagykereskedelem", external: true },

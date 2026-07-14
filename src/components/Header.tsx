@@ -47,11 +47,17 @@ const NavLink = ({ entry }: { entry: NavEntry }) => {
     );
   }
   if (entry.children?.length) {
-    return (
+    // Parent with a real destination stays clickable; "#" is a pure toggle.
+    return entry.href === "#" ? (
       <span className="nav-link">
         {entry.label}
         <Caret />
       </span>
+    ) : (
+      <Link className="nav-link" href={entry.href}>
+        {entry.label}
+        <Caret />
+      </Link>
     );
   }
   return (
@@ -128,11 +134,17 @@ export const Header = () => {
                 <NavLink entry={entry} />
                 {entry.children?.length ? (
                   <div className="dropdown">
-                    {entry.children.map((c) => (
-                      <Link key={c.href} href={c.href}>
-                        {c.label}
-                      </Link>
-                    ))}
+                    {entry.children.map((c) =>
+                      c.external ? (
+                        <a key={c.href} href={c.href} target="_blank" rel="noopener noreferrer">
+                          {c.label}
+                        </a>
+                      ) : (
+                        <Link key={c.href} href={c.href}>
+                          {c.label}
+                        </Link>
+                      )
+                    )}
                   </div>
                 ) : null}
               </div>
