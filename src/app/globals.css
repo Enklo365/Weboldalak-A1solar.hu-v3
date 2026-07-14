@@ -377,35 +377,26 @@ img {
 }
 
 /* ================= FOOTER (light) ================= */
+/* Curved shape background (raised, rounded top-left) — same motif as the
+   hero's rounded cut-out. The SVG is #F6F6F6 with a transparent notch above
+   the curve on the right, so the page white shows through there. */
 .site-footer {
-  background: #f6f6f6;
-  color: #444;
-  margin-top: 80px;
-}
-/* Curved top zone — same rounded cut-out motif as the hero. The SVG is #F6F6F6
-   with a transparent notch above the curve on the right, so the white base
-   shows through there (badges sit on the white notch, above the curve). */
-.footer-shape {
   background-color: #fff;
   background-image: url("/wp-content/uploads/2025/07/a1_lableec.svg");
   background-repeat: no-repeat;
-  background-position: center top;
+  background-position: center;
   background-size: 100% 100%;
-  padding: 96px 0 40px;
+  color: #444;
+  padding-top: 72px;
+  margin-top: 80px;
 }
 .footer-top {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
   gap: 48px;
   flex-wrap: wrap;
-}
-.footer-brand {
-  align-self: flex-end;
-}
-.footer-badges {
-  align-self: flex-end;
-  padding-bottom: 4px;
+  padding-bottom: 32px;
 }
 .footer-brand {
   max-width: 440px;
