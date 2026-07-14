@@ -540,6 +540,16 @@ img {
   height: auto;
 }
 
+/* The scoped Blocksy CSS turns `body{overflow-x:hidden}` into
+   `.mirror-root{overflow-x:hidden}`, which creates a scroll container and
+   breaks position:sticky for descendants. `overflow-x: clip` still clips
+   horizontal overflow but does NOT establish a scroll container, so sticky
+   works again. */
+.mirror-root {
+  overflow-x: clip !important;
+  overflow-y: visible !important;
+}
+
 /* Elementor "sticky top" widgets (e.g. sidebar cards) — the live site makes
    these sticky via JS, which isn't loaded in the mirrored pages, so reproduce
    the effect with CSS. Attribute value is HTML-decoded in the DOM, so the
