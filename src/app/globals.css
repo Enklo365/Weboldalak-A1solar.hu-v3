@@ -129,14 +129,15 @@ img {
 }
 
 /* ================= HEADER ================= */
+/* display:contents so .mainbar sticks relative to <body> (whole page),
+   while the .topbar announcement bar scrolls away normally. */
 .site-header {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: #fff;
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
+  display: contents;
 }
 .topbar {
+  position: relative;
+  z-index: 90;
+  background: #fff;
   border-bottom: 1px solid var(--line);
   font-size: 14px;
 }
@@ -211,6 +212,13 @@ img {
   color: var(--ink);
 }
 
+.mainbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #fff;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
+}
 .mainbar .container {
   display: flex;
   align-items: center;
