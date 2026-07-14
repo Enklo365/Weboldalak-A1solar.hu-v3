@@ -658,5 +658,17 @@
   "parent": "0",
   "id": "12976",
   "categories": []
+ },
+ {
+  "title": "OEP szigetelés",
+  "slug": "oepszigeteles",
+  "status": "publish",
+  "date": "2026-01-01 00:00:00",
+  "excerpt": "OEP szigetelés – hamarosan elérhető.",
+  "content": "<section style=\"padding:80px 24px;text-align:center;max-width:720px;margin:0 auto;\">\n      <span style=\"display:inline-block;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#db0330;margin-bottom:12px;\">A1 Solar</span>\n      <h1 style=\"font-size:clamp(28px,5vw,44px);margin:0 0 16px;\">OEP szigetelés</h1>\n      <p style=\"color:#4b5563;font-size:17px;line-height:1.7;margin:0 0 28px;\">Ez az oldal hamarosan elérhető lesz. Addig is kollégáink készséggel állnak rendelkezésére az Otthoni Energiatároló Programmal és szigeteléssel kapcsolatban.</p>\n      <a class=\"btn btn-primary\" href=\"/kapcsolat\">Kapcsolatfelvétel</a>\n    </section>",
+  "link": "https://a1solar.hu/oepszigeteles/",
+  "parent": "0",
+  "id": "oepszig",
+  "categories": []
  }
 ]

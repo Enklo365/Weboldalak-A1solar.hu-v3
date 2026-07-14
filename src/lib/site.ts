@@ -15,10 +15,10 @@ export const SITE = {
   supportHours: "08:00-16:00",
   address: "1222 Budapest, Méz utca 11.",
   social: {
-    facebook: "https://www.facebook.com/a1solarhungary",
-    youtube: "https://www.youtube.com/@a1solar",
-    linkedin: "https://www.linkedin.com/company/a1-solar-kft/",
-    instagram: "https://www.instagram.com/a1solar.hu/",
+    facebook: "https://www.facebook.com/a1solarkft/",
+    youtube: "https://www.youtube.com/@a1solarkft",
+    linkedin: "https://hu.linkedin.com/company/a1solarkft",
+    instagram: "https://www.instagram.com/a1solarkft/",
   },
 } as const;
 
@@ -78,28 +78,22 @@ export const MAIN_NAV: NavEntry[] = [
 
 export const FOOTER_NAV: NavChild[] = [
   { href: "/cegunkrol", label: "Cégünkről" },
-  { href: "/lakossagi-napelem", label: "Lakossági napelem" },
-  { href: "/vallalati-napelem", label: "Vállalati napelem" },
+  { href: "/szolgaltatasaink", label: "Szolgáltatásaink" },
   { href: "/palyazatok", label: "Pályázatok" },
   { href: "/karrier", label: "Karrier" },
-  { href: "/tudastar-blog", label: "Tudástár & Blog" },
+  { href: "/tudastar-blog", label: "Tudástár" },
   { href: "/kapcsolat", label: "Kapcsolat" },
 ];
 
 export const FOOTER_SERVICES: NavChild[] = [
   { href: "/vallalati-napelem", label: "Vállalati napelem" },
   { href: "/lakossagi-napelem", label: "Lakossági napelem" },
-  {
-    href: "/lakossagi-energiatarolo-tamogatas",
-    label: "Otthoni Energiatároló Program",
-  },
-  { href: "/vallalati-energiatarolas", label: "Vállalati energiatárolás" },
-  { href: "/kepzeseink", label: "Képzéseink" },
+  { href: "/palyazatok", label: "Pályázatok" },
+  { href: "/kepzeseink", label: "Képzések" },
 ];
 
 export const FOOTER_USEFUL: NavChild[] = [
   { href: "/palyazatok", label: "Aktuális pályázatok" },
-  { href: "/napenergia-plusz-program", label: "Napenergia Plusz Program" },
   {
     href: "/panelmosas-karbantartas-aszf",
     label: "Panelmosás-karbantartás ÁSZF",
@@ -109,9 +103,10 @@ export const FOOTER_USEFUL: NavChild[] = [
 export const FOOTER_LEGAL: NavChild[] = [
   { href: "/adatvedelmi-nyilatkozat", label: "Adatvédelmi nyilatkozat" },
   { href: "/cookie-nyilatkozat", label: "Cookie nyilatkozat" },
-  { href: "/aszf", label: "ÁSZF" },
+  { href: "/aszf", label: "Általános Szerződési Feltételek" },
   {
     href: "/lakossagi-napelemes-rendszerek-tamogatasa-promocios-szabalyzat",
     label: "Promóciós szabályzat",
   },
+  { href: "/oepszigeteles", label: "OEP szigetelés" },
 ];
