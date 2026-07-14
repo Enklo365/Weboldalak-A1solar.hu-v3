@@ -416,6 +416,8 @@ img {
   flex: 1;
   display: flex;
   justify-content: flex-end;
+  align-self: flex-start;
+  margin-top: -18px;
 }
 .footer-badges img {
   max-width: 540px;
