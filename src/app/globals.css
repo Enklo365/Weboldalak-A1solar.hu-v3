@@ -540,6 +540,21 @@ img {
   height: auto;
 }
 
+/* Elementor "sticky top" widgets (e.g. sidebar cards) — the live site makes
+   these sticky via JS, which isn't loaded in the mirrored pages, so reproduce
+   the effect with CSS. Attribute value is HTML-decoded in the DOM, so the
+   substring match works. `align-self` keeps the flex child from stretching
+   (which would defeat position: sticky); `top` clears the sticky header. */
+@media (min-width: 768px) {
+  .mirror-root [data-settings*='"sticky":"top"'] {
+    position: sticky !important;
+    top: 100px !important;
+    align-self: flex-start !important;
+    height: -moz-fit-content !important;
+    height: fit-content !important;
+  }
+}
+
 /* ================= ARTICLE / PROSE (blog posts) ================= */
 .prose {
   max-width: 760px;
