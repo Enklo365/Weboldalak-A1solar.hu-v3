@@ -150,31 +150,32 @@ img {
 .topbar-item {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
 }
 .topbar-icon {
-  width: 34px;
-  height: 34px;
+  width: 37px;
+  height: 37px;
   flex: none;
   display: grid;
   place-items: center;
   border-radius: 50%;
-  background: rgba(219, 3, 48, 0.1);
+  background: transparent;
+  border: 1px solid rgba(218, 222, 228, 0.7);
   color: var(--brand);
 }
 .topbar-label {
-  font-weight: 700;
-  color: var(--ink);
+  font-weight: 600;
+  color: #2d2d2d;
   font-size: 13px;
 }
 .topbar-value {
-  color: var(--brand);
-  font-weight: 600;
-  font-size: 14px;
+  color: #007bff;
+  font-weight: 400;
+  font-size: 13px;
 }
 .topbar-value.muted {
-  color: var(--ink-muted);
-  font-weight: 500;
+  color: #2d2d2d;
+  font-weight: 400;
 }
 .topbar-spacer {
   margin-left: auto;
@@ -222,14 +223,15 @@ img {
   flex: none;
 }
 .brand-logo img {
-  height: 46px;
+  height: 32px;
   width: auto;
 }
 .mainnav {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 2px;
   margin-left: auto;
+  margin-right: auto;
 }
 .nav-item {
   position: relative;
@@ -238,10 +240,10 @@ img {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 12px 16px;
-  font-weight: 600;
-  font-size: 15px;
-  color: var(--ink);
+  padding: 12px 15px;
+  font-weight: 500;
+  font-size: 17px;
+  color: #2d2d2d;
   border-radius: 8px;
   cursor: pointer;
 }
@@ -290,6 +292,10 @@ img {
 }
 .header-cta {
   flex: none;
+  padding: 9px 22px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 30px;
 }
 .burger {
   display: none;
