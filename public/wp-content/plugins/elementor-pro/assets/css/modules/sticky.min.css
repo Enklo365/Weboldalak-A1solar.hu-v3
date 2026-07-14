@@ -1,0 +1,3 @@
+.mirror-root .elementor-sticky--active{z-index:99}
+.mirror-root .elementor-sticky__spacer .e-n-menu .e-n-menu-content{display:none}
+.mirror-root .e-con.elementor-sticky--active{z-index:var(--z-index,99)}

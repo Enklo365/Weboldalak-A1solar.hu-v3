@@ -1,0 +1,4 @@
+.mirror-root .elementor-widget-image{text-align:center}
+.mirror-root .elementor-widget-image a{display:inline-block}
+.mirror-root .elementor-widget-image a img[src$=".svg"]{width:48px}
+.mirror-root .elementor-widget-image img{display:inline-block;vertical-align:middle}

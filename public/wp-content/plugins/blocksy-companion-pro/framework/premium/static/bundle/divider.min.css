@@ -1,0 +1,6 @@
+.mirror-root .ct-header-divider{display:inline-flex}
+.mirror-root .ct-header-divider:before{content:""}
+.mirror-root #header .ct-header-divider{align-items:center;height:100%}
+.mirror-root #header .ct-header-divider:before{height:var(--divider-size, 100%);border-inline-end:var(--divider-style)}
+.mirror-root #offcanvas .ct-header-divider{justify-content:var(--horizontal-alignment);width:100%}
+.mirror-root #offcanvas .ct-header-divider:before{width:var(--divider-size, 100%);border-bottom:var(--divider-style)}

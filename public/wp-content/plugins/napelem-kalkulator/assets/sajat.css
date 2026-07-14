@@ -1,0 +1,64 @@
+.mirror-root .calc_data{
+  display: none;
+}
+.mirror-root @media screen and (max-width: 600px){
+  .well{
+    padding-left:50px!important;
+    padding-right:50px!important;
+    margin:0!important;
+}
+}
+.mirror-root .kalkulator .slider::-webkit-slider-thumb{
+  width: 30px;
+  height: 30px;
+  background: #c01d20;
+  cursor: ew-resize;
+  margin-top: -10px;
+}
+.mirror-root .arajanlat_form .hidden{
+  display: none !important;
+}
+.mirror-root .korgomb2{
+  color: #c01d20;
+}
+.mirror-root .header_sec{
+  background-image: linear-gradient(160deg, #C21C20 35%, #9D1014 75%);
+  margin-bottom:50px!important;
+  border-radius:10px;
+  color:white;
+  padding:50px!important;
+}
+.mirror-root .col-lg-12{
+  padding: 10px!important;
+}
+.mirror-root .box{
+  box-shadow:none;
+  border-radius:10px;
+}
+.mirror-root .form-control{
+    display: block;
+    width: 90% !important;
+    margin: 0 auto !important;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.mirror-root .lakossagi_form{
+    display: block;
+    width: 90% !important;
+    margin: 0 auto !important;
+}
+.mirror-root .frm_style_formidable-style.with_frm_style .frm_compact .frm_dropzone.dz-clickable .dz-message, .mirror-root .frm_style_formidable-style.with_frm_style input[type=submit], .mirror-root .frm_style_formidable-style.with_frm_style .frm_submit input[type=button], .mirror-root .frm_style_formidable-style.with_frm_style .frm_submit button, .mirror-root .frm_form_submit_style, .mirror-root .frm_style_formidable-style.with_frm_style .frm-edit-page-btn{
+    background-image: linear-gradient(160deg, #C21C20 35%, #9D1014 75%);
+    border:none!important;
+}
+.mirror-root .row{
+    margin-right: -5px!important;
+    margin-left: -5px!important;
+}

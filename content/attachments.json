@@ -1,0 +1,5482 @@
+{
+ "15": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/08/Arboria-Light.ttf",
+  "title": "A1 Solar",
+  "slug": "arboria-light"
+ },
+ "16": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/08/Arboria-Medium.ttf",
+  "title": "A1 Solar",
+  "slug": "arboria-medium"
+ },
+ "19": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/08/A1solar-logo.svg",
+  "title": "A1solar-logo",
+  "slug": "a1solar-logo"
+ },
+ "22": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/08/a1solar-favicon.png",
+  "title": "a1solar-favicon",
+  "slug": "a1solar-favicon"
+ },
+ "23": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/08/cropped-a1solar-favicon.png",
+  "title": "cropped-a1solar-favicon.png",
+  "slug": "cropped-a1solar-favicon-png"
+ },
+ "118": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/08/lakossagi-villanyszamla-nullazas.png",
+  "title": "lakossagi-villanyszamla-nullazas",
+  "slug": "lakossagi-villanyszamla-nullazas"
+ },
+ "119": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/08/vallalati-koltsegoptimalizalas.png",
+  "title": "vallalati-koltsegoptimalizalas",
+  "slug": "vallalati-koltsegoptimalizalas"
+ },
+ "134": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/08/hero-kep.jpg",
+  "title": "hero-kep",
+  "slug": "hero-kep"
+ },
+ "139": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/08/Szenyán-Endre-ügyvezető-igazgató.jpg",
+  "title": "Szenyán-Endre-ügyvezető-igazgató",
+  "slug": "szenyan-endre-ugyvezeto-igazgato"
+ },
+ "143": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/08/A1solar-feher-logo.svg",
+  "title": "A1solar-feher-logo",
+  "slug": "a1solar-feher-logo"
+ },
+ "173": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/08/placeholder.png",
+  "title": "placeholder.png",
+  "slug": "placeholder-png"
+ },
+ "223": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/08/Családi-ház-Budapest-XVII.-kerület.png",
+  "title": "Családi ház - Budapest XVII. kerület",
+  "slug": "csaladi-haz-budapest-xvii-kerulet"
+ },
+ "226": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/08/teszt.png",
+  "title": "teszt",
+  "slug": "teszt"
+ },
+ "238": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/08/Napelemes-rendszer-engedélyeztetése.png",
+  "title": "Napelemes rendszer engedélyeztetése",
+  "slug": "napelemes-rendszer-engedelyeztetese-2"
+ },
+ "239": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/08/Napelem-megtérülési-ideje-a-háztartásokban.png",
+  "title": "Napelem megtérülési ideje a háztartásokban",
+  "slug": "napelem-megterulesi-ideje-a-haztartasokban-2"
+ },
+ "240": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/08/Mikor-termel-többet-a-napelem-1.png",
+  "title": "Mikor termel többet a napelem",
+  "slug": "mikor-termel-tobbet-a-napelem-1"
+ },
+ "256": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/08/Vélemény-1-1.jpg",
+  "title": "Vélemény 1 (1)",
+  "slug": "velemeny-1-1"
+ },
+ "257": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/08/Kovács-Róbert-napelemes-pályázat-1.jpg",
+  "title": "Kovács-Róbert-napelemes-pályázat (1)",
+  "slug": "kovacs-robert-napelemes-palyazat-1"
+ },
+ "293": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/08/Fronius-logo.png",
+  "title": "Fronius-logo",
+  "slug": "fronius-logo"
+ },
+ "294": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/08/SolarEdge-logo.png",
+  "title": "SolarEdge-logo",
+  "slug": "solaredge-logo"
+ },
+ "295": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/08/Huawei-logo.png",
+  "title": "Huawei-logo",
+  "slug": "huawei-logo"
+ },
+ "306": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/08/longi-solar-logo.png",
+  "title": "longi-solar-logo",
+  "slug": "longi-solar-logo"
+ },
+ "307": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/08/Suntech-logo.png",
+  "title": "Suntech-logo",
+  "slug": "suntech-logo"
+ },
+ "308": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/08/solitek-logo.png",
+  "title": "solitek-logo",
+  "slug": "solitek-logo"
+ },
+ "312": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/08/villanyszamla.png",
+  "title": "villanyszamla",
+  "slug": "villanyszamla"
+ },
+ "315": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/08/napkollektor-napelem.png",
+  "title": "napkollektor-napelem",
+  "slug": "napkollektor-napelem"
+ },
+ "317": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/08/fronius-inverter.jpg",
+  "title": "fronius-inverter",
+  "slug": "fronius-inverter"
+ },
+ "320": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/08/napelem-panel.jpg",
+  "title": "napelem-panel",
+  "slug": "napelem-panel"
+ },
+ "325": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/08/monokristaly-polikristaly.jpg",
+  "title": "monokristaly-polikristaly",
+  "slug": "monokristaly-polikristaly"
+ },
+ "326": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/08/polikristaly-panel.png",
+  "title": "polikristaly panel",
+  "slug": "polikristaly-panel"
+ },
+ "327": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/08/monokristaly-panel.png",
+  "title": "monokristaly panel",
+  "slug": "monokristaly-panel"
+ },
+ "332": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/08/solar-edge-inverter.jpg",
+  "title": "solar-edge-inverter",
+  "slug": "solar-edge-inverter"
+ },
+ "333": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/08/Huawei-inverter.jpg",
+  "title": "Huawei-inverter",
+  "slug": "huawei-inverter"
+ },
+ "336": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/08/napelem-tartoszerkezet.jpg",
+  "title": "napelem-tartoszerkezet",
+  "slug": "napelem-tartoszerkezet"
+ },
+ "337": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/08/napelem-kabelek.jpg",
+  "title": "napelem-kabelek",
+  "slug": "napelem-kabelek"
+ },
+ "339": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/08/Ad-vesz-óra.jpg",
+  "title": "Ad-vesz-óra",
+  "slug": "ad-vesz-ora"
+ },
+ "407": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/08/Google-kep.png",
+  "title": "Google-kep",
+  "slug": "google-kep"
+ },
+ "408": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/08/Social-kep.png",
+  "title": "Social-kep",
+  "slug": "social-kep"
+ },
+ "422": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/08/Leziter-Kft-Baja-15-kWp.jpg",
+  "title": "Leziter Kft - Baja - 15 kWp",
+  "slug": "leziter-kft-baja-15-kwp-3"
+ },
+ "423": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/09/Leziter-Kft-Baja-15-kWp.jpg",
+  "title": "Leziter Kft - Baja - 15 kWp",
+  "slug": "leziter-kft-baja-15-kwp-2"
+ },
+ "424": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/09/Leziter-Kft-Baja-15-kWp-_200.jpg",
+  "title": "Leziter Kft - Baja - 15 kWp _200",
+  "slug": "leziter-kft-baja-15-kwp-_200"
+ },
+ "426": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/09/Bátonyterenye-105-kWp.jpg",
+  "title": "Bátonyterenye - 10,5 kWp",
+  "slug": "batonyterenye-105-kwp"
+ },
+ "427": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/09/Bátonyterenye-105-kWp-_-300.jpg",
+  "title": "Bátonyterenye - 10,5 kWp _ 300",
+  "slug": "batonyterenye-105-kwp-_-300"
+ },
+ "428": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/09/Bátonyterenye-105-kWp-_-400.jpg",
+  "title": "Bátonyterenye - 10,5 kWp _ 400",
+  "slug": "batonyterenye-105-kwp-_-400"
+ },
+ "429": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/09/Leziter-Kft-Baja-15-kWp-_-400.jpg",
+  "title": "Leziter Kft - Baja - 15 kWp _ 400",
+  "slug": "leziter-kft-baja-15-kwp-_-400"
+ },
+ "432": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/09/Kazincbarcika.jpg",
+  "title": "Kazincbarcika",
+  "slug": "kazincbarcika"
+ },
+ "433": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/09/Kazincbarcika-_-400.jpg",
+  "title": "Kazincbarcika _ 400",
+  "slug": "kazincbarcika-_-400"
+ },
+ "435": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/09/Nyírpazony-_-4-kWp.jpg",
+  "title": "Nyírpazony _ 4 kWp",
+  "slug": "nyirpazony-_-4-kwp"
+ },
+ "436": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/09/Nyírpazony-_-4-kWp-_-400.jpg",
+  "title": "Nyírpazony _ 4 kWp _ 400",
+  "slug": "nyirpazony-_-4-kwp-_-400"
+ },
+ "446": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/09/napelem-családi-ház.jpg",
+  "title": "otthonfelújítási támogatás napelemes rendszerre",
+  "slug": "napelem-csaladi-haz-jpg"
+ },
+ "483": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/09/404_1.png",
+  "title": "404_1.png",
+  "slug": "404_1-png"
+ },
+ "484": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/09/404-6.png",
+  "title": "404-6.png",
+  "slug": "404-6-png"
+ },
+ "485": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/09/404-4.png",
+  "title": "404-4.png",
+  "slug": "404-4-png"
+ },
+ "486": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/09/404.jpg",
+  "title": "404",
+  "slug": "404"
+ },
+ "487": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/09/light-effect-star-sparkle-sunlight_136982-59.jpg",
+  "title": "light-effect-star-sparkle-sunlight_136982-59",
+  "slug": "light-effect-star-sparkle-sunlight_136982-59"
+ },
+ "488": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/09/Nevtelen-terv-2020-09-15T142106.586-1.png",
+  "title": "Névtelen terv - 2020-09-15T142106.586 (1)",
+  "slug": "nevtelen-terv-2020-09-15t142106-586-1"
+ },
+ "503": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/09/napelem-tajolas.jpg",
+  "title": "napelem-tajolas",
+  "slug": "napelem-tajolas"
+ },
+ "505": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/09/napelem-hatasfok.jpg",
+  "title": "napelem-hatasfok",
+  "slug": "napelem-hatasfok"
+ },
+ "508": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/10/napelem-telen.jpg",
+  "title": "napelem-telen",
+  "slug": "napelem-telen"
+ },
+ "513": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/10/a1solar_logo_112_3.png",
+  "title": "a1solar_logo_112_3.png",
+  "slug": "a1solar_logo_112_3-png"
+ },
+ "514": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/10/Nevtelen-terv-88-1.png",
+  "title": "Névtelen-terv-88-1.png",
+  "slug": "nevtelen-terv-88-1-png"
+ },
+ "515": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/10/pattern-5.png",
+  "title": "pattern-5.png",
+  "slug": "pattern-5-png"
+ },
+ "516": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/10/Garanciabajnok-napelemes-rendszerek.png",
+  "title": "Garanciabajnok-napelemes-rendszerek.png",
+  "slug": "garanciabajnok-napelemes-rendszerek-png"
+ },
+ "517": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/10/Szenyan-Endre.jpg",
+  "title": "Szenyán-Endre.jpg",
+  "slug": "szenyan-endre-jpg"
+ },
+ "518": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/10/pattern-6.png",
+  "title": "pattern-6.png",
+  "slug": "pattern-6-png"
+ },
+ "519": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/10/I.-1-1.png",
+  "title": "I.-1-1.png",
+  "slug": "i-1-1-png"
+ },
+ "520": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/10/I.-2.png",
+  "title": "I.-2.png",
+  "slug": "i-2-png"
+ },
+ "521": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/10/I.-3.png",
+  "title": "I.-3.png",
+  "slug": "i-3-png"
+ },
+ "522": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/10/I.-4.png",
+  "title": "I.-4.png",
+  "slug": "i-4-png"
+ },
+ "523": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/10/napelem-panelek-a-hazon.png",
+  "title": "napelem-panelek-a-házon.png",
+  "slug": "napelem-panelek-a-hazon-png"
+ },
+ "524": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/10/logo-small-huawei.png",
+  "title": "logo-small-huawei.png",
+  "slug": "logo-small-huawei-png"
+ },
+ "525": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/10/Fronius-Logo.png",
+  "title": "Fronius-Logo.png",
+  "slug": "fronius-logo-png"
+ },
+ "526": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/10/SolarEdge-Logo.png",
+  "title": "SolarEdge-Logo.png",
+  "slug": "solaredge-logo-png"
+ },
+ "527": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/10/longi-solar-logo.png",
+  "title": "longi-solar-logo.png",
+  "slug": "longi-solar-logo-png"
+ },
+ "528": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/10/Suntech.png",
+  "title": "Suntech.png",
+  "slug": "suntech-png"
+ },
+ "529": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/10/solitek_logo.png",
+  "title": "solitek_logo.png",
+  "slug": "solitek_logo-png"
+ },
+ "571": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/10/inverterek.jpg",
+  "title": "inverterek",
+  "slug": "inverterek-2"
+ },
+ "572": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/10/felepites.jpg",
+  "title": "felepites",
+  "slug": "felepites"
+ },
+ "576": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/10/meroszalag.jpg",
+  "title": "meroszalag",
+  "slug": "meroszalag"
+ },
+ "587": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/10/Egy-ut-egy-fa.png",
+  "title": "Egy út egy fa",
+  "slug": "egy-ut-egy-fa"
+ },
+ "589": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/10/egyutegyfa_ultetes.jpg",
+  "title": "egyutegyfa_ultetés",
+  "slug": "egyutegyfa_ultetes"
+ },
+ "599": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/10/napelem-erteknoveles.jpg",
+  "title": "napelem-erteknoveles",
+  "slug": "napelem-erteknoveles"
+ },
+ "601": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/10/napelem-szamolas.jpg",
+  "title": "napelem-szamolas",
+  "slug": "napelem-szamolas"
+ },
+ "604": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/10/napelem-hazteton.jpg",
+  "title": "napelem-hazteton",
+  "slug": "napelem-hazteton"
+ },
+ "608": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/11/pest-megye-napelem-palyazat.png",
+  "title": "pest-megye-napelem pályázat",
+  "slug": "pest-megye-napelem-palyazat"
+ },
+ "610": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/11/palyazat-pest-megye-napelem-2020.jpg",
+  "title": "ginop plusz 121 pályázat",
+  "slug": "palyazat-pest-megye-napelem-2020"
+ },
+ "617": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/11/BlackFriday-szabalyzat.pdf",
+  "title": "BlackFriday szabályzat",
+  "slug": "blackfriday-szabalyzat"
+ },
+ "619": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/11/Napelem-Black-Friday-2020.png",
+  "title": "Napelem Black Friday 2020",
+  "slug": "napelem-black-friday-2020"
+ },
+ "620": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/11/napelem-rendszer-black-friday-2020.jpg",
+  "title": "napelem rendszer black friday 2020",
+  "slug": "napelem-rendszer-black-friday-2020"
+ },
+ "624": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/11/soros-napelem.jpg",
+  "title": "soros napelem",
+  "slug": "soros-napelem"
+ },
+ "625": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/11/1.-generacios-optimalizalas.jpg",
+  "title": "1. generációs optimalizálás",
+  "slug": "1-generacios-optimalizalas"
+ },
+ "626": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/11/2.-generacios-cellasor-optimalizalt-napelem.jpg",
+  "title": "2. generációs cellasor optimalizált napelem",
+  "slug": "2-generacios-cellasor-optimalizalt-napelem"
+ },
+ "689": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/11/otthonfelujitasi-tamogatas-napelemre.jpg",
+  "title": "otthonfelújítási támogatás napelemre",
+  "slug": "otthonfelujitasi-tamogatas-napelemre"
+ },
+ "691": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/11/otthonfelujitasi-tamogatas-inverterek.png",
+  "title": "otthonfelújítási támogatás inverterek",
+  "slug": "otthonfelujitasi-tamogatas-inverterek"
+ },
+ "701": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/11/qcell-logo.png",
+  "title": "qcell-logo",
+  "slug": "qcell-logo"
+ },
+ "705": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/11/1280px-Maxim_Integrated_logo.svg.png",
+  "title": "1280px-Maxim_Integrated_logo.svg",
+  "slug": "1280px-maxim_integrated_logo-svg"
+ },
+ "709": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/11/saj-inverter.jpg",
+  "title": "saj inverter",
+  "slug": "saj-inverter"
+ },
+ "712": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/11/SAJ-logo.png",
+  "title": "SAJ logo",
+  "slug": "saj-logo"
+ },
+ "718": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/11/budapest-x-kerulet-a1-solar.jpg",
+  "title": "budapest x kerület a1 solar",
+  "slug": "budapest-x-kerulet-a1-solar"
+ },
+ "720": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/11/Balatonboglar-uveg_uveg-panelek.jpg",
+  "title": "Balatonboglár üveg_üveg panelek",
+  "slug": "balatonboglar-uveg_uveg-panelek"
+ },
+ "722": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/11/Hajduboszormeny-88-kwp.jpg",
+  "title": "Hajdúböszörmény 8,8 kwp",
+  "slug": "hajduboszormeny-88-kwp"
+ },
+ "738": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/12/family_solar_garden.jpg",
+  "title": "family_solar_garden",
+  "slug": "family_solar_garden"
+ },
+ "739": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/12/Solarfamilyhome.png",
+  "title": "Solarfamilyhome",
+  "slug": "solarfamilyhome"
+ },
+ "758": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/12/placeholder-1.png",
+  "title": "placeholder-1.png",
+  "slug": "placeholder-1-png"
+ },
+ "780": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/12/Napelem-kalkulator-–-igy-mukodik-valojaban-kep.jpg",
+  "title": "Napelem kalkulátor – így működik valójában kép",
+  "slug": "solar-energy-concept-image"
+ },
+ "785": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/12/napelem-kalkulator-print-screen.png",
+  "title": "napelem kalkulátor print screen",
+  "slug": "napelem-kalkulator-print-screen"
+ },
+ "819": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/12/napelemkerdesek-2020.jpg",
+  "title": "napelemkérdések 2020",
+  "slug": "napelemkerdesek-2020"
+ },
+ "820": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/12/napelem-kerdesek-2020.jpg",
+  "title": "napelem kérdések 2020",
+  "slug": "napelem-kerdesek-2020"
+ },
+ "823": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/12/Q-cells-tuv.jpg",
+  "title": "Q cells tuv",
+  "slug": "q-cells-tuv"
+ },
+ "827": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/12/Dr.-Zhengrong-Shi-Suntech.jpg",
+  "title": "Dr. Zhengrong Shi Suntech",
+  "slug": "dr-zhengrong-shi-suntech"
+ },
+ "871": {
+  "url": "https://a1solar.hu/wp-content/uploads/2020/12/napelem-rendszer-felaron-1-1.png",
+  "title": "napelem rendszer felaron (1) (1)",
+  "slug": "napelem-rendszer-felaron-1-1"
+ },
+ "1016": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/01/a1solar_51_2_palyazatvaltozasok.jpg",
+  "title": "a1solar_51_2_palyazatvaltozasok",
+  "slug": "a1solar_51_2_palyazatvaltozasok"
+ },
+ "1025": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/01/a1solar_51_1_solarcooking_tiny-scaled.jpg",
+  "title": "a1solar_51_1_solarcooking_tiny",
+  "slug": "a1solar_51_1_solarcooking_tiny"
+ },
+ "1033": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/01/a1solar_52_1_tanyapalyazat_tiny.jpg",
+  "title": "a1solar_52_1_tanyapalyazat_tiny",
+  "slug": "a1solar_52_1_tanyapalyazat_tiny"
+ },
+ "1041": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/01/a1solar_52_2_sziget1_tiny-scaled.jpg",
+  "title": "a1solar_52_2_sziget1_tiny",
+  "slug": "a1solar_52_2_sziget1_tiny"
+ },
+ "1048": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/01/a1solar_53_1_sziget2_tiny.jpg",
+  "title": "a1solar_53_1_sziget2_tiny",
+  "slug": "a1solar_53_1_sziget2_tiny"
+ },
+ "1058": {
+  "url": "https://a1solar.hu/wp-content/uploads/woocommerce-placeholder.png",
+  "title": "woocommerce-placeholder",
+  "slug": "woocommerce-placeholder"
+ },
+ "1059": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/01/a1solar_hibrid_tiny.jpg",
+  "title": "a1solar_hibrid_tiny",
+  "slug": "a1solar_hibrid_tiny"
+ },
+ "1063": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/02/a1solar_01_1_hibalehetosegek_tiny.jpg",
+  "title": "a1solar_01_1_hibalehetosegek_tiny",
+  "slug": "a1solar_01_1_hibalehetosegek_tiny"
+ },
+ "1071": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/02/a1solar_01_2_0Ft-osvillanyszamla_tiny.jpg",
+  "title": "a1solar_01_2_0Ft-osvillanyszamla_tiny",
+  "slug": "a1solar_01_2_0ft-osvillanyszamla_tiny"
+ },
+ "1088": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/02/Napelem-vallalat-1.jpg",
+  "title": "Napelem vállalat 1",
+  "slug": "napelem-vallalat-1"
+ },
+ "1091": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/02/a1solar_02_1_vallalkozasoknapelem1_tiny.jpg",
+  "title": "a1solar_02_1_vallalkozasoknapelem1_tiny",
+  "slug": "a1solar_02_1_vallalkozasoknapelem1_tiny"
+ },
+ "1098": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/02/allattarto-telep-fejlesztese-palyazat.jpg",
+  "title": "állattartó telep fejlesztése pályázat",
+  "slug": "allattarto-telep-fejlesztese-palyazat"
+ },
+ "1099": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/02/allattarto-telep-fejlesztese-palyazat-2021.png",
+  "title": "állattartó telep fejlesztése pályázat 2021",
+  "slug": "allattarto-telep-fejlesztese-palyazat-2021"
+ },
+ "1104": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/02/Zsombo-50-kwp.jpg",
+  "title": "Zsombo 50 kwp",
+  "slug": "zsombo-50-kwp"
+ },
+ "1106": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/02/paskal-strand-200-kWp.jpg",
+  "title": "paskál strand 200 kWp",
+  "slug": "paskal-strand-200-kwp"
+ },
+ "1108": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/02/Pilisjaszfalu-altalanos-iskola-27-kWp.jpg",
+  "title": "Pilisjászfalu általános iskola - 27 kWp",
+  "slug": "pilisjaszfalu-altalanos-iskola-27-kwp"
+ },
+ "1110": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/02/Sylvester-Janos-Gimnazium-32-kWp.jpg",
+  "title": "Sylvester János Gimnázium - 32 kWp",
+  "slug": "sylvester-janos-gimnazium-32-kwp"
+ },
+ "1112": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/02/Kazincbarcika-E.V.-18-kWp.jpg",
+  "title": "Kazincbarcika E.V. - 18 kWp",
+  "slug": "kazincbarcika-e-v-18-kwp"
+ },
+ "1124": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/02/allattarto-telepek-fejlesztese-2021.png",
+  "title": "állattartó telepek fejlesztése 2021",
+  "slug": "allattarto-telepek-fejlesztese-2021"
+ },
+ "1128": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/02/MFB-napelem-ujratoltve.png",
+  "title": "MFB napelem újratöltve",
+  "slug": "mfb-napelem-ujratoltve"
+ },
+ "1183": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/03/Szekszard-4-kwp-napelem.jpg",
+  "title": "Szekszárd 4 kwp napelem",
+  "slug": "szekszard-4-kwp-napelem"
+ },
+ "1185": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/03/Hajnunanas-3-kwp-napelem-rendszer.jpg",
+  "title": "Hajnúnánás 3 kwp napelem rendszer",
+  "slug": "hajnunanas-3-kwp-napelem-rendszer"
+ },
+ "1187": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/03/Maglod-6-kwp-lakossagi-napelem-rendszer.jpg",
+  "title": "Maglód 6 kwp lakossági napelem rendszer",
+  "slug": "maglod-6-kwp-lakossagi-napelem-rendszer"
+ },
+ "1188": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/03/Szabalyzat.pdf",
+  "title": "Szabályzat",
+  "slug": "szabalyzat"
+ },
+ "1223": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/03/a1solar_napelem-elhelyezes.jpg",
+  "title": "a1solar_napelem elhelyezes",
+  "slug": "a1solar_napelem-elhelyezes"
+ },
+ "1225": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/03/a1solar_napenergia-jovoje.jpg",
+  "title": "a1solar_napenergia jovoje",
+  "slug": "a1solar_napenergia-jovoje"
+ },
+ "1228": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/03/a1solar_uszo-napelemek.jpg",
+  "title": "a1solar_úszó napelemek",
+  "slug": "a1solar_uszo-napelemek"
+ },
+ "1293": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/03/a1_solar-vizminoseg_javitas_naepelemmel.jpg",
+  "title": "a1_solar-vizminoseg_javitas_naepelemmel",
+  "slug": "a1_solar-vizminoseg_javitas_naepelemmel"
+ },
+ "1295": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/03/a1_vizminoseg-javitas-napelemmel.jpg",
+  "title": "a1_vízminőség javítás napelemmel",
+  "slug": "a1_vizminoseg-javitas-napelemmel"
+ },
+ "1299": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/03/solar-panel-1393880_1280-1.png",
+  "title": "solar-panel-1393880_1280 (1)",
+  "slug": "solar-panel-1393880_1280-1"
+ },
+ "1331": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/04/Bg-About-New.png",
+  "title": "Bg-About-New.png",
+  "slug": "bg-about-new-png"
+ },
+ "1332": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/04/About-Page-intro-pic.png",
+  "title": "",
+  "slug": "about-page-intro-pic-png"
+ },
+ "1333": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/04/BG-intro-About.png",
+  "title": "BG-intro-About.png",
+  "slug": "bg-intro-about-png"
+ },
+ "1334": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/04/We-believe-BG.png",
+  "title": "We-believe-BG.png",
+  "slug": "we-believe-bg-png"
+ },
+ "1335": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/04/Team-5.png",
+  "title": "Team-5.png",
+  "slug": "team-5-png"
+ },
+ "1336": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/04/Team-2-1.png",
+  "title": "Team-2-1.png",
+  "slug": "team-2-1-png"
+ },
+ "1337": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/04/Team-4-1.png",
+  "title": "Team-4-1.png",
+  "slug": "team-4-1-png"
+ },
+ "1338": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/04/Team-3-1.png",
+  "title": "Team-3-1.png",
+  "slug": "team-3-1-png"
+ },
+ "1339": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/04/Team-8.png",
+  "title": "Team-8.png",
+  "slug": "team-8-png"
+ },
+ "1340": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/04/Team-9.png",
+  "title": "Team-9.png",
+  "slug": "team-9-png"
+ },
+ "1341": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/04/Team-1-1.png",
+  "title": "Team-1-1.png",
+  "slug": "team-1-1-png"
+ },
+ "1342": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/04/Team-6.png",
+  "title": "Team-6.png",
+  "slug": "team-6-png"
+ },
+ "1343": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/04/Team-7.png",
+  "title": "Team-7.png",
+  "slug": "team-7-png"
+ },
+ "1344": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/04/BG-About-Team-section.png",
+  "title": "BG-About-Team-section.png",
+  "slug": "bg-about-team-section-png"
+ },
+ "1345": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/04/1.png",
+  "title": "1.png",
+  "slug": "1-png"
+ },
+ "1346": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/04/4.png",
+  "title": "4.png",
+  "slug": "4-png"
+ },
+ "1347": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/04/8.png",
+  "title": "8.png",
+  "slug": "8-png"
+ },
+ "1348": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/04/14.png",
+  "title": "14.png",
+  "slug": "14-png"
+ },
+ "1349": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/04/16.png",
+  "title": "16.png",
+  "slug": "16-png"
+ },
+ "1350": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/04/13.png",
+  "title": "13.png",
+  "slug": "13-png"
+ },
+ "1351": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/04/3.png",
+  "title": "3.png",
+  "slug": "3-png"
+ },
+ "1352": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/04/CTA-About-new.png",
+  "title": "CTA-About-new.png",
+  "slug": "cta-about-new-png"
+ },
+ "1353": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/04/CTA-Shapes.png",
+  "title": "CTA-Shapes.png",
+  "slug": "cta-shapes-png"
+ },
+ "1382": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/04/a1-a-megujulo-energia-es-a-fosszilis-energia-harca.jpg",
+  "title": "a1-a megújuló energia és a fosszilis energia harca",
+  "slug": "a1-a-megujulo-energia-es-a-fosszilis-energia-harca"
+ },
+ "1450": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/04/A1-Solar-napelemes-lakossagi-rendszer.jpg",
+  "title": "A1 Solar napelemes lakossági rendszer",
+  "slug": "a1-solar-napelemes-lakossagi-rendszer"
+ },
+ "1451": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/04/Hars-Beatrix.jpg",
+  "title": "Hárs Beatrix",
+  "slug": "hars-beatrix"
+ },
+ "1452": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/04/Kosa-Dora.jpg",
+  "title": "Kósa Dóra",
+  "slug": "kosa-dora"
+ },
+ "1453": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/04/Gal-Noemi.jpg",
+  "title": "Gál Noémi",
+  "slug": "gal-noemi"
+ },
+ "1454": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/04/Kovacs-Csanad.jpg",
+  "title": "Kovács Csanád",
+  "slug": "kovacs-csanad"
+ },
+ "1455": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/04/Kovacs-Istvan.jpg",
+  "title": "Kovács István",
+  "slug": "kovacs-istvan"
+ },
+ "1456": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/04/Kovacs-Zsombor.jpg",
+  "title": "Kovács Zsombor",
+  "slug": "kovacs-zsombor"
+ },
+ "1457": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/04/Marsai-Miklos.jpg",
+  "title": "Marsai Miklós",
+  "slug": "marsai-miklos"
+ },
+ "1458": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/04/Snyehola-Mark.jpg",
+  "title": "Snyehola Márk",
+  "slug": "snyehola-mark"
+ },
+ "1459": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/04/Szenyan-Endre.jpg",
+  "title": "Szenyán Endre",
+  "slug": "szenyan-endre"
+ },
+ "1460": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/04/Szenyan-Sapi-Zsofia.jpg",
+  "title": "Szenyán-Sápi Zsófia",
+  "slug": "szenyan-sapi-zsofia"
+ },
+ "1461": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/04/Kovacs-Csanad-A1.jpg",
+  "title": "Kovács Csanád A1",
+  "slug": "kovacs-csanad-a1"
+ },
+ "1462": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/04/Napelem-telepites-2021.jpg",
+  "title": "Napelem telepítés 2021",
+  "slug": "napelem-telepites-2021"
+ },
+ "1489": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/04/u4.png",
+  "title": "u4.png",
+  "slug": "u4-png"
+ },
+ "1490": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/04/q_cells_panel-300x300-1.png",
+  "title": "q_cells_panel-300x300",
+  "slug": "q_cells_panel-300x300"
+ },
+ "1491": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/04/Q-cells-q.peak-duo-ml-G9-385-Wp-mono-panel.jpg",
+  "title": "Q cells q.peak duo ml G9 385 Wp mono panel",
+  "slug": "q-cells-q-peak-duo-ml-g9-385-wp-mono-panel"
+ },
+ "1492": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/04/Q-cells-q.peak-duo-ml-G9-385-Wp-mono-fektetett-panel.jpg",
+  "title": "Q cells q.peak duo ml G9 385 Wp mono fektetett panel",
+  "slug": "q-cells-q-peak-duo-ml-g9-385-wp-mono-fektetett-panel"
+ },
+ "1493": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/04/fifthflour.png",
+  "title": "fifthflour.png",
+  "slug": "fifthflour-png"
+ },
+ "1494": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/04/Edgewater...png",
+  "title": "Edgewater...png",
+  "slug": "edgewater-png"
+ },
+ "1495": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/04/digit.png",
+  "title": "digit.png",
+  "slug": "digit-png"
+ },
+ "1496": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/04/darkside.png",
+  "title": "darkside.png",
+  "slug": "darkside-png"
+ },
+ "1497": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/04/bolier.png",
+  "title": "bolier.png",
+  "slug": "bolier-png"
+ },
+ "1498": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/04/bastil.png",
+  "title": "bastil.png",
+  "slug": "bastil-png"
+ },
+ "1499": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/04/phone-x.png",
+  "title": "phone-x.png",
+  "slug": "phone-x-png"
+ },
+ "1500": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/04/SPP-2017.jpg",
+  "title": "SPP 2017",
+  "slug": "spp-2017"
+ },
+ "1501": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/04/EUPD_2019.jpg",
+  "title": "EUPD_2019",
+  "slug": "eupd_2019"
+ },
+ "1502": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/04/DNV-GL-2017.jpg",
+  "title": "DNV GL 2017",
+  "slug": "dnv-gl-2017"
+ },
+ "1503": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/04/PV-M-2017.jpg",
+  "title": "PV M 2017",
+  "slug": "pv-m-2017"
+ },
+ "1504": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/04/Photon-2014.jpg",
+  "title": "Photon 2014",
+  "slug": "photon-2014"
+ },
+ "1505": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/04/ISO-2018.png",
+  "title": "ISO 2018",
+  "slug": "iso-2018"
+ },
+ "1506": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/04/SW-2015.jpg",
+  "title": "SW 2015",
+  "slug": "sw-2015"
+ },
+ "1507": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/04/SP-2017.jpg",
+  "title": "SP 2017",
+  "slug": "sp-2017"
+ },
+ "1508": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/04/Q_CELLS_360_Q.PEAK_DUO_BLK-G9_450.jpg",
+  "title": "Q_CELLS_360_Q.PEAK_DUO_BLK-G9_450",
+  "slug": "q_cells_360_q-peak_duo_blk-g9_450"
+ },
+ "1512": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/04/PV-M-2017_2.jpg",
+  "title": "PV M 2017_2",
+  "slug": "pv-m-2017_2"
+ },
+ "1513": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/04/SP-2017_2.jpg",
+  "title": "SP 2017_2",
+  "slug": "sp-2017_2"
+ },
+ "1514": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/04/SPP-2017_2.jpg",
+  "title": "SPP 2017_2",
+  "slug": "spp-2017_2"
+ },
+ "1515": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/04/SW-2015_2.jpg",
+  "title": "SW 2015_2",
+  "slug": "sw-2015_2"
+ },
+ "1516": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/04/DNV-GL-2017_2.jpg",
+  "title": "DNV GL 2017_2",
+  "slug": "dnv-gl-2017_2"
+ },
+ "1517": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/04/EUPD_2019_2.jpg",
+  "title": "EUPD_2019_2",
+  "slug": "eupd_2019_2"
+ },
+ "1518": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/04/ISO-2018_2.png",
+  "title": "ISO 2018_2",
+  "slug": "iso-2018_2"
+ },
+ "1519": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/04/Photon-2014_2.jpg",
+  "title": "Photon 2014_2",
+  "slug": "photon-2014_2"
+ },
+ "1520": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/04/Q.PEAK_DUO_ML_G9-1.png",
+  "title": "Q.PEAK_DUO_ML_G9 (1)",
+  "slug": "q-peak_duo_ml_g9-1"
+ },
+ "1521": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/04/Q_CELLS_Adatlap_Q.PEAK_DUO_ML-G9_370-390_A1_Solar.pdf",
+  "title": "Q PEAK DUO ML G9 adatlap",
+  "slug": "q_cells_adatlap_q-peak_duo_ml-g9_370-390_a1_solar"
+ },
+ "1522": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/04/Q_CELLS_Adatlap_Q.PEAK_DUO-G5_315-335_A1_Solar.pdf",
+  "title": "Q PEAK DUO G5 adatlap",
+  "slug": "q_cells_adatlap_q-peak_duo-g5_315-335_a1_solar"
+ },
+ "1523": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/04/Q_CELLS_Adatlap_Q.PEAK_DUO-G6_340-355_A1_Solar.pdf",
+  "title": "Q PEAK DUO G6 adatlap",
+  "slug": "q_cells_adatlap_q-peak_duo-g6_340-355_a1_solar"
+ },
+ "1524": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/04/Q_CELLS_Adatlap_Q.PEAK_DUO-G7_325-335-A1_Solar.pdf",
+  "title": "Q PEAK DUO G7 adatlap",
+  "slug": "q_cells_adatlap_q-peak_duo-g7_325-335-a1_solar"
+ },
+ "1525": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/04/Q_CELLS_Adatlap_Q.PEAK_DUO-G8_345-360_A1_Solar.pdf",
+  "title": "Q PEAK DUO G8 Adatlap",
+  "slug": "q_cells_adatlap_q-peak_duo-g8_345-360_a1_solar"
+ },
+ "1526": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/04/Q-CELLS-Q.PEAK-DUO-G9-felepitese.jpg",
+  "title": "Q CELLS Q.PEAK DUO-G9 felépítése",
+  "slug": "q-cells-q-peak-duo-g9-felepitese"
+ },
+ "1527": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/04/A-Q.PEAK-DUO-G8-felcellai-kozott-meg-ures-ter-volt.jpg",
+  "title": "A Q.PEAK DUO-G8 félcellái között még üres tér volt",
+  "slug": "a-q-peak-duo-g8-felcellai-kozott-meg-ures-ter-volt"
+ },
+ "1528": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/04/A-Duo-Z-technologianak-hala-ma-mar-tobb-felcella-talalhato-a-G9-modelleken.jpg",
+  "title": "A Duo Z technológiának hála ma már több félcella található a G9 modelleken",
+  "slug": "a-duo-z-technologianak-hala-ma-mar-tobb-felcella-talalhato-a-g9-modelleken"
+ },
+ "1529": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/04/Q.PEAK-DUO-G9-12-busbar-technologia.jpg",
+  "title": "Q.PEAK DUO-G9 12 busbar technológia",
+  "slug": "q-peak-duo-g9-12-busbar-technologia"
+ },
+ "1545": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/04/a1_solar-napelem-hatekonysagnoveles-hajjal.jpg",
+  "title": "a1_solar-napelem hatékonyságnövelés hajjal",
+  "slug": "a1_solar-napelem-hatekonysagnoveles-hajjal"
+ },
+ "1548": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/04/Kovacs-Fulop-Kinga.jpg",
+  "title": "Kovács-Fülöp Kinga",
+  "slug": "kovacs-fulop-kinga"
+ },
+ "1559": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/04/Szenyan-Sapi-Zsofia_A1-Solar.jpg",
+  "title": "Szenyán-Sápi Zsófia_A1 Solar",
+  "slug": "szenyan-sapi-zsofia_a1-solar"
+ },
+ "1561": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/04/Szenyan-Endre_A1-Solar.jpg",
+  "title": "Szenyán Endre_A1 Solar",
+  "slug": "szenyan-endre_a1-solar"
+ },
+ "1569": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/04/a1_solar-tarol-a-ketoldali-erintkezesu-napelem.jpg",
+  "title": "a1_solar-tarol a kétoldali érintkezésű napelem",
+  "slug": "a1_solar-tarol-a-ketoldali-erintkezesu-napelem"
+ },
+ "1586": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/04/a1-felkeszulni-napenergia-tarolo-erkezik-az-amazontol.jpg",
+  "title": "a1-felkészülni, napenergia-tároló érkezik az amazontól",
+  "slug": "a1-felkeszulni-napenergia-tarolo-erkezik-az-amazontol"
+ },
+ "1596": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/05/allattarto-telep-fejlesztese-napelemmel.png",
+  "title": "állattartó telep fejlesztése napelemmel",
+  "slug": "allattarto-telep-fejlesztese-napelemmel"
+ },
+ "1597": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/05/goodwe-logo-vector.png",
+  "title": "goodwe-logo-vector",
+  "slug": "goodwe-logo-vector"
+ },
+ "1601": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/05/allattarto-telep-fejlesztese-napelemmel-2021.png",
+  "title": "állattartó telep fejlesztése napelemmel 2021",
+  "slug": "allattarto-telep-fejlesztese-napelemmel-2021"
+ },
+ "1742": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/05/a1_solar-Jelentos-agrar-PV-fejlesztesek-a-mezogazdasagban.jpg",
+  "title": "a1_solar-Jelentős agrár-PV fejlesztések a mezőgazdaságban",
+  "slug": "a1_solar-jelentos-agrar-pv-fejlesztesek-a-mezogazdasagban"
+ },
+ "1791": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/05/a1_solar-eszkozbeszerzesi-palyazat.jpg",
+  "title": "a1_solar-eszközbeszerzési pályázat",
+  "slug": "a1_solar-eszkozbeszerzesi-palyazat"
+ },
+ "1815": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/05/a1_solar-Orias-siker-ujraindul-az-europai-napelemgyartas.jpg",
+  "title": "a1_solar-Óriás siker, újraindul az európai napelemgyártás",
+  "slug": "a1_solar-orias-siker-ujraindul-az-europai-napelemgyartas"
+ },
+ "1852": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/05/a1-solar-Napenergia-a-jovobe-valo-befektetes.png",
+  "title": "a1 solar-Napenergia- a jövőbe való befektetés!",
+  "slug": "a1-solar-napenergia-a-jovobe-valo-befektetes"
+ },
+ "1856": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/05/I.-5.png",
+  "title": "I.-5.png",
+  "slug": "i-5-png"
+ },
+ "1857": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/05/I.-6.png",
+  "title": "I.-6.png",
+  "slug": "i-6-png"
+ },
+ "1858": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/05/I.-7.png",
+  "title": "I.-7.png",
+  "slug": "i-7-png"
+ },
+ "1859": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/05/I.-8.png",
+  "title": "I.-8.png",
+  "slug": "i-8-png"
+ },
+ "1860": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/05/napelem-panelek-a-hazon.png",
+  "title": "napelem-panelek-a-házon.png",
+  "slug": "napelem-panelek-a-hazon-png-2"
+ },
+ "1861": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/05/e78016a0.png",
+  "title": "e78016a0.png",
+  "slug": "e78016a0-png"
+ },
+ "1924": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/05/longi-napelem_a1-slolar.jpg",
+  "title": "longi napelem_a1 slolar",
+  "slug": "longi-napelem_a1-slolar"
+ },
+ "1925": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/05/longi-napelem_a1-slolar-1.jpg",
+  "title": "longi napelem_a1 slolar",
+  "slug": "longi-napelem_a1-slolar-2"
+ },
+ "1932": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/05/longi-napelem-a1-solar2.jpg",
+  "title": "longi napelem-a1 solar2",
+  "slug": "longi-napelem-a1-solar2"
+ },
+ "1933": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/05/longi-napelem-a1-solar2-1.jpg",
+  "title": "longi napelem-a1 solar2",
+  "slug": "longi-napelem-a1-solar2-2"
+ },
+ "1951": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/05/a1-solar-longi-napelem-1-scaled.jpg",
+  "title": "a1 solar-longi napelem 1",
+  "slug": "a1-solar-longi-napelem-1"
+ },
+ "1952": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/05/a1-solar-longi-napelem-3-scaled.jpg",
+  "title": "a1 solar- longi napelem 3",
+  "slug": "a1-solar-longi-napelem-3"
+ },
+ "1953": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/05/a1-solar-longi-napelem-2-scaled.jpg",
+  "title": "a1 solar- longi napelem 2",
+  "slug": "a1-solar-longi-napelem-2"
+ },
+ "1957": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/05/a1-solar-longi-napelem-4-scaled.jpg",
+  "title": "a1 solar- longi napelem 4",
+  "slug": "a1-solar-longi-napelem-4"
+ },
+ "1962": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/05/Longi_350-380_A1-Solar.pdf",
+  "title": "Longi napelem katalógus",
+  "slug": "longi_350-380_a1-solar"
+ },
+ "1963": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/05/LONGi-Solar-Napelem-katalogus-A1-Solar.pdf",
+  "title": "LONGi-Solar-Napelem katalógus",
+  "slug": "longi-solar-napelem-katalogus-a1-solar"
+ },
+ "1997": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/05/a1_solar-Vajon-sikerul-elerni-2030-ig-a-nulla-netto-kibocsatast.jpg",
+  "title": "a1_solar-Vajon sikerül elérni 2030-ig a nulla nettó kibocsátást",
+  "slug": "a1_solar-vajon-sikerul-elerni-2030-ig-a-nulla-netto-kibocsatast"
+ },
+ "2002": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/06/a1-Novekvo-megujulo-energia-szukseglet-es-a-valosag-talalkozasa.jpg",
+  "title": "a1-Növekvő megújuló energia szükséglet és a valóság találkozása",
+  "slug": "a1-novekvo-megujulo-energia-szukseglet-es-a-valosag-talalkozasa"
+ },
+ "2065": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/06/a1_solar-Karnyujtasnyira-az-elerheto-novekedes-a-napelemiparban.jpg",
+  "title": "a1_solar-Karnyújtásnyira az elérhető növekedés a napelemiparban",
+  "slug": "a1_solar-karnyujtasnyira-az-elerheto-novekedes-a-napelemiparban"
+ },
+ "2072": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/06/a1_solar-Hibrid-rendszereket-az-Egyesult-Kiralysagnak.png",
+  "title": "a1_solar-Hibrid rendszereket az Egyesült Királyságnak",
+  "slug": "a1_solar-hibrid-rendszereket-az-egyesult-kiralysagnak"
+ },
+ "2099": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/06/A1_solar-Uj-napenergia-merfoldkovet-ert-el-az-USA.jpg",
+  "title": "A1_solar-Új napenergia mérföldkövet ért el az USA",
+  "slug": "a1_solar-uj-napenergia-merfoldkovet-ert-el-az-usa"
+ },
+ "2106": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/07/A1_Solar-A-fosszilis-vagy-napenergia-megfizetheto-aron.jpg",
+  "title": "A1_Solar-A fosszílis-, vagy napenergia megfizethető áron",
+  "slug": "a1_solar-a-fosszilis-vagy-napenergia-megfizetheto-aron"
+ },
+ "2112": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/07/A1_Solar-A-fosszilis-vagy-napenergia-megfizetheto-aron-1.jpg",
+  "title": "A1_Solar-A fosszílis-, vagy napenergia megfizethető áron",
+  "slug": "a1_solar-a-fosszilis-vagy-napenergia-megfizetheto-aron-2"
+ },
+ "2123": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/07/a1_solar-Megujulo-energiaforrasok-kereslete-az-Egyesult-Kiralysagban.jpg",
+  "title": "a1_solar-Megújuló energiaforrások kereslete az Egyesült Királyságban",
+  "slug": "a1_solar-megujulo-energiaforrasok-kereslete-az-egyesult-kiralysagban"
+ },
+ "2126": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/07/LONGi-oversized.png",
+  "title": "LONGi oversized",
+  "slug": "longi-oversized"
+ },
+ "2133": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/07/a1-solar-Az-oversized-modulok-gorcso-alatt.jpg",
+  "title": "a1 solar- Az oversized modulok górcső alatt",
+  "slug": "a1-solar-az-oversized-modulok-gorcso-alatt"
+ },
+ "2156": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/07/IEC_61730__IEC_61215.jpg",
+  "title": "IEC_61730_&_IEC_61215",
+  "slug": "iec_61730__iec_61215"
+ },
+ "2157": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/07/IEC_61730__IEC_61215-1.jpg",
+  "title": "IEC_61730_&_IEC_61215",
+  "slug": "iec_61730__iec_61215-2"
+ },
+ "2158": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/07/ce-jel.jpg",
+  "title": "ce jel",
+  "slug": "ce-jel"
+ },
+ "2159": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/07/intertek.png",
+  "title": "intertek",
+  "slug": "intertek"
+ },
+ "2160": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/07/3E.png",
+  "title": "3E",
+  "slug": "3e"
+ },
+ "2161": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/07/PV.png",
+  "title": "PV",
+  "slug": "pv"
+ },
+ "2162": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/07/GD.png",
+  "title": "GD",
+  "slug": "gd"
+ },
+ "2163": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/07/Intertek-2.png",
+  "title": "Intertek 2",
+  "slug": "intertek-2"
+ },
+ "2164": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/07/clean-energy.png",
+  "title": "clean energy",
+  "slug": "clean-energy"
+ },
+ "2165": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/07/CQC.png",
+  "title": "CQC",
+  "slug": "cqc"
+ },
+ "2166": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/07/JA-napelem.png",
+  "title": "JA napelem",
+  "slug": "ja-napelem"
+ },
+ "2170": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/07/JA-Solar.jpg",
+  "title": "JA Solar",
+  "slug": "ja-solar"
+ },
+ "2171": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/07/L-G7.png",
+  "title": "L-G7",
+  "slug": "l-g7"
+ },
+ "2175": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/07/garancia.png",
+  "title": "garancia",
+  "slug": "garancia"
+ },
+ "2179": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/07/garancia-1.png",
+  "title": "garancia",
+  "slug": "garancia-2"
+ },
+ "2202": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/07/a1-solar-JAM60S20-365-390_napelem-adatlap.pdf",
+  "title": "Napelem adatlap",
+  "slug": "a1-solar-jam60s20-365-390_napelem-adatlap"
+ },
+ "2247": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/07/ja-solar-panel.jpg",
+  "title": "ja-solar-panel",
+  "slug": "ja-solar-panel"
+ },
+ "2255": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/07/a1-solar_termenytarolo-tamogatas.jpg",
+  "title": "a1 solar_terménytároló támogatás",
+  "slug": "a1-solar_termenytarolo-tamogatas"
+ },
+ "2259": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/07/a1-solar_termenytarolo-tamogatas-1.jpg",
+  "title": "a1 solar_terménytároló támogatás",
+  "slug": "a1-solar_termenytarolo-tamogatas-2"
+ },
+ "2260": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/07/a1-solar_tamogatas.jpg",
+  "title": "a1 solar_támogatás",
+  "slug": "a1-solar_tamogatas"
+ },
+ "2305": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/07/a1-solar-elelmiszeripari-uzemek-fejlesztese.jpg",
+  "title": "a1 solar-élelmiszeripari üzemek fejlesztése",
+  "slug": "a1-solar-elelmiszeripari-uzemek-fejlesztese"
+ },
+ "2306": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/07/a1-solar-elelmiszeripari-uzemek-palyazat.jpg",
+  "title": "a1 solar- élelmiszeripari üzemek pályázat",
+  "slug": "a1-solar-elelmiszeripari-uzemek-palyazat"
+ },
+ "2398": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/07/a1-solar-elelmiszeripari-uzemek-komplex-fejlesztese.jpg",
+  "title": "a1 solar-élelmiszeripari üzemek komplex fejlesztése",
+  "slug": "a1-solar-elelmiszeripari-uzemek-komplex-fejlesztese"
+ },
+ "2399": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/07/a1-solar-elelmiszeripari-uzemek-komplex.jpg",
+  "title": "a1 solar-élelmiszeripari üzemek komplex",
+  "slug": "a1-solar-elelmiszeripari-uzemek-komplex"
+ },
+ "2438": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/07/a1-solar-Fit-for-55.jpg",
+  "title": "a1 solar-Fit for 55",
+  "slug": "a1-solar-fit-for-55"
+ },
+ "2442": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/07/a1-solar-TOPCon-cellak-es-az-n-tipusu-napelemek-scaled.jpg",
+  "title": "a1 solar-TOPCon cellák és az n-típusú napelemek",
+  "slug": "a1-solar-topcon-cellak-es-az-n-tipusu-napelemek"
+ },
+ "2448": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/07/bisnode-logo-2.jpg",
+  "title": "bisnode-logo-2",
+  "slug": "bisnode-logo-2"
+ },
+ "2449": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/07/bisnode-logo-200.jpg",
+  "title": "bisnode-logo-200",
+  "slug": "bisnode-logo-200"
+ },
+ "2450": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/07/solaredge_service_partner_.jpg",
+  "title": "solaredge_service_partner_",
+  "slug": "solaredge_service_partner_"
+ },
+ "2451": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/07/mnnsz_logo_alapitva-1.jpg",
+  "title": "mnnsz_logo_alapitva (1)",
+  "slug": "mnnsz_logo_alapitva-1"
+ },
+ "2452": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/07/mnnsz_logo_alapitva_200.jpg",
+  "title": "mnnsz_logo_alapitva_200",
+  "slug": "mnnsz_logo_alapitva_200"
+ },
+ "2453": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/07/mnnsz_logo_alapitva_150-e1627382952571.jpg",
+  "title": "mnnsz_logo_alapitva_150",
+  "slug": "mnnsz_logo_alapitva_150"
+ },
+ "2454": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/07/bme_szakmai_gyakorlohely_200.jpg",
+  "title": "bme_szakmai_gyakorlohely_200",
+  "slug": "bme_szakmai_gyakorlohely_200"
+ },
+ "2455": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/07/bme_szakmai_gyakorlohely_138.jpg",
+  "title": "bme_szakmai_gyakorlohely_138",
+  "slug": "bme_szakmai_gyakorlohely_138"
+ },
+ "2456": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/07/bme_szakmai_gyakorlohely_200_negyzetes.jpg",
+  "title": "bme_szakmai_gyakorlohely_200_negyzetes",
+  "slug": "bme_szakmai_gyakorlohely_200_negyzetes"
+ },
+ "2457": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/07/bisnode-logo-284.jpg",
+  "title": "bisnode-logo-284",
+  "slug": "bisnode-logo-284"
+ },
+ "2481": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/07/madrin.png",
+  "title": "madrin.png",
+  "slug": "madrin-png"
+ },
+ "2482": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/07/armond.png",
+  "title": "armond.png",
+  "slug": "armond-png"
+ },
+ "2483": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/07/qw1.jpg",
+  "title": "qw1.jpg",
+  "slug": "qw1-jpg"
+ },
+ "2484": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/07/qw2.jpg",
+  "title": "qw2.jpg",
+  "slug": "qw2-jpg"
+ },
+ "2485": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/07/qw3.jpg",
+  "title": "qw3.jpg",
+  "slug": "qw3-jpg"
+ },
+ "2486": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/07/qw4.jpg",
+  "title": "qw4.jpg",
+  "slug": "qw4-jpg"
+ },
+ "2487": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/07/GINOP-4.1.3-19.jpg",
+  "title": "GINOP-4.1.3-19",
+  "slug": "ginop-4-1-3-19"
+ },
+ "2488": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/07/GINOP-4.1.4.jpg",
+  "title": "GINOP-4.1.4",
+  "slug": "ginop-4-1-4"
+ },
+ "2489": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/07/GINOP-5.2.4.jpg",
+  "title": "GINOP-5.2.4",
+  "slug": "ginop-5-2-4"
+ },
+ "2490": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/07/GINOP-5.2.4-1.jpg",
+  "title": "GINOP-5.2.4",
+  "slug": "ginop-5-2-4-2"
+ },
+ "2491": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/07/VEKOP-1.2.6-20.jpg",
+  "title": "VEKOP-1.2.6-20",
+  "slug": "vekop-1-2-6-20"
+ },
+ "2492": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/07/GINOP-1.2.8-20.jpg",
+  "title": "GINOP-1.2.8-20",
+  "slug": "ginop-1-2-8-20"
+ },
+ "2496": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/07/paylazat-logo.jpg",
+  "title": "páylázat logo",
+  "slug": "paylazat-logo"
+ },
+ "2506": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/07/qr2.jpg",
+  "title": "qr2.jpg",
+  "slug": "qr2-jpg"
+ },
+ "2507": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/07/napelem.jpg",
+  "title": "napelem",
+  "slug": "napelem"
+ },
+ "2538": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/07/mnnsz-logo.jpg",
+  "title": "mnnsz logo",
+  "slug": "mnnsz-logo"
+ },
+ "2551": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/07/GINOP-PLUSZ-1.2.1.jpg",
+  "title": "GINOP PLUSZ-1.2.1",
+  "slug": "ginop-plusz-1-2-1"
+ },
+ "2619": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/07/KEOP-4.4.0_4.9.0.jpg",
+  "title": "KEOP 4.4.0_4.9.0",
+  "slug": "keop-4-4-0_4-9-0"
+ },
+ "2620": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/07/KEOP-5.3.0B.jpg",
+  "title": "KEOP-5.3.0B",
+  "slug": "keop-5-3-0b"
+ },
+ "2621": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/07/KEOP-palyazatok.jpg",
+  "title": "KEOP pályázatok",
+  "slug": "keop-palyazatok"
+ },
+ "2622": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/07/KEOP-4.10.0.jpg",
+  "title": "KEOP-4.10.0",
+  "slug": "keop-4-10-0"
+ },
+ "2623": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/07/KEOP-4.2.0.jpg",
+  "title": "KEOP-4.2.0",
+  "slug": "keop-4-2-0"
+ },
+ "2624": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/07/TOP-3.2.1.jpg",
+  "title": "TOP-3.2.1",
+  "slug": "top-3-2-1"
+ },
+ "2628": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/07/KEHOP-5.2.1.jpg",
+  "title": "KEHOP-5.2.1",
+  "slug": "kehop-5-2-1"
+ },
+ "2632": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/07/GINOP-1.2.8-20-1.jpg",
+  "title": "GINOP-1.2.8-20",
+  "slug": "ginop-1-2-8-20-2"
+ },
+ "2653": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/07/GINOP-1.2.6_1.2.8.jpg",
+  "title": "GINOP-1.2.6_1.2.8",
+  "slug": "ginop-1-2-6_1-2-8"
+ },
+ "2691": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/08/szakmai-gyakorlohely-260.jpg",
+  "title": "szakmai gyakorlóhely 260",
+  "slug": "szakmai-gyakorlohely-260"
+ },
+ "2704": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/08/a1-napeleme-forgatokonyv-kibocsajtasrol.png",
+  "title": "a1-napeleme forgatókönyv kibocsájtásról",
+  "slug": "a1-napeleme-forgatokonyv-kibocsajtasrol"
+ },
+ "2705": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/08/a1-napeleme-forgatokonyv-kibocsajtasrol.jpg",
+  "title": "a1-napeleme forgatókönyv kibocsájtásról",
+  "slug": "a1-napeleme-forgatokonyv-kibocsajtasrol-2"
+ },
+ "2707": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/08/a1-napelem-kapacitas-forgatokonyv.jpg",
+  "title": "a1- napelem kapacitás forgatókönyv",
+  "slug": "a1-napelem-kapacitas-forgatokonyv"
+ },
+ "2708": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/08/a1-napelem-kapacitas-forgatokonyv-1.jpg",
+  "title": "a1- napelem kapacitás forgatókönyv",
+  "slug": "a1-napelem-kapacitas-forgatokonyv-2"
+ },
+ "2712": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/08/a1-uj-heterojunkcios-gyarral-lesz-gazdagabb-Oroszorszag.jpg",
+  "title": "a1-új heterojunkciós gyárral lesz gazdagabb Oroszország",
+  "slug": "a1-uj-heterojunkcios-gyarral-lesz-gazdagabb-oroszorszag"
+ },
+ "2717": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/08/100-MW-os-heterojunkcios-modul-gyar-nyilik-Floridaban.jpg",
+  "title": "100 MW-os heterojunkciós modul gyár nyílik Floridában",
+  "slug": "100-mw-os-heterojunkcios-modul-gyar-nyilik-floridaban"
+ },
+ "2781": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/08/lakossagi-napelem.jpg",
+  "title": "lakossági napelem",
+  "slug": "lakossagi-napelem-2"
+ },
+ "2786": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/08/ja-solar-logo.png",
+  "title": "ja-solar-logo",
+  "slug": "ja-solar-logo"
+ },
+ "2824": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/09/Nok-a-napenergia-teruleten.jpg",
+  "title": "Nők a napenergia területén",
+  "slug": "nok-a-napenergia-teruleten"
+ },
+ "2864": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/09/napelem-a-tetore.jpg",
+  "title": "napelem a tetőre",
+  "slug": "napelem-a-tetore"
+ },
+ "2899": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/09/20210830_160548-scaled.jpg",
+  "title": "20210830_160548",
+  "slug": "20210830_160548"
+ },
+ "2900": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/09/unikornis-napelem-2-scaled.jpg",
+  "title": "unikornis napelem (2)",
+  "slug": "unikornis-napelem-2"
+ },
+ "2947": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/09/napelem-megterules.jpg",
+  "title": "napelem megtérülés",
+  "slug": "napelem-megterules"
+ },
+ "2948": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/09/napelem-megterules-2.jpg",
+  "title": "napelem megtérülés 2",
+  "slug": "napelem-megterules-2"
+ },
+ "2970": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/10/uj-napelemes-celok.jpg",
+  "title": "új napelemes célok",
+  "slug": "uj-napelemes-celok"
+ },
+ "3018": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/10/napelem-tartoszerkezet.jpg",
+  "title": "napelem tartószerkezet",
+  "slug": "napelem-tartoszerkezet-2"
+ },
+ "3021": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/10/megujulo-energiaforras.jpg",
+  "title": "megújuló energiaforrás",
+  "slug": "megujulo-energiaforras"
+ },
+ "3025": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/10/megujuloenergia-napelem.jpg",
+  "title": "megújulóenergia -napelem",
+  "slug": "megujuloenergia-napelem"
+ },
+ "3028": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/10/NanoPV-gyartas.jpg",
+  "title": "NanoPV gyártás",
+  "slug": "nanopv-gyartas"
+ },
+ "3032": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/10/naperomu.jpg",
+  "title": "naperőmű",
+  "slug": "naperomu"
+ },
+ "3064": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/10/szigetuzemu-napelem.jpg",
+  "title": "szigetüzemű napelem",
+  "slug": "szigetuzemu-napelem"
+ },
+ "3084": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/10/Listaarak-SAJ-inverterrel.pdf",
+  "title": "Listaárak SAJ inverterrel",
+  "slug": "listaarak-saj-inverterrel"
+ },
+ "3085": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/10/Listaarak-Huawei-inverterrel.pdf",
+  "title": "Listaárak Huawei inverterrel",
+  "slug": "listaarak-huawei-inverterrel"
+ },
+ "3093": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/10/emelkedo-arak.jpg",
+  "title": "emelkedő árak",
+  "slug": "emelkedo-arak"
+ },
+ "3097": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/10/napelemes-rendszer-telepitese.jpg",
+  "title": "napelemes rendszer telepítése",
+  "slug": "napelemes-rendszer-telepitese"
+ },
+ "3101": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/10/uj-rekord-a-monokristalyos-napelemek-teruleten.jpg",
+  "title": "új rekord a monokristályos napelemek területén",
+  "slug": "uj-rekord-a-monokristalyos-napelemek-teruleten"
+ },
+ "3110": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/11/netto-nulla-celkituzes.png",
+  "title": "nettó nulla célkitűzés",
+  "slug": "netto-nulla-celkituzes"
+ },
+ "3114": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/11/vekonyreteg-napelem.png",
+  "title": "vékonyréteg-napelem",
+  "slug": "vekonyreteg-napelem"
+ },
+ "3126": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/11/hibrid-rendszer.png",
+  "title": "hibrid rendszer",
+  "slug": "hibrid-rendszer"
+ },
+ "3130": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/11/tartoszerkezet.png",
+  "title": "tartószerkezet",
+  "slug": "tartoszerkezet"
+ },
+ "3143": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/11/karbantartasi-koltseg.png",
+  "title": "karbantartási költség",
+  "slug": "karbantartasi-koltseg"
+ },
+ "3146": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/11/SAJ-listaar-2021_11_30.pdf",
+  "title": "SAJ listaár",
+  "slug": "saj-listaar-2021_11_30"
+ },
+ "3150": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/11/Huawei-rendszer-ar-2021_11_30.pdf",
+  "title": "Huawei rendszer ár",
+  "slug": "huawei-rendszer-ar-2021_11_30"
+ },
+ "3154": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/11/Huawei-listaar-2021_11_30.pdf",
+  "title": "Huawei listaár",
+  "slug": "huawei-listaar-2021_11_30"
+ },
+ "3162": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/12/szigetuzemu-napelem.png",
+  "title": "szigetüzemű napelem",
+  "slug": "szigetuzemu-napelem-2"
+ },
+ "3165": {
+  "url": "https://a1solar.hu/wp-content/uploads/2021/12/C3-napelem.png",
+  "title": "C3 napelem",
+  "slug": "c3-napelem"
+ },
+ "3180": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/01/legmodernebb-napelemek.png",
+  "title": "legmodernebb napelemek",
+  "slug": "legmodernebb-napelemek"
+ },
+ "3182": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/01/napelem-es-szelenergia.png",
+  "title": "napelem és szélenergia",
+  "slug": "napelem-es-szelenergia"
+ },
+ "3190": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/01/uszo-napelem.png",
+  "title": "úszó napelem",
+  "slug": "uszo-napelem"
+ },
+ "3194": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/01/napelem-meghajtasu-vasut.png",
+  "title": "napelem meghajtású vasút",
+  "slug": "napelem-meghajtasu-vasut"
+ },
+ "3256": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/01/Napelem-mukodese.png",
+  "title": "Napelem működése",
+  "slug": "napelem-mukodese"
+ },
+ "3259": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/01/napelem-dolesszoge.png",
+  "title": "napelem dőlésszöge",
+  "slug": "napelem-dolesszoge"
+ },
+ "3264": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/02/decentralizalt-napelem.png",
+  "title": "decentralizált napelem",
+  "slug": "decentralizalt-napelem"
+ },
+ "3267": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/02/napelemes-projekt.png",
+  "title": "napelemes projekt",
+  "slug": "napelemes-projekt"
+ },
+ "3271": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/02/napelemes-zsindelye.png",
+  "title": "napelemes zsindelye",
+  "slug": "napelemes-zsindelye"
+ },
+ "3280": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/02/nyilvanos-naplem-konzultacio.png",
+  "title": "nyilvános naplem konzultáció",
+  "slug": "nyilvanos-naplem-konzultacio"
+ },
+ "3283": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/02/Tesla-negyedev.png",
+  "title": "Tesla negyedév",
+  "slug": "tesla-negyedev"
+ },
+ "3286": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/02/tesla-g47d584e3a_1920.jpg",
+  "title": "tesla-g47d584e3a_1920",
+  "slug": "tesla-g47d584e3a_1920"
+ },
+ "3287": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/02/Tesla-elektomos.jpg",
+  "title": "Tesla elektomos",
+  "slug": "tesla-elektomos"
+ },
+ "3293": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/02/ember.png",
+  "title": "ember",
+  "slug": "ember"
+ },
+ "3294": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/02/ember-1.png",
+  "title": "ember",
+  "slug": "ember-2"
+ },
+ "3299": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/02/villamosenergia-termeles.png",
+  "title": "villamosenergia-termelés",
+  "slug": "villamosenergia-termeles"
+ },
+ "3302": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/02/napelem-merete.png",
+  "title": "napelem mérete",
+  "slug": "napelem-merete"
+ },
+ "3304": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/02/megujuloenergia-aukcio.png",
+  "title": "megújulóenergia-aukció",
+  "slug": "megujuloenergia-aukcio"
+ },
+ "3312": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/02/napelem-tipus.png",
+  "title": "napelem típus",
+  "slug": "napelem-tipus"
+ },
+ "3333": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/02/eu-legregebbi-napeleme.png",
+  "title": "eu legrégebbi napeleme",
+  "slug": "eu-legregebbi-napeleme"
+ },
+ "3350": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/03/napelem-a-mezogazdasagban.png",
+  "title": "napelem a mezőgazdaságban",
+  "slug": "napelem-a-mezogazdasagban"
+ },
+ "3352": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/03/Longi-napelem.png",
+  "title": "Longi napelem",
+  "slug": "longi-napelem"
+ },
+ "3357": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/03/longi.png",
+  "title": "longi",
+  "slug": "longi"
+ },
+ "3359": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/03/uj-napelem-cella.png",
+  "title": "új napelem cella",
+  "slug": "uj-napelem-cella"
+ },
+ "3362": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/03/napelem-tetore.png",
+  "title": "napelem tetőre",
+  "slug": "napelem-tetore"
+ },
+ "3368": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/03/gaztol-valo-fuggetlenedes.png",
+  "title": "gáztól való függetlenedés",
+  "slug": "gaztol-valo-fuggetlenedes"
+ },
+ "3371": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/03/india.png",
+  "title": "india",
+  "slug": "india"
+ },
+ "3373": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/03/india-2.png",
+  "title": "india 2",
+  "slug": "india-2"
+ },
+ "3376": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/03/napelemes-rendszer-telepitese.png",
+  "title": "napelemes rendszer telepítése",
+  "slug": "napelemes-rendszer-telepitese-2"
+ },
+ "3422": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/03/a1-galeria.png",
+  "title": "a1 galéria",
+  "slug": "a1-galeria"
+ },
+ "3423": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/03/a1-galeria-2.png",
+  "title": "a1 galéria (2)",
+  "slug": "a1-galeria-2"
+ },
+ "3424": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/03/bp-napelem-scaled.jpg",
+  "title": "bp napelem",
+  "slug": "bp-napelem"
+ },
+ "3425": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/03/Erd-napelem-scaled.jpg",
+  "title": "Érd napelem",
+  "slug": "erd-napelem"
+ },
+ "3426": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/03/IMG_4690-scaled.jpg",
+  "title": "IMG_4690",
+  "slug": "img_4690"
+ },
+ "3427": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/03/IMG_20220303_144057-scaled.jpg",
+  "title": "IMG_20220303_144057",
+  "slug": "img_20220303_144057"
+ },
+ "3428": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/03/IMG_20220315_121059-scaled.jpg",
+  "title": "IMG_20220315_121059",
+  "slug": "img_20220315_121059"
+ },
+ "3429": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/03/IMG_20210831_110101-scaled.jpg",
+  "title": "IMG_20210831_110101",
+  "slug": "img_20210831_110101"
+ },
+ "3430": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/03/IMG_20210831_114218-scaled.jpg",
+  "title": "IMG_20210831_114218",
+  "slug": "img_20210831_114218"
+ },
+ "3431": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/03/IMG-27472a9eb0ff3d460c00a36ae69adba5-V.jpg",
+  "title": "IMG-27472a9eb0ff3d460c00a36ae69adba5-V",
+  "slug": "img-27472a9eb0ff3d460c00a36ae69adba5-v"
+ },
+ "3432": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/03/szulok-napelem-scaled.jpg",
+  "title": "szulok napelem",
+  "slug": "szulok-napelem"
+ },
+ "3433": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/03/VI.-napelem_Szent-Csalad-Plebania-scaled.jpg",
+  "title": "VI. napelem_Szent Család Plébánia",
+  "slug": "vi-napelem_szent-csalad-plebania"
+ },
+ "3434": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/03/budapest-2-napelem-2-scaled.jpg",
+  "title": "budapest 2 napelem 2",
+  "slug": "budapest-2-napelem-2"
+ },
+ "3435": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/03/budapest-3-napelem.jpg",
+  "title": "budapest 3 napelem",
+  "slug": "budapest-3-napelem"
+ },
+ "3436": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/03/IMG-5d0e3956533a6c000ab302f7bf58c48a-V.jpg",
+  "title": "IMG-5d0e3956533a6c000ab302f7bf58c48a-V",
+  "slug": "img-5d0e3956533a6c000ab302f7bf58c48a-v"
+ },
+ "3437": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/03/jpg_to_jpg0-1.jpg",
+  "title": "jpg_to_jpg0 (1)",
+  "slug": "jpg_to_jpg0-1"
+ },
+ "3438": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/03/jpg_to_jpg0.jpg",
+  "title": "jpg_to_jpg0",
+  "slug": "jpg_to_jpg0"
+ },
+ "3439": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/03/nadap-napelem.jpg",
+  "title": "nadap napelem",
+  "slug": "nadap-napelem"
+ },
+ "3440": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/03/nadap-napelem-2.jpg",
+  "title": "nadap napelem 2",
+  "slug": "nadap-napelem-2"
+ },
+ "3441": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/03/pilisvorosvar-napelem-scaled.jpg",
+  "title": "pilisvörösvár napelem",
+  "slug": "pilisvorosvar-napelem"
+ },
+ "3442": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/03/szazhalombatta-napelem.jpg",
+  "title": "százhalombatta napelem",
+  "slug": "szazhalombatta-napelem"
+ },
+ "3443": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/03/torokbalint-napelem-3.jpg",
+  "title": "törökbálint napelem 3",
+  "slug": "torokbalint-napelem-3"
+ },
+ "3444": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/03/zamardi-napelem-2.jpg",
+  "title": "zamárdi napelem 2",
+  "slug": "zamardi-napelem-2"
+ },
+ "3445": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/03/zamardi-napelem.jpg",
+  "title": "zamárdi napelem",
+  "slug": "zamardi-napelem"
+ },
+ "3446": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/03/Pecel-napelem-scaled.jpg",
+  "title": "Pécel napelem",
+  "slug": "pecel-napelem"
+ },
+ "3447": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/03/Longi-napelem-1.png",
+  "title": "Longi napelem",
+  "slug": "longi-napelem-2"
+ },
+ "3464": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/03/50-os-otthonfelujitasi-tamogatas.mp4",
+  "title": "50%-os otthonfelújítási támogatás",
+  "slug": "50-os-otthonfelujitasi-tamogatas"
+ },
+ "3478": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/03/IMG-6a6a6bd304651b55b19b9791e2525acb-V.jpg",
+  "title": "IMG-6a6a6bd304651b55b19b9791e2525acb-V",
+  "slug": "img-6a6a6bd304651b55b19b9791e2525acb-v"
+ },
+ "3499": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/03/A1-Solar-Listaarak-2022.03.25_1648543284.pdf",
+  "title": "A1 Solar Listaárak",
+  "slug": "a1-solar-listaarak-2022-03-25_1648543284"
+ },
+ "3516": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/03/IMG_20211118_135525-scaled.jpg",
+  "title": "IMG_20211118_135525",
+  "slug": "img_20211118_135525"
+ },
+ "3525": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/03/szombathely-napelem-scaled.jpg",
+  "title": "szombathely napelem",
+  "slug": "szombathely-napelem"
+ },
+ "3531": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/03/Orsegi-Brojler-Kft-scaled.jpg",
+  "title": "Őrségi Brojler Kft",
+  "slug": "orsegi-brojler-kft"
+ },
+ "3533": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/03/Bi-Ker-Kft-scaled.jpg",
+  "title": "Bi-Ker Kft",
+  "slug": "bi-ker-kft"
+ },
+ "3535": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/03/Asotthalom-napelem-scaled.jpg",
+  "title": "Ásotthalom napelem",
+  "slug": "asotthalom-napelem"
+ },
+ "3537": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/03/Telepites-utan_Rona-haz-Kft-scaled.jpg",
+  "title": "Telepítés után_Róna-ház Kft",
+  "slug": "telepites-utan_rona-haz-kft"
+ },
+ "3539": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/03/Lelle-hotel-napelem-scaled.jpg",
+  "title": "Lelle hotel napelem",
+  "slug": "lelle-hotel-napelem"
+ },
+ "3541": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/03/Koros-Tanker-Kft-napelem-scaled.jpg",
+  "title": "Kőrös Tanker Kft napelem",
+  "slug": "koros-tanker-kft-napelem"
+ },
+ "3543": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/03/exasol-kft-scaled.jpg",
+  "title": "exasol kft",
+  "slug": "exasol-kft"
+ },
+ "3546": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/03/unikornis-Kft-napelem-scaled.jpg",
+  "title": "unikornis Kft napelem",
+  "slug": "unikornis-kft-napelem"
+ },
+ "3547": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/03/koroka-kft-scaled.jpg",
+  "title": "kőróka kft",
+  "slug": "koroka-kft"
+ },
+ "3549": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/03/Herola-Kft.-napelem-scaled.jpg",
+  "title": "Herola Kft. napelem",
+  "slug": "herola-kft-napelem"
+ },
+ "3551": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/03/Batony-Uniker-Kft-napelem.jpg",
+  "title": "Bátony Uniker Kft napelem",
+  "slug": "batony-uniker-kft-napelem"
+ },
+ "3553": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/03/Slepp-Ker-Kft-napelem.jpg",
+  "title": "Slepp-Ker Kft napelem",
+  "slug": "slepp-ker-kft-napelem"
+ },
+ "3555": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/03/Furedi-Kft-napelem-scaled.jpg",
+  "title": "Füredi Kft napelem",
+  "slug": "furedi-kft-napelem"
+ },
+ "3557": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/04/budakeszi-napelem.jpg",
+  "title": "budakeszi napelem",
+  "slug": "budakeszi-napelem"
+ },
+ "3559": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/04/szazhalombatta-napelem.jpg",
+  "title": "százhalombatta napelem",
+  "slug": "szazhalombatta-napelem-2"
+ },
+ "3564": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/04/Nevtelen.png",
+  "title": "Névtelen",
+  "slug": "nevtelen"
+ },
+ "3567": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/04/India_napelem.png",
+  "title": "India_napelem",
+  "slug": "india_napelem"
+ },
+ "3569": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/04/Amerika-napelem-bovitese.png",
+  "title": "Amerika napelem bővítése",
+  "slug": "amerika-napelem-bovitese"
+ },
+ "3604": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/04/GINOP-415-22.png",
+  "title": "GINOP 415-22",
+  "slug": "ginop-415-22"
+ },
+ "3617": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/04/VP6-palyazat.png",
+  "title": "VP6 pályázat",
+  "slug": "vp6-palyazat"
+ },
+ "3646": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/04/8-lepes.png",
+  "title": "8 lépés",
+  "slug": "8-lepes"
+ },
+ "3649": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/04/8-lepes-1.png",
+  "title": "8 lépés",
+  "slug": "8-lepes-2"
+ },
+ "3652": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/04/perovszkit-napelem.png",
+  "title": "perovszkit napelem",
+  "slug": "perovszkit-napelem"
+ },
+ "3656": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/04/napelempalyazat-maganszemelyeknek.png",
+  "title": "napelempályázat magánszemélyeknek",
+  "slug": "napelempalyazat-maganszemelyeknek"
+ },
+ "3661": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/04/napelem-tajolasa.png",
+  "title": "napelem tájolása",
+  "slug": "napelem-tajolasa-2"
+ },
+ "3664": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/04/megujulo-energia_napelem.png",
+  "title": "megújuló energia_napelem",
+  "slug": "megujulo-energia_napelem"
+ },
+ "3667": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/04/Nemetorszag-napelem-bovites.png",
+  "title": "Németország napelem bővítés",
+  "slug": "nemetorszag-napelem-bovites"
+ },
+ "3673": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/04/amazon-napelemes-beruhazas.png",
+  "title": "amazon napelemes beruházás",
+  "slug": "amazon-napelemes-beruhazas"
+ },
+ "3676": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/04/napelemmodulok-arai.png",
+  "title": "napelemmodulok árai",
+  "slug": "napelemmodulok-arai"
+ },
+ "3698": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/05/netto-fogyasztasmeres.png",
+  "title": "nettó fogyasztásmérés",
+  "slug": "netto-fogyasztasmeres"
+ },
+ "3708": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/05/1-TW-teljesitmenyu-napelem.png",
+  "title": "1 TW teljesítményű napelem",
+  "slug": "1-tw-teljesitmenyu-napelem"
+ },
+ "3712": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/05/napelem-telepito-kepzes-2022.png",
+  "title": "napelem telepito kepzes 2022",
+  "slug": "napelem-telepito-kepzes-2022"
+ },
+ "3714": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/05/Hero-Home-page-new.png",
+  "title": "Hero-Home-page-new.png",
+  "slug": "hero-home-page-new-png"
+ },
+ "3715": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/05/BG-HomePage-High.png",
+  "title": "BG-HomePage-High.png",
+  "slug": "bg-homepage-high-png"
+ },
+ "3716": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/05/Intro-Home-page-new.png",
+  "title": "Intro-Home-page-new.png",
+  "slug": "intro-home-page-new-png"
+ },
+ "3717": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/05/BG-home-new4.png",
+  "title": "BG-home-new4.png",
+  "slug": "bg-home-new4-png"
+ },
+ "3718": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/05/Group-11-Copy.png",
+  "title": "Group-11-Copy.png",
+  "slug": "group-11-copy-png"
+ },
+ "3719": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/05/Group-13-Copy.png",
+  "title": "Group-13-Copy.png",
+  "slug": "group-13-copy-png"
+ },
+ "3720": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/05/Group-17.png",
+  "title": "Group-17.png",
+  "slug": "group-17-png"
+ },
+ "3721": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/05/Group-21.png",
+  "title": "Group-21.png",
+  "slug": "group-21-png"
+ },
+ "3722": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/05/Group-20.png",
+  "title": "Group-20.png",
+  "slug": "group-20-png"
+ },
+ "3723": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/05/content-icon-new.png",
+  "title": "content-icon-new.png",
+  "slug": "content-icon-new-png"
+ },
+ "3724": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/05/Shapes-icons.png",
+  "title": "Shapes-icons.png",
+  "slug": "shapes-icons-png"
+ },
+ "3725": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/05/BG-TEAN-Home.png",
+  "title": "BG-TEAN-Home.png",
+  "slug": "bg-tean-home-png"
+ },
+ "3726": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/05/Testimonial-3-1.png",
+  "title": "Testimonial-3-1.png",
+  "slug": "testimonial-3-1-png"
+ },
+ "3727": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/05/Testimonial-1.png",
+  "title": "Testimonial-1.png",
+  "slug": "testimonial-1-png"
+ },
+ "3728": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/05/Testimonial-2.png",
+  "title": "Testimonial-2.png",
+  "slug": "testimonial-2-png"
+ },
+ "3729": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/05/BG-Testemonials-home-page.png",
+  "title": "BG-Testemonials-home-page.png",
+  "slug": "bg-testemonials-home-page-png"
+ },
+ "3730": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/05/CTA-Home-page-New.png",
+  "title": "CTA-Home-page-New.png",
+  "slug": "cta-home-page-new-png"
+ },
+ "3757": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/05/napelem-ujrahasznositas.png",
+  "title": "napelem újrahasznosítás",
+  "slug": "napelem-ujrahasznositas"
+ },
+ "3783": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/05/napelem-termelese.png",
+  "title": "napelem termelése",
+  "slug": "napelem-termelese"
+ },
+ "3788": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/05/napelem-kapacitas.png",
+  "title": "napelem kapacitás",
+  "slug": "napelem-kapacitas"
+ },
+ "3798": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/05/uj-megujuloenergia-fejleszto-ceg-Magyarorszagon.png",
+  "title": "új megújulóenergia-fejlesztő cég Magyarországon",
+  "slug": "uj-megujuloenergia-fejleszto-ceg-magyarorszagon"
+ },
+ "3813": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/05/uszo-napelem.png",
+  "title": "úszó napelem",
+  "slug": "uszo-napelem-2"
+ },
+ "3821": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/06/szabi.png",
+  "title": "szabi",
+  "slug": "szabi"
+ },
+ "3824": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/06/Rotter-Norbert-1-scaled-e1654061605552.jpg",
+  "title": "Rotter Norbert (1)",
+  "slug": "rotter-norbert-1"
+ },
+ "3845": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/06/napelem-tipusok.png",
+  "title": "napelem típusok",
+  "slug": "napelem-tipusok"
+ },
+ "3888": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/06/hatekonysagi-rekord.png",
+  "title": "hatékonysági rekord",
+  "slug": "hatekonysagi-rekord"
+ },
+ "3919": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/06/perovszkit-napelem-kiserlet.png",
+  "title": "perovszkit napelem kísérlet",
+  "slug": "perovszkit-napelem-kiserlet"
+ },
+ "3928": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/06/strategiai-partnerseg-india.png",
+  "title": "stratégiai partnerség india",
+  "slug": "strategiai-partnerseg-india"
+ },
+ "3935": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/06/strategiai-parnterseg.png",
+  "title": "stratégiai parnterség",
+  "slug": "strategiai-parnterseg"
+ },
+ "3941": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/07/nap-fele-fordulo-napelem.png",
+  "title": "nap felé forduló napelem",
+  "slug": "nap-fele-fordulo-napelem"
+ },
+ "3962": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/07/napenergia.png",
+  "title": "napenergia",
+  "slug": "napenergia"
+ },
+ "3981": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/07/napelem.png",
+  "title": "napelem",
+  "slug": "napelem-2"
+ },
+ "3990": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/07/nap-es-szelenergia-novekedese.png",
+  "title": "nap és szélenergia növekedése",
+  "slug": "nap-es-szelenergia-novekedese"
+ },
+ "4013": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/07/ketos-vilagrekord-napelemknel.png",
+  "title": "ketős világrekord napelemknél",
+  "slug": "ketos-vilagrekord-napelemknel"
+ },
+ "4021": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/07/napelem-tanulmany.png",
+  "title": "napelem tanulmány",
+  "slug": "napelem-tanulmany"
+ },
+ "4034": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/07/growatt-abra.png",
+  "title": "growatt ábra",
+  "slug": "growatt-abra"
+ },
+ "4035": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/07/huawei-inverter--scaled.jpg",
+  "title": "huawei inverter",
+  "slug": "huawei-inverter-2"
+ },
+ "4037": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/07/huawei-inverter-1-1-scaled.jpg",
+  "title": "huawei inverter",
+  "slug": "huawei-inverter-3"
+ },
+ "4074": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/08/engedelyezesi-nehezsegek.png",
+  "title": "engedélyezési nehézségek",
+  "slug": "engedelyezesi-nehezsegek"
+ },
+ "4075": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/08/engedelyezesi-nehezsegek-1.png",
+  "title": "engedélyezési nehézségek",
+  "slug": "engedelyezesi-nehezsegek-2"
+ },
+ "4076": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/08/engedelyezesi-nehezsegek-2.png",
+  "title": "engedélyezési nehézségek",
+  "slug": "engedelyezesi-nehezsegek-3"
+ },
+ "4077": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/08/15-fok-napelem.png",
+  "title": "1,5 fok napelem",
+  "slug": "15-fok-napelem"
+ },
+ "4086": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/08/GINOP-4.1.5-22._001.png",
+  "title": "GINOP-4.1.5-22._001",
+  "slug": "ginop-4-1-5-22-_001"
+ },
+ "4110": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/08/7-GW-napelem-az-USA-ban.png",
+  "title": "7 GW napelem az USA-ban",
+  "slug": "7-gw-napelem-az-usa-ban"
+ },
+ "4155": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/08/solar-panel-202208.jpg",
+  "title": "solar panel 202208",
+  "slug": "solar-panel-202208"
+ },
+ "4156": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/08/sunova-logo.png",
+  "title": "sunova logo",
+  "slug": "sunova-logo"
+ },
+ "4157": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/08/Sunova-certifikaciok.png",
+  "title": "Sunova certifikációk",
+  "slug": "sunova-certifikaciok"
+ },
+ "4158": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/08/Sunova-410-adatlap.pdf",
+  "title": "Sunova 410 adatlap",
+  "slug": "sunova-410-adatlap"
+ },
+ "4162": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/08/Sunova-vilagszerte.png",
+  "title": "Sunova világszerte",
+  "slug": "sunova-vilagszerte"
+ },
+ "4186": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/08/znshine-solar-logo.png",
+  "title": "znshine-solar-logo",
+  "slug": "znshine-solar-logo"
+ },
+ "4187": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/08/ZNShine-solar-panel-450-Wp.png",
+  "title": "ZNShine solar panel 450 Wp",
+  "slug": "znshine-solar-panel-450-wp"
+ },
+ "4188": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/08/znshine-garantalt-teljesitmeny.png",
+  "title": "znshine garantált teljesítmény",
+  "slug": "znshine-garantalt-teljesitmeny"
+ },
+ "4193": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/08/ZNShine-certifikaciok.png",
+  "title": "ZNShine certifikációk",
+  "slug": "znshine-certifikaciok"
+ },
+ "4194": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/08/ZNShine-ZXM7-SHLD108-395-415W.pdf",
+  "title": "ZNShine - ZXM7-SHLD108 395-415W",
+  "slug": "znshine-zxm7-shld108-395-415w"
+ },
+ "4198": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/08/znshine-solar-logo-1.png",
+  "title": "znshine-solar-logo",
+  "slug": "znshine-solar-logo-2"
+ },
+ "4213": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/08/Urom.jpg",
+  "title": "Üröm",
+  "slug": "urom"
+ },
+ "4215": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/08/Mariahalom-napelem.jpg",
+  "title": "Máriahalom napelem",
+  "slug": "mariahalom-napelem"
+ },
+ "4217": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/08/Rad-napelem-scaled.jpg",
+  "title": "Rád napelem",
+  "slug": "rad-napelem"
+ },
+ "4219": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/08/siofok-napelem.jpg",
+  "title": "siófok napelem",
+  "slug": "siofok-napelem"
+ },
+ "4221": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/08/Szentendre-Napelem.jpg",
+  "title": "Szentendre Napelem",
+  "slug": "szentendre-napelem"
+ },
+ "4223": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/08/Budapest-11.-napelem.jpg",
+  "title": "Budapest 11. napelem",
+  "slug": "budapest-11-napelem"
+ },
+ "4226": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/08/siofok-napelem-2-scaled.jpg",
+  "title": "siófok napelem 2",
+  "slug": "siofok-napelem-2"
+ },
+ "4228": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/08/Paty-napelem-scaled.jpg",
+  "title": "Páty napelem",
+  "slug": "paty-napelem"
+ },
+ "4230": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/08/Budapest-napelem.jpg",
+  "title": "Budapest napelem",
+  "slug": "budapest-napelem"
+ },
+ "4232": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/08/Erd-napelem.jpg",
+  "title": "Érd napelem",
+  "slug": "erd-napelem-2"
+ },
+ "4234": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/08/Budapest-2-napelem.jpg",
+  "title": "Budapest 2 napelem",
+  "slug": "budapest-2-napelem"
+ },
+ "4236": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/08/Pecel-napelem-scaled.jpg",
+  "title": "Pécel napelem",
+  "slug": "pecel-napelem-2"
+ },
+ "4239": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/08/budapest-3-napelem.jpg",
+  "title": "budapest 3 napelem",
+  "slug": "budapest-3-napelem-2"
+ },
+ "4242": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/08/Esztergom-napelem-scaled.jpg",
+  "title": "Esztergom napelem",
+  "slug": "esztergom-napelem"
+ },
+ "4244": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/08/szuha-napelem-scaled.jpg",
+  "title": "szuha napelem",
+  "slug": "szuha-napelem"
+ },
+ "4308": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/Three-Phase-On-Grid-3-25KW3.png",
+  "title": "Three-Phase-On-Grid-3-25KW3.png",
+  "slug": "three-phase-on-grid-3-25kw3-png"
+ },
+ "4309": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/Three-Phase-On-Grid-3-25KW3-1.png",
+  "title": "Three-Phase-On-Grid-3-25KW3.png",
+  "slug": "three-phase-on-grid-3-25kw3-png-2"
+ },
+ "4310": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/Three-Phase-On-Grid-3-25KW3-2.png",
+  "title": "Three-Phase-On-Grid-3-25KW3.png",
+  "slug": "three-phase-on-grid-3-25kw3-png-3"
+ },
+ "4311": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/Three-Phase-On-Grid-3-25KW3-3.png",
+  "title": "Three-Phase-On-Grid-3-25KW3.png",
+  "slug": "three-phase-on-grid-3-25kw3-png-4"
+ },
+ "4312": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/Three-Phase-On-Grid-3-25KW3-4.png",
+  "title": "Three-Phase-On-Grid-3-25KW3.png",
+  "slug": "three-phase-on-grid-3-25kw3-png-5"
+ },
+ "4313": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/Three-Phase-On-Grid-3-25KW3-5.png",
+  "title": "Three-Phase-On-Grid-3-25KW3.png",
+  "slug": "three-phase-on-grid-3-25kw3-png-6"
+ },
+ "4314": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/Three-Phase-On-Grid-3-25KW3-6.png",
+  "title": "Three-Phase-On-Grid-3-25KW3.png",
+  "slug": "three-phase-on-grid-3-25kw3-png-7"
+ },
+ "4315": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/Three-Phase-On-Grid-3-25KW3-7.png",
+  "title": "Three-Phase-On-Grid-3-25KW3.png",
+  "slug": "three-phase-on-grid-3-25kw3-png-8"
+ },
+ "4316": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/Three-Phase-On-Grid-3-25KW3-8.png",
+  "title": "Three-Phase-On-Grid-3-25KW3.png",
+  "slug": "three-phase-on-grid-3-25kw3-png-9"
+ },
+ "4317": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/goodwe-hero-bg-1.png",
+  "title": "goodwe-hero-bg-1.png",
+  "slug": "goodwe-hero-bg-1-png"
+ },
+ "4318": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/placeholder.png",
+  "title": "placeholder.png",
+  "slug": "placeholder-png-2"
+ },
+ "4319": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/placeholder-1.png",
+  "title": "placeholder.png",
+  "slug": "placeholder-png-3"
+ },
+ "4320": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/do-media-bisnode-hu.jpeg",
+  "title": "do-media-bisnode-hu.jpeg",
+  "slug": "do-media-bisnode-hu-jpeg"
+ },
+ "4321": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/mnnsz_logo_betu_fekete-1.png",
+  "title": "mnnsz_logo_betu_fekete-1.png",
+  "slug": "mnnsz_logo_betu_fekete-1-png"
+ },
+ "4322": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/lakossagi-villanyszamla-nullazas.png",
+  "title": "lakossagi-villanyszamla-nullazas.png",
+  "slug": "lakossagi-villanyszamla-nullazas-png"
+ },
+ "4323": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/vallalati-koltsegoptimalizalas.png",
+  "title": "vallalati-koltsegoptimalizalas.png",
+  "slug": "vallalati-koltsegoptimalizalas-png"
+ },
+ "4324": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/Blyxago-ujlogo-sotet.svg",
+  "title": "Blyxago-ujlogo-sotet.svg",
+  "slug": "blyxago-ujlogo-sotet-svg"
+ },
+ "4325": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/blyxa-consulting-logo-360-1.png",
+  "title": "blyxa-consulting-logo-360-1.png",
+  "slug": "blyxa-consulting-logo-360-1-png"
+ },
+ "4326": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/Névtelen-terv-42.png",
+  "title": "Névtelen-terv-42.png",
+  "slug": "nevtelen-terv-42-png"
+ },
+ "4327": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/svgexport-9.svg",
+  "title": "svgexport-9.svg",
+  "slug": "svgexport-9-svg"
+ },
+ "4328": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/Inverterek-kategória.png",
+  "title": "Inverterek-kategória.png",
+  "slug": "inverterek-kategoria-png"
+ },
+ "4329": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/panel-kategória.png",
+  "title": "panel-kategória.png",
+  "slug": "panel-kategoria-png"
+ },
+ "4330": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/panel-kategória-1.png",
+  "title": "panel-kategória-1.png",
+  "slug": "panel-kategoria-1-png"
+ },
+ "4331": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/logo-3.svg",
+  "title": "logo-3.svg",
+  "slug": "logo-3-svg"
+ },
+ "4332": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/logo-4.svg",
+  "title": "logo-4.svg",
+  "slug": "logo-4-svg"
+ },
+ "4333": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/logo-2.svg",
+  "title": "logo-2.svg",
+  "slug": "logo-2-svg"
+ },
+ "4334": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/logo-1.svg",
+  "title": "logo-1.svg",
+  "slug": "logo-1-svg"
+ },
+ "4335": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/afore-logo.png",
+  "title": "afore-logo.png",
+  "slug": "afore-logo-png"
+ },
+ "4337": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/dekra_a1_100_0_90_20.png",
+  "title": "dekra_a1_100_0_90_20.png",
+  "slug": "dekra_a1_100_0_90_20-png"
+ },
+ "4338": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/A1solar-logo.svg",
+  "title": "A1solar-logo.svg",
+  "slug": "a1solar-logo-svg"
+ },
+ "4399": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/goodwe-cegunkrol-hero.jpg",
+  "title": "goodwe-cegunkrol-hero.jpg",
+  "slug": "goodwe-cegunkrol-hero-jpg"
+ },
+ "4400": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/Szenyan-Endre_A1-Solar.jpg",
+  "title": "Szenyan-Endre_A1-Solar.jpg",
+  "slug": "szenyan-endre_a1-solar-jpg"
+ },
+ "4401": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/logo-5.svg",
+  "title": "logo-5.svg",
+  "slug": "logo-5-svg"
+ },
+ "4402": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/Hars-Beatrix.jpeg",
+  "title": "Hars-Beatrix.jpeg",
+  "slug": "hars-beatrix-jpeg"
+ },
+ "4403": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/Kovacs-Csanad-A1.jpeg",
+  "title": "Kovacs-Csanad-A1.jpeg",
+  "slug": "kovacs-csanad-a1-jpeg"
+ },
+ "4404": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/Kovacs-Istvan.jpeg",
+  "title": "Kovacs-Istvan.jpeg",
+  "slug": "kovacs-istvan-jpeg"
+ },
+ "4405": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/Kovacs-Zsombor.jpeg",
+  "title": "Kovacs-Zsombor.jpeg",
+  "slug": "kovacs-zsombor-jpeg"
+ },
+ "4406": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/Kovacs-Fulop-Kinga.jpeg",
+  "title": "Kovacs-Fulop-Kinga.jpeg",
+  "slug": "kovacs-fulop-kinga-jpeg"
+ },
+ "4407": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/Kosa-Dora.jpeg",
+  "title": "Kosa-Dora.jpeg",
+  "slug": "kosa-dora-jpeg"
+ },
+ "4408": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/Marsai-Miklos.jpeg",
+  "title": "Marsai-Miklos.jpeg",
+  "slug": "marsai-miklos-jpeg"
+ },
+ "4409": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/Snyehola-Mark.jpeg",
+  "title": "Snyehola-Mark.jpeg",
+  "slug": "snyehola-mark-jpeg"
+ },
+ "4410": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/Szenyan-Sapi-Zsofia_A1-Solar.jpeg",
+  "title": "Szenyan-Sapi-Zsofia_A1-Solar.jpeg",
+  "slug": "szenyan-sapi-zsofia_a1-solar-jpeg"
+ },
+ "4411": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/301352958_425238809670490_5796167653488034092_n.png",
+  "title": "301352958_425238809670490_5796167653488034092_n.png",
+  "slug": "301352958_425238809670490_5796167653488034092_n-png"
+ },
+ "4412": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/cropped-egyutegyfa.png",
+  "title": "cropped-egyutegyfa.png",
+  "slug": "cropped-egyutegyfa-png"
+ },
+ "4502": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/301982211_2882453308725899_3750880567084275693_n.png",
+  "title": "301982211_2882453308725899_3750880567084275693_n.png",
+  "slug": "301982211_2882453308725899_3750880567084275693_n-png"
+ },
+ "4503": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/Névtelen-terv-46.png",
+  "title": "Névtelen-terv-46.png",
+  "slug": "nevtelen-terv-46-png"
+ },
+ "4504": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/301674412_774282833849823_7493593621653656246_n.png",
+  "title": "301674412_774282833849823_7493593621653656246_n.png",
+  "slug": "301674412_774282833849823_7493593621653656246_n-png"
+ },
+ "4505": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/302054115_446677980845754_7816080290576530136_n.png",
+  "title": "302054115_446677980845754_7816080290576530136_n.png",
+  "slug": "302054115_446677980845754_7816080290576530136_n-png"
+ },
+ "4506": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/Névtelen-terv-47.png",
+  "title": "Névtelen-terv-47.png",
+  "slug": "nevtelen-terv-47-png"
+ },
+ "4507": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/Névtelen-terv-48.png",
+  "title": "Névtelen-terv-48.png",
+  "slug": "nevtelen-terv-48-png"
+ },
+ "4605": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/Névtelen-terv-45.png",
+  "title": "Névtelen-terv-45.png",
+  "slug": "nevtelen-terv-45-png"
+ },
+ "4606": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/Fronius-Logo.png",
+  "title": "Fronius-Logo.png",
+  "slug": "fronius-logo-png-2"
+ },
+ "4607": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/logo-small-huawei.png",
+  "title": "logo-small-huawei.png",
+  "slug": "logo-small-huawei-png-2"
+ },
+ "4608": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/solitek_logo.png",
+  "title": "solitek_logo.png",
+  "slug": "solitek_logo-png-2"
+ },
+ "4609": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/Suntech.png",
+  "title": "Suntech.png",
+  "slug": "suntech-png-2"
+ },
+ "4610": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/longi-solar-logo.png",
+  "title": "longi-solar-logo.png",
+  "slug": "longi-solar-logo-png-2"
+ },
+ "4611": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/SolarEdge-Logo.png",
+  "title": "SolarEdge-Logo.png",
+  "slug": "solaredge-logo-png-2"
+ },
+ "4612": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/I.-5.png",
+  "title": "I.-5.png",
+  "slug": "i-5-png-2"
+ },
+ "4613": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/I.-6.png",
+  "title": "I.-6.png",
+  "slug": "i-6-png-2"
+ },
+ "4614": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/I.-7.png",
+  "title": "I.-7.png",
+  "slug": "i-7-png-2"
+ },
+ "4615": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/I.-8.png",
+  "title": "I.-8.png",
+  "slug": "i-8-png-2"
+ },
+ "4616": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/napelem-panelek-a-hazon.png",
+  "title": "napelem-panelek-a-hazon.png",
+  "slug": "napelem-panelek-a-hazon-png-3"
+ },
+ "4623": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/1.png",
+  "title": "1",
+  "slug": "1"
+ },
+ "4624": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/2.png",
+  "title": "2",
+  "slug": "2"
+ },
+ "4625": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/3.png",
+  "title": "3",
+  "slug": "3"
+ },
+ "4626": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/4.png",
+  "title": "4",
+  "slug": "4"
+ },
+ "4627": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/5.png",
+  "title": "5",
+  "slug": "5"
+ },
+ "4628": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/6.png",
+  "title": "6",
+  "slug": "6"
+ },
+ "4629": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/7.png",
+  "title": "7",
+  "slug": "7"
+ },
+ "4630": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/8.png",
+  "title": "8",
+  "slug": "8"
+ },
+ "4631": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/9.png",
+  "title": "9",
+  "slug": "9"
+ },
+ "4632": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/10.png",
+  "title": "10",
+  "slug": "10"
+ },
+ "4633": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/11.png",
+  "title": "11",
+  "slug": "11"
+ },
+ "4653": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/1-1.png",
+  "title": "1",
+  "slug": "1-2"
+ },
+ "4654": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/2-1.png",
+  "title": "2",
+  "slug": "2-2"
+ },
+ "4655": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/3-1.png",
+  "title": "3",
+  "slug": "3-2"
+ },
+ "4656": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/4-1.png",
+  "title": "4",
+  "slug": "4-2"
+ },
+ "4657": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/5-1.png",
+  "title": "5",
+  "slug": "5-2"
+ },
+ "4658": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/6-1.png",
+  "title": "6",
+  "slug": "6-2"
+ },
+ "4659": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/7-1.png",
+  "title": "7",
+  "slug": "7-2"
+ },
+ "4660": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/8-1.png",
+  "title": "8",
+  "slug": "8-2"
+ },
+ "4661": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/9-1.png",
+  "title": "9",
+  "slug": "9-2"
+ },
+ "4662": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/10-1.png",
+  "title": "10",
+  "slug": "10-2"
+ },
+ "4676": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/301841462_3320071288215477_6582684483007917915_n.png",
+  "title": "301841462_3320071288215477_6582684483007917915_n.png",
+  "slug": "301841462_3320071288215477_6582684483007917915_n-png"
+ },
+ "4809": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/a1solar-hero-design.png",
+  "title": "a1solar-hero-design",
+  "slug": "a1solar-hero-design"
+ },
+ "4813": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/a1solar-hero-design-1.png",
+  "title": "a1solar-hero-design (1)",
+  "slug": "a1solar-hero-design-1"
+ },
+ "4846": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/Névtelen-terv-19.png",
+  "title": "Névtelen-terv-19.png",
+  "slug": "nevtelen-terv-19-png"
+ },
+ "4854": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/Nevtelen-terv-18.png",
+  "title": "Névtelen terv (18)",
+  "slug": "nevtelen-terv-18"
+ },
+ "4980": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/placeholder-2.png",
+  "title": "placeholder.png",
+  "slug": "placeholder-png-4"
+ },
+ "5015": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/Webbystep-Logo-3.svg",
+  "title": "Webbystep-Logo (3)",
+  "slug": "webbystep-logo-3"
+ },
+ "5040": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/pexels-los-muertos-crew-8853509.jpg",
+  "title": "pexels-los-muertos-crew-8853509",
+  "slug": "pexels-los-muertos-crew-8853509"
+ },
+ "5047": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/Nevtelen-terv-19.png",
+  "title": "Névtelen terv (19)",
+  "slug": "nevtelen-terv-19"
+ },
+ "5055": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/Nevtelen-terv-20.png",
+  "title": "Névtelen terv (20)",
+  "slug": "nevtelen-terv-20"
+ },
+ "5117": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/Nevtelen-1080-×-1080-keppont.png",
+  "title": "Névtelen (1080 × 1080 képpont)",
+  "slug": "nevtelen-1080-x-1080-keppont"
+ },
+ "5365": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/Nevtelen-450-×-450-keppont-480-×-500-keppont-480-×-495-keppont.svg",
+  "title": "Névtelen (450 × 450 képpont) (480 × 500 képpont) (480 × 495 képpont)",
+  "slug": "nevtelen-450-x-450-keppont-480-x-500-keppont-480-x-495-keppont"
+ },
+ "5459": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/Afore-egyfázisú-inverter-1-3kw.png",
+  "title": "Afore - egyfázisú inverter 1-3kw",
+  "slug": "afore-egyfazisu-inverter-1-3kw"
+ },
+ "5460": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/1-2.png",
+  "title": "Afore - egyfázisú inverter 1-3kw II.",
+  "slug": "1-3"
+ },
+ "5461": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/3-2.png",
+  "title": "Afore - egyfázisú inverter 1-3kw III.",
+  "slug": "3-3"
+ },
+ "5496": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/1652672058120466.webp",
+  "title": "1652672058120466",
+  "slug": "1652672058120466"
+ },
+ "5499": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/1647333649187510.jpeg",
+  "title": "1647333649187510",
+  "slug": "1647333649187510"
+ },
+ "5500": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/1-3.png",
+  "title": "1",
+  "slug": "1-4"
+ },
+ "5501": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/2-2.png",
+  "title": "2",
+  "slug": "2-3"
+ },
+ "5502": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/3-3.png",
+  "title": "3",
+  "slug": "3-4"
+ },
+ "5503": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/4-2.png",
+  "title": "4",
+  "slug": "4-3"
+ },
+ "5504": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/5-2.png",
+  "title": "5",
+  "slug": "5-3"
+ },
+ "5505": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/6-2.png",
+  "title": "6",
+  "slug": "6-3"
+ },
+ "5506": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/7-2.png",
+  "title": "7",
+  "slug": "7-3"
+ },
+ "5507": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/8-2.png",
+  "title": "8",
+  "slug": "8-3"
+ },
+ "5508": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/9-2.png",
+  "title": "9",
+  "slug": "9-3"
+ },
+ "5509": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/10-2.png",
+  "title": "10",
+  "slug": "10-3"
+ },
+ "5510": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/11-1.png",
+  "title": "11",
+  "slug": "11-2"
+ },
+ "5511": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/12.png",
+  "title": "12",
+  "slug": "12"
+ },
+ "5513": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/1647333462525882.jpeg",
+  "title": "1647333462525882",
+  "slug": "1647333462525882"
+ },
+ "5515": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/1652673127714548.webp",
+  "title": "1652673127714548",
+  "slug": "1652673127714548"
+ },
+ "5517": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/1647333323533413.jpeg",
+  "title": "1647333323533413",
+  "slug": "1647333323533413"
+ },
+ "5519": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/ZXM7-SHLD108-Series-panel-500-x-500.png",
+  "title": "ZXM7-SHLD108 Series panel 500 x 500",
+  "slug": "zxm7-shld108-series-panel-500-x-500"
+ },
+ "5520": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/SS-415-54MDH-Panel.png",
+  "title": "SS-415-54MDH Panel",
+  "slug": "ss-415-54mdh-panel"
+ },
+ "5591": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/540w-module.jpg",
+  "title": "540w-module",
+  "slug": "540w-module"
+ },
+ "5672": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/Projoy-PEFS-EL40H-2.png",
+  "title": "Projoy PEFS-EL40H-2",
+  "slug": "projoy-pefs-el40h-2"
+ },
+ "5679": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/Nevtelen-terv-22.png",
+  "title": "Névtelen terv (22)",
+  "slug": "nevtelen-terv-22"
+ },
+ "5681": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/Nevtelen-terv-23.png",
+  "title": "Névtelen terv (23)",
+  "slug": "nevtelen-terv-23"
+ },
+ "5698": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/Nevtelen-terv-24.png",
+  "title": "Névtelen terv (24)",
+  "slug": "nevtelen-terv-24"
+ },
+ "5699": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/Nevtelen-terv-25.png",
+  "title": "Névtelen terv (25)",
+  "slug": "nevtelen-terv-25"
+ },
+ "5712": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/e-mail-fejlec.png",
+  "title": "e-mail-fejlec",
+  "slug": "e-mail-fejlec"
+ },
+ "5855": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/305547490_1115857389364525_1744071443722427847_n.png",
+  "title": "305547490_1115857389364525_1744071443722427847_n",
+  "slug": "305547490_1115857389364525_1744071443722427847_n"
+ },
+ "5859": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/305495645_448471657301186_86275957852279586_n.png",
+  "title": "305495645_448471657301186_86275957852279586_n",
+  "slug": "305495645_448471657301186_86275957852279586_n"
+ },
+ "5861": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/305311079_497152718892810_5559639468459285053_n.png",
+  "title": "305311079_497152718892810_5559639468459285053_n",
+  "slug": "305311079_497152718892810_5559639468459285053_n"
+ },
+ "5863": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/305319907_1102320427327937_6205173289291875717_n.png",
+  "title": "305319907_1102320427327937_6205173289291875717_n",
+  "slug": "305319907_1102320427327937_6205173289291875717_n"
+ },
+ "5866": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/305599490_5534872663236224_6203602520359421941_n.png",
+  "title": "305599490_5534872663236224_6203602520359421941_n",
+  "slug": "305599490_5534872663236224_6203602520359421941_n"
+ },
+ "5867": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/305646728_618981453207210_5864756908753911602_n.png",
+  "title": "305646728_618981453207210_5864756908753911602_n",
+  "slug": "305646728_618981453207210_5864756908753911602_n"
+ },
+ "5880": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/305429338_754800932243148_8548303747087306047_n.png",
+  "title": "305429338_754800932243148_8548303747087306047_n",
+  "slug": "305429338_754800932243148_8548303747087306047_n"
+ },
+ "5967": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/kiegeszitok.png",
+  "title": "kiegeszitok",
+  "slug": "kiegeszitok"
+ },
+ "5969": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/kiegeszitok-1.png",
+  "title": "kiegeszitok (1)",
+  "slug": "kiegeszitok-1"
+ },
+ "5971": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/kiegeszitok-2.png",
+  "title": "kiegeszitok (2)",
+  "slug": "kiegeszitok-2"
+ },
+ "5973": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/kiegeszitok-3.png",
+  "title": "kiegeszitok (3)",
+  "slug": "kiegeszitok-3"
+ },
+ "5975": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/kiegeszitok-4.png",
+  "title": "kiegeszitok (4)",
+  "slug": "kiegeszitok-4"
+ },
+ "5977": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/kiegeszitok-5.png",
+  "title": "kiegeszitok (5)",
+  "slug": "kiegeszitok-5"
+ },
+ "5980": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/kiegeszitok-6.png",
+  "title": "kiegeszitok (6)",
+  "slug": "kiegeszitok-6"
+ },
+ "5982": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/kiegeszitok-7.png",
+  "title": "kiegeszitok (7)",
+  "slug": "kiegeszitok-7"
+ },
+ "5991": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/SS-460-60MDH.pdf",
+  "title": "SS-460-60MDH",
+  "slug": "ss-460-60mdh"
+ },
+ "6052": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/Azsia.png",
+  "title": "Ázsia",
+  "slug": "azsia"
+ },
+ "6076": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/Olaszorszagi-telepitesek-merteke.png",
+  "title": "Olaszországi telepítések mértéke",
+  "slug": "olaszorszagi-telepitesek-merteke"
+ },
+ "6096": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/IMG_1385-scaled.jpg",
+  "title": "megéri a napelem telepítés",
+  "slug": "img_1385"
+ },
+ "6476": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/10/ZNShine-ZXM7-SHLD108-395-415W_compressed.pdf",
+  "title": "ZNShine - ZXM7-SHLD108 395-415W_compressed",
+  "slug": "znshine-zxm7-shld108-395-415w_compressed"
+ },
+ "6478": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/10/ZNShine-ZXM6-NHLDD144-166_black-frame_compressed.pdf",
+  "title": "ZNShine ZXM6-NHLDD144 166_black frame_compressed",
+  "slug": "znshine-zxm6-nhldd144-166_black-frame_compressed"
+ },
+ "6487": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/10/szolar-kabel-500m.png",
+  "title": "szolár kábel 500m",
+  "slug": "szolar-kabel-500m"
+ },
+ "6488": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/10/MC4-csatlakozo.jpg",
+  "title": "MC4 csatlakozó",
+  "slug": "mc4-csatlakozo"
+ },
+ "6489": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/10/Szolar-kabel-6mm2.png",
+  "title": "Szolár kábel 6mm2",
+  "slug": "szolar-kabel-6mm2"
+ },
+ "6504": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/10/projoy-tulfesz.png",
+  "title": "projoy túlfesz",
+  "slug": "projoy-tulfesz"
+ },
+ "6510": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/Projoy-tuzvedelmi-kapcsolo-7-10-sztring.png",
+  "title": "Projoy tűzvédelmi kapcsoló 7-10 sztring",
+  "slug": "projoy-tuzvedelmi-kapcsolo-7-10-sztring"
+ },
+ "6511": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/Projoy-tuzvedelmi-kapcsolo-3-6-sztring.png",
+  "title": "Projoy tűzvédelmi kapcsoló 3-6 sztring",
+  "slug": "projoy-tuzvedelmi-kapcsolo-3-6-sztring"
+ },
+ "6512": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/Projoy-tuzvedelmi-kapcsolo-3-6-sztring-1.png",
+  "title": "Projoy tűzvédelmi kapcsoló 3-6 sztring",
+  "slug": "projoy-tuzvedelmi-kapcsolo-3-6-sztring-2"
+ },
+ "6513": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/Projoy-tuzvedelmi-kapcsolo-1-2-sztring.png",
+  "title": "Projoy tűzvédelmi kapcsoló 1-2 sztring",
+  "slug": "projoy-tuzvedelmi-kapcsolo-1-2-sztring"
+ },
+ "6530": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/10/a1solar_01_2_0Ft-osvillanyszamla_tiny.jpg",
+  "title": "a1solar_01_2_0Ft-osvillanyszamla_tiny",
+  "slug": "a1solar_01_2_0ft-osvillanyszamla_tiny-2"
+ },
+ "6541": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/10/a1_solar-Karnyujtasnyira-az-elerheto-novekedes-a-napelemiparban.jpg",
+  "title": "a1_solar-Karnyújtásnyira az elérhető növekedés a napelemiparban",
+  "slug": "a1_solar-karnyujtasnyira-az-elerheto-novekedes-a-napelemiparban-2"
+ },
+ "6549": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/10/suntech-power-logo-vector.png",
+  "title": "suntech-power-logo-vector",
+  "slug": "suntech-power-logo-vector"
+ },
+ "6550": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/10/znshine-solar-logo.png",
+  "title": "znshine-solar-logo",
+  "slug": "znshine-solar-logo-3"
+ },
+ "6551": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/10/tigo-logo.png",
+  "title": "tigo-logo",
+  "slug": "tigo-logo"
+ },
+ "6552": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/10/Tigo_Energy.jpg",
+  "title": "Tigo_Energy",
+  "slug": "tigo_energy"
+ },
+ "6553": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/10/sunova-solar-logo.png",
+  "title": "sunova solar logo",
+  "slug": "sunova-solar-logo"
+ },
+ "6613": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/10/1659169574-KBKgIqRYZ_lg.jpg",
+  "title": "1659169574-KBKgIqRYZ_lg",
+  "slug": "1659169574-kbkgiqryz_lg"
+ },
+ "6642": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/10/60f04491c9ac97ea22b72cf9_IMG_245735588-transcode-1.mp4",
+  "title": "60f04491c9ac97ea22b72cf9_IMG_245735588-transcode (1)",
+  "slug": "60f04491c9ac97ea22b72cf9_img_245735588-transcode-1"
+ },
+ "6738": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/10/Solplanet-ASW30K-50K-LT-G2-Szeria-Adatlap_cp.pdf",
+  "title": "Solplanet ASW30K-50K-LT-G2 Széria Adatlap_cp",
+  "slug": "solplanet-asw30k-50k-lt-g2-szeria-adatlap_cp"
+ },
+ "6740": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/10/Solplanet_ASW30K-50K-LT-G2.png",
+  "title": "Solplanet_ASW30K-50K-LT-G2",
+  "slug": "solplanet_asw30k-50k-lt-g2"
+ },
+ "6741": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/10/Solplanet_ASW30K-50K-LT-G2-1.png",
+  "title": "Solplanet_ASW30K-50K-LT-G2 (1)",
+  "slug": "solplanet_asw30k-50k-lt-g2-1"
+ },
+ "6754": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/10/Solplanet-ASW8K-20K-LT-G2-Szeria-Adatlap.pdf",
+  "title": "Solplanet ASW8K-20K-LT-G2 Széria Adatlap",
+  "slug": "solplanet-asw8k-20k-lt-g2-szeria-adatlap"
+ },
+ "6755": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/10/Solplanet_ASW8-20K-LT-G2_Left_side-1.png",
+  "title": "Solplanet_ASW8-20K-LT-G2_Left_side (1)",
+  "slug": "solplanet_asw8-20k-lt-g2_left_side-1"
+ },
+ "6756": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/10/Solplanet_ASW_8-20K-LT-G2-1.png",
+  "title": "Solplanet_ASW_8-20K-LT-G2 (1)",
+  "slug": "solplanet_asw_8-20k-lt-g2-1"
+ },
+ "6757": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/10/Solplanet_ASW8-20K-LT-G2_Side_View-1.png",
+  "title": "Solplanet_ASW8-20K-LT-G2_Side_View (1)",
+  "slug": "solplanet_asw8-20k-lt-g2_side_view-1"
+ },
+ "6758": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/10/Solplanet_ASW_8-20K-LT-G2_Bottom-1.png",
+  "title": "Solplanet_ASW_8-20K-LT-G2_Bottom (1)",
+  "slug": "solplanet_asw_8-20k-lt-g2_bottom-1"
+ },
+ "6759": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/10/Solplanet_Monitoring_App-1.png",
+  "title": "Solplanet_Monitoring_App (1)",
+  "slug": "solplanet_monitoring_app-1"
+ },
+ "6775": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/10/Solplanet-ASW3K-20K-LT-G2-PRO-Szeria-Adatlap.pdf",
+  "title": "Solplanet ASW3K-20K-LT-G2-PRO Széria Adatlap",
+  "slug": "solplanet-asw3k-20k-lt-g2-pro-szeria-adatlap"
+ },
+ "6776": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/10/Solplanet_ASW3-20K-LT-G2-PRO_Side_view-1.png",
+  "title": "Solplanet_ASW3-20K-LT-G2-PRO_Side_view (1)",
+  "slug": "solplanet_asw3-20k-lt-g2-pro_side_view-1"
+ },
+ "6777": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/10/Solplanet_ASW3-20K-LT-G2-PRO_Right_view-1.png",
+  "title": "Solplanet_ASW3-20K-LT-G2-PRO_Right_view (1)",
+  "slug": "solplanet_asw3-20k-lt-g2-pro_right_view-1"
+ },
+ "6778": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/10/Solplanet_ASW3-20K-LT-G2-PRO_Left_view-1.png",
+  "title": "Solplanet_ASW3-20K-LT-G2-PRO_Left_view (1)",
+  "slug": "solplanet_asw3-20k-lt-g2-pro_left_view-1"
+ },
+ "6779": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/10/Solplanet_ASW3-20K-LT-G2-PRO_Front_view-1.png",
+  "title": "Solplanet_ASW3-20K-LT-G2-PRO_Front_view (1)",
+  "slug": "solplanet_asw3-20k-lt-g2-pro_front_view-1"
+ },
+ "6802": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/10/A1-Solar-nagyker-arlista-2022.10.18.pdf",
+  "title": "A1 Solar nagyker árlista 2022.10.18",
+  "slug": "a1-solar-nagyker-arlista-2022-10-18"
+ },
+ "6807": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/10/A1-Solar-nagyker-arlista-2022.10.18-1.pdf",
+  "title": "A1 Solar nagyker árlista 2022.10.18",
+  "slug": "a1-solar-nagyker-arlista-2022-10-18-2"
+ },
+ "6821": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/10/Wurth-lemezsin-ALU-180mm-EPDM.png",
+  "title": "Würth-lemezsín-ALU-180mm-EPDM",
+  "slug": "wurth-lemezsin-alu-180mm-epdm-2"
+ },
+ "6822": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/10/Wurth-lemezsin-ALU-180mm-EPDM-meret.png",
+  "title": "Würth-lemezsín-ALU-180mm-EPDM-méret",
+  "slug": "wurth-lemezsin-alu-180mm-epdm-meret"
+ },
+ "6824": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/10/Wurth-lemezsin_-Light_-elofurt-395MM-EPDM.png",
+  "title": "Würth-lemezsín_-Light_-előfúrt-395MM-EPDM",
+  "slug": "wurth-lemezsin_-light_-elofurt-395mm-epdm"
+ },
+ "6825": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/10/Wurth-lemezsin_-Light_-elofurt-395MM-EPDM-meret.png",
+  "title": "Würth-lemezsín_-Light_-előfúrt-395MM-EPDM-méret",
+  "slug": "wurth-lemezsin_-light_-elofurt-395mm-epdm-meret"
+ },
+ "6827": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/10/Wurth-tocsavar-1-es-tipus-eloszerelt.png",
+  "title": "Würth tőcsavar 1-es típus előszerelt",
+  "slug": "wurth-tocsavar-1-es-tipus-eloszerelt"
+ },
+ "6830": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/10/Wurth-adaptertarto-derekszogu.png",
+  "title": "Würth adaptertartó derékszögű",
+  "slug": "wurth-adaptertarto-derekszogu"
+ },
+ "6832": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/10/Wurth-TETOKAMPO-ALU-110-4-PONTON-ALLITHATO.png",
+  "title": "Würth TETŐKAMPÓ-ALU-110 4 PONTON ÁLLÍTHATÓ",
+  "slug": "wurth-tetokampo-alu-110-4-ponton-allithato-2"
+ },
+ "6834": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/10/Wurth-TETOKAMPO-ALU-110-4-PONTON-ALLITHATO-rajz.png",
+  "title": "Würth TETŐKAMPÓ-ALU-110 4 PONTON ÁLLÍTHATÓ rajz",
+  "slug": "wurth-tetokampo-alu-110-4-ponton-allithato-rajz"
+ },
+ "6836": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/10/Wurth-Vegleszorito-30-50mm-fekete.png",
+  "title": "Würth Végleszorító 30-50mm fekete",
+  "slug": "wurth-vegleszorito-30-50mm-fekete-2"
+ },
+ "6838": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/10/Wurth-Kozepleszorito-30-50mm-fekete.png",
+  "title": "Würth Középleszorító 30-50mm fekete",
+  "slug": "wurth-kozepleszorito-30-50mm-fekete-2"
+ },
+ "6840": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/10/Wurth-sintoldo-39X37-ALU.jpg",
+  "title": "Würth síntoldó 39X37 ALU",
+  "slug": "wurth-sintoldo-39x37-alu-2"
+ },
+ "6842": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/10/Wurth-SOLAR-ALU-ZEBRA-SIN-39X37-3150MM.jpg",
+  "title": "Würth SOLAR ALU ZEBRA SÍN 39X37-3150MM",
+  "slug": "wurth-solar-alu-zebra-sin-39x37-3150mm-2"
+ },
+ "6843": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/10/Wurth-SOLAR-ALU-ZEBRA-SIN-39X37-3150MM-meret.jpg",
+  "title": "Würth SOLAR ALU ZEBRA SÍN 39X37-3150MM méret",
+  "slug": "wurth-solar-alu-zebra-sin-39x37-3150mm-meret"
+ },
+ "6845": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/10/Wurth-Vegleszorito-30-50mm-ALU.png",
+  "title": "Würth Végleszorító 30-50mm ALU",
+  "slug": "wurth-vegleszorito-30-50mm-alu"
+ },
+ "6847": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/10/Wurth-Kozepleszorito-30-50mm-ALU.png",
+  "title": "Würth Középleszorító 30-50mm ALU",
+  "slug": "wurth-kozepleszorito-30-50mm-alu"
+ },
+ "6868": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/10/napelem-tamogatas-1.png",
+  "title": "napelem támogatás (1)",
+  "slug": "napelem-tamogatas-1"
+ },
+ "6869": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/10/Nagyvallalati-napelem-tamogatas-2022.png",
+  "title": "Nagyvállalati napelem támogatás 2022",
+  "slug": "nagyvallalati-napelem-tamogatas-2022"
+ },
+ "6883": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/10/A1-Solar-nagyker-arlista-2022.10.30.pdf",
+  "title": "A1 Solar nagyker árlista 2022.10.30",
+  "slug": "a1-solar-nagyker-arlista-2022-10-30"
+ },
+ "6913": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/11/A1-Solar-nagyker-arlista-2022.11.08.pdf",
+  "title": "A1 Solar nagyker árlista 2022.11.08",
+  "slug": "a1-solar-nagyker-arlista-2022-11-08"
+ },
+ "6920": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/11/2.1.png",
+  "title": "PV-telepítések fejlődése",
+  "slug": "2-1"
+ },
+ "6922": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/11/pv-penetration-2021.png",
+  "title": "pv penetration 2021",
+  "slug": "pv-penetration-2021"
+ },
+ "6957": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/11/napelemes-szektorban-dolgozok-aranya.png",
+  "title": "napelemes szektorban dolgozók aránya",
+  "slug": "napelemes-szektorban-dolgozok-aranya"
+ },
+ "6969": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/11/indiai-napelempark-novekedese.png",
+  "title": "indiai napelempark növekedése",
+  "slug": "indiai-napelempark-novekedese"
+ },
+ "7007": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/11/A1-Solar-nagyker-arlista-2022.11.24.pdf",
+  "title": "A1 Solar nagyker árlista 2022.11.24",
+  "slug": "a1-solar-nagyker-arlista-2022-11-24"
+ },
+ "7019": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/11/Wurth-SOLAR-ALU-ZEBRA-SIN-47×37-3300.webp",
+  "title": "Würth SOLAR-ALU ZEBRA SÍN 47×37 3300",
+  "slug": "wurth-solar-alu-zebra-sin-47x37-3300"
+ },
+ "7020": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/11/Wurth-SOLAR-ALU-ZEBRA-SIN-47×37.webp",
+  "title": "Würth SOLAR-ALU ZEBRA SÍN 47×37",
+  "slug": "wurth-solar-alu-zebra-sin-47x37"
+ },
+ "7022": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/11/Wurth-SOLAR-ALU-ZEBRA-SIN-47X37-3015.webp",
+  "title": "Würth SOLAR-ALU ZEBRA SÍN 47X37 - 3015",
+  "slug": "wurth-solar-alu-zebra-sin-47x37-3015"
+ },
+ "7024": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/11/sintoldo-47×37-ALU.webp",
+  "title": "síntoldó 47×37 ALU",
+  "slug": "sintoldo-47x37-alu"
+ },
+ "7037": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/11/vip-tag-logo-2022.png",
+  "title": "vip tag logo 2022",
+  "slug": "vip-tag-logo-2022"
+ },
+ "7070": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/11/napelem-es-szeleromu-rekord.png",
+  "title": "napelem és szélerőmű rekord",
+  "slug": "napelem-es-szeleromu-rekord"
+ },
+ "7071": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/11/india-2.png",
+  "title": "india 2",
+  "slug": "india-2-2"
+ },
+ "7072": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/11/Rekord-mennyisegu-napelemes-rendszert-telepitettek-2021-1.png",
+  "title": "Rekord mennyiségű napelemes rendszert telepítettek 2021",
+  "slug": "rekord-mennyisegu-napelemes-rendszert-telepitettek-2021-2"
+ },
+ "7073": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/11/uj-perovszkit-napelem.png",
+  "title": "új perovszkit napelem",
+  "slug": "uj-perovszkit-napelem"
+ },
+ "7074": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/11/megduplazodo-munkaero-a-napelemek-teren-1.png",
+  "title": "megduplázódó munkaerő a napelemek terén",
+  "slug": "megduplazodo-munkaero-a-napelemek-teren-2"
+ },
+ "7075": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/11/Eu-s-felhivas-a-napelemrol-1.png",
+  "title": "Eu-s felhívás a napelemről (1)",
+  "slug": "eu-s-felhivas-a-napelemrol-1"
+ },
+ "7076": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/11/villamosenergia-termeles.jpg",
+  "title": "villamosenergia-termelés",
+  "slug": "villamosenergia-termeles-2"
+ },
+ "7078": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/11/napelem-gyartsa-Europaban.png",
+  "title": "napelem gyártsá Európában",
+  "slug": "napelem-gyartsa-europaban"
+ },
+ "7079": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/11/napelem-akkumulatorral.png",
+  "title": "napelem akkumulátorral",
+  "slug": "napelem-akkumulatorral"
+ },
+ "7080": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/11/Fokozodo-napelem-telepites.png",
+  "title": "Fokozódó napelem telepítés",
+  "slug": "fokozodo-napelem-telepites"
+ },
+ "7081": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/10/ketos-vilagrekord-napelemknel.png",
+  "title": "ketős világrekord napelemknél",
+  "slug": "ketos-vilagrekord-napelemknel-2"
+ },
+ "7083": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/HJT-napelem-rekord.png",
+  "title": "HJT napelem rekord",
+  "slug": "hjt-napelem-rekord"
+ },
+ "7085": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/gaztol-valo-fuggetlenedes.png",
+  "title": "gáztól való függetlenedés",
+  "slug": "gaztol-valo-fuggetlenedes-2"
+ },
+ "7087": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/09/napelem-termelese-1.png",
+  "title": "napelem termelése",
+  "slug": "napelem-termelese-3"
+ },
+ "7091": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/08/engedelyezes-korlatai-1.png",
+  "title": "engedélyezés korlátai",
+  "slug": "engedelyezes-korlatai-2"
+ },
+ "7095": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/11/mekkora-napelemt-eri-meg-telepiteni.png",
+  "title": "mekkora napelemt éri meg telepíteni",
+  "slug": "mekkora-napelemt-eri-meg-telepiteni"
+ },
+ "7121": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/12/zarva-karacsony.jpg",
+  "title": "zarva-karacsony",
+  "slug": "zarva-karacsony"
+ },
+ "7134": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/12/Sunnova-partnerseg.png",
+  "title": "Sunnova partnerség",
+  "slug": "sunnova-partnerseg"
+ },
+ "7137": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/12/Nap-es-szelenergia-dominal.png",
+  "title": "Nap és szélenergia dominál",
+  "slug": "nap-es-szelenergia-dominal"
+ },
+ "7148": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/12/Napelem-nagyker-fulfillment.webp",
+  "title": "Napelem nagyker fulfillment",
+  "slug": "napelem-nagyker-fulfillment"
+ },
+ "7151": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/12/Projoy-logo.jpg",
+  "title": "Projoy logo",
+  "slug": "projoy-logo"
+ },
+ "7152": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/12/wurth-logo.png",
+  "title": "würth logo",
+  "slug": "wurth-logo"
+ },
+ "7153": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/12/Wurth_logo.png",
+  "title": "Würth_logo",
+  "slug": "wurth_logo"
+ },
+ "7154": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/12/Tigo_Logo.png",
+  "title": "Tigo_Logo",
+  "slug": "tigo_logo"
+ },
+ "7155": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/12/sunways-logo.png",
+  "title": "sunways logo",
+  "slug": "sunways-logo"
+ },
+ "7156": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/12/Solplanet-Logo-Gradient.png",
+  "title": "Solplanet-Logo-Gradient",
+  "slug": "solplanet-logo-gradient"
+ },
+ "7157": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/12/PROJOY-LOGO.png",
+  "title": "PROJOY-LOGO",
+  "slug": "projoy-logo-2"
+ },
+ "7158": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/12/Projoy-logo-png.png",
+  "title": "Projoy logo png",
+  "slug": "projoy-logo-png"
+ },
+ "7159": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/12/KBE-logo.png",
+  "title": "KBE logo",
+  "slug": "kbe-logo"
+ },
+ "7160": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/12/Enerack-logo.png",
+  "title": "Enerack logo",
+  "slug": "enerack-logo"
+ },
+ "7161": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/12/Afore-Logo.jpg",
+  "title": "Afore Logo",
+  "slug": "afore-logo"
+ },
+ "7162": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/12/Afore-Logo-99.jpg",
+  "title": "Afore Logo 99",
+  "slug": "afore-logo-99"
+ },
+ "7163": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/12/Afore-Logo_99.jpg",
+  "title": "Afore Logo_99",
+  "slug": "afore-logo_99"
+ },
+ "7164": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/12/Afore-Logo_99-1.jpg",
+  "title": "Afore Logo_99",
+  "slug": "afore-logo_99-2"
+ },
+ "7165": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/12/Enerack-logo-99.png",
+  "title": "Enerack logo 99",
+  "slug": "enerack-logo-99"
+ },
+ "7166": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/12/KBE-logo-99.png",
+  "title": "KBE logo 99",
+  "slug": "kbe-logo-99"
+ },
+ "7167": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/12/PROJOY-LOGO-99.png",
+  "title": "PROJOY-LOGO 99",
+  "slug": "projoy-logo-99"
+ },
+ "7168": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/12/Solplanet-Logo-99.png",
+  "title": "Solplanet-Logo 99",
+  "slug": "solplanet-logo-99"
+ },
+ "7169": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/12/sunova-logo.png",
+  "title": "sunova logo",
+  "slug": "sunova-logo-2"
+ },
+ "7170": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/12/sunways-logo-99.png",
+  "title": "sunways logo 99",
+  "slug": "sunways-logo-99"
+ },
+ "7171": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/12/wurth-logo-99.png",
+  "title": "würth logo 99",
+  "slug": "wurth-logo-99"
+ },
+ "7172": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/12/znshine-solar-logo-99.png",
+  "title": "znshine-solar-logo 99",
+  "slug": "znshine-solar-logo-99"
+ },
+ "7173": {
+  "url": "https://a1solar.hu/wp-content/uploads/2022/12/Tigo_Logo-99.png",
+  "title": "Tigo_Logo 99",
+  "slug": "tigo_logo-99"
+ },
+ "7203": {
+  "url": "https://a1solar.hu/wp-content/uploads/2023/01/A1-Solar-nagyker-arlista-2023.01.09.pdf",
+  "title": "A1 Solar nagyker árlista 2023.01.09",
+  "slug": "a1-solar-nagyker-arlista-2023-01-09"
+ },
+ "7226": {
+  "url": "https://a1solar.hu/wp-content/uploads/2023/02/A1-Solar-nagyker-arlista-2023.02.13.pdf",
+  "title": "A1 Solar nagyker árlista 2023.02.13",
+  "slug": "a1-solar-nagyker-arlista-2023-02-13"
+ },
+ "7231": {
+  "url": "https://a1solar.hu/wp-content/uploads/2023/02/V-usTxg.jpeg",
+  "title": "V--usTxg",
+  "slug": "v-ustxg"
+ },
+ "7319": {
+  "url": "https://a1solar.hu/wp-content/uploads/2023/03/A1-Solar-frissitett-arajanlat-1.pdf",
+  "title": "A1 Solar frissített árajánlat (1)",
+  "slug": "a1-solar-frissitett-arajanlat-1"
+ },
+ "7323": {
+  "url": "https://a1solar.hu/wp-content/uploads/2023/03/A1-Solar-frissitett-arajanlat-2.pdf",
+  "title": "A1 Solar frissített árajánlat (2)",
+  "slug": "a1-solar-frissitett-arajanlat-2"
+ },
+ "7325": {
+  "url": "https://a1solar.hu/wp-content/uploads/2023/03/minden-amit-a-napelem-akkumulatorokrol.jpeg",
+  "title": "minden, amit a napelem akkumulátorokról",
+  "slug": "minden-amit-a-napelem-akkumulatorokrol"
+ },
+ "7329": {
+  "url": "https://a1solar.hu/wp-content/uploads/2023/03/napelemes-tetocserep-scaled.jpg",
+  "title": "napelemes tetőcserép",
+  "slug": "napelemes-tetocserep"
+ },
+ "7350": {
+  "url": "https://a1solar.hu/wp-content/uploads/2023/03/166350770_l-scaled.jpg",
+  "title": "166350770_l",
+  "slug": "166350770_l"
+ },
+ "7352": {
+  "url": "https://a1solar.hu/wp-content/uploads/2023/03/172110314_m.jpg",
+  "title": "172110314_m",
+  "slug": "172110314_m"
+ },
+ "7377": {
+  "url": "https://a1solar.hu/wp-content/uploads/2023/03/Afore-Single-Phase-Hybrid-1-6kW.png",
+  "title": "Afore Single Phase Hybrid 1-6kW",
+  "slug": "afore-single-phase-hybrid-1-6kw"
+ },
+ "7378": {
+  "url": "https://a1solar.hu/wp-content/uploads/2023/03/Afore-1-fazis-adatlap.webp",
+  "title": "Afore 1 fázis adatlap",
+  "slug": "afore-1-fazis-adatlap"
+ },
+ "7380": {
+  "url": "https://a1solar.hu/wp-content/uploads/2023/03/Afore-Single-Phase-Hybrid-1-6kW-1.png",
+  "title": "Afore Single Phase Hybrid 1-6kW",
+  "slug": "afore-single-phase-hybrid-1-6kw-2"
+ },
+ "7383": {
+  "url": "https://a1solar.hu/wp-content/uploads/2023/03/Afore-Single-Phase-Hybrid-1-6kW-2.png",
+  "title": "Afore Single Phase Hybrid 1-6kW",
+  "slug": "afore-single-phase-hybrid-1-6kw-3"
+ },
+ "7384": {
+  "url": "https://a1solar.hu/wp-content/uploads/2023/03/Afore-Single-Phase-Hybrid-1-6kW-3.png",
+  "title": "Afore Single Phase Hybrid 1-6kW",
+  "slug": "afore-single-phase-hybrid-1-6kw-4"
+ },
+ "7411": {
+  "url": "https://a1solar.hu/wp-content/uploads/2023/03/a1solar-napelem-rendszer.jpg",
+  "title": "a1solar-napelem-rendszer",
+  "slug": "a1solar-napelem-rendszer"
+ },
+ "7413": {
+  "url": "https://a1solar.hu/wp-content/uploads/2023/03/a1-solar-video-thumb1.png",
+  "title": "a1-solar-video-thumb[1]",
+  "slug": "a1-solar-video-thumb1"
+ },
+ "7415": {
+  "url": "https://a1solar.hu/wp-content/uploads/2023/03/IMG_4327.jpeg",
+  "title": "IMG_4327",
+  "slug": "img_4327"
+ },
+ "7418": {
+  "url": "https://a1solar.hu/wp-content/uploads/2023/03/oktatas_foto_9-scaled.jpg",
+  "title": "oktatas_foto_9",
+  "slug": "oktatas_foto_9"
+ },
+ "7421": {
+  "url": "https://a1solar.hu/wp-content/uploads/2023/03/188622822_l-scaled.jpg",
+  "title": "Close-up of a businessman using calculator",
+  "slug": "close-up-of-a-businessman-using-calculator"
+ },
+ "7431": {
+  "url": "https://a1solar.hu/wp-content/uploads/2023/03/Risen-RSM40-8-410M.jpg",
+  "title": "",
+  "slug": "risen-rsm40-8-410m"
+ },
+ "7432": {
+  "url": "https://a1solar.hu/wp-content/uploads/2023/03/Risen-RSM40-8-410M-mono-120-cellas-410W-Fekete-adatlap.pdf",
+  "title": "Risen RSM40-8-410M mono 120 cellás 410W - Fekete adatlap",
+  "slug": "risen-rsm40-8-410m-mono-120-cellas-410w-fekete-adatlap"
+ },
+ "7438": {
+  "url": "https://a1solar.hu/wp-content/uploads/2023/03/napelem-tajolas_2.jpg",
+  "title": "napelem tájolás_2",
+  "slug": "napelem-tajolas_2"
+ },
+ "7442": {
+  "url": "https://a1solar.hu/wp-content/uploads/2023/03/do-media-bisnode-hu.jpeg",
+  "title": "do-media-bisnode-hu",
+  "slug": "do-media-bisnode-hu"
+ },
+ "7443": {
+  "url": "https://a1solar.hu/wp-content/uploads/2023/03/vip-tag-logo-2022.png",
+  "title": "vip-tag-logo-2022",
+  "slug": "vip-tag-logo-2022-2"
+ },
+ "7471": {
+  "url": "https://a1solar.hu/wp-content/uploads/2023/04/A1-Solar-nagyker-arlista-20230411.pdf",
+  "title": "A1 Solar - nagyker árlista 20230411",
+  "slug": "a1-solar-nagyker-arlista-20230411"
+ },
+ "7473": {
+  "url": "https://a1solar.hu/wp-content/uploads/2023/04/ERK-R52-3450.jpg",
+  "title": "ERK-R52-3450",
+  "slug": "erk-r52-3450"
+ },
+ "7474": {
+  "url": "https://a1solar.hu/wp-content/uploads/2023/04/ERK-RCB.jpg",
+  "title": "ERK-RCB",
+  "slug": "erk-rcb"
+ },
+ "7476": {
+  "url": "https://a1solar.hu/wp-content/uploads/2023/04/ERK-RCN.jpg",
+  "title": "ERK-RCN",
+  "slug": "erk-rcn"
+ },
+ "7478": {
+  "url": "https://a1solar.hu/wp-content/uploads/2023/04/ERK-TRB-D13.jpg",
+  "title": "ERK-TRB-D13",
+  "slug": "erk-trb-d13"
+ },
+ "7480": {
+  "url": "https://a1solar.hu/wp-content/uploads/2023/04/ERK-TRH-S01.jpg",
+  "title": "ERK-TRH-S01",
+  "slug": "erk-trh-s01"
+ },
+ "7482": {
+  "url": "https://a1solar.hu/wp-content/uploads/2023/04/ERK-TRB-D03.jpg",
+  "title": "ERK-TRB-D03",
+  "slug": "erk-trb-d03"
+ },
+ "7484": {
+  "url": "https://a1solar.hu/wp-content/uploads/2023/04/ERK-MRS-5.jpg",
+  "title": "ERK-MRS-5",
+  "slug": "erk-mrs-5"
+ },
+ "7486": {
+  "url": "https://a1solar.hu/wp-content/uploads/2023/04/ERK-MFS-5.jpg",
+  "title": "ERK-MFS-5",
+  "slug": "erk-mfs-5"
+ },
+ "7488": {
+  "url": "https://a1solar.hu/wp-content/uploads/2023/04/ERK-TRB-D14.jpg",
+  "title": "ERK-TRB-D14",
+  "slug": "erk-trb-d14"
+ },
+ "7491": {
+  "url": "https://a1solar.hu/wp-content/uploads/2023/04/ERK-TRB-C10.jpg",
+  "title": "ERK-TRB-C10",
+  "slug": "erk-trb-c10"
+ },
+ "7493": {
+  "url": "https://a1solar.hu/wp-content/uploads/2023/04/ERK-RCC.jpg",
+  "title": "ERK-RCC",
+  "slug": "erk-rcc"
+ },
+ "7495": {
+  "url": "https://a1solar.hu/wp-content/uploads/2023/04/ERK-NBW.jpg",
+  "title": "ERK-NBW",
+  "slug": "erk-nbw"
+ },
+ "7544": {
+  "url": "https://a1solar.hu/wp-content/uploads/2023/04/A1-Solar-nagyker-arlista-20230418_euro.pdf",
+  "title": "A1 Solar - nagyker árlista 20230418_euro",
+  "slug": "a1-solar-nagyker-arlista-20230418_euro"
+ },
+ "7589": {
+  "url": "https://a1solar.hu/wp-content/uploads/2023/04/nagymeretu-napelem-rendszer.jpg",
+  "title": "nagyméretű-napelem-rendszer",
+  "slug": "nagymeretu-napelem-rendszer"
+ },
+ "7597": {
+  "url": "https://a1solar.hu/wp-content/uploads/2023/05/Tanyak_haztartasi_lepteku_villamos_energia.jpg",
+  "title": "Tanyák_háztartási_léptékű_villamos_energia",
+  "slug": "tanyak_haztartasi_lepteku_villamos_energia"
+ },
+ "7607": {
+  "url": "https://a1solar.hu/wp-content/uploads/2023/05/160368462_m_normal_none.jpg",
+  "title": "160368462_m_normal_none",
+  "slug": "160368462_m_normal_none"
+ },
+ "7645": {
+  "url": "https://a1solar.hu/wp-content/uploads/2023/05/hogyan-erdemes-optimalizalni-az-agrarvallalatok-energiafelhasznalasat-2.jpg",
+  "title": "hogyan-erdemes-optimalizalni-az-agrarvallalatok-energiafelhasznalasat-2",
+  "slug": "hogyan-erdemes-optimalizalni-az-agrarvallalatok-energiafelhasznalasat-2"
+ },
+ "7704": {
+  "url": "https://a1solar.hu/wp-content/uploads/2023/05/eletromos-auto-2.jpg",
+  "title": "eletromos autó 2",
+  "slug": "eletromos-auto-2"
+ },
+ "7713": {
+  "url": "https://a1solar.hu/wp-content/uploads/2023/05/A1-Solar-nagyker-arlista-20230531_euro_compressed.pdf",
+  "title": "A1 Solar - nagyker árlista 20230531_euro_compressed",
+  "slug": "a1-solar-nagyker-arlista-20230531_euro_compressed"
+ },
+ "7731": {
+  "url": "https://a1solar.hu/wp-content/uploads/2023/06/183201.webp",
+  "title": "183201",
+  "slug": "183201"
+ },
+ "7736": {
+  "url": "https://a1solar.hu/wp-content/uploads/2023/06/image001-1-scaled.jpg",
+  "title": "dav",
+  "slug": "dav"
+ },
+ "7773": {
+  "url": "https://a1solar.hu/wp-content/uploads/2023/06/42090827_m_normal_none.jpg",
+  "title": "napelem rendszer ára",
+  "slug": "42090827_m_normal_none"
+ },
+ "7783": {
+  "url": "https://a1solar.hu/wp-content/uploads/2023/06/a-szaldo-elszamolas-es-az-energiatarola-akkumulator-kapcsolata-scaled.jpg",
+  "title": "a-szaldo- elszamolas-es-az-energiatarola-akkumulator-kapcsolata",
+  "slug": "a-szaldo-elszamolas-es-az-energiatarola-akkumulator-kapcsolata"
+ },
+ "7821": {
+  "url": "https://a1solar.hu/wp-content/uploads/2023/06/miert-erik-meg-a-napelem-panelek-a-magasabb-arat-is-1.jpg",
+  "title": "miert-erik-meg-a-napelem-panelek-a-magasabb-arat-is (1)",
+  "slug": "miert-erik-meg-a-napelem-panelek-a-magasabb-arat-is-1"
+ },
+ "7825": {
+  "url": "https://a1solar.hu/wp-content/uploads/2023/07/A1-Solar-nagyker-arlista-20230711_compressed.pdf",
+  "title": "A1-Solar-nagyker-árlista-20230711_compressed",
+  "slug": "a1-solar-nagyker-arlista-20230711_compressed"
+ },
+ "7830": {
+  "url": "https://a1solar.hu/wp-content/uploads/2023/07/Hosszu_honapok_ota_tarto_bizonytalansag_utan_latszik_nemi_feny_a_napelemesalagut_vegen.jpg",
+  "title": "napenergia-plusz-program-2024",
+  "slug": "hosszu_honapok_ota_tarto_bizonytalansag_utan_latszik_nemi_feny_a_napelemesalagut_vegen"
+ },
+ "7839": {
+  "url": "https://a1solar.hu/wp-content/uploads/2023/07/A1-Solar-nagyker-arlista-20230715.pdf",
+  "title": "A1 Solar - nagyker árlista 20230715",
+  "slug": "a1-solar-nagyker-arlista-20230715"
+ },
+ "7844": {
+  "url": "https://a1solar.hu/wp-content/uploads/2023/07/A1-Solar-nagyker-arlista-20230717_compressed.pdf",
+  "title": "A1-Solar-nagyker-árlista-20230717_compressed",
+  "slug": "a1-solar-nagyker-arlista-20230717_compressed"
+ },
+ "7848": {
+  "url": "https://a1solar.hu/wp-content/uploads/2023/07/sunways-haromfazisu-inverter.png",
+  "title": "sunways-haromfazisu-inverter",
+  "slug": "sunways-haromfazisu-inverter"
+ },
+ "7860": {
+  "url": "https://a1solar.hu/wp-content/uploads/2023/07/201657379_m_normal_none-1.jpg",
+  "title": "sunways-inverter-napelemes-projekt",
+  "slug": "201657379_m_normal_none-1"
+ },
+ "7864": {
+  "url": "https://a1solar.hu/wp-content/uploads/2023/07/A1-Solar-Csalitermek_compressed.pdf",
+  "title": "A1 Solar -Csalitermék_compressed",
+  "slug": "a1-solar-csalitermek_compressed"
+ },
+ "7868": {
+  "url": "https://a1solar.hu/wp-content/uploads/2023/07/napelemrendszer-telepites-mit-kell-tudnia-es-mire-szamithat.jpg",
+  "title": "napelemrendszer-telepites-mit-kell-tudnia-es-mire-szamithat",
+  "slug": "napelemrendszer-telepites-mit-kell-tudnia-es-mire-szamithat"
+ },
+ "7872": {
+  "url": "https://a1solar.hu/wp-content/uploads/2023/07/napenergia-vallalkozasok-szamara-a-fenntarthato-jovo-alapja-2.jpg",
+  "title": "napenergia-vallalkozasok-szamara-a-fenntarthato-jovo-alapja (2)",
+  "slug": "napenergia-vallalkozasok-szamara-a-fenntarthato-jovo-alapja-2"
+ },
+ "7884": {
+  "url": "https://a1solar.hu/wp-content/uploads/2023/08/napelem-telepito-lehetsz-1.png",
+  "title": "napelem-telepito-lehetsz (1)",
+  "slug": "napelem-telepito-lehetsz-1"
+ },
+ "7896": {
+  "url": "https://a1solar.hu/wp-content/uploads/2023/08/Gyorsasag-es-megbizhato-kivitelezo-scaled.jpg",
+  "title": "Gyorsasag-es-megbizhato-kivitelezo-napelemes-rendszer",
+  "slug": "gyorsasag-es-megbizhato-kivitelezo"
+ },
+ "7964": {
+  "url": "https://a1solar.hu/wp-content/uploads/2023/08/sunova-solar-tier-1-es-besorolasu-gyarto.jpg",
+  "title": "sunova-solar-tier-1-es-besorolasu-gyarto",
+  "slug": "sunova-solar-tier-1-es-besorolasu-gyarto"
+ },
+ "7974": {
+  "url": "https://a1solar.hu/wp-content/uploads/2023/08/mi-a-kulonbseg-a-napelem-panel-es-napkollektor-kozott.jpg",
+  "title": "mi-a-kulonbseg-a-napelem-panel-es-napkollektor-kozott",
+  "slug": "mi-a-kulonbseg-a-napelem-panel-es-napkollektor-kozott"
+ },
+ "7977": {
+  "url": "https://a1solar.hu/wp-content/uploads/2023/08/a1-solar–tobb-mint-egy-napelem-nagyker.jpg",
+  "title": "a1-solar–tobb-mint-egy-napelem-nagyker",
+  "slug": "a1-solar-tobb-mint-egy-napelem-nagyker"
+ },
+ "7978": {
+  "url": "https://a1solar.hu/wp-content/uploads/2023/08/a1-solar–tobb-mint-egy-napelem-nagyker-1.jpg",
+  "title": "a1-solar–tobb-mint-egy-napelem-nagyker",
+  "slug": "a1-solar-tobb-mint-egy-napelem-nagyker-2"
+ },
+ "8001": {
+  "url": "https://a1solar.hu/wp-content/uploads/2023/09/A1-arlista_20230908_compressed.pdf",
+  "title": "A1-arlista_20230908_compressed",
+  "slug": "a1-arlista_20230908_compressed"
+ },
+ "8025": {
+  "url": "https://a1solar.hu/wp-content/uploads/2023/09/A1solar_arlista_20230914.pdf",
+  "title": "A1solar_arlista_20230914",
+  "slug": "a1solar_arlista_20230914"
+ },
+ "8048": {
+  "url": "https://a1solar.hu/wp-content/uploads/2023/09/notif.png",
+  "title": "notif",
+  "slug": "notif"
+ },
+ "8053": {
+  "url": "https://a1solar.hu/wp-content/uploads/2023/09/brutto_elszamolas_mellett_is_megeri_napelem_rendszert_telepiteni_1.jpg",
+  "title": "brutto_elszamolas_mellett_is_megeri_napelem_rendszert_telepiteni_1",
+  "slug": "brutto_elszamolas_mellett_is_megeri_napelem_rendszert_telepiteni_1"
+ },
+ "8056": {
+  "url": "https://a1solar.hu/wp-content/uploads/2023/09/sunways_inverter.jpg",
+  "title": "sunways_inverter",
+  "slug": "sunways_inverter"
+ },
+ "8059": {
+  "url": "https://a1solar.hu/wp-content/uploads/2023/09/211054018_m_normal_none.jpg",
+  "title": "napenergai_napfeny",
+  "slug": "211054018_m_normal_none"
+ },
+ "8062": {
+  "url": "https://a1solar.hu/wp-content/uploads/2023/09/Telepites-kep-2-scaled.jpg",
+  "title": "inverter_telepites",
+  "slug": "telepites-kep-2"
+ },
+ "8065": {
+  "url": "https://a1solar.hu/wp-content/uploads/2023/09/brutto_elszamolas_mellett_is_megeri_napelem_rendszert_telepiteni_2.jpg",
+  "title": "hibrid_inverter",
+  "slug": "brutto_elszamolas_mellett_is_megeri_napelem_rendszert_telepiteni_2"
+ },
+ "8071": {
+  "url": "https://a1solar.hu/wp-content/uploads/2023/10/A1solar_arlista_20230928_HUF_compressed.pdf",
+  "title": "A1solar_arlista_20230928_HUF_compressed",
+  "slug": "a1solar_arlista_20230928_huf_compressed"
+ },
+ "8077": {
+  "url": "https://a1solar.hu/wp-content/uploads/2023/10/A1Solar_arlista_20231011_HUF_compressed.pdf",
+  "title": "A1Solar_arlista_20231011_HUF_compressed",
+  "slug": "a1solar_arlista_20231011_huf_compressed"
+ },
+ "8079": {
+  "url": "https://a1solar.hu/wp-content/uploads/2023/10/A1Solar_arlista_20231025_HUF.pdf",
+  "title": "A1Solar_arlista_20231025_HUF",
+  "slug": "a1solar_arlista_20231025_huf"
+ },
+ "8119": {
+  "url": "https://a1solar.hu/wp-content/uploads/2023/10/sunways_inverter.png",
+  "title": "sunways_inverter",
+  "slug": "sunways_inverter-2"
+ },
+ "8121": {
+  "url": "https://a1solar.hu/wp-content/uploads/2023/10/Energiatarolas_a_-fenntarthatosag_jovoje.jpg",
+  "title": "Energiatarolas_a_ fenntarthatosag_jovoje",
+  "slug": "energiatarolas_a_-fenntarthatosag_jovoje"
+ },
+ "8125": {
+  "url": "https://a1solar.hu/wp-content/uploads/2023/10/Enerack_tartoszerkezetek_megbizhato_alap_napelemes_rendszerekhez.jpg",
+  "title": "Enerack_tartoszerkezetek",
+  "slug": "enerack_tartoszerkezetek_megbizhato_alap_napelemes_rendszerekhez"
+ },
+ "8130": {
+  "url": "https://a1solar.hu/wp-content/uploads/2023/10/sunways_portal-scaled.jpg",
+  "title": "sunways_portál",
+  "slug": "sunways_portal"
+ },
+ "8133": {
+  "url": "https://a1solar.hu/wp-content/uploads/2023/11/A1Solar_arlista_20231128_HUF.pdf",
+  "title": "A1Solar_arlista_20231128_HUF",
+  "slug": "a1solar_arlista_20231128_huf"
+ },
+ "8135": {
+  "url": "https://a1solar.hu/wp-content/uploads/2023/11/175369261_m_normal_none-1.jpg",
+  "title": "napelem_tajolas",
+  "slug": "175369261_m_normal_none-1"
+ },
+ "8139": {
+  "url": "https://a1solar.hu/wp-content/uploads/2023/11/117408612_m_normal_none-1.jpg",
+  "title": "inverter_szerepe",
+  "slug": "117408612_m_normal_none-1"
+ },
+ "8143": {
+  "url": "https://a1solar.hu/wp-content/uploads/2023/11/210363746_m_normal_none.jpg",
+  "title": "napelemes_rendszer",
+  "slug": "210363746_m_normal_none"
+ },
+ "8146": {
+  "url": "https://a1solar.hu/wp-content/uploads/2023/11/Vallalati-napelemes-rendszerek-2.jpg",
+  "title": "Vállalati napelemes rendszerek 2",
+  "slug": "vallalati-napelemes-rendszerek-2"
+ },
+ "8180": {
+  "url": "https://a1solar.hu/wp-content/uploads/2023/12/Close.svg",
+  "title": "Close.svg",
+  "slug": "close-svg"
+ },
+ "8181": {
+  "url": "https://a1solar.hu/wp-content/uploads/2023/12/Shoe-Store-Popup-pic.jpg",
+  "title": "Shoe-Store-Popup-pic.jpg",
+  "slug": "shoe-store-popup-pic-jpg"
+ },
+ "8207": {
+  "url": "https://a1solar.hu/wp-content/uploads/2024/01/656db08dae423582b7f84240_Lakossági-napelem-2.jpg",
+  "title": "akkumulator_szerepe",
+  "slug": "656db08dae423582b7f84240_lakossagi-napelem-2"
+ },
+ "8210": {
+  "url": "https://a1solar.hu/wp-content/uploads/2024/01/61195e21f792d7065d2f56ad_noise.png",
+  "title": "61195e21f792d7065d2f56ad_noise",
+  "slug": "61195e21f792d7065d2f56ad_noise"
+ },
+ "8448": {
+  "url": "https://a1solar.hu/wp-content/uploads/2024/02/Deye-vagott-.png",
+  "title": "Deye-vagott-",
+  "slug": "deye-vagott"
+ },
+ "8567": {
+  "url": "https://a1solar.hu/wp-content/uploads/2024/02/szimmetrikus_inverter_abra.png",
+  "title": "szimmetrikus_inverter_abra",
+  "slug": "szimmetrikus_inverter_abra"
+ },
+ "8568": {
+  "url": "https://a1solar.hu/wp-content/uploads/2024/02/aszimmetrikus_inverter_abra.png",
+  "title": "aszimmetrikus_inverter_abra",
+  "slug": "aszimmetrikus_inverter_abra"
+ },
+ "8701": {
+  "url": "https://a1solar.hu/wp-content/uploads/2024/03/A1-Solar-szigetuzem-napelemes-rendszer-akkumulator.png",
+  "title": "A1-Solar-szigetuzem-napelemes-rendszer-akkumulator",
+  "slug": "a1-solar-szigetuzem-napelemes-rendszer-akkumulator"
+ },
+ "8702": {
+  "url": "https://a1solar.hu/wp-content/uploads/2024/03/A1-Solar-szigetuzem-napelemes-rendszer-akkumulator-1.png",
+  "title": "A1-Solar-szigetuzem-napelemes-rendszer-akkumulator-1",
+  "slug": "a1-solar-szigetuzem-napelemes-rendszer-akkumulator-1"
+ },
+ "8717": {
+  "url": "https://a1solar.hu/wp-content/uploads/2024/03/napelem_akkumulator.jpg",
+  "title": "napelem_akkumulator",
+  "slug": "largemodernhousewithsolarpanelsonapitchedroof"
+ },
+ "8741": {
+  "url": "https://a1solar.hu/wp-content/uploads/2024/04/储能授权证书_李真委_A1_Smart_System_Kft_Hungary_and_Austria匈牙利和奥地利-2_page-0001.jpg",
+  "title": "储能授权证书_李真委_A1_Smart_System_Kft_Hungary_and_Austria匈牙利和奥地利-2_page-0001",
+  "slug": "%e5%82%a8%e8%83%bd%e6%8e%88%e6%9d%83%e8%af%81%e4%b9%a6_%e6%9d%8e%e7%9c%9f%e5%a7%94_a1_smart_system_kft_hungary_and_austria%e5%8c%88%e7%89%99%e5%88%a9%e5%92%8c%e5%a5%a5%e5%9c%b0%e5%88%a9-2_page-0001"
+ },
+ "8745": {
+  "url": "https://a1solar.hu/wp-content/uploads/2024/04/deye-tanusitvany-2.png",
+  "title": "deye-tanusitvany-2",
+  "slug": "deye-tanusitvany-2"
+ },
+ "8752": {
+  "url": "https://a1solar.hu/wp-content/uploads/2024/04/hivatalos-deye-ess-disztributorok-lettunk.png",
+  "title": "hivatalos-deye-ess-disztributorok-lettunk",
+  "slug": "hivatalos-deye-ess-disztributorok-lettunk-2"
+ },
+ "8770": {
+  "url": "https://a1solar.hu/wp-content/uploads/2024/04/Termekkatalogus-2024.pdf",
+  "title": "Termékkatalógus 2024",
+  "slug": "termekkatalogus-2024"
+ },
+ "8776": {
+  "url": "https://a1solar.hu/wp-content/uploads/2024/04/Okosotthon-Szolgaltatas-2024.pdf",
+  "title": "Okosotthon Szolgáltatás 2024",
+  "slug": "okosotthon-szolgaltatas-2024"
+ },
+ "8789": {
+  "url": "https://a1solar.hu/wp-content/uploads/2024/04/ESCO-kiadvany-2024.pdf",
+  "title": "ESCO kiadvány 2024",
+  "slug": "esco-kiadvany-2024"
+ },
+ "8794": {
+  "url": "https://a1solar.hu/wp-content/uploads/2024/04/Cegbemutato-2024.pdf",
+  "title": "Cégbemutató 2024",
+  "slug": "cegbemutato-2024"
+ },
+ "8802": {
+  "url": "https://a1solar.hu/wp-content/uploads/2024/04/Okosotthon-Szolgaltatas-2024-1.pdf",
+  "title": "Okosotthon Szolgáltatás 2024.",
+  "slug": "okosotthon-szolgaltatas-2024-2"
+ },
+ "8803": {
+  "url": "https://a1solar.hu/wp-content/uploads/2024/04/Okosotthon-Szolgaltatas-2024-2.pdf",
+  "title": "Okosotthon Szolgáltatás 2024.",
+  "slug": "okosotthon-szolgaltatas-2024-3"
+ },
+ "8808": {
+  "url": "https://a1solar.hu/wp-content/uploads/2024/04/Termekkatalogus-2024-1.pdf",
+  "title": "Termékkatalógus 2024.",
+  "slug": "termekkatalogus-2024-2"
+ },
+ "8812": {
+  "url": "https://a1solar.hu/wp-content/uploads/2024/04/kozlemeny_3_honapot_meg_nem_halado_kesedelemrol-2024004.pdf",
+  "title": "kozlemeny_3_honapot_meg_nem_halado_kesedelemrol-2024004",
+  "slug": "kozlemeny_3_honapot_meg_nem_halado_kesedelemrol-2024004"
+ },
+ "8847": {
+  "url": "https://a1solar.hu/wp-content/uploads/2024/04/bocipanel-scaled.jpg",
+  "title": "Álattartó telep",
+  "slug": "bocipanel"
+ },
+ "8852": {
+  "url": "https://a1solar.hu/wp-content/uploads/2024/04/shutterstock_1783886117-scaled.jpg",
+  "title": "Feldolgozó üzem",
+  "slug": "moderngranaryelevator-silversilosonagro-processingandmanufacturingplant"
+ },
+ "8865": {
+  "url": "https://a1solar.hu/wp-content/uploads/2024/05/A1-kedvezmenyes-arlista-20240501.pdf",
+  "title": "A1- kedvezményes - arlista-20240501",
+  "slug": "a1-kedvezmenyes-arlista-20240501"
+ },
+ "8871": {
+  "url": "https://a1solar.hu/wp-content/uploads/2024/05/Feldolgozo-uzemek-komplex-tamogatasa-2.png",
+  "title": "Feldolgozó üzemek (komplex) támogatása (2)",
+  "slug": "feldolgozo-uzemek-komplex-tamogatasa-2"
+ },
+ "8872": {
+  "url": "https://a1solar.hu/wp-content/uploads/2024/05/Nevtelen-terv-2024-05-13T122525.086-1.png",
+  "title": "Névtelen terv - 2024-05-13T122525.086 (1)",
+  "slug": "nevtelen-terv-2024-05-13t122525-086-1"
+ },
+ "8873": {
+  "url": "https://a1solar.hu/wp-content/uploads/2024/05/Nevtelen-terv-2024-05-13T122943.482.png",
+  "title": "Névtelen terv - 2024-05-13T122943.482",
+  "slug": "nevtelen-terv-2024-05-13t122943-482"
+ },
+ "8874": {
+  "url": "https://a1solar.hu/wp-content/uploads/2024/05/Nevtelen-terv-2024-05-13T123307.640.png",
+  "title": "Névtelen terv - 2024-05-13T123307.640",
+  "slug": "nevtelen-terv-2024-05-13t123307-640"
+ },
+ "8875": {
+  "url": "https://a1solar.hu/wp-content/uploads/2024/05/Allattarto-telepek-fejlesztese-es-megujitasa.png",
+  "title": "Állattartó telepek fejlesztése és megújítása",
+  "slug": "allattarto-telepek-fejlesztese-es-megujitasa"
+ },
+ "8876": {
+  "url": "https://a1solar.hu/wp-content/uploads/2024/05/KKV-Technologia-Plusz-Hitelprogram.png",
+  "title": "KKV Technológia Plusz Hitelprogram",
+  "slug": "kkv-technologia-plusz-hitelprogram"
+ },
+ "8877": {
+  "url": "https://a1solar.hu/wp-content/uploads/2024/05/Kerteszeti-uveghazakhoz-hutohazakhoz-kapcsolodo-es-post-harvest-fejlesztesek-tamogatasa.png",
+  "title": "Kertészeti üvegházakhoz, hűtőházakhoz kapcsolódó, és post-harvest fejlesztések támogatása",
+  "slug": "kerteszeti-uveghazakhoz-hutohazakhoz-kapcsolodo-es-post-harvest-fejlesztesek-tamogatasa"
+ },
+ "8903": {
+  "url": "https://a1solar.hu/wp-content/uploads/2024/05/Feldolgozo-uzemek-komplex-tamogatasa.png",
+  "title": "Feldolgozó üzemek (komplex) támogatása",
+  "slug": "feldolgozo-uzemek-komplex-tamogatasa"
+ },
+ "8904": {
+  "url": "https://a1solar.hu/wp-content/uploads/2024/05/Allattarto-telepek-fejlesztese-es-megujitasa-1.png",
+  "title": "Állattartó telepek fejlesztése és megújítása (1)",
+  "slug": "allattarto-telepek-fejlesztese-es-megujitasa-1"
+ },
+ "8944": {
+  "url": "https://a1solar.hu/wp-content/uploads/2024/05/photo_2024-05-14_11-37-13.jpg",
+  "title": "photo_2024-05-14_11-37-13",
+  "slug": "photo_2024-05-14_11-37-13"
+ },
+ "9000": {
+  "url": "https://a1solar.hu/wp-content/uploads/2024/05/Akcios-arlista-2024.05.16.pdf",
+  "title": "Akciós árlista 2024.05.16",
+  "slug": "akcios-arlista-2024-05-16"
+ },
+ "9194": {
+  "url": "https://a1solar.hu/wp-content/uploads/2024/05/szakmai-nap-nyito-.png",
+  "title": "szakmai nap nyitó",
+  "slug": "szakmai-nap-nyito"
+ },
+ "9202": {
+  "url": "https://a1solar.hu/wp-content/uploads/2024/05/szakmai-nap-borito.png",
+  "title": "szakmai-nap-borito",
+  "slug": "szakmai-nap-borito"
+ },
+ "9204": {
+  "url": "https://a1solar.hu/wp-content/uploads/2024/05/szakmai-nap-borito-1.png",
+  "title": "szakmai-nap-borito (1)",
+  "slug": "szakmai-nap-borito-1"
+ },
+ "9205": {
+  "url": "https://a1solar.hu/wp-content/uploads/2024/05/szakmai-nap.png",
+  "title": "szakmai-nap",
+  "slug": "szakmai-nap"
+ },
+ "9206": {
+  "url": "https://a1solar.hu/wp-content/uploads/2024/05/6568d6324671e1c97c428331_oktatas_foto_6-1-scaled.jpg",
+  "title": "6568d6324671e1c97c428331_oktatas_foto_6 (1)",
+  "slug": "6568d6324671e1c97c428331_oktatas_foto_6-1"
+ },
+ "9249": {
+  "url": "https://a1solar.hu/wp-content/uploads/2024/06/otthonfelujitasi-hitelprogram-1.png",
+  "title": "otthonfelujitasi-hitelprogram (1)",
+  "slug": "otthonfelujitasi-hitelprogram-1"
+ },
+ "9250": {
+  "url": "https://a1solar.hu/wp-content/uploads/2024/06/otthonfelujitasi-hitelprogram-2.png",
+  "title": "otthonfelujitasi-hitelprogram",
+  "slug": "otthonfelujitasi-hitelprogram-2"
+ },
+ "9271": {
+  "url": "https://a1solar.hu/wp-content/uploads/2024/06/otthonfelujitasi-hitelprogram-hoszivattyu_.png",
+  "title": "otthonfelujitasi-hitelprogram-hoszivattyu_",
+  "slug": "otthonfelujitasi-hitelprogram-hoszivattyu_"
+ },
+ "9295": {
+  "url": "https://a1solar.hu/wp-content/uploads/2024/06/otthonfelujitasi-hitelprogram-tech.png",
+  "title": "otthonfelujitasi-hitelprogram-tech",
+  "slug": "otthonfelujitasi-hitelprogram-tech"
+ },
+ "9399": {
+  "url": "https://a1solar.hu/wp-content/uploads/2024/07/A1-arlista-20240701-1_compressed.pdf",
+  "title": "A1 - arlista-20240701 (1)_compressed",
+  "slug": "a1-arlista-20240701-1_compressed"
+ },
+ "9436": {
+  "url": "https://a1solar.hu/wp-content/uploads/2024/08/getimage.png",
+  "title": "getimage",
+  "slug": "getimage"
+ },
+ "9441": {
+  "url": "https://a1solar.hu/wp-content/uploads/2024/08/getimage1.png",
+  "title": "getimage1",
+  "slug": "getimage1"
+ },
+ "9458": {
+  "url": "https://a1solar.hu/wp-content/uploads/2024/08/a-napenergia-jovoje-az-okosotthonokban.png",
+  "title": "a-napenergia-jovoje-az-okosotthonokban",
+  "slug": "a-napenergia-jovoje-az-okosotthonokban"
+ },
+ "9461": {
+  "url": "https://a1solar.hu/wp-content/uploads/2024/08/uj-fejlesztesek-es-innovaciok-a-napelem-technologiaban.png",
+  "title": "uj-fejlesztesek-es-innovaciok-a-napelem-technologiaban",
+  "slug": "uj-fejlesztesek-es-innovaciok-a-napelem-technologiaban"
+ },
+ "9464": {
+  "url": "https://a1solar.hu/wp-content/uploads/2024/08/a-napelemes-nagykereskedelem-trendjei-es-kihivasai.png",
+  "title": "a-napelemes-nagykereskedelem-trendjei-es-kihivasai",
+  "slug": "a-napelemes-nagykereskedelem-trendjei-es-kihivasai"
+ },
+ "9482": {
+  "url": "https://a1solar.hu/wp-content/uploads/2024/08/fodemszigeteles.png",
+  "title": "fodemszigeteles",
+  "slug": "fodemszigeteles"
+ },
+ "9484": {
+  "url": "https://a1solar.hu/wp-content/uploads/2024/08/falusicsok-e1723718509681.png",
+  "title": "falusicsok",
+  "slug": "falusicsok"
+ },
+ "9512": {
+  "url": "https://a1solar.hu/wp-content/uploads/2024/08/fodemszigeteles-1.png",
+  "title": "fodemszigeteles",
+  "slug": "fodemszigeteles-2"
+ },
+ "9525": {
+  "url": "https://a1solar.hu/wp-content/uploads/2024/08/fodemszigeteles-2.png",
+  "title": "fodemszigeteles",
+  "slug": "fodemszigeteles-3"
+ },
+ "9564": {
+  "url": "https://a1solar.hu/wp-content/uploads/2024/08/okosotthon.png",
+  "title": "okosotthon",
+  "slug": "okosotthon"
+ },
+ "9566": {
+  "url": "https://a1solar.hu/wp-content/uploads/2024/08/okosotthon1.png",
+  "title": "okosotthon1",
+  "slug": "okosotthon1"
+ },
+ "9765": {
+  "url": "https://a1solar.hu/wp-content/uploads/2024/11/A1solar-feher-logo.svg",
+  "title": "A1solar-feher-logo.svg",
+  "slug": "a1solar-feher-logo-svg"
+ },
+ "9766": {
+  "url": "https://a1solar.hu/wp-content/uploads/2024/11/656db08dae423582b7f84240_Lakossagi-napelem-2.jpg",
+  "title": "656db08dae423582b7f84240_Lakossági-napelem-2.jpg",
+  "slug": "656db08dae423582b7f84240_lakossagi-napelem-2-jpg"
+ },
+ "9767": {
+  "url": "https://a1solar.hu/wp-content/uploads/2024/11/do-media-bisnode-hu.jpeg",
+  "title": "do-media-bisnode-hu.jpeg",
+  "slug": "do-media-bisnode-hu-jpeg-2"
+ },
+ "9768": {
+  "url": "https://a1solar.hu/wp-content/uploads/2024/11/mnnsz_logo_betu_fekete-1.png",
+  "title": "mnnsz_logo_betu_fekete-1.png",
+  "slug": "mnnsz_logo_betu_fekete-1-png-2"
+ },
+ "9769": {
+  "url": "https://a1solar.hu/wp-content/uploads/2024/11/Deye-vagott-.png",
+  "title": "Deye-vagott-.png",
+  "slug": "deye-vagott-png"
+ },
+ "9770": {
+  "url": "https://a1solar.hu/wp-content/uploads/2024/11/sunways-logo-99.png",
+  "title": "sunways-logo-99.png",
+  "slug": "sunways-logo-99-png"
+ },
+ "9771": {
+  "url": "https://a1solar.hu/wp-content/uploads/2024/11/A1solar-logo.svg",
+  "title": "A1solar-logo.svg",
+  "slug": "a1solar-logo-svg-2"
+ },
+ "9804": {
+  "url": "https://a1solar.hu/wp-content/uploads/2024/11/okosotthon_logo.svg",
+  "title": "okosotthon_logo",
+  "slug": "okosotthon_logo"
+ },
+ "9831": {
+  "url": "https://a1solar.hu/wp-content/uploads/2024/11/otthonfelujitasi-tamogatas-1.png",
+  "title": "otthonfelujitasi-tamogatas (1)",
+  "slug": "otthonfelujitasi-tamogatas-1"
+ },
+ "10032": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/01/otthonfelujitasi-tamogatas-2025-1-1.png",
+  "title": "otthonfelujitasi-tamogatas-2025-1 (1)",
+  "slug": "otthonfelujitasi-tamogatas-2025-1-1"
+ },
+ "10085": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/01/otthonfelujitasi-tamogatas-2025-2-1.png",
+  "title": "otthonfelujitasi-tamogatas-2025-2 (1)",
+  "slug": "otthonfelujitasi-tamogatas-2025-2-1"
+ },
+ "10114": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/01/otthonfelujitasi-tamogatas-2025-3-1.png",
+  "title": "otthonfelujitasi-tamogatas-2025-3 (1)",
+  "slug": "otthonfelujitasi-tamogatas-2025-3-1"
+ },
+ "10116": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/01/otthonfelujitasi-tamogatas-2025-4-1.png",
+  "title": "otthonfelujitasi-tamogatas-2025-4 (1)",
+  "slug": "otthonfelujitasi-tamogatas-2025-4-1"
+ },
+ "10168": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/01/otthonfelujitasi-tamogatas-1.png",
+  "title": "otthonfelújítási támogatás 1",
+  "slug": "otthonfelujitasi-tamogatas-1-2"
+ },
+ "10169": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/01/otthonfelujitasi-tamogatas-2.png",
+  "title": "otthonfelújítási támogatás 2",
+  "slug": "otthonfelujitasi-tamogatas-2"
+ },
+ "10210": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/02/50_tamogatas.svg",
+  "title": "50%_támogatás",
+  "slug": "50_tamogatas"
+ },
+ "10217": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/02/tamogatas_banner.svg",
+  "title": "tamogatas_banner",
+  "slug": "tamogatas_banner"
+ },
+ "10247": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/03/ft1000-1.png",
+  "title": "ft1000 (1)",
+  "slug": "ft1000-1"
+ },
+ "10254": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/03/energiatarolas-cegeknek-1.png",
+  "title": "energiatarolas-cegeknek (1)",
+  "slug": "energiatarolas-cegeknek-1"
+ },
+ "10268": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/03/Kelfeder-Zrt.-I-2-mWp.jpg",
+  "title": "Kelfeder Zrt. I 2 mWp",
+  "slug": "kelfeder-zrt-i-2-mwp"
+ },
+ "10316": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/03/Premontrei.jpg",
+  "title": "Premontrei",
+  "slug": "premontrei"
+ },
+ "10317": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/03/photo_2024-02-21_08-54-39-e1742982344750.jpg",
+  "title": "photo_2024-02-21_08-54-39",
+  "slug": "photo_2024-02-21_08-54-39"
+ },
+ "10318": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/03/dji_fly_20240201_123236_119_1706787172213_photo-scaled.jpg",
+  "title": "default",
+  "slug": "default"
+ },
+ "10385": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/03/arbevetel-letszam-a1solar.png",
+  "title": "arbevetel-letszam-a1solar",
+  "slug": "arbevetel-letszam-a1solar"
+ },
+ "10400": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/03/europa-terkep.png",
+  "title": "europa-terkep",
+  "slug": "europa-terkep"
+ },
+ "10409": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/03/biztonsag.png",
+  "title": "biztonsag",
+  "slug": "biztonsag"
+ },
+ "10410": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/03/energiatakarekossag.png",
+  "title": "energiatakarekossag",
+  "slug": "energiatakarekossag"
+ },
+ "10411": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/03/kenyelem.png",
+  "title": "kenyelem",
+  "slug": "kenyelem"
+ },
+ "10412": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/03/kenyelem-1.png",
+  "title": "kenyelem",
+  "slug": "kenyelem-2"
+ },
+ "10413": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/03/BOGWOOD-Kft-scaled.jpg",
+  "title": "BOGWOOD Kft.",
+  "slug": "bogwood-kft"
+ },
+ "10414": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/03/Juskufa-Kft.1.jpg",
+  "title": "Juskufa Kft.1",
+  "slug": "juskufa-kft-1"
+ },
+ "10415": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/03/Kisszallasi-kelteto-kft-2-scaled.jpg",
+  "title": "default",
+  "slug": "default-2"
+ },
+ "10416": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/03/piedl-kft.jpeg",
+  "title": "piedl kft",
+  "slug": "piedl-kft"
+ },
+ "10417": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/03/PI-METAL-Kft.1.jpg",
+  "title": "PI-METÁL Kft.1",
+  "slug": "pi-metal-kft-1"
+ },
+ "10422": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/03/FT_EU_FGC2025_Logo_RGB_White.png",
+  "title": "FT_EU_FGC2025_Logo_RGB_White",
+  "slug": "ft_eu_fgc2025_logo_rgb_white"
+ },
+ "10493": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/03/terkep_vrz1.svg",
+  "title": "terkep_vrz1",
+  "slug": "terkep_vrz1"
+ },
+ "10501": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/03/a1_terjeszkedes.svg",
+  "title": "a1_terjeszkedes",
+  "slug": "a1_terjeszkedes"
+ },
+ "10549": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/03/a1_logo.json",
+  "title": "a1_logo",
+  "slug": "a1_logo"
+ },
+ "10557": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/03/a1_logo.gif",
+  "title": "a1_logo",
+  "slug": "a1_logo-2"
+ },
+ "10558": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/03/c14e5643-2e56-42bb-a269-d2640738804d.gif",
+  "title": "c14e5643-2e56-42bb-a269-d2640738804d",
+  "slug": "c14e5643-2e56-42bb-a269-d2640738804d"
+ },
+ "10560": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/03/facebook_icon.png",
+  "title": "facebook_icon",
+  "slug": "facebook_icon"
+ },
+ "10561": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/03/linkedin_icon.png",
+  "title": "linkedin_icon",
+  "slug": "linkedin_icon"
+ },
+ "10562": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/03/web_icon.png",
+  "title": "web_icon",
+  "slug": "web_icon"
+ },
+ "10571": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/03/Webbanner_1860x800.png",
+  "title": "Webbanner_1860x800",
+  "slug": "webbanner_1860x800"
+ },
+ "10572": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/03/Insta_1080x1080.png",
+  "title": "Insta_1080x1080",
+  "slug": "insta_1080x1080"
+ },
+ "10574": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/03/vector3.png",
+  "title": "vector3",
+  "slug": "vector3"
+ },
+ "10576": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/03/email_banneer.png",
+  "title": "email_banneer",
+  "slug": "email_banneer"
+ },
+ "10634": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/05/photo_2025-05-21_20-41-58.jpg",
+  "title": "photo_2025-05-21_20-41-58",
+  "slug": "photo_2025-05-21_20-41-58"
+ },
+ "10635": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/05/photo_2025-05-21_20-42-23.jpg",
+  "title": "photo_2025-05-21_20-42-23",
+  "slug": "photo_2025-05-21_20-42-23"
+ },
+ "10646": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/05/ginop-plusz-1-4-5-25-1.png",
+  "title": "ginop-plusz-1-4-5-25",
+  "slug": "ginop-plusz-1-4-5-25-1"
+ },
+ "10652": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/05/3.png",
+  "title": "3",
+  "slug": "3-5"
+ },
+ "10653": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/05/2.png",
+  "title": "2",
+  "slug": "2-4"
+ },
+ "10654": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/05/1.png",
+  "title": "1",
+  "slug": "1-5"
+ },
+ "10665": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/05/napelem_inverter_hoszivattyu_kep_1200x700px.jpg",
+  "title": "napelem_inverter_hoszivattyu_kep_1200x700px",
+  "slug": "napelem_inverter_hoszivattyu_kep_1200x700px"
+ },
+ "10691": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/05/pexels-los-muertos-crew-8853509.jpg",
+  "title": "pexels-los-muertos-crew-8853509.jpg",
+  "slug": "pexels-los-muertos-crew-8853509-jpg"
+ },
+ "10721": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/06/jedlik-anyos-energetikai-program-2-1.png",
+  "title": "jedlik-anyos-energetikai-program",
+  "slug": "jedlik-anyos-energetikai-program-2-1"
+ },
+ "10734": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/06/Energiatarolas-cegeknek.png",
+  "title": "Energiatárolás cégeknek",
+  "slug": "energiatarolas-cegeknek"
+ },
+ "10779": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/07/18792.jpg",
+  "title": "18792",
+  "slug": "18792"
+ },
+ "10781": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/07/herokep-scaled.png",
+  "title": "herokep",
+  "slug": "herokep"
+ },
+ "10782": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/07/svg_design-elem.svg",
+  "title": "svg_design-elem",
+  "slug": "svg_design-elem"
+ },
+ "10791": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/07/hatter_design_cta.svg",
+  "title": "hatter_design_cta",
+  "slug": "hatter_design_cta"
+ },
+ "10792": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/07/arrow_svg.svg",
+  "title": "arrow_svg",
+  "slug": "arrow_svg"
+ },
+ "10805": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/07/cta_normal.svg",
+  "title": "cta_normal",
+  "slug": "cta_normal"
+ },
+ "10806": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/07/cta_prio.svg",
+  "title": "cta_prio",
+  "slug": "cta_prio"
+ },
+ "10885": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/07/smaller.svg",
+  "title": "smaller",
+  "slug": "smaller"
+ },
+ "10915": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/07/a1_lablec.svg",
+  "title": "a1_lablec",
+  "slug": "a1_lablec"
+ },
+ "10916": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/07/a1_lablecc.svg",
+  "title": "a1_lablecc",
+  "slug": "a1_lablecc"
+ },
+ "10917": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/07/lableec.svg",
+  "title": "lableec",
+  "slug": "lableec"
+ },
+ "10983": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/07/a1_lableec.svg",
+  "title": "a1_lableec",
+  "slug": "a1_lableec"
+ },
+ "11033": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/07/badgek.png",
+  "title": "badgek",
+  "slug": "badgek"
+ },
+ "11037": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/07/Telepitettuk-az-elso-Napenergia-Plusz-Programos-rendszert-A1-Solar.mp4",
+  "title": "Telepítettük az első Napenergia Plusz Programos rendszert! - A1 Solar",
+  "slug": "telepitettuk-az-elso-napenergia-plusz-programos-rendszert-a1-solar"
+ },
+ "11096": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/07/mobile_bg_design.svg",
+  "title": "mobile_bg_design",
+  "slug": "mobile_bg_design"
+ },
+ "11101": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/07/mobile_mask_cta.svg",
+  "title": "mobile_mask_cta",
+  "slug": "mobile_mask_cta"
+ },
+ "11191": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/07/73400.jpg",
+  "title": "73400",
+  "slug": "73400"
+ },
+ "11192": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/07/28522.jpg",
+  "title": "28522",
+  "slug": "28522"
+ },
+ "11221": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/07/photo_2025-07-30_10-24-40.jpg",
+  "title": "photo_2025-07-30_10-24-40",
+  "slug": "photo_2025-07-30_10-24-40"
+ },
+ "11236": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/07/photo_2025-07-30_11-05-00.jpg",
+  "title": "photo_2025-07-30_11-05-00",
+  "slug": "photo_2025-07-30_11-05-00"
+ },
+ "11291": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/07/photo_5764948694217641556_y.jpg",
+  "title": "fox-ess-g-max-telepites",
+  "slug": "photo_5764948694217641556_y"
+ },
+ "11293": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/07/photo_5764948694217641557_y.jpg",
+  "title": "photo_5764948694217641557_y",
+  "slug": "photo_5764948694217641557_y"
+ },
+ "11294": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/07/photo_5764948694217641557_y-edited.jpg",
+  "title": "photo_5764948694217641557_y",
+  "slug": "photo_5764948694217641557_y-2"
+ },
+ "11296": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/07/photo_5764948694217641557_y-1.jpg",
+  "title": "photo_5764948694217641557_y",
+  "slug": "photo_5764948694217641557_y-3"
+ },
+ "11297": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/07/photo_5764948694217641557_y-1-edited.jpg",
+  "title": "photo_5764948694217641557_y",
+  "slug": "photo_5764948694217641557_y-4"
+ },
+ "11364": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/08/Harasztosi_Szabolcs.png",
+  "title": "Harasztosi_Szabolcs",
+  "slug": "harasztosi_szabolcs"
+ },
+ "11474": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/08/47611.jpg",
+  "title": "47611",
+  "slug": "47611"
+ },
+ "11475": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/08/byd.png",
+  "title": "byd",
+  "slug": "byd"
+ },
+ "11476": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/08/deye-1.png",
+  "title": "deye (1)",
+  "slug": "deye-1"
+ },
+ "11477": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/08/fox-ess_622f953c-3d34-4715-b73e-206eadf17ed8.png",
+  "title": "fox-ess_622f953c-3d34-4715-b73e-206eadf17ed8",
+  "slug": "fox-ess_622f953c-3d34-4715-b73e-206eadf17ed8"
+ },
+ "11478": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/08/projoy.png",
+  "title": "projoy",
+  "slug": "projoy"
+ },
+ "11479": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/08/longi-logo-1.svg",
+  "title": "longi-logo (1)",
+  "slug": "longi-logo-1"
+ },
+ "11480": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/08/kbe_berlin.png",
+  "title": "kbe_berlin",
+  "slug": "kbe_berlin"
+ },
+ "11481": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/08/ja-solar-logo-1.svg",
+  "title": "ja-solar-logo (1)",
+  "slug": "ja-solar-logo-1"
+ },
+ "11482": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/08/huawei-logo-1.svg",
+  "title": "huawei-logo (1)",
+  "slug": "huawei-logo-1"
+ },
+ "11483": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/08/risen-energy-logo-1.svg",
+  "title": "risen-energy-logo (1)",
+  "slug": "risen-energy-logo-1"
+ },
+ "11484": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/08/sharp.png",
+  "title": "sharp",
+  "slug": "sharp"
+ },
+ "11485": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/08/solinteg.png",
+  "title": "solinteg",
+  "slug": "solinteg"
+ },
+ "11486": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/08/thornova.png",
+  "title": "thornova",
+  "slug": "thornova"
+ },
+ "11487": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/08/tigo-1.png",
+  "title": "tigo (1)",
+  "slug": "tigo-1"
+ },
+ "11488": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/08/wurth.png",
+  "title": "wurth",
+  "slug": "wurth"
+ },
+ "11499": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/08/240061.jpg",
+  "title": "240061",
+  "slug": "240061"
+ },
+ "11500": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/08/8024.jpg",
+  "title": "8024",
+  "slug": "8024"
+ },
+ "11509": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/08/2808.jpg",
+  "title": "2808",
+  "slug": "2808"
+ },
+ "11510": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/08/8363.jpg",
+  "title": "8363",
+  "slug": "8363"
+ },
+ "11511": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/08/7854.jpg",
+  "title": "7854",
+  "slug": "7854"
+ },
+ "11551": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/08/GoPro-Energy-–-GP-ESS-_-GP-HV.png",
+  "title": "GoPro Energy – GP-ESS _ GP-HV",
+  "slug": "gopro-energy-gp-ess-_-gp-hv"
+ },
+ "11552": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/08/Deye-GE-F120-2H2.png",
+  "title": "Deye GE-F120-2H2",
+  "slug": "deye-ge-f120-2h2"
+ },
+ "11553": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/08/Deye-GE-F60.png",
+  "title": "Deye GE-F60",
+  "slug": "deye-ge-f60"
+ },
+ "11554": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/08/Huawei-LUNA2000-2S10-215.png",
+  "title": "Huawei LUNA2000-2S10-215",
+  "slug": "huawei-luna2000-2s10-215"
+ },
+ "11555": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/08/Fox-ESS-G-MAX-GM215kWh-100kW-2h.png",
+  "title": "Fox ESS G-MAX GM215kWh-100kW-2h",
+  "slug": "fox-ess-g-max-gm215kwh-100kw-2h"
+ },
+ "11568": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/07/logoka1.png",
+  "title": "logoka1",
+  "slug": "logoka1"
+ },
+ "11569": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/07/logoka1solar.png",
+  "title": "logoka1solar",
+  "slug": "logoka1solar"
+ },
+ "11571": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/08/Kepernyofoto-2025-08-15-11.33.49.png",
+  "title": "Képernyőfotó 2025-08-15 - 11.33.49",
+  "slug": "kepernyofoto-2025-08-15-11-33-49"
+ },
+ "11589": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/08/photo_5764948694217641557_y-e1755512642459.jpg",
+  "title": "fox-ess-g-max-telepites",
+  "slug": "photo_5764948694217641557_y-5"
+ },
+ "11621": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/08/fox-ess-g-max-telepites.png",
+  "title": "fox-ess-g-max-telepites",
+  "slug": "fox-ess-g-max-telepites-2"
+ },
+ "11853": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/10/svg_design-elem.svg",
+  "title": "svg_design-elem.svg",
+  "slug": "svg_design-elem-svg"
+ },
+ "11854": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/10/mobile_bg_design.svg",
+  "title": "mobile_bg_design.svg",
+  "slug": "mobile_bg_design-svg"
+ },
+ "11855": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/10/fodemszigeteles.png",
+  "title": "fodemszigeteles.png",
+  "slug": "fodemszigeteles-png"
+ },
+ "11856": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/10/ingyenespadlasszigeteles.png",
+  "title": "ingyenespadlasszigeteles.png",
+  "slug": "ingyenespadlasszigeteles-png"
+ },
+ "11857": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/10/A1solar-logo.svg",
+  "title": "A1solar-logo.svg",
+  "slug": "a1solar-logo-svg-3"
+ },
+ "11858": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/10/badgek.png",
+  "title": "badgek.png",
+  "slug": "badgek-png"
+ },
+ "11859": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/10/a1_lableec.svg",
+  "title": "a1_lableec.svg",
+  "slug": "a1_lableec-svg"
+ },
+ "11903": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/10/2453.jpg",
+  "title": "2453",
+  "slug": "2453"
+ },
+ "11920": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/10/3065-1.jpg",
+  "title": "3065 (1)",
+  "slug": "3065-1"
+ },
+ "11921": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/10/1368-1.jpg",
+  "title": "1368 (1)",
+  "slug": "1368-1"
+ },
+ "11922": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/10/506-1.jpg",
+  "title": "506 (1)",
+  "slug": "506-1"
+ },
+ "11923": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/10/photo_2025-10-30_11-09-28.jpg",
+  "title": "photo_2025-10-30_11-09-28",
+  "slug": "photo_2025-10-30_11-09-28"
+ },
+ "12000": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/11/indul-a-jedlik-anyos-energetikai-program.png",
+  "title": "indul-a-jedlik-anyos-energetikai-program",
+  "slug": "indul-a-jedlik-anyos-energetikai-program"
+ },
+ "12076": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/11/2149113525.jpg",
+  "title": "2149113525",
+  "slug": "2149113525"
+ },
+ "12077": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/11/9846255.jpg",
+  "title": "9846255",
+  "slug": "9846255"
+ },
+ "12082": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/11/szenyan-endre.png",
+  "title": "szenyán endre",
+  "slug": "szenyan-endre-2"
+ },
+ "12116": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/12/uzleti-etikai-dij-a1-solar-2025-scaled.jpg",
+  "title": "uzleti-etikai-dij-a1-solar-2025",
+  "slug": "uzleti-etikai-dij-a1-solar-2025"
+ },
+ "12124": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/12/Uj-lakossagi-energiatarolos-tamogatasi-program-indul.png",
+  "title": "Új lakossági energiatárolós támogatási program indul",
+  "slug": "uj-lakossagi-energiatarolos-tamogatasi-program-indul"
+ },
+ "12138": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/12/lakossagi-energiatarolo-tamogatas.png",
+  "title": "lakossagi-energiatarolo-tamogatas",
+  "slug": "lakossagi-energiatarolo-tamogatas-2"
+ },
+ "12151": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/12/a1solar_badgek.png",
+  "title": "a1solar_badgek",
+  "slug": "a1solar_badgek"
+ },
+ "12157": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/12/a1solar_badgek-1.png",
+  "title": "a1solar_badgek (1)",
+  "slug": "a1solar_badgek-1"
+ },
+ "12244": {
+  "url": "https://a1solar.hu/wp-content/uploads/2026/01/hogyan-mukodnek-az-akkumulatoros-energiatarolo-rendszerek.png",
+  "title": "hogyan-mukodnek-az-akkumulatoros-energiatarolo-rendszerek",
+  "slug": "hogyan-mukodnek-az-akkumulatoros-energiatarolo-rendszerek"
+ },
+ "12246": {
+  "url": "https://a1solar.hu/wp-content/uploads/2026/01/hogyan-toltodik-egy-akkumulator-egy-lakossagi-rendszerben.png",
+  "title": "hogyan-toltodik-egy-akkumulator-egy-lakossagi-rendszerben",
+  "slug": "hogyan-toltodik-egy-akkumulator-egy-lakossagi-rendszerben"
+ },
+ "12249": {
+  "url": "https://a1solar.hu/wp-content/uploads/2026/01/hagyomanyos-napelemes-rendszer-atalakitasa-hibrid-rendszerre-lepesrol-lepesre-utmutato.png",
+  "title": "hagyomanyos-napelemes-rendszer-atalakitasa-hibrid-rendszerre-lepesrol-lepesre-utmutato",
+  "slug": "hagyomanyos-napelemes-rendszer-atalakitasa-hibrid-rendszerre-lepesrol-lepesre-utmutato"
+ },
+ "12252": {
+  "url": "https://a1solar.hu/wp-content/uploads/2026/01/milyen-koltsegei-vannak-egy-hagyomanyos-napelemes-rendszer-hibridre-torteno-atalakitasanak.png",
+  "title": "milyen-koltsegei-vannak-egy-hagyomanyos-napelemes-rendszer-hibridre-torteno-atalakitasanak",
+  "slug": "milyen-koltsegei-vannak-egy-hagyomanyos-napelemes-rendszer-hibridre-torteno-atalakitasanak"
+ },
+ "12255": {
+  "url": "https://a1solar.hu/wp-content/uploads/2026/01/biztonsagosak-e-az-otthoni-akkumulatorok.png",
+  "title": "biztonsagosak-e-az-otthoni-akkumulatorok",
+  "slug": "biztonsagosak-e-az-otthoni-akkumulatorok"
+ },
+ "12258": {
+  "url": "https://a1solar.hu/wp-content/uploads/2026/01/mit-jelent-a-fazisasszimetria-az-invertereknel.png",
+  "title": "mit-jelent-a-fazisasszimetria-az-invertereknel",
+  "slug": "mit-jelent-a-fazisasszimetria-az-invertereknel"
+ },
+ "12261": {
+  "url": "https://a1solar.hu/wp-content/uploads/2026/01/mekkora-akkumulatorra-van-valojaban-szukseg-egy-csaladi-hazban.png",
+  "title": "mekkora-akkumulatorra-van-valojaban-szukseg-egy-csaladi-hazban",
+  "slug": "mekkora-akkumulatorra-van-valojaban-szukseg-egy-csaladi-hazban"
+ },
+ "12264": {
+  "url": "https://a1solar.hu/wp-content/uploads/2026/01/mit-tud-es-mit-nem-tud-egy-energiatarolo-aramszunet-eseten.png",
+  "title": "mit-tud-es-mit-nem-tud-egy-energiatarolo-aramszunet-eseten",
+  "slug": "mit-tud-es-mit-nem-tud-egy-energiatarolo-aramszunet-eseten"
+ },
+ "12267": {
+  "url": "https://a1solar.hu/wp-content/uploads/2026/01/mi-tortenik-a-napelemmel-ha-tele-az-akkumulator.png",
+  "title": "mi-tortenik-a-napelemmel-ha-tele-az-akkumulator",
+  "slug": "mi-tortenik-a-napelemmel-ha-tele-az-akkumulator"
+ },
+ "12275": {
+  "url": "https://a1solar.hu/wp-content/uploads/2026/01/tipikus-muszaki-tevhitek-az-energiatarolassal-kapcsolatban.png",
+  "title": "tipikus-muszaki-tevhitek-az-energiatarolassal-kapcsolatban",
+  "slug": "tipikus-muszaki-tevhitek-az-energiatarolassal-kapcsolatban"
+ },
+ "12358": {
+  "url": "https://a1solar.hu/wp-content/uploads/2026/01/3104-1-1.jpg",
+  "title": "3104 (1) (1)",
+  "slug": "3104-1-1"
+ },
+ "12359": {
+  "url": "https://a1solar.hu/wp-content/uploads/2026/01/16088-1.jpg",
+  "title": "16088 (1)",
+  "slug": "16088-1"
+ },
+ "12364": {
+  "url": "https://a1solar.hu/wp-content/uploads/2026/01/DEYE.png",
+  "title": "DEYE",
+  "slug": "deye"
+ },
+ "12365": {
+  "url": "https://a1solar.hu/wp-content/uploads/2026/01/FOXESS.png",
+  "title": "FOXESS",
+  "slug": "foxess"
+ },
+ "12366": {
+  "url": "https://a1solar.hu/wp-content/uploads/2026/01/HUAWEI.png",
+  "title": "HUAWEI",
+  "slug": "huawei"
+ },
+ "12367": {
+  "url": "https://a1solar.hu/wp-content/uploads/2026/01/SIGENERGY.png",
+  "title": "SIGENERGY",
+  "slug": "sigenergy"
+ },
+ "12405": {
+  "url": "https://a1solar.hu/wp-content/uploads/2026/01/miert_a_sigenergy_a_legjobb_valasztas_az_otthoni_energiatarolasban-1.png",
+  "title": "miert_a_sigenergy_a_legjobb_valasztas_az_otthoni_energiatarolasban",
+  "slug": "miert_a_sigenergy_a_legjobb_valasztas_az_otthoni_energiatarolasban-1"
+ },
+ "12415": {
+  "url": "https://a1solar.hu/wp-content/uploads/2026/01/sigenergy_vs_fox_ess_akkumulator_melyik_a_legjobb_valasztas_2026.png",
+  "title": "sigenergy_vs_fox_ess_akkumulator_melyik_a_legjobb_valasztas_2026_ra",
+  "slug": "sigenergy_vs_fox_ess_akkumulator_melyik_a_legjobb_valasztas_2026"
+ },
+ "12450": {
+  "url": "https://a1solar.hu/wp-content/uploads/2026/01/39411-1.jpg",
+  "title": "39411 (1)",
+  "slug": "39411-1"
+ },
+ "12451": {
+  "url": "https://a1solar.hu/wp-content/uploads/2026/01/24233-1.jpg",
+  "title": "24233 (1)",
+  "slug": "24233-1"
+ },
+ "12452": {
+  "url": "https://a1solar.hu/wp-content/uploads/2026/01/gift.svg",
+  "title": "gift",
+  "slug": "gift"
+ },
+ "12453": {
+  "url": "https://a1solar.hu/wp-content/uploads/2026/01/plane.svg",
+  "title": "plane",
+  "slug": "plane"
+ },
+ "12454": {
+  "url": "https://a1solar.hu/wp-content/uploads/2026/01/calendar-1.svg",
+  "title": "calendar-1",
+  "slug": "calendar-1"
+ },
+ "12455": {
+  "url": "https://a1solar.hu/wp-content/uploads/2026/01/pin.svg",
+  "title": "pin",
+  "slug": "pin"
+ },
+ "12528": {
+  "url": "https://a1solar.hu/wp-content/uploads/2026/02/layers-2.svg",
+  "title": "layers-2",
+  "slug": "layers-2"
+ },
+ "12596": {
+  "url": "https://a1solar.hu/wp-content/uploads/2026/02/A1_Solar_Lakossagi_autotolto_backup_solaredge_arlista.pdf",
+  "title": "A1_Solar_Lakossagi_autotolto_backup_solaredge_arlista",
+  "slug": "a1_solar_lakossagi_autotolto_backup_solaredge_arlista"
+ },
+ "12610": {
+  "url": "https://a1solar.hu/wp-content/uploads/2026/02/Deye_Huawei_webinar_A1Solar_mod.pdf",
+  "title": "Deye_Huawei_webinar_A1Solar_mód",
+  "slug": "deye_huawei_webinar_a1solar_mod"
+ },
+ "12611": {
+  "url": "https://a1solar.hu/wp-content/uploads/2026/02/Otthoni-Energiatarolo-Program-bemutato-mod.pdf",
+  "title": "Otthoni Energiatároló Program - bemutató mód",
+  "slug": "otthoni-energiatarolo-program-bemutato-mod"
+ },
+ "12612": {
+  "url": "https://a1solar.hu/wp-content/uploads/2026/02/Sigenergy_FoxESS_webinar_A1Solarv3.pdf",
+  "title": "Sigenergy_FoxESS_webinar_A1Solarv3",
+  "slug": "sigenergy_foxess_webinar_a1solarv3"
+ },
+ "12616": {
+  "url": "https://a1solar.hu/wp-content/uploads/2025/07/a1solar_badgek.png",
+  "title": "a1solar_badgek",
+  "slug": "a1solar_badgek-2"
+ },
+ "12626": {
+  "url": "https://a1solar.hu/wp-content/uploads/2026/02/tudastar_blog-3.png",
+  "title": "tudastar_blog (3)",
+  "slug": "tudastar_blog-3"
+ },
+ "12645": {
+  "url": "https://a1solar.hu/wp-content/uploads/2026/02/10_kw_napelemes_rendszer_es_akkumulatoros_energiatarolas.png",
+  "title": "10_kw_napelemes_rendszer_es_akkumulatoros_energiatarolas",
+  "slug": "10_kw_napelemes_rendszer_es_akkumulatoros_energiatarolas"
+ },
+ "12649": {
+  "url": "https://a1solar.hu/wp-content/uploads/2026/02/KOMA_segedlet_Koztartozasmentes_adozoi_adatbazisban_torteno_szerepelteteshez.pdf",
+  "title": "KOMA_segédlet_Köztartozásmentes_adózói_adatbázisban_történő_szerepeltetéshez",
+  "slug": "koma_segedlet_koztartozasmentes_adozoi_adatbazisban_torteno_szerepelteteshez"
+ },
+ "12650": {
+  "url": "https://a1solar.hu/wp-content/uploads/2026/02/vallalkozas_van_bejelentve_a_lakcimen_mikor_gond_es_mikor_nem-1.png",
+  "title": "vallalkozas_van_bejelentve_a_lakcimen_mikor_gond_es_mikor_nem",
+  "slug": "vallalkozas_van_bejelentve_a_lakcimen_mikor_gond_es_mikor_nem-1"
+ },
+ "12653": {
+  "url": "https://a1solar.hu/wp-content/uploads/2026/02/mi_tortenik_marcius_16_tol_az_otthoni_energiatarolo_programban-1.png",
+  "title": "mi_tortenik_marcius_16_tol_az_otthoni_energiatarolo_programban",
+  "slug": "mi_tortenik_marcius_16_tol_az_otthoni_energiatarolo_programban-1"
+ },
+ "12660": {
+  "url": "https://a1solar.hu/wp-content/uploads/2026/02/marad_a_szaldo_inverteercsere_utan-otthoni-energiatarolo-program-1.png",
+  "title": "marad_a_szaldo_inverteercsere_utan-otthoni-energiatarolo-program",
+  "slug": "marad_a_szaldo_inverteercsere_utan-otthoni-energiatarolo-program-1"
+ },
+ "12662": {
+  "url": "https://a1solar.hu/wp-content/uploads/2026/02/marad_a_szaldo_inverteercsere_utan-otthoni-energiatarolo-program-2.png",
+  "title": "marad_a_szaldo_inverteercsere_utan-otthoni-energiatarolo-program",
+  "slug": "marad_a_szaldo_inverteercsere_utan-otthoni-energiatarolo-program-2"
+ },
+ "12678": {
+  "url": "https://a1solar.hu/wp-content/uploads/2026/03/az_a1_solar_ujra_a-_financial_times_TOP1000_es_listajan-1.png",
+  "title": "az_a1_solar_ujra_a _financial_times_TOP1000_es_listajan",
+  "slug": "az_a1_solar_ujra_a-_financial_times_top1000_es_listajan-1"
+ },
+ "12689": {
+  "url": "https://a1solar.hu/wp-content/uploads/2026/03/milyen_dokumentumok_szuksegesek_az_otthoni_energiatarolo_program_igazolasi_szakaszahoz.png",
+  "title": "milyen_dokumentumok_szuksegesek_az_otthoni_energiatarolo_program_igazolasi_szakaszahoz",
+  "slug": "milyen_dokumentumok_szuksegesek_az_otthoni_energiatarolo_program_igazolasi_szakaszahoz"
+ },
+ "12713": {
+  "url": "https://a1solar.hu/wp-content/uploads/2026/03/ChatGPT-Image-2026.-marc.-13.-21_20_16.png",
+  "title": "Otthoni Energiatároló Program",
+  "slug": "chatgpt-image-2026-marc-13-21_20_16"
+ },
+ "12714": {
+  "url": "https://a1solar.hu/wp-content/uploads/2026/03/otthoni_energiatarolo_program-1.png",
+  "title": "otthoni_energiatarolo_program (1)",
+  "slug": "otthoni_energiatarolo_program-1"
+ },
+ "12725": {
+  "url": "https://a1solar.hu/wp-content/uploads/2026/03/49ffa5400e0943bcb8ed15b44a4f21c4.mp4",
+  "title": "49ffa5400e0943bcb8ed15b44a4f21c4",
+  "slug": "49ffa5400e0943bcb8ed15b44a4f21c4"
+ },
+ "12726": {
+  "url": "https://a1solar.hu/wp-content/uploads/2026/03/square-check-big.svg",
+  "title": "square-check-big",
+  "slug": "square-check-big"
+ },
+ "12833": {
+  "url": "https://a1solar.hu/wp-content/uploads/2026/04/energrosso_logo_final_red_yellow-4.svg",
+  "title": "energrosso_logo_final_red_yellow (4)",
+  "slug": "energrosso_logo_final_red_yellow-4"
+ },
+ "12835": {
+  "url": "https://a1solar.hu/wp-content/uploads/2026/04/a1_opengraph-scaled.png",
+  "title": "a1_opengraph",
+  "slug": "a1_opengraph"
+ },
+ "12917": {
+  "url": "https://a1solar.hu/wp-content/uploads/2026/06/46456156_3542166_d75e20fceebfd53881e24295c1b235ab_wm.jpg",
+  "title": "46456156_3542166_d75e20fceebfd53881e24295c1b235ab_wm",
+  "slug": "46456156_3542166_d75e20fceebfd53881e24295c1b235ab_wm"
+ },
+ "12919": {
+  "url": "https://a1solar.hu/wp-content/uploads/2026/06/2025.11.27.-Uzleti-Etikai-Dij-159-1-scaled.jpg",
+  "title": "2025.11.27. Üzleti Etikai Díj--159 (1)",
+  "slug": "2025-11-27-uzleti-etikai-dij-159-1"
+ },
+ "12932": {
+  "url": "https://a1solar.hu/wp-content/uploads/2026/06/modositottak-az-rrf-6-2-1-palyazat-elszamlasi-hataridejet.png",
+  "title": "modositottak-az-rrf--6-2-1-palyazat-elszamlasi-hataridejet",
+  "slug": "modositottak-az-rrf-6-2-1-palyazat-elszamlasi-hataridejet"
+ },
+ "12952": {
+  "url": "https://a1solar.hu/wp-content/uploads/2026/06/A1_Solar_Ajanlat_otthoni_energiatarolas_vegleges-0529.pdf",
+  "title": "A1_Solar_Ajanlat_otthoni_energiatarolas_vegleges 0529",
+  "slug": "a1_solar_ajanlat_otthoni_energiatarolas_vegleges-0529"
+ },
+ "12964": {
+  "url": "https://a1solar.hu/wp-content/uploads/2026/06/photo_2026-06-24_11-59-38.jpg",
+  "title": "photo_2026-06-24_11-59-38",
+  "slug": "photo_2026-06-24_11-59-38"
+ },
+ "12989": {
+  "url": "https://a1solar.hu/wp-content/uploads/2026/06/Panelmosas-aloldalhoz-A1-Solar-1080p-h264.mp4",
+  "title": "Panelmosás aloldalhoz - A1 Solar (1080p, h264)",
+  "slug": "panelmosas-aloldalhoz-a1-solar-1080p-h264"
+ },
+ "13006": {
+  "url": "https://a1solar.hu/wp-content/uploads/2026/06/vallalati-napelem-tisztitas-es-karbantartas.jpg",
+  "title": "vallalati-napelem-tisztitas-es-karbantartas",
+  "slug": "vallalati-napelem-tisztitas-es-karbantartas-2"
+ },
+ "13009": {
+  "url": "https://a1solar.hu/wp-content/uploads/2026/06/lakossagi-napelem-tisztitas-karbantartas.png",
+  "title": "lakossagi-napelem-tisztitas-karbantartas",
+  "slug": "lakossagi-napelem-tisztitas-karbantartas"
+ },
+ "13067": {
+  "url": "https://a1solar.hu/wp-content/uploads/2026/07/4a28b1cc-adf0-488a-aa59-e6c7cc950323-1.png",
+  "title": "4a28b1cc-adf0-488a-aa59-e6c7cc950323 (1)",
+  "slug": "4a28b1cc-adf0-488a-aa59-e6c7cc950323-1"
+ },
+ "13071": {
+  "url": "https://a1solar.hu/wp-content/uploads/2026/07/Nevtelen-terv-12-1.png",
+  "title": "Névtelen terv (12) (1)",
+  "slug": "nevtelen-terv-12-1"
+ },
+ "13106": {
+  "url": "https://a1solar.hu/wp-content/uploads/2026/07/photo_2026-07-13_11-51-51.jpg",
+  "title": "photo_2026-07-13_11-51-51",
+  "slug": "photo_2026-07-13_11-51-51"
+ }
+}

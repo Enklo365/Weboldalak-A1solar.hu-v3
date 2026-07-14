@@ -1,0 +1,25 @@
+.mirror-root .fluentform-widget-wrapper.hide-fluent-form-labels .ff-el-input--label{display:none!important}
+.mirror-root .fluentform-widget-wrapper.hide-error-message .ff-el-is-error .text-danger{display:none}
+.mirror-root .fluentform-widget-wrapper.fluentform-widget-align-left{margin:0 auto 0 0}
+.mirror-root .fluentform-widget-wrapper.fluentform-widget-align-center{float:none;margin:0 auto}
+.mirror-root .fluentform-widget-wrapper.fluentform-widget-align-right{margin:0 0 0 auto}
+.mirror-root .fluentform-widget-custom-radio-checkbox input[type=checkbox], .mirror-root .fluentform-widget-custom-radio-checkbox input[type=radio]{background:#ddd;height:15px;min-width:1px;outline:none;padding:3px;width:15px}
+.mirror-root .fluentform-widget-custom-radio-checkbox input[type=checkbox]:after, .mirror-root .fluentform-widget-custom-radio-checkbox input[type=radio]:after{border:0 solid transparent;content:"";display:block;height:100%;margin:0;padding:0;width:100%}
+.mirror-root .fluentform-widget-custom-radio-checkbox input[type=checkbox]:checked:after, .mirror-root .fluentform-widget-custom-radio-checkbox input[type=radio]:checked:after{background:#999;background-image:url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E");background-position:50%;background-repeat:no-repeat;background-size:12px}
+.mirror-root .fluentform-widget-custom-radio-checkbox input[type=radio], .mirror-root .fluentform-widget-custom-radio-checkbox input[type=radio]:after{border-radius:50%}
+.mirror-root .fluentform-widget-wrapper .frm-fluent-form .ff-step-header{margin-bottom:0}
+.mirror-root .ff-el-progress-bar{align-items:center;display:flex;height:100%;justify-content:flex-end}
+.mirror-root .fluent-form-widget-step-header-yes .ff-step-header .ff-el-progress-status, .mirror-root .fluent-form-widget-step-progressbar-yes .ff-el-progress{display:block}
+.mirror-root .fluent-form-widget-step-header-yes .frm-fluent-form .ff-step-header, .mirror-root .fluent-form-widget-step-progressbar-yes .frm-fluent-form .ff-step-header{margin-bottom:20px}
+.mirror-root .fluentform-widget-section-break-content-left .ff-el-group.ff-el-section-break{text-align:left}
+.mirror-root .fluentform-widget-section-break-content-center .ff-el-group.ff-el-section-break{text-align:center}
+.mirror-root .fluentform-widget-section-break-content-right .ff-el-group.ff-el-section-break{text-align:right}
+.mirror-root .fluentform-widget-submit-button-full-width .ff-btn-submit{display:block;width:100%}
+.mirror-root .fluentform-widget-submit-button-center .ff-el-group .ff-btn-submit, .mirror-root .fluentform-widget-submit-button-center .ff-el-group.ff-text-left .ff-btn-submit, .mirror-root .fluentform-widget-submit-button-center .ff-el-group.ff-text-right .ff-btn-submit{align-items:center;display:flex;justify-content:center;margin:0 auto}
+.mirror-root .fluentform-widget-submit-button-right .ff-el-group .ff-btn-submit, .mirror-root .fluentform-widget-submit-button-right .ff-el-group.ff-text-left .ff-btn-submit, .mirror-root .fluentform-widget-submit-button-right .ff-el-group.ff-text-right .ff-btn-submit{float:right}
+.mirror-root .fluentform-widget-submit-button-left .ff-el-group .ff-btn-submit, .mirror-root .fluentform-widget-submit-button-left .ff-el-group.ff-text-left .ff-btn-submit, .mirror-root .fluentform-widget-submit-button-left .ff-el-group.ff-text-right .ff-btn-submit{float:left}
+.mirror-root .fluentform-widget-wrapper.hide-placeholder input::-webkit-input-placeholder, .mirror-root .fluentform-widget-wrapper.hide-placeholder textarea::-webkit-input-placeholder{opacity:0;visibility:hidden}
+.mirror-root .fluentform-widget-wrapper.hide-placeholder input:-moz-placeholder, .mirror-root .fluentform-widget-wrapper.hide-placeholder input::-moz-placeholder, .mirror-root .fluentform-widget-wrapper.hide-placeholder textarea:-moz-placeholder, .mirror-root .fluentform-widget-wrapper.hide-placeholder textarea::-moz-placeholder{opacity:0;visibility:hidden}
+.mirror-root .fluentform-widget-wrapper.hide-placeholder input:-ms-input-placeholder, .mirror-root .fluentform-widget-wrapper.hide-placeholder textarea:-ms-input-placeholder{opacity:0;visibility:hidden}
+.mirror-root .fluentform-widget-wrapper.hide-placeholder input::-ms-input-placeholder, .mirror-root .fluentform-widget-wrapper.hide-placeholder textarea::-ms-input-placeholder{opacity:0;visibility:hidden}
+.mirror-root .lity{z-index:9999!important}

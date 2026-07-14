@@ -1,0 +1,18 @@
+.mirror-root .cmplz-video.cmplz-iframe-styles{background-color:transparent}
+.mirror-root .cmplz-video.cmplz-hidden{visibility:hidden !important}
+.mirror-root .cmplz-blocked-content-notice{display:none}
+.mirror-root .cmplz-placeholder-parent{height:inherit}
+.mirror-root .cmplz-optin .cmplz-blocked-content-container .cmplz-blocked-content-notice, .mirror-root .cmplz-optin .cmplz-wp-video .cmplz-blocked-content-notice, .mirror-root .cmplz-optout .cmplz-blocked-content-container .cmplz-blocked-content-notice, .mirror-root .cmplz-optout .cmplz-wp-video .cmplz-blocked-content-notice{display:block}
+.mirror-root .cmplz-blocked-content-container, .mirror-root .cmplz-wp-video{animation-name:cmplz-fadein;animation-duration:600ms;background:#FFF;border:0;border-radius:3px;box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15);display:flex;justify-content:center;align-items:center;background-repeat:no-repeat !important;background-size:cover !important;height:inherit;position:relative}
+.mirror-root .cmplz-blocked-content-container.gmw-map-cover, .mirror-root .cmplz-wp-video.gmw-map-cover{max-height:100%;position:absolute}
+.mirror-root .cmplz-blocked-content-container.cmplz-video-placeholder, .mirror-root .cmplz-wp-video.cmplz-video-placeholder{padding-bottom:initial}
+.mirror-root .cmplz-blocked-content-container iframe, .mirror-root .cmplz-wp-video iframe{visibility:hidden;max-height:100%;border:0 !important}
+.mirror-root .cmplz-blocked-content-container .cmplz-custom-accept-btn, .mirror-root .cmplz-wp-video .cmplz-custom-accept-btn{white-space:normal;text-transform:initial;cursor:pointer;position:absolute !important;width:100%;top:50%;left:50%;transform:translate(-50%,-50%);max-width:200px;font-size:14px;padding:10px;background-color:rgba(0,0,0,0.5);color:#fff;text-align:center;z-index:98;line-height:23px}
+.mirror-root .cmplz-blocked-content-container .cmplz-custom-accept-btn:focus, .mirror-root .cmplz-wp-video .cmplz-custom-accept-btn:focus{border:1px dotted #cecece}
+.mirror-root .cmplz-blocked-content-container .cmplz-blocked-content-notice, .mirror-root .cmplz-wp-video .cmplz-blocked-content-notice{white-space:normal;text-transform:initial;position:absolute !important;width:100%;top:50%;left:50%;transform:translate(-50%,-50%);max-width:300px;font-size:14px;padding:10px;background-color:rgba(0,0,0,0.5);color:#fff;text-align:center;z-index:98;line-height:23px}
+.mirror-root .cmplz-blocked-content-container .cmplz-blocked-content-notice .cmplz-links, .mirror-root .cmplz-wp-video .cmplz-blocked-content-notice .cmplz-links{display:block;margin-bottom:10px}
+.mirror-root .cmplz-blocked-content-container .cmplz-blocked-content-notice .cmplz-links a, .mirror-root .cmplz-wp-video .cmplz-blocked-content-notice .cmplz-links a{color:#fff}
+.mirror-root .cmplz-blocked-content-container .cmplz-blocked-content-notice .cmplz-blocked-content-notice-body, .mirror-root .cmplz-wp-video .cmplz-blocked-content-notice .cmplz-blocked-content-notice-body{display:block}
+.mirror-root .cmplz-blocked-content-container div div{display:none}
+.mirror-root .cmplz-wp-video .cmplz-placeholder-element{width:100%;height:inherit}
+@keyframes cmplz-fadein{from{opacity:0}to{opacity:1}}

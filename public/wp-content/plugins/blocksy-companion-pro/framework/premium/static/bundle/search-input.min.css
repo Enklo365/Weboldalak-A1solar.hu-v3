@@ -1,0 +1,3 @@
+.mirror-root [data-middle=search-input]{--middle-column-width: var(--search-box-max-width, 25%)}
+.mirror-root .ct-header .ct-search-box{width:100%;max-width:var(--max-width, 250px)}
+.mirror-root [data-row=middle][data-middle=search-input] [data-column=middle] .ct-search-box{--max-width: 100%}
