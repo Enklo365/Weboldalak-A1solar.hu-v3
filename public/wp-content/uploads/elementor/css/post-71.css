@@ -1,0 +1,298 @@
+.mirror-root .elementor-kit-71{--e-global-color-primary:#6EC1E4;--e-global-color-secondary:#54595F;--e-global-color-text:#7A7A7A;--e-global-color-accent:#61CE70;--e-global-color-7dd8bcba:#4054B2;--e-global-color-983712:#23A455;--e-global-color-7ccf2c8:#000;--e-global-color-2578f48c:#FFF;--e-global-color-39b70243:#231F20;--e-global-color-5482c5cf:#DA0330;--e-global-color-4894aba5:#F6F6F6;--e-global-typography-primary-font-family:"Roboto";--e-global-typography-primary-font-weight:600;--e-global-typography-secondary-font-family:"Roboto Slab";--e-global-typography-secondary-font-weight:400;--e-global-typography-text-font-family:"Roboto";--e-global-typography-text-font-weight:400;--e-global-typography-accent-font-family:"Roboto";--e-global-typography-accent-font-weight:500;}
+.mirror-root .elementor-kit-71 e-page-transition{background-color:#FFBC7D;}
+.mirror-root .elementor-section.elementor-section-boxed > .elementor-container{max-width:1140px;}
+.mirror-root .e-con{--container-max-width:1140px;}
+.mirror-root .elementor-widget:not(:last-child){margin-block-end:20px;}
+.mirror-root .elementor-element{--widgets-spacing:20px 20px;--widgets-spacing-row:20px;--widgets-spacing-column:20px;}
+{}
+.mirror-root h1.entry-title{display:var(--page-title-display);}
+@media(max-width:1024px){.mirror-root .elementor-section.elementor-section-boxed > .elementor-container{max-width:1024px;}
+.mirror-root .e-con{--container-max-width:1024px;}}
+@media(max-width:767px){.mirror-root .elementor-section.elementor-section-boxed > .elementor-container{max-width:767px;}
+.mirror-root .e-con{--container-max-width:767px;}}
+.mirror-root .a1-regform{
+  background: #fff;
+  padding: 40px 0;
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: inherit;
+}
+.mirror-root .a1-regform .regform-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 20px;
+  align-items: stretch;
+}
+.mirror-root .a1-regform .regform-field{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin-bottom: 0;
+}
+.mirror-root .a1-regform .regform-full{
+  display: block;
+  margin-bottom: 20px;
+}
+.mirror-root .a1-regform .regform-field label{
+  display: block;
+  font-size: 15px;
+  font-weight: 400;
+  color: #1a1a1a;
+  margin-bottom: 10px;
+  line-height: 1.45;
+}
+.mirror-root .a1-regform .req{
+  color: #db0330;
+  margin-left: 2px;
+}
+.mirror-root .a1-regform .regform-field small{
+  display: block;
+  font-size: 13px;
+  color: #6b6b6b;
+  margin: -4px 0 10px;
+  line-height: 1.5;
+  font-style: normal;
+  flex-grow: 1;
+}
+.mirror-root .a1-regform .regform-field > input, .mirror-root .a1-regform .regform-field > select, .mirror-root .a1-regform .regform-field > textarea, .mirror-root .a1-regform .regform-field > .wpcf7-form-control-wrap{
+  margin-top: auto;
+}
+.mirror-root .a1-regform input[type="text"], .mirror-root .a1-regform input[type="email"], .mirror-root .a1-regform input[type="tel"], .mirror-root .a1-regform input[type="date"], .mirror-root .a1-regform input[type="url"], .mirror-root .a1-regform input[type="number"], .mirror-root .a1-regform select{
+  width: 100%;
+  padding: 18px 22px;
+  border: none;
+  border-radius: 999px;
+  background: #f2f1ec;
+  font-size: 15px;
+  color: #1a1a1a;
+  font-family: inherit;
+  box-shadow: none;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
+  outline: none;
+}
+.mirror-root .a1-regform textarea{
+  width: 100%;
+  padding: 18px 22px;
+  border: none;
+  border-radius: 20px;
+  background: #f2f1ec;
+  font-size: 15px;
+  color: #1a1a1a;
+  font-family: inherit;
+  min-height: 120px;
+  box-sizing: border-box;
+  outline: none;
+  resize: vertical;
+}
+.mirror-root .a1-regform input:focus, .mirror-root .a1-regform textarea:focus, .mirror-root .a1-regform select:focus{
+  background: #eae9e3;
+  box-shadow: 0 0 0 2px rgba(219, 3, 48, 0.15);
+}
+.mirror-root .a1-regform input::placeholder, .mirror-root .a1-regform textarea::placeholder{
+  color: #a8a6a0;
+  opacity: 1;
+}
+.mirror-root .a1-regform select{
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%231a1a1a' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 22px center;
+  background-size: 12px;
+  padding-right: 45px;
+}
+.mirror-root .a1-regform .codedropz-upload-wrapper{
+  width: 100%;
+}
+.mirror-root .a1-regform .codedropz-upload-handler{
+  border: 2px dashed #c9c7bd !important;
+  border-radius: 20px !important;
+  background: #f2f1ec !important;
+  padding: 30px 20px !important;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+.mirror-root .a1-regform .codedropz-upload-handler:hover{
+  border-color: #db0330 !important;
+  background: #eae9e3 !important;
+}
+.mirror-root .a1-regform .codedropz-upload-inner{
+  text-align: center;
+}
+.mirror-root .a1-regform .codedropz-upload-inner h3{
+  font-size: 15px !important;
+  font-weight: 500 !important;
+  color: #1a1a1a !important;
+  margin: 0 0 6px !important;
+}
+.mirror-root .a1-regform .codedropz-upload-inner span{
+  color: #6b6b6b !important;
+  font-size: 13px !important;
+}
+.mirror-root .a1-regform .codedropz-upload-inner .dnd-upload-counter, .mirror-root .a1-regform .codedropz-upload-inner span em{
+  font-size: 13px !important;
+  color: #6b6b6b !important;
+  font-style: normal !important;
+}
+.mirror-root .a1-regform .codedropz-btn-wrap a{
+  background: #db0330 !important;
+  color: #fff !important;
+  padding: 10px 24px !important;
+  border-radius: 999px !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  text-decoration: none !important;
+  display: inline-block !important;
+  margin-top: 10px !important;
+  transition: background 0.2s;
+  border: none !important;
+}
+.mirror-root .a1-regform .codedropz-btn-wrap a:hover{
+  background: #b10229 !important;
+  color: #fff !important;
+}
+.mirror-root .a1-regform .dnd-upload-status{
+  margin-top: 12px;
+  background: #fff;
+  border: 1px solid #e5e4de;
+  border-radius: 12px;
+  padding: 12px 16px;
+}
+.mirror-root .a1-regform .dnd-upload-details{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.mirror-root .a1-regform .name{
+  font-size: 14px !important;
+  color: #1a1a1a !important;
+  font-weight: 500 !important;
+}
+.mirror-root .a1-regform .dnd-upload-image{
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.mirror-root .a1-regform .dnd-progress-bar{
+  background: #db0330 !important;
+  height: 4px !important;
+  border-radius: 2px !important;
+}
+.mirror-root .a1-regform .remove-file{
+  color: #db0330 !important;
+  font-size: 12px !important;
+  text-decoration: none !important;
+  padding: 4px 10px;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+.mirror-root .a1-regform .remove-file:hover{
+  background: #fce7ec !important;
+}
+.mirror-root .a1-regform .dnd-upload-status .error{
+  color: #db0330 !important;
+  font-size: 13px !important;
+  margin-top: 4px;
+}
+.mirror-root .a1-regform .emergency-header{
+  font-size: 18px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 30px 0 20px;
+  padding-top: 30px;
+  border-top: 1px solid #e5e4de;
+}
+.mirror-root .a1-regform .regform-consent{
+  margin: 30px 0 25px;
+}
+.mirror-root .a1-regform .regform-consent .wpcf7-list-item{
+  margin: 0;
+  display: block;
+}
+.mirror-root .a1-regform .regform-consent label{
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 15px;
+  color: #1a1a1a;
+  line-height: 1.55;
+  cursor: pointer;
+}
+.mirror-root .a1-regform .regform-consent input[type="checkbox"]{
+  margin-top: 4px;
+  width: 18px;
+  height: 18px;
+  accent-color: #db0330;
+  flex-shrink: 0;
+}
+.mirror-root .a1-regform .regform-consent a{
+  color: #db0330;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.mirror-root .a1-regform .regform-consent a:hover{
+  color: #b10229;
+}
+.mirror-root .a1-regform .regform-submit input[type="submit"], .mirror-root .a1-regform .wpcf7-submit{
+  width: 100%;
+  background: #db0330;
+  color: #fff;
+  padding: 20px;
+  border: none;
+  border-radius: 999px;
+  font-size: 17px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  letter-spacing: 0.3px;
+  font-family: inherit;
+  margin-top: 10px;
+}
+.mirror-root .a1-regform .regform-submit input[type="submit"]:hover, .mirror-root .a1-regform .wpcf7-submit:hover{
+  background: #b10229;
+}
+.mirror-root .a1-regform .regform-submit input[type="submit"]:active, .mirror-root .a1-regform .wpcf7-submit:active{
+  transform: scale(0.98);
+}
+.mirror-root .a1-regform .wpcf7-not-valid-tip{
+  color: #db0330;
+  font-size: 13px;
+  margin-top: 6px;
+  margin-left: 22px;
+}
+.mirror-root .a1-regform .wpcf7-response-output{
+  border-radius: 12px;
+  padding: 14px 20px;
+  font-size: 14px;
+  margin-top: 20px;
+}
+.mirror-root .a1-regform .wpcf7-spinner{
+  background-color: #db0330;
+}
+.mirror-root @media (max-width: 767px){
+  .a1-regform {
+    padding: 20px 0;
+  }
+  
+  .a1-regform .regform-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .a1-regform .regform-field {
+    height: auto;
+  }
+  
+  .a1-regform .regform-submit input[type="submit"],
+  .a1-regform .wpcf7-submit {
+    padding: 18px;
+    font-size: 16px;
+  }
+  
+  .a1-regform .codedropz-upload-handler {
+    padding: 24px 16px !important;
+  }
+}
