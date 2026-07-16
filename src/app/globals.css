@@ -377,15 +377,20 @@ img {
 }
 
 /* ================= FOOTER (light) ================= */
-/* Curved shape background (raised, rounded top-left) — same motif as the
-   hero's rounded cut-out. The SVG is #F6F6F6 with a transparent notch above
-   the curve on the right, so the page white shows through there. */
+/* Curved top edge (raised, rounded left) — same motif as the hero's rounded
+   cut-out. The footer body is solid #F6F6F6; a white "notch" SVG is painted
+   across the top, cutting the curve out of the top-right so the gray edge
+   sweeps up on the left.
+   NB: the original a1_lableec.svg keeps its aspect ratio when used as a
+   background (no preserveAspectRatio="none"), so `background-size: 100% 100%`
+   letterboxed it — leaving white bands above and below the shape. Painting
+   only the notch at natural aspect avoids that at every viewport width. */
 .site-footer {
-  background-color: #fff;
-  background-image: url("/wp-content/uploads/2025/07/a1_lableec.svg");
+  background-color: #f6f6f6;
+  background-image: url("/wp-content/uploads/2025/07/a1_lableec_notch.svg");
   background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100% 100%;
+  background-position: top center;
+  background-size: 100% auto;
   color: #444;
   padding-top: 72px;
   margin-top: 80px;
