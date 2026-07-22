@@ -140,7 +140,7 @@ export function HomeHero() {
         </div>
 
         {/* Service cards nested into the notch */}
-        <div className="absolute z-20 grid grid-cols-3" style={{ left: "40.8%", right: "0.8%", top: "77.2%", gap: "20px" }}>
+        <div className="absolute z-20 grid grid-cols-3" style={{ left: "40.8%", right: "0", top: "77.2%", gap: "20px" }}>
           {A1_SERVICE_CARDS.map((c, i) => {
             const prio = i === 0;
             return (
@@ -225,7 +225,7 @@ export function HomeHero() {
       {/* Company intro — aligned to the hero image's left edge (~10px) and, on
           desktop, vertically centred in the band-bottom → cards-bottom gap
           (the cards overhang the hero mask by ~106px). */}
-      <div className="mx-auto flex w-full max-w-[1290px] items-center px-4 lg:min-h-[106px] lg:px-[10px]">
+      <div className="mx-auto flex w-full max-w-[1290px] items-center px-4 lg:min-h-[106px] lg:px-0">
         <p className="mt-10 max-w-md text-[var(--ink-soft)] lg:mt-0">{HERO.intro}</p>
       </div>
     </section>
