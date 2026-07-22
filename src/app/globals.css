@@ -355,23 +355,23 @@ img {
     transform: translateY(0);
   }
 }
-/* Content row sits directly on the sheet (no inner card frame). */
+/* Content row sits directly on the sheet (no inner card frame).
+   Fixed height so the sheet never jumps between menus; the menu columns keep
+   their natural width and pin to the RIGHT, while the feature image grows to
+   fill whatever space is left on the left. */
 .megamenu-card {
   display: flex;
   gap: 32px;
   align-items: stretch;
+  min-height: 300px;
 }
-/* Feature card (left) — content sits in the bottom-left corner */
+/* Feature card (left) — grows to fill the free space, content bottom-left. */
 .megamenu-feature {
   position: relative;
   display: flex;
   align-items: flex-end;
-  width: 260px;
-  flex: none;
-  /* Track the content height (the card stretches both columns to the taller
-     one). A modest floor keeps the image substantial even for the shorter
-     2-column menu, but avoids the fixed 300px overhang below the footer. */
-  min-height: 230px;
+  flex: 1 1 auto;
+  min-width: 260px;
   border-radius: 18px;
   overflow: hidden;
   background-size: cover;
@@ -408,7 +408,7 @@ img {
 /* Right side: groups + footer */
 .megamenu-main {
   display: flex;
-  flex: 1;
+  flex: none;
   flex-direction: column;
   justify-content: space-between;
   padding: 10px 8px 4px 12px;
