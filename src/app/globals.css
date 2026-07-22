@@ -697,127 +697,123 @@ img {
   padding: 0;
 }
 
-/* ===================================================================
-   Frame menu — opening the mobile menu scales the whole page back into
-   a rounded card, revealing this brand-coloured frame + navigation.
-   =================================================================== */
-.page-shell {
-  position: relative;
-  min-height: 100vh;
-  background: #fff;
-  transform-origin: center;
-  transition: transform 0.46s cubic-bezier(0.32, 0.72, 0, 1), border-radius 0.46s ease;
-}
-body.menu-open {
-  overflow: hidden;
-  background: var(--brand-dark);
-}
-body.menu-open .page-shell {
-  transform: translateX(58%) scale(0.84);
-  border-radius: 30px;
-  overflow: hidden;
-  box-shadow: -18px 0 60px rgba(10, 14, 20, 0.28);
-  pointer-events: none;
-}
-
-.app-menu {
+/* ---- Mobile drawer (redesigned) ---- */
+.mobile-drawer {
   position: fixed;
   inset: 0;
-  background: linear-gradient(158deg, var(--brand) 0%, var(--brand-dark) 100%);
-  pointer-events: none;
+  z-index: 200;
+  background: rgba(10, 14, 20, 0.45);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.32s ease, visibility 0.32s;
 }
-/* Transparent catcher — a tap anywhere outside the nav closes the menu. */
-.app-menu-scrim {
-  position: fixed;
-  inset: 0;
-  border: none;
-  background: transparent;
-  cursor: pointer;
-  pointer-events: none;
+.mobile-drawer.open {
+  opacity: 1;
+  visibility: visible;
 }
-body.menu-open .app-menu-scrim {
-  z-index: 30;
-  pointer-events: auto;
-}
-.app-menu-inner {
-  position: fixed;
+.mobile-panel {
+  position: absolute;
   left: 0;
-  top: 0;
+  right: 0;
   bottom: 0;
-  width: 62%;
-  max-width: 300px;
+  max-height: 88vh;
+  background: #fff;
+  border-radius: 26px 26px 0 0;
+  padding: 8px 18px calc(18px + env(safe-area-inset-bottom, 0px));
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
-  padding: calc(26px + env(safe-area-inset-top, 0px)) 20px calc(22px + env(safe-area-inset-bottom, 0px)) 22px;
-  overflow-y: auto;
-  color: #fff;
-  opacity: 0;
-  transform: translateX(-14px);
-  transition: opacity 0.3s ease 0.06s, transform 0.4s cubic-bezier(0.32, 0.72, 0, 1) 0.06s;
+  transform: translateY(100%);
+  transition: transform 0.4s cubic-bezier(0.2, 0.7, 0.2, 1);
 }
-body.menu-open .app-menu-inner {
-  z-index: 31;
-  pointer-events: auto;
-  opacity: 1;
-  transform: none;
+.mobile-drawer.open .mobile-panel {
+  transform: translateY(0);
 }
-.app-menu-close {
-  align-self: flex-end;
+.mobile-grabber {
+  flex: none;
+  width: 42px;
+  height: 4px;
+  border-radius: 999px;
+  background: var(--line);
+  margin: 6px auto 8px;
+}
+.mobile-panel-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 2px 14px;
+}
+.mobile-panel-logo {
+  height: 30px;
+  width: auto;
+}
+.mobile-close {
   display: grid;
   place-items: center;
   width: 40px;
   height: 40px;
   border: none;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.14);
-  color: #fff;
+  background: var(--surface-3);
+  color: var(--ink);
   cursor: pointer;
-  transition: background 0.15s;
+  transition: background 0.15s, color 0.15s;
 }
-.app-menu-close:active {
-  background: rgba(255, 255, 255, 0.28);
+.mobile-close:active {
+  background: var(--brand);
+  color: #fff;
 }
-.app-menu-nav {
+.mobile-nav {
   display: flex;
   flex-direction: column;
-  margin-top: 22px;
+  gap: 2px;
 }
-.app-menu-group {
-  display: flex;
-  flex-direction: column;
-}
-.app-menu-row {
+.mobile-nav-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 10px;
   width: 100%;
-  padding: 14px 0;
-  font-size: 19px;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  color: #fff;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--ink);
   background: none;
   border: none;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 14px;
   text-align: left;
   cursor: pointer;
+  transition: background 0.15s, color 0.15s;
 }
-.app-menu-row svg {
+.mobile-nav-row:active {
+  background: var(--surface-3);
+}
+.mobile-nav-group.open > .mobile-nav-row {
+  background: var(--surface-3);
+  color: var(--brand);
+}
+.mobile-nav-row .nav-caret {
   flex: none;
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--ink-muted);
   transition: transform 0.25s ease;
 }
-.app-menu-group.open > .app-menu-row svg {
+.mobile-nav-group.open > .mobile-nav-row .nav-caret {
   transform: rotate(180deg);
+  color: var(--brand);
 }
-.app-menu-sub {
+.mobile-nav-row svg:last-child:not(.nav-caret) {
+  flex: none;
+  color: var(--ink-muted);
+}
+.mobile-sub {
   display: flex;
   flex-direction: column;
-  padding: 4px 0 10px 2px;
-  animation: appSubIn 0.24s ease;
+  padding: 2px 0 8px 12px;
+  margin: 2px 0 4px 16px;
+  border-left: 2px solid var(--line);
+  animation: subIn 0.24s ease;
 }
-@keyframes appSubIn {
+@keyframes subIn {
   from {
     opacity: 0;
     transform: translateY(-4px);
@@ -827,59 +823,103 @@ body.menu-open .app-menu-inner {
     transform: none;
   }
 }
-.app-menu-sub a {
-  padding: 9px 0;
-  font-size: 15px;
+.mobile-sub a {
+  padding: 10px 12px;
+  font-size: 14.5px;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.82);
+  color: var(--ink-soft);
+  border-radius: 10px;
 }
-.app-menu-sub a:active {
-  color: #fff;
+.mobile-sub a:active {
+  background: var(--surface-3);
+  color: var(--brand);
 }
-.app-menu-foot {
-  margin-top: auto;
-  padding-top: 24px;
-}
-.app-menu-cta {
+.mobile-cta {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 18px;
   padding: 14px;
-  background: #fff;
-  color: var(--brand);
-  font-weight: 700;
+  background: var(--brand);
+  color: #fff;
+  font-weight: 600;
   font-size: 15px;
-  border-radius: 14px;
-  transition: transform 0.15s;
+  border-radius: 16px;
+  transition: background 0.15s;
 }
-.app-menu-cta:active {
-  transform: scale(0.98);
-  color: var(--brand);
-}
-.app-menu-contact {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-  margin-top: 16px;
-  font-size: 13.5px;
-}
-.app-menu-contact a {
-  color: rgba(255, 255, 255, 0.85);
-}
-.app-menu-contact a:active {
+.mobile-cta:active {
+  background: var(--brand-dark);
   color: #fff;
 }
-/* While the menu is open, tuck the floating bottom bar away. */
-body.menu-open .bottom-nav {
+.mobile-quick {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+.mobile-quick-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px;
+  background: var(--surface-3);
+  color: var(--ink);
+  font-weight: 500;
+  font-size: 14px;
+  border-radius: 14px;
+}
+.mobile-quick-btn svg {
+  width: 18px;
+  height: 18px;
+  color: var(--brand);
+}
+.mobile-quick-btn:active {
+  background: #ececec;
+}
+.mobile-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 18px;
+  font-size: 13.5px;
+  color: var(--ink-soft);
+}
+.mobile-meta a:active {
+  color: var(--brand);
+}
+.mobile-meta .muted {
+  color: var(--ink-muted);
+}
+.mobile-social {
+  display: flex;
+  gap: 14px;
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+/* Drawer open: freeze the page behind it and tuck the bottom bar away. */
+body.drawer-open {
+  overflow: hidden;
+}
+body.drawer-open .bottom-nav {
   transform: translateY(200%);
   opacity: 0;
   pointer-events: none;
 }
-@media (prefers-reduced-motion: reduce) {
-  .page-shell,
-  .app-menu-inner {
-    transition: none;
-  }
+.mobile-social a {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--surface-3);
+  color: var(--ink);
+  transition: background 0.15s, color 0.15s;
+}
+.mobile-social a:active {
+  background: var(--brand);
+  color: #fff;
 }
 
 @media (max-width: 1180px) {
