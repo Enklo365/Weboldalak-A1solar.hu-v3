@@ -72,8 +72,8 @@ const CardBody = ({ title, text, icon }: { title: string; text: string; icon: st
  */
 export function HomeHero() {
   return (
-    // ~11px top gap = the same moat the cards leave around the hero mask.
-    <section className="w-full pt-[11px]">
+    // Flush to the header (no top gap) — the hero mask fills from y=0.
+    <section className="w-full">
       {/* ── Desktop hero (≥lg) ─────────────────────────────────────────── */}
       {/* aspect-ratio (not a fixed 571px height) keeps the photo crop identical
           at every width — otherwise narrow viewports crop less off the top and
