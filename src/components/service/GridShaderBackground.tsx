@@ -10,6 +10,11 @@ import { useEffect, useRef } from "react";
  * pauses when the tab/section is hidden. Falls back to the parent's CSS red
  * background if WebGL is unavailable.
  */
+/* Brand-red replica of the shaders.com "Collapsing Grid 4" preset:
+   a Pixelated (scale 18, gap 0.03) Swirl gradient whose per-cell roundness is
+   driven by a diagonal SineWave (angle 84°) — cells ripple square↔circle, the
+   "collapse". Colours mapped to the A1 brand (deep red → pink swirl on a deep
+   red base) instead of the preset's tan/purple/yellow. */
 const FRAG = `
 precision highp float;
 uniform vec2 u_res;
@@ -23,34 +28,37 @@ float roundRect(vec2 p, vec2 b, float r){
 void main(){
   vec2 uv = gl_FragCoord.xy / u_res.xy;
   float aspect = u_res.x / max(u_res.y, 1.0);
+  float t = u_time;
 
-  float cols = 18.0;
-  float rows = max(4.0, floor(cols / aspect));
-  vec2 grid = vec2(cols, rows);
-  vec2 id = floor(uv * grid);
-  vec2 cell = fract(uv * grid) - 0.5;
+  // --- Pixelate: a scale-18 grid of cells (aspect-corrected to stay square) ---
+  float scale = 18.0;
+  vec2 auv = vec2(uv.x * aspect, uv.y);
+  vec2 cell = fract(auv * scale) - 0.5;
 
-  float t = u_time * 0.5;
-  // Rippling field that drives each cell's size — the "collapse".
-  float w = 0.5 + 0.5 * sin(id.x * 0.5 + id.y * 0.38 - t)
-                  * cos(id.x * 0.22 - id.y * 0.33 + t * 0.7);
-  // Diagonal gradient: cells collapse toward the top-left, open at bottom-right.
-  float grad = clamp((uv.x * 0.75 + uv.y * 0.35), 0.0, 1.0);
-  float amt = clamp(w * 0.55 + grad * 0.6, 0.0, 1.0);
-  float size = mix(0.06, 0.46, amt);
+  // --- SineWave roundness field (angle 84°, freq 0.6, animated speed 2) ---
+  float ang = radians(84.0);
+  vec2 dir = vec2(cos(ang), sin(ang));
+  float coord = dot(uv - vec2(0.84, 0.52), dir);
+  float wave = 0.5 + 0.5 * sin(coord * 20.0 + t * 2.0);
+  float roundness = mix(0.13, 1.0, wave);              // 0.13 (square) → 1 (circle)
 
-  float d = roundRect(cell, vec2(size), size * 0.55);
-  float shape = smoothstep(0.03, -0.03, d);
+  // --- Cell shape: rounded rect with a 0.03 gap ---
+  float halfSize = 0.5 - 0.06;
+  float d = roundRect(cell, vec2(halfSize), roundness * halfSize);
+  float shapeMask = smoothstep(0.035, -0.035, d);
 
-  // Brand palette (vibrant red → pink so the grid reads clearly).
-  vec3 deep  = vec3(0.58, 0.05, 0.11);
-  vec3 brand = vec3(0.90, 0.06, 0.22); // ~#db0330
-  vec3 light = vec3(1.0, 0.74, 0.82);
+  // --- Swirl fill (detail 1.3, speed 2), brand palette in place of tan↔purple ---
+  vec2 c = vec2((uv.x - 0.5) * aspect, uv.y - 0.5);
+  float a = atan(c.y, c.x) + length(c) * 3.0 * 1.3 + t * 0.5;
+  float mixv = 0.5 + 0.5 * sin(a);
+  vec3 colA = vec3(0.74, 0.09, 0.13);   // brand-dark red
+  vec3 colB = vec3(1.0, 0.72, 0.80);    // light pink
+  vec3 swirl = mix(colA, colB, mixv);
 
-  vec3 bg = mix(deep, brand, clamp(uv.y * 0.5 + uv.x * 0.35, 0.0, 1.0));
-  vec3 cellCol = mix(brand, light, clamp(amt * 0.75 + uv.x * 0.4, 0.0, 1.0));
+  // --- Base colour shown in the gaps (deep red instead of the preset's #fff6a8) ---
+  vec3 base = vec3(0.32, 0.02, 0.07);
 
-  vec3 col = mix(bg, cellCol, shape * 0.9);
+  vec3 col = mix(base, swirl, shapeMask);
   gl_FragColor = vec4(col, 1.0);
 }
 `;
