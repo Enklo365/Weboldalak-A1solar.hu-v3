@@ -3,7 +3,6 @@ import { A1_SERVICE_CARDS } from "@/components/home/serviceCards.data";
 
 const HERO_BG = "/wp-content/uploads/2026/03/otthoni_energiatarolo_program-1.png";
 const HERO_BG_MOBILE = "/wp-content/uploads/2026/03/ChatGPT-Image-2026.-marc.-13.-21_20_16.png";
-const HERO_MASK = "/wp-content/uploads/2025/07/svg_design-elem.svg";
 const CTA_PRIO_MASK = "/wp-content/uploads/2025/07/cta_prio.svg";
 const CTA_NORMAL_MASK = "/wp-content/uploads/2025/07/cta_normal.svg";
 
@@ -59,13 +58,49 @@ const CardBody = ({ title, text, icon }: { title: string; text: string; icon: st
 );
 
 /**
+ * Hero photo — the `svg_design-elem` shape (rounded corners on the left +
+ * lower-right notch) as a scalable `clip-path`, filled by a real `<img>`.
+ *
+ * Why a component (not `background-image` + `mask`): a real `<img>` with
+ * `object-cover object-bottom` gives a rock-solid, predictable crop, and a
+ * `clipPath` in `objectBoundingBox` units scales exactly to the element at any
+ * width (no `mask-size` letterbox/stretch quirks, no stray white bands). The
+ * path is the exact `svg_design-elem.svg` geometry, transformed into 0–1 space
+ * (÷1434 wide, ÷571 tall).
+ */
+const HERO_CLIP_ID = "a1-hero-shape";
+const HeroPhoto = () => (
+  <>
+    <svg width="0" height="0" className="absolute" aria-hidden focusable="false">
+      <defs>
+        <clipPath id={HERO_CLIP_ID} clipPathUnits="objectBoundingBox">
+          <path
+            transform="scale(0.00069735, 0.00175131)"
+            d="M1403 0C1420.12 0 1434 13.8792 1434 31V394C1434 410.569 1420.57 424 1404 424H655C598.5 424 590 424 573 441.5C555.915 459.088 534.421 495.166 518.441 521.988C509.471 537.045 502.239 549.186 498.5 553.5C488.1 565.5 468.5 570.167 460 571H30C13.4315 571 0 557.569 0 541V31C0 13.8792 13.8792 0 31 0H1403Z"
+          />
+        </clipPath>
+      </defs>
+    </svg>
+    <div className="absolute inset-0" style={{ clipPath: `url(#${HERO_CLIP_ID})` }}>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={HERO_BG}
+        alt=""
+        aria-hidden
+        // inline width/height beat the global `img { height: auto }` rule
+        style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "50% 100%" }}
+      />
+      <div className="absolute inset-0" style={{ background: GRADIENT }} />
+    </div>
+  </>
+);
+
+/**
  * Homepage hero — native reproduction of the a1solar.hu WordPress hero.
  *
- * Desktop (≥lg): the exact `.hero-bg-desktop` block — a 1290×571 band, photo
- * `cover` / bottom, left-dark gradient, headline bottom-left (40px padding +
- * 30px extra bottom, 600px max). The rounded corners + lower-right notch come
- * from the site's `svg_design-elem.svg` mask (as the live Elementor widget
- * applies it), and the three 230×230 service cards nest into the notch.
+ * Desktop (≥lg): a max-1290px band (aspect-ratio 1290/571) with the shaped
+ * `HeroPhoto`, left-dark gradient, headline bottom-left, and the three service
+ * cards nesting into the notch.
  *
  * Mobile (<lg): the `.hero-masked` block — a 300px clip-path banner with the
  * mobile artwork, then the three cards stacked beneath.
@@ -79,25 +114,8 @@ export function HomeHero() {
           at every width — otherwise narrow viewports crop less off the top and
           the image's sky shows as empty space above the subject. */}
       <div className="relative mx-auto hidden w-full lg:block" style={{ maxWidth: "1290px", aspectRatio: "1290 / 571" }}>
-        {/* Masked photo + gradient */}
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: `url(${HERO_BG})`,
-            backgroundSize: "cover",
-            backgroundPosition: "bottom",
-            WebkitMaskImage: `url(${HERO_MASK})`,
-            maskImage: `url(${HERO_MASK})`,
-            WebkitMaskSize: "100% 100%",
-            maskSize: "100% 100%",
-            WebkitMaskPosition: "50% 50%",
-            maskPosition: "50% 50%",
-            WebkitMaskRepeat: "no-repeat",
-            maskRepeat: "no-repeat",
-          }}
-        >
-          <div className="absolute inset-0" style={{ background: GRADIENT }} />
-        </div>
+        {/* Shaped photo (clip-path + real <img>) */}
+        <HeroPhoto />
 
         {/* Headline content, bottom-left */}
         <div className="absolute bottom-0 left-0 z-10 text-white" style={{ padding: "40px 40px 70px", maxWidth: "600px" }}>
