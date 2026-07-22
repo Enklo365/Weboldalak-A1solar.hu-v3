@@ -31,8 +31,10 @@ const ArrowUpRight = () => (
  */
 export function HomeHero() {
   return (
-    <section className="mx-auto w-full max-w-[var(--container)] px-4 pt-6 md:pt-8">
-      <div className="relative w-full" style={{ aspectRatio: "1434 / 571" }}>
+    <section className="w-full pt-6 md:pt-8">
+      {/* Full-bleed hero (breaks out of the container) so the mask + cards share
+          one coordinate system, exactly like a1solar.hu. */}
+      <div className="relative left-1/2 right-1/2 -mx-[50vw] w-screen" style={{ height: "clamp(360px, 44.7vw, 640px)" }}>
         {/* Masked photo + left-dark gradient */}
         <div
           className="absolute inset-0"
@@ -54,8 +56,11 @@ export function HomeHero() {
           />
         </div>
 
-        {/* Headline content, bottom-left */}
-        <div className="absolute bottom-0 left-0 z-10 max-w-[600px] p-7 pb-10 text-white md:p-10">
+        {/* Headline content, bottom-left (aligned to the content container) */}
+        <div
+          className="absolute bottom-0 left-0 z-10 max-w-[640px] pb-12 text-white"
+          style={{ paddingLeft: "max(1.5rem, calc((100vw - var(--container)) / 2 + 1.5rem))", paddingRight: "1.5rem" }}
+        >
           <span className="inline-block rounded-full bg-white/90 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.12em] text-[var(--ink)]">
             {HERO.badge}
           </span>
@@ -114,7 +119,9 @@ export function HomeHero() {
       </div>
 
       {/* Company intro beneath, on the left */}
-      <p className="mt-[9%] max-w-md text-[var(--ink-soft)]">{HERO.intro}</p>
+      <div className="mx-auto w-full max-w-[var(--container)] px-4">
+        <p className="mt-12 max-w-md text-[var(--ink-soft)]">{HERO.intro}</p>
+      </div>
     </section>
   );
 }
