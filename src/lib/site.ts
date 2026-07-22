@@ -126,8 +126,8 @@ export const MEGA_MENUS: Record<string, MegaMenu> = {
   Cégünkről: {
     feature: {
       image: "/wp-content/uploads/2025/07/photo_2025-07-30_10-24-40.jpg",
-      title: "Új esélyt adtunk",
-      text: "Első afrikai napelemes rendszerünket adtuk át Zanzibárban.",
+      title: "Új esélyt adtunk!",
+      text: "Átadtuk első napelemes rendszerünket afrikában.",
       href: "/az-a1-solar-zanzibar-ltd-atadta-elso-afrikai-napelemes-rendszeret/",
     },
     groups: [

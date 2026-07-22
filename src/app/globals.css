@@ -445,15 +445,16 @@ img {
   width: 42px;
   height: 42px;
   flex: none;
-  border-radius: 12px;
+  border-radius: 4px;
   background: #fff;
   border: 1px solid var(--line);
   color: var(--ink);
-  transition: color 0.15s, border-color 0.15s;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
 }
 .megamenu-item:hover .megamenu-item-icon {
-  color: var(--brand);
-  border-color: rgba(219, 3, 48, 0.3);
+  background: var(--brand);
+  color: #fff;
+  border-color: var(--brand);
 }
 .megamenu-item-body {
   display: flex;
