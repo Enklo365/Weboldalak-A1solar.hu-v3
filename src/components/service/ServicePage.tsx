@@ -91,8 +91,9 @@ const ServiceHero = ({ data }: { data: ServicePageData["hero"] }) => (
           </h1>
           <PillCta href={data.ctaHref}>{data.ctaLabel}</PillCta>
         </div>
-        {/* Intro text seated in the lower-right notch cut-out */}
-        <div className="absolute z-10 flex items-center" style={{ left: "46%", right: "1.5%", top: "73%", bottom: "3%" }}>
+        {/* Intro text vertically centred in the lower-right notch cut-out (the
+            image ends at ~74% on the right, so the notch spans 74%–100%). */}
+        <div className="absolute z-10 flex items-center" style={{ left: "46%", right: "1.5%", top: "74%", bottom: "1%" }}>
           <p style={{ fontSize: "16px", lineHeight: 1.6, color: "var(--ink-soft)" }}>{data.intro}</p>
         </div>
       </div>
