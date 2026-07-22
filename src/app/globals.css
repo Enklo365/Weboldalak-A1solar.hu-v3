@@ -336,28 +336,30 @@ img {
   left: 0;
   right: 0;
   z-index: 50;
-  padding-top: 10px;
+  /* Attached white sheet — flush with the header, so it reads as the header
+     "growing" rather than a card floating in the air. No shadow (per house
+     style); the hairline bottom border + soft bottom rounding close it off. */
+  background: #fff;
+  border-bottom: 1px solid var(--line);
+  border-radius: 0 0 24px 24px;
+  padding: 24px 0 28px;
   animation: megaIn 0.18s ease;
 }
 @keyframes megaIn {
   from {
     opacity: 0;
-    transform: translateY(-6px);
+    transform: translateY(-8px);
   }
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
-/* Floating rounded card (matches the site's card language). */
+/* Content row sits directly on the sheet (no inner card frame). */
 .megamenu-card {
   display: flex;
-  gap: 16px;
+  gap: 32px;
   align-items: stretch;
-  background: #f6f6f6;
-  border: 1px solid var(--line);
-  border-radius: 24px;
-  padding: 16px;
 }
 /* Feature card (left) — content sits in the bottom-left corner */
 .megamenu-feature {
@@ -436,7 +438,7 @@ img {
   transition: background 0.15s, border-color 0.15s, box-shadow 0.15s;
 }
 .megamenu-item:hover {
-  background: #fff;
+  background: var(--surface-3);
   border-color: var(--line);
 }
 .megamenu-item-icon {
@@ -446,7 +448,7 @@ img {
   height: 42px;
   flex: none;
   border-radius: 4px;
-  background: #fff;
+  background: var(--surface-3);
   border: 1px solid var(--line);
   color: var(--ink);
   transition: background 0.15s, color 0.15s, border-color 0.15s;
