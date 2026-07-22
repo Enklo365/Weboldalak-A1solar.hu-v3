@@ -204,7 +204,7 @@ export function HomeHero() {
               >
                 {HERO.badge}
               </span>
-              <h1 className="mt-5" style={{ color: "#fff", fontSize: "28px", fontWeight: 300, lineHeight: 1.2 }}>
+              <h1 style={{ marginTop: "22px", color: "#fff", fontSize: "28px", fontWeight: 300, lineHeight: 1.2 }}>
                 {HERO.titleTop}
                 <br />
                 <strong style={{ fontWeight: 700 }}>{HERO.titleStrong}</strong>
@@ -224,22 +224,22 @@ export function HomeHero() {
             badge nests into a scooped-out corner, echoing the desktop cards). */}
         <div className="mt-6 flex flex-col gap-4 px-4">
           {A1_SERVICE_CARDS.map((c) => (
-            <Link key={c.href} href={c.href} className="group relative block h-[230px] transition-opacity hover:opacity-95">
+            <Link key={c.href} href={c.href} className="group relative block aspect-[365/254] transition-opacity hover:opacity-95">
               <div
                 className="absolute inset-0"
                 style={{
                   background: "var(--surface-3)",
                   WebkitMaskImage: MOBILE_CARD_MASK,
                   maskImage: MOBILE_CARD_MASK,
-                  WebkitMaskSize: "cover",
-                  maskSize: "cover",
+                  WebkitMaskSize: "100% 100%",
+                  maskSize: "100% 100%",
                   WebkitMaskRepeat: "no-repeat",
                   maskRepeat: "no-repeat",
                 }}
               />
               {/* Icon — top-left */}
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={c.icon} alt="" className="absolute left-5 top-3 object-contain" style={{ height: "96px", width: "auto" }} aria-hidden />
+              <img src={c.icon} alt="" className="absolute left-5 top-4 object-contain" style={{ height: "76px", width: "auto" }} aria-hidden />
               {/* Arrow badge — nested in the top-right notch */}
               <CardArrowBadge className="right-5 top-1.5" />
               {/* Text — bottom */}
