@@ -19,17 +19,37 @@ const HERO = {
     "Célunk, hogy ügyfeleink egyetlen helyről kapják meg az összes olyan szolgáltatást, amely egy napelemes rendszer kialakításához szükséges.",
 };
 
-const ArrowUpRight = () => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-5 w-5" aria-hidden>
-    <path d="M7 17 17 7M8 7h9v9" strokeLinecap="round" strokeLinejoin="round" />
+/** The a1solar 14×14 up-right arrow (exact paths from the WP markup). */
+const Arrow14 = () => (
+  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="h-3.5 w-3.5" aria-hidden>
+    <path d="M3.76953 1H13.0003V10.2308" stroke="currentColor" strokeWidth="1.5" />
+    <path d="M13 1L1 13" stroke="currentColor" strokeWidth="1.5" />
   </svg>
+);
+
+/**
+ * Arrow badge for the "Vállalati" card — matches the WP hover: on card hover the
+ * circle fills red while the dark arrow slides out to the top-right and a white
+ * one slides in from the bottom-left.
+ */
+const CardArrowBadge = () => (
+  <span className="absolute right-1 top-1 z-10 grid h-11 w-11 place-items-center overflow-hidden rounded-full border border-[var(--line)] bg-white transition-colors duration-300 group-hover:border-transparent group-hover:bg-[var(--brand)]">
+    <span className="relative block h-3.5 w-3.5">
+      <span className="absolute inset-0 text-[var(--ink)] transition-transform duration-300 ease-out group-hover:-translate-y-full group-hover:translate-x-full">
+        <Arrow14 />
+      </span>
+      <span className="absolute inset-0 -translate-x-full translate-y-full text-white transition-transform duration-300 ease-out group-hover:translate-x-0 group-hover:translate-y-0">
+        <Arrow14 />
+      </span>
+    </span>
+  </span>
 );
 
 /** Inner content of a service card (icon + title + text). */
 const CardBody = ({ title, text, icon }: { title: string; text: string; icon: string }) => (
   <>
     {/* eslint-disable-next-line @next/next/no-img-element */}
-    <img src={icon} alt="" className="w-[90px] object-contain" aria-hidden />
+    <img src={icon} alt="" className="self-start object-contain" style={{ height: "72px", width: "auto" }} aria-hidden />
     <div>
       <h3 className="text-[var(--ink)]" style={{ fontSize: "28px", fontWeight: 500, lineHeight: 1.2 }}>
         {title}
@@ -65,8 +85,8 @@ export function HomeHero() {
             backgroundPosition: "bottom",
             WebkitMaskImage: `url(${HERO_MASK})`,
             maskImage: `url(${HERO_MASK})`,
-            WebkitMaskSize: "contain",
-            maskSize: "contain",
+            WebkitMaskSize: "100% 100%",
+            maskSize: "100% 100%",
             WebkitMaskPosition: "50% 50%",
             maskPosition: "50% 50%",
             WebkitMaskRepeat: "no-repeat",
@@ -116,13 +136,7 @@ export function HomeHero() {
                     maskRepeat: "no-repeat",
                   }}
                 />
-                {prio ? (
-                  <span className="absolute right-1 top-1 z-10 grid h-11 w-11 place-items-center rounded-full border border-[var(--line)] bg-white text-[var(--ink)] transition-colors duration-200 group-hover:border-transparent group-hover:bg-[var(--brand)] group-hover:text-white">
-                    <span className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
-                      <ArrowUpRight />
-                    </span>
-                  </span>
-                ) : null}
+                {prio ? <CardArrowBadge /> : null}
                 <div className="absolute inset-0 flex flex-col justify-between p-5">
                   <CardBody title={c.title} text={c.text} icon={c.icon} />
                 </div>
@@ -179,9 +193,11 @@ export function HomeHero() {
         </div>
       </div>
 
-      {/* Company intro beneath — aligned to the hero image's left edge (band, ~10px). */}
-      <div className="mx-auto w-full max-w-[1290px] px-4 lg:px-[10px]">
-        <p className="mt-10 max-w-md text-[var(--ink-soft)] lg:mt-14">{HERO.intro}</p>
+      {/* Company intro — aligned to the hero image's left edge (~10px) and, on
+          desktop, vertically centred in the band-bottom → cards-bottom gap
+          (the cards overhang the hero mask by ~106px). */}
+      <div className="mx-auto flex w-full max-w-[1290px] items-center px-4 lg:min-h-[106px] lg:px-[10px]">
+        <p className="mt-10 max-w-md text-[var(--ink-soft)] lg:mt-0">{HERO.intro}</p>
       </div>
     </section>
   );
