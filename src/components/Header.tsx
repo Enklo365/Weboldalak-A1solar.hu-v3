@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { MAIN_NAV, MEGA_MENUS, SITE, type NavEntry } from "@/lib/site";
 
 const LOGO = "/wp-content/uploads/2022/09/A1solar-logo.svg";
@@ -196,7 +196,16 @@ export const Header = () => {
   const [open, setOpen] = useState(false);
   const [expanded, setExpanded] = useState<string | null>(null);
   const [mega, setMega] = useState<string | null>(null);
+  const [scrolled, setScrolled] = useState(false);
   const activeMega = mega ? MEGA_MENUS[mega] : null;
+
+  // Shrink the sticky nav bar once the page is scrolled past the top.
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
   const toggle = (label: string) => setExpanded((cur) => (cur === label ? null : label));
   const close = () => {
     setOpen(false);
@@ -251,7 +260,7 @@ export const Header = () => {
       </div>
 
       {/* Main navigation bar */}
-      <div className="mainbar" onMouseLeave={() => setMega(null)}>
+      <div className={`mainbar${scrolled ? " scrolled" : ""}`} onMouseLeave={() => setMega(null)}>
         <div className="container">
           <Link className="brand-logo" href="/" aria-label="A1 Solar">
             {/* eslint-disable-next-line @next/next/no-img-element */}

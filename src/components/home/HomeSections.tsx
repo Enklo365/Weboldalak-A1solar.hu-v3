@@ -11,19 +11,20 @@ const Eyebrow = ({ children }: { children: string }) => (
   </span>
 );
 
-/** a1solar CTA: a 44px brand-red circle with a chevron + a label beside it. */
-const CircleCta = ({ href, children }: { href: string; children: string }) => (
-  <Link href={href} className="group inline-flex items-center gap-3">
-    <span
-      className="grid h-11 w-11 shrink-0 place-items-center rounded-full text-white transition-transform group-hover:scale-105"
-      style={{ background: "var(--brand)" }}
-    >
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" className="h-5 w-5" aria-hidden>
-        <path d="M9 6l6 6-6 6" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    </span>
-    <span className="font-semibold text-[var(--ink)]">{children}</span>
-  </Link>
+/**
+ * a1solar animated CTA — a brand-red circle that grows into a full pill button
+ * on hover, the arrow sliding right and the label turning white. Pure CSS
+ * (classes defined in globals.css under `.learn-more`).
+ */
+const LearnMore = ({ href, children }: { href: string; children: string }) => (
+  <div className="extra-button-container flex">
+    <Link href={href} className="learn-more">
+      <span className="circle" aria-hidden>
+        <span className="extra-icon arrow" />
+      </span>
+      <span className="extra-button-text">{children}</span>
+    </Link>
+  </div>
 );
 
 /** "Cégünkről — A jövőre optimalizálva" — autoplay video left, text right. */
@@ -47,7 +48,7 @@ export function HomeAbout() {
         <div className="max-w-[600px]">
           <Eyebrow>{ABOUT.eyebrow}</Eyebrow>
           <h2
-            className="mt-4 text-[var(--ink)]"
+            className="mt-6 text-[var(--ink)]"
             style={{ fontSize: "clamp(28px, 4.5vw, 40px)", fontWeight: 500, lineHeight: 1.15 }}
           >
             {ABOUT.title}
@@ -58,7 +59,7 @@ export function HomeAbout() {
             </p>
           ))}
           <div className="mt-8">
-            <CircleCta href={ABOUT.ctaHref}>{ABOUT.ctaLabel}</CircleCta>
+            <LearnMore href={ABOUT.ctaHref}>{ABOUT.ctaLabel}</LearnMore>
           </div>
         </div>
       </div>
@@ -74,7 +75,7 @@ export function HomeZanzibar() {
         <div className="max-w-[600px]">
           <Eyebrow>{ZANZIBAR.eyebrow}</Eyebrow>
           <h2
-            className="mt-4 text-[var(--ink)]"
+            className="mt-6 text-[var(--ink)]"
             style={{ fontSize: "clamp(28px, 4.5vw, 40px)", fontWeight: 500, lineHeight: 1.15 }}
           >
             {ZANZIBAR.title}
@@ -85,7 +86,7 @@ export function HomeZanzibar() {
             </p>
           ))}
           <div className="mt-8">
-            <CircleCta href={ZANZIBAR.ctaHref}>{ZANZIBAR.ctaLabel}</CircleCta>
+            <LearnMore href={ZANZIBAR.ctaHref}>{ZANZIBAR.ctaLabel}</LearnMore>
           </div>
         </div>
         <div className="overflow-hidden rounded-[20px]">
@@ -110,7 +111,7 @@ export function HomeArticles() {
           <div>
             <Eyebrow>{ARTICLES.eyebrow}</Eyebrow>
             <h2
-              className="mt-4 text-[var(--ink)]"
+              className="mt-6 text-[var(--ink)]"
               style={{ fontSize: "clamp(28px, 4.5vw, 40px)", fontWeight: 500, lineHeight: 1.15 }}
             >
               {ARTICLES.title}

@@ -249,6 +249,17 @@ img {
   align-items: center;
   gap: 24px;
   min-height: var(--header-h);
+  transition: min-height 0.25s ease;
+}
+/* Scrolled state — condense the sticky nav bar. */
+.mainbar.scrolled .container {
+  min-height: 62px;
+}
+.brand-logo img {
+  transition: height 0.25s ease;
+}
+.mainbar.scrolled .brand-logo img {
+  height: 28px;
 }
 .brand-logo {
   display: flex;
@@ -523,6 +534,75 @@ img {
   font-size: 14px;
   font-weight: 500;
   border-radius: 30px;
+}
+
+/* ---- Animated "learn more" CTA (circle grows into a full button on hover) ---- */
+.learn-more {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  font-size: 16px;
+  width: 14rem;
+}
+.learn-more .circle {
+  position: relative;
+  display: block;
+  margin: 0;
+  width: 3rem;
+  height: 3rem;
+  background: var(--brand);
+  border-radius: 1.625rem;
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+}
+.learn-more .extra-icon.arrow {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0.625rem;
+  margin: auto;
+  width: 1.125rem;
+  height: 0.125rem;
+  background: none;
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+}
+.learn-more .extra-icon.arrow::before {
+  content: "";
+  position: absolute;
+  top: -0.25rem;
+  right: 0.0625rem;
+  width: 0.625rem;
+  height: 0.625rem;
+  border-top: 0.125rem solid #fff;
+  border-right: 0.125rem solid #fff;
+  transform: rotate(45deg);
+}
+.learn-more .extra-button-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0.75rem 0;
+  margin-left: 2.5rem;
+  color: var(--ink);
+  font-weight: 500;
+  line-height: 1.6;
+  text-align: center;
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+}
+.learn-more:hover .circle {
+  width: 100%;
+}
+.learn-more:hover .extra-icon.arrow {
+  background: #fff;
+  transform: translate(1rem, 0);
+}
+.learn-more:hover .extra-button-text {
+  color: #fff;
 }
 .burger {
   display: none;

@@ -16,6 +16,9 @@ export default function NativHomePreview() {
   return (
     <>
       <HomeHero />
+      <div className="mx-auto max-w-[var(--container)] px-6">
+        <hr style={{ border: 0, borderTop: "1px dashed #ececec" }} />
+      </div>
       <HomeAbout />
       <HomeZanzibar />
       <HomeArticles />
