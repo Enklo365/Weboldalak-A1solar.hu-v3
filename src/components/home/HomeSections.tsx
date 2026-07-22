@@ -1,6 +1,13 @@
 import Link from "next/link";
 import { ABOUT, ARTICLES, ZANZIBAR } from "@/components/home/homeSections.data";
 
+/** Dashed section separator (container-width) with 50px breathing above/below. */
+export const SectionDivider = () => (
+  <div className="mx-auto max-w-[var(--container)] px-6 my-[50px]">
+    <hr style={{ border: 0, borderTop: "1px dashed #ececec" }} />
+  </div>
+);
+
 /** Small tint pill used as the section eyebrow (a1solar `.elementor-button` style). */
 const Eyebrow = ({ children }: { children: string }) => (
   <span
@@ -30,7 +37,7 @@ const LearnMore = ({ href, children }: { href: string; children: string }) => (
 /** "Cégünkről — A jövőre optimalizálva" — autoplay video left, text right. */
 export function HomeAbout() {
   return (
-    <section className="w-full py-16 md:py-24">
+    <section className="w-full">
       <div className="mx-auto grid max-w-[var(--container)] grid-cols-1 items-center gap-10 px-6 lg:grid-cols-2 lg:gap-16">
         <div className="overflow-hidden rounded-[20px] bg-[var(--surface-3)]">
           <video
@@ -70,7 +77,7 @@ export function HomeAbout() {
 /** "Zanzibár" — two-column: text left, photo right. */
 export function HomeZanzibar() {
   return (
-    <section className="w-full py-16 md:py-24">
+    <section className="w-full">
       <div className="mx-auto grid max-w-[var(--container)] grid-cols-1 items-center gap-10 px-6 lg:grid-cols-2 lg:gap-16">
         <div className="max-w-[600px]">
           <Eyebrow>{ZANZIBAR.eyebrow}</Eyebrow>
@@ -105,7 +112,7 @@ export function HomeZanzibar() {
 /** "Tudástár — Legfrissebb cikkeink" — three article cards. */
 export function HomeArticles() {
   return (
-    <section className="w-full py-16 md:py-24">
+    <section className="w-full pb-16 md:pb-24">
       <div className="mx-auto max-w-[var(--container)] px-6">
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:items-start md:gap-16">
           <div>

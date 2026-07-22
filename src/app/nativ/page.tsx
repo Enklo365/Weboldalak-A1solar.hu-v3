@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { HomeHero } from "@/components/home/HomeHero";
-import { HomeAbout, HomeArticles, HomeZanzibar } from "@/components/home/HomeSections";
+import { HomeAbout, HomeArticles, HomeZanzibar, SectionDivider } from "@/components/home/HomeSections";
 
 export const metadata: Metadata = {
   title: "A1 Solar – natív főoldal (preview)",
@@ -16,11 +16,11 @@ export default function NativHomePreview() {
   return (
     <>
       <HomeHero />
-      <div className="mx-auto max-w-[var(--container)] px-6">
-        <hr style={{ border: 0, borderTop: "1px dashed #ececec" }} />
-      </div>
+      <SectionDivider />
       <HomeAbout />
+      <SectionDivider />
       <HomeZanzibar />
+      <SectionDivider />
       <HomeArticles />
     </>
   );
