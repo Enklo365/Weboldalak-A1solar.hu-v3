@@ -4,6 +4,7 @@ import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { CookieConsent } from "@/components/CookieConsent";
+import { MobileMenu } from "@/components/MobileMenu";
 import { SITE } from "@/lib/site";
 
 const inter = Inter({
@@ -38,10 +39,13 @@ export default function RootLayout({
   return (
     <html lang="hu" className={inter.variable}>
       <body>
-        <Header />
-        <main>{children}</main>
-        <Footer />
-        <CookieConsent />
+        <MobileMenu />
+        <div className="page-shell">
+          <Header />
+          <main>{children}</main>
+          <Footer />
+          <CookieConsent />
+        </div>
       </body>
     </html>
   );
