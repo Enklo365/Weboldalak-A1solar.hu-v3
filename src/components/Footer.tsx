@@ -149,15 +149,20 @@ export const Footer = () => (
       </div>
 
       <div className="footer-bottom">
-        <span>
-          © {YEAR} {SITE.legalName}. – Minden jog fenntartva.
-        </span>
         <div className="footer-legal">
           {FOOTER_LEGAL.map((l) => (
             <Link key={l.href + l.label} href={l.href}>
               {l.label}
             </Link>
           ))}
+        </div>
+        <div className="footer-copyright-row">
+          <span>
+            © {YEAR} {SITE.legalName} – Minden jog fenntartva.
+          </span>
+          <a href="https://webbystep.hu" target="_blank" rel="noopener noreferrer">
+            Built by Webbystep
+          </a>
         </div>
       </div>
       </div>
