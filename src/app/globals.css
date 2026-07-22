@@ -1040,6 +1040,47 @@ img {
     grid-template-columns: 1fr;
   }
 }
+/* Footer: below the section breakpoint the panel becomes tall & narrow, so the
+   hero-mirror clip distorts — swap it for a clean rounded card and let the
+   awards flow inline at the top. */
+@media (max-width: 900px) {
+  .footer-panel {
+    clip-path: none;
+    border-radius: 28px;
+  }
+  .footer-notch {
+    position: static;
+    inset: auto;
+    height: auto;
+    padding: 32px 24px 4px;
+    justify-content: flex-start;
+  }
+  .footer-notch img {
+    max-width: min(460px, 100%);
+  }
+  .footer-inner {
+    padding: 18px 24px 8px;
+  }
+  .footer-bottom {
+    margin: 0 24px;
+  }
+}
+@media (max-width: 560px) {
+  .footer-notch {
+    padding: 26px 20px 4px;
+  }
+  .footer-inner {
+    padding: 14px 20px 8px;
+  }
+  .footer-bottom {
+    margin: 0 20px;
+  }
+  .footer-copyright-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
 
 /* ================= WP CONTENT (self-styled pages) ================= */
 .wp-content {

@@ -110,7 +110,7 @@ export function HomeZanzibar() {
             <LearnMore href={ZANZIBAR.ctaHref}>{ZANZIBAR.ctaLabel}</LearnMore>
           </div>
         </div>
-        <div data-animate="up" style={{ transitionDelay: "120ms" }} className="aspect-[4/3] overflow-hidden rounded-[20px]">
+        <div data-animate="up" style={{ transitionDelay: "120ms" }} className="order-first aspect-[4/3] overflow-hidden rounded-[20px] lg:order-none">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             data-fade
