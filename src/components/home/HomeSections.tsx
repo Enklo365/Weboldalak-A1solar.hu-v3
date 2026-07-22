@@ -127,7 +127,7 @@ export function HomeZanzibar() {
 /** "Tudástár — Legfrissebb cikkeink" — three article cards. */
 export function HomeArticles() {
   return (
-    <section className="w-full py-16 md:py-24" style={{ background: "#f6f6f6" }}>
+    <section className="w-full pb-16 md:pb-24">
       <div className="mx-auto max-w-[var(--container)] px-6">
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:items-start md:gap-16">
           <div>
@@ -160,7 +160,7 @@ export function HomeArticles() {
                   <span className="notch-badge-pill">{ARTICLES.category}</span>
                 </span>
               </div>
-              <div className="flex flex-1 flex-col p-6">
+              <div className="flex flex-1 flex-col bg-[var(--surface-3)] p-6">
                 <h3 className="text-lg font-semibold leading-snug text-[var(--ink)]">{a.title}</h3>
                 <p className="mt-3 flex-1 text-sm leading-relaxed text-[var(--ink-soft)]">{a.excerpt}</p>
                 <ReadMore>Tovább olvasom</ReadMore>
