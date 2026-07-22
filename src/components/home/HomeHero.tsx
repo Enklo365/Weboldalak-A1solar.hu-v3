@@ -56,24 +56,25 @@ export function HomeHero() {
           </div>
         </div>
 
-        {/* Service cards nested into the banner's lower-right */}
-        <div className="relative z-[3] -mt-10 ml-auto grid grid-cols-1 gap-4 rounded-[22px] bg-[var(--surface-3)] p-4 sm:grid-cols-3 md:absolute md:-bottom-8 md:right-0 md:-mt-0 md:w-[58%] md:p-5">
+        {/* Service cards — separate grey panels nested into the banner's lower-right */}
+        <div className="relative z-[3] -mt-10 ml-auto grid grid-cols-1 gap-4 sm:grid-cols-3 md:absolute md:-bottom-10 md:right-0 md:-mt-0 md:w-[62%]">
           {A1_SERVICE_CARDS.map((c, i) => (
             <Link
               key={c.href}
               href={c.href}
-              className="group relative flex flex-col justify-between rounded-2xl bg-white p-5 transition-shadow hover:shadow-[0_10px_30px_rgba(0,0,0,0.08)]"
+              className="group relative flex flex-col justify-between rounded-[20px] p-6 transition-shadow hover:shadow-[0_12px_34px_rgba(0,0,0,0.08)]"
+              style={{ background: "var(--surface-3)" }}
             >
               {i === 0 ? (
-                <span className="absolute right-4 top-4 grid h-9 w-9 place-items-center rounded-full border border-[var(--line)] bg-white text-[var(--ink)]">
+                <span className="absolute right-5 top-5 grid h-9 w-9 place-items-center rounded-full border border-[var(--line)] bg-white text-[var(--ink)]">
                   <ArrowUpRight />
                 </span>
               ) : null}
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={c.icon} alt="" className="h-14 w-14 object-contain" aria-hidden />
-              <div className="mt-3">
-                <h3 className="text-lg font-bold text-[var(--ink)]">{c.title}</h3>
-                <p className="mt-1 text-sm leading-snug text-[var(--ink-soft)]">{c.text}</p>
+              <img src={c.icon} alt="" className="h-16 w-16 object-contain" aria-hidden />
+              <div className="mt-5">
+                <h3 className="text-xl font-bold text-[var(--ink)]">{c.title}</h3>
+                <p className="mt-2 text-sm leading-snug text-[var(--ink-soft)]">{c.text}</p>
               </div>
             </Link>
           ))}
