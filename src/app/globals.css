@@ -1506,6 +1506,31 @@ body.drawer-open .bottom-nav {
   gap: 16px;
   max-width: 640px;
 }
+/* Process step card — the roman numeral nests in a concave notch scooped from
+   the card's top-left corner (echoes the homepage CTA/news-badge notches). */
+.step-card {
+  position: relative;
+  background: var(--surface-3);
+  border-radius: 18px;
+  padding: 78px 28px 28px;
+  -webkit-mask: radial-gradient(circle 32px at 44px 44px, #0000 0 32px, #000 33px);
+  mask: radial-gradient(circle 32px at 44px 44px, #0000 0 32px, #000 33px);
+}
+.step-badge {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--brand);
+  color: #fff;
+  font-weight: 700;
+  font-size: 15px;
+}
+
 /* Borderless, full-width variant for service subpages (no card chrome). */
 .contact-card--bare {
   background: var(--surface-3);

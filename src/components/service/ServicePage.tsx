@@ -170,19 +170,9 @@ const ProcessSection = ({ data }: { data: ServicePageData["process"] }) => (
     </div>
     <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2">
       {data.steps.map((s, i) => (
-        <div
-          key={s.num}
-          data-animate="up"
-          style={{ transitionDelay: `${(i % 2) * 80}ms`, background: "var(--surface-3)" }}
-          className="flex flex-col rounded-[18px] p-7"
-        >
-          <span
-            className="grid h-11 w-11 place-items-center rounded-full text-[16px] font-bold"
-            style={{ background: "#fff", color: "var(--brand)" }}
-          >
-            {s.num}
-          </span>
-          <h3 className="mt-6 text-[17px] font-semibold text-[var(--ink)]">{s.title}</h3>
+        <div key={s.num} data-animate="up" style={{ transitionDelay: `${(i % 2) * 80}ms` }} className="step-card">
+          <span className="step-badge">{s.num}</span>
+          <h3 className="text-[17px] font-semibold text-[var(--ink)]">{s.title}</h3>
           <p className="mt-3 text-sm leading-relaxed text-[var(--ink-soft)]">{s.body}</p>
         </div>
       ))}
@@ -193,16 +183,16 @@ const ProcessSection = ({ data }: { data: ServicePageData["process"] }) => (
 const OfferBanner = ({ data }: { data: ServicePageData["offer"] }) => (
   <section
     data-animate="up"
-    className="flex flex-col items-start gap-8 rounded-[24px] px-9 py-12 text-white md:flex-row md:items-center md:justify-between md:gap-12"
+    className="rounded-[24px] px-9 py-12 text-white"
     style={{ background: "linear-gradient(120deg, var(--brand) 0%, var(--brand-dark) 100%)" }}
   >
-    <div className="max-w-[560px]">
-      <h2 style={{ color: "#fff", fontSize: "clamp(22px, 3.2vw, 30px)", fontWeight: 600, lineHeight: 1.25 }}>{data.title}</h2>
-      <p className="mt-4 text-white/85">{data.body}</p>
-    </div>
+    <h2 className="max-w-[620px]" style={{ color: "#fff", fontSize: "clamp(22px, 3.2vw, 30px)", fontWeight: 600, lineHeight: 1.25 }}>
+      {data.title}
+    </h2>
+    <p className="mt-4 max-w-[620px] text-white/85">{data.body}</p>
     <Link
       href={data.ctaHref}
-      className="inline-flex flex-none items-center rounded-full transition-opacity hover:opacity-90"
+      className="mt-9 inline-flex items-center rounded-full transition-opacity hover:opacity-90"
       style={{ background: "#fff", color: "var(--brand)", padding: "14px 28px", fontSize: "15px", fontWeight: 600 }}
     >
       {data.ctaLabel}
@@ -361,6 +351,7 @@ export function ServicePage({ data }: { data: ServicePageData }) {
             <RowDivider />
             <ProcessSection data={data.process} />
             <OfferBanner data={data.offer} />
+            <RowDivider />
             <WhySection data={data.why} />
             <RowDivider />
             <ReferencesSection data={data.references} />
