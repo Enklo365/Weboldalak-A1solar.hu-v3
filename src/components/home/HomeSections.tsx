@@ -134,7 +134,6 @@ export function HomeArticles() {
               key={a.href}
               href={a.href}
               className="group flex flex-col overflow-hidden rounded-[20px] bg-white transition-shadow hover:shadow-lg"
-              style={{ border: "1px solid var(--line)" }}
             >
               <div className="relative aspect-[16/9] overflow-hidden">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
