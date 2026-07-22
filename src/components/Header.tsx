@@ -100,11 +100,21 @@ export const Header = () => {
         <div className="container">
           <div className="topbar-item">
             <span className="topbar-icon">
+              <MailIcon />
+            </span>
+            <span className="topbar-text">
+              <span className="topbar-label">E-mail cím:</span>
+              <a className="topbar-value" href={`mailto:${SITE.email}`}>
+                {SITE.email}
+              </a>
+            </span>
+          </div>
+          <div className="topbar-item hide-sm">
+            <span className="topbar-icon">
               <PhoneIcon />
             </span>
-            <span>
+            <span className="topbar-text">
               <span className="topbar-label">Telefonszám:</span>
-              <br />
               <a className="topbar-value" href={`tel:${SITE.phoneRaw}`}>
                 {SITE.phoneDisplay}
               </a>
@@ -114,22 +124,9 @@ export const Header = () => {
             <span className="topbar-icon">
               <ClockIcon />
             </span>
-            <span>
+            <span className="topbar-text">
               <span className="topbar-label">Telefonos ügyfélszolgálat</span>
-              <br />
               <span className="topbar-value muted">{SITE.supportHours}</span>
-            </span>
-          </div>
-          <div className="topbar-item hide-sm">
-            <span className="topbar-icon">
-              <MailIcon />
-            </span>
-            <span>
-              <span className="topbar-label">E-mail cím:</span>
-              <br />
-              <a className="topbar-value" href={`mailto:${SITE.email}`}>
-                {SITE.email}
-              </a>
             </span>
           </div>
           <div className="topbar-spacer" />

@@ -164,6 +164,12 @@ img {
   border: 1px solid rgba(218, 222, 228, 0.7);
   color: var(--brand);
 }
+.topbar-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+  gap: 1px;
+}
 .topbar-label {
   font-weight: 600;
   color: #2d2d2d;
@@ -185,12 +191,18 @@ img {
   margin-left: auto;
 }
 .ft-badge {
+  /* Same size as the header's "Kapcsolat" button (.header-cta). */
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
   background: var(--brand);
   color: #fff;
-  font-weight: 600;
-  font-size: 13px;
-  padding: 10px 18px;
-  border-radius: 999px;
+  font-weight: 500;
+  font-size: 14px;
+  padding: 9px 22px;
+  border: 1.5px solid transparent;
+  border-radius: 30px;
 }
 .ft-badge:hover {
   background: var(--brand-dark);

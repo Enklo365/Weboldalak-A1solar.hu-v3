@@ -2,6 +2,7 @@ import Link from "next/link";
 import { A1_SERVICE_CARDS } from "@/components/home/serviceCards.data";
 
 const HERO_BG = "/wp-content/uploads/2026/03/otthoni_energiatarolo_program-1.png";
+const HERO_VIDEO = "/nativ/hero-loop.mp4";
 const HERO_BG_MOBILE = "/wp-content/uploads/2026/03/ChatGPT-Image-2026.-marc.-13.-21_20_16.png";
 const CTA_PRIO_MASK = "/wp-content/uploads/2025/07/cta_prio.svg";
 const CTA_NORMAL_MASK = "/wp-content/uploads/2025/07/cta_normal.svg";
@@ -49,10 +50,10 @@ const CardBody = ({ title, text, icon }: { title: string; text: string; icon: st
     {/* eslint-disable-next-line @next/next/no-img-element */}
     <img src={icon} alt="" className="self-start object-contain" style={{ height: "72px", width: "auto" }} aria-hidden />
     <div>
-      <h3 className="text-[var(--ink)]" style={{ fontSize: "28px", fontWeight: 500, lineHeight: 1.2 }}>
+      <h3 className="text-[var(--ink)]" style={{ fontSize: "25px", fontWeight: 500, lineHeight: 1.2 }}>
         {title}
       </h3>
-      <p className="mt-2 text-[15px] leading-snug text-[var(--ink-soft)]">{text}</p>
+      <p className="mt-2 text-[14px] leading-snug text-[var(--ink-soft)]">{text}</p>
     </div>
   </>
 );
@@ -82,14 +83,18 @@ const HeroPhoto = () => (
       </defs>
     </svg>
     <div className="absolute inset-0" style={{ clipPath: `url(#${HERO_CLIP_ID})` }}>
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src={HERO_BG}
-        alt=""
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        preload="auto"
+        poster={HERO_BG}
         aria-hidden
-        // inline width/height beat the global `img { height: auto }` rule
         style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "50% 100%" }}
-      />
+      >
+        <source src={HERO_VIDEO} type="video/mp4" />
+      </video>
       <div className="absolute inset-0" style={{ background: GRADIENT }} />
     </div>
   </>
