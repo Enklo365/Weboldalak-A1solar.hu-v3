@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
-import { MirrorContent } from "@/components/MirrorContent";
-import { WpContent } from "@/components/WpContent";
-import { getPage } from "@/lib/content";
-import { getMirror } from "@/lib/mirror";
+import { Motion } from "@/components/Motion";
+import { HomeHero } from "@/components/home/HomeHero";
+import { HomeAbout, HomeArticles, HomeZanzibar, SectionDivider } from "@/components/home/HomeSections";
 
 export const metadata: Metadata = {
   title: "A1 Solar – Napelem, energiatárolás és finanszírozás egy helyről",
@@ -12,10 +10,21 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
 };
 
+/**
+ * Homepage — native React/Next.js rebuild of a1solar.hu (previously served from
+ * the `/nativ` preview route; promoted to `/` after sign-off).
+ */
 export default function HomePage() {
-  const mirror = getMirror("kezdolap");
-  if (mirror) return <MirrorContent page={mirror} />;
-  const home = getPage("kezdolap");
-  if (!home) notFound();
-  return <WpContent html={home.content} />;
+  return (
+    <>
+      <Motion />
+      <HomeHero />
+      <SectionDivider />
+      <HomeAbout />
+      <SectionDivider />
+      <HomeZanzibar />
+      <SectionDivider />
+      <HomeArticles />
+    </>
+  );
 }
