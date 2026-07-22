@@ -6,6 +6,10 @@ const HERO_VIDEO = "/nativ/hero-loop.mp4";
 const HERO_BG_MOBILE = "/wp-content/uploads/2026/03/ChatGPT-Image-2026.-marc.-13.-21_20_16.png";
 const CTA_PRIO_MASK = "/wp-content/uploads/2025/07/cta_prio.svg";
 const CTA_NORMAL_MASK = "/wp-content/uploads/2025/07/cta_normal.svg";
+/* Circular notch scooped from the mobile card's top-right corner, sized/placed
+   to nest the 48px arrow badge (6px inset → centre 30px from top & right). */
+const MOBILE_CARD_NOTCH =
+  "radial-gradient(circle 32px at calc(100% - 30px) 30px, transparent 31px, #000 32px)";
 
 const GRADIENT = "linear-gradient(to right, #0A141Dcc 0%, rgba(10,20,29,0) 100%)";
 
@@ -217,23 +221,33 @@ export function HomeHero() {
           </div>
         </div>
 
-        {/* Cards stacked beneath on mobile — full-width, icon top-left, arrow top-right. */}
+        {/* Cards stacked beneath on mobile — notched top-right corner (the arrow
+            badge nests into a scooped-out corner, echoing the desktop cards). */}
         <div className="mt-6 flex flex-col gap-4 px-4">
           {A1_SERVICE_CARDS.map((c) => (
             <Link
               key={c.href}
               href={c.href}
-              className="group relative flex flex-col gap-6 rounded-[20px] p-6 transition-opacity hover:opacity-95"
-              style={{ background: "var(--surface-3)" }}
+              className="group relative block min-h-[230px] transition-opacity hover:opacity-95"
             >
+              <div
+                className="absolute inset-0 rounded-[20px]"
+                style={{
+                  background: "var(--surface-3)",
+                  WebkitMaskImage: MOBILE_CARD_NOTCH,
+                  maskImage: MOBILE_CARD_NOTCH,
+                }}
+              />
               <CardArrowBadge />
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={c.icon} alt="" className="object-contain" style={{ height: "84px", width: "auto" }} aria-hidden />
-              <div>
-                <h3 className="text-[var(--ink)]" style={{ fontSize: "28px", fontWeight: 500, lineHeight: 1.2 }}>
-                  {c.title}
-                </h3>
-                <p className="mt-2 text-[15px] leading-snug text-[var(--ink-soft)]">{c.text}</p>
+              <div className="relative flex flex-col gap-6 p-6">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={c.icon} alt="" className="object-contain" style={{ height: "84px", width: "auto" }} aria-hidden />
+                <div>
+                  <h3 className="text-[var(--ink)]" style={{ fontSize: "28px", fontWeight: 500, lineHeight: 1.2 }}>
+                    {c.title}
+                  </h3>
+                  <p className="mt-2 text-[15px] leading-snug text-[var(--ink-soft)]">{c.text}</p>
+                </div>
               </div>
             </Link>
           ))}
