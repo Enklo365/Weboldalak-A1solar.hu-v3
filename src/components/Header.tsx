@@ -37,6 +37,11 @@ const SearchIcon = () => (
     <path d="m20 20-3.5-3.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
   </svg>
 );
+const ExtLinkIcon = () => (
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden>
+    <path d="M7 17 17 7M9 7h8v8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+);
 const FacebookIcon = () => (
   <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
     <path d="M14 8.5V7c0-.8.2-1.2 1.3-1.2H17V3h-2.6C11.5 3 10.5 4.7 10.5 7v1.5H8.5V12h2v9h3.5v-9h2.5l.4-3.5H14Z" />
@@ -314,8 +319,10 @@ export const Header = () => {
             aria-label="Menü megnyitása"
             onClick={() => setOpen(true)}
           >
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden>
-              <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+            <svg width="20" height="16" viewBox="0 0 18 14" fill="currentColor" aria-hidden>
+              <rect y="0" width="18" height="1.7" rx="1" />
+              <rect y="6.15" width="18" height="1.7" rx="1" />
+              <rect y="12.3" width="18" height="1.7" rx="1" />
             </svg>
           </button>
         </div>
@@ -388,9 +395,10 @@ export const Header = () => {
       <div className={`mobile-drawer${open ? " open" : ""}`} onClick={close}>
         <div className="mobile-panel" onClick={(e) => e.stopPropagation()}>
           <div className="mobile-panel-head">
-            <span className="mobile-panel-title">Navigáció</span>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img className="mobile-panel-logo" src={LOGO} alt="A1 Solar" />
             <button className="mobile-close" type="button" aria-label="Menü bezárása" onClick={close}>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
                 <path d="M6 6l12 12M18 6 6 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
               </svg>
             </button>
@@ -401,28 +409,29 @@ export const Header = () => {
               if (entry.external) {
                 return (
                   <a key={entry.label} className="mobile-nav-row" href={entry.href} target="_blank" rel="noopener noreferrer">
-                    {entry.label}
+                    <span>{entry.label}</span>
+                    <ExtLinkIcon />
                   </a>
                 );
               }
               if (entry.children?.length) {
                 const isOpen = expanded === entry.label;
                 return (
-                  <div key={entry.label} className="mobile-nav-group">
+                  <div key={entry.label} className={`mobile-nav-group${isOpen ? " open" : ""}`}>
                     <button
                       type="button"
                       className="mobile-nav-row"
                       aria-expanded={isOpen}
                       onClick={() => toggle(entry.label)}
                     >
-                      {entry.label}
+                      <span>{entry.label}</span>
                       <Caret />
                     </button>
                     {isOpen ? (
                       <div className="mobile-sub">
                         {entry.href !== "#" ? (
                           <Link href={entry.href} onClick={close}>
-                            {entry.label} — áttekintés
+                            Áttekintés
                           </Link>
                         ) : null}
                         {entry.children.map((c) =>
@@ -443,51 +452,31 @@ export const Header = () => {
               }
               return (
                 <Link key={entry.label} className="mobile-nav-row" href={entry.href} onClick={close}>
-                  {entry.label}
+                  <span>{entry.label}</span>
                 </Link>
               );
             })}
           </nav>
 
-          <Link className="btn btn-primary mobile-ft" href="/ft1000" onClick={close}>
-            Financial Times - FT 1000
+          <Link className="mobile-cta" href="/kapcsolat" onClick={close}>
+            Kérj ajánlatot
           </Link>
 
-          <div className="mobile-contact">
-            <div className="mobile-contact-item">
-              <span className="topbar-icon">
-                <PhoneIcon />
-              </span>
-              <span>
-                <span className="topbar-label">Telefonszám:</span>
-                <br />
-                <a className="topbar-value" href={`tel:${SITE.phoneRaw}`}>
-                  {SITE.phoneDisplay}
-                </a>
-              </span>
-            </div>
-            <div className="mobile-contact-item">
-              <span className="topbar-icon">
-                <ClockIcon />
-              </span>
-              <span>
-                <span className="topbar-label">Telefonos ügyfélszolgálat</span>
-                <br />
-                <span className="topbar-value muted">{SITE.supportHours}</span>
-              </span>
-            </div>
-            <div className="mobile-contact-item">
-              <span className="topbar-icon">
-                <MailIcon />
-              </span>
-              <span>
-                <span className="topbar-label">E-mail cím:</span>
-                <br />
-                <a className="topbar-value" href={`mailto:${SITE.email}`}>
-                  {SITE.email}
-                </a>
-              </span>
-            </div>
+          <div className="mobile-quick">
+            <a className="mobile-quick-btn" href={`tel:${SITE.phoneRaw}`}>
+              <PhoneIcon />
+              Hívás
+            </a>
+            <a className="mobile-quick-btn" href={`mailto:${SITE.email}`}>
+              <MailIcon />
+              E-mail
+            </a>
+          </div>
+
+          <div className="mobile-meta">
+            <a href={`tel:${SITE.phoneRaw}`}>{SITE.phoneDisplay}</a>
+            <span className="muted">Ügyfélszolgálat: {SITE.supportHours}</span>
+            <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
           </div>
 
           <div className="mobile-social">
