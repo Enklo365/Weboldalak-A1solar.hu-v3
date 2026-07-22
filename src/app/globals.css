@@ -363,7 +363,8 @@ img {
   display: flex;
   gap: 32px;
   align-items: stretch;
-  min-height: 300px;
+  width: 100%;
+  min-height: 320px;
 }
 /* Feature card (left) — grows to fill the free space, content bottom-left. */
 .megamenu-feature {
