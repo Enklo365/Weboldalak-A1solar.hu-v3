@@ -28,17 +28,16 @@ const Arrow14 = () => (
 );
 
 /**
- * Arrow badge for the "Vállalati" card — matches the WP hover: on card hover the
- * circle fills red while the dark arrow slides out to the top-right and a white
- * one slides in from the bottom-left.
+ * Arrow badge for the "Vállalati" card — exact WP hover: circle #f6f6f6 → red,
+ * the dark arrow fades out sliding to +6/+6, the white one fades in from −6/−6.
  */
 const CardArrowBadge = () => (
-  <span className="absolute right-1 top-1 z-10 grid h-11 w-11 place-items-center overflow-hidden rounded-full border border-[var(--line)] bg-white transition-colors duration-300 group-hover:border-transparent group-hover:bg-[var(--brand)]">
+  <span className="absolute right-1.5 top-1.5 z-10 grid h-12 w-12 place-items-center rounded-full bg-[var(--surface-3)] transition-colors duration-300 group-hover:bg-[var(--brand)]">
     <span className="relative block h-3.5 w-3.5">
-      <span className="absolute inset-0 text-[var(--ink)] transition-transform duration-300 ease-out group-hover:-translate-y-full group-hover:translate-x-full">
+      <span className="absolute inset-0 text-[var(--ink)] transition-all duration-300 group-hover:translate-x-1.5 group-hover:translate-y-1.5 group-hover:opacity-0">
         <Arrow14 />
       </span>
-      <span className="absolute inset-0 -translate-x-full translate-y-full text-white transition-transform duration-300 ease-out group-hover:translate-x-0 group-hover:translate-y-0">
+      <span className="absolute inset-0 -translate-x-1.5 -translate-y-1.5 text-white opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:translate-y-0 group-hover:opacity-100">
         <Arrow14 />
       </span>
     </span>
@@ -73,7 +72,8 @@ const CardBody = ({ title, text, icon }: { title: string; text: string; icon: st
  */
 export function HomeHero() {
   return (
-    <section className="w-full">
+    // ~11px top gap = the same moat the cards leave around the hero mask.
+    <section className="w-full pt-[11px]">
       {/* ── Desktop hero (≥lg) ─────────────────────────────────────────── */}
       <div className="relative mx-auto hidden w-full lg:block" style={{ maxWidth: "1290px", height: "571px" }}>
         {/* Masked photo + gradient */}
