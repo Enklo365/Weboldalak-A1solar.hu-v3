@@ -41,10 +41,6 @@ export const MAIN_NAV: NavEntry[] = [
     label: "Szolgáltatásaink",
     children: [
       {
-        href: "/lakossagi-energiatarolo-tamogatas",
-        label: "Otthoni Energiatároló Program",
-      },
-      {
         href: "/lakossagi-napelem-tisztitas-es-karbantartas",
         label: "Lakossági napelem tisztítás és karbantartás",
       },
@@ -66,6 +62,7 @@ export const MAIN_NAV: NavEntry[] = [
       },
     ],
   },
+  { href: "/lakossagi-energiatarolo-tamogatas", label: "Otthoni Energiatároló Program" },
   { href: "/tudastar-blog", label: "Cikkek" },
   { href: "https://energrosso.hu/", label: "Nagykereskedelem", external: true },
 ];
@@ -89,15 +86,15 @@ export const MEGA_MENUS: Record<string, MegaMenu> = {
       {
         heading: "Lakossági",
         links: [
-          { href: "/lakossagi-energiatarolo-tamogatas", label: "Energiatároló Program", desc: "Támogatott tárolás otthonra.", icon: "battery" },
-          { href: "/lakossagi-napelem", label: "Lakossági napelem", desc: "Otthonod energiájáért.", icon: "panel" },
+          { href: "/lakossagi-napelem", label: "Napelem", desc: "Otthonod energiájáért.", icon: "panel" },
+          { href: "/lakossagi-energiatarolo-tamogatas", label: "Energiatárolás", desc: "Tárold a zöld energiát.", icon: "battery" },
           { href: "/lakossagi-napelem-tisztitas-es-karbantartas", label: "Tisztítás & karbantartás", desc: "Csúcson a rendszered.", icon: "care" },
         ],
       },
       {
         heading: "Vállalati",
         links: [
-          { href: "/vallalati-napelem", label: "Vállalati napelem", desc: "Kevesebb energiaköltség.", icon: "building" },
+          { href: "/vallalati-napelem", label: "Napelem", desc: "Kevesebb energiaköltség.", icon: "panel" },
           { href: "/vallalati-energiatarolas", label: "Energiatárolás", desc: "Tárold a zöld energiát.", icon: "battery" },
           { href: "/vallalati-napelem-tisztitas-es-karbantartas", label: "Tisztítás & karbantartás", desc: "Céges rendszerekhez.", icon: "care" },
         ],

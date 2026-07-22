@@ -1005,6 +1005,7 @@ img {
   align-items: center;
   gap: 18px;
   flex-wrap: wrap;
+  font-size: 12px;
 }
 .footer-copyright-row a:hover {
   color: var(--brand);
