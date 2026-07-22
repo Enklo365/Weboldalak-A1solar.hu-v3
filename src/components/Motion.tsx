@@ -25,7 +25,7 @@ export function Motion() {
       img.addEventListener("error", done, { once: true });
     });
 
-    const animated = document.querySelectorAll("[data-animate]");
+    const animated = document.querySelectorAll<HTMLElement>("[data-animate]");
     if (reduce) {
       animated.forEach((el) => el.classList.add("in"));
       return;
@@ -40,9 +40,18 @@ export function Motion() {
           }
         });
       },
-      { rootMargin: "0px 0px -10% 0px", threshold: 0.12 }
+      { rootMargin: "0px 0px -8% 0px", threshold: 0.1 }
     );
-    animated.forEach((el) => io.observe(el));
+    // Elements already within (or near) the viewport on load reveal at once;
+    // only the ones below the fold wait for the scroll observer. This keeps the
+    // visible content from ever being stuck hidden.
+    animated.forEach((el) => {
+      if (el.getBoundingClientRect().top < window.innerHeight - 40) {
+        el.classList.add("in");
+      } else {
+        io.observe(el);
+      }
+    });
     return () => io.disconnect();
   }, []);
 
