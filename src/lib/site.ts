@@ -136,19 +136,13 @@ export const MEGA_MENUS: Record<string, MegaMenu> = {
         links: [
           { href: "/cegunkrol", label: "Rólunk", desc: "Ismerd meg az A1 Solart.", icon: "info" },
           { href: "/karrier", label: "Karrier", desc: "Csatlakozz a csapatunkhoz.", icon: "career" },
-          { href: "/ft1000", label: "Financial Times – FT 1000", desc: "Európa legdinamikusabb cégei közt.", icon: "trophy" },
         ],
       },
       {
         heading: "Tudástár & híreink",
         links: [
           { href: "/tudastar-blog", label: "Cikkek", desc: "Friss hírek és tudástár.", icon: "article" },
-          {
-            href: "/az-a1-solar-zanzibar-ltd-atadta-elso-afrikai-napelemes-rendszeret/",
-            label: "Zanzibár küldetés",
-            desc: "Afrikai napelemes projektünk.",
-            icon: "globe",
-          },
+          { href: "/ft1000", label: "Financial Times – FT 1000", desc: "Európa legdinamikusabb cégei közt.", icon: "trophy" },
         ],
       },
     ],
