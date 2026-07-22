@@ -1506,6 +1506,45 @@ body.drawer-open .bottom-nav {
   gap: 16px;
   max-width: 640px;
 }
+/* Support widget availability dot — green + pulsing during office hours, red otherwise. */
+.status-dot {
+  position: relative;
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  flex: none;
+}
+.status-dot.is-closed {
+  background: var(--brand);
+}
+.status-dot.is-open {
+  background: #16a34a;
+}
+.status-dot.is-open::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  animation: statusPulse 1.8s ease-out infinite;
+}
+@keyframes statusPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(22, 163, 74, 0.55);
+  }
+  70% {
+    box-shadow: 0 0 0 9px rgba(22, 163, 74, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(22, 163, 74, 0);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .status-dot.is-open::after {
+    animation: none;
+  }
+}
+
 /* Process step card — the roman numeral nests in a concave notch scooped from
    the card's top-left corner (echoes the homepage CTA/news-badge notches). The
    badge is a sibling OUTSIDE the masked card, or the mask would clip it too. */

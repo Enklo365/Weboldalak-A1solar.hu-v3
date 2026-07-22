@@ -2,8 +2,10 @@ import type { ReactNode } from "react";
 import Link from "next/link";
 import { ContactForm } from "@/components/ContactForm";
 import { Motion } from "@/components/Motion";
+import { GridShaderBackground } from "@/components/service/GridShaderBackground";
 import type { ServicePageData } from "@/components/service/serviceData";
 import { ServiceTocNav, type TocItem } from "@/components/service/ServiceTocNav";
+import { SupportStatusDot } from "@/components/service/SupportStatusDot";
 import { SITE } from "@/lib/site";
 
 /* The homepage hero shape (rounded left + lower-right notch) as a scalable
@@ -93,7 +95,7 @@ const ServiceHero = ({ data }: { data: ServicePageData["hero"] }) => (
         </div>
         {/* Intro text vertically centred in the lower-right notch cut-out (the
             image ends at ~74% on the right, so the notch spans 74%–100%). */}
-        <div className="absolute z-10 flex items-center" style={{ left: "46%", right: "1.5%", top: "74%", bottom: "1%" }}>
+        <div className="absolute z-10 flex items-center" style={{ left: "46%", right: "1.5%", top: "80%", bottom: "1%" }}>
           <p style={{ fontSize: "16px", lineHeight: 1.6, color: "var(--ink-soft)" }}>{data.intro}</p>
         </div>
       </div>
@@ -185,20 +187,29 @@ const ProcessSection = ({ data }: { data: ServicePageData["process"] }) => (
 const OfferBanner = ({ data }: { data: ServicePageData["offer"] }) => (
   <section
     data-animate="up"
-    className="rounded-[24px] px-9 py-12 text-white"
+    className="relative overflow-hidden rounded-[24px] px-9 py-12 text-white"
     style={{ background: "linear-gradient(120deg, var(--brand) 0%, var(--brand-dark) 100%)" }}
   >
-    <h2 className="max-w-[620px]" style={{ color: "#fff", fontSize: "clamp(22px, 3.2vw, 30px)", fontWeight: 600, lineHeight: 1.25 }}>
-      {data.title}
-    </h2>
-    <p className="mt-4 max-w-[620px] text-white/85">{data.body}</p>
-    <Link
-      href={data.ctaHref}
-      className="mt-9 inline-flex items-center rounded-full transition-opacity hover:opacity-90"
-      style={{ background: "#fff", color: "var(--brand)", padding: "14px 28px", fontSize: "15px", fontWeight: 600 }}
-    >
-      {data.ctaLabel}
-    </Link>
+    {/* Animated brand-coloured collapsing-grid background (WebGL). */}
+    <GridShaderBackground className="absolute inset-0" />
+    {/* Contrast wash so the white copy stays legible over the grid. */}
+    <div
+      className="absolute inset-0"
+      style={{ background: "linear-gradient(90deg, rgba(74,4,14,0.78) 0%, rgba(74,4,14,0.42) 52%, rgba(74,4,14,0.08) 100%)" }}
+    />
+    <div className="relative z-10">
+      <h2 className="max-w-[620px]" style={{ color: "#fff", fontSize: "clamp(22px, 3.2vw, 30px)", fontWeight: 600, lineHeight: 1.25 }}>
+        {data.title}
+      </h2>
+      <p className="mt-4 max-w-[620px] text-white/85">{data.body}</p>
+      <Link
+        href={data.ctaHref}
+        className="mt-9 inline-flex items-center rounded-full transition-opacity hover:opacity-90"
+        style={{ background: "#fff", color: "var(--brand)", padding: "14px 28px", fontSize: "15px", fontWeight: 600 }}
+      >
+        {data.ctaLabel}
+      </Link>
+    </div>
   </section>
 );
 
@@ -318,7 +329,7 @@ const SupportWidget = () => (
       <div>
         <div className="text-sm font-semibold text-[var(--ink)]">Ügyfélszolgálat</div>
         <a href={`tel:${SITE.phoneRaw}`} className="mt-0.5 flex items-center gap-2 font-semibold text-[var(--ink)]">
-          <span className="h-2 w-2 rounded-full" style={{ background: "var(--brand)" }} />
+          <SupportStatusDot />
           {SITE.phoneDisplay}
         </a>
       </div>
