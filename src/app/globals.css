@@ -869,13 +869,13 @@ img {
 .footer-notch {
   position: absolute;
   top: 0;
-  right: 56px;
+  right: 96px;
   z-index: 3;
   display: flex;
   align-items: center;
   background: #fff;
-  padding: 16px 34px 22px;
-  border-radius: 0 0 34px 34px;
+  padding: 22px 44px 34px;
+  border-radius: 0 0 56px 56px;
 }
 .footer-notch img {
   max-width: 520px;
@@ -886,23 +886,23 @@ img {
   content: "";
   position: absolute;
   top: 0;
-  left: -34px;
-  width: 34px;
-  height: 34px;
+  left: -60px;
+  width: 60px;
+  height: 60px;
   background: #f6f6f6;
-  -webkit-mask: radial-gradient(34px at 0 0, #0000 98%, #000);
-  mask: radial-gradient(34px at 0 0, #0000 98%, #000);
+  -webkit-mask: radial-gradient(60px at 0 0, #0000 98%, #000);
+  mask: radial-gradient(60px at 0 0, #0000 98%, #000);
 }
 .footer-notch::after {
   content: "";
   position: absolute;
   top: 0;
-  right: -34px;
-  width: 34px;
-  height: 34px;
+  right: -60px;
+  width: 60px;
+  height: 60px;
   background: #f6f6f6;
-  -webkit-mask: radial-gradient(34px at 100% 0, #0000 98%, #000);
-  mask: radial-gradient(34px at 100% 0, #0000 98%, #000);
+  -webkit-mask: radial-gradient(60px at 100% 0, #0000 98%, #000);
+  mask: radial-gradient(60px at 100% 0, #0000 98%, #000);
 }
 .footer-top {
   display: flex;
