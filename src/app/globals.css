@@ -337,42 +337,128 @@ img {
   top: 0;
   right: 0;
   height: 100%;
-  width: min(380px, 88vw);
+  width: min(340px, 90vw);
   background: #fff;
-  padding: 24px;
+  padding: 20px;
   overflow-y: auto;
 }
-.mobile-panel a {
-  display: block;
-  padding: 12px 6px;
-  font-weight: 600;
-  border-bottom: 1px solid var(--line);
+.mobile-panel-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 14px;
 }
-.mobile-panel .sub a {
+.mobile-panel-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--ink);
+}
+.mobile-close {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fff;
+  color: var(--ink);
+  cursor: pointer;
+}
+.mobile-nav-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 14px 4px;
+  font-size: 16px;
   font-weight: 500;
-  padding-left: 18px;
+  color: var(--ink);
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  cursor: pointer;
+}
+.mobile-nav-row .nav-caret {
   color: var(--ink-soft);
+}
+.mobile-sub {
+  display: flex;
+  flex-direction: column;
+  padding: 4px 0 10px 14px;
+}
+.mobile-sub a {
+  padding: 9px 4px;
   font-size: 14px;
+  font-weight: 500;
+  color: var(--ink-soft);
+}
+.mobile-sub a:hover {
+  color: var(--brand);
+}
+.mobile-ft {
+  width: 100%;
+  margin-top: 20px;
+  justify-content: center;
+}
+.mobile-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 22px;
+}
+.mobile-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.mobile-social {
+  display: flex;
+  gap: 12px;
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+.mobile-social a {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--ink);
+}
+.mobile-social a:hover {
+  background: var(--brand);
+  border-color: var(--brand);
+  color: #fff;
 }
 
 @media (max-width: 1180px) {
   .mainnav,
-  .header-cta,
   .search-box {
     display: none;
   }
   .burger {
     display: flex;
+  }
+  .header-cta {
     margin-left: auto;
   }
-}
-@media (max-width: 900px) {
-  .topbar .container {
-    gap: 16px;
-    padding-block: 10px;
+  .mainbar .container {
+    gap: 12px;
   }
-  .topbar-item.hide-sm {
+}
+/* On phones the utility bar collapses into the menu, leaving logo + CTA + burger. */
+@media (max-width: 900px) {
+  .topbar {
     display: none;
+  }
+}
+@media (max-width: 560px) {
+  .header-cta {
+    padding: 9px 16px;
+    font-size: 14px;
   }
 }
 

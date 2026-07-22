@@ -178,16 +178,24 @@ export function HomeHero() {
           </Link>
         </div>
 
-        {/* Cards stacked beneath on mobile */}
-        <div className="mt-8 grid grid-cols-1 gap-4 px-4 sm:grid-cols-3">
+        {/* Cards stacked beneath on mobile — full-width, icon top-left, arrow top-right. */}
+        <div className="mt-6 flex flex-col gap-4 px-4">
           {A1_SERVICE_CARDS.map((c) => (
             <Link
               key={c.href}
               href={c.href}
-              className="flex items-center gap-4 rounded-[20px] p-5 transition-opacity hover:opacity-95 sm:flex-col sm:items-start sm:gap-0 sm:aspect-square sm:justify-between"
+              className="group relative flex flex-col gap-6 rounded-[20px] p-6 transition-opacity hover:opacity-95"
               style={{ background: "var(--surface-3)" }}
             >
-              <CardBody title={c.title} text={c.text} icon={c.icon} />
+              <CardArrowBadge />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={c.icon} alt="" className="object-contain" style={{ height: "84px", width: "auto" }} aria-hidden />
+              <div>
+                <h3 className="text-[var(--ink)]" style={{ fontSize: "28px", fontWeight: 500, lineHeight: 1.2 }}>
+                  {c.title}
+                </h3>
+                <p className="mt-2 text-[15px] leading-snug text-[var(--ink-soft)]">{c.text}</p>
+              </div>
             </Link>
           ))}
         </div>

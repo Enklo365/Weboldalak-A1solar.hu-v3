@@ -37,6 +37,23 @@ const SearchIcon = () => (
     <path d="m20 20-3.5-3.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
   </svg>
 );
+const FacebookIcon = () => (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+    <path d="M14 8.5V7c0-.8.2-1.2 1.3-1.2H17V3h-2.6C11.5 3 10.5 4.7 10.5 7v1.5H8.5V12h2v9h3.5v-9h2.5l.4-3.5H14Z" />
+  </svg>
+);
+const YoutubeIcon = () => (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+    <path d="M22.5 8.2a2.7 2.7 0 0 0-1.9-1.9C18.9 5.8 12 5.8 12 5.8s-6.9 0-8.6.5A2.7 2.7 0 0 0 1.5 8.2 28 28 0 0 0 1 12a28 28 0 0 0 .5 3.8 2.7 2.7 0 0 0 1.9 1.9c1.7.5 8.6.5 8.6.5s6.9 0 8.6-.5a2.7 2.7 0 0 0 1.9-1.9A28 28 0 0 0 23 12a28 28 0 0 0-.5-3.8ZM9.8 15.3V8.7l5.7 3.3-5.7 3.3Z" />
+  </svg>
+);
+const InstagramIcon = () => (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
+    <rect x="3.5" y="3.5" width="17" height="17" rx="5" stroke="currentColor" strokeWidth="2" />
+    <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="2" />
+    <circle cx="17.3" cy="6.7" r="1.3" fill="currentColor" />
+  </svg>
+);
 
 const NavLink = ({ entry }: { entry: NavEntry }) => {
   if (entry.external) {
@@ -69,6 +86,12 @@ const NavLink = ({ entry }: { entry: NavEntry }) => {
 
 export const Header = () => {
   const [open, setOpen] = useState(false);
+  const [expanded, setExpanded] = useState<string | null>(null);
+  const toggle = (label: string) => setExpanded((cur) => (cur === label ? null : label));
+  const close = () => {
+    setOpen(false);
+    setExpanded(null);
+  };
 
   return (
     <header className="site-header">
@@ -169,49 +192,122 @@ export const Header = () => {
       </div>
 
       {/* Mobile drawer */}
-      <div className={`mobile-drawer${open ? " open" : ""}`} onClick={() => setOpen(false)}>
+      <div className={`mobile-drawer${open ? " open" : ""}`} onClick={close}>
         <div className="mobile-panel" onClick={(e) => e.stopPropagation()}>
-          <button
-            className="burger"
-            type="button"
-            aria-label="Menü bezárása"
-            style={{ marginLeft: "auto", marginBottom: 16 }}
-            onClick={() => setOpen(false)}
-          >
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden>
-              <path d="M6 6l12 12M18 6 6 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-            </svg>
-          </button>
-          {MAIN_NAV.map((entry) =>
-            entry.external ? (
-              <a key={entry.label} href={entry.href} target="_blank" rel="noopener noreferrer">
-                {entry.label}
-              </a>
-            ) : (
-              <div key={entry.label}>
-                <Link href={entry.href} onClick={() => setOpen(false)}>
+          <div className="mobile-panel-head">
+            <span className="mobile-panel-title">Navigáció</span>
+            <button className="mobile-close" type="button" aria-label="Menü bezárása" onClick={close}>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden>
+                <path d="M6 6l12 12M18 6 6 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+              </svg>
+            </button>
+          </div>
+
+          <nav className="mobile-nav" aria-label="Mobil menü">
+            {MAIN_NAV.map((entry) => {
+              if (entry.external) {
+                return (
+                  <a key={entry.label} className="mobile-nav-row" href={entry.href} target="_blank" rel="noopener noreferrer">
+                    {entry.label}
+                  </a>
+                );
+              }
+              if (entry.children?.length) {
+                const isOpen = expanded === entry.label;
+                return (
+                  <div key={entry.label} className="mobile-nav-group">
+                    <button
+                      type="button"
+                      className="mobile-nav-row"
+                      aria-expanded={isOpen}
+                      onClick={() => toggle(entry.label)}
+                    >
+                      {entry.label}
+                      <Caret />
+                    </button>
+                    {isOpen ? (
+                      <div className="mobile-sub">
+                        {entry.href !== "#" ? (
+                          <Link href={entry.href} onClick={close}>
+                            {entry.label} — áttekintés
+                          </Link>
+                        ) : null}
+                        {entry.children.map((c) =>
+                          c.external ? (
+                            <a key={c.href} href={c.href} target="_blank" rel="noopener noreferrer">
+                              {c.label}
+                            </a>
+                          ) : (
+                            <Link key={c.href} href={c.href} onClick={close}>
+                              {c.label}
+                            </Link>
+                          )
+                        )}
+                      </div>
+                    ) : null}
+                  </div>
+                );
+              }
+              return (
+                <Link key={entry.label} className="mobile-nav-row" href={entry.href} onClick={close}>
                   {entry.label}
                 </Link>
-                {entry.children?.length ? (
-                  <div className="sub">
-                    {entry.children.map((c) => (
-                      <Link key={c.href} href={c.href} onClick={() => setOpen(false)}>
-                        {c.label}
-                      </Link>
-                    ))}
-                  </div>
-                ) : null}
-              </div>
-            )
-          )}
-          <Link
-            className="btn btn-primary"
-            href="/kapcsolat"
-            style={{ marginTop: 20, width: "100%" }}
-            onClick={() => setOpen(false)}
-          >
-            Kapcsolat
+              );
+            })}
+          </nav>
+
+          <Link className="btn btn-primary mobile-ft" href="/ft1000" onClick={close}>
+            Financial Times - FT 1000
           </Link>
+
+          <div className="mobile-contact">
+            <div className="mobile-contact-item">
+              <span className="topbar-icon">
+                <PhoneIcon />
+              </span>
+              <span>
+                <span className="topbar-label">Telefonszám:</span>
+                <br />
+                <a className="topbar-value" href={`tel:${SITE.phoneRaw}`}>
+                  {SITE.phoneDisplay}
+                </a>
+              </span>
+            </div>
+            <div className="mobile-contact-item">
+              <span className="topbar-icon">
+                <ClockIcon />
+              </span>
+              <span>
+                <span className="topbar-label">Telefonos ügyfélszolgálat</span>
+                <br />
+                <span className="topbar-value muted">{SITE.supportHours}</span>
+              </span>
+            </div>
+            <div className="mobile-contact-item">
+              <span className="topbar-icon">
+                <MailIcon />
+              </span>
+              <span>
+                <span className="topbar-label">E-mail cím:</span>
+                <br />
+                <a className="topbar-value" href={`mailto:${SITE.email}`}>
+                  {SITE.email}
+                </a>
+              </span>
+            </div>
+          </div>
+
+          <div className="mobile-social">
+            <a href={SITE.social.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <FacebookIcon />
+            </a>
+            <a href={SITE.social.youtube} target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+              <YoutubeIcon />
+            </a>
+            <a href={SITE.social.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <InstagramIcon />
+            </a>
+          </div>
         </div>
       </div>
     </header>
