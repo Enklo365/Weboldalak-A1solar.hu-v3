@@ -400,6 +400,7 @@ export const Header = () => {
       {/* Mobile drawer */}
       <div className={`mobile-drawer${open ? " open" : ""}`} onClick={close}>
         <div className="mobile-panel" onClick={(e) => e.stopPropagation()}>
+          <div className="mobile-grabber" />
           <div className="mobile-panel-head">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img className="mobile-panel-logo" src={LOGO} alt="A1 Solar" />

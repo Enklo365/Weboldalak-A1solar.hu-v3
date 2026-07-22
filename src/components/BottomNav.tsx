@@ -24,6 +24,12 @@ const OfferIcon = () => (
     <path d="M13 3v5h5M8.5 13h7M8.5 16.5h4.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 );
+const ArticleIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" aria-hidden>
+    <rect x="4" y="4" width="16" height="16" rx="3" stroke="currentColor" strokeWidth="2" />
+    <path d="M8 9h8M8 13h8M8 17h5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+  </svg>
+);
 const MenuIcon = () => (
   <svg viewBox="0 0 24 24" fill="none" aria-hidden>
     <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
@@ -31,9 +37,9 @@ const MenuIcon = () => (
 );
 
 /**
- * Floating, thumb-reachable action bar for mobile (≤900px). Conversion-first:
- * call, e-mail, request-a-quote, and a menu button that opens the header drawer.
- * Hides while scrolling down, reappears on scroll-up; respects the iOS safe area.
+ * Floating mobile bottom bar (≤900px) with a raised centre CTA nesting in a
+ * concave notch. Conversion-first: the elevated button is "Ajánlatkérés"; the
+ * side slots are call / e-mail / articles / menu. Hides on scroll-down.
  */
 export function BottomNav() {
   const [hidden, setHidden] = useState(false);
@@ -53,26 +59,32 @@ export function BottomNav() {
 
   return (
     <nav className={`bottom-nav${hidden ? " hidden" : ""}`} aria-label="Gyors műveletek">
-      <a className="bottom-nav-item" href={`tel:${SITE.phoneRaw}`}>
-        <PhoneIcon />
-        Hívás
-      </a>
-      <a className="bottom-nav-item" href={`mailto:${SITE.email}`}>
-        <MailIcon />
-        E-mail
-      </a>
-      <Link className="bottom-nav-item primary" href="/kapcsolat">
+      <div className="bottom-nav-bar">
+        <a className="bottom-nav-item" href={`tel:${SITE.phoneRaw}`}>
+          <PhoneIcon />
+          Hívás
+        </a>
+        <a className="bottom-nav-item" href={`mailto:${SITE.email}`}>
+          <MailIcon />
+          E-mail
+        </a>
+        <span className="bottom-nav-slot">Ajánlat</span>
+        <Link className="bottom-nav-item" href="/tudastar-blog">
+          <ArticleIcon />
+          Cikkek
+        </Link>
+        <button
+          type="button"
+          className="bottom-nav-item"
+          onClick={() => window.dispatchEvent(new CustomEvent("a1:toggle-menu"))}
+        >
+          <MenuIcon />
+          Menü
+        </button>
+      </div>
+      <Link className="bottom-nav-cta" href="/kapcsolat" aria-label="Ajánlatkérés">
         <OfferIcon />
-        Ajánlatkérés
       </Link>
-      <button
-        type="button"
-        className="bottom-nav-item"
-        onClick={() => window.dispatchEvent(new CustomEvent("a1:toggle-menu"))}
-      >
-        <MenuIcon />
-        Menü
-      </button>
     </nav>
   );
 }
