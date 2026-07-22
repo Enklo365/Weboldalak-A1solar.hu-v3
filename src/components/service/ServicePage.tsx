@@ -178,8 +178,8 @@ const OfferBanner = ({ data }: { data: ServicePageData["offer"] }) => (
         </div>
         <Link
           href={data.ctaHref}
-          className="inline-flex flex-none items-center rounded-full bg-white transition-opacity hover:opacity-90"
-          style={{ color: "var(--brand)", padding: "14px 28px", fontSize: "15px", fontWeight: 600 }}
+          className="inline-flex flex-none items-center rounded-full transition-opacity hover:opacity-90"
+          style={{ background: "#fff", color: "var(--brand)", padding: "14px 28px", fontSize: "15px", fontWeight: 600 }}
         >
           {data.ctaLabel}
         </Link>
