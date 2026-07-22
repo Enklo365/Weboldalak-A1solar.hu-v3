@@ -55,7 +55,7 @@ export function HomeAbout() {
         <div className="max-w-[600px]">
           <Eyebrow>{ABOUT.eyebrow}</Eyebrow>
           <h2
-            className="mt-6 text-[var(--ink)]"
+            className="mt-8 text-[var(--ink)]"
             style={{ fontSize: "clamp(28px, 4.5vw, 40px)", fontWeight: 500, lineHeight: 1.15 }}
           >
             {ABOUT.title}
@@ -82,7 +82,7 @@ export function HomeZanzibar() {
         <div className="max-w-[600px]">
           <Eyebrow>{ZANZIBAR.eyebrow}</Eyebrow>
           <h2
-            className="mt-6 text-[var(--ink)]"
+            className="mt-8 text-[var(--ink)]"
             style={{ fontSize: "clamp(28px, 4.5vw, 40px)", fontWeight: 500, lineHeight: 1.15 }}
           >
             {ZANZIBAR.title}
@@ -118,7 +118,7 @@ export function HomeArticles() {
           <div>
             <Eyebrow>{ARTICLES.eyebrow}</Eyebrow>
             <h2
-              className="mt-6 text-[var(--ink)]"
+              className="mt-8 text-[var(--ink)]"
               style={{ fontSize: "clamp(28px, 4.5vw, 40px)", fontWeight: 500, lineHeight: 1.15 }}
             >
               {ARTICLES.title}
