@@ -6,10 +6,9 @@ const HERO_VIDEO = "/nativ/hero-loop.mp4";
 const HERO_BG_MOBILE = "/wp-content/uploads/2026/03/ChatGPT-Image-2026.-marc.-13.-21_20_16.png";
 const CTA_PRIO_MASK = "/wp-content/uploads/2025/07/cta_prio.svg";
 const CTA_NORMAL_MASK = "/wp-content/uploads/2025/07/cta_normal.svg";
-/* Circular notch scooped from the mobile card's top-right corner, sized/placed
-   to nest the 48px arrow badge (6px inset → centre 30px from top & right). */
-const MOBILE_CARD_NOTCH =
-  "radial-gradient(circle 32px at calc(100% - 30px) 30px, transparent 31px, #000 32px)";
+/* The WP mobile card mask — a rounded rectangle with a step-notch scooped out of
+   the top-right corner (where the arrow badge nests). Used with mask-size cover. */
+const MOBILE_CARD_MASK = "url(/wp-content/uploads/2025/07/mobile_mask_cta.svg)";
 
 const GRADIENT = "linear-gradient(to right, #0A141Dcc 0%, rgba(10,20,29,0) 100%)";
 
@@ -35,8 +34,8 @@ const Arrow14 = () => (
  * Arrow badge for the "Vállalati" card — exact WP hover: circle #f6f6f6 → red,
  * the dark arrow fades out sliding to +6/+6, the white one fades in from −6/−6.
  */
-const CardArrowBadge = () => (
-  <span className="absolute right-1.5 top-1.5 z-10 grid h-12 w-12 place-items-center rounded-full bg-[var(--surface-3)] transition-colors duration-300 group-hover:bg-[var(--brand)]">
+const CardArrowBadge = ({ className = "right-1.5 top-1.5" }: { className?: string }) => (
+  <span className={`absolute z-10 grid h-12 w-12 place-items-center rounded-full bg-[var(--surface-3)] transition-colors duration-300 group-hover:bg-[var(--brand)] ${className}`}>
     <span className="relative block h-3.5 w-3.5">
       <span className="absolute inset-0 text-[var(--ink)] transition-all duration-300 group-hover:translate-x-1.5 group-hover:translate-y-1.5 group-hover:opacity-0">
         <Arrow14 />
@@ -225,29 +224,30 @@ export function HomeHero() {
             badge nests into a scooped-out corner, echoing the desktop cards). */}
         <div className="mt-6 flex flex-col gap-4 px-4">
           {A1_SERVICE_CARDS.map((c) => (
-            <Link
-              key={c.href}
-              href={c.href}
-              className="group relative block min-h-[230px] transition-opacity hover:opacity-95"
-            >
+            <Link key={c.href} href={c.href} className="group relative block h-[230px] transition-opacity hover:opacity-95">
               <div
-                className="absolute inset-0 rounded-[20px]"
+                className="absolute inset-0"
                 style={{
                   background: "var(--surface-3)",
-                  WebkitMaskImage: MOBILE_CARD_NOTCH,
-                  maskImage: MOBILE_CARD_NOTCH,
+                  WebkitMaskImage: MOBILE_CARD_MASK,
+                  maskImage: MOBILE_CARD_MASK,
+                  WebkitMaskSize: "cover",
+                  maskSize: "cover",
+                  WebkitMaskRepeat: "no-repeat",
+                  maskRepeat: "no-repeat",
                 }}
               />
-              <CardArrowBadge />
-              <div className="relative flex flex-col gap-6 p-6">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={c.icon} alt="" className="object-contain" style={{ height: "84px", width: "auto" }} aria-hidden />
-                <div>
-                  <h3 className="text-[var(--ink)]" style={{ fontSize: "28px", fontWeight: 500, lineHeight: 1.2 }}>
-                    {c.title}
-                  </h3>
-                  <p className="mt-2 text-[15px] leading-snug text-[var(--ink-soft)]">{c.text}</p>
-                </div>
+              {/* Icon — top-left */}
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={c.icon} alt="" className="absolute left-5 top-3 object-contain" style={{ height: "96px", width: "auto" }} aria-hidden />
+              {/* Arrow badge — nested in the top-right notch */}
+              <CardArrowBadge className="right-5 top-1.5" />
+              {/* Text — bottom */}
+              <div className="absolute inset-x-0 bottom-0 p-5">
+                <h3 className="text-[var(--ink)]" style={{ fontSize: "24px", fontWeight: 500, lineHeight: 1.2 }}>
+                  {c.title}
+                </h3>
+                <p className="mt-1.5 text-sm leading-snug text-[var(--ink-soft)]">{c.text}</p>
               </div>
             </Link>
           ))}
