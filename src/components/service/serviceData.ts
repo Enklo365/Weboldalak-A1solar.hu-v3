@@ -179,3 +179,24 @@ const lakossagiNapelem: ServicePageData = {
 export const SERVICE_PAGES: Record<string, ServicePageData> = {
   "lakossagi-napelem": lakossagiNapelem,
 };
+
+/** Sidebar service navigation (grouped), current page highlighted by slug. */
+export type ServiceNavGroup = { heading: string; links: { href: string; label: string }[] };
+export const SERVICE_NAV: ServiceNavGroup[] = [
+  {
+    heading: "Lakossági",
+    links: [
+      { href: "/lakossagi-napelem", label: "Napelem" },
+      { href: "/lakossagi-energiatarolo-tamogatas", label: "Energiatárolás" },
+      { href: "/lakossagi-napelem-tisztitas-es-karbantartas", label: "Tisztítás & karbantartás" },
+    ],
+  },
+  {
+    heading: "Vállalati",
+    links: [
+      { href: "/vallalati-napelem", label: "Napelem" },
+      { href: "/vallalati-energiatarolas", label: "Energiatárolás" },
+      { href: "/vallalati-napelem-tisztitas-es-karbantartas", label: "Tisztítás & karbantartás" },
+    ],
+  },
+];
