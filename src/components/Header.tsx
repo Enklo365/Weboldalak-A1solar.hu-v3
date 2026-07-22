@@ -199,34 +199,44 @@ export const Header = () => {
         {/* Mega-menu panel (desktop) */}
         {activeMega ? (
           <div className="megamenu">
-            <div className="container megamenu-inner">
-              <div className="megamenu-groups">
-                {activeMega.groups.map((g) => (
-                  <div className="megamenu-group" key={g.heading}>
-                    <span className="megamenu-heading">{g.heading}</span>
-                    {g.links.map((l) =>
-                      l.external ? (
-                        <a key={l.href} href={l.href} target="_blank" rel="noopener noreferrer" onClick={() => setMega(null)}>
-                          {l.label}
-                        </a>
-                      ) : (
-                        <Link key={l.href} href={l.href} onClick={() => setMega(null)}>
-                          {l.label}
-                        </Link>
-                      )
-                    )}
-                  </div>
-                ))}
+            <div className="container">
+              <div className="megamenu-card">
+                <div className="megamenu-groups">
+                  {activeMega.groups.map((g) => (
+                    <div className="megamenu-group" key={g.heading}>
+                      <span className="megamenu-heading">{g.heading}</span>
+                      {g.links.map((l) => {
+                        const inner = (
+                          <>
+                            <span>{l.label}</span>
+                            <span className="mega-arrow" aria-hidden>
+                              →
+                            </span>
+                          </>
+                        );
+                        return l.external ? (
+                          <a key={l.href} href={l.href} target="_blank" rel="noopener noreferrer" onClick={() => setMega(null)}>
+                            {inner}
+                          </a>
+                        ) : (
+                          <Link key={l.href} href={l.href} onClick={() => setMega(null)}>
+                            {inner}
+                          </Link>
+                        );
+                      })}
+                    </div>
+                  ))}
+                </div>
+                <Link className="megamenu-promo" href={activeMega.promo.ctaHref} onClick={() => setMega(null)}>
+                  <span className="megamenu-promo-media" style={{ backgroundImage: `url(${activeMega.promo.image})` }} />
+                  <span className="megamenu-promo-body">
+                    <span className="megamenu-promo-eyebrow">{activeMega.promo.eyebrow}</span>
+                    <span className="megamenu-promo-title">{activeMega.promo.title}</span>
+                    <span className="megamenu-promo-text">{activeMega.promo.text}</span>
+                    <span className="megamenu-promo-cta">{activeMega.promo.ctaLabel} →</span>
+                  </span>
+                </Link>
               </div>
-              <Link className="megamenu-promo" href={activeMega.promo.ctaHref} onClick={() => setMega(null)}>
-                <span className="megamenu-promo-media" style={{ backgroundImage: `url(${activeMega.promo.image})` }} />
-                <span className="megamenu-promo-body">
-                  <span className="megamenu-promo-eyebrow">{activeMega.promo.eyebrow}</span>
-                  <span className="megamenu-promo-title">{activeMega.promo.title}</span>
-                  <span className="megamenu-promo-text">{activeMega.promo.text}</span>
-                  <span className="megamenu-promo-cta">{activeMega.promo.ctaLabel} →</span>
-                </span>
-              </Link>
             </div>
           </div>
         ) : null}

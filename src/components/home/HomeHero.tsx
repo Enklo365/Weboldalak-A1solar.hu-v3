@@ -165,7 +165,7 @@ export function HomeHero() {
                   }}
                 />
                 {prio ? <CardArrowBadge /> : null}
-                <div className="absolute inset-0 flex flex-col justify-between p-5">
+                <div className="absolute inset-0 flex flex-col justify-center gap-5 p-5">
                   <CardBody title={c.title} text={c.text} icon={c.icon} />
                 </div>
               </Link>
