@@ -4,6 +4,7 @@ import { A1_SERVICE_CARDS } from "@/components/home/serviceCards.data";
 const HERO_BG = "/wp-content/uploads/2026/03/otthoni_energiatarolo_program-1.png";
 const HERO_MASK = "/wp-content/uploads/2025/07/svg_design-elem.svg";
 const CTA_PRIO_MASK = "/wp-content/uploads/2025/07/cta_prio.svg";
+const CTA_NORMAL_MASK = "/wp-content/uploads/2025/07/cta_normal.svg";
 
 const HERO = {
   badge: "Otthoni Energiatároló Program",
@@ -22,95 +23,104 @@ const ArrowUpRight = () => (
 );
 
 /**
- * Homepage hero — native reproduction of a1solar.hu using the site's own SVG
- * shapes: the photo panel is masked with `svg_design-elem.svg` (the concave
- * notch at the lower-right), and the three service cards use the site's card
- * shapes (`cta_normal.svg` = rounded rect, `cta_prio.svg` = rounded rect with a
- * top-right notch for the arrow). Headline + CTA anchor bottom-left; the three
- * cards nest into the notch; the company intro sits beneath, on the left.
+ * Homepage hero — native reproduction of a1solar.hu, matching the mirror's exact
+ * geometry: a max-1290px-wide, 571px-tall band centred in the page, masked with
+ * `svg_design-elem.svg` (mask-size `contain`, centred) which gives the rounded
+ * corners + the lower-right notch. The photo fills it (`cover`, `50% 100%`) under
+ * a left-dark gradient. Headline + CTA sit bottom-left (40px padding, 600px max);
+ * three 230×230 cards nest into the notch (card 1 uses `cta_prio.svg` + arrow,
+ * cards 2–3 use `cta_normal.svg`). The company intro sits beneath, on the left.
  */
 export function HomeHero() {
   return (
     <section className="w-full pt-6 md:pt-8">
-      {/* Full-bleed hero (breaks out of the container) so the mask + cards share
-          one coordinate system, exactly like a1solar.hu. */}
-      <div className="relative left-1/2 right-1/2 -mx-[50vw] w-screen" style={{ height: "clamp(360px, 44.7vw, 640px)" }}>
+      {/* Hero band: max 1290px, 571px tall, masked (contain, centred) */}
+      <div className="relative mx-auto w-full" style={{ maxWidth: "1290px", height: "571px" }}>
         {/* Masked photo + left-dark gradient */}
         <div
           className="absolute inset-0"
           style={{
             backgroundImage: `url(${HERO_BG})`,
             backgroundSize: "cover",
-            backgroundPosition: "bottom",
+            backgroundPosition: "50% 100%",
             WebkitMaskImage: `url(${HERO_MASK})`,
             maskImage: `url(${HERO_MASK})`,
-            WebkitMaskSize: "100% 100%",
-            maskSize: "100% 100%",
+            WebkitMaskSize: "contain",
+            maskSize: "contain",
+            WebkitMaskPosition: "50% 50%",
+            maskPosition: "50% 50%",
             WebkitMaskRepeat: "no-repeat",
             maskRepeat: "no-repeat",
           }}
         >
           <div
             className="absolute inset-0"
-            style={{ background: "linear-gradient(to right, rgba(10,20,29,0.8) 0%, rgba(10,20,29,0) 62%)" }}
+            style={{ background: "linear-gradient(to right, rgba(10,20,29,0.8) 0%, rgba(10,20,29,0) 100%)" }}
           />
         </div>
 
-        {/* Headline content, bottom-left (aligned to the content container) */}
-        <div
-          className="absolute bottom-0 left-0 z-10 max-w-[640px] pb-12 text-white"
-          style={{ paddingLeft: "max(1.5rem, calc((100vw - var(--container)) / 2 + 1.5rem))", paddingRight: "1.5rem" }}
-        >
-          <span className="inline-block rounded-full bg-white/90 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.12em] text-[var(--ink)]">
+        {/* Headline content, bottom-left (40px padding, 600px max) */}
+        <div className="absolute bottom-0 left-0 z-10 text-white" style={{ padding: "40px", maxWidth: "600px" }}>
+          <span
+            className="inline-block rounded-full px-3 py-2 text-xs font-medium uppercase tracking-[1px] text-white"
+            style={{ background: "rgba(255,255,255,0.2)" }}
+          >
             {HERO.badge}
           </span>
-          <h1 className="mt-5 text-[2rem] leading-[1.2] font-light md:text-[42px]" style={{ color: "#fff" }}>
+          <h1 className="mt-5 mb-5 text-[32px] leading-[1.2] font-light md:text-[42px]" style={{ color: "#fff" }}>
             {HERO.titleTop}
             <br />
             <strong className="font-bold">{HERO.titleStrong}</strong>
           </h1>
           <Link
             href={HERO.ctaHref}
-            className="mt-6 inline-flex items-center rounded-full px-7 py-3.5 text-sm font-semibold transition-colors"
-            style={{ background: "var(--brand)", color: "#fff" }}
+            className="inline-flex items-center rounded-full text-base font-normal transition-opacity hover:opacity-90"
+            style={{ background: "var(--brand)", color: "#fff", padding: "10px 20px" }}
           >
             {HERO.ctaLabel}
           </Link>
         </div>
 
-        {/* Service cards nested into the notch, lower-right */}
-        <div className="absolute right-0 z-20 grid w-[58%] grid-cols-3 gap-[1.8%]" style={{ top: "76%" }}>
+        {/* Service cards nested into the notch (bottom-right) */}
+        <div
+          className="absolute z-20 grid grid-cols-3"
+          style={{ left: "40.8%", right: "0.8%", top: "77.2%", gap: "20px" }}
+        >
           {A1_SERVICE_CARDS.map((c, i) => {
             const prio = i === 0;
             return (
               <Link
                 key={c.href}
                 href={c.href}
-                className="group relative flex aspect-[251/254] flex-col justify-between p-6 transition-opacity hover:opacity-95"
-                style={
-                  prio
-                    ? {
-                        background: "var(--surface-3)",
-                        WebkitMaskImage: `url(${CTA_PRIO_MASK})`,
-                        maskImage: `url(${CTA_PRIO_MASK})`,
-                        WebkitMaskSize: "100% 100%",
-                        maskSize: "100% 100%",
-                        WebkitMaskRepeat: "no-repeat",
-                        maskRepeat: "no-repeat",
-                      }
-                    : { background: "var(--surface-3)", borderRadius: "30px" }
-                }
+                className="group relative block aspect-square transition-opacity hover:opacity-95"
               >
+                {/* Masked grey shape (cta_prio = notch for the arrow, cta_normal = rounded rect) */}
+                <div
+                  className="absolute inset-0"
+                  style={{
+                    background: "var(--surface-3)",
+                    WebkitMaskImage: `url(${prio ? CTA_PRIO_MASK : CTA_NORMAL_MASK})`,
+                    maskImage: `url(${prio ? CTA_PRIO_MASK : CTA_NORMAL_MASK})`,
+                    WebkitMaskSize: "100% 100%",
+                    maskSize: "100% 100%",
+                    WebkitMaskRepeat: "no-repeat",
+                    maskRepeat: "no-repeat",
+                  }}
+                />
+                {/* Arrow badge sitting in the notch (prio card only) */}
                 {prio ? (
-                  <span className="absolute right-3 top-3 grid h-10 w-10 place-items-center rounded-full border border-[var(--line)] bg-white text-[var(--ink)]">
+                  <span className="absolute right-1 top-1 z-10 grid h-11 w-11 place-items-center rounded-full border border-[var(--line)] bg-white text-[var(--ink)]">
                     <ArrowUpRight />
                   </span>
                 ) : null}
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={c.icon} alt="" className="h-16 w-16 object-contain" aria-hidden />
-                <div>
-                  <h3 className="text-lg font-bold text-[var(--ink)]">{c.title}</h3>
-                  <p className="mt-2 text-sm leading-snug text-[var(--ink-soft)]">{c.text}</p>
+                {/* Content on top of the shape (not masked) */}
+                <div className="absolute inset-0 flex flex-col justify-between p-5">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={c.icon} alt="" className="h-14 w-14 object-contain" aria-hidden />
+                  <div>
+                    <h3 className="text-[26px] font-medium leading-[1.15] text-[var(--ink)]">{c.title}</h3>
+                    <p className="mt-2 text-[15px] leading-snug text-[var(--ink-soft)]">{c.text}</p>
+                  </div>
                 </div>
               </Link>
             );
@@ -120,7 +130,7 @@ export function HomeHero() {
 
       {/* Company intro beneath, on the left */}
       <div className="mx-auto w-full max-w-[var(--container)] px-4">
-        <p className="mt-12 max-w-md text-[var(--ink-soft)]">{HERO.intro}</p>
+        <p className="mt-14 max-w-md text-[var(--ink-soft)]">{HERO.intro}</p>
       </div>
     </section>
   );
