@@ -1552,12 +1552,14 @@ body.drawer-open .bottom-nav {
   position: relative;
 }
 .step-card {
-  background: var(--surface-3);
+  /* Slightly deeper neutral than #f6f6f6 so the WHITE corner-bite actually
+     reads on a white page (like the homepage notch reads on the dark hero). */
+  background: #eceef1;
   border-radius: 18px;
-  padding: 74px 28px 28px;
-  /* Bite scooped out of the very top-left corner (reveals the white page). */
-  -webkit-mask: radial-gradient(circle 30px at 30px 30px, #0000 0 30px, #000 31px);
-  mask: radial-gradient(circle 30px at 30px 30px, #0000 0 30px, #000 31px);
+  padding: 80px 28px 28px;
+  /* Concave bite scooped out of the very top-left corner (reveals the page). */
+  -webkit-mask: radial-gradient(circle 34px at 32px 32px, #0000 0 34px, #000 35px);
+  mask: radial-gradient(circle 34px at 32px 32px, #0000 0 34px, #000 35px);
 }
 .step-badge {
   position: absolute;
@@ -1565,13 +1567,13 @@ body.drawer-open .bottom-nav {
   left: 8px;
   display: grid;
   place-items: center;
-  width: 44px;
-  height: 44px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   background: #fff;
   color: #212529;
   font-weight: 700;
-  font-size: 16px;
+  font-size: 17px;
 }
 
 /* Borderless, full-width variant for service subpages (no card chrome). */
