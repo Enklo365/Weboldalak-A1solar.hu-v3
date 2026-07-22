@@ -14,7 +14,7 @@ export const ABOUT = {
 
 export const ZANZIBAR = {
   eyebrow: "Zanzibár",
-  title: "Új esélyt adtunk – megújuló energiával.",
+  title: "Új esélyt adtunk\n– megújuló energiával.",
   photo: "/wp-content/uploads/2025/07/photo_2025-07-30_10-24-40.jpg",
   paragraphs: [
     "Büszkék vagyunk rá, hogy elindítottuk afrikai küldetésünket: Zanzibár szívében, a Zaso Children’s Home gyermekotthonban adtuk át első napelemes rendszerünket.",
