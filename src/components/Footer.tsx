@@ -36,7 +36,8 @@ const Instagram = () => (
 
 export const Footer = () => (
   <footer className="site-footer">
-    <div className="container footer-inner">
+    <div className="container">
+      <div className="footer-panel">
       {/* Awards nested into the footer's top edge — mirrors the hero, where the
           CTA cards nest into the hero's concave notch. */}
       <div className="footer-notch">
@@ -44,6 +45,7 @@ export const Footer = () => (
         <img src={BADGES} alt="A1 Solar díjak és elismerések" />
       </div>
 
+      <div className="footer-inner">
       {/* Top: logo + mission */}
       <div className="footer-top">
         <div className="footer-brand">
@@ -117,10 +119,9 @@ export const Footer = () => (
           </div>
         </div>
       </div>
-    </div>
+      </div>
 
-    <div className="footer-bottom">
-      <div className="container">
+      <div className="footer-bottom">
         <span>
           © {YEAR} {SITE.legalName}. – Minden jog fenntartva.
         </span>
@@ -131,6 +132,7 @@ export const Footer = () => (
             </Link>
           ))}
         </div>
+      </div>
       </div>
     </div>
   </footer>
