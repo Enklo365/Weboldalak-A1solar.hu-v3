@@ -1507,9 +1507,12 @@ body.drawer-open .bottom-nav {
   max-width: 640px;
 }
 /* Process step card — the roman numeral nests in a concave notch scooped from
-   the card's top-left corner (echoes the homepage CTA/news-badge notches). */
-.step-card {
+   the card's top-left corner (echoes the homepage CTA/news-badge notches). The
+   badge is a sibling OUTSIDE the masked card, or the mask would clip it too. */
+.step {
   position: relative;
+}
+.step-card {
   background: var(--surface-3);
   border-radius: 18px;
   padding: 78px 28px 28px;

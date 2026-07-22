@@ -170,10 +170,12 @@ const ProcessSection = ({ data }: { data: ServicePageData["process"] }) => (
     </div>
     <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2">
       {data.steps.map((s, i) => (
-        <div key={s.num} data-animate="up" style={{ transitionDelay: `${(i % 2) * 80}ms` }} className="step-card">
+        <div key={s.num} data-animate="up" style={{ transitionDelay: `${(i % 2) * 80}ms` }} className="step">
+          <div className="step-card">
+            <h3 className="text-[17px] font-semibold text-[var(--ink)]">{s.title}</h3>
+            <p className="mt-3 text-sm leading-relaxed text-[var(--ink-soft)]">{s.body}</p>
+          </div>
           <span className="step-badge">{s.num}</span>
-          <h3 className="text-[17px] font-semibold text-[var(--ink)]">{s.title}</h3>
-          <p className="mt-3 text-sm leading-relaxed text-[var(--ink-soft)]">{s.body}</p>
         </div>
       ))}
     </div>
