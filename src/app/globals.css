@@ -452,10 +452,7 @@ img {
   border: 1px solid transparent;
   transition: background 0.15s, border-color 0.15s, box-shadow 0.15s;
 }
-.megamenu-item:hover {
-  background: var(--surface-3);
-  border-color: var(--line);
-}
+/* No grey wrapper/border on hover — only the icon flashes red. */
 .megamenu-item-icon {
   display: grid;
   place-items: center;
