@@ -36,8 +36,15 @@ const Instagram = () => (
 
 export const Footer = () => (
   <footer className="site-footer">
-    <div className="container">
-      {/* Top: logo + mission (left), badges (right) */}
+    <div className="container footer-inner">
+      {/* Awards nested into the footer's top edge — mirrors the hero, where the
+          CTA cards nest into the hero's concave notch. */}
+      <div className="footer-notch">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src={BADGES} alt="A1 Solar díjak és elismerések" />
+      </div>
+
+      {/* Top: logo + mission */}
       <div className="footer-top">
         <div className="footer-brand">
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -47,10 +54,6 @@ export const Footer = () => (
             megoldásokkal segítsük ügyfeleinket az energiafüggetlenség és a
             zöldebb jövő elérésében.
           </p>
-        </div>
-        <div className="footer-badges">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={BADGES} alt="A1 Solar díjak és elismerések" />
         </div>
       </div>
 

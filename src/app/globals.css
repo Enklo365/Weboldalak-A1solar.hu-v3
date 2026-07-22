@@ -851,13 +851,55 @@ img {
    only the notch at natural aspect avoids that at every viewport width. */
 .site-footer {
   background-color: #f6f6f6;
-  background-image: url("/wp-content/uploads/2025/07/a1_lableec_notch.svg");
-  background-repeat: no-repeat;
-  background-position: top center;
-  background-size: 100% auto;
   color: #444;
-  padding-top: 72px;
   margin-top: 80px;
+  position: relative;
+  border-radius: 44px 44px 0 0;
+}
+/* Relative wrapper so the awards panel can nest into the footer's top edge. */
+.footer-inner {
+  position: relative;
+  padding-top: 104px;
+}
+/* White awards panel descending from the footer top edge (merges with the white
+   gap above); the grey footer scoops around it with concave fillets. */
+.footer-notch {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  background: #fff;
+  padding: 16px 34px 22px;
+  border-radius: 0 0 34px 34px;
+}
+.footer-notch img {
+  max-width: 520px;
+  width: 100%;
+  height: auto;
+}
+.footer-notch::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -34px;
+  width: 34px;
+  height: 34px;
+  background: #f6f6f6;
+  -webkit-mask: radial-gradient(34px at 0 0, #0000 98%, #000);
+  mask: radial-gradient(34px at 0 0, #0000 98%, #000);
+}
+.footer-notch::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -34px;
+  width: 34px;
+  height: 34px;
+  background: #f6f6f6;
+  -webkit-mask: radial-gradient(34px at 100% 0, #0000 98%, #000);
+  mask: radial-gradient(34px at 100% 0, #0000 98%, #000);
 }
 .footer-top {
   display: flex;
