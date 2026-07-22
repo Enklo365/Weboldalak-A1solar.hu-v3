@@ -604,6 +604,34 @@ img {
 .learn-more:hover .extra-button-text {
   color: #fff;
 }
+/* Compact variant (e.g. inside cards) — animates on the parent .group hover
+   too, since a card that is itself a link can't nest another anchor. */
+.learn-more.is-compact {
+  width: 11rem;
+  font-size: 14px;
+}
+.learn-more.is-compact .circle {
+  width: 2.25rem;
+  height: 2.25rem;
+}
+.learn-more.is-compact .extra-icon.arrow {
+  left: 0.5rem;
+}
+.learn-more.is-compact .extra-button-text {
+  margin-left: 1.85rem;
+  padding: 0.45rem 0;
+}
+.group:hover .learn-more.is-compact .circle {
+  width: 100%;
+}
+.learn-more.is-compact:hover .extra-icon.arrow,
+.group:hover .learn-more.is-compact .extra-icon.arrow {
+  background: #fff;
+  transform: translate(0.7rem, 0);
+}
+.group:hover .learn-more.is-compact .extra-button-text {
+  color: #fff;
+}
 
 /* ---- Category badge notched into the image corner (echoes the hero shape) ---- */
 .notch-badge {

@@ -34,6 +34,20 @@ const LearnMore = ({ href, children }: { href: string; children: string }) => (
   </div>
 );
 
+/**
+ * Compact, non-anchor variant of {@link LearnMore} for use inside a card that is
+ * itself a link (nested anchors are invalid). It animates on the parent card's
+ * `group` hover rather than its own.
+ */
+const ReadMore = ({ children }: { children: string }) => (
+  <span className="learn-more is-compact mt-5">
+    <span className="circle" aria-hidden>
+      <span className="extra-icon arrow" />
+    </span>
+    <span className="extra-button-text">{children}</span>
+  </span>
+);
+
 /** "Cégünkről — A jövőre optimalizálva" — autoplay video left, text right. */
 export function HomeAbout() {
   return (
@@ -113,7 +127,7 @@ export function HomeZanzibar() {
 /** "Tudástár — Legfrissebb cikkeink" — three article cards. */
 export function HomeArticles() {
   return (
-    <section className="w-full pb-16 md:pb-24">
+    <section className="w-full py-16 md:py-24" style={{ background: "#f6f6f6" }}>
       <div className="mx-auto max-w-[var(--container)] px-6">
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:items-start md:gap-16">
           <div>
@@ -133,7 +147,7 @@ export function HomeArticles() {
             <Link
               key={a.href}
               href={a.href}
-              className="group flex flex-col overflow-hidden rounded-[20px] bg-white transition-shadow hover:shadow-lg"
+              className="group flex flex-col overflow-hidden rounded-[20px] bg-white"
             >
               <div className="relative aspect-[16/9] overflow-hidden">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -147,12 +161,7 @@ export function HomeArticles() {
               <div className="flex flex-1 flex-col p-6">
                 <h3 className="text-lg font-semibold leading-snug text-[var(--ink)]">{a.title}</h3>
                 <p className="mt-3 flex-1 text-sm leading-relaxed text-[var(--ink-soft)]">{a.excerpt}</p>
-                <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[var(--brand-dark)]">
-                  Tovább olvasom
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-4 w-4">
-                    <path d="M9 6l6 6-6 6" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                </span>
+                <ReadMore>Tovább olvasom</ReadMore>
               </div>
             </Link>
           ))}
