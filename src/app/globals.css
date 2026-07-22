@@ -886,8 +886,18 @@ img {
 .mobile-social {
   display: flex;
   gap: 14px;
-  margin-top: auto;
+  margin-top: 18px;
   padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+/* Drawer open: freeze the page behind it and tuck the bottom bar away. */
+body.drawer-open {
+  overflow: hidden;
+}
+body.drawer-open .bottom-nav {
+  transform: translateY(160%);
+  opacity: 0;
+  pointer-events: none;
 }
 .mobile-social a {
   display: grid;

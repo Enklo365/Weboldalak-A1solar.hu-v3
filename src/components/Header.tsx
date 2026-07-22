@@ -218,6 +218,12 @@ export const Header = () => {
     window.addEventListener("a1:toggle-menu", toggle);
     return () => window.removeEventListener("a1:toggle-menu", toggle);
   }, []);
+
+  // While the drawer is open, lock background scroll and hide the bottom bar.
+  useEffect(() => {
+    document.body.classList.toggle("drawer-open", open);
+    return () => document.body.classList.remove("drawer-open");
+  }, [open]);
   const toggle = (label: string) => setExpanded((cur) => (cur === label ? null : label));
   const close = () => {
     setOpen(false);
