@@ -27,7 +27,8 @@ export type ServicePageData = {
   why: { eyebrow: string; title: string; body: string; emphasize: string[] };
   references: { eyebrow: string; title: string; images: string[] };
   contact: { title: string; intro: string };
-  grant: {
+  /** Optional rural-grant + sales-rep block (residential pages only). */
+  grant?: {
     title: string;
     body: string;
     repName: string;
@@ -158,17 +159,6 @@ const lakossagiNapelem: ServicePageData = {
     title: "Kérd személyre szabott ajánlatunkat!",
     intro:
       "Töltsd ki ajánlatkérő űrlapunkat, és kollégánk felveszi veled a kapcsolatot a megadott elérhetőségeid egyikén. Kérjük, légy elérhető!",
-  },
-  grant: {
-    title: "5000 fő alatti településen élsz?",
-    body:
-      "A Vidéki Otthonfelújítási Program keretein belül akár 3 millió forint vissza nem térítendő támogatást is szerezhetsz. Keresd értékesítő kollégánkat a részletekért.",
-    repName: "Harasztosi Szabolcs",
-    repRole: "Értékesítési vezető",
-    repPhone: "(+36) 20-334-5849",
-    repPhotoLabel: "Értékesítő kollégánk hétköznap 10:00–15:00 között elérhető – fordulj hozzá bizalommal!",
-    repPhoto: "/wp-content/uploads/2025/08/Harasztosi_Szabolcs.png",
-    ctaLabel: "Beszéljünk a lehetőségeidről!",
   },
 };
 

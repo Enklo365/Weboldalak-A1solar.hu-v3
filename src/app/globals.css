@@ -1515,6 +1515,9 @@ body.drawer-open .bottom-nav {
   width: 100%;
   padding: 32px;
 }
+.contact-card--bare h3 {
+  font-weight: 500;
+}
 .contact-card--bare .field input,
 .contact-card--bare .field textarea {
   border-color: transparent;

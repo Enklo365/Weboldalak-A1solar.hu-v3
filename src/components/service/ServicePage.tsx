@@ -253,7 +253,8 @@ const ReferencesSection = ({ data }: { data: ServicePageData["references"] }) =>
             data-fade
             src={src}
             alt="A1 Solar telepített napelemes rendszer"
-            className="h-full w-full object-cover object-center transition-transform duration-300 group-hover:scale-105"
+            className="object-cover object-center transition-transform duration-300 group-hover:scale-105"
+            style={{ height: "100%", width: "100%" }}
           />
         </div>
       ))}
@@ -270,7 +271,7 @@ const ContactSection = ({ data }: { data: ServicePageData["contact"] }) => (
   </section>
 );
 
-const GrantSection = ({ data }: { data: ServicePageData["grant"] }) => (
+const GrantSection = ({ data }: { data: NonNullable<ServicePageData["grant"]> }) => (
   <section
     data-animate="up"
     className="grid grid-cols-1 items-center gap-8 rounded-[24px] p-8 md:grid-cols-[1.5fr_1fr] md:p-10"
@@ -305,7 +306,7 @@ const GrantSection = ({ data }: { data: ServicePageData["grant"] }) => (
 /** Customer-service card in the sidebar (bg #f6f6f6, no border). */
 const SupportWidget = () => (
   <div className="rounded-[20px] p-6" style={{ background: "var(--surface-3)" }}>
-    <h3 style={{ fontSize: "19px", fontWeight: 700, lineHeight: 1.25, color: "var(--ink)" }}>Beszéljünk a lehetőségeidről!</h3>
+    <h3 style={{ fontSize: "19px", fontWeight: 500, lineHeight: 1.25, color: "var(--ink)" }}>Beszéljünk a lehetőségeidről!</h3>
     <p className="mt-3 text-sm leading-relaxed text-[var(--ink-soft)]">
       Ügyfélszolgálatunk hétköznap {SITE.supportHours} között elérhető – fordulj hozzánk bizalommal!
     </p>
@@ -343,7 +344,7 @@ export function ServicePage({ data }: { data: ServicePageData }) {
   ];
 
   return (
-    <div className="pb-16 md:pb-24">
+    <div className="pb-6 md:pb-8">
       <Motion />
       <ServiceHero data={data.hero} />
 
@@ -364,7 +365,7 @@ export function ServicePage({ data }: { data: ServicePageData }) {
             <ReferencesSection data={data.references} />
             <RowDivider />
             <ContactSection data={data.contact} />
-            <GrantSection data={data.grant} />
+            {data.grant ? <GrantSection data={data.grant} /> : null}
           </div>
 
           {/* Sidebar — vertical dashed divider on its left (desktop) */}

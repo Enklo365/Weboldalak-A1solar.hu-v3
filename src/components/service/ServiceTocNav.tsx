@@ -43,7 +43,7 @@ export function ServiceTocNav({ items }: { items: TocItem[] }) {
 
   return (
     <nav className="rounded-[20px] p-6" style={{ background: "var(--surface-3)" }} aria-label="Szakaszok">
-      <div className="text-[13px] font-semibold uppercase tracking-[1px] text-[var(--ink-muted)]">A tartalomból</div>
+      <div className="text-[13px] font-semibold uppercase tracking-[1px] text-[var(--ink-muted)]">Navigáció</div>
       <ul className="mt-4 flex flex-col gap-1">
         {items.map((item) => {
           const isActive = active === item.id;
