@@ -364,7 +364,7 @@ img {
   position: relative;
   display: flex;
   align-items: flex-end;
-  width: 290px;
+  width: 260px;
   flex: none;
   min-height: 300px;
   border-radius: 18px;
@@ -465,11 +465,13 @@ img {
   font-size: 14px;
   font-weight: 600;
   color: var(--ink);
+  white-space: nowrap;
 }
 .megamenu-item-desc {
   font-size: 13px;
   color: var(--ink-soft);
   line-height: 1.35;
+  white-space: nowrap;
 }
 /* Footer helper bar */
 .megamenu-footer {
