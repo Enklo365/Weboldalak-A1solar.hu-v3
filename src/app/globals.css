@@ -138,15 +138,25 @@ img {
   position: relative;
   z-index: 90;
   background: #fff;
-  border-bottom: 1px solid var(--line);
   font-size: 14px;
 }
 .topbar .container {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 28px;
   min-height: 58px;
   flex-wrap: wrap;
+}
+/* Divider spans the section content width (not full-bleed). */
+.topbar .container::after {
+  content: "";
+  position: absolute;
+  left: 24px;
+  right: 24px;
+  bottom: 0;
+  height: 1px;
+  background: var(--line);
 }
 .topbar-item {
   display: flex;
