@@ -87,18 +87,24 @@ export const MEGA_MENUS: Record<string, MegaMenu> = {
   Szolgáltatásaink: {
     feature: {
       image: "/wp-content/uploads/2026/03/otthoni_energiatarolo_program-1.png",
-      title: "Napelem és energiatárolás egy helyről",
-      text: "Tervezéstől a kivitelezésig, pályázati támogatással.",
-      href: "/kapcsolat",
+      title: "Válassza az A1 Solar-t kivitelező partnerként",
+      text: "az Otthoni Energiatároló Programban.",
+      href: "/lakossagi-energiatarolo-tamogatas",
     },
     groups: [
       {
-        heading: "Lakossági & vállalati",
+        heading: "Lakossági",
         links: [
           { href: "/lakossagi-napelem", label: "Lakossági napelem", desc: "Otthonod energiaellátására.", icon: "panel" },
+          { href: "/lakossagi-napelem-tisztitas-es-karbantartas", label: "Tisztítás & karbantartás", desc: "Tartsd csúcson a rendszered.", icon: "care" },
+        ],
+      },
+      {
+        heading: "Vállalati",
+        links: [
           { href: "/vallalati-napelem", label: "Vállalati napelem", desc: "Céged energiaköltségének csökkentése.", icon: "building" },
           { href: "/vallalati-energiatarolas", label: "Energiatárolás", desc: "Tárold el a megtermelt energiát.", icon: "battery" },
-          { href: "/lakossagi-napelem-tisztitas-es-karbantartas", label: "Tisztítás & karbantartás", desc: "Tartsd csúcson a rendszered.", icon: "care" },
+          { href: "/vallalati-napelem-tisztitas-es-karbantartas", label: "Tisztítás & karbantartás", desc: "Karbantartás céges rendszerekhez.", icon: "care" },
         ],
       },
       {
@@ -111,8 +117,8 @@ export const MEGA_MENUS: Record<string, MegaMenu> = {
       },
     ],
     footer: {
-      title: "Nem tudod, melyik illik hozzád?",
-      text: "Segítünk megtalálni a megfelelő megoldást.",
+      title: "Segítsünk eligazodni?",
+      text: "Vedd fel velünk a kapcsolatot!",
       ctaLabel: "Kapcsolat",
       ctaHref: "/kapcsolat",
     },
