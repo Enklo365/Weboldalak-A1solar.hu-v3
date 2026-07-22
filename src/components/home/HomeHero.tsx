@@ -204,7 +204,7 @@ export function HomeHero() {
               >
                 {HERO.badge}
               </span>
-              <h1 className="mt-3" style={{ color: "#fff", fontSize: "28px", fontWeight: 300, lineHeight: 1.2 }}>
+              <h1 className="mt-5" style={{ color: "#fff", fontSize: "28px", fontWeight: 300, lineHeight: 1.2 }}>
                 {HERO.titleTop}
                 <br />
                 <strong style={{ fontWeight: 700 }}>{HERO.titleStrong}</strong>
