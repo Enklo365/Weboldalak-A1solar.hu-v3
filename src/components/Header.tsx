@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { MAIN_NAV, SITE, type NavEntry } from "@/lib/site";
+import { MAIN_NAV, MEGA_MENUS, SITE, type NavEntry } from "@/lib/site";
 
 const LOGO = "/wp-content/uploads/2022/09/A1solar-logo.svg";
 
@@ -87,6 +87,8 @@ const NavLink = ({ entry }: { entry: NavEntry }) => {
 export const Header = () => {
   const [open, setOpen] = useState(false);
   const [expanded, setExpanded] = useState<string | null>(null);
+  const [mega, setMega] = useState<string | null>(null);
+  const activeMega = mega ? MEGA_MENUS[mega] : null;
   const toggle = (label: string) => setExpanded((cur) => (cur === label ? null : label));
   const close = () => {
     setOpen(false);
@@ -141,7 +143,7 @@ export const Header = () => {
       </div>
 
       {/* Main navigation bar */}
-      <div className="mainbar">
+      <div className="mainbar" onMouseLeave={() => setMega(null)}>
         <div className="container">
           <Link className="brand-logo" href="/" aria-label="A1 Solar">
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -149,26 +151,33 @@ export const Header = () => {
           </Link>
 
           <nav className="mainnav" aria-label="Fő menü">
-            {MAIN_NAV.map((entry) => (
-              <div className="nav-item" key={entry.label}>
-                <NavLink entry={entry} />
-                {entry.children?.length ? (
-                  <div className="dropdown">
-                    {entry.children.map((c) =>
-                      c.external ? (
-                        <a key={c.href} href={c.href} target="_blank" rel="noopener noreferrer">
-                          {c.label}
-                        </a>
-                      ) : (
-                        <Link key={c.href} href={c.href}>
-                          {c.label}
-                        </Link>
-                      )
-                    )}
-                  </div>
-                ) : null}
-              </div>
-            ))}
+            {MAIN_NAV.map((entry) => {
+              const hasMega = Boolean(MEGA_MENUS[entry.label]);
+              return (
+                <div
+                  className={`nav-item${mega === entry.label ? " is-open" : ""}`}
+                  key={entry.label}
+                  onMouseEnter={() => setMega(hasMega ? entry.label : null)}
+                >
+                  <NavLink entry={entry} />
+                  {!hasMega && entry.children?.length ? (
+                    <div className="dropdown">
+                      {entry.children.map((c) =>
+                        c.external ? (
+                          <a key={c.href} href={c.href} target="_blank" rel="noopener noreferrer">
+                            {c.label}
+                          </a>
+                        ) : (
+                          <Link key={c.href} href={c.href}>
+                            {c.label}
+                          </Link>
+                        )
+                      )}
+                    </div>
+                  ) : null}
+                </div>
+              );
+            })}
           </nav>
 
           <Link className="btn btn-primary header-cta" href="/kapcsolat">
@@ -186,6 +195,41 @@ export const Header = () => {
             </svg>
           </button>
         </div>
+
+        {/* Mega-menu panel (desktop) */}
+        {activeMega ? (
+          <div className="megamenu">
+            <div className="container megamenu-inner">
+              <div className="megamenu-groups">
+                {activeMega.groups.map((g) => (
+                  <div className="megamenu-group" key={g.heading}>
+                    <span className="megamenu-heading">{g.heading}</span>
+                    {g.links.map((l) =>
+                      l.external ? (
+                        <a key={l.href} href={l.href} target="_blank" rel="noopener noreferrer" onClick={() => setMega(null)}>
+                          {l.label}
+                        </a>
+                      ) : (
+                        <Link key={l.href} href={l.href} onClick={() => setMega(null)}>
+                          {l.label}
+                        </Link>
+                      )
+                    )}
+                  </div>
+                ))}
+              </div>
+              <Link className="megamenu-promo" href={activeMega.promo.ctaHref} onClick={() => setMega(null)}>
+                <span className="megamenu-promo-media" style={{ backgroundImage: `url(${activeMega.promo.image})` }} />
+                <span className="megamenu-promo-body">
+                  <span className="megamenu-promo-eyebrow">{activeMega.promo.eyebrow}</span>
+                  <span className="megamenu-promo-title">{activeMega.promo.title}</span>
+                  <span className="megamenu-promo-text">{activeMega.promo.text}</span>
+                  <span className="megamenu-promo-cta">{activeMega.promo.ctaLabel} →</span>
+                </span>
+              </Link>
+            </div>
+          </div>
+        ) : null}
       </div>
 
       {/* Mobile drawer */}
