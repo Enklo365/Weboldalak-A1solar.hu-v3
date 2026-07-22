@@ -151,7 +151,7 @@ export function HomeHero() {
           {A1_SERVICE_CARDS.map((c, i) => {
             const prio = i === 0;
             return (
-              <Link key={c.href} href={c.href} className="group relative block aspect-square transition-opacity hover:opacity-95">
+              <Link key={c.href} href={c.href} className="group relative block aspect-[1/1.12] transition-opacity hover:opacity-95">
                 <div
                   className="absolute inset-0"
                   style={{
@@ -233,7 +233,7 @@ export function HomeHero() {
       {/* Company intro — aligned to the hero image's left edge (~10px) and, on
           desktop, vertically centred in the band-bottom → cards-bottom gap
           (the cards overhang the hero mask by ~106px). */}
-      <div className="container flex items-center lg:min-h-[101px]">
+      <div className="container flex items-center lg:min-h-[118px]">
         <p className="mt-10 max-w-md text-[var(--ink-soft)] lg:mt-0">{HERO.intro}</p>
       </div>
     </section>
