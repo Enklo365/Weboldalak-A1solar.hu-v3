@@ -74,7 +74,7 @@ export function HomeHero() {
         </div>
 
         {/* Service cards nested into the notch, lower-right */}
-        <div className="absolute right-0 z-20 grid w-[62%] grid-cols-3 gap-4" style={{ bottom: "-12%" }}>
+        <div className="absolute right-0 z-20 grid w-[58%] grid-cols-3 gap-[1.8%]" style={{ top: "76%" }}>
           {A1_SERVICE_CARDS.map((c, i) => {
             const prio = i === 0;
             return (
