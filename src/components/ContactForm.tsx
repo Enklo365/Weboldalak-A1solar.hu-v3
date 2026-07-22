@@ -8,6 +8,8 @@ type ContactFormProps = {
   heading?: string;
   intro?: string;
   compact?: boolean;
+  /** Borderless, shadowless, full-width variant (used inside service subpages). */
+  bare?: boolean;
 };
 
 /**
@@ -18,7 +20,9 @@ export const ContactForm = ({
   formName = "Kapcsolati űrlap",
   heading = "Kérjen ingyenes ajánlatot",
   intro = "Töltse ki az űrlapot, és munkatársunk 24 órán belül felveszi Önnel a kapcsolatot.",
+  bare = false,
 }: ContactFormProps) => {
+  const cardClass = bare ? "contact-card contact-card--bare" : "contact-card";
   const [status, setStatus] = useState<"idle" | "sending" | "ok" | "error">(
     "idle"
   );
@@ -50,7 +54,7 @@ export const ContactForm = ({
 
   if (status === "ok") {
     return (
-      <div className="contact-card contact-success">
+      <div className={`${cardClass} contact-success`}>
         <div className="contact-success__icon">✓</div>
         <h3>Köszönjük megkeresését!</h3>
         <p>Munkatársunk hamarosan felveszi Önnel a kapcsolatot.</p>
@@ -59,7 +63,7 @@ export const ContactForm = ({
   }
 
   return (
-    <form className="contact-card" onSubmit={onSubmit} noValidate>
+    <form className={cardClass} onSubmit={onSubmit} noValidate>
       <h3>{heading}</h3>
       <p className="contact-intro">{intro}</p>
       <div className="field-row">

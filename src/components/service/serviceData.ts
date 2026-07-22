@@ -6,14 +6,13 @@
  */
 
 export type ServiceStep = { num: string; title: string; body: string };
-export type ServiceStat = { value: string; label: string };
-export type ServiceReview = { quote: string; author: string };
 
 export type ServicePageData = {
   slug: string;
   hero: {
     eyebrow: string;
-    title: string;
+    titleLight: string;
+    titleStrong: string;
     ctaLabel: string;
     ctaHref: string;
     image: string;
@@ -24,7 +23,8 @@ export type ServicePageData = {
   benefits: { title: string; body: string; note: string; ctaLabel: string; ctaHref: string };
   process: { eyebrow: string; title: string; steps: ServiceStep[] };
   offer: { title: string; body: string; ctaLabel: string; ctaHref: string };
-  why: { eyebrow: string; title: string; body: string; image: string; stats: ServiceStat[]; reviews: ServiceReview[] };
+  /** "Cégünkről" — body with `emphasize` phrases bolded; reviews come later (Trustindex). */
+  why: { eyebrow: string; title: string; body: string; emphasize: string[] };
   references: { eyebrow: string; title: string; images: string[] };
   contact: { title: string; intro: string };
   grant: {
@@ -43,7 +43,8 @@ const lakossagiNapelem: ServicePageData = {
   slug: "lakossagi-napelem",
   hero: {
     eyebrow: "Lakossági napelemes rendszerek",
-    title: "Biztosítsd otthonod energiaellátását!",
+    titleLight: "Biztosítsd otthonod",
+    titleStrong: "energiaellátását!",
     ctaLabel: "Ajánlatkérés",
     ctaHref: "#ajanlatkeres",
     image: "/wp-content/uploads/2025/08/8024.jpg",
@@ -130,17 +131,12 @@ const lakossagiNapelem: ServicePageData = {
     title: "Miért válassz minket?",
     body:
       "Több mint 10 éves tapasztalatunkkal és több mint 5000 telepített rendszerrel garantáljuk a megbízhatóságot, a szakértelmet és a biztonságot. Átfogó szolgáltatásaink az első konzultációtól egészen a fenntartásig tartanak.",
-    image: "/wp-content/uploads/2022/08/Budapest-napelem.jpg",
-    stats: [
-      { value: "10+", label: "év tapasztalat" },
-      { value: "5000+", label: "telepített rendszer" },
-      { value: "2 év", label: "telepítési garancia" },
-    ],
-    reviews: [
-      { quote: "Kiváló csapat, gyors és hatékony kivitelezés. Ajánlott!", author: "László Péter" },
-      { quote: "Tökéletesen meg vagyok elégedve, köszönöm!", author: "Tamás Martinka" },
-      { quote: "Délvidék legjobb napelemes csapata, köszönöm a szakszerű, precíz munkát.", author: "László Balogh" },
-      { quote: "Gyorsan, szakszerűen zajlott a kivitelezés. Köszönöm!", author: "Pál Holi" },
+    emphasize: [
+      "10 éves tapasztalatunkkal",
+      "5000 telepített rendszerrel",
+      "megbízhatóságot",
+      "szakértelmet",
+      "biztonságot",
     ],
   },
   references: {

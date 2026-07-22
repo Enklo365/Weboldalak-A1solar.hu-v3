@@ -1,8 +1,9 @@
+import type { ReactNode } from "react";
 import Link from "next/link";
 import { ContactForm } from "@/components/ContactForm";
 import { Motion } from "@/components/Motion";
 import type { ServicePageData } from "@/components/service/serviceData";
-import { SERVICE_NAV } from "@/components/service/serviceData";
+import { ServiceTocNav, type TocItem } from "@/components/service/ServiceTocNav";
 import { SITE } from "@/lib/site";
 
 /* The homepage hero shape (rounded left + lower-right notch) as a scalable
@@ -29,8 +30,31 @@ const PillCta = ({ href, children }: { href: string; children: string }) => (
   </Link>
 );
 
-/** Bare divider used between body sections (fills the column width). */
+/** Container-width dashed divider (same as the homepage). */
+const SectionDivider = () => (
+  <div className="mx-auto max-w-[var(--container)] px-6 my-[50px]">
+    <hr data-animate="line" style={{ border: 0, borderTop: "1px dashed #ececec" }} />
+  </div>
+);
+
+/** Bare dashed divider that fills the column width (between body sections). */
 const RowDivider = () => <hr data-animate="line" style={{ border: 0, borderTop: "1px dashed #ececec" }} />;
+
+/** Render a paragraph, bolding any of the `emphasize` phrases found in it. */
+const renderEmphasis = (body: string, phrases: string[]): ReactNode => {
+  if (!phrases.length) return body;
+  const escaped = phrases.map((p) => p.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));
+  const parts = body.split(new RegExp(`(${escaped.join("|")})`, "g"));
+  return parts.map((part, i) =>
+    phrases.includes(part) ? (
+      <strong key={`${part}-${i}`} className="font-semibold text-[var(--ink)]">
+        {part}
+      </strong>
+    ) : (
+      <span key={`t-${i}`}>{part}</span>
+    )
+  );
+};
 
 const ServiceHero = ({ data }: { data: ServicePageData["hero"] }) => (
   <section className="w-full">
@@ -45,7 +69,7 @@ const ServiceHero = ({ data }: { data: ServicePageData["hero"] }) => (
       </defs>
     </svg>
 
-    {/* Desktop band (≥lg) — shaped photo + headline bottom-left */}
+    {/* Desktop band (≥lg) — shaped photo + headline bottom-left + intro in the notch */}
     <div className="container hidden lg:block">
       <div className="relative w-full" style={{ aspectRatio: "1192 / 571" }}>
         <div className="absolute inset-0" style={{ clipPath: `url(#${HERO_CLIP_ID})` }}>
@@ -60,13 +84,21 @@ const ServiceHero = ({ data }: { data: ServicePageData["hero"] }) => (
           >
             {data.eyebrow}
           </span>
-          <h1 style={{ color: "#fff", fontSize: "42px", fontWeight: 700, lineHeight: 1.15, marginBottom: "24px" }}>{data.title}</h1>
+          <h1 style={{ color: "#fff", fontSize: "42px", fontWeight: 300, lineHeight: 1.15, marginBottom: "24px" }}>
+            {data.titleLight}
+            <br />
+            <strong style={{ fontWeight: 700 }}>{data.titleStrong}</strong>
+          </h1>
           <PillCta href={data.ctaHref}>{data.ctaLabel}</PillCta>
+        </div>
+        {/* Intro text seated in the lower-right notch cut-out */}
+        <div className="absolute z-10 flex items-center" style={{ left: "46%", right: "1.5%", top: "73%", bottom: "3%" }}>
+          <p style={{ fontSize: "16px", lineHeight: 1.6, color: "var(--ink-soft)" }}>{data.intro}</p>
         </div>
       </div>
     </div>
 
-    {/* Mobile (<lg) — rounded card */}
+    {/* Mobile (<lg) — rounded card + intro below */}
     <div className="lg:hidden px-4">
       <div className="relative flex min-h-[360px] flex-col justify-end overflow-hidden rounded-[24px] p-6 text-white">
         {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -79,28 +111,28 @@ const ServiceHero = ({ data }: { data: ServicePageData["hero"] }) => (
           >
             {data.eyebrow}
           </span>
-          <h1 style={{ marginTop: "20px", color: "#fff", fontSize: "27px", fontWeight: 700, lineHeight: 1.2 }}>{data.title}</h1>
+          <h1 style={{ marginTop: "20px", color: "#fff", fontSize: "27px", fontWeight: 300, lineHeight: 1.2 }}>
+            {data.titleLight} <strong style={{ fontWeight: 700 }}>{data.titleStrong}</strong>
+          </h1>
           <div className="mt-5">
             <PillCta href={data.ctaHref}>{data.ctaLabel}</PillCta>
           </div>
         </div>
       </div>
-    </div>
-
-    {/* Intro paragraph */}
-    <div className="container mt-8">
-      <p className="max-w-[760px] text-lg text-[var(--ink-soft)]">{data.intro}</p>
+      <p className="mt-5 px-1" style={{ fontSize: "16px", lineHeight: 1.6, color: "var(--ink-soft)" }}>
+        {data.intro}
+      </p>
     </div>
   </section>
 );
 
 const ValueSection = ({ data }: { data: ServicePageData["value"] }) => (
-  <section data-animate="up">
+  <section id="value" data-animate="up" className="scroll-mt-[100px]">
     <Eyebrow>{data.eyebrow}</Eyebrow>
-    <h2 className="text-[var(--ink)]" style={{ marginTop: "20px", fontSize: "clamp(26px, 4vw, 36px)", fontWeight: 500, lineHeight: 1.15 }}>
+    <h2 className="text-[var(--ink)]" style={{ marginTop: "22px", fontSize: "clamp(26px, 4vw, 36px)", fontWeight: 500, lineHeight: 1.15 }}>
       {data.title}
     </h2>
-    <p className="mt-5 text-[var(--ink-soft)]">{data.body}</p>
+    <p className="mt-6 text-[var(--ink-soft)]">{data.body}</p>
   </section>
 );
 
@@ -110,14 +142,14 @@ const BenefitsSection = ({ data }: { data: ServicePageData["benefits"] }) => (
       <h2 className="text-[var(--ink)]" style={{ fontSize: "clamp(24px, 3.6vw, 32px)", fontWeight: 500, lineHeight: 1.2 }}>
         {data.title}
       </h2>
-      <p className="mt-5 text-[var(--ink-soft)]">{data.body}</p>
+      <p className="mt-6 text-[var(--ink-soft)]">{data.body}</p>
     </div>
     <div
       data-animate="up"
-      className="mt-8 flex flex-col items-start gap-5 rounded-[20px] p-7 md:flex-row md:items-center md:justify-between"
+      className="mt-8 flex flex-col items-start gap-6 rounded-[20px] p-8 md:flex-row md:items-center md:justify-between md:gap-10"
       style={{ background: "var(--surface-3)" }}
     >
-      <p className="text-[var(--ink)]" style={{ fontWeight: 500, fontSize: "17px" }}>
+      <p className="text-[var(--ink)]" style={{ fontWeight: 500, fontSize: "17px", lineHeight: 1.5 }}>
         {data.note}
       </p>
       <div className="flex-none">
@@ -128,10 +160,10 @@ const BenefitsSection = ({ data }: { data: ServicePageData["benefits"] }) => (
 );
 
 const ProcessSection = ({ data }: { data: ServicePageData["process"] }) => (
-  <section>
+  <section id="process" className="scroll-mt-[100px]">
     <div data-animate="up">
       <Eyebrow>{data.eyebrow}</Eyebrow>
-      <h2 className="text-[var(--ink)]" style={{ marginTop: "20px", fontSize: "clamp(26px, 4vw, 36px)", fontWeight: 500, lineHeight: 1.15 }}>
+      <h2 className="text-[var(--ink)]" style={{ marginTop: "22px", fontSize: "clamp(26px, 4vw, 36px)", fontWeight: 500, lineHeight: 1.15 }}>
         {data.title}
       </h2>
     </div>
@@ -140,17 +172,17 @@ const ProcessSection = ({ data }: { data: ServicePageData["process"] }) => (
         <div
           key={s.num}
           data-animate="up"
-          style={{ transitionDelay: `${(i % 2) * 80}ms` }}
-          className="flex flex-col rounded-[18px] border border-[var(--line)] bg-white p-6 transition-shadow hover:shadow-[0_18px_40px_rgba(10,14,20,0.06)]"
+          style={{ transitionDelay: `${(i % 2) * 80}ms`, background: "var(--surface-3)" }}
+          className="flex flex-col rounded-[18px] p-7"
         >
           <span
             className="grid h-11 w-11 place-items-center rounded-full text-[16px] font-bold"
-            style={{ background: "rgba(194,29,32,0.12)", color: "var(--brand)" }}
+            style={{ background: "#fff", color: "var(--brand)" }}
           >
             {s.num}
           </span>
-          <h3 className="mt-4 text-[17px] font-semibold text-[var(--ink)]">{s.title}</h3>
-          <p className="mt-2 text-sm leading-relaxed text-[var(--ink-soft)]">{s.body}</p>
+          <h3 className="mt-6 text-[17px] font-semibold text-[var(--ink)]">{s.title}</h3>
+          <p className="mt-3 text-sm leading-relaxed text-[var(--ink-soft)]">{s.body}</p>
         </div>
       ))}
     </div>
@@ -160,12 +192,12 @@ const ProcessSection = ({ data }: { data: ServicePageData["process"] }) => (
 const OfferBanner = ({ data }: { data: ServicePageData["offer"] }) => (
   <section
     data-animate="up"
-    className="flex flex-col items-start gap-6 rounded-[24px] px-8 py-10 text-white md:flex-row md:items-center md:justify-between"
+    className="flex flex-col items-start gap-8 rounded-[24px] px-9 py-12 text-white md:flex-row md:items-center md:justify-between md:gap-12"
     style={{ background: "linear-gradient(120deg, var(--brand) 0%, var(--brand-dark) 100%)" }}
   >
     <div className="max-w-[560px]">
-      <h2 style={{ color: "#fff", fontSize: "clamp(22px, 3.2vw, 30px)", fontWeight: 600, lineHeight: 1.2 }}>{data.title}</h2>
-      <p className="mt-3 text-white/85">{data.body}</p>
+      <h2 style={{ color: "#fff", fontSize: "clamp(22px, 3.2vw, 30px)", fontWeight: 600, lineHeight: 1.25 }}>{data.title}</h2>
+      <p className="mt-4 text-white/85">{data.body}</p>
     </div>
     <Link
       href={data.ctaHref}
@@ -178,70 +210,50 @@ const OfferBanner = ({ data }: { data: ServicePageData["offer"] }) => (
 );
 
 const WhySection = ({ data }: { data: ServicePageData["why"] }) => (
-  <section>
-    <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-2">
-      <div data-animate="up" className="order-first aspect-[4/3] overflow-hidden rounded-[20px] md:order-none">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img data-fade src={data.image} alt="A1 Solar referencia" className="object-cover" style={{ height: "100%", width: "100%" }} />
-      </div>
-      <div data-animate="up" style={{ transitionDelay: "120ms" }}>
-        <Eyebrow>{data.eyebrow}</Eyebrow>
-        <h2 className="text-[var(--ink)]" style={{ marginTop: "20px", fontSize: "clamp(26px, 4vw, 34px)", fontWeight: 500, lineHeight: 1.15 }}>
-          {data.title}
-        </h2>
-        <p className="mt-5 text-[var(--ink-soft)]">{data.body}</p>
-        <div className="mt-8 grid grid-cols-3 gap-4">
-          {data.stats.map((st) => (
-            <div key={st.label}>
-              <div className="text-[clamp(22px,2.6vw,30px)] font-bold text-[var(--brand)]">{st.value}</div>
-              <div className="mt-1 text-xs leading-snug text-[var(--ink-muted)]">{st.label}</div>
-            </div>
-          ))}
-        </div>
-      </div>
+  <section id="cegunkrol" className="scroll-mt-[100px]">
+    <div data-animate="up">
+      <Eyebrow>{data.eyebrow}</Eyebrow>
+      <h2 className="text-[var(--ink)]" style={{ marginTop: "22px", fontSize: "clamp(26px, 4vw, 36px)", fontWeight: 500, lineHeight: 1.15 }}>
+        {data.title}
+      </h2>
+      <p className="mt-6 max-w-[760px] text-[var(--ink-soft)]">{renderEmphasis(data.body, data.emphasize)}</p>
     </div>
-
-    <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2">
-      {data.reviews.map((r, i) => (
-        <figure
-          key={r.author}
-          data-animate="up"
-          style={{ transitionDelay: `${(i % 2) * 80}ms` }}
-          className="flex flex-col rounded-[18px] bg-[var(--surface-3)] p-6"
-        >
-          <div aria-hidden className="text-[15px] tracking-wide text-[#f5b100]">
-            ★★★★★
-          </div>
-          <blockquote className="mt-3 flex-1 text-sm leading-relaxed text-[var(--ink-soft)]">“{r.quote}”</blockquote>
-          <figcaption className="mt-4 text-sm font-semibold text-[var(--ink)]">{r.author}</figcaption>
-        </figure>
-      ))}
+    {/* Reviews placeholder — Google reviews go here later via Trustindex. */}
+    <div
+      data-animate="up"
+      className="mt-8 flex min-h-[180px] flex-col items-center justify-center gap-2 rounded-[20px] p-8 text-center"
+      style={{ background: "var(--surface-3)" }}
+    >
+      <div aria-hidden className="text-lg tracking-wide text-[#f5b100]">
+        ★★★★★
+      </div>
+      <p className="text-sm text-[var(--ink-muted)]">Ügyfeleink Google-értékelései hamarosan itt jelennek meg.</p>
     </div>
   </section>
 );
 
 const ReferencesSection = ({ data }: { data: ServicePageData["references"] }) => (
-  <section>
+  <section id="referenciak" className="scroll-mt-[100px]">
     <div data-animate="up">
       <Eyebrow>{data.eyebrow}</Eyebrow>
-      <h2 className="text-[var(--ink)]" style={{ marginTop: "20px", fontSize: "clamp(26px, 4vw, 36px)", fontWeight: 500, lineHeight: 1.15 }}>
+      <h2 className="text-[var(--ink)]" style={{ marginTop: "22px", fontSize: "clamp(26px, 4vw, 36px)", fontWeight: 500, lineHeight: 1.15 }}>
         {data.title}
       </h2>
     </div>
-    <div className="mt-8 grid grid-cols-2 gap-4 md:grid-cols-3">
+    <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3">
       {data.images.map((src, i) => (
         <div
           key={src}
           data-animate="up"
           style={{ transitionDelay: `${(i % 3) * 80}ms` }}
-          className="group aspect-[4/3] overflow-hidden rounded-[16px]"
+          className="group aspect-square overflow-hidden rounded-[16px]"
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             data-fade
             src={src}
             alt="A1 Solar telepített napelemes rendszer"
-            className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+            className="h-full w-full object-cover object-center transition-transform duration-300 group-hover:scale-105"
           />
         </div>
       ))}
@@ -251,24 +263,27 @@ const ReferencesSection = ({ data }: { data: ServicePageData["references"] }) =>
 
 const ContactSection = ({ data }: { data: ServicePageData["contact"] }) => (
   <section id="ajanlatkeres" data-animate="up" className="scroll-mt-[100px]">
-    <ContactForm formName="Ajánlatkérő űrlap" heading={data.title} intro={data.intro} />
+    <div className="mb-6">
+      <Eyebrow>Ajánlatkérés</Eyebrow>
+    </div>
+    <ContactForm bare formName="Ajánlatkérő űrlap" heading={data.title} intro={data.intro} />
   </section>
 );
 
 const GrantSection = ({ data }: { data: ServicePageData["grant"] }) => (
   <section
     data-animate="up"
-    className="grid grid-cols-1 items-center gap-8 rounded-[24px] p-8 md:grid-cols-[1.4fr_1fr]"
+    className="grid grid-cols-1 items-center gap-8 rounded-[24px] p-8 md:grid-cols-[1.5fr_1fr] md:p-10"
     style={{ background: "var(--surface-3)" }}
   >
     <div>
-      <h2 className="text-[var(--ink)]" style={{ fontSize: "clamp(22px, 3.2vw, 28px)", fontWeight: 600, lineHeight: 1.2 }}>
+      <h2 className="text-[var(--ink)]" style={{ fontSize: "clamp(22px, 3.2vw, 28px)", fontWeight: 600, lineHeight: 1.25 }}>
         {data.title}
       </h2>
       <p className="mt-4 text-[var(--ink-soft)]">{data.body}</p>
       <p className="mt-4 text-sm text-[var(--ink-muted)]">{data.repPhotoLabel}</p>
     </div>
-    <div className="flex items-center gap-4 rounded-[18px] bg-white p-5">
+    <div className="flex items-center gap-4">
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={data.repPhoto}
@@ -287,68 +302,57 @@ const GrantSection = ({ data }: { data: ServicePageData["grant"] }) => (
   </section>
 );
 
-/** Sticky sidebar — service navigation (current highlighted) + a lead-capture card. */
-const ServiceSidebar = ({ current }: { current: string }) => (
-  <div className="flex flex-col gap-6 lg:sticky lg:top-[110px]">
-    <nav className="rounded-[20px] border border-[var(--line)] p-6" aria-label="Szolgáltatásaink">
-      <div className="text-[13px] font-semibold uppercase tracking-[1px] text-[var(--ink-muted)]">Szolgáltatásaink</div>
-      {SERVICE_NAV.map((group) => (
-        <div key={group.heading} className="mt-4">
-          <div className="text-xs font-semibold uppercase tracking-[1px] text-[var(--brand-dark)]">{group.heading}</div>
-          <ul className="mt-2 flex flex-col gap-1">
-            {group.links.map((l) => {
-              const active = l.href === `/${current}`;
-              return (
-                <li key={l.href}>
-                  <Link
-                    href={l.href}
-                    aria-current={active ? "page" : undefined}
-                    className="flex items-center justify-between rounded-[10px] px-3 py-2 text-sm transition-colors"
-                    style={
-                      active
-                        ? { background: "rgba(194,29,32,0.1)", color: "var(--brand)", fontWeight: 600 }
-                        : { color: "var(--ink-soft)" }
-                    }
-                  >
-                    {l.label}
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-        </div>
-      ))}
-    </nav>
-
-    <div className="rounded-[20px] p-6 text-white" style={{ background: "linear-gradient(150deg, var(--brand) 0%, var(--brand-dark) 100%)" }}>
-      <h3 style={{ fontSize: "19px", fontWeight: 700, lineHeight: 1.2 }}>Kérj személyre szabott ajánlatot!</h3>
-      <p className="mt-2 text-sm text-white/85">Felmérjük az igényeidet, és pár napon belül ajánlatot adunk.</p>
-      <Link
-        href="#ajanlatkeres"
-        className="mt-4 inline-flex items-center rounded-full"
-        style={{ background: "#fff", color: "var(--brand)", padding: "11px 22px", fontSize: "14px", fontWeight: 600 }}
-      >
-        Ajánlatkérés
-      </Link>
-      <a href={`tel:${SITE.phoneRaw}`} className="mt-4 block text-sm font-semibold text-white">
-        {SITE.phoneDisplay}
-      </a>
-      <div className="text-xs text-white/70">Ügyfélszolgálat: {SITE.supportHours}</div>
+/** Customer-service card in the sidebar (bg #f6f6f6, no border). */
+const SupportWidget = () => (
+  <div className="rounded-[20px] p-6" style={{ background: "var(--surface-3)" }}>
+    <h3 style={{ fontSize: "19px", fontWeight: 700, lineHeight: 1.25, color: "var(--ink)" }}>Beszéljünk a lehetőségeidről!</h3>
+    <p className="mt-3 text-sm leading-relaxed text-[var(--ink-soft)]">
+      Ügyfélszolgálatunk hétköznap {SITE.supportHours} között elérhető – fordulj hozzánk bizalommal!
+    </p>
+    <div className="mt-6 flex items-center gap-4">
+      <span className="grid h-14 w-14 flex-none place-items-center rounded-full" style={{ background: "#fff", color: "var(--brand)" }}>
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden>
+          <path
+            d="M4 12a8 8 0 0 1 16 0M4 12v3a2 2 0 0 0 2 2h1v-6H6a2 2 0 0 0-2 1Zm16 0v3a2 2 0 0 1-2 2h-1v-6h1a2 2 0 0 1 2 1Z"
+            stroke="currentColor"
+            strokeWidth="1.7"
+            strokeLinejoin="round"
+          />
+          <path d="M18 17v.5a3 3 0 0 1-3 3h-3" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
+        </svg>
+      </span>
+      <div>
+        <div className="text-sm font-semibold text-[var(--ink)]">Ügyfélszolgálat</div>
+        <a href={`tel:${SITE.phoneRaw}`} className="mt-0.5 flex items-center gap-2 font-semibold text-[var(--ink)]">
+          <span className="h-2 w-2 rounded-full" style={{ background: "var(--brand)" }} />
+          {SITE.phoneDisplay}
+        </a>
+      </div>
     </div>
   </div>
 );
 
 /** Native service subpage — hero full-width, then a two-column body + sticky sidebar. */
 export function ServicePage({ data }: { data: ServicePageData }) {
+  const tocItems: TocItem[] = [
+    { id: "value", label: data.value.eyebrow },
+    { id: "process", label: data.process.eyebrow },
+    { id: "cegunkrol", label: data.why.eyebrow },
+    { id: "referenciak", label: data.references.eyebrow },
+    { id: "ajanlatkeres", label: "Ajánlatkérés" },
+  ];
+
   return (
     <div className="pb-16 md:pb-24">
       <Motion />
       <ServiceHero data={data.hero} />
 
-      <div className="container mt-[50px]">
-        <div className="grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,1fr)_320px] lg:gap-14">
+      <SectionDivider />
+
+      <div className="container">
+        <div className="grid grid-cols-1 gap-y-12 lg:grid-cols-[minmax(0,1fr)_340px] lg:gap-x-0">
           {/* Main column */}
-          <div className="flex min-w-0 flex-col gap-[46px]">
+          <div className="flex min-w-0 flex-col gap-[46px] lg:pr-10">
             <ValueSection data={data.value} />
             <RowDivider />
             <BenefitsSection data={data.benefits} />
@@ -363,9 +367,12 @@ export function ServicePage({ data }: { data: ServicePageData }) {
             <GrantSection data={data.grant} />
           </div>
 
-          {/* Sidebar (stretches to row height so the inner card can stick) */}
-          <aside>
-            <ServiceSidebar current={data.slug} />
+          {/* Sidebar — vertical dashed divider on its left (desktop) */}
+          <aside className="lg:border-l lg:border-dashed lg:border-[#ececec] lg:pl-10">
+            <div className="flex flex-col gap-6 lg:sticky lg:top-[110px]">
+              <ServiceTocNav items={tocItems} />
+              <SupportWidget />
+            </div>
           </aside>
         </div>
       </div>
