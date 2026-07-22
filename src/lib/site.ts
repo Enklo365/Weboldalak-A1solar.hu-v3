@@ -87,32 +87,32 @@ export const MEGA_MENUS: Record<string, MegaMenu> = {
   Szolgáltatásaink: {
     feature: {
       image: "/wp-content/uploads/2026/03/otthoni_energiatarolo_program-1.png",
-      title: "Válassza az A1 Solar-t kivitelező partnerként",
-      text: "az Otthoni Energiatároló Programban.",
+      title: "Otthoni Energiatároló Program",
+      text: "Válaszd kivitelezőnek az A1 Solar-t!",
       href: "/lakossagi-energiatarolo-tamogatas",
     },
     groups: [
       {
         heading: "Lakossági",
         links: [
-          { href: "/lakossagi-napelem", label: "Lakossági napelem", desc: "Otthonod energiaellátására.", icon: "panel" },
-          { href: "/lakossagi-napelem-tisztitas-es-karbantartas", label: "Tisztítás & karbantartás", desc: "Tartsd csúcson a rendszered.", icon: "care" },
+          { href: "/lakossagi-napelem", label: "Lakossági napelem", desc: "Otthonod energiájáért.", icon: "panel" },
+          { href: "/lakossagi-napelem-tisztitas-es-karbantartas", label: "Tisztítás & karbantartás", desc: "Csúcson a rendszered.", icon: "care" },
         ],
       },
       {
         heading: "Vállalati",
         links: [
-          { href: "/vallalati-napelem", label: "Vállalati napelem", desc: "Céged energiaköltségének csökkentése.", icon: "building" },
-          { href: "/vallalati-energiatarolas", label: "Energiatárolás", desc: "Tárold el a megtermelt energiát.", icon: "battery" },
-          { href: "/vallalati-napelem-tisztitas-es-karbantartas", label: "Tisztítás & karbantartás", desc: "Karbantartás céges rendszerekhez.", icon: "care" },
+          { href: "/vallalati-napelem", label: "Vállalati napelem", desc: "Kevesebb energiaköltség.", icon: "building" },
+          { href: "/vallalati-energiatarolas", label: "Energiatárolás", desc: "Tárold a zöld energiát.", icon: "battery" },
+          { href: "/vallalati-napelem-tisztitas-es-karbantartas", label: "Tisztítás & karbantartás", desc: "Céges rendszerekhez.", icon: "care" },
         ],
       },
       {
         heading: "Finanszírozás",
         links: [
-          { href: "/palyazatok", label: "Pályázatok", desc: "Elérhető támogatások és források.", icon: "doc" },
-          { href: "/jedlik-anyos-energetikai-program", label: "Jedlik Ányos program", desc: "Energetikai pályázati program.", icon: "award" },
-          { href: "/jedlik-anyos-finanszirozasi-segitseg", label: "Jedlik finanszírozás", desc: "Segítség a finanszírozáshoz.", icon: "coins" },
+          { href: "/palyazatok", label: "Pályázatok", desc: "Elérhető támogatások.", icon: "doc" },
+          { href: "/jedlik-anyos-energetikai-program", label: "Jedlik Ányos program", desc: "Energetikai pályázat.", icon: "award" },
+          { href: "/jedlik-anyos-finanszirozasi-segitseg", label: "Jedlik finanszírozás", desc: "Segítség a hiteledhez.", icon: "coins" },
         ],
       },
     ],
@@ -142,7 +142,7 @@ export const MEGA_MENUS: Record<string, MegaMenu> = {
         heading: "Tudástár & híreink",
         links: [
           { href: "/tudastar-blog", label: "Cikkek", desc: "Friss hírek és tudástár.", icon: "article" },
-          { href: "/ft1000", label: "Financial Times – FT 1000", desc: "Európa legdinamikusabb cégei közt.", icon: "trophy" },
+          { href: "/ft1000", label: "Financial Times – FT 1000", desc: "Európa legdinamikusabbjai.", icon: "trophy" },
         ],
       },
     ],
