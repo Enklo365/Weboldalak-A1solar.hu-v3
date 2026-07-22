@@ -177,39 +177,36 @@ export function HomeHero() {
 
       {/* ── Mobile hero (<lg) ──────────────────────────────────────────── */}
       <div className="lg:hidden">
-        {/* Rounded hero card (no sharp polygon cut) — matches the desktop's
-            rounded-panel language. */}
-        <div className="px-4">
-          <div
-            className="relative flex min-h-[340px] flex-col justify-end overflow-hidden rounded-[24px] p-6 text-white"
-            style={{
-              backgroundImage: `url(${HERO_BG_MOBILE})`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-            }}
-          >
-            <div className="absolute inset-0" style={{ background: GRADIENT }} />
-            <div className="relative z-10">
-              <span
-                className="inline-block rounded-full text-xs font-medium uppercase tracking-[1px]"
-                style={{ background: "rgba(255,255,255,0.2)", padding: "6px 12px" }}
-              >
-                {HERO.badge}
-              </span>
-              <h1 className="mt-3" style={{ color: "#fff", fontSize: "28px", fontWeight: 300, lineHeight: 1.2 }}>
-                {HERO.titleTop}
-                <br />
-                <strong style={{ fontWeight: 700 }}>{HERO.titleStrong}</strong>
-              </h1>
-            </div>
-            <Link
-              href={HERO.ctaHref}
-              className="relative z-10 mt-4 self-start rounded-full text-sm font-normal"
-              style={{ background: "#db0330", color: "#fff", padding: "10px 22px" }}
-            >
-              {HERO.ctaLabel}
-            </Link>
+        {/* Faithful reproduction of the WP `.hero-masked` block: a 300px banner
+            with the polygon notch cut on the lower-right corner. */}
+        <div
+          className="relative flex flex-col justify-end p-5 text-white"
+          style={{
+            height: "300px",
+            backgroundImage: `url(${HERO_BG_MOBILE})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            clipPath: "polygon(0 0, 100% 0, 100% 90%, 85% 100%, 0 100%)",
+          }}
+        >
+          <div className="absolute inset-0" style={{ background: GRADIENT }} />
+          <div className="relative z-10">
+            <span className="text-xs uppercase" style={{ background: "rgba(0,0,0,0.3)", padding: "4px 8px", borderRadius: "8px" }}>
+              {HERO.badge}
+            </span>
+            <h1 className="mt-2.5" style={{ color: "#fff", fontSize: "25px", fontWeight: 300, lineHeight: 1.2 }}>
+              {HERO.titleTop}
+              <br />
+              <strong style={{ fontWeight: 700 }}>{HERO.titleStrong}</strong>
+            </h1>
           </div>
+          <Link
+            href={HERO.ctaHref}
+            className="relative z-10 mt-4 self-start rounded-full text-sm font-normal"
+            style={{ background: "#db0330", color: "#fff", padding: "8px 20px" }}
+          >
+            {HERO.ctaLabel}
+          </Link>
         </div>
 
         {/* Cards stacked beneath on mobile — full-width, icon top-left, arrow top-right. */}
