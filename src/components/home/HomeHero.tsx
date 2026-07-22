@@ -29,7 +29,7 @@ const ArrowUpRight = () => (
 const CardBody = ({ title, text, icon }: { title: string; text: string; icon: string }) => (
   <>
     {/* eslint-disable-next-line @next/next/no-img-element */}
-    <img src={icon} alt="" className="h-14 w-14 object-contain" aria-hidden />
+    <img src={icon} alt="" className="w-[90px] object-contain" aria-hidden />
     <div>
       <h3 className="text-[var(--ink)]" style={{ fontSize: "28px", fontWeight: 500, lineHeight: 1.2 }}>
         {title}
@@ -53,7 +53,7 @@ const CardBody = ({ title, text, icon }: { title: string; text: string; icon: st
  */
 export function HomeHero() {
   return (
-    <section className="w-full pt-6 md:pt-8">
+    <section className="w-full">
       {/* ── Desktop hero (≥lg) ─────────────────────────────────────────── */}
       <div className="relative mx-auto hidden w-full lg:block" style={{ maxWidth: "1290px", height: "571px" }}>
         {/* Masked photo + gradient */}
@@ -80,11 +80,11 @@ export function HomeHero() {
         <div className="absolute bottom-0 left-0 z-10 text-white" style={{ padding: "40px 40px 70px", maxWidth: "600px" }}>
           <span
             className="inline-block rounded-full px-3 py-2 text-xs font-medium uppercase tracking-[1px] text-white"
-            style={{ background: "rgba(255,255,255,0.2)" }}
+            style={{ background: "rgba(255,255,255,0.2)", marginBottom: "20px" }}
           >
             {HERO.badge}
           </span>
-          <h1 className="mt-5" style={{ color: "#fff", fontSize: "42px", fontWeight: 300, lineHeight: 1.2, marginBottom: "20px" }}>
+          <h1 style={{ color: "#fff", fontSize: "42px", fontWeight: 300, lineHeight: 1.2, marginBottom: "20px" }}>
             {HERO.titleTop}
             <br />
             <strong style={{ fontWeight: 700 }}>{HERO.titleStrong}</strong>
@@ -117,8 +117,10 @@ export function HomeHero() {
                   }}
                 />
                 {prio ? (
-                  <span className="absolute right-1 top-1 z-10 grid h-11 w-11 place-items-center rounded-full border border-[var(--line)] bg-white text-[var(--ink)]">
-                    <ArrowUpRight />
+                  <span className="absolute right-1 top-1 z-10 grid h-11 w-11 place-items-center rounded-full border border-[var(--line)] bg-white text-[var(--ink)] transition-colors duration-200 group-hover:border-transparent group-hover:bg-[var(--brand)] group-hover:text-white">
+                    <span className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+                      <ArrowUpRight />
+                    </span>
                   </span>
                 ) : null}
                 <div className="absolute inset-0 flex flex-col justify-between p-5">
@@ -177,8 +179,8 @@ export function HomeHero() {
         </div>
       </div>
 
-      {/* Company intro beneath (both) */}
-      <div className="mx-auto w-full max-w-[var(--container)] px-4">
+      {/* Company intro beneath — aligned to the hero image's left edge (band, ~10px). */}
+      <div className="mx-auto w-full max-w-[1290px] px-4 lg:px-[10px]">
         <p className="mt-10 max-w-md text-[var(--ink-soft)] lg:mt-14">{HERO.intro}</p>
       </div>
     </section>
