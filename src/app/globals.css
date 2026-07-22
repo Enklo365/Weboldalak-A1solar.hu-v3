@@ -612,7 +612,7 @@ img {
   height: 2.25rem;
 }
 .learn-more.is-compact .extra-icon.arrow {
-  left: 0.375rem;
+  left: 0.25rem;
 }
 .learn-more.is-compact .extra-button-text {
   margin-left: 1.85rem;
@@ -975,11 +975,12 @@ img {
   display: grid;
   place-items: center;
   color: #fff;
-  transition: background 0.15s;
+  transition: background 0.15s, color 0.15s, transform 0.15s;
 }
 .footer-social a:hover {
   background: var(--brand);
   color: #fff;
+  transform: scale(1.1);
 }
 .footer-disclaimer {
   margin: 28px 0 0;
@@ -1510,4 +1511,96 @@ img {
   color: var(--ink-soft);
   margin: 0 0 22px;
   font-size: 15.5px;
+}
+
+/* ============ Micro-interactions (opt-in via data attributes) ============ */
+/* Scroll-reveal: fade + rise into view. */
+[data-animate="up"] {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity 0.6s ease, transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+  will-change: opacity, transform;
+}
+[data-animate="up"].in {
+  opacity: 1;
+  transform: none;
+}
+/* Scroll-reveal: draw a divider in from the left. */
+[data-animate="line"] {
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+[data-animate="line"].in {
+  transform: scaleX(1);
+}
+/* Images fade in once decoded. */
+img[data-fade] {
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+img[data-fade].loaded {
+  opacity: 1;
+}
+
+/* Hero copy: staggered rise on load. */
+.hero-copy > * {
+  animation: heroRise 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) backwards;
+}
+.hero-copy > *:nth-child(1) {
+  animation-delay: 0.08s;
+}
+.hero-copy > *:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.hero-copy > *:nth-child(3) {
+  animation-delay: 0.32s;
+}
+@keyframes heroRise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Mega-menu items: staggered rise when the panel opens. */
+.megamenu-item {
+  animation: megaItemIn 0.34s ease backwards;
+}
+.megamenu-group .megamenu-item:nth-child(2) {
+  animation-delay: 0.05s;
+}
+.megamenu-group .megamenu-item:nth-child(3) {
+  animation-delay: 0.1s;
+}
+.megamenu-group .megamenu-item:nth-child(4) {
+  animation-delay: 0.15s;
+}
+@keyframes megaItemIn {
+  from {
+    opacity: 0;
+    transform: translateY(7px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-animate],
+  .hero-copy > *,
+  .megamenu-item {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  img[data-fade] {
+    opacity: 1 !important;
+  }
 }

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Motion } from "@/components/Motion";
 import { HomeHero } from "@/components/home/HomeHero";
 import { HomeAbout, HomeArticles, HomeZanzibar, SectionDivider } from "@/components/home/HomeSections";
 
@@ -15,6 +16,7 @@ export const metadata: Metadata = {
 export default function NativHomePreview() {
   return (
     <>
+      <Motion />
       <HomeHero />
       <SectionDivider />
       <HomeAbout />

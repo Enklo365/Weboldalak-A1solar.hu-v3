@@ -4,7 +4,7 @@ import { ABOUT, ARTICLES, ZANZIBAR } from "@/components/home/homeSections.data";
 /** Dashed section separator (container-width) with 50px breathing above/below. */
 export const SectionDivider = () => (
   <div className="mx-auto max-w-[var(--container)] px-6 my-[50px]">
-    <hr style={{ border: 0, borderTop: "1px dashed #ececec" }} />
+    <hr data-animate="line" style={{ border: 0, borderTop: "1px dashed #ececec" }} />
   </div>
 );
 
@@ -53,7 +53,7 @@ export function HomeAbout() {
   return (
     <section className="w-full">
       <div className="mx-auto grid max-w-[var(--container)] grid-cols-1 items-center gap-10 px-6 lg:grid-cols-2 lg:gap-16">
-        <div className="aspect-[4/3] overflow-hidden rounded-[20px] bg-[var(--surface-3)]">
+        <div data-animate="up" className="aspect-[4/3] overflow-hidden rounded-[20px] bg-[var(--surface-3)]">
           <video
             autoPlay
             loop
@@ -66,7 +66,7 @@ export function HomeAbout() {
             <source src={ABOUT.video} type="video/mp4" />
           </video>
         </div>
-        <div className="max-w-[600px]">
+        <div data-animate="up" style={{ transitionDelay: "120ms" }} className="max-w-[600px]">
           <Eyebrow>{ABOUT.eyebrow}</Eyebrow>
           <h2
             className="text-[var(--ink)]"
@@ -93,7 +93,7 @@ export function HomeZanzibar() {
   return (
     <section className="w-full">
       <div className="mx-auto grid max-w-[var(--container)] grid-cols-1 items-center gap-10 px-6 lg:grid-cols-2 lg:gap-16">
-        <div className="max-w-[600px]">
+        <div data-animate="up" className="max-w-[600px]">
           <Eyebrow>{ZANZIBAR.eyebrow}</Eyebrow>
           <h2
             className="text-[var(--ink)]"
@@ -110,9 +110,10 @@ export function HomeZanzibar() {
             <LearnMore href={ZANZIBAR.ctaHref}>{ZANZIBAR.ctaLabel}</LearnMore>
           </div>
         </div>
-        <div className="aspect-[4/3] overflow-hidden rounded-[20px]">
+        <div data-animate="up" style={{ transitionDelay: "120ms" }} className="aspect-[4/3] overflow-hidden rounded-[20px]">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
+            data-fade
             src={ZANZIBAR.photo}
             alt="A1 Solar Zanzibár – napelemes rendszer átadása"
             className="object-cover"
@@ -130,7 +131,7 @@ export function HomeArticles() {
     <section className="w-full pb-16 md:pb-24">
       <div className="mx-auto max-w-[var(--container)] px-6">
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:items-start md:gap-16">
-          <div>
+          <div data-animate="up">
             <Eyebrow>{ARTICLES.eyebrow}</Eyebrow>
             <h2
               className="text-[var(--ink)]"
@@ -143,15 +144,18 @@ export function HomeArticles() {
         </div>
 
         <div className="mt-12 grid grid-cols-1 gap-7 md:grid-cols-3">
-          {ARTICLES.items.map((a) => (
+          {ARTICLES.items.map((a, i) => (
             <Link
               key={a.href}
               href={a.href}
+              data-animate="up"
+              style={{ transitionDelay: `${i * 90}ms` }}
               className="group flex flex-col overflow-hidden rounded-[20px] bg-white"
             >
               <div className="relative aspect-[16/9] overflow-hidden">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
+                  data-fade
                   src={a.img}
                   alt=""
                   className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
