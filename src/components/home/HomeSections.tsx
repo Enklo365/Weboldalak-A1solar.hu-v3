@@ -39,15 +39,15 @@ export function HomeAbout() {
   return (
     <section className="w-full">
       <div className="mx-auto grid max-w-[var(--container)] grid-cols-1 items-center gap-10 px-6 lg:grid-cols-2 lg:gap-16">
-        <div className="overflow-hidden rounded-[20px] bg-[var(--surface-3)]">
+        <div className="aspect-[4/3] overflow-hidden rounded-[20px] bg-[var(--surface-3)]">
           <video
-            className="h-full w-full object-cover"
             autoPlay
             loop
             muted
             playsInline
             preload="auto"
             aria-hidden
+            style={{ height: "100%", width: "100%", objectFit: "cover" }}
           >
             <source src={ABOUT.video} type="video/mp4" />
           </video>
@@ -96,12 +96,13 @@ export function HomeZanzibar() {
             <LearnMore href={ZANZIBAR.ctaHref}>{ZANZIBAR.ctaLabel}</LearnMore>
           </div>
         </div>
-        <div className="overflow-hidden rounded-[20px]">
+        <div className="aspect-[4/3] overflow-hidden rounded-[20px]">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={ZANZIBAR.photo}
             alt="A1 Solar Zanzibár – napelemes rendszer átadása"
-            className="h-full w-full object-cover"
+            className="object-cover"
+            style={{ height: "100%", width: "100%" }}
           />
         </div>
       </div>
@@ -142,12 +143,7 @@ export function HomeArticles() {
                   alt=""
                   className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
                 />
-                <span
-                  className="absolute right-3 top-3 rounded-full px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.5px] text-white"
-                  style={{ background: "var(--brand)" }}
-                >
-                  {ARTICLES.category}
-                </span>
+                <span className="notch-badge">{ARTICLES.category}</span>
               </div>
               <div className="flex flex-1 flex-col p-6">
                 <h3 className="text-lg font-semibold leading-snug text-[var(--ink)]">{a.title}</h3>

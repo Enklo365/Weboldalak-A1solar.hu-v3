@@ -604,6 +604,49 @@ img {
 .learn-more:hover .extra-button-text {
   color: #fff;
 }
+
+/* ---- Category badge notched into the image corner (echoes the hero shape) ---- */
+.notch-badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  height: 34px;
+  padding: 0 16px;
+  background: #fff;
+  color: var(--brand);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  border-bottom-left-radius: 16px;
+}
+/* Concave fillet along the top edge, to the left of the tab. */
+.notch-badge::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -16px;
+  width: 16px;
+  height: 16px;
+  background: #fff;
+  -webkit-mask: radial-gradient(16px at 0 16px, #0000 98%, #000);
+  mask: radial-gradient(16px at 0 16px, #0000 98%, #000);
+}
+/* Concave fillet along the right edge, below the tab. */
+.notch-badge::after {
+  content: "";
+  position: absolute;
+  bottom: -16px;
+  right: 0;
+  width: 16px;
+  height: 16px;
+  background: #fff;
+  -webkit-mask: radial-gradient(16px at 16px 0, #0000 98%, #000);
+  mask: radial-gradient(16px at 16px 0, #0000 98%, #000);
+}
 .burger {
   display: none;
   flex: none;
