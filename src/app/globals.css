@@ -368,7 +368,10 @@ img {
   align-items: flex-end;
   width: 260px;
   flex: none;
-  min-height: 300px;
+  /* Track the content height (the card stretches both columns to the taller
+     one). A modest floor keeps the image substantial even for the shorter
+     2-column menu, but avoids the fixed 300px overhang below the footer. */
+  min-height: 230px;
   border-radius: 18px;
   overflow: hidden;
   background-size: cover;
