@@ -117,8 +117,9 @@ export function HomeHero() {
         {/* Shaped photo (clip-path + real <img>) */}
         <HeroPhoto />
 
-        {/* Headline content, bottom-left */}
-        <div className="absolute bottom-0 left-0 z-10 text-white" style={{ padding: "40px 40px 70px", maxWidth: "600px" }}>
+        {/* Headline content, bottom-left — equal inset from the bottom and the
+            left of the hero shape (40px / 40px). */}
+        <div className="absolute bottom-0 left-0 z-10 text-white" style={{ padding: "40px", maxWidth: "600px" }}>
           <span
             className="inline-block rounded-full px-3 py-2 text-xs font-medium uppercase tracking-[1px] text-white"
             style={{ background: "rgba(255,255,255,0.2)", marginBottom: "20px" }}
