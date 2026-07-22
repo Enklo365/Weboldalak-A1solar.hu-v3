@@ -869,14 +869,17 @@ img {
 }
 /* White awards panel descending from the footer top edge (merges with the white
    gap above); the grey footer scoops around it with concave fillets. */
-/* Awards sit in the mirror notch's cut-out (over the page background). */
+/* Awards centred in the mirror notch's cut-out (over the page background). */
 .footer-notch {
   position: absolute;
-  top: 26px;
-  right: 44px;
+  top: 0;
+  left: 47%;
+  right: 3.5%;
+  height: 25.7%;
   z-index: 3;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 .footer-notch img {
   max-width: 480px;
@@ -979,6 +982,14 @@ img {
 }
 .footer-social a:hover {
   background: var(--brand);
+  color: #fff;
+}
+.footer-disclaimer {
+  margin: 28px 0 0;
+  font-size: 12px;
+  line-height: 1.7;
+  color: #9a9a9a;
+  text-align: justify;
 }
 .footer-bottom {
   margin: 0 48px;

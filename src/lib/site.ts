@@ -166,12 +166,14 @@ export const FOOTER_SERVICES: NavChild[] = [
   { href: "/kepzeseink", label: "Képzések" },
 ];
 
+const OEP_PDF =
+  "/wp-content/uploads/2026/06/A1_Solar_Ajanlat_otthoni_energiatarolas_vegleges-0529.pdf";
+
 export const FOOTER_USEFUL: NavChild[] = [
   { href: "/palyazatok", label: "Aktuális pályázatok" },
-  {
-    href: "/panelmosas-karbantartas-aszf",
-    label: "Panelmosás-karbantartás ÁSZF",
-  },
+  { href: "/lakossagi-energiatarolo-tamogatas", label: "Otthoni Energiatároló Program" },
+  { href: OEP_PDF, label: "OEP csomagajánlatok", external: true },
+  { href: "https://energrosso.hu/", label: "Nagykereskedelem", external: true },
 ];
 
 export const FOOTER_LEGAL: NavChild[] = [
@@ -183,4 +185,8 @@ export const FOOTER_LEGAL: NavChild[] = [
     label: "Promóciós szabályzat",
   },
   { href: "/oepszigeteles", label: "OEP szigetelés" },
+  {
+    href: "/panelmosas-karbantartas-aszf",
+    label: "Panelmosás-karbantartás ÁSZF",
+  },
 ];

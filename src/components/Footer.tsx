@@ -4,12 +4,26 @@ import {
   FOOTER_NAV,
   FOOTER_SERVICES,
   FOOTER_USEFUL,
+  type NavChild,
   SITE,
 } from "@/lib/site";
 
 const LOGO = "/wp-content/uploads/2024/11/A1solar-logo.svg";
 const BADGES = "/wp-content/uploads/2025/07/a1solar_badgek-1024x127.png";
-const YEAR = 2025;
+const YEAR = 2026;
+
+/** Footer link that opens external targets in a new tab. */
+const FooterLink = ({ href, label, external }: NavChild) =>
+  external ? (
+    <a href={href} target="_blank" rel="noopener noreferrer">
+      {label}
+    </a>
+  ) : (
+    <Link href={href}>{label}</Link>
+  );
+
+const DISCLAIMER =
+  "A weboldalon szereplő információk kizárólag általános tájékoztatást szolgálnak, nem minősülnek kötelező érvényű ajánlatnak, műszaki, pénzügyi vagy pályázati tanácsadásnak. A végleges műszaki tartalom, ár, határidő és kivitelezési feltételek minden esetben egyedi felmérés és írásbeli ajánlat alapján kerülnek meghatározásra. A feltüntetett termelési, megtakarítási és megtérülési adatok becslések; a tényleges eredmények a helyszíni adottságoktól, a fogyasztástól, az időjárástól, az energiaáraktól és az aktuális szabályozástól függően eltérhetnek. A pályázatok és finanszírozások elérhetőségéért vagy elnyeréséért az A1 Solar Kft. nem vállal garanciát. A termékképek és műszaki adatok tájékoztató jellegűek, azok változhatnak. Kötelező érvényűnek kizárólag az elfogadott írásbeli ajánlat és szerződés minősül. A személyes adatok kezelése az Adatkezelési Tájékoztató szerint történik. A weboldal tartalmai eltérő jelzés hiányában az A1 Solar Kft. tulajdonát képezik.";
 
 const Facebook = () => (
   <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
@@ -79,7 +93,7 @@ export const Footer = () => (
           <ul>
             {FOOTER_NAV.map((l) => (
               <li key={l.href + l.label}>
-                <Link href={l.href}>{l.label}</Link>
+                <FooterLink {...l} />
               </li>
             ))}
           </ul>
@@ -90,7 +104,7 @@ export const Footer = () => (
           <ul>
             {FOOTER_SERVICES.map((l) => (
               <li key={l.href + l.label}>
-                <Link href={l.href}>{l.label}</Link>
+                <FooterLink {...l} />
               </li>
             ))}
           </ul>
@@ -101,7 +115,7 @@ export const Footer = () => (
           <ul>
             {FOOTER_USEFUL.map((l) => (
               <li key={l.href + l.label}>
-                <Link href={l.href}>{l.label}</Link>
+                <FooterLink {...l} />
               </li>
             ))}
           </ul>
@@ -148,6 +162,10 @@ export const Footer = () => (
       </div>
       </div>
       </div>
+    </div>
+
+    <div className="container">
+      <p className="footer-disclaimer">{DISCLAIMER}</p>
     </div>
   </footer>
 );
