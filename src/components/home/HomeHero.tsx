@@ -113,7 +113,8 @@ export function HomeHero() {
       {/* aspect-ratio (not a fixed 571px height) keeps the photo crop identical
           at every width — otherwise narrow viewports crop less off the top and
           the image's sky shows as empty space above the subject. */}
-      <div className="relative mx-auto hidden w-full lg:block" style={{ maxWidth: "var(--container)", aspectRatio: "1240 / 571" }}>
+      <div className="container hidden lg:block">
+        <div className="relative w-full" style={{ aspectRatio: "1192 / 571" }}>
         {/* Shaped photo (clip-path + real <img>) */}
         <HeroPhoto />
 
@@ -165,6 +166,7 @@ export function HomeHero() {
               </Link>
             );
           })}
+        </div>
         </div>
       </div>
 
@@ -226,7 +228,7 @@ export function HomeHero() {
       {/* Company intro — aligned to the hero image's left edge (~10px) and, on
           desktop, vertically centred in the band-bottom → cards-bottom gap
           (the cards overhang the hero mask by ~106px). */}
-      <div className="mx-auto flex w-full max-w-[var(--container)] items-center px-4 lg:min-h-[101px] lg:px-0">
+      <div className="container flex items-center lg:min-h-[101px]">
         <p className="mt-10 max-w-md text-[var(--ink-soft)] lg:mt-0">{HERO.intro}</p>
       </div>
     </section>

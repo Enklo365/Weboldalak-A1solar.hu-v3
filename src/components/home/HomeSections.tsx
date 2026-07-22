@@ -30,7 +30,7 @@ const CircleCta = ({ href, children }: { href: string; children: string }) => (
 export function HomeAbout() {
   return (
     <section className="w-full py-16 md:py-24">
-      <div className="mx-auto grid max-w-[var(--container)] grid-cols-1 items-center gap-10 px-4 lg:grid-cols-2 lg:gap-16">
+      <div className="mx-auto grid max-w-[var(--container)] grid-cols-1 items-center gap-10 px-6 lg:grid-cols-2 lg:gap-16">
         <div className="overflow-hidden rounded-[20px] bg-[var(--surface-3)]">
           <video
             className="h-full w-full object-cover"
@@ -70,7 +70,7 @@ export function HomeAbout() {
 export function HomeZanzibar() {
   return (
     <section className="w-full py-16 md:py-24">
-      <div className="mx-auto grid max-w-[var(--container)] grid-cols-1 items-center gap-10 px-4 lg:grid-cols-2 lg:gap-16">
+      <div className="mx-auto grid max-w-[var(--container)] grid-cols-1 items-center gap-10 px-6 lg:grid-cols-2 lg:gap-16">
         <div className="max-w-[600px]">
           <Eyebrow>{ZANZIBAR.eyebrow}</Eyebrow>
           <h2
@@ -105,7 +105,7 @@ export function HomeZanzibar() {
 export function HomeArticles() {
   return (
     <section className="w-full py-16 md:py-24">
-      <div className="mx-auto max-w-[var(--container)] px-4">
+      <div className="mx-auto max-w-[var(--container)] px-6">
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:items-start md:gap-16">
           <div>
             <Eyebrow>{ARTICLES.eyebrow}</Eyebrow>
