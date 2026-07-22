@@ -147,6 +147,13 @@ const MegaIcon = ({ name }: { name: string }) => {
           <path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18" />
         </svg>
       );
+    case "trophy":
+      return (
+        <svg {...p}>
+          <path d="M8 4h8v5a4 4 0 0 1-8 0V4z" />
+          <path d="M8 6H5v1a3 3 0 0 0 3 3M16 6h3v1a3 3 0 0 1-3 3M10 14h4M9 20h6M12 14v6" />
+        </svg>
+      );
     default:
       return (
         <svg {...p}>

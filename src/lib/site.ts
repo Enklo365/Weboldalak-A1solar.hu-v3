@@ -120,20 +120,21 @@ export const MEGA_MENUS: Record<string, MegaMenu> = {
   Cégünkről: {
     feature: {
       image: "/wp-content/uploads/2025/07/photo_2025-07-30_10-24-40.jpg",
-      title: "A jövőre optimalizálva",
-      text: "Több mint tíz év a megújuló energia élvonalában.",
-      href: "/cegunkrol",
+      title: "Új esélyt adtunk",
+      text: "Első afrikai napelemes rendszerünket adtuk át Zanzibárban.",
+      href: "/az-a1-solar-zanzibar-ltd-atadta-elso-afrikai-napelemes-rendszeret/",
     },
     groups: [
       {
-        heading: "Cégünk",
+        heading: "Cégünkről",
         links: [
           { href: "/cegunkrol", label: "Rólunk", desc: "Ismerd meg az A1 Solart.", icon: "info" },
           { href: "/karrier", label: "Karrier", desc: "Csatlakozz a csapatunkhoz.", icon: "career" },
+          { href: "/ft1000", label: "Financial Times – FT 1000", desc: "Európa legdinamikusabb cégei közt.", icon: "trophy" },
         ],
       },
       {
-        heading: "Tudás & hírek",
+        heading: "Tudástár & híreink",
         links: [
           { href: "/tudastar-blog", label: "Cikkek", desc: "Friss hírek és tudástár.", icon: "article" },
           {
@@ -146,8 +147,8 @@ export const MEGA_MENUS: Record<string, MegaMenu> = {
       },
     ],
     footer: {
-      title: "Kérdésed van rólunk?",
-      text: "Szívesen válaszolunk bármire.",
+      title: "Kérdésed van?",
+      text: "Írj nekünk egy üzenetet!",
       ctaLabel: "Kapcsolat",
       ctaHref: "/kapcsolat",
     },
