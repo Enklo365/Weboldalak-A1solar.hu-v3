@@ -55,6 +55,107 @@ const InstagramIcon = () => (
   </svg>
 );
 
+/** Line icons for mega-menu items, selected by name. */
+const MegaIcon = ({ name }: { name: string }) => {
+  const p = {
+    width: 22,
+    height: 22,
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: 1.7,
+    strokeLinecap: "round" as const,
+    strokeLinejoin: "round" as const,
+    "aria-hidden": true,
+  };
+  switch (name) {
+    case "panel":
+      return (
+        <svg {...p}>
+          <rect x="3" y="4" width="18" height="12" rx="1" />
+          <path d="M3 8h18M3 12h18M9 4v12M15 4v12M12 16v4M8 20h8" />
+        </svg>
+      );
+    case "building":
+      return (
+        <svg {...p}>
+          <rect x="5" y="3" width="14" height="18" rx="1" />
+          <path d="M9 7h2M13 7h2M9 11h2M13 11h2M9 15h6" />
+        </svg>
+      );
+    case "battery":
+      return (
+        <svg {...p}>
+          <rect x="3" y="7" width="16" height="10" rx="2" />
+          <path d="M21 10v4M12 9l-2 3h3l-2 3" />
+        </svg>
+      );
+    case "care":
+      return (
+        <svg {...p}>
+          <path d="M12 3l1.8 4.2L18 9l-4.2 1.8L12 15l-1.8-4.2L6 9l4.2-1.8L12 3z" />
+          <path d="M18.5 15l.7 1.8 1.8.7-1.8.7-.7 1.8-.7-1.8-1.8-.7 1.8-.7z" />
+        </svg>
+      );
+    case "doc":
+      return (
+        <svg {...p}>
+          <path d="M7 3h7l4 4v14H7z" />
+          <path d="M14 3v4h4M10 12h6M10 16h6" />
+        </svg>
+      );
+    case "award":
+      return (
+        <svg {...p}>
+          <circle cx="12" cy="9" r="5" />
+          <path d="M9 13l-1 8 4-2 4 2-1-8" />
+        </svg>
+      );
+    case "coins":
+      return (
+        <svg {...p}>
+          <ellipse cx="9" cy="7" rx="6" ry="3" />
+          <path d="M3 7v5c0 1.7 2.7 3 6 3s6-1.3 6-3V7" />
+          <path d="M15 12.5c2.5-.3 6-1.4 6-3.5s-3.5-3.2-6-3.5" />
+        </svg>
+      );
+    case "info":
+      return (
+        <svg {...p}>
+          <circle cx="12" cy="12" r="9" />
+          <path d="M12 11v5M12 8h.01" />
+        </svg>
+      );
+    case "career":
+      return (
+        <svg {...p}>
+          <rect x="3" y="7" width="18" height="13" rx="2" />
+          <path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M3 12h18" />
+        </svg>
+      );
+    case "article":
+      return (
+        <svg {...p}>
+          <rect x="4" y="4" width="16" height="16" rx="2" />
+          <path d="M8 9h8M8 13h8M8 17h5" />
+        </svg>
+      );
+    case "globe":
+      return (
+        <svg {...p}>
+          <circle cx="12" cy="12" r="9" />
+          <path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18" />
+        </svg>
+      );
+    default:
+      return (
+        <svg {...p}>
+          <circle cx="12" cy="12" r="9" />
+        </svg>
+      );
+  }
+};
+
 const NavLink = ({ entry }: { entry: NavEntry }) => {
   if (entry.external) {
     return (
@@ -201,41 +302,59 @@ export const Header = () => {
           <div className="megamenu">
             <div className="container">
               <div className="megamenu-card">
-                <div className="megamenu-groups">
-                  {activeMega.groups.map((g) => (
-                    <div className="megamenu-group" key={g.heading}>
-                      <span className="megamenu-heading">{g.heading}</span>
-                      {g.links.map((l) => {
-                        const inner = (
-                          <>
-                            <span>{l.label}</span>
-                            <span className="mega-arrow" aria-hidden>
-                              →
-                            </span>
-                          </>
-                        );
-                        return l.external ? (
-                          <a key={l.href} href={l.href} target="_blank" rel="noopener noreferrer" onClick={() => setMega(null)}>
-                            {inner}
-                          </a>
-                        ) : (
-                          <Link key={l.href} href={l.href} onClick={() => setMega(null)}>
-                            {inner}
-                          </Link>
-                        );
-                      })}
-                    </div>
-                  ))}
-                </div>
-                <Link className="megamenu-promo" href={activeMega.promo.ctaHref} onClick={() => setMega(null)}>
-                  <span className="megamenu-promo-media" style={{ backgroundImage: `url(${activeMega.promo.image})` }} />
-                  <span className="megamenu-promo-body">
-                    <span className="megamenu-promo-eyebrow">{activeMega.promo.eyebrow}</span>
-                    <span className="megamenu-promo-title">{activeMega.promo.title}</span>
-                    <span className="megamenu-promo-text">{activeMega.promo.text}</span>
-                    <span className="megamenu-promo-cta">{activeMega.promo.ctaLabel} →</span>
+                <Link
+                  className="megamenu-feature"
+                  href={activeMega.feature.href}
+                  onClick={() => setMega(null)}
+                  style={{ backgroundImage: `url(${activeMega.feature.image})` }}
+                >
+                  <span className="megamenu-feature-body">
+                    <span className="megamenu-feature-title">{activeMega.feature.title}</span>
+                    <span className="megamenu-feature-text">{activeMega.feature.text}</span>
                   </span>
                 </Link>
+
+                <div className="megamenu-main">
+                  <div className="megamenu-groups">
+                    {activeMega.groups.map((g) => (
+                      <div className="megamenu-group" key={g.heading}>
+                        <span className="megamenu-heading">{g.heading}</span>
+                        {g.links.map((l) => {
+                          const inner = (
+                            <>
+                              <span className="megamenu-item-icon">
+                                <MegaIcon name={l.icon} />
+                              </span>
+                              <span className="megamenu-item-body">
+                                <span className="megamenu-item-title">{l.label}</span>
+                                <span className="megamenu-item-desc">{l.desc}</span>
+                              </span>
+                            </>
+                          );
+                          return l.external ? (
+                            <a key={l.href} className="megamenu-item" href={l.href} target="_blank" rel="noopener noreferrer" onClick={() => setMega(null)}>
+                              {inner}
+                            </a>
+                          ) : (
+                            <Link key={l.href} className="megamenu-item" href={l.href} onClick={() => setMega(null)}>
+                              {inner}
+                            </Link>
+                          );
+                        })}
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="megamenu-footer">
+                    <span className="megamenu-footer-text">
+                      <strong>{activeMega.footer.title}</strong>
+                      {activeMega.footer.text}
+                    </span>
+                    <Link className="megamenu-footer-cta" href={activeMega.footer.ctaHref} onClick={() => setMega(null)}>
+                      {activeMega.footer.ctaLabel}
+                    </Link>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

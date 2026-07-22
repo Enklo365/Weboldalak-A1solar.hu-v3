@@ -77,74 +77,79 @@ export const MAIN_NAV: NavEntry[] = [
 ];
 
 /** Mega-menu content, keyed by the MAIN_NAV label it belongs to. */
-export type MegaLink = { href: string; label: string; external?: boolean };
+export type MegaLink = { href: string; label: string; desc: string; icon: string; external?: boolean };
 export type MegaGroup = { heading: string; links: MegaLink[] };
-export type MegaPromo = { image: string; eyebrow: string; title: string; text: string; ctaLabel: string; ctaHref: string };
-export type MegaMenu = { groups: MegaGroup[]; promo: MegaPromo };
+export type MegaFeature = { image: string; title: string; text: string; href: string };
+export type MegaFooter = { title: string; text: string; ctaLabel: string; ctaHref: string };
+export type MegaMenu = { feature: MegaFeature; groups: MegaGroup[]; footer: MegaFooter };
 
 export const MEGA_MENUS: Record<string, MegaMenu> = {
   Szolgáltatásaink: {
+    feature: {
+      image: "/wp-content/uploads/2026/03/otthoni_energiatarolo_program-1.png",
+      title: "Napelem és energiatárolás egy helyről",
+      text: "Tervezéstől a kivitelezésig, pályázati támogatással.",
+      href: "/kapcsolat",
+    },
     groups: [
       {
-        heading: "Lakossági",
+        heading: "Lakossági & vállalati",
         links: [
-          { href: "/lakossagi-napelem", label: "Lakossági napelem" },
-          { href: "/lakossagi-napelem-tisztitas-es-karbantartas", label: "Tisztítás és karbantartás" },
-        ],
-      },
-      {
-        heading: "Vállalati",
-        links: [
-          { href: "/vallalati-napelem", label: "Vállalati napelem" },
-          { href: "/vallalati-energiatarolas", label: "Vállalati energiatárolás" },
-          { href: "/vallalati-napelem-tisztitas-es-karbantartas", label: "Tisztítás és karbantartás" },
+          { href: "/lakossagi-napelem", label: "Lakossági napelem", desc: "Otthonod energiaellátására.", icon: "panel" },
+          { href: "/vallalati-napelem", label: "Vállalati napelem", desc: "Céged energiaköltségének csökkentése.", icon: "building" },
+          { href: "/vallalati-energiatarolas", label: "Energiatárolás", desc: "Tárold el a megtermelt energiát.", icon: "battery" },
+          { href: "/lakossagi-napelem-tisztitas-es-karbantartas", label: "Tisztítás & karbantartás", desc: "Tartsd csúcson a rendszered.", icon: "care" },
         ],
       },
       {
         heading: "Finanszírozás",
         links: [
-          { href: "/palyazatok", label: "Pályázatok" },
-          { href: "/jedlik-anyos-energetikai-program", label: "Jedlik Ányos program" },
-          { href: "/jedlik-anyos-finanszirozasi-segitseg", label: "Jedlik Ányos finanszírozás" },
+          { href: "/palyazatok", label: "Pályázatok", desc: "Elérhető támogatások és források.", icon: "doc" },
+          { href: "/jedlik-anyos-energetikai-program", label: "Jedlik Ányos program", desc: "Energetikai pályázati program.", icon: "award" },
+          { href: "/jedlik-anyos-finanszirozasi-segitseg", label: "Jedlik finanszírozás", desc: "Segítség a finanszírozáshoz.", icon: "coins" },
         ],
       },
     ],
-    promo: {
-      image: "/wp-content/uploads/2026/03/otthoni_energiatarolo_program-1.png",
-      eyebrow: "Otthoni Energiatároló Program",
-      title: "Kérjen ingyenes felmérést",
-      text: "Nézzük meg együtt, mennyit spórolhat napelemmel és energiatárolóval.",
+    footer: {
+      title: "Nem tudod, melyik illik hozzád?",
+      text: "Segítünk megtalálni a megfelelő megoldást.",
       ctaLabel: "Kapcsolat",
       ctaHref: "/kapcsolat",
     },
   },
   Cégünkről: {
+    feature: {
+      image: "/wp-content/uploads/2025/07/photo_2025-07-30_10-24-40.jpg",
+      title: "A jövőre optimalizálva",
+      text: "Több mint tíz év a megújuló energia élvonalában.",
+      href: "/cegunkrol",
+    },
     groups: [
       {
         heading: "Cégünk",
         links: [
-          { href: "/cegunkrol", label: "Rólunk" },
-          { href: "/karrier", label: "Karrier" },
+          { href: "/cegunkrol", label: "Rólunk", desc: "Ismerd meg az A1 Solart.", icon: "info" },
+          { href: "/karrier", label: "Karrier", desc: "Csatlakozz a csapatunkhoz.", icon: "career" },
         ],
       },
       {
         heading: "Tudás & hírek",
         links: [
-          { href: "/tudastar-blog", label: "Cikkek" },
+          { href: "/tudastar-blog", label: "Cikkek", desc: "Friss hírek és tudástár.", icon: "article" },
           {
             href: "/az-a1-solar-zanzibar-ltd-atadta-elso-afrikai-napelemes-rendszeret/",
-            label: "Zanzibár – afrikai küldetés",
+            label: "Zanzibár küldetés",
+            desc: "Afrikai napelemes projektünk.",
+            icon: "globe",
           },
         ],
       },
     ],
-    promo: {
-      image: "/wp-content/uploads/2025/07/photo_2025-07-30_10-24-40.jpg",
-      eyebrow: "Cégünkről",
-      title: "A jövőre optimalizálva",
-      text: "Több mint tíz év tapasztalat a megújuló energiában.",
-      ctaLabel: "Ismerj meg minket",
-      ctaHref: "/cegunkrol",
+    footer: {
+      title: "Kérdésed van rólunk?",
+      text: "Szívesen válaszolunk bármire.",
+      ctaLabel: "Kapcsolat",
+      ctaHref: "/kapcsolat",
     },
   },
 };
