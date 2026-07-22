@@ -206,6 +206,13 @@ export const Header = () => {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  // The floating bottom bar's "Menü" button opens this same drawer.
+  useEffect(() => {
+    const toggle = () => setOpen((cur) => !cur);
+    window.addEventListener("a1:toggle-menu", toggle);
+    return () => window.removeEventListener("a1:toggle-menu", toggle);
+  }, []);
   const toggle = (label: string) => setExpanded((cur) => (cur === label ? null : label));
   const close = () => {
     setOpen(false);

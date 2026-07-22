@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { BottomNav } from "@/components/BottomNav";
 import { Motion } from "@/components/Motion";
 import { HomeHero } from "@/components/home/HomeHero";
 import { HomeAbout, HomeArticles, HomeZanzibar, SectionDivider } from "@/components/home/HomeSections";
@@ -24,6 +25,7 @@ export default function NativHomePreview() {
       <HomeZanzibar />
       <SectionDivider />
       <HomeArticles />
+      <BottomNav />
     </>
   );
 }
