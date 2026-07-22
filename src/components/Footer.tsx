@@ -37,14 +37,27 @@ const Instagram = () => (
 export const Footer = () => (
   <footer className="site-footer">
     <div className="container">
-      <div className="footer-panel">
-      {/* Awards nested into the footer's top edge — mirrors the hero, where the
-          CTA cards nest into the hero's concave notch. */}
+      <div className="footer-shell">
+      {/* The hero silhouette, mirrored vertically, clips the footer panel — the
+          top-right notch is the hero's card notch flipped. */}
+      <svg width="0" height="0" aria-hidden focusable="false" style={{ position: "absolute" }}>
+        <defs>
+          <clipPath id="footer-shape" clipPathUnits="objectBoundingBox">
+            <path
+              transform="matrix(0.00069735 0 0 -0.00175131 0 1)"
+              d="M1403 0C1420.12 0 1434 13.8792 1434 31V394C1434 410.569 1420.57 424 1404 424H655C598.5 424 590 424 573 441.5C555.915 459.088 534.421 495.166 518.441 521.988C509.471 537.045 502.239 549.186 498.5 553.5C488.1 565.5 468.5 570.167 460 571H30C13.4315 571 0 557.569 0 541V31C0 13.8792 13.8792 0 31 0H1403Z"
+            />
+          </clipPath>
+        </defs>
+      </svg>
+
+      {/* Awards nested into the hero-mirror notch (over the cut-out). */}
       <div className="footer-notch">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src={BADGES} alt="A1 Solar díjak és elismerések" />
       </div>
 
+      <div className="footer-panel">
       <div className="footer-inner">
       {/* Top: logo + mission */}
       <div className="footer-top">
@@ -132,6 +145,7 @@ export const Footer = () => (
             </Link>
           ))}
         </div>
+      </div>
       </div>
       </div>
     </div>

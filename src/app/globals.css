@@ -854,55 +854,34 @@ img {
   margin: 80px 0 32px;
   background: transparent;
 }
-/* Container-width rounded panel — the hero silhouette mirrored (floats on the
-   page background, notch on the top edge where the awards sit). */
+/* Container-width panel clipped to the hero silhouette (mirrored vertically) —
+   floats on the page background, the hero's card notch flipped to the top. */
+.footer-shell {
+  position: relative;
+}
 .footer-panel {
   position: relative;
   background: #f6f6f6;
-  border-radius: 44px;
+  clip-path: url(#footer-shape);
 }
 .footer-inner {
-  padding: 60px 48px 8px;
+  padding: 64px 48px 8px;
 }
 /* White awards panel descending from the footer top edge (merges with the white
    gap above); the grey footer scoops around it with concave fillets. */
+/* Awards sit in the mirror notch's cut-out (over the page background). */
 .footer-notch {
   position: absolute;
-  top: 0;
-  right: 96px;
+  top: 26px;
+  right: 44px;
   z-index: 3;
   display: flex;
   align-items: center;
-  background: #fff;
-  padding: 22px 44px 34px;
-  border-radius: 0 0 56px 56px;
 }
 .footer-notch img {
-  max-width: 520px;
+  max-width: 480px;
   width: 100%;
   height: auto;
-}
-.footer-notch::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -60px;
-  width: 60px;
-  height: 60px;
-  background: #f6f6f6;
-  -webkit-mask: radial-gradient(60px at 0 0, #0000 98%, #000);
-  mask: radial-gradient(60px at 0 0, #0000 98%, #000);
-}
-.footer-notch::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: -60px;
-  width: 60px;
-  height: 60px;
-  background: #f6f6f6;
-  -webkit-mask: radial-gradient(60px at 100% 0, #0000 98%, #000);
-  mask: radial-gradient(60px at 100% 0, #0000 98%, #000);
 }
 .footer-top {
   display: flex;
