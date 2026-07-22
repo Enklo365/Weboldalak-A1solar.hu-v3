@@ -31,7 +31,9 @@ const CardBody = ({ title, text, icon }: { title: string; text: string; icon: st
     {/* eslint-disable-next-line @next/next/no-img-element */}
     <img src={icon} alt="" className="h-14 w-14 object-contain" aria-hidden />
     <div>
-      <h3 className="text-[26px] font-medium leading-[1.15] text-[var(--ink)]">{title}</h3>
+      <h3 className="text-[var(--ink)]" style={{ fontSize: "28px", fontWeight: 500, lineHeight: 1.2 }}>
+        {title}
+      </h3>
       <p className="mt-2 text-[15px] leading-snug text-[var(--ink-soft)]">{text}</p>
     </div>
   </>
@@ -82,15 +84,15 @@ export function HomeHero() {
           >
             {HERO.badge}
           </span>
-          <h1 className="mt-5 mb-5 text-[42px] font-light leading-[1.2]" style={{ color: "#fff" }}>
+          <h1 className="mt-5" style={{ color: "#fff", fontSize: "42px", fontWeight: 300, lineHeight: 1.2, marginBottom: "20px" }}>
             {HERO.titleTop}
             <br />
-            <strong className="font-bold">{HERO.titleStrong}</strong>
+            <strong style={{ fontWeight: 700 }}>{HERO.titleStrong}</strong>
           </h1>
           <Link
             href={HERO.ctaHref}
-            className="inline-flex items-center rounded-full text-base font-normal transition-opacity hover:opacity-90"
-            style={{ background: "#db0330", color: "#fff", padding: "10px 20px" }}
+            className="inline-flex items-center rounded-full transition-opacity hover:opacity-90"
+            style={{ background: "#db0330", color: "#fff", padding: "10px 20px", fontSize: "16px", fontWeight: 400 }}
           >
             {HERO.ctaLabel}
           </Link>
@@ -145,10 +147,10 @@ export function HomeHero() {
             <span className="text-xs uppercase" style={{ background: "rgba(0,0,0,0.3)", padding: "4px 8px", borderRadius: "8px" }}>
               {HERO.badge}
             </span>
-            <h1 className="mt-2.5 text-[25px] font-light leading-tight" style={{ color: "#fff" }}>
+            <h1 className="mt-2.5" style={{ color: "#fff", fontSize: "25px", fontWeight: 300, lineHeight: 1.2 }}>
               {HERO.titleTop}
               <br />
-              <strong className="font-bold">{HERO.titleStrong}</strong>
+              <strong style={{ fontWeight: 700 }}>{HERO.titleStrong}</strong>
             </h1>
           </div>
           <Link

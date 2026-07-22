@@ -46,7 +46,12 @@ export function HomeAbout() {
         </div>
         <div className="max-w-[600px]">
           <Eyebrow>{ABOUT.eyebrow}</Eyebrow>
-          <h2 className="mt-4 text-[32px] font-medium leading-tight text-[var(--ink)] md:text-[40px]">{ABOUT.title}</h2>
+          <h2
+            className="mt-4 text-[var(--ink)]"
+            style={{ fontSize: "clamp(28px, 4.5vw, 40px)", fontWeight: 500, lineHeight: 1.15 }}
+          >
+            {ABOUT.title}
+          </h2>
           {ABOUT.paragraphs.map((p) => (
             <p key={p.slice(0, 24)} className="mt-5 text-[var(--ink-soft)]">
               {p}
@@ -68,7 +73,10 @@ export function HomeZanzibar() {
       <div className="mx-auto grid max-w-[var(--container)] grid-cols-1 items-center gap-10 px-4 lg:grid-cols-2 lg:gap-16">
         <div className="max-w-[600px]">
           <Eyebrow>{ZANZIBAR.eyebrow}</Eyebrow>
-          <h2 className="mt-4 text-[32px] font-medium leading-tight text-[var(--ink)] md:text-[40px]">
+          <h2
+            className="mt-4 text-[var(--ink)]"
+            style={{ fontSize: "clamp(28px, 4.5vw, 40px)", fontWeight: 500, lineHeight: 1.15 }}
+          >
             {ZANZIBAR.title}
           </h2>
           {ZANZIBAR.paragraphs.map((p) => (
@@ -101,7 +109,10 @@ export function HomeArticles() {
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:items-start md:gap-16">
           <div>
             <Eyebrow>{ARTICLES.eyebrow}</Eyebrow>
-            <h2 className="mt-4 text-[32px] font-medium leading-tight text-[var(--ink)] md:text-[40px]">
+            <h2
+              className="mt-4 text-[var(--ink)]"
+              style={{ fontSize: "clamp(28px, 4.5vw, 40px)", fontWeight: 500, lineHeight: 1.15 }}
+            >
               {ARTICLES.title}
             </h2>
           </div>
