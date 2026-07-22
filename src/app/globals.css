@@ -391,7 +391,7 @@ img {
   padding: 24px;
 }
 .megamenu-feature-title {
-  font-size: 22px;
+  font-size: 18px;
   font-weight: 600;
   line-height: 1.2;
 }
@@ -462,7 +462,7 @@ img {
   gap: 1px;
 }
 .megamenu-item-title {
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 600;
   color: var(--ink);
 }
@@ -499,14 +499,14 @@ img {
   align-items: center;
   padding: 10px 22px;
   border-radius: 999px;
-  background: var(--ink);
+  background: var(--brand);
   color: #fff;
   font-size: 14px;
   font-weight: 500;
   transition: background 0.15s;
 }
 .megamenu-footer-cta:hover {
-  background: var(--brand);
+  background: var(--brand-dark);
   color: #fff;
 }
 .header-cta {

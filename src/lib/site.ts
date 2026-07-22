@@ -142,7 +142,7 @@ export const MEGA_MENUS: Record<string, MegaMenu> = {
         heading: "Tudástár & híreink",
         links: [
           { href: "/tudastar-blog", label: "Cikkek", desc: "Friss hírek és tudástár.", icon: "article" },
-          { href: "/ft1000", label: "Financial Times – FT 1000", desc: "Európa legdinamikusabbjai.", icon: "trophy" },
+          { href: "/ft1000", label: "Financial Times", desc: "Európa legdinamikusabbjai.", icon: "trophy" },
         ],
       },
     ],
