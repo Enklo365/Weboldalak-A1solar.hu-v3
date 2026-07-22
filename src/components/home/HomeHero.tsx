@@ -75,7 +75,10 @@ export function HomeHero() {
     // ~11px top gap = the same moat the cards leave around the hero mask.
     <section className="w-full pt-[11px]">
       {/* ── Desktop hero (≥lg) ─────────────────────────────────────────── */}
-      <div className="relative mx-auto hidden w-full lg:block" style={{ maxWidth: "1290px", height: "571px" }}>
+      {/* aspect-ratio (not a fixed 571px height) keeps the photo crop identical
+          at every width — otherwise narrow viewports crop less off the top and
+          the image's sky shows as empty space above the subject. */}
+      <div className="relative mx-auto hidden w-full lg:block" style={{ maxWidth: "1290px", aspectRatio: "1290 / 571" }}>
         {/* Masked photo + gradient */}
         <div
           className="absolute inset-0"
