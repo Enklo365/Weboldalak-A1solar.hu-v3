@@ -195,7 +195,7 @@ const OfferBanner = ({ data }: { data: ServicePageData["offer"] }) => (
     {/* Contrast wash so the white copy stays legible over the grid. */}
     <div
       className="absolute inset-0"
-      style={{ background: "linear-gradient(90deg, rgba(74,4,14,0.78) 0%, rgba(74,4,14,0.42) 52%, rgba(74,4,14,0.08) 100%)" }}
+      style={{ background: "linear-gradient(90deg, rgba(74,4,14,0.72) 0%, rgba(74,4,14,0.30) 52%, rgba(74,4,14,0) 100%)" }}
     />
     <div className="relative z-10">
       <h2 className="max-w-[620px]" style={{ color: "#fff", fontSize: "clamp(22px, 3.2vw, 30px)", fontWeight: 600, lineHeight: 1.25 }}>

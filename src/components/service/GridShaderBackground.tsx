@@ -42,15 +42,15 @@ void main(){
   float d = roundRect(cell, vec2(size), size * 0.55);
   float shape = smoothstep(0.03, -0.03, d);
 
-  // Brand palette.
-  vec3 deep  = vec3(0.36, 0.02, 0.07);
-  vec3 brand = vec3(0.858, 0.012, 0.188); // #db0330
-  vec3 light = vec3(1.0, 0.62, 0.72);
+  // Brand palette (vibrant red → pink so the grid reads clearly).
+  vec3 deep  = vec3(0.58, 0.05, 0.11);
+  vec3 brand = vec3(0.90, 0.06, 0.22); // ~#db0330
+  vec3 light = vec3(1.0, 0.74, 0.82);
 
-  vec3 bg = mix(deep, vec3(0.62, 0.06, 0.12), uv.y * 0.8 + 0.1);
-  vec3 cellCol = mix(brand, light, clamp(amt * 0.7 + uv.x * 0.35, 0.0, 1.0));
+  vec3 bg = mix(deep, brand, clamp(uv.y * 0.5 + uv.x * 0.35, 0.0, 1.0));
+  vec3 cellCol = mix(brand, light, clamp(amt * 0.75 + uv.x * 0.4, 0.0, 1.0));
 
-  vec3 col = mix(bg, cellCol, shape * 0.92);
+  vec3 col = mix(bg, cellCol, shape * 0.9);
   gl_FragColor = vec4(col, 1.0);
 }
 `;
@@ -98,7 +98,6 @@ export function GridShaderBackground({ className }: { className?: string }) {
     const uTime = gl.getUniformLocation(prog, "u_time");
 
     let raf = 0;
-    let visible = true;
     const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
 
     const resize = () => {
@@ -111,35 +110,30 @@ export function GridShaderBackground({ className }: { className?: string }) {
       gl.viewport(0, 0, canvas.width, canvas.height);
     };
 
-    const io = new IntersectionObserver((entries) => {
-      visible = entries[0]?.isIntersecting ?? true;
-    });
-    io.observe(canvas);
-
     const ro = new ResizeObserver(resize);
     ro.observe(canvas);
     resize();
 
-    const render = (ms: number) => {
-      if (visible && !document.hidden) {
-        gl.uniform2f(uRes, canvas.width, canvas.height);
-        gl.uniform1f(uTime, reduce ? 6.0 : ms * 0.001);
-        gl.drawArrays(gl.TRIANGLES, 0, 3);
-      }
-      if (!reduce) raf = requestAnimationFrame(render);
-    };
-    if (reduce) {
-      // Draw one static frame.
+    const draw = (time: number) => {
       gl.uniform2f(uRes, canvas.width, canvas.height);
-      gl.uniform1f(uTime, 6.0);
+      gl.uniform1f(uTime, time);
       gl.drawArrays(gl.TRIANGLES, 0, 3);
+    };
+
+    // Always paint at least one frame; rAF naturally pauses in background tabs.
+    if (reduce) {
+      draw(6.0);
     } else {
+      const render = (ms: number) => {
+        draw(ms * 0.001);
+        raf = requestAnimationFrame(render);
+      };
+      draw(0);
       raf = requestAnimationFrame(render);
     }
 
     return () => {
       cancelAnimationFrame(raf);
-      io.disconnect();
       ro.disconnect();
       gl.deleteProgram(prog);
       gl.deleteShader(vs);
