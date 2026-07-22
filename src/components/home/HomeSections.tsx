@@ -156,7 +156,9 @@ export function HomeArticles() {
                   alt=""
                   className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
                 />
-                <span className="notch-badge">{ARTICLES.category}</span>
+                <span className="notch-badge">
+                  <span className="notch-badge-pill">{ARTICLES.category}</span>
+                </span>
               </div>
               <div className="flex flex-1 flex-col p-6">
                 <h3 className="text-lg font-semibold leading-snug text-[var(--ink)]">{a.title}</h3>

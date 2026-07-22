@@ -633,7 +633,10 @@ img {
   color: #fff;
 }
 
-/* ---- Category badge notched into the image corner (echoes the hero shape) ---- */
+/* ---- Category badge nested in a pocket carved into the image (hero echo) ----
+   The image's top-right corner is scooped away (a card-coloured pocket with
+   concave fillets), and a red pill sits inside the recess — mirroring how the
+   hero's CTA cards nest into the hero's concave notch. */
 .notch-badge {
   position: absolute;
   top: 0;
@@ -641,39 +644,47 @@ img {
   z-index: 2;
   display: inline-flex;
   align-items: center;
-  height: 40px;
-  padding: 0 18px;
+  padding: 12px 14px 14px 16px;
+  background: #fff;
+  border-bottom-left-radius: 28px;
+}
+/* Concave fillet along the top edge, to the left of the pocket. */
+.notch-badge::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -28px;
+  width: 28px;
+  height: 28px;
+  background: #fff;
+  -webkit-mask: radial-gradient(28px at 0 100%, #0000 98%, #000);
+  mask: radial-gradient(28px at 0 100%, #0000 98%, #000);
+}
+/* Concave fillet along the right edge, below the pocket. */
+.notch-badge::after {
+  content: "";
+  position: absolute;
+  bottom: -28px;
+  right: 0;
+  width: 28px;
+  height: 28px;
+  background: #fff;
+  -webkit-mask: radial-gradient(28px at 0 100%, #0000 98%, #000);
+  mask: radial-gradient(28px at 0 100%, #0000 98%, #000);
+}
+/* The red pill that sits inside the pocket. */
+.notch-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  height: 26px;
+  padding: 0 14px;
   background: var(--brand);
   color: #fff;
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.5px;
   text-transform: uppercase;
-  border-bottom-left-radius: 26px;
-}
-/* Concave fillet along the top edge, to the left of the tab. */
-.notch-badge::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -26px;
-  width: 26px;
-  height: 26px;
-  background: var(--brand);
-  -webkit-mask: radial-gradient(26px at 0 100%, #0000 98%, #000);
-  mask: radial-gradient(26px at 0 100%, #0000 98%, #000);
-}
-/* Concave fillet along the right edge, below the tab. */
-.notch-badge::after {
-  content: "";
-  position: absolute;
-  bottom: -26px;
-  right: 0;
-  width: 26px;
-  height: 26px;
-  background: var(--brand);
-  -webkit-mask: radial-gradient(26px at 0 100%, #0000 98%, #000);
-  mask: radial-gradient(26px at 0 100%, #0000 98%, #000);
+  border-radius: 999px;
 }
 .burger {
   display: none;
