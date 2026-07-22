@@ -30,9 +30,6 @@ export type NavEntry = {
   children?: NavChild[];
 };
 
-const OEP_PDF =
-  "/wp-content/uploads/2026/06/A1_Solar_Ajanlat_otthoni_energiatarolas_vegleges-0529.pdf";
-
 export const MAIN_NAV: NavEntry[] = [
   {
     href: "/cegunkrol",
@@ -43,6 +40,10 @@ export const MAIN_NAV: NavEntry[] = [
     href: "#",
     label: "Szolgáltatásaink",
     children: [
+      {
+        href: "/lakossagi-energiatarolo-tamogatas",
+        label: "Otthoni Energiatároló Program",
+      },
       {
         href: "/lakossagi-napelem-tisztitas-es-karbantartas",
         label: "Lakossági napelem tisztítás és karbantartás",
@@ -63,13 +64,6 @@ export const MAIN_NAV: NavEntry[] = [
         href: "/jedlik-anyos-finanszirozasi-segitseg",
         label: "Jedlik Ányos finanszírozási segítség",
       },
-    ],
-  },
-  {
-    href: "/lakossagi-energiatarolo-tamogatas",
-    label: "Otthoni Energiatároló Program",
-    children: [
-      { href: OEP_PDF, label: "OEP csomagajánlatok", external: true },
     ],
   },
   { href: "/tudastar-blog", label: "Cikkek" },
@@ -95,6 +89,7 @@ export const MEGA_MENUS: Record<string, MegaMenu> = {
       {
         heading: "Lakossági",
         links: [
+          { href: "/lakossagi-energiatarolo-tamogatas", label: "Energiatároló Program", desc: "Támogatott tárolás otthonra.", icon: "battery" },
           { href: "/lakossagi-napelem", label: "Lakossági napelem", desc: "Otthonod energiájáért.", icon: "panel" },
           { href: "/lakossagi-napelem-tisztitas-es-karbantartas", label: "Tisztítás & karbantartás", desc: "Csúcson a rendszered.", icon: "care" },
         ],
