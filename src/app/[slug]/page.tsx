@@ -6,6 +6,7 @@ import { MirrorContent } from "@/components/MirrorContent";
 import { MARKETING_PAGES } from "@/components/page/marketing";
 import { SuccessPage, SUCCESS_PAGES } from "@/components/page/SuccessPage";
 import { TextPage, TEXT_PAGES } from "@/components/page/TextPage";
+import { TOOL_PAGES } from "@/components/page/tools";
 import { ServicePage } from "@/components/service/ServicePage";
 import { SERVICE_PAGES } from "@/components/service/serviceData";
 import { WpContent } from "@/components/WpContent";
@@ -67,6 +68,10 @@ export default async function DynamicPage({
   // Bespoke native marketing pages.
   const Marketing = MARKETING_PAGES[slug];
   if (Marketing) return <Marketing />;
+
+  // Native tool / utility pages (calculators, brochure, eligibility…).
+  const Tool = TOOL_PAGES[slug];
+  if (Tool) return <Tool />;
 
   // Native confirmation ("sikeres…") pages.
   const success = SUCCESS_PAGES[slug];
