@@ -191,9 +191,9 @@ const OfferBanner = ({ data }: { data: ServicePageData["offer"] }) => (
       /* On-brand static "sunlight" graphic: a soft glow + faint radiating rings
          from the top-right (solar/energy), with a darker bottom-left for text. */
       background: [
-        "radial-gradient(118% 90% at 100% -5%, rgba(255,255,255,0.20) 0%, rgba(255,255,255,0) 55%)",
-        "repeating-radial-gradient(circle at 100% 0%, rgba(255,255,255,0) 0 58px, rgba(255,255,255,0.05) 58px 60px)",
-        "radial-gradient(100% 120% at -8% 115%, rgba(74,4,14,0.55) 0%, rgba(74,4,14,0) 58%)",
+        "radial-gradient(80% 70% at 102% -12%, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0) 52%)",
+        "repeating-radial-gradient(circle at 100% 0%, rgba(255,255,255,0) 0 62px, rgba(255,255,255,0.04) 62px 64px)",
+        "radial-gradient(95% 115% at -8% 116%, rgba(74,4,14,0.5) 0%, rgba(74,4,14,0) 55%)",
         "var(--brand)",
       ].join(", "),
     }}
