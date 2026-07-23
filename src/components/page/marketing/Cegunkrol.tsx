@@ -1,8 +1,9 @@
 const HERO_CLIP_ID = "a1-cegunkrol-hero-shape";
-const HERO_VIDEO = "/wp-content/uploads/2025/07/Telepitettuk-az-elso-Napenergia-Plusz-Programos-rendszert-A1-Solar.mp4";
-const HERO_POSTER = "/wp-content/uploads/2025/08/47611.jpg";
+/* Same looped hero video as the homepage. */
+const HERO_VIDEO = "/nativ/hero-loop.mp4";
+const HERO_POSTER = "/wp-content/uploads/2026/03/otthoni_energiatarolo_program-1.png";
 const AWARD_IMAGE = "/wp-content/uploads/2026/06/2025.11.27.-Uzleti-Etikai-Dij-159-1-scaled.jpg";
-const GRADIENT = "linear-gradient(to right, #0A141Dd9 0%, rgba(10,20,29,0.15) 100%)";
+const GRADIENT = "linear-gradient(to right, #0A141Dcc 0%, rgba(10,20,29,0) 100%)";
 
 const STORY = [
   "Az A1 Solar Kft. az innováció, az energia és a fenntarthatóság harmóniáját tükrözi vállalati kultúrájában, melynek középpontjában az ügyfelek elégedettsége és a megújuló energia áll.",
@@ -18,7 +19,7 @@ const HeroCopy = () => (
     >
       Cégünkről
     </span>
-    <h1 style={{ marginTop: "20px", color: "#fff", fontSize: "clamp(30px, 3.6vw, 46px)", fontWeight: 300, lineHeight: 1.12 }}>
+    <h1 style={{ marginTop: "20px", color: "#fff", fontSize: "clamp(28px, 3.4vw, 42px)", fontWeight: 300, lineHeight: 1.2 }}>
       A jövőre
       <br />
       <strong style={{ fontWeight: 700 }}>Optimalizálva</strong>
@@ -39,7 +40,7 @@ export const Cegunkrol = () => (
           <clipPath id={HERO_CLIP_ID} clipPathUnits="objectBoundingBox">
             <path
               transform="scale(0.00069735, 0.00175131)"
-              d="M1403 0C1420.12 0 1434 13.8792 1434 31V394C1434 410.569 1420.57 424 1404 424H655C598.5 424 590 424 573 441.5C555.915 459.088 534.421 495.166 518.441 521.988C509.471 537.045 502.239 549.186 498.5 553.5C488.1 565.5 468.5 570.167 460 571H30C13.4315 571 0 557.569 0 541V31C0 13.8792 13.8792 0 31 0H1403Z"
+              d="M1403 0C1420.12 0 1434 13.8792 1434 31V394C1434 410.569 1420.57 424 1404 424H1305C1248.5 424 1240 424 1223 441.5C1205.915 459.088 1184.421 495.166 1168.441 521.988C1159.471 537.045 1152.239 549.186 1148.5 553.5C1138.1 565.5 1118.5 570.167 1110 571H30C13.4315 571 0 557.569 0 541V31C0 13.8792 13.8792 0 31 0H1403Z"
             />
           </clipPath>
         </defs>
@@ -54,14 +55,16 @@ export const Cegunkrol = () => (
               muted
               loop
               playsInline
+              preload="auto"
               poster={HERO_POSTER}
-              style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "50% 50%" }}
+              aria-hidden
+              style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "50% 100%" }}
             >
               <source src={HERO_VIDEO} type="video/mp4" />
             </video>
             <div className="absolute inset-0" style={{ background: GRADIENT }} />
           </div>
-          <div className="absolute bottom-0 left-0 z-10" style={{ padding: "48px" }}>
+          <div className="absolute bottom-0 left-0 z-10" style={{ padding: "40px" }}>
             <HeroCopy />
           </div>
         </div>
