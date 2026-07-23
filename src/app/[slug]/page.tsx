@@ -3,6 +3,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ContactForm } from "@/components/ContactForm";
 import { MirrorContent } from "@/components/MirrorContent";
+import { SuccessPage, SUCCESS_PAGES } from "@/components/page/SuccessPage";
+import { TextPage, TEXT_PAGES } from "@/components/page/TextPage";
 import { ServicePage } from "@/components/service/ServicePage";
 import { SERVICE_PAGES } from "@/components/service/serviceData";
 import { WpContent } from "@/components/WpContent";
@@ -60,6 +62,23 @@ export default async function DynamicPage({
   // Natively rebuilt service subpages take over from the WP mirror.
   const service = SERVICE_PAGES[slug];
   if (service) return <ServicePage data={service} />;
+
+  // Native confirmation ("sikeres…") pages.
+  const success = SUCCESS_PAGES[slug];
+  if (success) return <SuccessPage content={success} />;
+
+  // Native legal / policy text pages.
+  const textEyebrow = TEXT_PAGES[slug];
+  if (textEyebrow) {
+    const textPage = getPage(slug);
+    if (textPage) {
+      return (
+        <TextPage
+          content={{ eyebrow: textEyebrow, title: textPage.title, html: processHtml(textPage.content) }}
+        />
+      );
+    }
+  }
 
   // Pages take precedence over same-slug posts (e.g. `ft1000`).
   const page = getPage(slug);
