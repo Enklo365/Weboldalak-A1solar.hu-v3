@@ -86,7 +86,7 @@ const ServiceHero = ({ data }: { data: ServicePageData["hero"] }) => (
           >
             {data.eyebrow}
           </span>
-          <h1 style={{ color: "#fff", fontSize: "42px", fontWeight: 300, lineHeight: 1.15, marginBottom: "24px" }}>
+          <h1 style={{ color: "#fff", fontSize: "clamp(26px, 2.9vw, 34px)", fontWeight: 300, lineHeight: 1.18, marginBottom: "24px" }}>
             {data.titleLight}
             <br />
             <strong style={{ fontWeight: 700 }}>{data.titleStrong}</strong>
@@ -114,7 +114,7 @@ const ServiceHero = ({ data }: { data: ServicePageData["hero"] }) => (
           >
             {data.eyebrow}
           </span>
-          <h1 style={{ marginTop: "20px", color: "#fff", fontSize: "27px", fontWeight: 300, lineHeight: 1.2 }}>
+          <h1 style={{ marginTop: "20px", color: "#fff", fontSize: "clamp(22px, 6.2vw, 26px)", fontWeight: 300, lineHeight: 1.2 }}>
             {data.titleLight} <strong style={{ fontWeight: 700 }}>{data.titleStrong}</strong>
           </h1>
           <div className="mt-5">

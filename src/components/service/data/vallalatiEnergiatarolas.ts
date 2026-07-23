@@ -82,16 +82,4 @@ export const vallalatiEnergiatarolas: ServicePageData = {
     intro:
       "Töltsd ki ajánlatkérő űrlapunkat, és kollégánk felveszi veled a kapcsolatot a megadott elérhetőségeid egyikén. Kérjük, légy elérhető!",
   },
-  grant: {
-    title: "Szeretnéd pályázati forrásból finanszírozni a beruházást?",
-    body:
-      "A Jedlik Ányos Program keretein belül akár 50%-os intenzitással pályázhatsz energiatároló berendezésre. Keresd értékesítő kollégánkat a részletekért.",
-    repName: "Harasztosi Szabolcs",
-    repRole: "Értékesítési vezető",
-    repPhone: "(+36) 20-334-5849",
-    repPhotoLabel:
-      "Értékesítő kollégánk hétköznap 10:00–15:00 között elérhető – fordulj hozzá bizalommal!",
-    repPhoto: "/wp-content/uploads/2025/08/Harasztosi_Szabolcs.png",
-    ctaLabel: "Beszéljünk a lehetőségeidről!",
-  },
 };
