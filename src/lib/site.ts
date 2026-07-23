@@ -62,7 +62,6 @@ export const MAIN_NAV: NavEntry[] = [
       },
     ],
   },
-  { href: "/lakossagi-energiatarolo-tamogatas", label: "Otthoni Energiatároló Program" },
   { href: "/tudastar-blog", label: "Cikkek" },
   { href: "https://energrosso.hu/", label: "Nagykereskedelem", external: true },
 ];

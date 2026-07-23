@@ -267,8 +267,8 @@ export const Header = () => {
             </span>
           </div>
           <div className="topbar-spacer" />
-          <Link className="ft-badge hide-sm" href="/ft1000">
-            Financial Times - FT 1000
+          <Link className="ft-badge hide-sm" href="/lakossagi-energiatarolo-tamogatas">
+            Otthoni Energiatároló Program
           </Link>
           <form className="search-box" action="/tudastar-blog">
             <SearchIcon />
