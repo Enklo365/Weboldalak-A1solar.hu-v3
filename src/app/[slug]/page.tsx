@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ContactForm } from "@/components/ContactForm";
 import { MirrorContent } from "@/components/MirrorContent";
+import { CAMPAIGN_PAGES } from "@/components/page/campaign";
 import { MARKETING_PAGES } from "@/components/page/marketing";
 import { SuccessPage, SUCCESS_PAGES } from "@/components/page/SuccessPage";
 import { TextPage, TEXT_PAGES } from "@/components/page/TextPage";
@@ -72,6 +73,10 @@ export default async function DynamicPage({
   // Native tool / utility pages (calculators, brochure, eligibility…).
   const Tool = TOOL_PAGES[slug];
   if (Tool) return <Tool />;
+
+  // Bespoke native campaign / landing pages.
+  const Campaign = CAMPAIGN_PAGES[slug];
+  if (Campaign) return <Campaign />;
 
   // Native confirmation ("sikeres…") pages.
   const success = SUCCESS_PAGES[slug];
