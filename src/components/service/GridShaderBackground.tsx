@@ -10,50 +10,44 @@ import { useEffect, useRef } from "react";
  * pauses when the tab/section is hidden. Falls back to the parent's CSS red
  * background if WebGL is unavailable.
  */
-/* Brand-red replica of the shaders.com "Collapsing Grid 4" preset:
-   a Pixelated (scale 18, gap 0.03) Swirl gradient whose per-cell roundness is
-   driven by a diagonal SineWave (angle 84°) — cells ripple square↔circle, the
-   "collapse". Colours mapped to the A1 brand (deep red → pink swirl on a deep
-   red base) instead of the preset's tan/purple/yellow. */
+/* Premium "aurora" flow — soft brand-red light blobs drifting slowly over the
+   #db0330 base (Stripe/Linear-style living gradient). No grid, no hard edges;
+   a subtle grain kills banding. Calm, on-brand, doesn't break the clean design. */
 const FRAG = `
 precision highp float;
 uniform vec2 u_res;
 uniform float u_time;
 
-float roundRect(vec2 p, vec2 b, float r){
-  vec2 q = abs(p) - b + r;
-  return min(max(q.x, q.y), 0.0) + length(max(q, 0.0)) - r;
-}
+float hash(vec2 p){ return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453); }
 
 void main(){
   vec2 uv = gl_FragCoord.xy / u_res.xy;
   float aspect = u_res.x / max(u_res.y, 1.0);
-  float t = u_time;
+  vec2 p = vec2(uv.x * aspect, uv.y);
+  float t = u_time * 0.12;
 
-  // --- Pixelate: a scale-18 grid of cells (aspect-corrected to stay square) ---
-  float scale = 18.0;
-  vec2 auv = vec2(uv.x * aspect, uv.y);
-  vec2 cell = fract(auv * scale) - 0.5;
+  // Slowly drifting soft light centres.
+  vec2 c1 = vec2(0.24 * aspect + 0.16 * sin(t * 1.0),       0.30 + 0.10 * cos(t * 0.8));
+  vec2 c2 = vec2(0.82 * aspect + 0.14 * cos(t * 0.7 + 1.0), 0.72 + 0.12 * sin(t * 1.1));
+  vec2 c3 = vec2(0.55 * aspect + 0.20 * sin(t * 0.5 + 2.5), 0.46 + 0.14 * cos(t * 0.9 + 0.5));
 
-  // --- SineWave roundness field (angle 84°, freq 0.6, animated speed 2) ---
-  float ang = radians(84.0);
-  vec2 dir = vec2(cos(ang), sin(ang));
-  float coord = dot(uv - vec2(0.84, 0.52), dir);
-  float wave = 0.5 + 0.5 * sin(coord * 20.0 + t * 2.0);
-  float roundness = mix(0.13, 1.0, wave);              // 0.13 (square) → 1 (circle)
+  float g1 = smoothstep(1.05, 0.0, length(p - c1));
+  float g2 = smoothstep(1.10, 0.0, length(p - c2));
+  float g3 = smoothstep(0.95, 0.0, length(p - c3));
 
-  // --- Cell shape: rounded rect with a 0.03 gap ---
-  float halfSize = 0.5 - 0.06;
-  float d = roundRect(cell, vec2(halfSize), roundness * halfSize);
-  float shapeMask = smoothstep(0.035, -0.035, d);
+  // Brand-red palette: base #db0330 shading to a touch darker down the panel.
+  vec3 base = mix(vec3(0.859, 0.012, 0.188), vec3(0.70, 0.02, 0.14), uv.y);
+  vec3 glow = vec3(0.96, 0.20, 0.34);   // warm lighter red
+  vec3 deep = vec3(0.55, 0.02, 0.11);   // deep red
 
-  // --- Discreet brand fill: the card stays solid #db0330; the collapsing grid
-  //     plays only a touch darker so the motion is barely-there, not loud. ---
-  vec3 base = vec3(0.859, 0.012, 0.188);   // #db0330 — the card's base colour
-  vec3 dark = vec3(0.64, 0.02, 0.135);     // slightly darker red for the moving cells
-  float depth = 0.5 + 0.5 * sin((uv.x * 1.2 + uv.y * 0.8) * 3.0 + t * 0.35);
-  vec3 cellCol = mix(base, dark, 0.55 + 0.45 * depth);
-  vec3 col = mix(base, cellCol, shapeMask * 0.42);   // 0.42 → subtle, épphogy látszik
+  vec3 col = base;
+  col = mix(col, glow, g1 * 0.42);
+  col = mix(col, deep, g2 * 0.40);
+  col = mix(col, glow, g3 * 0.28);
+
+  // Fine grain to prevent gradient banding.
+  col += (hash(gl_FragCoord.xy) - 0.5) * 0.02;
+
   gl_FragColor = vec4(col, 1.0);
 }
 `;

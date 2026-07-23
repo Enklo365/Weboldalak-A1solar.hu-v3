@@ -1549,44 +1549,56 @@ body.drawer-open .bottom-nav {
 .step {
   position: relative;
 }
-/* Soft-grey disc behind the bite so the scoop reads as a real notch on the
-   #f6f6f6 card (the homepage gets this contrast from the dark hero behind). */
-.step::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 72px;
-  height: 72px;
-  border-radius: 50%;
-  background: #e5e8ec;
-  z-index: 0;
-}
 .step-card {
   position: relative;
-  z-index: 1;
   background: var(--surface-3);
   border-radius: 18px;
-  /* Full-width row: the numeral badge sits in a concave bite at the top-left
-     corner; the copy is indented past it (like the homepage CTA-card notch). */
-  padding: 26px 32px 26px 100px;
-  -webkit-mask: radial-gradient(circle 36px at 36px 36px, #0000 0 36px, #000 37px);
-  mask: radial-gradient(circle 36px at 36px 36px, #0000 0 36px, #000 37px);
+  /* Full-width row: the numeral sits in the notch pocket carved into the
+     top-left corner; the copy is indented past it. */
+  padding: 26px 32px 26px 104px;
 }
+/* The notch: a white "pocket" the #f6f6f6 card curves smoothly into via two
+   concave fillets — the same technique as the homepage news-badge notch, so it
+   reads as a rounded bite (not a circle sitting on top). The number lives here. */
 .step-badge {
   position: absolute;
-  z-index: 2;
-  top: 10px;
-  left: 10px;
+  z-index: 3;
+  top: 0;
+  left: 0;
   display: grid;
   place-items: center;
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
+  width: 60px;
+  height: 60px;
   background: #fff;
+  border-top-left-radius: 18px;
+  border-bottom-right-radius: 26px;
   color: #212529;
   font-weight: 700;
   font-size: 17px;
+}
+/* Concave fillet along the top edge, to the right of the pocket. */
+.step-badge::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -24px;
+  width: 24px;
+  height: 24px;
+  background: #fff;
+  -webkit-mask: radial-gradient(24px at 100% 100%, #0000 98%, #000);
+  mask: radial-gradient(24px at 100% 100%, #0000 98%, #000);
+}
+/* Concave fillet along the left edge, below the pocket. */
+.step-badge::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -24px;
+  width: 24px;
+  height: 24px;
+  background: #fff;
+  -webkit-mask: radial-gradient(24px at 100% 100%, #0000 98%, #000);
+  mask: radial-gradient(24px at 100% 100%, #0000 98%, #000);
 }
 
 /* Borderless, full-width variant for service subpages (no card chrome). */
