@@ -129,7 +129,7 @@ const ServiceHero = ({ data }: { data: ServicePageData["hero"] }) => (
   </section>
 );
 
-const ValueSection = ({ data }: { data: ServicePageData["value"] }) => (
+const ValueSection = ({ data }: { data: NonNullable<ServicePageData["value"]> }) => (
   <section id="value" data-animate="up" className="scroll-mt-[100px]">
     <Eyebrow>{data.eyebrow}</Eyebrow>
     <h2 className="text-[var(--ink)]" style={{ marginTop: "22px", fontSize: "clamp(26px, 4vw, 36px)", fontWeight: 500, lineHeight: 1.15 }}>
@@ -139,7 +139,7 @@ const ValueSection = ({ data }: { data: ServicePageData["value"] }) => (
   </section>
 );
 
-const BenefitsSection = ({ data }: { data: ServicePageData["benefits"] }) => (
+const BenefitsSection = ({ data }: { data: NonNullable<ServicePageData["benefits"]> }) => (
   <section>
     <div data-animate="up">
       <h2 className="text-[var(--ink)]" style={{ fontSize: "clamp(24px, 3.6vw, 32px)", fontWeight: 500, lineHeight: 1.2 }}>
@@ -162,7 +162,7 @@ const BenefitsSection = ({ data }: { data: ServicePageData["benefits"] }) => (
   </section>
 );
 
-const ProcessSection = ({ data }: { data: ServicePageData["process"] }) => (
+const ProcessSection = ({ data }: { data: NonNullable<ServicePageData["process"]> }) => (
   <section id="process" className="scroll-mt-[100px]">
     <div data-animate="up">
       <Eyebrow>{data.eyebrow}</Eyebrow>
@@ -184,7 +184,7 @@ const ProcessSection = ({ data }: { data: ServicePageData["process"] }) => (
   </section>
 );
 
-const OfferBanner = ({ data }: { data: ServicePageData["offer"] }) => (
+const OfferBanner = ({ data }: { data: NonNullable<ServicePageData["offer"]> }) => (
   <section
     data-animate="up"
     className="relative overflow-hidden rounded-[24px] px-9 py-12 text-white"
@@ -215,7 +215,7 @@ const OfferBanner = ({ data }: { data: ServicePageData["offer"] }) => (
   </section>
 );
 
-const WhySection = ({ data }: { data: ServicePageData["why"] }) => (
+const WhySection = ({ data }: { data: NonNullable<ServicePageData["why"]> }) => (
   <section id="cegunkrol" className="scroll-mt-[100px]">
     <div data-animate="up">
       <Eyebrow>{data.eyebrow}</Eyebrow>
@@ -238,7 +238,7 @@ const WhySection = ({ data }: { data: ServicePageData["why"] }) => (
   </section>
 );
 
-const ReferencesSection = ({ data }: { data: ServicePageData["references"] }) => (
+const ReferencesSection = ({ data }: { data: NonNullable<ServicePageData["references"]> }) => (
   <section id="referenciak" className="scroll-mt-[100px]">
     <div data-animate="up">
       <Eyebrow>{data.eyebrow}</Eyebrow>
@@ -323,13 +323,44 @@ const SupportWidget = () => (
 
 /** Native service subpage — hero full-width, then a two-column body + sticky sidebar. */
 export function ServicePage({ data }: { data: ServicePageData }) {
-  const tocItems: TocItem[] = [
-    { id: "value", label: data.value.eyebrow },
-    { id: "process", label: data.process.eyebrow },
-    { id: "cegunkrol", label: data.why.eyebrow },
-    { id: "referenciak", label: data.references.eyebrow },
-    { id: "ajanlatkeres", label: "Ajánlatkérés" },
-  ];
+  // Assemble the body from whichever sections the page actually has, with a
+  // dashed RowDivider between consecutive content sections. The offer banner
+  // and grant card intentionally have no divider before them (they cap a run).
+  const toc: TocItem[] = [];
+  const body: ReactNode[] = [];
+  const divide = () => {
+    if (body.length) body.push(<RowDivider key={`div-${body.length}`} />);
+  };
+
+  if (data.value) {
+    toc.push({ id: "value", label: data.value.eyebrow });
+    divide();
+    body.push(<ValueSection key="value" data={data.value} />);
+  }
+  if (data.benefits) {
+    divide();
+    body.push(<BenefitsSection key="benefits" data={data.benefits} />);
+  }
+  if (data.process) {
+    toc.push({ id: "process", label: data.process.eyebrow });
+    divide();
+    body.push(<ProcessSection key="process" data={data.process} />);
+  }
+  if (data.offer) body.push(<OfferBanner key="offer" data={data.offer} />);
+  if (data.why) {
+    toc.push({ id: "cegunkrol", label: data.why.eyebrow });
+    divide();
+    body.push(<WhySection key="why" data={data.why} />);
+  }
+  if (data.references) {
+    toc.push({ id: "referenciak", label: data.references.eyebrow });
+    divide();
+    body.push(<ReferencesSection key="references" data={data.references} />);
+  }
+  toc.push({ id: "ajanlatkeres", label: "Ajánlatkérés" });
+  divide();
+  body.push(<ContactSection key="contact" data={data.contact} />);
+  if (data.grant) body.push(<GrantSection key="grant" data={data.grant} />);
 
   return (
     <div className="pb-6 md:pb-8">
@@ -341,26 +372,12 @@ export function ServicePage({ data }: { data: ServicePageData }) {
       <div className="container">
         <div className="grid grid-cols-1 gap-y-12 lg:grid-cols-[minmax(0,1fr)_340px] lg:gap-x-0">
           {/* Main column */}
-          <div className="flex min-w-0 flex-col gap-[46px] lg:pr-10">
-            <ValueSection data={data.value} />
-            <RowDivider />
-            <BenefitsSection data={data.benefits} />
-            <RowDivider />
-            <ProcessSection data={data.process} />
-            <OfferBanner data={data.offer} />
-            <RowDivider />
-            <WhySection data={data.why} />
-            <RowDivider />
-            <ReferencesSection data={data.references} />
-            <RowDivider />
-            <ContactSection data={data.contact} />
-            {data.grant ? <GrantSection data={data.grant} /> : null}
-          </div>
+          <div className="flex min-w-0 flex-col gap-[46px] lg:pr-10">{body}</div>
 
           {/* Sidebar — vertical dashed divider on its left (desktop) */}
           <aside className="lg:border-l lg:border-dashed lg:border-[#ececec] lg:pl-10">
             <div className="flex flex-col gap-6 lg:sticky lg:top-[110px]">
-              <ServiceTocNav items={tocItems} />
+              <ServiceTocNav items={toc} />
               <SupportWidget />
             </div>
           </aside>

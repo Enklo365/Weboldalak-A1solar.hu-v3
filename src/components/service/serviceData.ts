@@ -2,8 +2,13 @@
  * Data model for the native service subpages (napelem, energiatárolás, …).
  * Copy + imagery lifted faithfully from the a1solar.hu WordPress pages so the
  * rebuild is a native React reproduction, not a mirror. One object per service;
- * `NATIVE_SERVICE_SLUGS` (in the [slug] route) gates which slugs render natively.
+ * `SERVICE_PAGES` (used by the [slug] route) gates which slugs render natively.
+ * Per-service objects live under ./data.
  */
+import { lakossagiTisztitas } from "@/components/service/data/lakossagiTisztitas";
+import { vallalatiEnergiatarolas } from "@/components/service/data/vallalatiEnergiatarolas";
+import { vallalatiNapelem } from "@/components/service/data/vallalatiNapelem";
+import { vallalatiTisztitas } from "@/components/service/data/vallalatiTisztitas";
 
 export type ServiceStep = { num: string; title: string; body: string };
 
@@ -19,13 +24,13 @@ export type ServicePageData = {
     imageAlt: string;
     intro: string;
   };
-  value: { eyebrow: string; title: string; body: string };
-  benefits: { title: string; body: string; note: string; ctaLabel: string; ctaHref: string };
-  process: { eyebrow: string; title: string; steps: ServiceStep[] };
-  offer: { title: string; body: string; ctaLabel: string; ctaHref: string };
+  value?: { eyebrow: string; title: string; body: string };
+  benefits?: { title: string; body: string; note: string; ctaLabel: string; ctaHref: string };
+  process?: { eyebrow: string; title: string; steps: ServiceStep[] };
+  offer?: { title: string; body: string; ctaLabel: string; ctaHref: string };
   /** "Cégünkről" — body with `emphasize` phrases bolded; reviews come later (Trustindex). */
-  why: { eyebrow: string; title: string; body: string; emphasize: string[] };
-  references: { eyebrow: string; title: string; images: string[] };
+  why?: { eyebrow: string; title: string; body: string; emphasize: string[] };
+  references?: { eyebrow: string; title: string; images: string[] };
   contact: { title: string; intro: string };
   /** Optional rural-grant + sales-rep block (residential pages only). */
   grant?: {
@@ -164,6 +169,10 @@ const lakossagiNapelem: ServicePageData = {
 
 export const SERVICE_PAGES: Record<string, ServicePageData> = {
   "lakossagi-napelem": lakossagiNapelem,
+  "vallalati-napelem": vallalatiNapelem,
+  "vallalati-energiatarolas": vallalatiEnergiatarolas,
+  "lakossagi-napelem-tisztitas-es-karbantartas": lakossagiTisztitas,
+  "vallalati-napelem-tisztitas-es-karbantartas": vallalatiTisztitas,
 };
 
 /** Sidebar service navigation (grouped), current page highlighted by slug. */
