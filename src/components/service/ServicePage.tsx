@@ -2,7 +2,6 @@ import type { ReactNode } from "react";
 import Link from "next/link";
 import { ContactForm } from "@/components/ContactForm";
 import { Motion } from "@/components/Motion";
-import { GridShaderBackground } from "@/components/service/GridShaderBackground";
 import type { ServicePageData } from "@/components/service/serviceData";
 import { ServiceTocNav, type TocItem } from "@/components/service/ServiceTocNav";
 import { SupportStatusDot } from "@/components/service/SupportStatusDot";
@@ -188,15 +187,17 @@ const OfferBanner = ({ data }: { data: ServicePageData["offer"] }) => (
   <section
     data-animate="up"
     className="relative overflow-hidden rounded-[24px] px-9 py-12 text-white"
-    style={{ background: "var(--brand)" }}
+    style={{
+      /* On-brand static "sunlight" graphic: a soft glow + faint radiating rings
+         from the top-right (solar/energy), with a darker bottom-left for text. */
+      background: [
+        "radial-gradient(118% 90% at 100% -5%, rgba(255,255,255,0.20) 0%, rgba(255,255,255,0) 55%)",
+        "repeating-radial-gradient(circle at 100% 0%, rgba(255,255,255,0) 0 58px, rgba(255,255,255,0.05) 58px 60px)",
+        "radial-gradient(100% 120% at -8% 115%, rgba(74,4,14,0.55) 0%, rgba(74,4,14,0) 58%)",
+        "var(--brand)",
+      ].join(", "),
+    }}
   >
-    {/* Discreet brand collapsing-grid background (WebGL) — base stays #db0330. */}
-    <GridShaderBackground className="absolute inset-0" />
-    {/* Very light left wash purely for text edge legibility (base colour kept). */}
-    <div
-      className="absolute inset-0"
-      style={{ background: "linear-gradient(90deg, rgba(120,4,26,0.28) 0%, rgba(120,4,26,0.06) 45%, rgba(120,4,26,0) 100%)" }}
-    />
     <div className="relative z-10">
       <h2 className="max-w-[620px]" style={{ color: "#fff", fontSize: "clamp(22px, 3.2vw, 30px)", fontWeight: 600, lineHeight: 1.25 }}>
         {data.title}
