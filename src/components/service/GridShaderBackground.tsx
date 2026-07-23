@@ -47,18 +47,13 @@ void main(){
   float d = roundRect(cell, vec2(halfSize), roundness * halfSize);
   float shapeMask = smoothstep(0.035, -0.035, d);
 
-  // --- Swirl fill (detail 1.3, speed 2), brand palette in place of tan↔purple ---
-  vec2 c = vec2((uv.x - 0.5) * aspect, uv.y - 0.5);
-  float a = atan(c.y, c.x) + length(c) * 3.0 * 1.3 + t * 0.5;
-  float mixv = 0.5 + 0.5 * sin(a);
-  vec3 colA = vec3(0.74, 0.09, 0.13);   // brand-dark red
-  vec3 colB = vec3(1.0, 0.72, 0.80);    // light pink
-  vec3 swirl = mix(colA, colB, mixv);
-
-  // --- Base colour shown in the gaps (deep red instead of the preset's #fff6a8) ---
-  vec3 base = vec3(0.32, 0.02, 0.07);
-
-  vec3 col = mix(base, swirl, shapeMask);
+  // --- Discreet brand fill: the card stays solid #db0330; the collapsing grid
+  //     plays only a touch darker so the motion is barely-there, not loud. ---
+  vec3 base = vec3(0.859, 0.012, 0.188);   // #db0330 — the card's base colour
+  vec3 dark = vec3(0.64, 0.02, 0.135);     // slightly darker red for the moving cells
+  float depth = 0.5 + 0.5 * sin((uv.x * 1.2 + uv.y * 0.8) * 3.0 + t * 0.35);
+  vec3 cellCol = mix(base, dark, 0.55 + 0.45 * depth);
+  vec3 col = mix(base, cellCol, shapeMask * 0.42);   // 0.42 → subtle, épphogy látszik
   gl_FragColor = vec4(col, 1.0);
 }
 `;

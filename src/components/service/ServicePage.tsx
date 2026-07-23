@@ -170,12 +170,12 @@ const ProcessSection = ({ data }: { data: ServicePageData["process"] }) => (
         {data.title}
       </h2>
     </div>
-    <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2">
+    <div className="mt-10 flex flex-col gap-4">
       {data.steps.map((s, i) => (
-        <div key={s.num} data-animate="up" style={{ transitionDelay: `${(i % 2) * 80}ms` }} className="step">
+        <div key={s.num} data-animate="up" style={{ transitionDelay: `${(i % 3) * 70}ms` }} className="step">
           <div className="step-card">
             <h3 className="text-[17px] font-semibold text-[var(--ink)]">{s.title}</h3>
-            <p className="mt-3 text-sm leading-relaxed text-[var(--ink-soft)]">{s.body}</p>
+            <p className="mt-2 text-sm leading-relaxed text-[var(--ink-soft)]">{s.body}</p>
           </div>
           <span className="step-badge">{s.num}</span>
         </div>
@@ -188,14 +188,14 @@ const OfferBanner = ({ data }: { data: ServicePageData["offer"] }) => (
   <section
     data-animate="up"
     className="relative overflow-hidden rounded-[24px] px-9 py-12 text-white"
-    style={{ background: "linear-gradient(120deg, var(--brand) 0%, var(--brand-dark) 100%)" }}
+    style={{ background: "var(--brand)" }}
   >
-    {/* Animated brand-coloured collapsing-grid background (WebGL). */}
+    {/* Discreet brand collapsing-grid background (WebGL) — base stays #db0330. */}
     <GridShaderBackground className="absolute inset-0" />
-    {/* Contrast wash so the white copy stays legible over the grid. */}
+    {/* Very light left wash purely for text edge legibility (base colour kept). */}
     <div
       className="absolute inset-0"
-      style={{ background: "linear-gradient(90deg, rgba(74,4,14,0.72) 0%, rgba(74,4,14,0.30) 52%, rgba(74,4,14,0) 100%)" }}
+      style={{ background: "linear-gradient(90deg, rgba(120,4,26,0.28) 0%, rgba(120,4,26,0.06) 45%, rgba(120,4,26,0) 100%)" }}
     />
     <div className="relative z-10">
       <h2 className="max-w-[620px]" style={{ color: "#fff", fontSize: "clamp(22px, 3.2vw, 30px)", fontWeight: 600, lineHeight: 1.25 }}>

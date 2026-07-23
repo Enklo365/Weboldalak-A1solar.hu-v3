@@ -459,16 +459,14 @@ img {
   width: 42px;
   height: 42px;
   flex: none;
-  border-radius: 4px;
+  border-radius: 50%;
   background: var(--surface-3);
-  border: 1px solid var(--line);
   color: var(--ink);
-  transition: background 0.15s, color 0.15s, border-color 0.15s;
+  transition: background 0.15s, color 0.15s;
 }
 .megamenu-item:hover .megamenu-item-icon {
   background: var(--brand);
   color: #fff;
-  border-color: var(--brand);
 }
 .megamenu-item-body {
   display: flex;
@@ -1552,23 +1550,22 @@ body.drawer-open .bottom-nav {
   position: relative;
 }
 .step-card {
-  /* Slightly deeper neutral than #f6f6f6 so the WHITE corner-bite actually
-     reads on a white page (like the homepage notch reads on the dark hero). */
-  background: #eceef1;
+  background: var(--surface-3);
   border-radius: 18px;
-  padding: 80px 28px 28px;
-  /* Concave bite scooped out of the very top-left corner (reveals the page). */
-  -webkit-mask: radial-gradient(circle 34px at 32px 32px, #0000 0 34px, #000 35px);
-  mask: radial-gradient(circle 34px at 32px 32px, #0000 0 34px, #000 35px);
+  /* Full-width row: the numeral badge sits in a concave bite at the top-left
+     corner; the copy is indented past it (like the homepage CTA-card notch). */
+  padding: 26px 32px 26px 100px;
+  -webkit-mask: radial-gradient(circle 36px at 36px 36px, #0000 0 36px, #000 37px);
+  mask: radial-gradient(circle 36px at 36px 36px, #0000 0 36px, #000 37px);
 }
 .step-badge {
   position: absolute;
-  top: 8px;
-  left: 8px;
+  top: 10px;
+  left: 10px;
   display: grid;
   place-items: center;
-  width: 48px;
-  height: 48px;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
   background: #fff;
   color: #212529;
