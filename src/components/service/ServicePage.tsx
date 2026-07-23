@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import Link from "next/link";
 import { ContactForm } from "@/components/ContactForm";
 import { Motion } from "@/components/Motion";
+import { ReferenceGallery } from "@/components/service/ReferenceGallery";
 import type { ServicePageData } from "@/components/service/serviceData";
 import { ServiceTocNav, type TocItem } from "@/components/service/ServiceTocNav";
 import { SupportStatusDot } from "@/components/service/SupportStatusDot";
@@ -245,25 +246,7 @@ const ReferencesSection = ({ data }: { data: ServicePageData["references"] }) =>
         {data.title}
       </h2>
     </div>
-    <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3">
-      {data.images.map((src, i) => (
-        <div
-          key={src}
-          data-animate="up"
-          style={{ transitionDelay: `${(i % 3) * 80}ms` }}
-          className="group aspect-square overflow-hidden rounded-[16px]"
-        >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            data-fade
-            src={src}
-            alt="A1 Solar telepített napelemes rendszer"
-            className="object-cover object-center transition-transform duration-300 group-hover:scale-105"
-            style={{ height: "100%", width: "100%" }}
-          />
-        </div>
-      ))}
-    </div>
+    <ReferenceGallery images={data.images} />
   </section>
 );
 

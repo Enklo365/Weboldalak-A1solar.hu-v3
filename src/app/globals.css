@@ -1601,6 +1601,145 @@ body.drawer-open .bottom-nav {
   mask: radial-gradient(24px at 100% 100%, #0000 98%, #000);
 }
 
+/* ---- Reference gallery + lightbox ---- */
+.ref-tile {
+  position: relative;
+  display: block;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 16px;
+  padding: 0;
+  border: none;
+  background: var(--surface-3);
+  cursor: pointer;
+}
+.ref-img {
+  transition: transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);
+  will-change: transform;
+}
+.ref-tile:hover .ref-img,
+.ref-tile:focus-visible .ref-img {
+  transform: scale(1.06);
+}
+.ref-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(10, 14, 20, 0.42), rgba(10, 14, 20, 0) 55%);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+.ref-tile:hover .ref-overlay,
+.ref-tile:focus-visible .ref-overlay {
+  opacity: 1;
+}
+.ref-zoom {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #fff;
+  color: var(--ink);
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.ref-tile:hover .ref-zoom,
+.ref-tile:focus-visible .ref-zoom {
+  opacity: 1;
+  transform: none;
+}
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 8px;
+  padding: clamp(16px, 5vw, 56px);
+  background: rgba(8, 10, 14, 0.92);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  animation: lbFade 0.25s ease;
+}
+@keyframes lbFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.lightbox-figure {
+  margin: 0;
+  display: grid;
+  place-items: center;
+  min-width: 0;
+}
+.lightbox-img {
+  max-width: 100%;
+  max-height: 84vh;
+  width: auto;
+  height: auto;
+  border-radius: 14px;
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.5);
+  animation: lbZoom 0.28s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+@keyframes lbZoom {
+  from { transform: scale(0.96); opacity: 0.4; }
+  to { transform: none; opacity: 1; }
+}
+.lightbox-nav,
+.lightbox-close {
+  display: grid;
+  place-items: center;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.lightbox-nav {
+  width: 52px;
+  height: 52px;
+  flex: none;
+}
+.lightbox-nav:hover,
+.lightbox-close:hover {
+  background: var(--brand);
+}
+.lightbox-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 44px;
+  height: 44px;
+  z-index: 2;
+}
+.lightbox-count {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 14px;
+  font-weight: 500;
+}
+@media (max-width: 640px) {
+  .lightbox-nav { width: 42px; height: 42px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ref-img,
+  .ref-overlay,
+  .ref-zoom,
+  .lightbox,
+  .lightbox-img {
+    transition: none;
+    animation: none;
+  }
+}
+
 /* Borderless, full-width variant for service subpages (no card chrome). */
 .contact-card--bare {
   background: var(--surface-3);
