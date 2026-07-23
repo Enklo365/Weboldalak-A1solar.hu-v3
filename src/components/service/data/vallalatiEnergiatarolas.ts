@@ -8,8 +8,8 @@ export const vallalatiEnergiatarolas: ServicePageData = {
     titleStrong: "energiafogyasztásod!",
     ctaLabel: "Ajánlatkérés",
     ctaHref: "#ajanlatkeres",
-    image: "/wp-content/uploads/2025/08/Fox-ESS-G-MAX-GM215kWh-100kW-2h.png",
-    imageAlt: "Vállalati energiatároló rendszer – Fox ESS G-MAX akkumulátoros energiatároló",
+    image: "/wp-content/uploads/2025/08/47611.jpg",
+    imageAlt: "Vállalati napelemes és energiatároló rendszer irodaépület tetején",
     intro:
       "Az árampiaci volatilitás, a hálózati kapacitáskorlátok és a csúcsidei teljesítménydíjak egyre nagyobb terhet rónak az energiaintenzív vállalatok működésére. Ezekre a kihívásokra kínálunk üzletileg is megtérülő megoldást energiatároló rendszerek integrálásával.",
   },
