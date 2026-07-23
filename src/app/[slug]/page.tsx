@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ContactForm } from "@/components/ContactForm";
 import { MirrorContent } from "@/components/MirrorContent";
+import { MARKETING_PAGES } from "@/components/page/marketing";
 import { SuccessPage, SUCCESS_PAGES } from "@/components/page/SuccessPage";
 import { TextPage, TEXT_PAGES } from "@/components/page/TextPage";
 import { ServicePage } from "@/components/service/ServicePage";
@@ -62,6 +63,10 @@ export default async function DynamicPage({
   // Natively rebuilt service subpages take over from the WP mirror.
   const service = SERVICE_PAGES[slug];
   if (service) return <ServicePage data={service} />;
+
+  // Bespoke native marketing pages.
+  const Marketing = MARKETING_PAGES[slug];
+  if (Marketing) return <Marketing />;
 
   // Native confirmation ("sikeres…") pages.
   const success = SUCCESS_PAGES[slug];
