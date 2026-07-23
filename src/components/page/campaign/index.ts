@@ -5,6 +5,10 @@ import { Ft1000 } from "@/components/page/campaign/Ft1000";
 import { JedlikAnyosEnergetikaiProgram } from "@/components/page/campaign/JedlikAnyosEnergetikaiProgram";
 import { JedlikAnyosFinanszirozasiSegitseg } from "@/components/page/campaign/JedlikAnyosFinanszirozasiSegitseg";
 import { Kepzeseink } from "@/components/page/campaign/Kepzeseink";
+import { LakossagiEnergiataroloTamogatas } from "@/components/page/campaign/LakossagiEnergiataroloTamogatas";
+import { OepHelysziniFelmeres } from "@/components/page/campaign/OepHelysziniFelmeres";
+import { OepNyeremenyjatek } from "@/components/page/campaign/OepNyeremenyjatek";
+import { SzakmaiNapRegisztracio } from "@/components/page/campaign/SzakmaiNapRegisztracio";
 import { NapelemTarsashazaknak } from "@/components/page/campaign/NapelemTarsashazaknak";
 import { NapenergiaPluszProgram } from "@/components/page/campaign/NapenergiaPluszProgram";
 import { OtthonfelujitasiTamogatas2024 } from "@/components/page/campaign/OtthonfelujitasiTamogatas2024";
@@ -28,4 +32,8 @@ export const CAMPAIGN_PAGES: Record<string, ComponentType> = {
   "otthonfelujitasi-tamogatas-ajanlat-i": OtthonfelujitasiTamogatasAjanlatI,
   "otthonfelujitasi-tamogatas-ajanlat-ii": OtthonfelujitasiTamogatasAjanlatII,
   "otthonfelujitasi-tamogatas-ajanlat-iii": OtthonfelujitasiTamogatasAjanlatIII,
+  "lakossagi-energiatarolo-tamogatas": LakossagiEnergiataroloTamogatas,
+  "oep-nyeremenyjatek": OepNyeremenyjatek,
+  "oep-helyszini-felmeres": OepHelysziniFelmeres,
+  "szakmai-nap-regisztracio": SzakmaiNapRegisztracio,
 };
