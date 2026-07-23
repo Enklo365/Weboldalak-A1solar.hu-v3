@@ -1549,7 +1549,22 @@ body.drawer-open .bottom-nav {
 .step {
   position: relative;
 }
+/* Soft-grey disc behind the bite so the scoop reads as a real notch on the
+   #f6f6f6 card (the homepage gets this contrast from the dark hero behind). */
+.step::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: #e5e8ec;
+  z-index: 0;
+}
 .step-card {
+  position: relative;
+  z-index: 1;
   background: var(--surface-3);
   border-radius: 18px;
   /* Full-width row: the numeral badge sits in a concave bite at the top-left
@@ -1560,6 +1575,7 @@ body.drawer-open .bottom-nav {
 }
 .step-badge {
   position: absolute;
+  z-index: 2;
   top: 10px;
   left: 10px;
   display: grid;
