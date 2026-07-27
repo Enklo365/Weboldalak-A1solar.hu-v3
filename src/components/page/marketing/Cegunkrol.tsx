@@ -46,9 +46,11 @@ export const Cegunkrol = () => (
         </defs>
       </svg>
 
-      {/* Desktop (≥lg) — shaped video hero with headline bottom-left, notch bottom-right */}
+      {/* Desktop (≥lg) — shaped video hero with headline bottom-left, notch bottom-right.
+          Taller aspect than the service hero so it matches the homepage hero's full
+          visual height (whose service cards overhang the band by ~110px). */}
       <div className="container hidden lg:block">
-        <div className="relative w-full" style={{ aspectRatio: "1192 / 571" }}>
+        <div className="relative w-full" style={{ aspectRatio: "1192 / 660" }}>
           <div className="absolute inset-0" style={{ clipPath: `url(#${HERO_CLIP_ID})` }}>
             <video
               autoPlay
