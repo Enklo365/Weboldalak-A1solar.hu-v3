@@ -36,7 +36,7 @@ export const Karrier = () => (
       titleStrong="Csapatunkhoz!"
       image={HERO_IMAGE}
       imageAlt="Az A1 Solar szerelő csapata munka közben"
-      intro="Érj el kimagasló jövedelmet és csatlakozz szerelő vagy irodai csapatunkhoz. Dolgozzunk együtt a zöldebb jövőért."
+      intro="Csatlakozz szerelői vagy irodai csapatunkhoz, és építs velünk stabil, hosszú távú karriert! Versenyképes jövedelmet, támogató munkakörnyezetet és fejlődési lehetőséget kínálunk. Dolgozzunk együtt egy fenntarthatóbb, zöldebb jövőért! Tekintsd meg nyitott pozícióinkat, és küldd el jelentkezésed!"
       ctaLabel="Nyitott pozíciók"
       ctaHref="#poziciok"
     />
