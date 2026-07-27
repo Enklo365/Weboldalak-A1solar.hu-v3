@@ -5,8 +5,8 @@ import { KARRIER_BENEFITS, KARRIER_POSITIONS } from "@/components/page/marketing
 const HERO_IMAGE = "/wp-content/uploads/2023/11/210363746_m_normal_none.jpg";
 
 const CheckIcon = () => (
-  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" aria-hidden>
-    <path d="m5 12.5 4.2 4.2L19 7" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
+  <svg viewBox="0 0 24 24" width="15" height="15" fill="none" aria-hidden>
+    <path d="m5 12.5 4.2 4.2L19 7" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 );
 
@@ -41,8 +41,13 @@ export const Karrier = () => (
       ctaHref="#poziciok"
     />
 
+    {/* Dashed divider between the hero and the main content */}
+    <div className="container">
+      <hr className="my-12 md:my-16" style={{ border: 0, borderTop: "1px dashed #ececec" }} />
+    </div>
+
     {/* Positions (main) + "why join us" sidebar widget */}
-    <section id="poziciok" className="w-full py-16 md:py-24" style={{ scrollMarginTop: "var(--header-h)" }}>
+    <section id="poziciok" className="w-full pb-0" style={{ scrollMarginTop: "var(--header-h)" }}>
       <div className="container">
         <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_340px] lg:gap-0">
           {/* Main — open positions, one card per row */}
@@ -54,7 +59,7 @@ export const Karrier = () => (
               Nyitott pozíciók
             </span>
             <h2 className="text-[var(--ink)]" style={{ marginTop: "16px", fontSize: "clamp(24px, 3.4vw, 34px)", fontWeight: 600, lineHeight: 1.2 }}>
-              Válaszd ki a hozzád illő szerepet
+              Melyik nyitott pozíciónk érdekel?
             </h2>
             <p className="mt-4 text-[var(--ink-soft)]">Kattints egy pozícióra a részletekért és a jelentkezéshez.</p>
 
@@ -93,21 +98,21 @@ export const Karrier = () => (
           {/* Sidebar — "why join us" widget */}
           <aside className="lg:border-l lg:border-dashed lg:border-[#ececec] lg:pl-10">
             <div className="lg:sticky lg:top-[110px]">
-              <div className="rounded-[20px] p-6 md:p-7" style={{ background: "var(--surface-3)" }}>
-                <h2 className="text-[var(--ink)]" style={{ fontSize: "20px", fontWeight: 500, lineHeight: 1.25 }}>
+              <div className="rounded-[20px] p-5" style={{ background: "var(--surface-3)" }}>
+                <h2 className="text-[var(--ink)]" style={{ fontSize: "18px", fontWeight: 500, lineHeight: 1.25 }}>
                   Miért érdemes csatlakozni hozzánk?
                 </h2>
-                <ul className="mt-5 flex flex-col gap-4">
+                <ul className="mt-4 flex flex-col gap-3">
                   {KARRIER_BENEFITS.map((benefit) => (
-                    <li key={benefit} className="flex items-start gap-3 text-[var(--ink-soft)]">
+                    <li key={benefit} className="flex items-center gap-3 text-[var(--ink-soft)]" style={{ fontSize: "15px", lineHeight: 1.4 }}>
                       <span
-                        className="mt-0.5 grid h-9 w-9 shrink-0 place-items-center rounded-full"
-                        style={{ background: "#fff", color: "var(--brand)" }}
+                        className="grid h-7 w-7 shrink-0 place-items-center rounded-full"
+                        style={{ background: "var(--brand)", color: "#fff" }}
                         aria-hidden
                       >
                         <CheckIcon />
                       </span>
-                      <span className="pt-1">{benefit}</span>
+                      <span>{benefit}</span>
                     </li>
                   ))}
                 </ul>
