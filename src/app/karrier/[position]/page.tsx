@@ -1,8 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ContactForm } from "@/components/ContactForm";
-import { getKarrierPosition, KARRIER_POSITIONS } from "@/components/page/marketing/karrierData";
+import { KarrierApplyForm } from "@/components/page/marketing/KarrierApplyForm";
+import {
+  getKarrierPosition,
+  KARRIER_HERO_IMAGE,
+  KARRIER_POSITIONS,
+} from "@/components/page/marketing/karrierData";
+import { NotchHero } from "@/components/page/NotchHero";
 
 type Params = { position: string };
 
@@ -53,42 +58,30 @@ export default async function KarrierPositionPage({ params }: { params: Promise<
 
   return (
     <article>
-      {/* Header band */}
-      <div className="w-full py-12 md:py-16" style={{ background: "var(--surface-3)" }}>
-        <div className="container">
-          <nav className="flex items-center gap-2 text-sm text-[var(--ink-muted)]" aria-label="Morzsamenü">
-            <Link href="/" className="hover:text-[var(--brand)]">
-              Kezdőlap
-            </Link>
-            <span>/</span>
-            <Link href="/karrier" className="hover:text-[var(--brand)]">
-              Karrier
-            </Link>
-            <span>/</span>
-            <span className="text-[var(--ink-soft)]">{pos.title}</span>
-          </nav>
-          <span
-            className="mt-6 inline-block rounded-[30px] px-3 py-2 text-xs font-normal uppercase tracking-[1px]"
-            style={{ background: "rgba(194,29,32,0.14)", color: "var(--brand-dark)" }}
-          >
-            Nyitott pozíció
-          </span>
-          <h1 className="text-[var(--ink)]" style={{ marginTop: "16px", fontSize: "clamp(28px, 4vw, 42px)", fontWeight: 700, lineHeight: 1.15 }}>
-            {pos.title}
-          </h1>
-        </div>
+      <NotchHero
+        eyebrow="Nyitott pozíció"
+        titleStrong={pos.title}
+        image={KARRIER_HERO_IMAGE}
+        imageAlt={`${pos.title} – A1 Solar karrier`}
+        intro={pos.teaser}
+        ctaLabel="Jelentkezem"
+        ctaHref="#jelentkezes"
+      />
+
+      <div className="container">
+        <hr className="my-12 md:my-16" style={{ border: 0, borderTop: "1px dashed #ececec" }} />
       </div>
 
-      {/* Body */}
-      <section className="w-full py-14 md:py-20">
+      <section className="w-full pb-0">
         <div className="container">
-          <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_360px]">
-            <div>
+          <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_360px] lg:gap-0">
+            {/* Main — summary + stacked detail lists */}
+            <div className="lg:pr-10">
               <p className="max-w-[820px] text-lg text-[var(--ink-soft)]" style={{ lineHeight: 1.7 }}>
                 {pos.summary}
               </p>
 
-              <div className="mt-10 grid grid-cols-1 gap-10 sm:grid-cols-2">
+              <div className="mt-10 flex flex-col gap-9">
                 <DetailList title="Feladatok" items={pos.tasks} />
                 {pos.requirements ? <DetailList title="Elvárások" items={pos.requirements} /> : null}
                 {pos.plus ? <DetailList title="Előnyt jelent" items={pos.plus} /> : null}
@@ -98,29 +91,25 @@ export default async function KarrierPositionPage({ params }: { params: Promise<
               <div className="mt-10 rounded-[18px] p-6" style={{ background: "var(--surface-3)" }}>
                 <span className="font-semibold text-[var(--ink)]">Munkavégzés helye:</span>{" "}
                 <span className="text-[var(--ink-soft)]">{pos.location}</span>
-                <p className="mt-2 text-sm text-[var(--ink-muted)]">
-                  Jelentkezés az űrlap kitöltésével, fényképes önéletrajz csatolásával.
-                </p>
+              </div>
+
+              <div className="mt-12">
+                <Link href="/karrier" className="text-[var(--brand)] hover:underline">
+                  ← Vissza az összes pozícióhoz
+                </Link>
               </div>
             </div>
 
-            {/* Application form */}
-            <aside id="jelentkezes" style={{ scrollMarginTop: "var(--header-h)" }}>
+            {/* Sidebar — application form */}
+            <aside
+              id="jelentkezes"
+              className="lg:border-l lg:border-dashed lg:border-[#ececec] lg:pl-10"
+              style={{ scrollMarginTop: "var(--header-h)" }}
+            >
               <div className="lg:sticky lg:top-[110px]">
-                <ContactForm
-                  bare
-                  formName={`Karrier jelentkezés – ${pos.title}`}
-                  heading="Jelentkezz erre a pozícióra!"
-                  intro="Töltsd ki az űrlapot — kollégánk hamarosan jelentkezik. (Az önéletrajzot kérjük e-mailben juttasd el hozzánk, mert az űrlap fájlcsatolást nem támogat.)"
-                />
+                <KarrierApplyForm positionTitle={pos.title} />
               </div>
             </aside>
-          </div>
-
-          <div className="mt-14">
-            <Link href="/karrier" className="text-[var(--brand)] hover:underline">
-              ← Vissza az összes pozícióhoz
-            </Link>
           </div>
         </div>
       </section>

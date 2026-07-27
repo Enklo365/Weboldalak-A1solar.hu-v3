@@ -1,3 +1,6 @@
+/** Shared career hero image (used on /karrier and every position subpage). */
+export const KARRIER_HERO_IMAGE = "/wp-content/uploads/2023/11/210363746_m_normal_none.jpg";
+
 export type KarrierPosition = {
   slug: string;
   title: string;
