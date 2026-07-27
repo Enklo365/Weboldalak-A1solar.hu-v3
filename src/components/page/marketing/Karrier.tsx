@@ -41,79 +41,79 @@ export const Karrier = () => (
       ctaHref="#poziciok"
     />
 
-    {/* Why join us — icon-card grid */}
-    <section className="w-full py-16 md:py-24">
+    {/* Positions (main) + "why join us" sidebar widget */}
+    <section id="poziciok" className="w-full py-16 md:py-24" style={{ scrollMarginTop: "var(--header-h)" }}>
       <div className="container">
-        <h2
-          className="text-center text-[var(--ink)]"
-          style={{ fontSize: "clamp(24px, 3.4vw, 36px)", fontWeight: 600, lineHeight: 1.2 }}
-        >
-          Miért érdemes csatlakozni hozzánk?
-        </h2>
-        <div className="mx-auto mt-10 grid max-w-[1040px] grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {KARRIER_BENEFITS.map((benefit) => (
-            <div key={benefit} className="flex items-center gap-4 rounded-[20px] p-6" style={{ background: "var(--surface-3)" }}>
-              <span
-                className="grid h-12 w-12 shrink-0 place-items-center rounded-full"
-                style={{ background: "#fff", color: "var(--brand)" }}
-                aria-hidden
-              >
-                <CheckIcon />
-              </span>
-              <span className="font-medium text-[var(--ink)]">{benefit}</span>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    {/* Open positions — one card per row, linking to each subpage */}
-    <section id="poziciok" className="w-full pb-16 md:pb-24" style={{ scrollMarginTop: "var(--header-h)" }}>
-      <div className="container">
-        <div className="mx-auto max-w-[760px] text-center">
-          <span
-            className="inline-block rounded-[30px] px-3 py-2 text-xs font-normal uppercase tracking-[1px]"
-            style={{ background: "rgba(194,29,32,0.14)", color: "var(--brand-dark)" }}
-          >
-            Nyitott pozíciók
-          </span>
-          <h2 className="text-[var(--ink)]" style={{ marginTop: "16px", fontSize: "clamp(24px, 3.4vw, 38px)", fontWeight: 600, lineHeight: 1.2 }}>
-            Válaszd ki a hozzád illő szerepet
-          </h2>
-          <p className="mx-auto mt-4 text-[var(--ink-soft)]">
-            Kattints egy pozícióra a részletekért és a jelentkezéshez.
-          </p>
-        </div>
-
-        <div className="mx-auto mt-10 flex max-w-[900px] flex-col gap-4">
-          {KARRIER_POSITIONS.map((position) => (
-            <Link
-              key={position.slug}
-              href={`/karrier/${position.slug}`}
-              className="group flex items-center justify-between gap-6 rounded-[20px] p-6 transition-colors md:p-8"
-              style={{ background: "var(--surface-3)" }}
+        <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_340px] lg:gap-0">
+          {/* Main — open positions, one card per row */}
+          <div className="lg:pr-10">
+            <span
+              className="inline-block rounded-[30px] px-3 py-2 text-xs font-normal uppercase tracking-[1px]"
+              style={{ background: "rgba(194,29,32,0.14)", color: "var(--brand-dark)" }}
             >
-              <div className="min-w-0">
-                <h3 className="text-[var(--ink)]" style={{ fontSize: "clamp(19px, 2.4vw, 24px)", fontWeight: 600, lineHeight: 1.25 }}>
-                  {position.title}
-                </h3>
-                <p className="mt-2 text-[var(--ink-soft)]">{position.teaser}</p>
-                <div className="mt-3 flex items-center gap-2 text-sm text-[var(--ink-muted)]">
-                  <span style={{ color: "var(--brand)" }} aria-hidden>
-                    <PinIcon />
+              Nyitott pozíciók
+            </span>
+            <h2 className="text-[var(--ink)]" style={{ marginTop: "16px", fontSize: "clamp(24px, 3.4vw, 34px)", fontWeight: 600, lineHeight: 1.2 }}>
+              Válaszd ki a hozzád illő szerepet
+            </h2>
+            <p className="mt-4 text-[var(--ink-soft)]">Kattints egy pozícióra a részletekért és a jelentkezéshez.</p>
+
+            <div className="mt-8 flex flex-col gap-4">
+              {KARRIER_POSITIONS.map((position) => (
+                <Link
+                  key={position.slug}
+                  href={`/karrier/${position.slug}`}
+                  className="group flex items-center justify-between gap-6 rounded-[20px] p-6 transition-colors md:p-8"
+                  style={{ background: "var(--surface-3)" }}
+                >
+                  <div className="min-w-0">
+                    <h3 className="text-[var(--ink)]" style={{ fontSize: "clamp(19px, 2.4vw, 24px)", fontWeight: 600, lineHeight: 1.25 }}>
+                      {position.title}
+                    </h3>
+                    <p className="mt-2 text-[var(--ink-soft)]">{position.teaser}</p>
+                    <div className="mt-3 flex items-center gap-2 text-sm text-[var(--ink-muted)]">
+                      <span style={{ color: "var(--brand)" }} aria-hidden>
+                        <PinIcon />
+                      </span>
+                      <span className="truncate">{position.location}</span>
+                    </div>
+                  </div>
+                  <span
+                    className="grid h-12 w-12 shrink-0 place-items-center rounded-full transition-colors group-hover:bg-[var(--brand)] group-hover:text-white"
+                    style={{ background: "#fff", color: "var(--brand)" }}
+                    aria-hidden
+                  >
+                    <ArrowIcon />
                   </span>
-                  <span className="truncate">{position.location}</span>
-                </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* Sidebar — "why join us" widget */}
+          <aside className="lg:border-l lg:border-dashed lg:border-[#ececec] lg:pl-10">
+            <div className="lg:sticky lg:top-[110px]">
+              <div className="rounded-[20px] p-6 md:p-7" style={{ background: "var(--surface-3)" }}>
+                <h2 className="text-[var(--ink)]" style={{ fontSize: "20px", fontWeight: 500, lineHeight: 1.25 }}>
+                  Miért érdemes csatlakozni hozzánk?
+                </h2>
+                <ul className="mt-5 flex flex-col gap-4">
+                  {KARRIER_BENEFITS.map((benefit) => (
+                    <li key={benefit} className="flex items-start gap-3 text-[var(--ink-soft)]">
+                      <span
+                        className="mt-0.5 grid h-9 w-9 shrink-0 place-items-center rounded-full"
+                        style={{ background: "#fff", color: "var(--brand)" }}
+                        aria-hidden
+                      >
+                        <CheckIcon />
+                      </span>
+                      <span className="pt-1">{benefit}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <span
-                className="grid h-12 w-12 shrink-0 place-items-center rounded-full transition-colors group-hover:bg-[var(--brand)] group-hover:text-white"
-                style={{ background: "#fff", color: "var(--brand)" }}
-                aria-hidden
-              >
-                <ArrowIcon />
-              </span>
-            </Link>
-          ))}
+            </div>
+          </aside>
         </div>
       </div>
     </section>
