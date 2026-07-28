@@ -48,7 +48,7 @@ export const NotchHero = ({ eyebrow, titleLight, titleStrong, image, imageAlt, i
           >
             {eyebrow}
           </span>
-          <h1 style={{ color: "#fff", fontSize: "clamp(28px, 3.4vw, 42px)", fontWeight: 300, lineHeight: 1.18, marginBottom: "24px" }}>
+          <h1 style={{ color: "#fff", fontSize: "clamp(28px, 3.4vw, 42px)", fontWeight: 300, lineHeight: 1.18, marginBottom: "24px", maxWidth: "380px" }}>
             {titleLight ? (
               <>
                 {titleLight}
