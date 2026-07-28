@@ -92,8 +92,10 @@ export const Cegunkrol = () => (
       </div>
     </section>
 
-    {/* Story — left copy, right award photo */}
-    <section className="w-full py-16 md:py-24">
+    {/* Story — left copy, right award photo. Bottom gap tuned to equal the
+        hero→section top gap: the global footer margin-top (80px) already
+        supplies most of it, so we add pb-4 on desktop and pull -mb-4 on mobile. */}
+    <section className="w-full pt-16 pb-0 -mb-4 md:mb-0 md:pb-4 md:pt-24">
       <div className="container">
         <div className="grid items-stretch gap-10 lg:grid-cols-2 lg:gap-16">
           <div>
