@@ -1097,7 +1097,7 @@ body.drawer-open .bottom-nav {
 }
 .footer-bottom {
   margin: 0 48px;
-  border-top: 1px solid #e2e2e2;
+  border-top: 1px dashed #e2e2e2;
   padding: 22px 0;
   display: flex;
   flex-direction: column;
@@ -1120,6 +1120,8 @@ body.drawer-open .bottom-nav {
   display: flex;
   gap: 24px;
   flex-wrap: wrap;
+  padding-bottom: 22px;
+  border-bottom: 1px dashed #e2e2e2;
 }
 .footer-legal a {
   color: #666;

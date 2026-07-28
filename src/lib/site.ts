@@ -162,6 +162,20 @@ export const FOOTER_SERVICES: NavChild[] = [
   { href: "/kepzeseink", label: "Képzések" },
 ];
 
+/** Residential service links — mirrors the header mega-menu "Lakossági" group. */
+export const FOOTER_RESIDENTIAL: NavChild[] = [
+  { href: "/lakossagi-napelem", label: "Napelem" },
+  { href: "/lakossagi-energiatarolo-tamogatas", label: "Energiatárolás" },
+  { href: "/lakossagi-napelem-tisztitas-es-karbantartas", label: "Tisztítás & karbantartás" },
+];
+
+/** Commercial service links — mirrors the header mega-menu "Vállalati" group. */
+export const FOOTER_COMMERCIAL: NavChild[] = [
+  { href: "/vallalati-napelem", label: "Napelem" },
+  { href: "/vallalati-energiatarolas", label: "Energiatárolás" },
+  { href: "/vallalati-napelem-tisztitas-es-karbantartas", label: "Tisztítás & karbantartás" },
+];
+
 const OEP_PDF =
   "/wp-content/uploads/2026/06/A1_Solar_Ajanlat_otthoni_energiatarolas_vegleges-0529.pdf";
 

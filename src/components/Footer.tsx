@@ -1,9 +1,9 @@
 import Link from "next/link";
 import {
+  FOOTER_COMMERCIAL,
   FOOTER_LEGAL,
   FOOTER_NAV,
-  FOOTER_SERVICES,
-  FOOTER_USEFUL,
+  FOOTER_RESIDENTIAL,
   type NavChild,
   SITE,
 } from "@/lib/site";
@@ -100,9 +100,9 @@ export const Footer = () => (
         </div>
 
         <div className="footer-col">
-          <h4>Szolgáltatásaink</h4>
+          <h4>Lakossági</h4>
           <ul>
-            {FOOTER_SERVICES.map((l) => (
+            {FOOTER_RESIDENTIAL.map((l) => (
               <li key={l.href + l.label}>
                 <FooterLink {...l} />
               </li>
@@ -111,9 +111,9 @@ export const Footer = () => (
         </div>
 
         <div className="footer-col">
-          <h4>Hasznos linkek</h4>
+          <h4>Vállalati</h4>
           <ul>
-            {FOOTER_USEFUL.map((l) => (
+            {FOOTER_COMMERCIAL.map((l) => (
               <li key={l.href + l.label}>
                 <FooterLink {...l} />
               </li>
