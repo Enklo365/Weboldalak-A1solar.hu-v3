@@ -167,7 +167,7 @@ export function HomeArticles() {
                 </span>
               </div>
               <div className="flex flex-1 flex-col bg-[var(--surface-3)] p-6">
-                <h3 className="text-lg font-semibold leading-snug text-[var(--ink)]">{a.title}</h3>
+                <h3 className="text-lg font-medium leading-snug text-[var(--ink)]">{a.title}</h3>
                 <p className="mt-3 flex-1 text-sm leading-relaxed text-[var(--ink-soft)]">{a.excerpt}</p>
                 <ReadMore>Tovább olvasom</ReadMore>
               </div>
