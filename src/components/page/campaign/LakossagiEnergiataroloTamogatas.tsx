@@ -1,3 +1,5 @@
+import type { CSSProperties, ReactNode } from "react";
+
 import { ContactForm } from "@/components/ContactForm";
 import { SITE } from "@/lib/site";
 
@@ -11,20 +13,13 @@ const Eyebrow = ({ children }: { children: string }) => (
   </span>
 );
 
-/** Inline brand-red check mark used across benefit / feature lists. */
-const CheckIcon = () => (
-  <svg
-    width="22"
-    height="22"
-    viewBox="0 0 24 24"
-    fill="none"
-    aria-hidden="true"
-    style={{ flexShrink: 0 }}
-  >
-    <circle cx="12" cy="12" r="12" fill="var(--brand)" />
+/** Inline check mark used across benefit lists. `light` renders it for red backgrounds. */
+const CheckIcon = ({ light = false }: { light?: boolean }) => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true" style={{ flexShrink: 0 }}>
+    <circle cx="12" cy="12" r="12" fill={light ? "#fff" : "var(--brand)"} />
     <path
       d="M7 12.5l3 3 7-7"
-      stroke="#fff"
+      stroke={light ? "var(--brand)" : "#fff"}
       strokeWidth="2.2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -32,9 +27,69 @@ const CheckIcon = () => (
   </svg>
 );
 
+/** Section shell: eyebrow + 30px heading + optional intro, on white or tinted band. */
+type InfoSectionProps = {
+  eyebrow: string;
+  title: string;
+  intro?: string;
+  tinted?: boolean;
+  children?: ReactNode;
+};
+
+const InfoSection = ({ eyebrow, title, intro, tinted = false, children }: InfoSectionProps) => (
+  <section className="w-full py-16 md:py-20" style={tinted ? { background: "var(--surface-3)" } : undefined}>
+    <div className="mx-auto max-w-[var(--container)] px-6">
+      <Eyebrow>{eyebrow}</Eyebrow>
+      <h2 className="text-[var(--ink)]" style={{ marginTop: "18px", fontSize: "30px", fontWeight: 600, lineHeight: 1.2 }}>
+        {title}
+      </h2>
+      {intro !== undefined ? (
+        <p className="mt-5 text-[var(--ink-soft)]" style={{ fontSize: "17px", lineHeight: 1.75, maxWidth: "920px" }}>
+          {intro}
+        </p>
+      ) : null}
+      <div className="mt-8">{children}</div>
+    </div>
+  </section>
+);
+
+/** Bold uppercase sub-label inside an info block. */
+const SubHead = ({ children }: { children: ReactNode }) => (
+  <p
+    className="text-[var(--ink)]"
+    style={{ margin: "28px 0 12px", fontSize: "16px", fontWeight: 700 }}
+  >
+    {children}
+  </p>
+);
+
+/** Body paragraph inside an info block. */
+const Body = ({ children }: { children: ReactNode }) => (
+  <p className="text-[var(--ink-soft)]" style={{ margin: "0 0 14px", fontSize: "16px", lineHeight: 1.75, maxWidth: "920px" }}>
+    {children}
+  </p>
+);
+
+/** Bulleted list with a small brand dot. */
+const Bullets = ({ items }: { items: string[] }) => (
+  <ul className="flex flex-col gap-3" style={{ listStyle: "none", padding: 0, margin: "0 0 14px", maxWidth: "920px" }}>
+    {items.map((item) => (
+      <li key={item} className="flex items-start gap-3">
+        <span
+          aria-hidden="true"
+          style={{ flexShrink: 0, width: "8px", height: "8px", borderRadius: "9999px", background: "var(--brand)", marginTop: "9px" }}
+        />
+        <span className="text-[var(--ink-soft)]" style={{ fontSize: "16px", lineHeight: 1.65 }}>
+          {item}
+        </span>
+      </li>
+    ))}
+  </ul>
+);
+
 /** One inverter / storage package tier from the OEP catalogue. */
 type StoragePackage = {
-  name: string;
+  brand: string;
   image: string;
   ownFund: string;
   grant: string;
@@ -44,7 +99,7 @@ type StoragePackage = {
 
 const PACKAGES: StoragePackage[] = [
   {
-    name: "DEYE csomagok",
+    brand: "DEYE csomagok",
     image: "/wp-content/uploads/2026/01/DEYE.png",
     ownFund: "Már 0 Ft önerőtől",
     grant: "2,5 millió Ft",
@@ -52,21 +107,21 @@ const PACKAGES: StoragePackage[] = [
     featured: true,
   },
   {
-    name: "FOX ESS csomagok",
+    brand: "FOX ESS csomagok",
     image: "/wp-content/uploads/2026/01/FOXESS.png",
     ownFund: "Már 0 Ft önerőtől",
     grant: "2,5 millió Ft",
     backup: "Opcionális backup funkció",
   },
   {
-    name: "SIGENERGY csomagok",
+    brand: "SIGENERGY csomagok",
     image: "/wp-content/uploads/2026/01/SIGENERGY.png",
     ownFund: "Már 130 000 Ft önerőtől",
     grant: "2,5 millió Ft",
     backup: "Opcionális backup funkció",
   },
   {
-    name: "HUAWEI csomagok",
+    brand: "HUAWEI csomagok",
     image: "/wp-content/uploads/2026/01/HUAWEI.png",
     ownFund: "Már 835 600 Ft önerőtől",
     grant: "2,5 millió Ft",
@@ -86,93 +141,7 @@ const PROGRAM_STATS: { value: string; label: string }[] = [
   { value: "100 mrd Ft", label: "Program keretösszeg" },
   { value: "2,5 M Ft", label: "Maximális támogatás háztartásonként" },
   { value: "min. 10 kWh", label: "Támogatott tárolókapacitás" },
-  { value: "akár 100%", label: "Finanszírozás a piaci árak mellett" },
-];
-
-/** Costs coverable from the grant. */
-const ELIGIBLE_COSTS: string[] = [
-  "Villamosenergia-tároló (akkumulátor) beszerzése",
-  "Inverter beszerzése vagy cseréje (kizárólag hibrid inverterrel)",
-  "Tároló vezérlését végző eszközök (pl. BMS)",
-  "Visszwatt-védelem és beállítás költségei",
-  "Tervezési és engedélyezési költségek",
-  "Pályázati adminisztráció és kivitelezői közreműködés díja",
-  "Mérőhely szabványosítása",
-  "Fázisbővítés és csatlakozási alapdíj legfeljebb 3×20 A-ig",
-  "Telepítési, kiszállási és szerelési munkadíjak",
-  "Biztonsági és villamos mérések, vizsgálatok",
-];
-
-/** Who the program is an ideal fit for. */
-const AUDIENCE_POINTS: string[] = [
-  "Nagykorú, cselekvőképes magánszemélyek magyar adóazonosító jellel.",
-  "A beruházás helyszínével megegyező magyarországi állandó lakóhellyel.",
-  "A lakóingatlanban (rész)tulajdonjoggal, haszonélvezeti joggal vagy lakáscélú lízingszerződéssel rendelkezők.",
-  "Akiknek már van napelemes rendszerük, vagy vállalják annak telepítését a projekt keretében.",
-];
-
-/** Eligible property types. */
-const PROPERTY_TYPES: string[] = [
-  "Családi ház",
-  "Jogilag és energetikailag önálló iker- vagy sorház",
-  "Legfeljebb 6 lakásos társasház lakása",
-];
-
-/** Application timeline steps. */
-type TimelineStep = {
-  no: string;
-  title: string;
-  period: string;
-  text: string;
-};
-
-const TIMELINE: TimelineStep[] = [
-  {
-    no: "01",
-    title: "Felhívás megjelenése",
-    period: "2026. január 15.",
-    text: "A pályázati felhívás publikálása, amellyel elindul a program.",
-  },
-  {
-    no: "02",
-    title: "1. ütem – benyújtás",
-    period: "2026. február 2. 10:00 – legkésőbb március 15. 17:00",
-    text: "A pályázati űrlap kitöltése és benyújtása az nffku.hu portálon, KAÜ-azonosítással (Ügyfélkapu+ vagy DÁP).",
-  },
-  {
-    no: "03",
-    title: "2. ütem – igazolás és döntés",
-    period: "2026. március 16. 10:00 – legkésőbb szeptember 30.",
-    text: "A jogosultság igazolása, a projekt műszaki tartalmának bemutatása, a vállalkozási szerződés megkötése és a dokumentumok benyújtása. A 2. ütem csak az 1. ütem lezárása és a döntés után, a jogosult pályázók számára nyílik meg.",
-  },
-  {
-    no: "04",
-    title: "Fenntartási időszak",
-    period: "3 év",
-    text: "A fenntartási időszak a záró elszámolás elfogadásának napjától kezdődik – nem a kivitelezés befejezésétől vagy a szolgáltatói átvételtől.",
-  },
-];
-
-/** Payout phases. */
-const PAYOUTS: { no: string; title: string; amount: string; text: string }[] = [
-  {
-    no: "1",
-    title: "Előleg",
-    amount: "1 000 000 Ft",
-    text: "A pozitív támogatói döntést követően a Támogató 1 000 000 Ft előleget folyósít, amelyet a pályázó a kivitelező részére fizet meg a vállalkozási szerződés szerint.",
-  },
-  {
-    no: "2",
-    title: "Részszámla",
-    amount: "Önerő rendezése",
-    text: "A kivitelezés előrehaladásával a pályázó a részszámla alapján teljesíti a támogatási összeg és az esetleges önerő arányos részét. 2,5 millió Ft feletti összköltségnél az önerő rendelkezésre állását igazolni kell.",
-  },
-  {
-    no: "3",
-    title: "Végszámla",
-    amount: "Legfeljebb 1 500 000 Ft",
-    text: "A beruházás készre jelentése után a Támogató a végszámla alapján, de legfeljebb 1 500 000 Ft összegben folyósítja a fennmaradó támogatási részt.",
-  },
+  { value: "24 hónap", label: "A megvalósításra rendelkezésre álló idő" },
 ];
 
 /** Two webinar tracks. */
@@ -189,19 +158,39 @@ const WEBINARS: { badge: string; title: string; text: string }[] = [
   },
 ];
 
+/** Contractor-partner mini cards. */
+const PARTNER_STEPS: { title: string; text: string; cta: string }[] = [
+  {
+    title: "Benyújtotta a pályázatát és döntésre vár?",
+    text: "Kérjen előzetes árajánlatot, hogy pozitív elbírálás esetén gyorsan tudjon dönteni.",
+    cta: "Előzetes árajánlat kérése",
+  },
+  {
+    title: "Nézze meg a regisztrált kivitelezők listáját!",
+    text: "Ellenőrizze, hogy az A1 Solar Kft. szerepel a hivatalos, regisztrált kivitelezők között.",
+    cta: "Kérek tájékoztatást",
+  },
+  {
+    title: "Elfogadták a pályázatát?",
+    text: "Jelölje kivitelezőnek az A1 Solar Kft.-t, és kérjen ajánlatot a pályázati felületen – a műszaki tartalmat és az árajánlatot ingyen elkészítjük.",
+    cta: "Kérek ajánlatot",
+  },
+];
+
 /** Extra loyalty perks. */
-const PERKS: { title: string; text: string }[] = [
+const PERKS: { title: string; text: string; image: string }[] = [
   {
     title: "100 000 Ft értékű fejlesztési kupon",
     text: "Minden velünk sikeresen megvalósított projekt után bruttó 100 000 Ft értékű kupont adunk, amit későbbi napelemes vagy energiatárolási fejlesztésekhez használhatsz fel az A1 Solar Kft.-nél.",
+    image: "/wp-content/uploads/2025/10/ingyenespadlasszigeteles.png",
   },
   {
     title: "Álomutazás sorsolás – 2 fő részére",
     text: "Ha 2026. április 30-ig szerződsz velünk és Támogatói Okiratot kapsz, automatikusan részt veszel a sorsoláson. A nyertes egy 2 személyes, 5 napos álomutazást választhat: Zanzibár szigetére vagy Kínába.",
+    image: "/wp-content/uploads/2025/12/Uj-lakossagi-energiatarolos-tamogatasi-program-indul-1024x667.png",
   },
 ];
 
-/** Why choose A1 Solar. */
 const GUARANTEES: string[] = [
   "10+ év szakmai tapasztalat a megújuló energia piacán",
   "Országos lefedettség, gyors és átlátható ügyintézés",
@@ -210,96 +199,163 @@ const GUARANTEES: string[] = [
   "Több milliárd forintos árbevétel, stabil vállalati háttér",
 ];
 
-/** FAQ items rendered as native details/summary accordions. */
-const FAQ: { q: string; a: string }[] = [
+/** Costs coverable from the grant. */
+const ELIGIBLE_COSTS: string[] = [
+  "Villamosenergia-tároló (akkumulátor) beszerzése",
+  "Inverter beszerzése vagy cseréje (kizárólag hibrid inverter alkalmazásával)",
+  "Tároló vezérlését végző eszközök (pl. BMS)",
+  "Visszwatt-védelem és beállítás költségei",
+  "Tervezési és engedélyezési költségek",
+  "Pályázati adminisztráció és kivitelezői közreműködés díja",
+  "Mérőhely szabványosítása",
+  "Fázisbővítés és csatlakozási alapdíj legfeljebb 3×20 A-ig",
+  "Telepítési, kiszállási és szerelési munkadíjak",
+  "Szükséges biztonsági és villamos mérések, vizsgálatok (pl. érintésvédelmi és villamosbiztonsági felülvizsgálat)",
+];
+
+const STANDALONE_ELIGIBLE: string[] = [
+  "Villamosenergia-tároló rendszer (minimum 10 kWh névleges kapacitással)",
+  "Inverter (meglévő rendszer esetén csere, új rendszer esetén új telepítés)",
+  "Napelem panelek beszerzése – kizárólag új, teljes rendszer létesítése esetén",
+];
+
+const ELIGIBLE_APPLICANTS: string[] = [
+  "Magyar adóazonosító jellel rendelkeznek,",
+  "a beruházás helyszínével megegyező magyarországi állandó lakóhellyel bírnak,",
+  "a beruházással érintett lakóingatlanban (rész)tulajdonjoggal, haszonélvezeti joggal vagy lakáscélú lízingszerződéssel rendelkeznek,",
+  "már meglévő napelemes rendszerük van, vagy vállalják annak telepítését a projekt keretében,",
+  "valamint olyan természetes személy, aki 551, 552, 555 GFO kódú egyházi jogi személy tulajdonában lévő, lakhatási célú lakóingatlanban életvitelszerűen lakik, és az egyházi jogi személy tulajdonosi hozzájáruló nyilatkozatot ad.",
+];
+
+const PROPERTY_TYPES: string[] = [
+  "Családi házon,",
+  "jogilag és energetikailag önálló iker- vagy sorházon,",
+  "illetve legfeljebb 6 lakásos társasház lakásán.",
+];
+
+const ADMIN_ORG_FORMS: string[] = [
+  "egyéni vállalkozás vagy egyéni cég",
+  "közkereseti társaság (Kkt.) vagy betéti társaság (Bt.)",
+  "korlátolt felelősségű társaság (Kft.) vagy részvénytársaság (Zrt.)",
+  "egyesület vagy nonprofit szervezet",
+];
+
+const EXCLUSIONS: string[] = [
+  "aki a Napenergia Plusz Program keretében a beruházás helyszínére vonatkozóan a felhívás megjelenésének napján már érvényes támogatói okirattal rendelkezik;",
+  "aki az RRF-6.2.1-2021 azonosítószámú pályázati felhívás, illetve a Vidéki Otthonfelújítási Program támogatott projektje keretében már energiatárolót létesített;",
+  "aki a pályázat elbírálási eljárásában döntés-előkészítőként vagy döntéshozóként közreműködik, illetve az ilyen személlyel közös háztartásban élő hozzátartozó;",
+  "aki az államháztartásról szóló 2011. évi CXCV. törvény 48/B. § (1) bekezdés b) pontja szerinti személy, vagy akivel közös háztartásban ilyen tisztséget betöltő személy él;",
+  "akinek 60 napot meghaladó köztartozása áll fenn;",
+  "aki nem természetes személy;",
+  "aki nem rendelkezik magyar adóazonosító jellel;",
+  "aki kiskorú természetes személy;",
+  "aki a támogatói okiratban vállalt kötelezettségeit neki felróható okból nem teljesítette, kivéve vis maior esetét;",
+  "akinek meg nem fizetett köztartozása van – ebben az esetben a köztartozás rendezéséig a támogatás nem illeti meg, illetve visszatartásra kerül;",
+  "aki a pályázati szakaszban tett nyilatkozatok tartalmát az igazolási szakaszban nem tudja hitelt érdemlően és maradéktalanul alátámasztani.",
+];
+
+const KAU_METHODS: string[] = ["Ügyfélkapu+, vagy", "Digitális Állampolgár (DÁP) azonosítás."];
+
+const PRIORITY_1: string[] = [
+  "amelyek már kikerültek az éves szaldóelszámolásból, vagy",
+  "amelyek legkésőbb 2030. december 31-ig kikerülnek az éves szaldóelszámolásból,",
+  "valamint azok a pályázók is ide tartoznak, akik állami támogatás nélkül, önerőből telepítettek napelemes rendszert, és jelenleg bruttó elszámolás alá tartoznak.",
+];
+
+const TECH_STORAGE: string[] = [
+  "Az akkumulátoros energiatároló rendszer névleges kapacitásának legalább 10 kWh-nak kell lennie.",
+  "A műszaki specifikációk figyelembevételével legfeljebb 10%-os eltérés engedélyezett lefelé.",
+  "Az energiatároló maximális kapacitására felső korlát nincs, az a háztartás energiaigényéhez igazítható.",
+  "Az energiatároló kizárólag a napelemes rendszer egyenáramú (DC) oldalához csatlakoztatható, azaz a napelemes rendszer és az akkumulátoros tároló egy közös hibrid inverter DC oldalára kell, hogy kapcsolódjon.",
+  "AC oldali (váltakozó áramú) energiatároló csatlakoztatása nem támogatható.",
+  "Az inverterhez csatlakozó akkumulátoros energiatároló rendszer névleges feszültsége legalább 100 V legyen; ennél alacsonyabb feszültség esetén a tárolónak az alkalmazott inverter gyártójának saját termékének kell lennie.",
+];
+
+/** Payout phases. */
+const PAYOUTS: { no: string; title: string; amount: string; text: string }[] = [
   {
-    q: "Hogyan történik a pályázatok elbírálása?",
-    a: "A támogatási kérelmek elbírálása meghatározott preferenciarendszer alapján, több lépcsőben történik. Az első prioritási csoportba tartoznak azok, akik már kikerültek az éves szaldóelszámolásból, legkésőbb 2030. december 31-ig kikerülnek abból, vagy állami támogatás nélkül, önerőből telepítettek napelemes rendszert és jelenleg bruttó elszámolás alá tartoznak. A második csoportban azok, akik 5000 fő alatti településen rendelkeznek bejelentett állandó lakóhellyel. A sorrendet a település lélekszáma és a pályázat beadásának időpontja határozza meg.",
+    no: "1",
+    title: "Előleg",
+    amount: "1 000 000 Ft",
+    text: "A pozitív támogatói döntést követően a Támogató 1 000 000 Ft előleget folyósít a pályázó magánszemély részére. Ezt az összeget a pályázó a kivitelező részére fizeti meg, a vállalkozási szerződésben rögzített feltételek szerint.",
   },
   {
-    q: "Milyen műszaki feltételeknek kell megfelelni?",
-    a: "Az akkumulátoros energiatároló névleges kapacitása legalább 10 kWh legyen (legfeljebb 10%-os eltérés lefelé engedélyezett), felső korlát nincs. A tároló kizárólag a napelemes rendszer egyenáramú (DC) oldalához, közös hibrid inverterre csatlakoztatható; AC oldali csatlakozás nem támogatható. A névleges feszültség legalább 100 V. Új rendszer telepítésekor az inverter maximális névleges teljesítménye 5 kW, a paneloldali teljesítmény legfeljebb 6 kWp. A támogatás csak elosztóhálózathoz csatlakozó rendszerekre vehető igénybe, a szigetüzem nem támogatható.",
+    no: "2",
+    title: "Részszámla",
+    amount: "Önerő rendezése",
+    text: "A kivitelezés előrehaladásával a pályázó a kivitelező által kiállított részszámla alapján teljesíti a támogatási összeg és az esetlegesen fennálló önerő arányos részét. 2 500 000 Ft feletti összköltségnél az önerő rendelkezésre állását és megfizetését igazolni kell.",
   },
   {
-    q: "Mennyi idő áll rendelkezésre a megvalósításra?",
-    a: "A beruházást a Támogatói okirat hatályba lépésétől számított legfeljebb 24 hónapon belül kell megvalósítani, ami elegendő időt biztosít a tervezésre, engedélyezésre és kivitelezésre.",
-  },
-  {
-    q: "Mire figyeljen akkumulátor választáskor?",
-    a: "A lakossági energiatárolók piacán jelentős a kínálatbővülés, sok új gyártóval. Az ismeretlen eredetű vagy nem megfelelően minősített akkumulátorok komoly műszaki és biztonsági kockázatot jelenthetnek, ezért kizárólag bevizsgált, megbízható gyártók által kínált energiatárolók alkalmazása javasolt.",
-  },
-  {
-    q: "Mire kell figyelni a megvalósítás helyszínén?",
-    a: "A projekt helyszínén gazdasági tevékenység nem folytatható, még kiegészítő jelleggel sem. Fontos változás azonban, hogy az adminisztratív székhely már elfogadható: önmagában nem kizáró ok, ha az ingatlan csupán adminisztratív jelleggel van székhelyként bejelentve, feltéve, hogy nyilatkozattal igazolható, hogy a gazdasági tevékenység ténylegesen nem az ingatlanban történik.",
+    no: "3",
+    title: "Végszámla",
+    amount: "Legfeljebb 1 500 000 Ft",
+    text: "A beruházás teljes körű befejezése és készre jelentése után a Támogató a végszámla alapján, de legfeljebb 1 500 000 Ft összegben folyósítja a fennmaradó támogatási részt. A pályázó ezt követően rendezi a kivitelező felé a végszámlát.",
   },
 ];
 
+/** Shared red pill CTA to the closing form. */
+const heroPillStyle: CSSProperties = {
+  display: "inline-block",
+  background: "var(--brand)",
+  color: "#fff",
+  padding: "14px 30px",
+  borderRadius: "9999px",
+  fontWeight: 500,
+};
+
 /**
  * "Lakossági energiatároló támogatás" (Otthoni Energiatároló Program) kampány-landing —
- * bespoke natív újraépítés az A1 Solar design-nyelvén: hero, program-részletek,
- * jogosultság, csomagajánlatok, folyamat, kifizetés, webinárium, extra előnyök,
- * GYIK akkordeon és záró ajánlatkérő űrlap.
+ * a régi a1solar.hu oldal hű natív újraépítése: piros hero + űrlap, statisztika-sáv,
+ * webinárium, kivitelező-partner szekció, márkánkénti csomagajánlatok, extra előnyök,
+ * termékszekció, kifejtett tájékoztató (GYIK) szekciók és záró ajánlatkérő űrlap.
  */
 export const LakossagiEnergiataroloTamogatas = () => (
   <div className="w-full">
-    {/* HERO */}
-    <section className="w-full">
+    {/* HERO — brand-piros, kétoszlopos: bal szöveg + jobb űrlap */}
+    <section className="w-full" style={{ background: "var(--brand)" }}>
       <div className="mx-auto max-w-[var(--container)] px-6 py-16 md:py-24">
-        <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-[1.05fr_0.95fr]">
+        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
           <div>
-            <Eyebrow>Otthoni Energiatároló Program · 100 milliárd Ft keret</Eyebrow>
-            <h1
-              className="text-[var(--ink)]"
-              style={{ marginTop: "26px", fontSize: "clamp(36px, 6vw, 66px)", lineHeight: 1.08 }}
+            <span
+              className="inline-block rounded-[30px] px-3 py-2 text-xs font-normal uppercase tracking-[1px]"
+              style={{ background: "rgba(255,255,255,0.18)", color: "#fff" }}
             >
+              Otthoni Energiatároló Program
+            </span>
+            <h1 style={{ marginTop: "22px", color: "#fff", fontSize: "clamp(38px, 6vw, 64px)", lineHeight: 1.08 }}>
               <span style={{ fontWeight: 300 }}>Bízd ránk </span>
               <span style={{ fontWeight: 700 }}>a kivitelezést!</span>
             </h1>
-            <p
-              className="text-[var(--ink-soft)]"
-              style={{ marginTop: "22px", fontSize: "clamp(16px, 2vw, 19px)", lineHeight: 1.7, maxWidth: "560px" }}
-            >
-              Az Otthoni Energiatároló Program keretében segítünk a pályázati adminisztrációban, a
-              rendszer kiválasztásában, tervezésében és kivitelezésében, hogy otthonod számára
-              megbízható, hosszú távú megoldás valósuljon meg.
+            <p style={{ marginTop: "20px", color: "rgba(255,255,255,0.92)", fontSize: "clamp(16px, 2vw, 19px)", lineHeight: 1.7, maxWidth: "560px" }}>
+              Az Otthoni Energiatároló Program keretében segítünk a pályázati adminisztrációban, a rendszer
+              kiválasztásában, tervezésében és kivitelezésében, hogy otthonod számára megbízható, hosszú távú
+              megoldás valósuljon meg.
             </p>
-            <ul
-              className="flex flex-col gap-4"
-              style={{ listStyle: "none", padding: 0, margin: "28px 0 0", maxWidth: "560px" }}
-            >
+            <p style={{ marginTop: "26px", color: "#fff", fontSize: "16px", fontWeight: 700 }}>Amit az A1 Solar garantál:</p>
+            <ul className="flex flex-col gap-4" style={{ listStyle: "none", padding: 0, margin: "14px 0 0", maxWidth: "560px" }}>
               {HERO_BENEFITS.map((benefit) => (
                 <li key={benefit} className="flex items-center gap-3">
-                  <CheckIcon />
-                  <span className="text-[var(--ink)]" style={{ fontSize: "clamp(15px, 2vw, 18px)" }}>
-                    {benefit}
-                  </span>
+                  <CheckIcon light />
+                  <span style={{ color: "#fff", fontSize: "clamp(15px, 2vw, 18px)" }}>{benefit}</span>
                 </li>
               ))}
             </ul>
             <div className="mt-10">
               <a
-                href="#ajanlatkeres"
-                style={{
-                  display: "inline-block",
-                  background: "var(--brand)",
-                  color: "#fff",
-                  padding: "16px 34px",
-                  borderRadius: "9999px",
-                  fontWeight: 500,
-                }}
+                href="#jelentkezes"
+                style={{ display: "inline-block", background: "#fff", color: "var(--brand-dark)", padding: "14px 30px", borderRadius: "9999px", fontWeight: 600 }}
               >
-                Kérd ingyenes kalkulációnkat!
+                Töltsd ki az űrlapot
               </a>
             </div>
           </div>
 
-          <div style={{ borderRadius: "28px", overflow: "hidden", background: "var(--surface-3)" }}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/wp-content/uploads/2025/12/Uj-lakossagi-energiatarolos-tamogatasi-program-indul-1024x667.png"
-              alt="Új lakossági energiatárolós támogatási program indul"
-              loading="lazy"
-              style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+          <div style={{ background: "#fff", borderRadius: "28px", padding: "8px" }}>
+            <ContactForm
+              bare
+              formName="Otthoni Energiatároló Program"
+              heading="Töltse ki az alábbi űrlapot!"
+              intro="Munkatársunk 24 órán belül felveszi Önnel a kapcsolatot."
             />
           </div>
         </div>
@@ -307,8 +363,8 @@ export const LakossagiEnergiataroloTamogatas = () => (
     </section>
 
     {/* STATISZTIKA-SÁV */}
-    <section className="w-full">
-      <div className="mx-auto max-w-[var(--container)] px-6 pb-16 md:pb-24">
+    <section className="w-full py-16 md:py-20">
+      <div className="mx-auto max-w-[var(--container)] px-6">
         <div className="grid grid-cols-2 gap-6 lg:grid-cols-4">
           {PROGRAM_STATS.map((stat) => (
             <div
@@ -316,9 +372,7 @@ export const LakossagiEnergiataroloTamogatas = () => (
               className="flex flex-col items-center justify-center px-6 py-10 text-center"
               style={{ background: "var(--surface-3)", borderRadius: "24px" }}
             >
-              <span
-                style={{ color: "var(--brand)", fontSize: "clamp(24px, 4vw, 38px)", fontWeight: 700, lineHeight: 1 }}
-              >
+              <span style={{ color: "var(--brand)", fontSize: "clamp(24px, 4vw, 38px)", fontWeight: 700, lineHeight: 1 }}>
                 {stat.value}
               </span>
               <span className="mt-3 text-[var(--ink-soft)]" style={{ fontSize: "14px", lineHeight: 1.4 }}>
@@ -330,189 +384,105 @@ export const LakossagiEnergiataroloTamogatas = () => (
       </div>
     </section>
 
-    {/* TÁMOGATÁSI RÉSZLETEK — a program bemutatása */}
-    <section className="w-full">
-      <div className="mx-auto max-w-[var(--container)] px-6 pb-16 md:pb-24">
+    {/* WEBINÁRIUM */}
+    <section className="w-full py-16 md:py-20" style={{ background: "var(--surface-3)" }}>
+      <div className="mx-auto max-w-[var(--container)] px-6">
         <div className="text-center">
-          <Eyebrow>Támogatási részletek</Eyebrow>
-          <h2
-            className="mx-auto text-[var(--ink)]"
-            style={{ marginTop: "22px", fontSize: "30px", fontWeight: 600, lineHeight: 1.18, maxWidth: "820px" }}
-          >
-            Akár 2,5 millió Ft támogatás energiatárolóra
+          <Eyebrow>Webinárium</Eyebrow>
+          <h2 className="mx-auto text-[var(--ink)]" style={{ marginTop: "18px", fontSize: "30px", fontWeight: 600, lineHeight: 1.2, maxWidth: "820px" }}>
+            Otthoni Energiatároló Program webinárium
           </h2>
-        </div>
-
-        <div className="mx-auto mt-10 flex flex-col gap-5" style={{ maxWidth: "860px" }}>
-          <p className="text-[var(--ink-soft)]" style={{ fontSize: "17px", lineHeight: 1.75 }}>
-            A lakossági energiatároló támogatási program 100 milliárd forintos keretösszeggel indul, és
-            háztartásonként legfeljebb 2,5 millió forint vissza nem térítendő támogatást biztosít
-            akkumulátoros energiatároló rendszer telepítésére. A támogatás elsősorban legalább 10 kWh
-            kapacitású lakossági energiatárolók létesítésére vehető igénybe. A jelenlegi piaci árak
-            mellett a támogatás akár 100%-os finanszírozást is jelenthet.
-          </p>
-          <p className="text-[var(--ink-soft)]" style={{ fontSize: "17px", lineHeight: 1.75 }}>
-            Az elbírálás során előnyt élveznek azok a háztartások, amelyek már kikerültek, vagy 2030-ig
-            kikerülnek az éves szaldóelszámolásból, valamint azok a pályázók, akik 5000 fő alatti
-            településen rendelkeznek bejelentett állandó lakóhellyel. A támogatás feltétele meglévő, vagy
-            a projekt keretében vállaltan telepítésre kerülő napelemes rendszer megléte.
-          </p>
-          <p className="text-[var(--ink-soft)]" style={{ fontSize: "17px", lineHeight: 1.75 }}>
-            A konstrukció célja, hogy a családok a napközben megtermelt villamos energiát minél nagyobb
-            arányban saját otthonukban használják fel, ezáltal csökkentve a villanyszámlát, növelve az
-            energiafüggetlenséget, valamint mérsékelve a villamosenergia-hálózat terhelését.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    {/* KINEK AJÁNLOTT */}
-    <section className="w-full">
-      <div className="mx-auto max-w-[var(--container)] px-6 pb-16 md:pb-24">
-        <div className="text-center">
-          <Eyebrow>Kinek ajánlott?</Eyebrow>
-          <h2
-            className="mx-auto text-[var(--ink)]"
-            style={{ marginTop: "22px", fontSize: "30px", fontWeight: 600, lineHeight: 1.18, maxWidth: "820px" }}
-          >
-            Kiknek jelent ideális megoldást a program?
-          </h2>
-          <p
-            className="mx-auto mt-5 text-[var(--ink-soft)]"
-            style={{ fontSize: "17px", lineHeight: 1.7, maxWidth: "820px" }}
-          >
-            A támogatás elsősorban azoknak a háztartásoknak kínál valódi előnyt, amelyek már kikerültek
-            az éves szaldóelszámolásból, vagy legkésőbb 2030. december 31-ig átkerülnek abból – ez
-            leggyakrabban a 2015 előtt telepített rendszereknél fordul elő. Emellett elérhető azok
-            számára is, akik önerőből létesítettek napelemes rendszert, és jelenleg bruttó elszámolásban
-            vannak.
+          <p className="mx-auto mt-5 text-[var(--ink-soft)]" style={{ fontSize: "17px", lineHeight: 1.7, maxWidth: "820px" }}>
+            Az Otthoni Energiatároló Program kapcsán online webináriumot tartunk, ahol a 2. szakasz benyújtási
+            folyamatát, a szükséges tudnivalókat, valamint a következő lépéseket vesszük végig részletesen.
           </p>
         </div>
 
         <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2">
-          <div className="px-8 py-9" style={{ background: "var(--surface-3)", borderRadius: "24px" }}>
-            <h3 className="text-[var(--ink)]" style={{ margin: 0, fontSize: "22px", fontWeight: 600 }}>
-              Ki nyújthatja be a pályázatot?
-            </h3>
-            <ul className="mt-6 flex flex-col gap-4" style={{ listStyle: "none", padding: 0, margin: 0 }}>
-              {AUDIENCE_POINTS.map((point) => (
-                <li key={point} className="flex items-start gap-3">
-                  <CheckIcon />
-                  <span className="text-[var(--ink-soft)]" style={{ fontSize: "16px", lineHeight: 1.6 }}>
-                    {point}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="px-8 py-9" style={{ background: "var(--surface-3)", borderRadius: "24px" }}>
-            <h3 className="text-[var(--ink)]" style={{ margin: 0, fontSize: "22px", fontWeight: 600 }}>
-              Hol valósítható meg?
-            </h3>
-            <p className="mt-4 text-[var(--ink-soft)]" style={{ fontSize: "16px", lineHeight: 1.7 }}>
-              A beruházás kizárólag lakhatási célú ingatlanon valósítható meg:
-            </p>
-            <ul className="mt-5 flex flex-col gap-4" style={{ listStyle: "none", padding: 0, margin: 0 }}>
-              {PROPERTY_TYPES.map((type) => (
-                <li key={type} className="flex items-start gap-3">
-                  <CheckIcon />
-                  <span className="text-[var(--ink-soft)]" style={{ fontSize: "16px", lineHeight: 1.6 }}>
-                    {type}
-                  </span>
-                </li>
-              ))}
-            </ul>
-            <p
-              className="mt-6 text-[var(--ink-muted)]"
-              style={{ fontSize: "14px", lineHeight: 1.6 }}
-            >
-              Fontos változás: adminisztratív székhely már elfogadható, ha nyilatkozattal igazolható, hogy
-              a gazdasági tevékenység ténylegesen nem az ingatlanban történik.
-            </p>
-          </div>
+          {WEBINARS.map((webinar) => (
+            <div key={webinar.title} className="flex flex-col px-8 py-9" style={{ background: "#fff", borderRadius: "24px" }}>
+              <span
+                className="inline-block rounded-[30px] px-3 py-1 text-xs font-semibold uppercase tracking-[1px]"
+                style={{ background: "var(--brand)", color: "#fff", alignSelf: "flex-start" }}
+              >
+                {webinar.badge}
+              </span>
+              <h3 className="text-[var(--ink)]" style={{ margin: "18px 0 0", fontSize: "22px", fontWeight: 600 }}>
+                {webinar.title}
+              </h3>
+              <p className="mt-4 flex-1 text-[var(--ink-soft)]" style={{ fontSize: "16px", lineHeight: 1.7 }}>
+                {webinar.text}
+              </p>
+              <div className="mt-6">
+                <a href="#jelentkezes" style={heroPillStyle}>
+                  Jelentkezem
+                </a>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
 
-    {/* A TÁMOGATÁS MÉRTÉKE — elszámolható költségek */}
-    <section className="w-full">
-      <div className="mx-auto max-w-[var(--container)] px-6 pb-16 md:pb-24">
-        <div
-          className="grid grid-cols-1 gap-8 px-8 py-12 md:grid-cols-[0.95fr_1.05fr] md:gap-12 md:px-12 md:py-14"
-          style={{ background: "var(--surface-3)", borderRadius: "28px" }}
-        >
-          <div>
-            <Eyebrow>A támogatás mértéke</Eyebrow>
-            <h2
-              className="text-[var(--ink)]"
-              style={{ marginTop: "22px", fontSize: "30px", fontWeight: 600, lineHeight: 1.2 }}
-            >
-              Mekkora támogatás igényelhető, és mire használható fel?
-            </h2>
-            <p className="mt-4 text-[var(--ink-soft)]" style={{ fontSize: "16px", lineHeight: 1.7 }}>
-              A sikeres pályázók legfeljebb 2 500 000 Ft vissza nem térítendő támogatásban részesülhetnek,
-              amely az akkumulátoros energiatároló rendszer beszerzéséhez és telepítéséhez kapcsolódó
-              költségek széles körét fedezheti. Ha a beruházás összköltsége meghaladja a támogatási
-              összeget, a különbözet önerőből finanszírozandó.
-            </p>
-            <p className="mt-4 text-[var(--ink-muted)]" style={{ fontSize: "14px", lineHeight: 1.65 }}>
-              A felhívás megjelenése előtt felmerült költségek nem számolhatók el, és a lakóingatlan teljes
-              elektromos hálózatának korszerűsítése sem minősül elszámolható költségnek.
-            </p>
-          </div>
+    {/* KIVITELEZŐ-PARTNER */}
+    <section className="w-full py-16 md:py-20">
+      <div className="mx-auto max-w-[var(--container)] px-6">
+        <div className="mx-auto text-center" style={{ maxWidth: "900px" }}>
+          <Eyebrow>Kivitelezés</Eyebrow>
+          <h2 className="mx-auto text-[var(--ink)]" style={{ marginTop: "18px", fontSize: "30px", fontWeight: 600, lineHeight: 1.25, maxWidth: "900px" }}>
+            Válassza az A1 Solar Kft.-t megbízható kivitelező partnerként az Otthoni Energiatároló Programban
+          </h2>
+          <p className="mx-auto mt-5 text-[var(--ink-soft)]" style={{ fontSize: "17px", lineHeight: 1.7, maxWidth: "820px" }}>
+            Regisztrált kivitelezőként nemcsak az ajánlatkéréstől a megvalósításig kísérjük végig, hanem az
+            energiatároló rendszer teljes élettartama alatt partnerei maradunk – a pályázat lezárása után sem
+            engedjük el a kezét.
+          </p>
+        </div>
 
-          <div>
-            <p
-              className="text-[var(--ink)]"
-              style={{ margin: 0, fontSize: "15px", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.5px" }}
-            >
-              Elszámolható költségek a támogatás terhére
-            </p>
-            <ul className="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2" style={{ listStyle: "none", padding: 0, margin: 0 }}>
-              {ELIGIBLE_COSTS.map((cost) => (
-                <li key={cost} className="flex items-start gap-2.5">
-                  <CheckIcon />
-                  <span className="text-[var(--ink-soft)]" style={{ fontSize: "14px", lineHeight: 1.5 }}>
-                    {cost}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </div>
+        <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3">
+          {PARTNER_STEPS.map((step) => (
+            <div key={step.title} className="flex flex-col px-8 py-9" style={{ background: "var(--surface-3)", borderRadius: "24px" }}>
+              <h3 className="text-[var(--ink)]" style={{ margin: 0, fontSize: "20px", fontWeight: 600, lineHeight: 1.3 }}>
+                {step.title}
+              </h3>
+              <p className="mt-4 flex-1 text-[var(--ink-soft)]" style={{ fontSize: "15px", lineHeight: 1.65 }}>
+                {step.text}
+              </p>
+              <div className="mt-6">
+                <a href="#jelentkezes" style={{ ...heroPillStyle, padding: "12px 24px" }}>
+                  {step.cta}
+                </a>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
 
-    {/* CSOMAGOK */}
-    <section className="w-full">
-      <div className="mx-auto max-w-[var(--container)] px-6 pb-16 md:pb-24">
+    {/* CSOMAGAJÁNLATOK — márkánként */}
+    <section className="w-full py-16 md:py-20" style={{ background: "var(--surface-3)" }}>
+      <div className="mx-auto max-w-[var(--container)] px-6">
         <div className="text-center">
           <Eyebrow>Csomagok</Eyebrow>
-          <h2
-            className="mx-auto text-[var(--ink)]"
-            style={{ marginTop: "22px", fontSize: "30px", fontWeight: 600, lineHeight: 1.18, maxWidth: "820px" }}
-          >
+          <h2 className="mx-auto text-[var(--ink)]" style={{ marginTop: "18px", fontSize: "30px", fontWeight: 600, lineHeight: 1.2, maxWidth: "820px" }}>
             Csomagajánlataink
           </h2>
-          <p
-            className="mx-auto mt-5 text-[var(--ink-soft)]"
-            style={{ fontSize: "17px", lineHeight: 1.7, maxWidth: "860px" }}
-          >
-            Az alábbi csomagajánlatokat kifejezetten az Otthoni Energiatároló Program feltételeihez
-            igazítva állítottuk össze. A csomagok tartalmazzák a teljes körű tervezést és
-            engedélyeztetést, a pályázatírást és projektmenedzsmentet, valamint – a program aktuális
-            feltételei mellett – az ingyenes padlásfödém szigetelést is.
+          <p className="mx-auto mt-5 text-[var(--ink-soft)]" style={{ fontSize: "17px", lineHeight: 1.7, maxWidth: "900px" }}>
+            Az alábbi csomagajánlatokat kifejezetten az Otthoni Energiatároló Program feltételeihez igazítva
+            állítottuk össze. A csomagok tartalmazzák a teljes körű tervezést és engedélyeztetést, a pályázatírást
+            és projektmenedzsmentet, valamint – a program aktuális feltételei mellett – az ingyenes padlásfödém
+            szigetelést is. Célunk, hogy ügyfeleink számára a beruházás átlátható, biztonságos és gördülékeny
+            legyen a tervezéstől egészen a megvalósításig.
           </p>
         </div>
 
         <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {PACKAGES.map((pkg) => (
             <div
-              key={pkg.name}
+              key={pkg.brand}
               className="flex flex-col overflow-hidden"
               style={{
-                background: "var(--surface-3)",
+                background: "#fff",
                 borderRadius: "24px",
                 border: Boolean(pkg.featured) ? "2px solid var(--brand)" : "2px solid transparent",
               }}
@@ -521,15 +491,16 @@ export const LakossagiEnergiataroloTamogatas = () => (
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={pkg.image}
-                  alt={pkg.name}
+                  alt={pkg.brand}
                   loading="lazy"
                   style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
                 />
               </div>
               <div className="flex flex-1 flex-col px-6 py-7">
                 <div className="flex items-center justify-between gap-2">
-                  <h3 className="text-[var(--ink)]" style={{ margin: 0, fontSize: "20px", fontWeight: 700 }}>
-                    {pkg.name}
+                  {/* Márka szerinti csoport-cím */}
+                  <h3 className="text-[var(--ink)]" style={{ margin: 0, fontSize: "19px", fontWeight: 700 }}>
+                    {pkg.brand}
                   </h3>
                   {Boolean(pkg.featured) ? (
                     <span
@@ -541,10 +512,10 @@ export const LakossagiEnergiataroloTamogatas = () => (
                   ) : null}
                 </div>
 
-                <p className="mt-4 text-[var(--ink-muted)]" style={{ margin: "16px 0 0", fontSize: "13px" }}>
+                <p className="text-[var(--ink-muted)]" style={{ margin: "18px 0 0", fontSize: "13px" }}>
                   Önerő
                 </p>
-                <p className="text-[var(--ink)]" style={{ margin: "2px 0 0", fontSize: "20px", fontWeight: 700 }}>
+                <p className="text-[var(--ink)]" style={{ margin: "2px 0 0", fontSize: "19px", fontWeight: 700 }}>
                   {pkg.ownFund}
                 </p>
 
@@ -564,16 +535,8 @@ export const LakossagiEnergiataroloTamogatas = () => (
 
                 <div className="mt-6">
                   <a
-                    href="#ajanlatkeres"
-                    style={{
-                      display: "block",
-                      textAlign: "center",
-                      background: "var(--brand)",
-                      color: "#fff",
-                      padding: "12px 20px",
-                      borderRadius: "9999px",
-                      fontWeight: 500,
-                    }}
+                    href="#jelentkezes"
+                    style={{ display: "block", textAlign: "center", background: "var(--brand)", color: "#fff", padding: "12px 20px", borderRadius: "9999px", fontWeight: 500 }}
                   >
                     Érdekel a csomag
                   </a>
@@ -583,223 +546,25 @@ export const LakossagiEnergiataroloTamogatas = () => (
           ))}
         </div>
 
-        <div className="mt-12 flex flex-col items-center gap-6 md:flex-row md:justify-center">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/wp-content/uploads/2025/10/ingyenespadlasszigeteles.png"
-            alt="Ingyenes padlásfödém szigetelés"
-            loading="lazy"
-            style={{ height: "88px", width: "auto", objectFit: "contain" }}
-          />
-          <p
-            className="text-center text-[var(--ink-soft)] md:text-left"
-            style={{ fontSize: "16px", lineHeight: 1.6, maxWidth: "460px" }}
-          >
-            Kattints a további csomagajánlataink gombra, és nézd meg a teljes kínálatot.
+        <div className="mt-12 text-center">
+          <p className="mx-auto text-[var(--ink-soft)]" style={{ fontSize: "16px", lineHeight: 1.6, maxWidth: "640px" }}>
+            Kattintson a további csomagajánlataink gombra, és nézze meg a teljes kínálatot.
           </p>
-          <a
-            href="#ajanlatkeres"
-            style={{
-              display: "inline-block",
-              background: "var(--brand)",
-              color: "#fff",
-              padding: "14px 30px",
-              borderRadius: "9999px",
-              fontWeight: 500,
-            }}
-          >
-            További csomagajánlataink
-          </a>
-        </div>
-      </div>
-    </section>
-
-    {/* FOLYAMAT — jelentkezés és ütemezés */}
-    <section className="w-full">
-      <div className="mx-auto max-w-[var(--container)] px-6 pb-16 md:pb-24">
-        <div className="text-center">
-          <Eyebrow>Jelentkezési folyamat</Eyebrow>
-          <h2
-            className="mx-auto text-[var(--ink)]"
-            style={{ marginTop: "22px", fontSize: "30px", fontWeight: 600, lineHeight: 1.18, maxWidth: "820px" }}
-          >
-            Mikor és hogyan lehet jelentkezni?
-          </h2>
-          <p
-            className="mx-auto mt-5 text-[var(--ink-soft)]"
-            style={{ fontSize: "17px", lineHeight: 1.7, maxWidth: "820px" }}
-          >
-            A pályázatok kizárólag elektronikus úton nyújthatók be a pályázati portálon keresztül, KAÜ-azonosítással
-            (Ügyfélkapu+ vagy Digitális Állampolgár). A folyamat két, egymásra épülő ütemből áll.
-          </p>
-        </div>
-
-        <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2">
-          {TIMELINE.map((step) => (
-            <div
-              key={step.no}
-              className="flex gap-5 px-8 py-8"
-              style={{ background: "var(--surface-3)", borderRadius: "24px" }}
-            >
-              <span
-                className="flex items-center justify-center"
-                style={{
-                  flexShrink: 0,
-                  width: "52px",
-                  height: "52px",
-                  borderRadius: "9999px",
-                  background: "var(--brand)",
-                  color: "#fff",
-                  fontSize: "20px",
-                  fontWeight: 700,
-                }}
-              >
-                {step.no}
-              </span>
-              <div>
-                <h3 className="text-[var(--ink)]" style={{ margin: 0, fontSize: "19px", fontWeight: 600 }}>
-                  {step.title}
-                </h3>
-                <p style={{ margin: "6px 0 0", fontSize: "14px", fontWeight: 600, color: "var(--brand)" }}>
-                  {step.period}
-                </p>
-                <p className="mt-3 text-[var(--ink-soft)]" style={{ fontSize: "15px", lineHeight: 1.6 }}>
-                  {step.text}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    {/* KIFIZETÉS */}
-    <section className="w-full">
-      <div className="mx-auto max-w-[var(--container)] px-6 pb-16 md:pb-24">
-        <div className="text-center">
-          <Eyebrow>Kifizetések</Eyebrow>
-          <h2
-            className="mx-auto text-[var(--ink)]"
-            style={{ marginTop: "22px", fontSize: "30px", fontWeight: 600, lineHeight: 1.18, maxWidth: "820px" }}
-          >
-            Hogyan történik a támogatás kifizetése?
-          </h2>
-        </div>
-
-        <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3">
-          {PAYOUTS.map((phase) => (
-            <div
-              key={phase.no}
-              className="flex flex-col px-8 py-8"
-              style={{ background: "var(--surface-3)", borderRadius: "24px" }}
-            >
-              <span
-                className="flex items-center justify-center"
-                style={{
-                  width: "44px",
-                  height: "44px",
-                  borderRadius: "9999px",
-                  background: "rgba(194,29,32,0.14)",
-                  color: "var(--brand-dark)",
-                  fontSize: "18px",
-                  fontWeight: 700,
-                }}
-              >
-                {phase.no}
-              </span>
-              <h3 className="text-[var(--ink)]" style={{ margin: "18px 0 0", fontSize: "20px", fontWeight: 600 }}>
-                {phase.title}
-              </h3>
-              <p style={{ margin: "4px 0 0", fontSize: "22px", fontWeight: 700, color: "var(--brand)" }}>
-                {phase.amount}
-              </p>
-              <p className="mt-4 text-[var(--ink-soft)]" style={{ fontSize: "15px", lineHeight: 1.65 }}>
-                {phase.text}
-              </p>
-            </div>
-          ))}
-        </div>
-
-        <p
-          className="mx-auto mt-8 text-center text-[var(--ink-muted)]"
-          style={{ fontSize: "14px", lineHeight: 1.6, maxWidth: "760px" }}
-        >
-          Amennyiben a beruházás teljes költsége meghaladja a támogatás maximális összegét, a különbözetet
-          a pályázó önerőként köteles megfizetni a kivitelező részére. Az önerő rendelkezésre állása a
-          támogatói okirat kiállításának és a kifizetések teljesítésének feltétele.
-        </p>
-      </div>
-    </section>
-
-    {/* WEBINÁRIUM */}
-    <section className="w-full">
-      <div className="mx-auto max-w-[var(--container)] px-6 pb-16 md:pb-24">
-        <div className="text-center">
-          <Eyebrow>Webinárium</Eyebrow>
-          <h2
-            className="mx-auto text-[var(--ink)]"
-            style={{ marginTop: "22px", fontSize: "30px", fontWeight: 600, lineHeight: 1.18, maxWidth: "820px" }}
-          >
-            Otthoni Energiatároló Program webinárium
-          </h2>
-          <p
-            className="mx-auto mt-5 text-[var(--ink-soft)]"
-            style={{ fontSize: "17px", lineHeight: 1.7, maxWidth: "820px" }}
-          >
-            Online webináriumot tartunk, ahol a 2. szakasz benyújtási folyamatát, a szükséges
-            tudnivalókat, valamint a következő lépéseket vesszük végig részletesen.
-          </p>
-        </div>
-
-        <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2">
-          {WEBINARS.map((webinar) => (
-            <div
-              key={webinar.title}
-              className="flex flex-col px-8 py-9"
-              style={{ background: "var(--surface-3)", borderRadius: "24px" }}
-            >
-              <span
-                className="inline-block rounded-[30px] px-3 py-1 text-xs font-semibold uppercase tracking-[1px]"
-                style={{ background: "var(--brand)", color: "#fff", alignSelf: "flex-start" }}
-              >
-                {webinar.badge}
-              </span>
-              <h3 className="text-[var(--ink)]" style={{ margin: "18px 0 0", fontSize: "22px", fontWeight: 600 }}>
-                {webinar.title}
-              </h3>
-              <p className="mt-4 flex-1 text-[var(--ink-soft)]" style={{ fontSize: "16px", lineHeight: 1.7 }}>
-                {webinar.text}
-              </p>
-              <div className="mt-6">
-                <a
-                  href="#ajanlatkeres"
-                  style={{
-                    display: "inline-block",
-                    background: "var(--brand)",
-                    color: "#fff",
-                    padding: "12px 28px",
-                    borderRadius: "9999px",
-                    fontWeight: 500,
-                  }}
-                >
-                  Jelentkezem
-                </a>
-              </div>
-            </div>
-          ))}
+          <div className="mt-6">
+            <a href="#jelentkezes" style={heroPillStyle}>
+              További csomagajánlataink
+            </a>
+          </div>
         </div>
       </div>
     </section>
 
     {/* EXTRA ELŐNYÖK */}
-    <section className="w-full">
-      <div className="mx-auto max-w-[var(--container)] px-6 pb-16 md:pb-24">
+    <section className="w-full py-16 md:py-20">
+      <div className="mx-auto max-w-[var(--container)] px-6">
         <div className="text-center">
           <Eyebrow>Extra előnyök</Eyebrow>
-          <h2
-            className="mx-auto text-[var(--ink)]"
-            style={{ marginTop: "22px", fontSize: "30px", fontWeight: 600, lineHeight: 1.18, maxWidth: "820px" }}
-          >
+          <h2 className="mx-auto text-[var(--ink)]" style={{ marginTop: "18px", fontSize: "30px", fontWeight: 600, lineHeight: 1.2, maxWidth: "820px" }}>
             A pályázat és a kivitelezés nálunk csak a kezdet
           </h2>
           <p className="mx-auto mt-5 text-[var(--ink-soft)]" style={{ fontSize: "17px", maxWidth: "620px" }}>
@@ -811,160 +576,318 @@ export const LakossagiEnergiataroloTamogatas = () => (
           {PERKS.map((perk) => (
             <div
               key={perk.title}
-              className="flex flex-col px-8 py-9"
-              style={{
-                background: "rgba(194,29,32,0.06)",
-                borderRadius: "24px",
-                borderLeft: "4px solid var(--brand)",
-              }}
+              className="flex flex-col overflow-hidden"
+              style={{ background: "var(--surface-3)", borderRadius: "24px" }}
             >
-              <h3 className="text-[var(--ink)]" style={{ margin: 0, fontSize: "22px", fontWeight: 600, lineHeight: 1.25 }}>
-                {perk.title}
-              </h3>
-              <p className="mt-4 flex-1 text-[var(--ink-soft)]" style={{ fontSize: "16px", lineHeight: 1.7 }}>
-                {perk.text}
-              </p>
-              <p className="mt-5 text-[var(--ink-muted)]" style={{ margin: "20px 0 0", fontSize: "13px" }}>
-                Szabályzat: promóciós szabályzat
-              </p>
+              <div style={{ height: "200px", overflow: "hidden", background: "#fff" }}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={perk.image}
+                  alt={perk.title}
+                  loading="lazy"
+                  style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                />
+              </div>
+              <div className="flex flex-1 flex-col px-8 py-8">
+                <h3 className="text-[var(--ink)]" style={{ margin: 0, fontSize: "22px", fontWeight: 600, lineHeight: 1.25 }}>
+                  {perk.title}
+                </h3>
+                <p className="mt-4 flex-1 text-[var(--ink-soft)]" style={{ fontSize: "16px", lineHeight: 1.7 }}>
+                  {perk.text}
+                </p>
+                <p className="text-[var(--ink-muted)]" style={{ margin: "20px 0 0", fontSize: "13px" }}>
+                  Szabályzat: promóciós szabályzat
+                </p>
+              </div>
             </div>
           ))}
         </div>
       </div>
     </section>
 
-    {/* MŰSZAKI + IDŐKERET rövid kiemelés */}
-    <section className="w-full">
-      <div className="mx-auto max-w-[var(--container)] px-6 pb-16 md:pb-24">
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-          <div className="px-8 py-9" style={{ background: "var(--surface-3)", borderRadius: "24px" }}>
-            <h3 className="text-[var(--ink)]" style={{ margin: 0, fontSize: "20px", fontWeight: 600 }}>
-              Legalább 10 kWh kapacitás
-            </h3>
-            <p className="mt-3 text-[var(--ink-soft)]" style={{ fontSize: "15px", lineHeight: 1.65 }}>
-              Az energiatároló kizárólag a napelemes rendszer DC oldalához, közös hibrid inverterre
-              csatlakoztatható. Az AC oldali csatlakozás nem támogatható.
-            </p>
+    {/* TERMÉKSZEKCIÓ — támogatási részletek, kép + szöveg */}
+    <section className="w-full py-16 md:py-20" style={{ background: "var(--surface-3)" }}>
+      <div className="mx-auto max-w-[var(--container)] px-6">
+        <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-2 md:gap-14">
+          <div style={{ borderRadius: "24px", overflow: "hidden" }}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/wp-content/uploads/2025/12/Uj-lakossagi-energiatarolos-tamogatasi-program-indul-1024x667.png"
+              alt="Új lakossági energiatárolós támogatási program indul"
+              loading="lazy"
+              style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+            />
           </div>
-          <div className="px-8 py-9" style={{ background: "var(--surface-3)", borderRadius: "24px" }}>
-            <h3 className="text-[var(--ink)]" style={{ margin: 0, fontSize: "20px", fontWeight: 600 }}>
-              24 hónap a megvalósításra
-            </h3>
-            <p className="mt-3 text-[var(--ink-soft)]" style={{ fontSize: "15px", lineHeight: 1.65 }}>
-              A beruházást a Támogatói okirat hatályba lépésétől számított legfeljebb 24 hónapon belül kell
-              megvalósítani.
-            </p>
-          </div>
-          <div className="px-8 py-9" style={{ background: "var(--surface-3)", borderRadius: "24px" }}>
-            <h3 className="text-[var(--ink)]" style={{ margin: 0, fontSize: "20px", fontWeight: 600 }}>
-              Csak megbízható gyártók
-            </h3>
-            <p className="mt-3 text-[var(--ink-soft)]" style={{ fontSize: "15px", lineHeight: 1.65 }}>
-              Az energiatárolók esetében a biztonság és a hosszú távú megbízhatóság kiemelt szempont –
-              kizárólag bevizsgált gyártók megoldásaival dolgozunk.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    {/* MIÉRT VÁLASSZON MINKET */}
-    <section className="w-full">
-      <div className="mx-auto max-w-[var(--container)] px-6 pb-16 md:pb-24">
-        <div
-          className="grid grid-cols-1 gap-8 px-8 py-12 md:grid-cols-[1fr_1.1fr] md:gap-12 md:px-12 md:py-14"
-          style={{ background: "var(--surface-3)", borderRadius: "28px" }}
-        >
           <div>
-            <Eyebrow>Cégünkről</Eyebrow>
-            <h2
-              className="text-[var(--ink)]"
-              style={{ marginTop: "22px", fontSize: "30px", fontWeight: 600, lineHeight: 1.2 }}
-            >
-              Miért válasszon minket?
+            <Eyebrow>Támogatási részletek</Eyebrow>
+            <h2 className="text-[var(--ink)]" style={{ marginTop: "18px", fontSize: "30px", fontWeight: 600, lineHeight: 1.2 }}>
+              Akár 2,5 millió Ft támogatás energiatárolóra
             </h2>
-            <p className="mt-4 text-[var(--ink-soft)]" style={{ fontSize: "17px", lineHeight: 1.7 }}>
-              Az A1 Solar Kft. több mint egy évtizede foglalkozik napelemes rendszerek és energiatárolási
-              megoldások tervezésével és kivitelezésével. Tapasztalatunk lehetővé teszi, hogy ügyfeleink
-              számára biztonságos, hosszú távon is megbízható rendszereket kínáljunk.
+            <p className="mt-5 text-[var(--ink-soft)]" style={{ fontSize: "16px", lineHeight: 1.75 }}>
+              A lakossági energiatároló támogatási program 100 milliárd forintos keretösszeggel indul, és
+              háztartásonként legfeljebb 2,5 millió forint vissza nem térítendő támogatást biztosít akkumulátoros
+              energiatároló rendszer telepítésére. A támogatás elsősorban legalább 10 kWh kapacitású lakossági
+              energiatárolók létesítésére vehető igénybe. A jelenlegi piaci árak mellett a támogatás akár 100%-os
+              finanszírozást is jelenthet.
+            </p>
+            <p className="mt-4 text-[var(--ink-soft)]" style={{ fontSize: "16px", lineHeight: 1.75 }}>
+              A konstrukció célja, hogy a családok a napközben megtermelt villamos energiát minél nagyobb arányban
+              saját otthonukban használják fel, ezáltal csökkentve a villanyszámlát, növelve az energiafüggetlenséget,
+              valamint mérsékelve a villamosenergia-hálózat terhelését.
+            </p>
+            <div className="mt-8">
+              <a href="#jelentkezes" style={heroPillStyle}>
+                Indítsd el velünk a kivitelezést!
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* TÁJÉKOZTATÓ SZEKCIÓK — kifejtve (nem akkordeon) */}
+
+    <InfoSection
+      eyebrow="Kinek ajánlott?"
+      title="Kiknek jelent ideális megoldást a program?"
+      intro="A támogatás elsősorban azoknak a háztartásoknak kínál valódi előnyt, amelyek már kikerültek az éves szaldóelszámolásból, vagy legkésőbb 2030. december 31-ig átkerülnek abból. Ez leggyakrabban a 2015 előtt, illetve a közvetlenül azt követő években telepített rendszerek esetében fordul elő. Emellett a pályázat azok számára is elérhető, akik állami támogatás nélkül, önerőből létesítettek napelemes rendszert, és jelenleg bruttó elszámolásban vannak."
+    >
+      <SubHead>A pályázatot nagykorú, cselekvőképes magánszemélyek nyújthatják be, akik:</SubHead>
+      <Bullets items={ELIGIBLE_APPLICANTS} />
+      <SubHead>A beruházás kizárólag lakhatási célú ingatlanon valósítható meg, így:</SubHead>
+      <Bullets items={PROPERTY_TYPES} />
+      <SubHead>Mire kell figyelni a megvalósítás helyszínén?</SubHead>
+      <Body>
+        A projekt megvalósításának helyszínén gazdasági tevékenység nem folytatható, még kiegészítő jelleggel sem.
+        Gazdasági tevékenységnek minősül, ha az ingatlanban tényleges üzleti működés zajlik – például termelés,
+        szolgáltatásnyújtás vagy ügyfélfogadás.
+      </Body>
+      <Body>
+        Fontos változás: adminisztratív székhely már elfogadható. Önmagában nem kizáró ok, ha az ingatlan csupán
+        adminisztratív jelleggel van bejelentve székhelyként (vagy telephelyként/fióktelepként), például az alábbi
+        szervezeti formák esetén:
+      </Body>
+      <Bullets items={ADMIN_ORG_FORMS} />
+      <Body>
+        Ennek feltétele, hogy nyilatkozattal igazolható legyen, hogy a gazdasági tevékenység ténylegesen nem az
+        ingatlanban történik.
+      </Body>
+      <SubHead>A támogatás nem vehető igénybe azon pályázók esetében, akiknél az alábbi feltételek bármelyike fennáll:</SubHead>
+      <Bullets items={EXCLUSIONS} />
+    </InfoSection>
+
+    <InfoSection
+      eyebrow="A támogatás mértéke"
+      title="Mekkora támogatás igényelhető, és mire használható fel?"
+      intro="A sikeres pályázók legfeljebb 2 500 000 Ft vissza nem térítendő támogatásban részesülhetnek, amely az akkumulátoros energiatároló rendszer beszerzéséhez és telepítéséhez kapcsolódó költségek széles körét fedezheti. Amennyiben a beruházás összköltsége meghaladja a támogatási összeget, a különbözet önerőből finanszírozandó."
+      tinted
+    >
+      <SubHead>Elszámolható költségek a támogatás terhére:</SubHead>
+      <Bullets items={ELIGIBLE_COSTS} />
+      <Body>
+        Fontos megjegyezni, hogy a felhívás megjelenése előtt felmerült költségek nem számolhatók el, továbbá a
+        lakóingatlan teljes elektromos hálózatának korszerűsítése sem minősül elszámolható költségnek.
+      </Body>
+      <SubHead>Önállóan is támogatható elemek:</SubHead>
+      <Bullets items={STANDALONE_ELIGIBLE} />
+      <Body>
+        Meglévő napelemes rendszer fejlesztésekor paneloldali bővítés nem támogatható, akkor sem, ha inverter- vagy
+        energiatároló-csere történik. Bizonyos tevékenységek – így különösen a pályázati adminisztráció, a mérőhely
+        szabványosítása, a fázisbővítés, valamint a tervezési és engedélyezési feladatok – önállóan nem támogathatók,
+        azonban elszámolhatók a támogatás terhére, amennyiben szervesen kapcsolódnak az akkumulátoros energiatároló
+        rendszer telepítéséhez.
+      </Body>
+    </InfoSection>
+
+    <InfoSection
+      eyebrow="Jelentkezési folyamat"
+      title="Mikor és hogyan lehet jelentkezni?"
+      intro="Az Otthoni Energiatároló Programra a pályázatok kizárólag elektronikus úton nyújthatók be az nffku.hu pályázati portálon keresztül. A pályázat benyújtásához KAÜ-azonosítás szükséges, amely az alábbi módokon történhet:"
+    >
+      <Bullets items={KAU_METHODS} />
+      <Body>
+        Amennyiben a pályázó nem kíván saját KAÜ-azonosítással eljárni, lehetőség van arra is, hogy a pályázatot
+        meghatalmazott személy (például kivitelező vagy pályázati közreműködő) nyújtsa be a nevében, megfelelő
+        meghatalmazás birtokában. A pályázati felület közérthető és strukturált; az első – pályázati – szakasz során
+        kizárólag az alapvető jogosultsági feltételek és nyilatkozatok megadása szükséges.
+      </Body>
+      <SubHead>A program ütemezése:</SubHead>
+      <Bullets
+        items={[
+          "Felhívás megjelenése: 2026. január 15.",
+          "1. ütem – a pályázati űrlap kitöltése és benyújtása: 2026. február 2. (hétfő) 10:00 órától a felfüggesztő vagy lezáró közlemény megjelenéséig, de legkésőbb 2026. március 15. (vasárnap) 17:00 óráig.",
+          "2. ütem – jogosultság igazolása, a projekt műszaki és szakmai tartalmának bemutatása, a vállalkozási szerződés megkötése és a dokumentumok benyújtása: 2026. március 16. (hétfő) 10:00 órától és legkésőbb 2026. szeptember 30-ig.",
+        ]}
+      />
+      <Body>
+        Fontos: a 2. ütem nem indul el automatikusan 2026. március 16-án – az csak az 1. ütem lezárását és a döntést
+        követően, a jogosult pályázók számára nyílik meg. A fenntartási időszak 3 év, amely a záró elszámolás
+        elfogadásának napjától kezdődik – nem a kivitelezés befejezésétől és nem a szolgáltatói átvétel időpontjától
+        számítódik.
+      </Body>
+    </InfoSection>
+
+    <InfoSection
+      eyebrow="Elbírálás"
+      title="Hogyan történik a pályázatok elbírálása?"
+      intro="Az Otthoni Energiatároló Programra minden olyan nagykorú magánszemély pályázhat, aki már rendelkezik napelemes rendszerrel, vagy a projekt keretében vállalja annak telepítését. A támogatási kérelmek elbírálása meghatározott preferenciarendszer alapján, több lépcsőben történik."
+      tinted
+    >
+      <SubHead>Első prioritási csoport – elsőként azok a háztartások részesülnek előnyben:</SubHead>
+      <Bullets items={PRIORITY_1} />
+      <SubHead>Második prioritási csoport:</SubHead>
+      <Bullets items={["akik 5000 fő alatti településen rendelkeznek bejelentett állandó lakóhellyel."]} />
+      <SubHead>Hogyan alakul ki a sorrend?</SubHead>
+      <Bullets
+        items={[
+          "Az első prioritási csoporton belül: településméret – a kisebb lélekszámú települések előnyt élveznek; azonos településméret esetén a korábbi beadás élvez előnyt.",
+          "A második prioritási csoportban kizárólag a pályázat beadásának időpontja határozza meg a sorrendet.",
+          "Minden további pályázó esetében ismét a település lélekszáma, majd a pályázat beadásának időpontja számít.",
+        ]}
+      />
+    </InfoSection>
+
+    <InfoSection
+      eyebrow="Kifizetések"
+      title="Hogyan történik a támogatás kifizetése?"
+    >
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+        {PAYOUTS.map((phase) => (
+          <div key={phase.no} className="flex flex-col px-8 py-8" style={{ background: "var(--surface-3)", borderRadius: "24px" }}>
+            <span
+              className="flex items-center justify-center"
+              style={{ width: "44px", height: "44px", borderRadius: "9999px", background: "rgba(194,29,32,0.14)", color: "var(--brand-dark)", fontSize: "18px", fontWeight: 700 }}
+            >
+              {phase.no}
+            </span>
+            <h3 className="text-[var(--ink)]" style={{ margin: "18px 0 0", fontSize: "20px", fontWeight: 600 }}>
+              {phase.title}
+            </h3>
+            <p style={{ margin: "4px 0 0", fontSize: "22px", fontWeight: 700, color: "var(--brand)" }}>{phase.amount}</p>
+            <p className="mt-4 text-[var(--ink-soft)]" style={{ fontSize: "15px", lineHeight: 1.65 }}>
+              {phase.text}
             </p>
           </div>
-
-          <ul className="flex flex-col gap-4" style={{ listStyle: "none", padding: 0, margin: 0 }}>
-            {GUARANTEES.map((item) => (
-              <li key={item} className="flex items-start gap-3">
-                <CheckIcon />
-                <span className="text-[var(--ink-soft)]" style={{ fontSize: "16px", lineHeight: 1.6 }}>
-                  {item}
-                </span>
-              </li>
-            ))}
-          </ul>
-        </div>
+        ))}
       </div>
-    </section>
+      <p className="mt-8 text-[var(--ink-soft)]" style={{ fontSize: "16px", lineHeight: 1.75, maxWidth: "920px" }}>
+        Amennyiben a beruházás teljes költsége meghaladja a támogatás maximális összegét, a különbözetet a pályázó
+        önerőként köteles megfizetni a kivitelező részére. Az önerő rendelkezésre állása a támogatói okirat
+        kiállításának, illetve a kifizetések teljesítésének feltétele.
+      </p>
+    </InfoSection>
 
-    {/* GYIK */}
-    <section className="w-full">
-      <div className="mx-auto max-w-[var(--container)] px-6 pb-16 md:pb-24">
-        <div className="text-center">
-          <Eyebrow>Gyakori kérdések</Eyebrow>
-          <h2
-            className="mx-auto text-[var(--ink)]"
-            style={{ marginTop: "22px", fontSize: "30px", fontWeight: 600, lineHeight: 1.18, maxWidth: "820px" }}
-          >
-            Kérdésed maradt?
-          </h2>
-        </div>
+    <InfoSection
+      eyebrow="Műszaki feltételek"
+      title="Milyen műszaki feltételeknek kell megfelelni?"
+      intro="A támogatás kizárólag olyan beruházások esetén vehető igénybe, amelyek maradéktalanul megfelelnek a pályázati felhívásban rögzített műszaki követelményeknek."
+      tinted
+    >
+      <SubHead>1. Energiatároló rendszerre vonatkozó követelmények:</SubHead>
+      <Bullets items={TECH_STORAGE} />
+      <SubHead>2. Inverterre vonatkozó szabályok:</SubHead>
+      <Bullets
+        items={[
+          "Meglévő rendszer esetén, ha invertercsere szükséges: az inverter maximális teljesítménye a csatlakozási szerződésben (POD) szereplő értékkel egyezhet meg, és legfeljebb 1 kW-tal növelhető. Ilyen csere esetén sem szűnik meg a szaldós elszámolás.",
+          "Meglévő rendszer fejlesztése esetén a napelem panelek bővítése nem támogatható, akkor sem, ha inverter- vagy energiatároló-csere történik.",
+          "Új rendszer telepítésekor az inverter maximális névleges teljesítménye 5 kW lehet, a napelem panelek összteljesítménye pedig legfeljebb az inverter névleges teljesítményének 120%-a, vagyis legfeljebb 6 kWp.",
+        ]}
+      />
+      <Body>
+        A támogatás kizárólag elosztóhálózathoz csatlakozó rendszerekre vehető igénybe. A szigetüzemű működés nem
+        támogatható, ugyanakkor a rendszer működhet visszatáplálás-mentes (visszwattos) üzemmódban, azaz a közcélú
+        hálózat felé aktív teljesítményt nem táplál be.
+      </Body>
+    </InfoSection>
 
-        <div className="mx-auto mt-10 flex flex-col gap-4" style={{ maxWidth: "880px" }}>
-          {FAQ.map((item) => (
-            <details
-              key={item.q}
-              className="px-7 py-5"
-              style={{ background: "var(--surface-3)", borderRadius: "20px" }}
-            >
-              <summary
-                className="flex cursor-pointer items-center justify-between text-[var(--ink)]"
-                style={{ fontSize: "18px", fontWeight: 600, listStyle: "none" }}
-              >
-                {item.q}
-              </summary>
-              <p className="mt-4 text-[var(--ink-soft)]" style={{ fontSize: "16px", lineHeight: 1.7 }}>
-                {item.a}
+    <InfoSection
+      eyebrow="Megvalósítás"
+      title="Mennyi idő áll rendelkezésre a megvalósításra?"
+    >
+      <Body>
+        A beruházást a Támogatói okirat hatályba lépésétől számított legfeljebb 24 hónapon belül kell megvalósítani,
+        amely elegendő időt biztosít a tervezésre, engedélyezésre és kivitelezésre.
+      </Body>
+    </InfoSection>
+
+    <InfoSection
+      eyebrow="Tudnivaló"
+      title="Mire figyeljen akkumulátor választáskor?"
+      tinted
+    >
+      <Body>
+        A lakossági energiatárolók piacán jelenleg jelentős kínálatbővülés tapasztalható – részben az elektromos
+        autóipar lassulásának következtében –, ami számos új gyártó megjelenését hozta magával. Bár ezek között sok
+        kedvező árú megoldás található, az energiatárolók esetében a biztonság és a hosszú távú megbízhatóság kiemelt
+        szempont.
+      </Body>
+      <Body>
+        Az ismeretlen eredetű vagy nem megfelelően minősített akkumulátorok használata komoly műszaki és biztonsági
+        kockázatot jelenthet, ezért kizárólag bevizsgált, megbízható gyártók által kínált energiatárolók alkalmazása
+        javasolt.
+      </Body>
+    </InfoSection>
+
+    <InfoSection
+      eyebrow="Cégünkről"
+      title="Miért válasszon minket?"
+      intro="Az A1 Solar Kft. több mint egy évtizede foglalkozik napelemes rendszerek és energiatárolási megoldások tervezésével és kivitelezésével. Tapasztalatunk lehetővé teszi, hogy ügyfeleink számára biztonságos, hosszú távon is megbízható rendszereket kínáljunk."
+    >
+      <ul className="flex flex-col gap-4" style={{ listStyle: "none", padding: 0, margin: "0 0 8px", maxWidth: "760px" }}>
+        {GUARANTEES.map((item) => (
+          <li key={item} className="flex items-start gap-3">
+            <CheckIcon />
+            <span className="text-[var(--ink-soft)]" style={{ fontSize: "16px", lineHeight: 1.6 }}>
+              {item}
+            </span>
+          </li>
+        ))}
+      </ul>
+      <Body>
+        Az A1 Solart az innováció, a fenntarthatóság és az ügyfélközpontú szemlélet jellemzi. Célunk, hogy a napelemes
+        rendszerekhez kapcsolódó energiatárolással valódi, mérhető megtakarítást és nagyobb energiafüggetlenséget
+        biztosítsunk a magyar háztartások számára.
+      </Body>
+    </InfoSection>
+
+    {/* ZÁRÓ ŰRLAP + KAPCSOLAT */}
+    <section id="jelentkezes" className="w-full py-16 md:py-24" style={{ background: "var(--surface-3)" }}>
+      <div className="mx-auto max-w-[var(--container)] px-6">
+        <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-14">
+          <div>
+            <Eyebrow>Kapcsolatfelvétel</Eyebrow>
+            <h2 className="text-[var(--ink)]" style={{ marginTop: "18px", fontSize: "30px", fontWeight: 600, lineHeight: 1.2 }}>
+              Töltse ki az alábbi űrlapot!
+            </h2>
+            <p className="mt-5 text-[var(--ink-soft)]" style={{ fontSize: "17px", lineHeight: 1.7, maxWidth: "560px" }}>
+              Az űrlap kitöltését követően munkatársunk 24 órán belül felveszi Önnel a kapcsolatot a megadott
+              elérhetőségei egyikén.
+            </p>
+
+            <div className="mt-10" style={{ background: "#fff", borderRadius: "24px", padding: "28px" }}>
+              <p className="text-[var(--ink)]" style={{ margin: 0, fontSize: "20px", fontWeight: 700 }}>
+                Beszéljünk a lehetőségeidről!
               </p>
-            </details>
-          ))}
-        </div>
-      </div>
-    </section>
+              <p className="mt-3 text-[var(--ink-soft)]" style={{ fontSize: "16px", lineHeight: 1.7 }}>
+                Ügyfélszolgálatunk hétköznap {SITE.supportHours} között elérhető – fordulj hozzá bizalommal!
+              </p>
+              <p className="text-[var(--ink-muted)]" style={{ margin: "18px 0 4px", fontSize: "13px", textTransform: "uppercase", letterSpacing: "0.5px" }}>
+                Ügyfélszolgálat
+              </p>
+              <a href={`tel:${SITE.phoneRaw}`} style={{ color: "var(--brand)", fontSize: "24px", fontWeight: 700 }}>
+                {SITE.phoneDisplay}
+              </a>
+            </div>
+          </div>
 
-    {/* AJÁNLATKÉRÉS */}
-    <section id="ajanlatkeres" className="w-full">
-      <div className="mx-auto max-w-[var(--container)] px-6 pb-16 md:pb-24">
-        <div className="text-center">
-          <Eyebrow>Kapcsolatfelvétel</Eyebrow>
-          <h2
-            className="mx-auto text-[var(--ink)]"
-            style={{ marginTop: "22px", fontSize: "30px", fontWeight: 600, lineHeight: 1.18, maxWidth: "820px" }}
-          >
-            Indítsd el velünk a kivitelezést!
-          </h2>
-          <p className="mt-4 text-[var(--ink-soft)]" style={{ fontSize: "17px" }}>
-            Ügyfélszolgálatunk hétköznap {SITE.supportHours} között elérhető:{" "}
-            <a href={`tel:${SITE.phoneRaw}`} style={{ color: "var(--brand)", fontWeight: 700 }}>
-              {SITE.phoneDisplay}
-            </a>
-          </p>
-        </div>
-
-        <div className="mt-10">
-          <ContactForm
-            bare
-            formName="Lakossági energiatároló támogatás"
-            heading="Kérd ingyenes kalkulációnkat!"
-            intro="Töltsd ki az űrlapot, és kollégánk segít kihasználni az Otthoni Energiatároló Program támogatását."
-          />
+          <div style={{ background: "#fff", borderRadius: "28px", padding: "8px" }}>
+            <ContactForm
+              bare
+              formName="Otthoni Energiatároló Program"
+              heading="Töltse ki az alábbi űrlapot!"
+              intro="Munkatársunk 24 órán belül felveszi Önnel a kapcsolatot."
+            />
+          </div>
         </div>
       </div>
     </section>
