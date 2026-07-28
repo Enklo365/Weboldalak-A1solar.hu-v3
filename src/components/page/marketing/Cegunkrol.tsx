@@ -108,13 +108,13 @@ export const Cegunkrol = () => (
             </h2>
             <div className="mt-6 flex flex-col gap-5">
               {STORY.map((p) => (
-                <p key={p.slice(0, 24)} className="text-lg leading-relaxed text-[var(--ink-soft)]">
+                <p key={p.slice(0, 24)} className="text-base leading-relaxed text-[var(--ink-soft)]">
                   {p}
                 </p>
               ))}
             </div>
           </div>
-          <div className="overflow-hidden rounded-[24px] aspect-[4/3] lg:aspect-auto" style={{ background: "var(--surface-3)" }}>
+          <div className="order-first overflow-hidden rounded-[24px] aspect-[4/3] lg:order-none lg:aspect-auto" style={{ background: "var(--surface-3)" }}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={AWARD_IMAGE}
