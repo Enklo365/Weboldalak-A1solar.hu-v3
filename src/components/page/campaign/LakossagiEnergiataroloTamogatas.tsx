@@ -409,7 +409,7 @@ export const LakossagiEnergiataroloTamogatas = () => (
         */}
         <div className="relative">
           {/* DESKTOP — teljes szélességű alakított kép notch-csal */}
-          <div className="relative hidden w-full lg:block" style={{ aspectRatio: "1192 / 571" }}>
+          <div className="relative hidden w-full lg:block" style={{ aspectRatio: "1192 / 520" }}>
             <div className="absolute inset-0" style={{ clipPath: `url(#${HERO_NOTCH_ID})` }}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
@@ -490,7 +490,7 @@ export const LakossagiEnergiataroloTamogatas = () => (
           {/* JELENTKEZÉSI FORM — mobil: kép/intro alatt flow-ban; desktop: a jobb-alsó notch-kivágásba ültetve, a kép alá lógva */}
           <div
             id="jelentkezes"
-            className="mt-8 lg:absolute lg:left-[46%] lg:right-0 lg:top-[52%] lg:z-20 lg:mt-0"
+            className="mt-8 lg:absolute lg:left-[47%] lg:right-0 lg:top-[74%] lg:z-20 lg:mt-0"
             style={{ scrollMarginTop: "var(--header-h)" }}
           >
             <OepHeroForm />
