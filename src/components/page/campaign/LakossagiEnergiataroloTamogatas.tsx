@@ -376,16 +376,18 @@ const heroPillStyle: CSSProperties = {
 };
 
 /**
- * "Lakossági energiatároló támogatás" (Otthoni Energiatároló Program) kampány-landing —
- * a valós a1solar.hu elrendezését követi: felül kétoszlopos hero (bal oldalon notch-os
- * kép + intro/garanciapontok, jobb oldalon a jelentkezési űrlap), majd alatta minden
- * tartalmi szekció (statisztika, webinárium, kivitelező-partner, csomagajánlatok, extra
- * előnyök, termékszekció, kifejtett tájékoztató szekciók és az ügyfélszolgálat-blokk)
+ * "Lakossági energiatároló támogatás" (Otthoni Energiatároló Program) kampány-landing.
+ * Hero: teljes szélességű, notch-kivágásos alakított kép (ServiceHero-mintára); a bal-alsó
+ * sarokban az eyebrow + cím + CTA, a jobb-alsó notch-kivágásba pedig a jelentkezési FORM
+ * van ültetve (desktopon abszolút, a kép alá lógva), a kép alatt balra az intro +
+ * garanciapontok. Mobilon egyszerű stack: kártya-kép, intro/garanciák, majd a form.
+ * A hero alatt minden tartalmi szekció (statisztika, webinárium, kivitelező-partner,
+ * csomagajánlatok, extra előnyök, termékszekció, tájékoztató szekciók, ügyfélszolgálat)
  * teljes szélességben, egymás alatt.
  */
 export const LakossagiEnergiataroloTamogatas = () => (
   <div className="w-full">
-    {/* HERO — kép + garanciák | jelentkezési űrlap */}
+    {/* HERO — notch-os kép, a jelentkezési űrlap a jobb-alsó notch-kivágásba ültetve */}
     <section className="w-full pt-8 md:pt-12">
       <svg width="0" height="0" className="absolute" aria-hidden focusable="false">
         <defs>
@@ -399,64 +401,105 @@ export const LakossagiEnergiataroloTamogatas = () => (
       </svg>
 
       <div className="container">
-        <div className="grid gap-10 lg:grid-cols-2 lg:gap-12 lg:items-start">
-          {/* BAL — notch-os kép overlay szöveggel + alatta intro/garanciák */}
-          <div>
-            <div className="relative w-full" style={{ aspectRatio: "1192 / 571" }}>
-              <div className="absolute inset-0" style={{ clipPath: `url(#${HERO_NOTCH_ID})` }}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="/wp-content/uploads/2023/11/210363746_m_normal_none.jpg"
-                  alt="Napelem telepítés a tetőn"
-                  style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "50% 55%" }}
-                />
-                <div className="absolute inset-0" style={{ background: HERO_GRADIENT }} />
-              </div>
-              <div className="absolute bottom-0 left-0 z-10 text-white" style={{ padding: "40px", maxWidth: "560px" }}>
-                <span
-                  className="inline-block rounded-full px-3 py-2 text-xs font-medium uppercase tracking-[1px] text-white"
-                  style={{ background: "rgba(255,255,255,0.2)", marginBottom: "20px" }}
-                >
-                  Otthoni Energiatároló Program
-                </span>
-                <h1 style={{ color: "#fff", fontSize: "clamp(28px, 3.4vw, 42px)", fontWeight: 300, lineHeight: 1.18, marginBottom: "24px" }}>
-                  Bízd ránk
-                  <br />
-                  <strong style={{ fontWeight: 700 }}>a kivitelezést!</strong>
-                </h1>
+        {/*
+          A relatív konténer magassága DESKTOP-on pontosan a kép magassága (csak a
+          desktop kép van flow-ban), így a form `top: 52%`-a a KÉP magasságához
+          igazodik. Az intro és a form abszolút, a kép alá lógnak; a következő
+          szekciótól a testvér térkitöltő tartja a távolságot.
+        */}
+        <div className="relative">
+          {/* DESKTOP — teljes szélességű alakított kép notch-csal */}
+          <div className="relative hidden w-full lg:block" style={{ aspectRatio: "1192 / 571" }}>
+            <div className="absolute inset-0" style={{ clipPath: `url(#${HERO_NOTCH_ID})` }}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/wp-content/uploads/2023/11/210363746_m_normal_none.jpg"
+                alt="Napelem telepítés a tetőn"
+                style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "50% 55%" }}
+              />
+              <div className="absolute inset-0" style={{ background: HERO_GRADIENT }} />
+            </div>
+            <div className="absolute bottom-0 left-0 z-10 text-white" style={{ padding: "40px", maxWidth: "560px" }}>
+              <span
+                className="inline-block rounded-full px-3 py-2 text-xs font-medium uppercase tracking-[1px] text-white"
+                style={{ background: "rgba(255,255,255,0.2)", marginBottom: "20px" }}
+              >
+                Otthoni Energiatároló Program
+              </span>
+              <h1 style={{ color: "#fff", fontSize: "clamp(28px, 3.4vw, 42px)", fontWeight: 300, lineHeight: 1.18, marginBottom: "24px" }}>
+                Bízd ránk
+                <br />
+                <strong style={{ fontWeight: 700 }}>a kivitelezést!</strong>
+              </h1>
+              <a href="#jelentkezes" style={{ ...heroPillStyle, padding: "12px 24px", fontSize: "15px" }}>
+                További információ
+              </a>
+            </div>
+          </div>
+
+          {/* MOBIL — lekerekített kártya a címmel (nincs notch-pozicionálás) */}
+          <div className="relative flex min-h-[340px] flex-col justify-end overflow-hidden rounded-[24px] p-6 text-white lg:hidden">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/wp-content/uploads/2023/11/210363746_m_normal_none.jpg"
+              alt="Napelem telepítés a tetőn"
+              className="absolute inset-0"
+              style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "50% 55%" }}
+            />
+            <div className="absolute inset-0" style={{ background: HERO_GRADIENT }} />
+            <div className="relative z-10">
+              <span
+                className="inline-block rounded-full text-xs font-medium uppercase tracking-[1px]"
+                style={{ background: "rgba(255,255,255,0.2)", padding: "6px 12px" }}
+              >
+                Otthoni Energiatároló Program
+              </span>
+              <h1 style={{ marginTop: "20px", color: "#fff", fontSize: "clamp(24px, 6.2vw, 30px)", fontWeight: 300, lineHeight: 1.2 }}>
+                Bízd ránk <strong style={{ fontWeight: 700 }}>a kivitelezést!</strong>
+              </h1>
+              <div className="mt-5">
                 <a href="#jelentkezes" style={{ ...heroPillStyle, padding: "12px 24px", fontSize: "15px" }}>
                   További információ
                 </a>
               </div>
             </div>
-
-            <div className="mt-8">
-              <p className="text-[var(--ink-soft)]" style={{ fontSize: "17px", lineHeight: 1.75 }}>
-                Az Otthoni Energiatároló Program keretében segítünk a pályázati adminisztrációban, a rendszer
-                kiválasztásában, tervezésében és kivitelezésében, hogy otthonod számára megbízható, hosszú távú megoldás
-                valósuljon meg.
-              </p>
-              <p className="text-[var(--ink)]" style={{ margin: "24px 0 16px", fontSize: "17px", fontWeight: 700 }}>
-                Amit az A1 Solar garantál:
-              </p>
-              <ul className="flex flex-col gap-4" style={{ listStyle: "none", padding: 0, margin: 0 }}>
-                {HERO_GUARANTEES.map((item) => (
-                  <li key={item} className="flex items-start gap-3">
-                    <CheckIcon />
-                    <span className="text-[var(--ink-soft)]" style={{ fontSize: "16px", lineHeight: 1.6 }}>
-                      {item}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </div>
           </div>
 
-          {/* JOBB — jelentkezési űrlap */}
-          <div id="jelentkezes" style={{ scrollMarginTop: "var(--header-h)" }}>
+          {/* INTRO + garanciák — mobil: kép alatt, teljes szélességben; desktop: a kép alatt balra (46%) */}
+          <div className="mt-8 lg:absolute lg:left-0 lg:top-full lg:mt-6 lg:w-[46%]">
+            <p className="text-[var(--ink-soft)]" style={{ fontSize: "17px", lineHeight: 1.75 }}>
+              Az Otthoni Energiatároló Program keretében segítünk a pályázati adminisztrációban, a rendszer
+              kiválasztásában, tervezésében és kivitelezésében, hogy otthonod számára megbízható, hosszú távú megoldás
+              valósuljon meg.
+            </p>
+            <p className="text-[var(--ink)]" style={{ margin: "24px 0 16px", fontSize: "17px", fontWeight: 700 }}>
+              Amit az A1 Solar garantál:
+            </p>
+            <ul className="flex flex-col gap-4" style={{ listStyle: "none", padding: 0, margin: 0 }}>
+              {HERO_GUARANTEES.map((item) => (
+                <li key={item} className="flex items-start gap-3">
+                  <CheckIcon />
+                  <span className="text-[var(--ink-soft)]" style={{ fontSize: "16px", lineHeight: 1.6 }}>
+                    {item}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* JELENTKEZÉSI FORM — mobil: kép/intro alatt flow-ban; desktop: a jobb-alsó notch-kivágásba ültetve, a kép alá lógva */}
+          <div
+            id="jelentkezes"
+            className="mt-8 lg:absolute lg:left-[46%] lg:right-0 lg:top-[52%] lg:z-20 lg:mt-0"
+            style={{ scrollMarginTop: "var(--header-h)" }}
+          >
             <OepHeroForm />
           </div>
+
+          {/* DESKTOP térkitöltő: helyet hagy a képen túllógó intronak/formnak, hogy ne érjen a következő szekcióra.
+              (A relatív konténeren KÍVÜL, testvérként — így nem növeli a konténer magasságát, a form top:52%-a marad a képhez kötve.) */}
         </div>
+        <div aria-hidden className="hidden lg:block" style={{ height: "400px" }} />
       </div>
     </section>
 
