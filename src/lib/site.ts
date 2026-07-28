@@ -40,29 +40,24 @@ export const MAIN_NAV: NavEntry[] = [
     href: "#",
     label: "Szolgáltatásaink",
     children: [
-      {
-        href: "/lakossagi-napelem-tisztitas-es-karbantartas",
-        label: "Lakossági napelem tisztítás és karbantartás",
-      },
-      {
-        href: "/vallalati-napelem-tisztitas-es-karbantartas",
-        label: "Vállalati napelem tisztítás és karbantartás",
-      },
-      { href: "/vallalati-energiatarolas", label: "Vállalati energiatárolás" },
-      { href: "/vallalati-napelem", label: "Vállalati napelem" },
       { href: "/lakossagi-napelem", label: "Lakossági napelem" },
-      { href: "/palyazatok", label: "Pályázatok" },
-      {
-        href: "/jedlik-anyos-energetikai-program",
-        label: "Jedlik Ányos Energetikai Program",
-      },
-      {
-        href: "/jedlik-anyos-finanszirozasi-segitseg",
-        label: "Jedlik Ányos finanszírozási segítség",
-      },
+      { href: "/lakossagi-energiatarolo-tamogatas", label: "Lakossági energiatárolás" },
+      { href: "/lakossagi-napelem-tisztitas-es-karbantartas", label: "Lakossági napelem tisztítás és karbantartás" },
+      { href: "/vallalati-napelem", label: "Vállalati napelem" },
+      { href: "/vallalati-energiatarolas", label: "Vállalati energiatárolás" },
+      { href: "/vallalati-napelem-tisztitas-es-karbantartas", label: "Vállalati napelem tisztítás és karbantartás" },
     ],
   },
-  { href: "/tudastar-blog", label: "Cikkek" },
+  {
+    href: "#",
+    label: "Finanszírozás",
+    children: [
+      { href: "/palyazatok", label: "Pályázatok" },
+      { href: "/jedlik-anyos-energetikai-program", label: "Jedlik Ányos Energetikai Program" },
+      { href: "/jedlik-anyos-finanszirozasi-segitseg", label: "Jedlik Ányos finanszírozási segítség" },
+    ],
+  },
+  { href: "/tudastar-blog", label: "Híreink" },
   { href: "https://energrosso.hu/", label: "Nagykereskedelem", external: true },
 ];
 
@@ -98,20 +93,43 @@ export const MEGA_MENUS: Record<string, MegaMenu> = {
           { href: "/vallalati-napelem-tisztitas-es-karbantartas", label: "Tisztítás & karbantartás", desc: "Céges rendszerekhez.", icon: "care" },
         ],
       },
-      {
-        heading: "Finanszírozás",
-        links: [
-          { href: "/palyazatok", label: "Pályázatok", desc: "Elérhető támogatások.", icon: "doc" },
-          { href: "/jedlik-anyos-energetikai-program", label: "Jedlik Ányos program", desc: "Energetikai pályázat.", icon: "award" },
-          { href: "/jedlik-anyos-finanszirozasi-segitseg", label: "Jedlik finanszírozás", desc: "Segítség a hiteledhez.", icon: "coins" },
-        ],
-      },
     ],
     footer: {
       title: "Segítsünk eligazodni?",
       text: "Vedd fel velünk a kapcsolatot!",
       ctaLabel: "Kapcsolat",
       ctaHref: "/kapcsolat",
+    },
+  },
+  Finanszírozás: {
+    feature: {
+      image: "/wp-content/uploads/2025/06/jedlik-anyos-energetikai-program-2-1-1024x667.png",
+      title: "Aktuális pályázatok",
+      text: "Nézd meg, milyen támogatás illik hozzád!",
+      href: "/palyazatok",
+    },
+    groups: [
+      {
+        heading: "Pályázatok & támogatások",
+        links: [
+          { href: "/palyazatok", label: "Pályázatok", desc: "Elérhető támogatások.", icon: "doc" },
+          { href: "/otthonfelujitasi-tamogatas-2025", label: "Otthonfelújítási támogatás", desc: "Lakossági korszerűsítés.", icon: "doc" },
+          { href: "/lakossagi-energiatarolo-tamogatas", label: "Otthoni Energiatároló Program", desc: "Kiemelt lakossági pályázat.", icon: "battery" },
+        ],
+      },
+      {
+        heading: "Jedlik Ányos & hitel",
+        links: [
+          { href: "/jedlik-anyos-energetikai-program", label: "Jedlik Ányos program", desc: "Energetikai pályázat.", icon: "award" },
+          { href: "/jedlik-anyos-finanszirozasi-segitseg", label: "Jedlik finanszírozás", desc: "Segítség a hiteledhez.", icon: "coins" },
+        ],
+      },
+    ],
+    footer: {
+      title: "Nem tudod, mire vagy jogosult?",
+      text: "Töltsd ki a jogosultsági előszűrőt!",
+      ctaLabel: "Jogosultsági előszűrő",
+      ctaHref: "/jogosultsagi-eloszuro",
     },
   },
   Cégünkről: {

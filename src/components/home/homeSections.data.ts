@@ -27,7 +27,7 @@ export const ZANZIBAR = {
 
 export const ARTICLES = {
   eyebrow: "Tudástár",
-  title: "Legfrissebb cikkeink",
+  title: "Híreink",
   sub: "Cikkeinkben A-tól Z-ig mindent leírunk a napelemes rendszerekről és előre megválaszoljuk a felmerülő kérdéseit. Ha mégsem találnál választ a kérdéseidre, vedd fel velünk a kapcsolatot. Kollégáink szívesen segítenek!",
   category: "Hírek",
   items: [
