@@ -1160,7 +1160,7 @@ body.drawer-open .bottom-nav {
     position: static;
     inset: auto;
     height: auto;
-    padding: 32px 24px 4px;
+    padding: 32px 24px 28px;
     justify-content: flex-start;
   }
   .footer-notch img {
@@ -1175,7 +1175,7 @@ body.drawer-open .bottom-nav {
 }
 @media (max-width: 560px) {
   .footer-notch {
-    padding: 26px 20px 4px;
+    padding: 26px 20px 24px;
   }
   .footer-inner {
     padding: 14px 20px 8px;

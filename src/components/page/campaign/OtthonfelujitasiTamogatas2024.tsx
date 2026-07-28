@@ -194,7 +194,7 @@ export const OtthonfelujitasiTamogatas2024 = () => (
           <Eyebrow>Támogatható tevékenységek</Eyebrow>
           <h2
             className="text-[var(--ink)]"
-            style={{ marginTop: "22px", fontSize: "clamp(26px, 4vw, 40px)", fontWeight: 600, lineHeight: 1.2 }}
+            style={{ marginTop: "22px", fontSize: "30px", fontWeight: 600, lineHeight: 1.2 }}
           >
             Válaszd az A1 Solar Kft.-t kivitelezőnek!
           </h2>
@@ -227,7 +227,7 @@ export const OtthonfelujitasiTamogatas2024 = () => (
           <Eyebrow>Hőszivattyús rendszer</Eyebrow>
           <h2
             className="text-[var(--ink)]"
-            style={{ marginTop: "22px", fontSize: "clamp(24px, 3.5vw, 36px)", fontWeight: 600, lineHeight: 1.2 }}
+            style={{ marginTop: "22px", fontSize: "30px", fontWeight: 600, lineHeight: 1.2 }}
           >
             Fűtésre, hűtésre és használati melegvíz előállítására is!
           </h2>
@@ -260,7 +260,7 @@ export const OtthonfelujitasiTamogatas2024 = () => (
           <Eyebrow>Okosotthon technológia</Eyebrow>
           <h2
             className="text-[var(--ink)]"
-            style={{ marginTop: "22px", fontSize: "clamp(24px, 3.5vw, 36px)", fontWeight: 600, lineHeight: 1.2 }}
+            style={{ marginTop: "22px", fontSize: "30px", fontWeight: 600, lineHeight: 1.2 }}
           >
             Az energiahatékonyság kulcsa!
           </h2>
@@ -290,7 +290,7 @@ export const OtthonfelujitasiTamogatas2024 = () => (
           <Eyebrow>Kapcsolatfelvétel</Eyebrow>
           <h2
             className="text-[var(--ink)]"
-            style={{ marginTop: "22px", fontSize: "clamp(26px, 4vw, 40px)", fontWeight: 600, lineHeight: 1.2 }}
+            style={{ marginTop: "22px", fontSize: "30px", fontWeight: 600, lineHeight: 1.2 }}
           >
             Munkatársunk 24 órán belül felveszi Veled a kapcsolatot!
           </h2>

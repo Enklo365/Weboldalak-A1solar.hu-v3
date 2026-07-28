@@ -337,7 +337,7 @@ export const LakossagiEnergiataroloTamogatas = () => (
           <Eyebrow>Támogatási részletek</Eyebrow>
           <h2
             className="mx-auto text-[var(--ink)]"
-            style={{ marginTop: "22px", fontSize: "clamp(26px, 4vw, 42px)", fontWeight: 600, lineHeight: 1.18, maxWidth: "820px" }}
+            style={{ marginTop: "22px", fontSize: "30px", fontWeight: 600, lineHeight: 1.18, maxWidth: "820px" }}
           >
             Akár 2,5 millió Ft támogatás energiatárolóra
           </h2>
@@ -373,7 +373,7 @@ export const LakossagiEnergiataroloTamogatas = () => (
           <Eyebrow>Kinek ajánlott?</Eyebrow>
           <h2
             className="mx-auto text-[var(--ink)]"
-            style={{ marginTop: "22px", fontSize: "clamp(26px, 4vw, 42px)", fontWeight: 600, lineHeight: 1.18, maxWidth: "820px" }}
+            style={{ marginTop: "22px", fontSize: "30px", fontWeight: 600, lineHeight: 1.18, maxWidth: "820px" }}
           >
             Kiknek jelent ideális megoldást a program?
           </h2>
@@ -446,7 +446,7 @@ export const LakossagiEnergiataroloTamogatas = () => (
             <Eyebrow>A támogatás mértéke</Eyebrow>
             <h2
               className="text-[var(--ink)]"
-              style={{ marginTop: "22px", fontSize: "clamp(24px, 3.5vw, 36px)", fontWeight: 600, lineHeight: 1.2 }}
+              style={{ marginTop: "22px", fontSize: "30px", fontWeight: 600, lineHeight: 1.2 }}
             >
               Mekkora támogatás igényelhető, és mire használható fel?
             </h2>
@@ -491,7 +491,7 @@ export const LakossagiEnergiataroloTamogatas = () => (
           <Eyebrow>Csomagok</Eyebrow>
           <h2
             className="mx-auto text-[var(--ink)]"
-            style={{ marginTop: "22px", fontSize: "clamp(26px, 4vw, 42px)", fontWeight: 600, lineHeight: 1.18, maxWidth: "820px" }}
+            style={{ marginTop: "22px", fontSize: "30px", fontWeight: 600, lineHeight: 1.18, maxWidth: "820px" }}
           >
             Csomagajánlataink
           </h2>
@@ -621,7 +621,7 @@ export const LakossagiEnergiataroloTamogatas = () => (
           <Eyebrow>Jelentkezési folyamat</Eyebrow>
           <h2
             className="mx-auto text-[var(--ink)]"
-            style={{ marginTop: "22px", fontSize: "clamp(26px, 4vw, 42px)", fontWeight: 600, lineHeight: 1.18, maxWidth: "820px" }}
+            style={{ marginTop: "22px", fontSize: "30px", fontWeight: 600, lineHeight: 1.18, maxWidth: "820px" }}
           >
             Mikor és hogyan lehet jelentkezni?
           </h2>
@@ -680,7 +680,7 @@ export const LakossagiEnergiataroloTamogatas = () => (
           <Eyebrow>Kifizetések</Eyebrow>
           <h2
             className="mx-auto text-[var(--ink)]"
-            style={{ marginTop: "22px", fontSize: "clamp(26px, 4vw, 42px)", fontWeight: 600, lineHeight: 1.18, maxWidth: "820px" }}
+            style={{ marginTop: "22px", fontSize: "30px", fontWeight: 600, lineHeight: 1.18, maxWidth: "820px" }}
           >
             Hogyan történik a támogatás kifizetése?
           </h2>
@@ -738,7 +738,7 @@ export const LakossagiEnergiataroloTamogatas = () => (
           <Eyebrow>Webinárium</Eyebrow>
           <h2
             className="mx-auto text-[var(--ink)]"
-            style={{ marginTop: "22px", fontSize: "clamp(26px, 4vw, 42px)", fontWeight: 600, lineHeight: 1.18, maxWidth: "820px" }}
+            style={{ marginTop: "22px", fontSize: "30px", fontWeight: 600, lineHeight: 1.18, maxWidth: "820px" }}
           >
             Otthoni Energiatároló Program webinárium
           </h2>
@@ -798,7 +798,7 @@ export const LakossagiEnergiataroloTamogatas = () => (
           <Eyebrow>Extra előnyök</Eyebrow>
           <h2
             className="mx-auto text-[var(--ink)]"
-            style={{ marginTop: "22px", fontSize: "clamp(26px, 4vw, 42px)", fontWeight: 600, lineHeight: 1.18, maxWidth: "820px" }}
+            style={{ marginTop: "22px", fontSize: "30px", fontWeight: 600, lineHeight: 1.18, maxWidth: "820px" }}
           >
             A pályázat és a kivitelezés nálunk csak a kezdet
           </h2>
@@ -879,7 +879,7 @@ export const LakossagiEnergiataroloTamogatas = () => (
             <Eyebrow>Cégünkről</Eyebrow>
             <h2
               className="text-[var(--ink)]"
-              style={{ marginTop: "22px", fontSize: "clamp(24px, 3.5vw, 36px)", fontWeight: 600, lineHeight: 1.2 }}
+              style={{ marginTop: "22px", fontSize: "30px", fontWeight: 600, lineHeight: 1.2 }}
             >
               Miért válasszon minket?
             </h2>
@@ -911,7 +911,7 @@ export const LakossagiEnergiataroloTamogatas = () => (
           <Eyebrow>Gyakori kérdések</Eyebrow>
           <h2
             className="mx-auto text-[var(--ink)]"
-            style={{ marginTop: "22px", fontSize: "clamp(26px, 4vw, 42px)", fontWeight: 600, lineHeight: 1.18, maxWidth: "820px" }}
+            style={{ marginTop: "22px", fontSize: "30px", fontWeight: 600, lineHeight: 1.18, maxWidth: "820px" }}
           >
             Kérdésed maradt?
           </h2>
@@ -946,7 +946,7 @@ export const LakossagiEnergiataroloTamogatas = () => (
           <Eyebrow>Kapcsolatfelvétel</Eyebrow>
           <h2
             className="mx-auto text-[var(--ink)]"
-            style={{ marginTop: "22px", fontSize: "clamp(26px, 4vw, 42px)", fontWeight: 600, lineHeight: 1.18, maxWidth: "820px" }}
+            style={{ marginTop: "22px", fontSize: "30px", fontWeight: 600, lineHeight: 1.18, maxWidth: "820px" }}
           >
             Indítsd el velünk a kivitelezést!
           </h2>

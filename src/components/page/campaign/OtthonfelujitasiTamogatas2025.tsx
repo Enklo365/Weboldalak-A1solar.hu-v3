@@ -312,7 +312,7 @@ export const OtthonfelujitasiTamogatas2025 = () => (
           <Eyebrow>Információk</Eyebrow>
           <h2
             className="text-[var(--ink)]"
-            style={{ marginTop: "22px", fontSize: "clamp(26px, 4vw, 40px)", fontWeight: 600, lineHeight: 1.2 }}
+            style={{ marginTop: "22px", fontSize: "30px", fontWeight: 600, lineHeight: 1.2 }}
           >
             Vidéki Otthonfelújítási Program – akár 3 millió forint családoknak és nyugdíjasoknak
           </h2>
@@ -351,7 +351,7 @@ export const OtthonfelujitasiTamogatas2025 = () => (
           <Eyebrow>Jogosultság</Eyebrow>
           <h2
             className="text-[var(--ink)]"
-            style={{ marginTop: "22px", fontSize: "clamp(26px, 4vw, 40px)", fontWeight: 600, lineHeight: 1.2 }}
+            style={{ marginTop: "22px", fontSize: "30px", fontWeight: 600, lineHeight: 1.2 }}
           >
             Ki igényelheti az otthonfelújítási támogatást?
           </h2>
@@ -390,7 +390,7 @@ export const OtthonfelujitasiTamogatas2025 = () => (
             <Eyebrow>Felhasználás</Eyebrow>
             <h2
               className="text-[var(--ink)]"
-              style={{ marginTop: "22px", fontSize: "clamp(24px, 3.5vw, 36px)", fontWeight: 600, lineHeight: 1.2 }}
+              style={{ marginTop: "22px", fontSize: "30px", fontWeight: 600, lineHeight: 1.2 }}
             >
               Mire használható a támogatás?
             </h2>
@@ -421,7 +421,7 @@ export const OtthonfelujitasiTamogatas2025 = () => (
           <Eyebrow>Feltételek</Eyebrow>
           <h2
             className="text-[var(--ink)]"
-            style={{ marginTop: "22px", fontSize: "clamp(26px, 4vw, 40px)", fontWeight: 600, lineHeight: 1.2 }}
+            style={{ marginTop: "22px", fontSize: "30px", fontWeight: 600, lineHeight: 1.2 }}
           >
             A támogatás mértéke és feltételei
           </h2>
@@ -474,7 +474,7 @@ export const OtthonfelujitasiTamogatas2025 = () => (
           <Eyebrow>A folyamat</Eyebrow>
           <h2
             className="text-[var(--ink)]"
-            style={{ marginTop: "22px", fontSize: "clamp(26px, 4vw, 40px)", fontWeight: 600, lineHeight: 1.2 }}
+            style={{ marginTop: "22px", fontSize: "30px", fontWeight: 600, lineHeight: 1.2 }}
           >
             Hogyan lehet igényelni?
           </h2>
@@ -523,7 +523,7 @@ export const OtthonfelujitasiTamogatas2025 = () => (
           <Eyebrow>Csomagajánlatok</Eyebrow>
           <h2
             className="text-[var(--ink)]"
-            style={{ marginTop: "22px", fontSize: "clamp(26px, 4vw, 40px)", fontWeight: 600, lineHeight: 1.2 }}
+            style={{ marginTop: "22px", fontSize: "30px", fontWeight: 600, lineHeight: 1.2 }}
           >
             Kedvezményes csomagajánlataink a vidéki otthonfelújítási támogatáshoz
           </h2>
@@ -618,7 +618,7 @@ export const OtthonfelujitasiTamogatas2025 = () => (
           <Eyebrow>Gyakori kérdések</Eyebrow>
           <h2
             className="text-[var(--ink)]"
-            style={{ marginTop: "22px", fontSize: "clamp(26px, 4vw, 40px)", fontWeight: 600, lineHeight: 1.2 }}
+            style={{ marginTop: "22px", fontSize: "30px", fontWeight: 600, lineHeight: 1.2 }}
           >
             Kérdésed van?
           </h2>
@@ -689,7 +689,7 @@ export const OtthonfelujitasiTamogatas2025 = () => (
           <Eyebrow>Kapcsolatfelvétel</Eyebrow>
           <h2
             className="text-[var(--ink)]"
-            style={{ marginTop: "22px", fontSize: "clamp(26px, 4vw, 40px)", fontWeight: 600, lineHeight: 1.2 }}
+            style={{ marginTop: "22px", fontSize: "30px", fontWeight: 600, lineHeight: 1.2 }}
           >
             Ne hagyd ki ezt a lehetőséget!
           </h2>

@@ -166,7 +166,7 @@ export const SzakmaiNapRegisztracio = () => (
           <Eyebrow>Program</Eyebrow>
           <h2
             className="text-[var(--ink)]"
-            style={{ marginTop: "22px", fontSize: "clamp(26px, 4vw, 40px)", fontWeight: 600, lineHeight: 1.2 }}
+            style={{ marginTop: "22px", fontSize: "30px", fontWeight: 600, lineHeight: 1.2 }}
           >
             Készülj fel az év legfontosabb szakmai eseményére!
           </h2>
@@ -228,7 +228,7 @@ export const SzakmaiNapRegisztracio = () => (
           <Eyebrow>Előadók</Eyebrow>
           <h2
             className="text-[var(--ink)]"
-            style={{ marginTop: "22px", fontSize: "clamp(26px, 4vw, 40px)", fontWeight: 600, lineHeight: 1.2 }}
+            style={{ marginTop: "22px", fontSize: "30px", fontWeight: 600, lineHeight: 1.2 }}
           >
             Kik osztják meg veled a tudásukat?
           </h2>
@@ -267,7 +267,7 @@ export const SzakmaiNapRegisztracio = () => (
             <Eyebrow>Miért érdemes?</Eyebrow>
             <h2
               className="text-[var(--ink)]"
-              style={{ marginTop: "22px", fontSize: "clamp(24px, 3.5vw, 36px)", fontWeight: 600, lineHeight: 1.2 }}
+              style={{ marginTop: "22px", fontSize: "30px", fontWeight: 600, lineHeight: 1.2 }}
             >
               Ne hagyd ki az év szakmai eseményét!
             </h2>
@@ -299,7 +299,7 @@ export const SzakmaiNapRegisztracio = () => (
             <Eyebrow>Disztribúció</Eyebrow>
             <h2
               className="text-[var(--ink)]"
-              style={{ marginTop: "22px", fontSize: "clamp(24px, 3.5vw, 36px)", fontWeight: 600, lineHeight: 1.2 }}
+              style={{ marginTop: "22px", fontSize: "30px", fontWeight: 600, lineHeight: 1.2 }}
             >
               <span style={{ fontWeight: 300 }}>Hivatalos DEYE ESS </span>
               <span style={{ fontWeight: 700 }}>disztribútorok lettünk!</span>

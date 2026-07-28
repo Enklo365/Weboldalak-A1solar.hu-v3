@@ -166,7 +166,7 @@ export const Palyazatok = () => (
             <Eyebrow>Kérdésed maradt?</Eyebrow>
             <h2
               className="text-[var(--ink)]"
-              style={{ marginTop: "22px", fontSize: "clamp(24px, 3.5vw, 34px)", fontWeight: 600, lineHeight: 1.2 }}
+              style={{ marginTop: "22px", fontSize: "30px", fontWeight: 600, lineHeight: 1.2 }}
             >
               Beszéljünk a lehetőségeidről!
             </h2>

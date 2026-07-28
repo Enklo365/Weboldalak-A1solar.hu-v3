@@ -188,7 +188,7 @@ export const OtthonfelujitasiTamogatasAjanlatI = () => (
           <Eyebrow>Az ajánlat</Eyebrow>
           <h2
             className="text-[var(--ink)]"
-            style={{ marginTop: "22px", fontSize: "clamp(26px, 4vw, 40px)", fontWeight: 600, lineHeight: 1.2 }}
+            style={{ marginTop: "22px", fontSize: "30px", fontWeight: 600, lineHeight: 1.2 }}
           >
             Mit tartalmaz a csomag?
           </h2>
@@ -400,7 +400,7 @@ export const OtthonfelujitasiTamogatasAjanlatI = () => (
             <Eyebrow>Cégünkről</Eyebrow>
             <h2
               className="text-[var(--ink)]"
-              style={{ marginTop: "22px", fontSize: "clamp(24px, 3.5vw, 36px)", fontWeight: 600, lineHeight: 1.2 }}
+              style={{ marginTop: "22px", fontSize: "30px", fontWeight: 600, lineHeight: 1.2 }}
             >
               <span style={{ fontWeight: 300 }}>Miért válassza </span>
               <span style={{ fontWeight: 700 }}>az A1 Solart?</span>
@@ -472,7 +472,7 @@ export const OtthonfelujitasiTamogatasAjanlatI = () => (
           <Eyebrow>Kapcsolatfelvétel</Eyebrow>
           <h2
             className="text-[var(--ink)]"
-            style={{ marginTop: "22px", fontSize: "clamp(26px, 4vw, 40px)", fontWeight: 600, lineHeight: 1.2 }}
+            style={{ marginTop: "22px", fontSize: "30px", fontWeight: 600, lineHeight: 1.2 }}
           >
             Ne hagyja ki ezt a lehetőséget!
           </h2>

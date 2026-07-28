@@ -132,7 +132,7 @@ const ServiceHero = ({ data }: { data: ServicePageData["hero"] }) => (
 const ValueSection = ({ data }: { data: NonNullable<ServicePageData["value"]> }) => (
   <section id="value" data-animate="up" className="scroll-mt-[100px]">
     <Eyebrow>{data.eyebrow}</Eyebrow>
-    <h2 className="text-[var(--ink)]" style={{ marginTop: "22px", fontSize: "clamp(26px, 4vw, 36px)", fontWeight: 500, lineHeight: 1.15 }}>
+    <h2 className="text-[var(--ink)]" style={{ marginTop: "22px", fontSize: "30px", fontWeight: 500, lineHeight: 1.15 }}>
       {data.title}
     </h2>
     <p className="mt-6 text-[var(--ink-soft)]">{data.body}</p>
@@ -142,7 +142,7 @@ const ValueSection = ({ data }: { data: NonNullable<ServicePageData["value"]> })
 const BenefitsSection = ({ data }: { data: NonNullable<ServicePageData["benefits"]> }) => (
   <section>
     <div data-animate="up">
-      <h2 className="text-[var(--ink)]" style={{ fontSize: "clamp(24px, 3.6vw, 32px)", fontWeight: 500, lineHeight: 1.2 }}>
+      <h2 className="text-[var(--ink)]" style={{ fontSize: "30px", fontWeight: 500, lineHeight: 1.2 }}>
         {data.title}
       </h2>
       <p className="mt-6 text-[var(--ink-soft)]">{data.body}</p>
@@ -166,7 +166,7 @@ const ProcessSection = ({ data }: { data: NonNullable<ServicePageData["process"]
   <section id="process" className="scroll-mt-[100px]">
     <div data-animate="up">
       <Eyebrow>{data.eyebrow}</Eyebrow>
-      <h2 className="text-[var(--ink)]" style={{ marginTop: "22px", fontSize: "clamp(26px, 4vw, 36px)", fontWeight: 500, lineHeight: 1.15 }}>
+      <h2 className="text-[var(--ink)]" style={{ marginTop: "22px", fontSize: "30px", fontWeight: 500, lineHeight: 1.15 }}>
         {data.title}
       </h2>
     </div>
@@ -219,7 +219,7 @@ const WhySection = ({ data }: { data: NonNullable<ServicePageData["why"]> }) => 
   <section id="cegunkrol" className="scroll-mt-[100px]">
     <div data-animate="up">
       <Eyebrow>{data.eyebrow}</Eyebrow>
-      <h2 className="text-[var(--ink)]" style={{ marginTop: "22px", fontSize: "clamp(26px, 4vw, 36px)", fontWeight: 500, lineHeight: 1.15 }}>
+      <h2 className="text-[var(--ink)]" style={{ marginTop: "22px", fontSize: "30px", fontWeight: 500, lineHeight: 1.15 }}>
         {data.title}
       </h2>
       <p className="mt-6 max-w-[760px] text-[var(--ink-soft)]">{renderEmphasis(data.body, data.emphasize)}</p>
@@ -242,7 +242,7 @@ const ReferencesSection = ({ data }: { data: NonNullable<ServicePageData["refere
   <section id="referenciak" className="scroll-mt-[100px]">
     <div data-animate="up">
       <Eyebrow>{data.eyebrow}</Eyebrow>
-      <h2 className="text-[var(--ink)]" style={{ marginTop: "22px", fontSize: "clamp(26px, 4vw, 36px)", fontWeight: 500, lineHeight: 1.15 }}>
+      <h2 className="text-[var(--ink)]" style={{ marginTop: "22px", fontSize: "30px", fontWeight: 500, lineHeight: 1.15 }}>
         {data.title}
       </h2>
     </div>

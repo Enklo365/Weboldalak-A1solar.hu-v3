@@ -138,7 +138,7 @@ export const OepNyeremenyjatek = () => (
           <Eyebrow>Részvétel</Eyebrow>
           <h2
             className="text-[var(--ink)]"
-            style={{ marginTop: "22px", fontSize: "clamp(26px, 4vw, 40px)", fontWeight: 600, lineHeight: 1.2 }}
+            style={{ marginTop: "22px", fontSize: "30px", fontWeight: 600, lineHeight: 1.2 }}
           >
             Hogyan vehetsz részt?
           </h2>
@@ -191,7 +191,7 @@ export const OepNyeremenyjatek = () => (
           <Eyebrow>Nyeremények</Eyebrow>
           <h2
             className="text-[var(--ink)]"
-            style={{ marginTop: "22px", fontSize: "clamp(26px, 4vw, 40px)", fontWeight: 600, lineHeight: 1.2 }}
+            style={{ marginTop: "22px", fontSize: "30px", fontWeight: 600, lineHeight: 1.2 }}
           >
             Mit kapsz a program végén?
           </h2>

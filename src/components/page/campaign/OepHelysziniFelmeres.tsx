@@ -124,7 +124,7 @@ export const OepHelysziniFelmeres = () => (
             <Eyebrow>Helyszíni felmérés</Eyebrow>
             <h2
               className="text-[var(--ink)]"
-              style={{ marginTop: "22px", fontSize: "clamp(24px, 3.5vw, 36px)", fontWeight: 600, lineHeight: 1.2 }}
+              style={{ marginTop: "22px", fontSize: "30px", fontWeight: 600, lineHeight: 1.2 }}
             >
               A legjobb tervezés a helyszínen kezdődik
             </h2>
@@ -158,7 +158,7 @@ export const OepHelysziniFelmeres = () => (
           <Eyebrow>Döntések</Eyebrow>
           <h2
             className="text-[var(--ink)]"
-            style={{ marginTop: "22px", fontSize: "clamp(24px, 3.8vw, 38px)", fontWeight: 600, lineHeight: 1.2 }}
+            style={{ marginTop: "22px", fontSize: "30px", fontWeight: 600, lineHeight: 1.2 }}
           >
             Az elfogadott pályázat után következnek a legfontosabb döntések
           </h2>
@@ -183,7 +183,7 @@ export const OepHelysziniFelmeres = () => (
           <Eyebrow>Miért éri meg?</Eyebrow>
           <h2
             className="text-[var(--ink)]"
-            style={{ marginTop: "22px", fontSize: "clamp(26px, 4vw, 40px)", fontWeight: 600, lineHeight: 1.2 }}
+            style={{ marginTop: "22px", fontSize: "30px", fontWeight: 600, lineHeight: 1.2 }}
           >
             Mit nyer az ingyenes helyszíni felméréssel?
           </h2>
@@ -225,7 +225,7 @@ export const OepHelysziniFelmeres = () => (
             <Eyebrow>Cégünkről</Eyebrow>
             <h2
               className="text-[var(--ink)]"
-              style={{ marginTop: "22px", fontSize: "clamp(24px, 3.5vw, 36px)", fontWeight: 600, lineHeight: 1.2 }}
+              style={{ marginTop: "22px", fontSize: "30px", fontWeight: 600, lineHeight: 1.2 }}
             >
               Miért válasszon minket?
             </h2>
@@ -262,7 +262,7 @@ export const OepHelysziniFelmeres = () => (
           <Eyebrow>Kapcsolatfelvétel</Eyebrow>
           <h2
             className="text-[var(--ink)]"
-            style={{ marginTop: "22px", fontSize: "clamp(26px, 4vw, 40px)", fontWeight: 600, lineHeight: 1.2 }}
+            style={{ marginTop: "22px", fontSize: "30px", fontWeight: 600, lineHeight: 1.2 }}
           >
             Munkatársunk 48 órán belül felveszi Önnel a kapcsolatot
           </h2>
