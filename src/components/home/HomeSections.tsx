@@ -125,10 +125,12 @@ export function HomeZanzibar() {
   );
 }
 
-/** "Tudástár — Legfrissebb cikkeink" — three article cards. */
+/** "Tudástár — Híreink" — three article cards. */
 export function HomeArticles() {
   return (
-    <section className="w-full pb-16 md:pb-24">
+    // No bottom padding: the footer's global margin-top (80px) supplies the gap,
+    // otherwise pb-24 + 80px stacks into an oversized void before the footer.
+    <section className="w-full pb-0">
       <div className="mx-auto max-w-[var(--container)] px-6">
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:items-start md:gap-16">
           <div data-animate="up">

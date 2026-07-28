@@ -113,7 +113,6 @@ export const MEGA_MENUS: Record<string, MegaMenu> = {
         heading: "Pályázatok & támogatások",
         links: [
           { href: "/palyazatok", label: "Pályázatok", desc: "Elérhető támogatások.", icon: "doc" },
-          { href: "/otthonfelujitasi-tamogatas-2025", label: "Otthonfelújítási támogatás", desc: "Lakossági korszerűsítés.", icon: "doc" },
           { href: "/lakossagi-energiatarolo-tamogatas", label: "Otthoni Energiatároló Program", desc: "Kiemelt lakossági pályázat.", icon: "battery" },
         ],
       },
