@@ -596,6 +596,18 @@ img {
   background: #fff;
   transform: translate(1rem, 0);
 }
+
+/* Mirrored "back" variant — circle on the right, arrow pointing left. The circle
+   is a fixed-width block, so margin-left:auto right-aligns it (and it still grows
+   to 100% on hover); scaleX(-1) flips the arrow + its hover slide to the left. */
+.learn-more--back .circle {
+  margin-left: auto;
+  transform: scaleX(-1);
+}
+.learn-more--back .extra-button-text {
+  margin-left: 0;
+  margin-right: 2.5rem;
+}
 .learn-more:hover .extra-button-text {
   color: #fff;
 }

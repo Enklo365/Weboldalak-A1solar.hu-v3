@@ -90,7 +90,7 @@ export default async function KarrierPositionPage({ params }: { params: Promise<
               </div>
 
               <div className="extra-button-container mt-12 flex">
-                <Link href="/karrier" className="learn-more">
+                <Link href="/karrier" className="learn-more learn-more--back">
                   <span className="circle" aria-hidden>
                     <span className="extra-icon arrow" />
                   </span>
