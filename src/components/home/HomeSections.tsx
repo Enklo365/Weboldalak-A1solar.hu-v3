@@ -70,7 +70,7 @@ export function HomeAbout() {
           <Eyebrow>{ABOUT.eyebrow}</Eyebrow>
           <h2
             className="text-[var(--ink)]"
-            style={{ marginTop: "32px", fontSize: "clamp(28px, 4.5vw, 40px)", fontWeight: 500, lineHeight: 1.15 }}
+            style={{ marginTop: "32px", fontSize: "30px", fontWeight: 500, lineHeight: 1.15 }}
           >
             {ABOUT.title}
           </h2>
@@ -97,7 +97,7 @@ export function HomeZanzibar() {
           <Eyebrow>{ZANZIBAR.eyebrow}</Eyebrow>
           <h2
             className="text-[var(--ink)]"
-            style={{ marginTop: "32px", fontSize: "clamp(28px, 4.5vw, 40px)", fontWeight: 500, lineHeight: 1.15, whiteSpace: "pre-line" }}
+            style={{ marginTop: "32px", fontSize: "30px", fontWeight: 500, lineHeight: 1.15, whiteSpace: "pre-line" }}
           >
             {ZANZIBAR.title}
           </h2>
@@ -135,7 +135,7 @@ export function HomeArticles() {
             <Eyebrow>{ARTICLES.eyebrow}</Eyebrow>
             <h2
               className="text-[var(--ink)]"
-              style={{ marginTop: "32px", fontSize: "clamp(28px, 4.5vw, 40px)", fontWeight: 500, lineHeight: 1.15 }}
+              style={{ marginTop: "32px", fontSize: "30px", fontWeight: 500, lineHeight: 1.15 }}
             >
               {ARTICLES.title}
             </h2>
