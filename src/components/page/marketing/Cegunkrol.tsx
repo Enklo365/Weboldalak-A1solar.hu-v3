@@ -95,7 +95,7 @@ export const Cegunkrol = () => (
     {/* Story — left copy, right award photo */}
     <section className="w-full py-16 md:py-24">
       <div className="container">
-        <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+        <div className="grid items-stretch gap-10 lg:grid-cols-2 lg:gap-16">
           <div>
             <span
               className="inline-block rounded-[30px] px-3 py-2 text-xs font-normal uppercase tracking-[1px]"
@@ -114,13 +114,13 @@ export const Cegunkrol = () => (
               ))}
             </div>
           </div>
-          <div className="overflow-hidden rounded-[24px]" style={{ background: "var(--surface-3)" }}>
+          <div className="overflow-hidden rounded-[24px] aspect-[4/3] lg:aspect-auto" style={{ background: "var(--surface-3)" }}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={AWARD_IMAGE}
               alt="Az A1 Solar az Üzleti Etikai Díj 2025 díjátadóján"
               loading="lazy"
-              style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", aspectRatio: "4 / 3" }}
+              style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
             />
           </div>
         </div>
