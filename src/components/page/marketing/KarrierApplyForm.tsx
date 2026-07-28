@@ -50,6 +50,12 @@ export const KarrierApplyForm = ({ positionTitle }: KarrierApplyFormProps) => {
     const form = e.currentTarget;
     const data = new FormData(form);
 
+    // Honeypot — hidden field; only bots fill it. Silently drop the submission.
+    if (String(data.get("website") ?? "").trim() !== "") {
+      setStatus("ok");
+      return;
+    }
+
     if (data.get("consent") !== "on") {
       setError("Kérjük, fogadd el az adatkezelési tájékoztatót.");
       return;
@@ -115,21 +121,39 @@ export const KarrierApplyForm = ({ positionTitle }: KarrierApplyFormProps) => {
   }
 
   return (
-    <form className="contact-card contact-card--bare" onSubmit={onSubmit} noValidate>
-      <h3>Jelentkezz erre a pozícióra!</h3>
-      <p className="contact-intro">Töltsd ki az űrlapot és csatold önéletrajzod — kollégánk hamarosan jelentkezik.</p>
+    <form className="contact-card contact-card--bare" onSubmit={onSubmit}>
+      <h3>Jelentkezés</h3>
+      <p className="contact-intro">Töltsd ki az alábbi űrlapot és jelentkezz a pozícióra.</p>
+
+      {/* Honeypot — hidden from users; bots that fill it are silently dropped. */}
+      <input
+        type="text"
+        name="website"
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        style={{ position: "absolute", left: "-9999px", width: "1px", height: "1px", opacity: 0 }}
+      />
 
       <label className="field">
         <span>Név *</span>
-        <input name="name" required autoComplete="name" placeholder="Teljes név" />
+        <input name="name" required minLength={2} maxLength={80} autoComplete="name" placeholder="Teljes név" />
       </label>
       <label className="field">
         <span>E-mail cím *</span>
-        <input name="email" type="email" required autoComplete="email" placeholder="pelda@email.hu" />
+        <input name="email" type="email" required maxLength={120} autoComplete="email" placeholder="pelda@email.hu" />
       </label>
       <label className="field">
         <span>Telefonszám *</span>
-        <input name="phone" required autoComplete="tel" placeholder="+36 …" />
+        <input
+          name="phone"
+          type="tel"
+          required
+          pattern="[0-9+()\-\s]{6,20}"
+          title="Adj meg egy érvényes telefonszámot (legalább 6 számjegy)."
+          autoComplete="tel"
+          placeholder="+36 …"
+        />
       </label>
       <label className="field">
         <span>Motiváció / üzenet</span>
@@ -137,7 +161,9 @@ export const KarrierApplyForm = ({ positionTitle }: KarrierApplyFormProps) => {
       </label>
 
       <div className="field">
-        <span>Önéletrajz (PDF, DOC, kép — max. 3 MB)</span>
+        <span style={{ fontSize: "12px", fontWeight: 400, color: "var(--ink-muted)", textTransform: "none", letterSpacing: 0 }}>
+          Önéletrajz (PDF, DOC, kép — max. 3 MB)
+        </span>
         <input
           ref={fileRef}
           name="cv"

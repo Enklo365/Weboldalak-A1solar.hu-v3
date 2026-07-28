@@ -19,7 +19,8 @@ export const KARRIER_POSITIONS: KarrierPosition[] = [
     slug: "villanyszerelo",
     title: "Villanyszerelő",
     teaser: "Épületvillamossági munkák — csatlakozz szerelő csapatunkhoz.",
-    summary: "Villanyszerelő kollégát keresünk épületvillamossági munkálatok ellátására.",
+    summary:
+      "Épületvillamossági munkákra keresünk gyakorlott villanyszerelő kollégát Nagykanizsa, Kaposvár, Szekszárd és Budapest térségében.",
     location: "Nagykanizsa és környéke, Kaposvár és környéke, Budapest",
     tasks: [
       "Épületvillamossági munkák",
@@ -43,7 +44,7 @@ export const KARRIER_POSITIONS: KarrierPosition[] = [
     title: "Napelem és energiatároló értékesítő",
     teaser: "Lakossági és céges rendszerek értékesítése, közvetlen gyártói támogatással.",
     summary:
-      "Műszaki beállítottságú vagy, és van legalább két év tapasztalatod a megújuló energia iparágban? Csatlakozz hozzánk, és vegyél részt lakossági és céges napelemes rendszerek értékesítésében! Elsősorban a Fox ESS, Deye és a Sigenergy termékeivel dolgozunk a kisebb, és Huawei-el kiegészítve a nagyobb projekteknél. Mind a négy brandnél közvetlen gyártói támogatást élvezünk a projektek tervezése, a kivitelezés és az aftersales során egyaránt.",
+      "Legalább kétéves megújuló energetikai tapasztalattal keresünk értékesítőt lakossági és céges napelemes, energiatárolós rendszerekhez.",
     location: "Budapest XXII. kerületi irodánkban, de országosan végezhető.",
     tasks: [
       "Beérkező megkeresések kezelése",
@@ -86,7 +87,7 @@ export const KARRIER_POSITIONS: KarrierPosition[] = [
     title: "Marketing menedzser",
     teaser: "Teljes marketing rendszer működtetése — valódi „hands-on” generalista szerep.",
     summary:
-      "Most olyan Marketing Managert (generalistát) keresünk, aki képes kézben tartani és működtetni egy teljes marketing rendszert — nem ügynökségi koordinátor, hanem valódi „hands-on” szakember! Ez nem egy szűk PPC vagy social media pozíció — ez egy teljes marketing működtetési szerep, melybe az A1 Solar-on kívül az Energrosso nemzetközi nagykereskedelmi működése is beletartozik.",
+      "Hands-on marketing generalistát keresünk, aki egy teljes marketing rendszert épít és működtet az A1 Solar és az Energrosso számára.",
     location: "Budapest XXII. kerületi irodánkban, maximum 2 nap home office-al.",
     tasks: [
       "Stratégia & tervezés: éves és kampányszintű marketingtervek készítése és nyomonkövetése",
@@ -122,7 +123,7 @@ export const KARRIER_POSITIONS: KarrierPosition[] = [
     title: "Üzletfejlesztési menedzser (Olasz nyelvtudással)",
     teaser: "B2B nagykereskedelmi terjeszkedés Olaszországban — olasz nyelvtudással.",
     summary:
-      "Üzletfejlesztési menedzsert keresünk olasz nyelvtudással, aki segít nekünk a napenergia-nagykereskedelmi (B2B) üzletágunk olaszországi terjeszkedésében. Ha szenvedélyed az üzletépítés és van tapasztalatod a B2B világában, ez a lehetőség Neked szól!",
+      "Olasz nyelvtudással keresünk üzletfejlesztési menedzsert a napenergia-nagykereskedelmi (B2B) üzletágunk olaszországi terjeszkedéséhez.",
     location: "Budapest XXII. kerületi irodánkban, de országosan végezhető.",
     tasks: [
       "Új üzleti lehetőségek azonosítása (partnerségek, termékkategóriák, szolgáltatások)",
@@ -158,7 +159,7 @@ export const KARRIER_POSITIONS: KarrierPosition[] = [
     title: "Értékesítő",
     teaser: "Telefonos értékesítés és tanácsadás egy dinamikusan fejlődő csapatban.",
     summary:
-      "Szeretnél egy dinamikusan fejlődő, innovatív csapat tagja lenni? Szenvedélyed az értékesítés és az eredmények? Csatlakozz hozzánk, és fejleszd karriered egy különleges szakterületen! Közel 5000 telepítés és több száz energetikai pályázat tapasztalatát felhasználva egy olyan rendszert alakítottunk ki, ahol ügyfeleink egyetlen helyről kapják meg az összes szolgáltatást. Ennek a csapatnak a bővülő értékesítői/tanácsadói részébe keresünk kollégákat.",
+      "Telefonos értékesítőt keresünk egy dinamikus csapatba, ahol ügyfeleink egyetlen helyről kapják meg a teljes napelemes szolgáltatást.",
     location: "Budapest XXII. kerületi irodánkban, de országosan végezhető.",
     tasks: [
       "Termékek aktív telefonos értékesítése",

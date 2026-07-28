@@ -33,9 +33,9 @@ const CheckIcon = () => (
   </svg>
 );
 
-const DetailList = ({ title, items }: { title: string; items: string[] }) => (
-  <div>
-    <h2 className="text-sm font-semibold uppercase tracking-[0.5px] text-[var(--ink)]" style={{ marginBottom: "14px" }}>
+const DetailCard = ({ title, items }: { title: string; items: string[] }) => (
+  <div className="rounded-[20px] p-6 md:p-8" style={{ background: "var(--surface-3)" }}>
+    <h2 className="text-sm font-semibold uppercase tracking-[0.5px] text-[var(--ink)]" style={{ marginBottom: "16px" }}>
       {title}
     </h2>
     <ul className="flex flex-col gap-2.5">
@@ -63,7 +63,7 @@ export default async function KarrierPositionPage({ params }: { params: Promise<
         titleStrong={pos.title}
         image={KARRIER_HERO_IMAGE}
         imageAlt={`${pos.title} – A1 Solar karrier`}
-        intro={pos.teaser}
+        intro={pos.summary}
         ctaLabel="Jelentkezem"
         ctaHref="#jelentkezes"
       />
@@ -75,27 +75,26 @@ export default async function KarrierPositionPage({ params }: { params: Promise<
       <section className="w-full pb-0">
         <div className="container">
           <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_360px] lg:gap-0">
-            {/* Main — summary + stacked detail lists */}
+            {/* Main — detail cards */}
             <div className="lg:pr-10">
-              <p className="max-w-[820px] text-lg text-[var(--ink-soft)]" style={{ lineHeight: 1.7 }}>
-                {pos.summary}
-              </p>
-
-              <div className="mt-10 flex flex-col gap-9">
-                <DetailList title="Feladatok" items={pos.tasks} />
-                {pos.requirements ? <DetailList title="Elvárások" items={pos.requirements} /> : null}
-                {pos.plus ? <DetailList title="Előnyt jelent" items={pos.plus} /> : null}
-                {pos.offer ? <DetailList title="Amit kínálunk" items={pos.offer} /> : null}
+              <div className="flex flex-col gap-6">
+                <DetailCard title="Feladatok" items={pos.tasks} />
+                {pos.requirements ? <DetailCard title="Elvárások" items={pos.requirements} /> : null}
+                {pos.plus ? <DetailCard title="Előnyt jelent" items={pos.plus} /> : null}
+                {pos.offer ? <DetailCard title="Amit kínálunk" items={pos.offer} /> : null}
               </div>
 
-              <div className="mt-10 rounded-[18px] p-6" style={{ background: "var(--surface-3)" }}>
+              <div className="mt-6 rounded-[20px] p-6 md:p-8" style={{ background: "var(--surface-3)" }}>
                 <span className="font-semibold text-[var(--ink)]">Munkavégzés helye:</span>{" "}
                 <span className="text-[var(--ink-soft)]">{pos.location}</span>
               </div>
 
-              <div className="mt-12">
-                <Link href="/karrier" className="text-[var(--brand)] hover:underline">
-                  ← Vissza az összes pozícióhoz
+              <div className="extra-button-container mt-12 flex">
+                <Link href="/karrier" className="learn-more">
+                  <span className="circle" aria-hidden>
+                    <span className="extra-icon arrow" />
+                  </span>
+                  <span className="extra-button-text">Összes pozíció</span>
                 </Link>
               </div>
             </div>
