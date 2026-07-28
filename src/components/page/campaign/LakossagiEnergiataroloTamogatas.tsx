@@ -1,8 +1,11 @@
 import type { CSSProperties, ReactNode } from "react";
 
-import { ContactForm } from "@/components/ContactForm";
-import { NotchHero } from "@/components/page/NotchHero";
+import { OepHeroForm } from "@/components/page/campaign/OepHeroForm";
 import { SITE } from "@/lib/site";
+
+/** Shared clip-path geometry (matches NotchHero) for the hero photo. */
+const HERO_NOTCH_ID = "oep-hero-notch-shape";
+const HERO_GRADIENT = "linear-gradient(to right, #0A141Dcc 0%, rgba(10,20,29,0) 100%)";
 
 /** Small brand-tint pill used as a section eyebrow. */
 const Eyebrow = ({ children }: { children: string }) => (
@@ -260,6 +263,14 @@ const GUARANTEES: string[] = [
   "Több milliárd forintos árbevétel, stabil vállalati háttér",
 ];
 
+/** The four garanciapontok shown under the hero photo. */
+const HERO_GUARANTEES: string[] = [
+  "10+ év szakmai tapasztalat a megújuló energia piacán",
+  "Országos lefedettség, gyors és átlátható ügyintézés",
+  "Teljes körű garancia a telepített rendszerekre",
+  "Több milliárd forintos árbevétel, stabil vállalati háttér",
+];
+
 /** Costs coverable from the grant. */
 const ELIGIBLE_COSTS: string[] = [
   "Villamosenergia-tároló (akkumulátor) beszerzése",
@@ -366,48 +377,111 @@ const heroPillStyle: CSSProperties = {
 
 /**
  * "Lakossági energiatároló támogatás" (Otthoni Energiatároló Program) kampány-landing —
- * a szolgáltatás-aloldalak elrendezését követi: notch-os hero, majd kétoszlopos törzs,
- * ahol a bal főoszlopban egymás alá kerül minden tartalmi szekció (statisztika,
- * webinárium, kivitelező-partner, csomagajánlatok, extra előnyök, termékszekció és a
- * kifejtett tájékoztató szekciók), a jobb oldali sticky sidebarban pedig a jelentkezési
- * űrlap és az ügyfélszolgálat-widget kap helyet.
+ * a valós a1solar.hu elrendezését követi: felül kétoszlopos hero (bal oldalon notch-os
+ * kép + intro/garanciapontok, jobb oldalon a jelentkezési űrlap), majd alatta minden
+ * tartalmi szekció (statisztika, webinárium, kivitelező-partner, csomagajánlatok, extra
+ * előnyök, termékszekció, kifejtett tájékoztató szekciók és az ügyfélszolgálat-blokk)
+ * teljes szélességben, egymás alatt.
  */
 export const LakossagiEnergiataroloTamogatas = () => (
   <div className="w-full">
-    <NotchHero
-      eyebrow="Otthoni Energiatároló Program"
-      titleStrong="Bízd ránk a kivitelezést!"
-      image="/wp-content/uploads/2025/08/8024.jpg"
-      imageAlt="Lakossági napelemes és energiatároló rendszer"
-      intro="Az Otthoni Energiatároló Programban segítünk a pályázati adminisztrációban, a rendszer tervezésében és kulcsrakész kivitelezésében – megbízható, hosszú távú megoldással."
-      ctaLabel="Jelentkezem"
-      ctaHref="#jelentkezes"
-    />
+    {/* HERO — kép + garanciák | jelentkezési űrlap */}
+    <section className="w-full pt-8 md:pt-12">
+      <svg width="0" height="0" className="absolute" aria-hidden focusable="false">
+        <defs>
+          <clipPath id={HERO_NOTCH_ID} clipPathUnits="objectBoundingBox">
+            <path
+              transform="scale(0.00069735, 0.00175131)"
+              d="M1403 0C1420.12 0 1434 13.8792 1434 31V394C1434 410.569 1420.57 424 1404 424H655C598.5 424 590 424 573 441.5C555.915 459.088 534.421 495.166 518.441 521.988C509.471 537.045 502.239 549.186 498.5 553.5C488.1 565.5 468.5 570.167 460 571H30C13.4315 571 0 557.569 0 541V31C0 13.8792 13.8792 0 31 0H1403Z"
+            />
+          </clipPath>
+        </defs>
+      </svg>
+
+      <div className="container">
+        <div className="grid gap-10 lg:grid-cols-2 lg:gap-12 lg:items-start">
+          {/* BAL — notch-os kép overlay szöveggel + alatta intro/garanciák */}
+          <div>
+            <div className="relative w-full" style={{ aspectRatio: "1192 / 571" }}>
+              <div className="absolute inset-0" style={{ clipPath: `url(#${HERO_NOTCH_ID})` }}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/wp-content/uploads/2023/11/210363746_m_normal_none.jpg"
+                  alt="Napelem telepítés a tetőn"
+                  style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "50% 55%" }}
+                />
+                <div className="absolute inset-0" style={{ background: HERO_GRADIENT }} />
+              </div>
+              <div className="absolute bottom-0 left-0 z-10 text-white" style={{ padding: "40px", maxWidth: "560px" }}>
+                <span
+                  className="inline-block rounded-full px-3 py-2 text-xs font-medium uppercase tracking-[1px] text-white"
+                  style={{ background: "rgba(255,255,255,0.2)", marginBottom: "20px" }}
+                >
+                  Otthoni Energiatároló Program
+                </span>
+                <h1 style={{ color: "#fff", fontSize: "clamp(28px, 3.4vw, 42px)", fontWeight: 300, lineHeight: 1.18, marginBottom: "24px" }}>
+                  Bízd ránk
+                  <br />
+                  <strong style={{ fontWeight: 700 }}>a kivitelezést!</strong>
+                </h1>
+                <a href="#jelentkezes" style={{ ...heroPillStyle, padding: "12px 24px", fontSize: "15px" }}>
+                  További információ
+                </a>
+              </div>
+            </div>
+
+            <div className="mt-8">
+              <p className="text-[var(--ink-soft)]" style={{ fontSize: "17px", lineHeight: 1.75 }}>
+                Az Otthoni Energiatároló Program keretében segítünk a pályázati adminisztrációban, a rendszer
+                kiválasztásában, tervezésében és kivitelezésében, hogy otthonod számára megbízható, hosszú távú megoldás
+                valósuljon meg.
+              </p>
+              <p className="text-[var(--ink)]" style={{ margin: "24px 0 16px", fontSize: "17px", fontWeight: 700 }}>
+                Amit az A1 Solar garantál:
+              </p>
+              <ul className="flex flex-col gap-4" style={{ listStyle: "none", padding: 0, margin: 0 }}>
+                {HERO_GUARANTEES.map((item) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <CheckIcon />
+                    <span className="text-[var(--ink-soft)]" style={{ fontSize: "16px", lineHeight: 1.6 }}>
+                      {item}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          {/* JOBB — jelentkezési űrlap */}
+          <div id="jelentkezes" style={{ scrollMarginTop: "var(--header-h)" }}>
+            <OepHeroForm />
+          </div>
+        </div>
+      </div>
+    </section>
 
     <div className="container">
       <hr className="my-12 md:my-16" style={{ border: 0, borderTop: "1px dashed #ececec" }} />
     </div>
 
+    {/* TARTALOM — teljes szélességű szekciók egymás alatt */}
     <section className="w-full pb-0">
       <div className="container">
-        <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_360px] lg:gap-0">
-          {/* MAIN — stacked content sections */}
-          <div className="lg:pr-10">
-            {/* STATISZTIKA-SÁV */}
-            <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
-              {PROGRAM_STATS.map((stat) => (
-                <Stat key={stat.label} value={stat.value} label={stat.label} />
-              ))}
-            </div>
+        {/* STATISZTIKA-SÁV */}
+        <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
+          {PROGRAM_STATS.map((stat) => (
+            <Stat key={stat.label} value={stat.value} label={stat.label} />
+          ))}
+        </div>
 
-            <RowDivider />
+        <RowDivider />
 
-            {/* WEBINÁRIUM */}
-            <Section
-              eyebrow="Webinárium"
-              title="Otthoni Energiatároló Program webinárium"
-              intro="Az Otthoni Energiatároló Program kapcsán online webináriumot tartunk, ahol a 2. szakasz benyújtási folyamatát, a szükséges tudnivalókat, valamint a következő lépéseket vesszük végig részletesen."
-            >
+        {/* WEBINÁRIUM */}
+        <Section
+          eyebrow="Webinárium"
+          title="Otthoni Energiatároló Program webinárium"
+          intro="Az Otthoni Energiatároló Program kapcsán online webináriumot tartunk, ahol a 2. szakasz benyújtási folyamatát, a szükséges tudnivalókat, valamint a következő lépéseket vesszük végig részletesen."
+        >
               <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                 {WEBINARS.map((webinar) => (
                   <div key={webinar.title} className="flex flex-col px-7 py-8" style={{ background: "var(--surface-3)", borderRadius: "20px" }}>
@@ -468,7 +542,7 @@ export const LakossagiEnergiataroloTamogatas = () => (
               title="Csomagajánlataink"
               intro="Az alábbi csomagajánlatokat kifejezetten az Otthoni Energiatároló Program feltételeihez igazítva állítottuk össze. A csomagok tartalmazzák a teljes körű tervezést és engedélyeztetést, a pályázatírást és projektmenedzsmentet, valamint – a program aktuális feltételei mellett – az ingyenes padlásfödém szigetelést is."
             >
-              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
                 {PACKAGES.map((pkg) => (
                   <PackageCard key={pkg.brand} {...pkg} />
                 ))}
@@ -755,38 +829,41 @@ export const LakossagiEnergiataroloTamogatas = () => (
                 biztosítsunk a magyar háztartások számára.
               </Body>
             </Section>
+      </div>
+    </section>
+
+    <div className="container">
+      <hr className="my-12 md:my-16" style={{ border: 0, borderTop: "1px dashed #ececec" }} />
+    </div>
+
+    {/* ÜGYFÉLSZOLGÁLAT — teljes szélességű záró blokk */}
+    <section className="w-full pb-4">
+      <div className="container">
+        <div
+          className="flex flex-col items-start justify-between gap-6 px-8 py-8 md:flex-row md:items-center"
+          style={{ background: "var(--surface-3)", borderRadius: "20px" }}
+        >
+          <div>
+            <p className="text-[var(--ink)]" style={{ margin: 0, fontSize: "22px", fontWeight: 700 }}>
+              Beszéljünk a lehetőségeidről!
+            </p>
+            <p className="mt-3 text-[var(--ink-soft)]" style={{ fontSize: "16px", lineHeight: 1.7 }}>
+              Ügyfélszolgálatunk hétköznap {SITE.supportHours} között elérhető – fordulj hozzá bizalommal!
+            </p>
           </div>
-
-          {/* SIDEBAR — application form + support widget */}
-          <aside
-            id="jelentkezes"
-            className="lg:border-l lg:border-dashed lg:border-[#ececec] lg:pl-10"
-            style={{ scrollMarginTop: "var(--header-h)" }}
-          >
-            <div className="lg:sticky lg:top-[110px]">
-              <ContactForm
-                bare
-                formName="Otthoni Energiatároló Program"
-                heading="Jelentkezés"
-                intro="Töltsd ki az alábbi űrlapot és munkatársunk 24 órán belül felveszi veled a kapcsolatot."
-              />
-
-              <div className="mt-6" style={{ background: "var(--surface-3)", borderRadius: "20px", padding: "24px" }}>
-                <p className="text-[var(--ink)]" style={{ margin: 0, fontSize: "18px", fontWeight: 700 }}>
-                  Beszéljünk a lehetőségeidről!
-                </p>
-                <p className="mt-3 text-[var(--ink-soft)]" style={{ fontSize: "15px", lineHeight: 1.7 }}>
-                  Ügyfélszolgálatunk hétköznap {SITE.supportHours} között elérhető – fordulj hozzá bizalommal!
-                </p>
-                <p className="text-[var(--ink-muted)]" style={{ margin: "18px 0 4px", fontSize: "12px", textTransform: "uppercase", letterSpacing: "0.5px" }}>
-                  Ügyfélszolgálat
-                </p>
-                <a href={`tel:${SITE.phoneRaw}`} style={{ color: "var(--brand)", fontSize: "22px", fontWeight: 700 }}>
-                  {SITE.phoneDisplay}
-                </a>
-              </div>
+          <div className="md:text-right">
+            <p className="text-[var(--ink-muted)]" style={{ margin: "0 0 4px", fontSize: "12px", textTransform: "uppercase", letterSpacing: "0.5px" }}>
+              Ügyfélszolgálat
+            </p>
+            <a href={`tel:${SITE.phoneRaw}`} style={{ color: "var(--brand)", fontSize: "26px", fontWeight: 700 }}>
+              {SITE.phoneDisplay}
+            </a>
+            <div className="mt-5">
+              <a href="#jelentkezes" style={heroPillStyle}>
+                Jelentkezem
+              </a>
             </div>
-          </aside>
+          </div>
         </div>
       </div>
     </section>
