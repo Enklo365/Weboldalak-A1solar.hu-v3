@@ -417,11 +417,11 @@ export const LakossagiEnergiataroloTamogatas = () => (
                 loop
                 playsInline
                 preload="auto"
-                poster="/wp-content/uploads/2023/11/210363746_m_normal_none.jpg"
+                poster="/wp-content/uploads/2026/03/otthoni_energiatarolo_program-1.png"
                 aria-hidden="true"
                 style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "50% 50%" }}
               >
-                <source src="/wp-content/uploads/2025/07/Telepitettuk-az-elso-Napenergia-Plusz-Programos-rendszert-A1-Solar.mp4" type="video/mp4" />
+                <source src="/nativ/hero-loop.mp4" type="video/mp4" />
               </video>
               <div className="absolute inset-0" style={{ background: HERO_GRADIENT }} />
             </div>
@@ -451,12 +451,12 @@ export const LakossagiEnergiataroloTamogatas = () => (
               loop
               playsInline
               preload="auto"
-              poster="/wp-content/uploads/2023/11/210363746_m_normal_none.jpg"
+              poster="/wp-content/uploads/2026/03/otthoni_energiatarolo_program-1.png"
               aria-hidden="true"
               className="absolute inset-0"
               style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "50% 50%" }}
             >
-              <source src="/wp-content/uploads/2025/07/Telepitettuk-az-elso-Napenergia-Plusz-Programos-rendszert-A1-Solar.mp4" type="video/mp4" />
+              <source src="/nativ/hero-loop.mp4" type="video/mp4" />
             </video>
             <div className="absolute inset-0" style={{ background: HERO_GRADIENT }} />
             <div className="relative z-10">
@@ -502,7 +502,7 @@ export const LakossagiEnergiataroloTamogatas = () => (
           {/* JELENTKEZÉSI FORM — mobil: kép/intro alatt flow-ban; desktop: a jobb-alsó notch-kivágásba ültetve, a kép alá lógva */}
           <div
             id="jelentkezes"
-            className="mt-8 lg:absolute lg:left-[47%] lg:right-0 lg:top-[74%] lg:z-20 lg:mt-0"
+            className="mt-8 lg:absolute lg:left-[49%] lg:right-0 lg:top-[86%] lg:z-20 lg:mt-0"
             style={{ scrollMarginTop: "var(--header-h)" }}
           >
             <OepHeroForm />
