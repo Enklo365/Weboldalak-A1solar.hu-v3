@@ -525,75 +525,80 @@ export const LakossagiEnergiataroloTamogatas = () => (
               title="Válassza az A1 Solar Kft.-t megbízható kivitelező partnerként"
               intro="Regisztrált kivitelezőként nemcsak az ajánlatkéréstől a megvalósításig kísérjük végig, hanem az energiatároló rendszer teljes élettartama alatt partnerei maradunk – a pályázat lezárása után sem engedjük el a kezét."
             >
-              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+              <div className="grid grid-cols-1 items-stretch gap-6 sm:grid-cols-2">
                 {/* Bal kártya — döntés előtt */}
-                <div className="flex flex-col rounded-[20px] p-7 md:p-8" style={{ background: "var(--surface-3)" }}>
-                  <span
-                    className="rounded-[30px] px-3 py-2 text-xs font-normal uppercase tracking-[1px]"
-                    style={{ background: "rgba(194,29,32,0.14)", color: "var(--brand-dark)", alignSelf: "flex-start" }}
-                  >
-                    Döntés előtt
-                  </span>
-                  <h3 className="text-[var(--ink)]" style={{ margin: "18px 0 0", fontSize: "20px", fontWeight: 600, lineHeight: 1.3 }}>
+                <div className="flex flex-col rounded-[24px] p-8" style={{ background: "var(--surface-3)" }}>
+                  <div className="flex items-center gap-4">
+                    <span className="grid h-12 w-12 flex-none place-items-center rounded-full" style={{ background: "#fff", color: "var(--brand)" }} aria-hidden="true">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M14 3v4a1 1 0 0 0 1 1h4" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" />
+                        <path d="M14 3H6.5A1.5 1.5 0 0 0 5 4.5v15A1.5 1.5 0 0 0 6.5 21h11a1.5 1.5 0 0 0 1.5-1.5V8L14 3Z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" />
+                        <path d="M8.5 13h7M8.5 16.5h4.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+                      </svg>
+                    </span>
+                    <span
+                      className="rounded-[30px] px-3 py-1.5 text-xs font-semibold uppercase tracking-[1px]"
+                      style={{ background: "rgba(194,29,32,0.14)", color: "var(--brand-dark)" }}
+                    >
+                      Döntés előtt
+                    </span>
+                  </div>
+                  <h3 className="text-[var(--ink)]" style={{ margin: "20px 0 0", fontSize: "20px", fontWeight: 600, lineHeight: 1.3 }}>
                     Benyújtotta a pályázatát és döntésre vár?
                   </h3>
                   <p className="text-[var(--ink-soft)]" style={{ margin: "12px 0 0", fontSize: "16px", lineHeight: 1.6 }}>
-                    Kérjen előzetes árajánlatot, hogy pozitív elbírálás esetén gyorsan tudjon dönteni.
+                    Kérjen előzetes árajánlatot, hogy pozitív elbírálás esetén gyorsan tudjon dönteni. Ellenőrizze azt is,
+                    hogy az A1 Solar Kft. szerepel a hivatalos, regisztrált kivitelezők között.
                   </p>
-                  <a
-                    href="#jelentkezes"
-                    className="mt-5"
-                    style={{ display: "inline-block", alignSelf: "flex-start", background: "var(--brand)", color: "#fff", padding: "12px 24px", borderRadius: "9999px", fontWeight: 600 }}
-                  >
-                    Előzetes árajánlat kérése
-                  </a>
-                  <p className="text-[var(--ink)]" style={{ margin: "28px 0 0", fontSize: "16px", fontWeight: 600, lineHeight: 1.55 }}>
-                    Nézze meg a regisztrált kivitelezők listáját!
-                  </p>
-                  <a
-                    href="#jelentkezes"
-                    className="mt-4"
-                    style={{ display: "inline-block", alignSelf: "flex-start", background: "#fff", color: "var(--brand)", border: "2px solid var(--brand)", padding: "10px 22px", borderRadius: "9999px", fontWeight: 600 }}
-                  >
-                    Megnézem a hivatalos kivitelezői listát
-                  </a>
+                  <div className="mt-auto flex flex-col items-start gap-4 pt-7">
+                    <a
+                      href="#jelentkezes"
+                      style={{ display: "inline-block", background: "var(--brand)", color: "#fff", padding: "13px 26px", borderRadius: "9999px", fontWeight: 600 }}
+                    >
+                      Előzetes árajánlat kérése
+                    </a>
+                    <a href="#jelentkezes" className="inline-flex items-center gap-2" style={{ color: "var(--brand)", fontWeight: 600, fontSize: "15px" }}>
+                      Megnézem a hivatalos kivitelezői listát
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    </a>
+                  </div>
                 </div>
 
                 {/* Jobb kártya — pályázat elfogadva */}
-                <div className="flex flex-col rounded-[20px] p-7 md:p-8" style={{ background: "var(--surface-3)" }}>
-                  <span
-                    className="rounded-[30px] px-3 py-2 text-xs font-normal uppercase tracking-[1px]"
-                    style={{ background: "rgba(22,163,74,0.12)", color: "#16a34a", alignSelf: "flex-start" }}
-                  >
-                    Pályázat elfogadva
-                  </span>
-                  <h3 className="text-[var(--ink)]" style={{ margin: "18px 0 0", fontSize: "20px", fontWeight: 600, lineHeight: 1.3 }}>
+                <div className="flex flex-col rounded-[24px] p-8" style={{ background: "var(--surface-3)" }}>
+                  <div className="flex items-center gap-4">
+                    <span className="grid h-12 w-12 flex-none place-items-center rounded-full" style={{ background: "#fff", color: "#16a34a" }} aria-hidden="true">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1.8" />
+                        <path d="m8.5 12 2.5 2.5 4.5-5" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    </span>
+                    <span
+                      className="rounded-[30px] px-3 py-1.5 text-xs font-semibold uppercase tracking-[1px]"
+                      style={{ background: "rgba(22,163,74,0.12)", color: "#16a34a" }}
+                    >
+                      Pályázat elfogadva
+                    </span>
+                  </div>
+                  <h3 className="text-[var(--ink)]" style={{ margin: "20px 0 0", fontSize: "20px", fontWeight: 600, lineHeight: 1.3 }}>
                     Elfogadták a pályázatát?
                   </h3>
                   <p className="text-[var(--ink-soft)]" style={{ margin: "12px 0 0", fontSize: "16px", lineHeight: 1.6 }}>
                     <strong style={{ fontWeight: 700, color: "var(--ink)" }}>Jelölje kivitelezőnek</strong> az{" "}
                     <span style={{ color: "var(--brand)", fontWeight: 700 }}>A1 Solar Kft.-t</span>, és kérjen ajánlatot a
-                    pályázati felületen.
+                    pályázati felületen – a műszaki tartalmat és az{" "}
+                    <span style={{ color: "var(--brand)", fontWeight: 700 }}>árajánlatot ingyen elkészítjük</span>.
                   </p>
-                  <ul className="mt-5 flex flex-col gap-3" style={{ listStyle: "none", padding: 0, margin: 0 }}>
-                    <li className="flex items-start gap-3">
-                      <span
-                        aria-hidden="true"
-                        style={{ flexShrink: 0, width: "8px", height: "8px", borderRadius: "9999px", background: "var(--brand)", marginTop: "9px" }}
-                      />
-                      <span className="text-[var(--ink-soft)]" style={{ fontSize: "16px", lineHeight: 1.6 }}>
-                        a műszaki tartalmat és az{" "}
-                        <span style={{ color: "var(--brand)", fontWeight: 700 }}>árajánlatot ingyen elkészítjük</span>.
-                      </span>
-                    </li>
-                  </ul>
-                  <a
-                    href="#jelentkezes"
-                    className="mt-auto pt-6"
-                    style={{ display: "inline-block", alignSelf: "flex-start", background: "var(--brand)", color: "#fff", padding: "12px 24px", borderRadius: "9999px", fontWeight: 600 }}
-                  >
-                    Kérek ajánlatot
-                  </a>
+                  <div className="mt-auto pt-7">
+                    <a
+                      href="#jelentkezes"
+                      style={{ display: "inline-block", background: "var(--brand)", color: "#fff", padding: "13px 26px", borderRadius: "9999px", fontWeight: 600 }}
+                    >
+                      Kérek ajánlatot
+                    </a>
+                  </div>
                 </div>
               </div>
             </Section>
