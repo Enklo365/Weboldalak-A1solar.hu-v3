@@ -242,24 +242,6 @@ const PACKAGES: StoragePackage[] = [
 
 
 
-/** Contractor-partner mini cards. */
-const PARTNER_STEPS: { title: string; text: string; cta: string }[] = [
-  {
-    title: "Benyújtotta a pályázatát és döntésre vár?",
-    text: "Kérjen előzetes árajánlatot, hogy pozitív elbírálás esetén gyorsan tudjon dönteni.",
-    cta: "Előzetes árajánlat kérése",
-  },
-  {
-    title: "Nézze meg a regisztrált kivitelezők listáját!",
-    text: "Ellenőrizze, hogy az A1 Solar Kft. szerepel a hivatalos, regisztrált kivitelezők között.",
-    cta: "Kérek tájékoztatást",
-  },
-  {
-    title: "Elfogadták a pályázatát?",
-    text: "Jelölje kivitelezőnek az A1 Solar Kft.-t, és kérjen ajánlatot a pályázati felületen – a műszaki tartalmat és az árajánlatot ingyen elkészítjük.",
-    cta: "Kérek ajánlatot",
-  },
-];
 
 /** Extra loyalty perks. */
 const PERKS: { title: string; text: string; image: string }[] = [
@@ -551,22 +533,65 @@ export const LakossagiEnergiataroloTamogatas = () => (
               title="Válassza az A1 Solar Kft.-t megbízható kivitelező partnerként"
               intro="Regisztrált kivitelezőként nemcsak az ajánlatkéréstől a megvalósításig kísérjük végig, hanem az energiatároló rendszer teljes élettartama alatt partnerei maradunk – a pályázat lezárása után sem engedjük el a kezét."
             >
-              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-                {PARTNER_STEPS.map((step) => (
-                  <div key={step.title} className="flex flex-col px-7 py-8" style={{ background: "var(--surface-3)", borderRadius: "20px" }}>
-                    <h3 className="text-[var(--ink)]" style={{ margin: 0, fontSize: "18px", fontWeight: 600, lineHeight: 1.3 }}>
-                      {step.title}
+              <div className="grid grid-cols-1 items-start gap-6 sm:grid-cols-2">
+                {/* Bal kártya — piros fejléc + két CTA */}
+                <div className="flex flex-col overflow-hidden" style={{ borderRadius: "20px", border: "1px solid var(--line)" }}>
+                  <div className="px-7 py-6 text-center" style={{ background: "var(--brand)" }}>
+                    <h3 style={{ margin: 0, color: "#fff", fontSize: "20px", fontWeight: 700, lineHeight: 1.3 }}>
+                      Benyújtotta a pályázatát és döntésre vár?
                     </h3>
-                    <p className="mt-4 flex-1 text-[var(--ink-soft)]" style={{ fontSize: "15px", lineHeight: 1.65 }}>
-                      {step.text}
-                    </p>
-                    <div className="mt-6">
-                      <a href="#jelentkezes" style={{ ...heroPillStyle, padding: "12px 24px" }}>
-                        {step.cta}
-                      </a>
-                    </div>
                   </div>
-                ))}
+                  <div className="flex flex-1 flex-col items-center px-7 py-8 text-center" style={{ background: "#fff" }}>
+                    <p className="text-[var(--ink)]" style={{ margin: 0, fontSize: "16px", fontWeight: 600, lineHeight: 1.55 }}>
+                      Kérjen előzetes árajánlatot, hogy pozitív elbírálás esetén gyorsan tudjon dönteni.
+                    </p>
+                    <a
+                      href="#jelentkezes"
+                      className="mt-6"
+                      style={{ display: "inline-block", background: "var(--brand)", color: "#fff", padding: "13px 26px", borderRadius: "9999px", fontWeight: 600 }}
+                    >
+                      Előzetes árajánlat kérése
+                    </a>
+                    <p className="text-[var(--ink)]" style={{ margin: "36px 0 0", fontSize: "16px", fontWeight: 600, lineHeight: 1.55 }}>
+                      Nézze meg a regisztrált kivitelezők listáját!
+                    </p>
+                    <a
+                      href="#jelentkezes"
+                      className="mt-5"
+                      style={{ display: "inline-block", background: "#fff", color: "var(--brand)", border: "2px solid var(--brand)", padding: "11px 24px", borderRadius: "9999px", fontWeight: 600 }}
+                    >
+                      Megnézem a hivatalos kivitelezői listát
+                    </a>
+                  </div>
+                </div>
+
+                {/* Jobb kártya — szürke fejléc + pipa */}
+                <div className="flex flex-col overflow-hidden" style={{ borderRadius: "20px", border: "1px solid var(--line)" }}>
+                  <div className="px-7 py-6 text-center" style={{ background: "var(--surface-3)" }}>
+                    <h3 className="text-[var(--ink)]" style={{ margin: 0, fontSize: "20px", fontWeight: 700, lineHeight: 1.3 }}>
+                      Elfogadták a pályázatát?
+                    </h3>
+                  </div>
+                  <div className="flex flex-1 flex-col px-7 py-8" style={{ background: "#fff" }}>
+                    <p className="text-[var(--ink)]" style={{ margin: 0, fontSize: "16px", lineHeight: 1.6 }}>
+                      <strong style={{ fontWeight: 700 }}>Jelölje kivitelezőnek</strong> az{" "}
+                      <span style={{ color: "var(--brand)", fontWeight: 700 }}>A1 Solar Kft.-t</span>, és kérjen ajánlatot a
+                      pályázati felületen.
+                    </p>
+                    <ul className="mt-6 flex flex-col gap-3" style={{ listStyle: "none", padding: 0, margin: 0 }}>
+                      <li className="flex items-start gap-3">
+                        <span
+                          aria-hidden="true"
+                          style={{ flexShrink: 0, width: "8px", height: "8px", borderRadius: "9999px", background: "var(--brand)", marginTop: "9px" }}
+                        />
+                        <span className="text-[var(--ink)]" style={{ fontSize: "16px", lineHeight: 1.6 }}>
+                          a műszaki tartalmat és az{" "}
+                          <span style={{ color: "var(--brand)", fontWeight: 700 }}>árajánlatot ingyen elkészítjük</span>.
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
               </div>
             </Section>
 
