@@ -40,10 +40,10 @@ export const OepVideoPlaylist = () => {
   };
 
   return (
-    <div className="grid gap-4 lg:h-[480px] lg:grid-cols-[minmax(0,1fr)_340px]">
+    <div className="flex flex-col gap-6">
       {/* Main player */}
       <div
-        className="relative aspect-video overflow-hidden rounded-[20px] lg:aspect-auto lg:h-full"
+        className="relative aspect-video overflow-hidden rounded-[20px]"
         style={{ background: "#000", border: "1px solid var(--line)" }}
       >
         <iframe
@@ -57,24 +57,18 @@ export const OepVideoPlaylist = () => {
         />
       </div>
 
-      {/* Playlist rail */}
-      <div
-        className="flex flex-col overflow-hidden rounded-[20px] lg:h-full"
-        style={{ background: "var(--surface-3)", border: "1px solid var(--line)" }}
-      >
-        <div
-          className="flex items-center justify-between px-4 py-3"
-          style={{ borderBottom: "1px solid var(--line)" }}
-        >
-          <span className="font-semibold text-[var(--ink)]" style={{ fontSize: "14px" }}>
+      {/* Playlist grid below the player */}
+      <div>
+        <div className="mb-3 flex items-center justify-between">
+          <span className="font-semibold text-[var(--ink)]" style={{ fontSize: "15px" }}>
             Lejátszási lista
           </span>
-          <span className="text-[var(--ink-muted)]" style={{ fontSize: "12px" }}>
+          <span className="text-[var(--ink-muted)]" style={{ fontSize: "13px" }}>
             {VIDEOS.length} videó
           </span>
         </div>
 
-        <ul className="flex max-h-[420px] flex-1 flex-col gap-1 overflow-y-auto p-2 lg:max-h-none">
+        <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
           {VIDEOS.map((video, index) => {
             const isActive = video.id === activeId;
             return (
@@ -83,10 +77,13 @@ export const OepVideoPlaylist = () => {
                   type="button"
                   onClick={() => onSelect(video.id)}
                   aria-current={isActive ? "true" : undefined}
-                  className="flex w-full items-center gap-3 rounded-[12px] p-2 text-left transition-colors"
-                  style={isActive ? { background: "#fff" } : undefined}
+                  className="flex h-full w-full flex-col overflow-hidden rounded-[14px] text-left transition-colors"
+                  style={{
+                    background: isActive ? "#fff" : "var(--surface-3)",
+                    border: isActive ? "1px solid var(--brand)" : "1px solid var(--line)",
+                  }}
                 >
-                  <span className="relative flex-none overflow-hidden rounded-[8px]" style={{ width: "104px", aspectRatio: "16 / 9", background: "#000" }}>
+                  <span className="relative block overflow-hidden" style={{ aspectRatio: "16 / 9", background: "#000" }}>
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       src={`https://i.ytimg.com/vi/${video.id}/mqdefault.jpg`}
@@ -94,18 +91,16 @@ export const OepVideoPlaylist = () => {
                       loading="lazy"
                       style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
                     />
-                    {isActive ? (
-                      <span
-                        className="absolute inset-0 flex items-center justify-center"
-                        style={{ background: "rgba(0,0,0,0.35)" }}
-                      >
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="#fff" aria-hidden="true">
-                          <path d="M8 5v14l11-7z" />
-                        </svg>
-                      </span>
-                    ) : null}
+                    <span
+                      className="absolute inset-0 flex items-center justify-center transition-opacity"
+                      style={{ background: "rgba(0,0,0,0.30)", opacity: isActive ? 1 : 0 }}
+                    >
+                      <svg width="26" height="26" viewBox="0 0 24 24" fill="#fff" aria-hidden="true">
+                        <path d="M8 5v14l11-7z" />
+                      </svg>
+                    </span>
                   </span>
-                  <span className="min-w-0 flex-1">
+                  <span className="flex flex-1 flex-col gap-1 p-3">
                     <span
                       className="block"
                       style={{
@@ -121,7 +116,7 @@ export const OepVideoPlaylist = () => {
                     >
                       {video.title}
                     </span>
-                    <span className="mt-1 block text-[var(--ink-muted)]" style={{ fontSize: "11px" }}>
+                    <span className="mt-auto block text-[var(--ink-muted)]" style={{ fontSize: "11px" }}>
                       {index + 1}. videó
                     </span>
                   </span>
