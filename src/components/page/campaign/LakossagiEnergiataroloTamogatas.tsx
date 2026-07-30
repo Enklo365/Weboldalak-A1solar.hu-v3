@@ -1,3 +1,5 @@
+import type { LucideIcon } from "lucide-react";
+import { Gift, Plane } from "lucide-react";
 import type { CSSProperties, ReactNode } from "react";
 
 import { OepHeroForm } from "@/components/page/campaign/OepHeroForm";
@@ -201,17 +203,17 @@ const PACKAGES: StoragePackage[] = [
 
 
 
-/** Extra loyalty perks. */
-const PERKS: { title: string; text: string; image: string }[] = [
+/** Extra loyalty perks — icon-box cards (Lucide icons), matching the old page. */
+const PERKS: { title: string; text: string; icon: LucideIcon }[] = [
   {
     title: "100 000 Ft értékű fejlesztési kupon",
     text: "Minden velünk sikeresen megvalósított projekt után bruttó 100 000 Ft értékű kupont adunk, amit későbbi napelemes vagy energiatárolási fejlesztésekhez használhatsz fel az A1 Solar Kft.-nél.",
-    image: "/wp-content/uploads/2025/10/ingyenespadlasszigeteles.png",
+    icon: Gift,
   },
   {
     title: "Álomutazás sorsolás – 2 fő részére",
     text: "Ha 2026. április 30-ig szerződsz velünk és Támogatói Okiratot kapsz, automatikusan részt veszel a sorsoláson. A nyertes egy 2 személyes, 5 napos álomutazást választhat: Zanzibár szigetére vagy Kínába.",
-    image: "/wp-content/uploads/2025/12/Uj-lakossagi-energiatarolos-tamogatasi-program-indul-1024x667.png",
+    icon: Plane,
   },
 ];
 
@@ -612,26 +614,48 @@ export const LakossagiEnergiataroloTamogatas = () => (
               title="A pályázat és a kivitelezés nálunk csak a kezdet"
               intro="Extra előnyök, amiket máshol nem kapsz meg."
             >
-              <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-                {PERKS.map((perk) => (
-                  <div key={perk.title} className="flex flex-col overflow-hidden" style={{ background: "var(--surface-3)", borderRadius: "20px" }}>
-                    <div style={{ height: "180px", overflow: "hidden", background: "#fff" }}>
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img src={perk.image} alt={perk.title} loading="lazy" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
-                    </div>
-                    <div className="flex flex-1 flex-col px-7 py-7">
-                      <h3 className="text-[var(--ink)]" style={{ margin: 0, fontSize: "20px", fontWeight: 600, lineHeight: 1.25 }}>
-                        {perk.title}
-                      </h3>
-                      <p className="mt-4 flex-1 text-[var(--ink-soft)]" style={{ fontSize: "15px", lineHeight: 1.7 }}>
+              <div className="flex flex-col gap-6">
+                {PERKS.map((perk) => {
+                  const Icon = perk.icon;
+                  return (
+                    <div
+                      key={perk.title}
+                      className="rounded-[20px] p-6 md:p-7"
+                      style={{ background: "#fff", border: "1px solid var(--line)" }}
+                    >
+                      <div className="flex items-center gap-4">
+                        <span
+                          className="flex flex-none items-center justify-center rounded-full"
+                          style={{ width: "48px", height: "48px", background: "rgba(219,3,48,0.10)" }}
+                        >
+                          <Icon size={22} strokeWidth={1.75} style={{ color: "var(--brand)" }} />
+                        </span>
+                        <h3
+                          className="text-[var(--ink)]"
+                          style={{ margin: 0, fontSize: "15px", fontWeight: 700, lineHeight: 1.3, textTransform: "uppercase", letterSpacing: "0.3px" }}
+                        >
+                          {perk.title}
+                        </h3>
+                      </div>
+                      <div style={{ height: "1px", background: "var(--line)", margin: "20px 0" }} />
+                      <p className="text-[var(--ink-soft)]" style={{ margin: 0, fontSize: "15px", lineHeight: 1.75 }}>
                         {perk.text}
                       </p>
-                      <p className="text-[var(--ink-muted)]" style={{ margin: "20px 0 0", fontSize: "13px" }}>
-                        Szabályzat: promóciós szabályzat
-                      </p>
+                      <div className="mt-6 flex items-center justify-between gap-4">
+                        <span className="text-[var(--ink-muted)]" style={{ fontSize: "13px" }}>
+                          Szabályzat: promóciós szabályzat
+                        </span>
+                        <a
+                          href="/lakossagi-napelemes-rendszerek-tamogatasa-promocios-szabalyzat"
+                          className="flex-none font-medium text-[var(--ink-soft)] transition-colors hover:text-[var(--brand)]"
+                          style={{ fontSize: "13px" }}
+                        >
+                          További információ
+                        </a>
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </Section>
 
