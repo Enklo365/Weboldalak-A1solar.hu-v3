@@ -12,6 +12,7 @@ const OEP_TOC = [
   { id: "kivitelezes", label: "Kivitelezés" },
   { id: "csomagok", label: "Csomagajánlatok" },
   { id: "extra-elonyok", label: "Extra előnyök" },
+  { id: "videotar", label: "Videótár" },
   { id: "kinek-ajanlott", label: "Kinek ajánlott?" },
   { id: "tamogatas-merteke", label: "Támogatás mértéke" },
   { id: "jelentkezes-folyamat", label: "Jelentkezés" },
@@ -656,6 +657,41 @@ export const LakossagiEnergiataroloTamogatas = () => (
                     </div>
                   );
                 })}
+              </div>
+            </Section>
+
+            <RowDivider />
+
+            {/* VIDEÓTÁR — beágyazott YouTube lejátszási lista */}
+            <Section
+              id="videotar"
+              eyebrow="Videótár"
+              title="Nézd meg a programról szóló videóinkat"
+              intro="Termékbemutatók, webináriumok és pályázati útmutatók egy helyen — böngészd végig a teljes lejátszási listát."
+            >
+              <div
+                className="overflow-hidden rounded-[20px]"
+                style={{ background: "#000", border: "1px solid var(--line)", aspectRatio: "16 / 9" }}
+              >
+                <iframe
+                  src="https://www.youtube-nocookie.com/embed/QdHKaDdU-7Q?list=PLq0O3JGSosnaGtyIHSxpuC6c_BKALmMBf&rel=0"
+                  title="A1 Solar – Otthoni Energiatároló Program videótár"
+                  style={{ width: "100%", height: "100%", border: 0, display: "block" }}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  loading="lazy"
+                />
+              </div>
+              <div className="mt-5">
+                <a
+                  href="https://www.youtube.com/playlist?list=PLq0O3JGSosnaGtyIHSxpuC6c_BKALmMBf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-medium text-[var(--brand)] hover:underline"
+                  style={{ fontSize: "14px" }}
+                >
+                  Teljes lejátszási lista megtekintése a YouTube-on →
+                </a>
               </div>
             </Section>
 
