@@ -144,7 +144,7 @@ type StoragePackage = {
 };
 
 const PackageCard = ({ brand, image, ownFund, grant, backup }: StoragePackage) => (
-  <div className="flex flex-col rounded-[20px] p-4" style={{ background: "#fff", border: "1px solid var(--line)" }}>
+  <div className="flex flex-col rounded-[20px] p-3" style={{ background: "#fff", border: "1px solid var(--line)" }}>
     <div style={{ height: "128px", overflow: "hidden" }}>
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img src={image} alt={brand} loading="lazy" style={{ width: "100%", height: "100%", objectFit: "contain", display: "block" }} />
