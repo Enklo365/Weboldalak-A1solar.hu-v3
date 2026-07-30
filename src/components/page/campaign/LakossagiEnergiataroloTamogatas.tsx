@@ -153,10 +153,10 @@ const PackageCard = ({ brand, image, ownFund, grant, backup }: StoragePackage) =
       {brand}
     </h3>
     <div className="mt-3 flex flex-col gap-2">
-      <span className="rounded-[10px] px-3 py-2 text-center text-[var(--ink)]" style={{ background: "var(--surface-3)", fontSize: "13px" }}>
+      <span className="rounded-[10px] px-2 py-2 text-center text-[var(--ink)]" style={{ background: "var(--surface-3)", fontSize: "12px", whiteSpace: "nowrap" }}>
         {ownFund}
       </span>
-      <span className="rounded-[10px] px-3 py-2 text-center text-[var(--ink)]" style={{ background: "var(--surface-3)", fontSize: "13px" }}>
+      <span className="rounded-[10px] px-2 py-2 text-center text-[var(--ink)]" style={{ background: "var(--surface-3)", fontSize: "12px", whiteSpace: "nowrap" }}>
         Támogatás: <strong style={{ fontWeight: 700 }}>{grant}</strong>
       </span>
     </div>
