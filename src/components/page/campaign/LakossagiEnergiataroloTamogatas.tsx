@@ -43,14 +43,6 @@ const SupportWidget = () => (
         </a>
       </div>
     </div>
-    <div className="mt-6">
-      <a
-        href="#jelentkezes"
-        style={{ display: "block", textAlign: "center", background: "var(--brand)", color: "#fff", padding: "12px 20px", borderRadius: "9999px", fontWeight: 500 }}
-      >
-        Jelentkezem
-      </a>
-    </div>
   </div>
 );
 
@@ -533,64 +525,75 @@ export const LakossagiEnergiataroloTamogatas = () => (
               title="Válassza az A1 Solar Kft.-t megbízható kivitelező partnerként"
               intro="Regisztrált kivitelezőként nemcsak az ajánlatkéréstől a megvalósításig kísérjük végig, hanem az energiatároló rendszer teljes élettartama alatt partnerei maradunk – a pályázat lezárása után sem engedjük el a kezét."
             >
-              <div className="grid grid-cols-1 items-start gap-6 sm:grid-cols-2">
-                {/* Bal kártya — piros fejléc + két CTA */}
-                <div className="flex flex-col overflow-hidden" style={{ borderRadius: "20px", border: "1px solid var(--line)" }}>
-                  <div className="px-7 py-6 text-center" style={{ background: "var(--brand)" }}>
-                    <h3 style={{ margin: 0, color: "#fff", fontSize: "20px", fontWeight: 700, lineHeight: 1.3 }}>
-                      Benyújtotta a pályázatát és döntésre vár?
-                    </h3>
-                  </div>
-                  <div className="flex flex-1 flex-col items-center px-7 py-8 text-center" style={{ background: "#fff" }}>
-                    <p className="text-[var(--ink)]" style={{ margin: 0, fontSize: "16px", fontWeight: 600, lineHeight: 1.55 }}>
-                      Kérjen előzetes árajánlatot, hogy pozitív elbírálás esetén gyorsan tudjon dönteni.
-                    </p>
-                    <a
-                      href="#jelentkezes"
-                      className="mt-6"
-                      style={{ display: "inline-block", background: "var(--brand)", color: "#fff", padding: "13px 26px", borderRadius: "9999px", fontWeight: 600 }}
-                    >
-                      Előzetes árajánlat kérése
-                    </a>
-                    <p className="text-[var(--ink)]" style={{ margin: "36px 0 0", fontSize: "16px", fontWeight: 600, lineHeight: 1.55 }}>
-                      Nézze meg a regisztrált kivitelezők listáját!
-                    </p>
-                    <a
-                      href="#jelentkezes"
-                      className="mt-5"
-                      style={{ display: "inline-block", background: "#fff", color: "var(--brand)", border: "2px solid var(--brand)", padding: "11px 24px", borderRadius: "9999px", fontWeight: 600 }}
-                    >
-                      Megnézem a hivatalos kivitelezői listát
-                    </a>
-                  </div>
+              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                {/* Bal kártya — döntés előtt */}
+                <div className="flex flex-col rounded-[20px] p-7 md:p-8" style={{ background: "var(--surface-3)" }}>
+                  <span
+                    className="rounded-[30px] px-3 py-2 text-xs font-normal uppercase tracking-[1px]"
+                    style={{ background: "rgba(194,29,32,0.14)", color: "var(--brand-dark)", alignSelf: "flex-start" }}
+                  >
+                    Döntés előtt
+                  </span>
+                  <h3 className="text-[var(--ink)]" style={{ margin: "18px 0 0", fontSize: "20px", fontWeight: 600, lineHeight: 1.3 }}>
+                    Benyújtotta a pályázatát és döntésre vár?
+                  </h3>
+                  <p className="text-[var(--ink-soft)]" style={{ margin: "12px 0 0", fontSize: "16px", lineHeight: 1.6 }}>
+                    Kérjen előzetes árajánlatot, hogy pozitív elbírálás esetén gyorsan tudjon dönteni.
+                  </p>
+                  <a
+                    href="#jelentkezes"
+                    className="mt-5"
+                    style={{ display: "inline-block", alignSelf: "flex-start", background: "var(--brand)", color: "#fff", padding: "12px 24px", borderRadius: "9999px", fontWeight: 600 }}
+                  >
+                    Előzetes árajánlat kérése
+                  </a>
+                  <p className="text-[var(--ink)]" style={{ margin: "28px 0 0", fontSize: "16px", fontWeight: 600, lineHeight: 1.55 }}>
+                    Nézze meg a regisztrált kivitelezők listáját!
+                  </p>
+                  <a
+                    href="#jelentkezes"
+                    className="mt-4"
+                    style={{ display: "inline-block", alignSelf: "flex-start", background: "#fff", color: "var(--brand)", border: "2px solid var(--brand)", padding: "10px 22px", borderRadius: "9999px", fontWeight: 600 }}
+                  >
+                    Megnézem a hivatalos kivitelezői listát
+                  </a>
                 </div>
 
-                {/* Jobb kártya — szürke fejléc + pipa */}
-                <div className="flex flex-col overflow-hidden" style={{ borderRadius: "20px", border: "1px solid var(--line)" }}>
-                  <div className="px-7 py-6 text-center" style={{ background: "var(--surface-3)" }}>
-                    <h3 className="text-[var(--ink)]" style={{ margin: 0, fontSize: "20px", fontWeight: 700, lineHeight: 1.3 }}>
-                      Elfogadták a pályázatát?
-                    </h3>
-                  </div>
-                  <div className="flex flex-1 flex-col px-7 py-8" style={{ background: "#fff" }}>
-                    <p className="text-[var(--ink)]" style={{ margin: 0, fontSize: "16px", lineHeight: 1.6 }}>
-                      <strong style={{ fontWeight: 700 }}>Jelölje kivitelezőnek</strong> az{" "}
-                      <span style={{ color: "var(--brand)", fontWeight: 700 }}>A1 Solar Kft.-t</span>, és kérjen ajánlatot a
-                      pályázati felületen.
-                    </p>
-                    <ul className="mt-6 flex flex-col gap-3" style={{ listStyle: "none", padding: 0, margin: 0 }}>
-                      <li className="flex items-start gap-3">
-                        <span
-                          aria-hidden="true"
-                          style={{ flexShrink: 0, width: "8px", height: "8px", borderRadius: "9999px", background: "var(--brand)", marginTop: "9px" }}
-                        />
-                        <span className="text-[var(--ink)]" style={{ fontSize: "16px", lineHeight: 1.6 }}>
-                          a műszaki tartalmat és az{" "}
-                          <span style={{ color: "var(--brand)", fontWeight: 700 }}>árajánlatot ingyen elkészítjük</span>.
-                        </span>
-                      </li>
-                    </ul>
-                  </div>
+                {/* Jobb kártya — pályázat elfogadva */}
+                <div className="flex flex-col rounded-[20px] p-7 md:p-8" style={{ background: "var(--surface-3)" }}>
+                  <span
+                    className="rounded-[30px] px-3 py-2 text-xs font-normal uppercase tracking-[1px]"
+                    style={{ background: "rgba(22,163,74,0.12)", color: "#16a34a", alignSelf: "flex-start" }}
+                  >
+                    Pályázat elfogadva
+                  </span>
+                  <h3 className="text-[var(--ink)]" style={{ margin: "18px 0 0", fontSize: "20px", fontWeight: 600, lineHeight: 1.3 }}>
+                    Elfogadták a pályázatát?
+                  </h3>
+                  <p className="text-[var(--ink-soft)]" style={{ margin: "12px 0 0", fontSize: "16px", lineHeight: 1.6 }}>
+                    <strong style={{ fontWeight: 700, color: "var(--ink)" }}>Jelölje kivitelezőnek</strong> az{" "}
+                    <span style={{ color: "var(--brand)", fontWeight: 700 }}>A1 Solar Kft.-t</span>, és kérjen ajánlatot a
+                    pályázati felületen.
+                  </p>
+                  <ul className="mt-5 flex flex-col gap-3" style={{ listStyle: "none", padding: 0, margin: 0 }}>
+                    <li className="flex items-start gap-3">
+                      <span
+                        aria-hidden="true"
+                        style={{ flexShrink: 0, width: "8px", height: "8px", borderRadius: "9999px", background: "var(--brand)", marginTop: "9px" }}
+                      />
+                      <span className="text-[var(--ink-soft)]" style={{ fontSize: "16px", lineHeight: 1.6 }}>
+                        a műszaki tartalmat és az{" "}
+                        <span style={{ color: "var(--brand)", fontWeight: 700 }}>árajánlatot ingyen elkészítjük</span>.
+                      </span>
+                    </li>
+                  </ul>
+                  <a
+                    href="#jelentkezes"
+                    className="mt-auto pt-6"
+                    style={{ display: "inline-block", alignSelf: "flex-start", background: "var(--brand)", color: "#fff", padding: "12px 24px", borderRadius: "9999px", fontWeight: 600 }}
+                  >
+                    Kérek ajánlatot
+                  </a>
                 </div>
               </div>
             </Section>
@@ -905,6 +908,18 @@ export const LakossagiEnergiataroloTamogatas = () => (
               <SupportWidget />
             </div>
           </aside>
+        </div>
+      </div>
+    </section>
+
+    {/* ZÁRÓ ŰRLAP — a hero jelentkezési űrlapjának másolata a lap alján */}
+    <div className="container">
+      <hr className="my-12 md:my-16" style={{ border: 0, borderTop: "1px dashed #ececec" }} />
+    </div>
+    <section className="w-full pb-4">
+      <div className="container">
+        <div className="mx-auto max-w-[880px]">
+          <OepHeroForm />
         </div>
       </div>
     </section>
