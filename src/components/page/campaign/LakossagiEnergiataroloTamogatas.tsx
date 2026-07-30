@@ -1,7 +1,46 @@
 import type { CSSProperties, ReactNode } from "react";
 
 import { OepHeroForm } from "@/components/page/campaign/OepHeroForm";
+import { SupportStatusDot } from "@/components/service/SupportStatusDot";
 import { SITE } from "@/lib/site";
+
+/** Customer-service sidebar widget (mirrors the service subpages). */
+const SupportWidget = () => (
+  <div className="rounded-[20px] p-6" style={{ background: "var(--surface-3)" }}>
+    <h3 style={{ fontSize: "19px", fontWeight: 500, lineHeight: 1.25, color: "var(--ink)" }}>Beszéljünk a lehetőségeidről!</h3>
+    <p className="mt-3 text-sm leading-relaxed text-[var(--ink-soft)]">
+      Ügyfélszolgálatunk hétköznap {SITE.supportHours} között elérhető – fordulj hozzánk bizalommal!
+    </p>
+    <div className="mt-6 flex items-center gap-4">
+      <span className="grid h-14 w-14 flex-none place-items-center rounded-full" style={{ background: "#fff", color: "var(--brand)" }}>
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path
+            d="M4 12a8 8 0 0 1 16 0M4 12v3a2 2 0 0 0 2 2h1v-6H6a2 2 0 0 0-2 1Zm16 0v3a2 2 0 0 1-2 2h-1v-6h1a2 2 0 0 1 2 1Z"
+            stroke="currentColor"
+            strokeWidth="1.7"
+            strokeLinejoin="round"
+          />
+          <path d="M18 17v.5a3 3 0 0 1-3 3h-3" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
+        </svg>
+      </span>
+      <div>
+        <div className="text-sm font-semibold text-[var(--ink)]">Ügyfélszolgálat</div>
+        <a href={`tel:${SITE.phoneRaw}`} className="mt-0.5 flex items-center gap-2 font-semibold text-[var(--ink)]">
+          <SupportStatusDot />
+          {SITE.phoneDisplay}
+        </a>
+      </div>
+    </div>
+    <div className="mt-6">
+      <a
+        href="#jelentkezes"
+        style={{ display: "block", textAlign: "center", background: "var(--brand)", color: "#fff", padding: "12px 20px", borderRadius: "9999px", fontWeight: 500 }}
+      >
+        Jelentkezem
+      </a>
+    </div>
+  </div>
+);
 
 /** Shared clip-path geometry (matches NotchHero) for the hero photo. */
 const HERO_NOTCH_ID = "oep-hero-notch-shape";
@@ -500,9 +539,11 @@ export const LakossagiEnergiataroloTamogatas = () => (
       <hr className="my-12 md:my-16" style={{ border: 0, borderTop: "1px dashed #ececec" }} />
     </div>
 
-    {/* TARTALOM — teljes szélességű szekciók egymás alatt */}
+    {/* TARTALOM — main tartalom + sticky ügyfélszolgálat-sidebar (a footerig) */}
     <section className="w-full pb-0">
       <div className="container">
+        <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_340px] lg:gap-0">
+          <div className="min-w-0 lg:pr-10">
         {/* WEBINÁRIUM */}
         <Section
           eyebrow="Webinárium"
@@ -569,7 +610,7 @@ export const LakossagiEnergiataroloTamogatas = () => (
               title="Csomagajánlataink"
               intro="Az alábbi csomagajánlatokat kifejezetten az Otthoni Energiatároló Program feltételeihez igazítva állítottuk össze. A csomagok tartalmazzák a teljes körű tervezést és engedélyeztetést, a pályázatírást és projektmenedzsmentet, valamint – a program aktuális feltételei mellett – az ingyenes padlásfödém szigetelést is."
             >
-              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
                 {PACKAGES.map((pkg) => (
                   <PackageCard key={pkg.brand} {...pkg} />
                 ))}
@@ -856,41 +897,14 @@ export const LakossagiEnergiataroloTamogatas = () => (
                 biztosítsunk a magyar háztartások számára.
               </Body>
             </Section>
-      </div>
-    </section>
-
-    <div className="container">
-      <hr className="my-12 md:my-16" style={{ border: 0, borderTop: "1px dashed #ececec" }} />
-    </div>
-
-    {/* ÜGYFÉLSZOLGÁLAT — teljes szélességű záró blokk */}
-    <section className="w-full pb-4">
-      <div className="container">
-        <div
-          className="flex flex-col items-start justify-between gap-6 px-8 py-8 md:flex-row md:items-center"
-          style={{ background: "var(--surface-3)", borderRadius: "20px" }}
-        >
-          <div>
-            <p className="text-[var(--ink)]" style={{ margin: 0, fontSize: "22px", fontWeight: 700 }}>
-              Beszéljünk a lehetőségeidről!
-            </p>
-            <p className="mt-3 text-[var(--ink-soft)]" style={{ fontSize: "16px", lineHeight: 1.7 }}>
-              Ügyfélszolgálatunk hétköznap {SITE.supportHours} között elérhető – fordulj hozzá bizalommal!
-            </p>
           </div>
-          <div className="md:text-right">
-            <p className="text-[var(--ink-muted)]" style={{ margin: "0 0 4px", fontSize: "12px", textTransform: "uppercase", letterSpacing: "0.5px" }}>
-              Ügyfélszolgálat
-            </p>
-            <a href={`tel:${SITE.phoneRaw}`} style={{ color: "var(--brand)", fontSize: "26px", fontWeight: 700 }}>
-              {SITE.phoneDisplay}
-            </a>
-            <div className="mt-5">
-              <a href="#jelentkezes" style={heroPillStyle}>
-                Jelentkezem
-              </a>
+
+          {/* ÜGYFÉLSZOLGÁLAT sidebar — a webináriumtól a footerig */}
+          <aside className="lg:border-l lg:border-dashed lg:border-[#ececec] lg:pl-10">
+            <div className="lg:sticky lg:top-[110px]">
+              <SupportWidget />
             </div>
-          </div>
+          </aside>
         </div>
       </div>
     </section>
