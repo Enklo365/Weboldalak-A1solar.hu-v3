@@ -7,7 +7,7 @@ import { SITE } from "@/lib/site";
 
 /** Sidebar in-page navigation for the OEP subpage (mirrors the service pages). */
 const OEP_TOC = [
-  { id: "webinarium", label: "Webinárium" },
+  { id: "kivitelezes", label: "Kivitelezés" },
   { id: "csomagok", label: "Csomagajánlatok" },
   { id: "extra-elonyok", label: "Extra előnyök" },
   { id: "kinek-ajanlott", label: "Kinek ajánlott?" },
@@ -241,19 +241,6 @@ const PACKAGES: StoragePackage[] = [
 ];
 
 
-/** Two webinar tracks. */
-const WEBINARS: { badge: string; title: string; text: string }[] = [
-  {
-    badge: "Műszaki",
-    title: "Műszaki webinárium",
-    text: "Inverter- és energiatároló csomagok bemutatása (Fox ESS, Sigenergy, Deye, Huawei), valamint műszaki kérdések megválaszolása.",
-  },
-  {
-    badge: "Pályázati",
-    title: "Pályázati webinárium",
-    text: "Bemutatjuk az igazolási szakasz teendőit, a szükséges adatokat, és kérdezz-felelekre is lesz lehetőség.",
-  },
-];
 
 /** Contractor-partner mini cards. */
 const PARTNER_STEPS: { title: string; text: string; cta: string }[] = [
@@ -557,42 +544,9 @@ export const LakossagiEnergiataroloTamogatas = () => (
       <div className="container">
         <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_340px] lg:gap-0">
           <div className="min-w-0 lg:pr-10">
-        {/* WEBINÁRIUM */}
-        <Section
-          id="webinarium"
-          eyebrow="Webinárium"
-          title="Otthoni Energiatároló Program webinárium"
-          intro="Az Otthoni Energiatároló Program kapcsán online webináriumot tartunk, ahol a 2. szakasz benyújtási folyamatát, a szükséges tudnivalókat, valamint a következő lépéseket vesszük végig részletesen."
-        >
-              <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-                {WEBINARS.map((webinar) => (
-                  <div key={webinar.title} className="flex flex-col px-7 py-8" style={{ background: "var(--surface-3)", borderRadius: "20px" }}>
-                    <span
-                      className="inline-block rounded-[30px] px-3 py-1 text-xs font-semibold uppercase tracking-[1px]"
-                      style={{ background: "var(--brand)", color: "#fff", alignSelf: "flex-start" }}
-                    >
-                      {webinar.badge}
-                    </span>
-                    <h3 className="text-[var(--ink)]" style={{ margin: "18px 0 0", fontSize: "20px", fontWeight: 600 }}>
-                      {webinar.title}
-                    </h3>
-                    <p className="mt-4 flex-1 text-[var(--ink-soft)]" style={{ fontSize: "15px", lineHeight: 1.7 }}>
-                      {webinar.text}
-                    </p>
-                    <div className="mt-6">
-                      <a href="#jelentkezes" style={{ ...heroPillStyle, padding: "12px 24px" }}>
-                        Jelentkezem
-                      </a>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </Section>
-
-            <RowDivider />
-
             {/* KIVITELEZŐ-PARTNER */}
             <Section
+              id="kivitelezes"
               eyebrow="Kivitelezés"
               title="Válassza az A1 Solar Kft.-t megbízható kivitelező partnerként"
               intro="Regisztrált kivitelezőként nemcsak az ajánlatkéréstől a megvalósításig kísérjük végig, hanem az energiatároló rendszer teljes élettartama alatt partnerei maradunk – a pályázat lezárása után sem engedjük el a kezét."
