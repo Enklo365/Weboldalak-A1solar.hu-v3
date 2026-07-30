@@ -143,60 +143,26 @@ type StoragePackage = {
   featured?: boolean;
 };
 
-const PackageCard = ({ brand, image, ownFund, grant, backup, featured = false }: StoragePackage) => (
-  <div
-    className="flex flex-col overflow-hidden"
-    style={{ background: "#fff", borderRadius: "20px", border: featured ? "2px solid var(--brand)" : "2px solid var(--line)" }}
-  >
-    <div style={{ height: "150px", background: "#fff", overflow: "hidden" }}>
+const PackageCard = ({ brand, image, ownFund, grant, backup }: StoragePackage) => (
+  <div className="flex flex-col rounded-[20px] p-4" style={{ background: "#fff", border: "1px solid var(--line)" }}>
+    <div style={{ height: "128px", overflow: "hidden" }}>
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src={image} alt={brand} loading="lazy" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+      <img src={image} alt={brand} loading="lazy" style={{ width: "100%", height: "100%", objectFit: "contain", display: "block" }} />
     </div>
-    <div className="flex flex-1 flex-col px-6 py-6">
-      <div className="flex items-center justify-between gap-2">
-        <h3 className="text-[var(--ink)]" style={{ margin: 0, fontSize: "18px", fontWeight: 700 }}>
-          {brand}
-        </h3>
-        {featured ? (
-          <span
-            className="rounded-[30px] px-3 py-1 text-xs font-semibold uppercase tracking-[1px]"
-            style={{ background: "var(--brand)", color: "#fff" }}
-          >
-            Ajánlott
-          </span>
-        ) : null}
-      </div>
-
-      <p className="text-[var(--ink-muted)]" style={{ margin: "16px 0 0", fontSize: "13px" }}>
-        Önerő
-      </p>
-      <p className="text-[var(--ink)]" style={{ margin: "2px 0 0", fontSize: "18px", fontWeight: 700 }}>
+    <h3 className="text-[var(--ink)]" style={{ margin: "12px 0 0", fontSize: "15px", fontWeight: 700, textTransform: "uppercase" }}>
+      {brand}
+    </h3>
+    <div className="mt-3 flex flex-col gap-2">
+      <span className="rounded-[10px] px-3 py-2 text-center text-[var(--ink)]" style={{ background: "var(--surface-3)", fontSize: "13px" }}>
         {ownFund}
-      </p>
-
-      <div
-        className="mt-4 flex items-center justify-between py-3"
-        style={{ borderTop: "1px solid var(--line)", borderBottom: "1px solid var(--line)" }}
-      >
-        <span className="text-[var(--ink-soft)]" style={{ fontSize: "14px" }}>
-          Támogatás
-        </span>
-        <span style={{ fontSize: "16px", fontWeight: 700, color: "var(--brand)" }}>{grant}</span>
-      </div>
-
-      <p className="mt-4 flex-1 text-[var(--ink-soft)]" style={{ fontSize: "14px", lineHeight: 1.55 }}>
-        {backup}
-      </p>
-
-      <div className="mt-6">
-        <a
-          href="#jelentkezes"
-          style={{ display: "block", textAlign: "center", background: "var(--brand)", color: "#fff", padding: "11px 20px", borderRadius: "9999px", fontWeight: 500 }}
-        >
-          Érdekel a csomag
-        </a>
-      </div>
+      </span>
+      <span className="rounded-[10px] px-3 py-2 text-center text-[var(--ink)]" style={{ background: "var(--surface-3)", fontSize: "13px" }}>
+        Támogatás: <strong style={{ fontWeight: 700 }}>{grant}</strong>
+      </span>
     </div>
+    <p className="mt-3 text-[var(--ink-soft)]" style={{ fontSize: "13px", lineHeight: 1.5 }}>
+      {backup}
+    </p>
   </div>
 );
 
@@ -610,20 +576,30 @@ export const LakossagiEnergiataroloTamogatas = () => (
               title="Csomagajánlataink"
               intro="Az alábbi csomagajánlatokat kifejezetten az Otthoni Energiatároló Program feltételeihez igazítva állítottuk össze. A csomagok tartalmazzák a teljes körű tervezést és engedélyeztetést, a pályázatírást és projektmenedzsmentet, valamint – a program aktuális feltételei mellett – az ingyenes padlásfödém szigetelést is."
             >
-              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+              <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
                 {PACKAGES.map((pkg) => (
                   <PackageCard key={pkg.brand} {...pkg} />
                 ))}
               </div>
-              <div className="mt-10">
-                <p className="text-[var(--ink-soft)]" style={{ fontSize: "16px", lineHeight: 1.6 }}>
-                  Kattintson a további csomagajánlataink gombra, és nézze meg a teljes kínálatot.
-                </p>
-                <div className="mt-6">
-                  <a href="#jelentkezes" style={heroPillStyle}>
-                    További csomagajánlataink
-                  </a>
+              <div
+                className="mt-8 flex flex-col items-start gap-5 rounded-[20px] px-7 py-7 md:flex-row md:items-center md:justify-between"
+                style={{ background: "var(--brand)" }}
+              >
+                <div>
+                  <p style={{ margin: 0, color: "#fff", fontSize: "20px", fontWeight: 700, lineHeight: 1.3 }}>
+                    Otthoni Energiatároló Program csomagajánlatok
+                  </p>
+                  <p style={{ margin: "8px 0 0", color: "rgba(255,255,255,0.9)", fontSize: "15px" }}>
+                    Kattintson a további csomagajánlataink gombra.
+                  </p>
                 </div>
+                <a
+                  href="#jelentkezes"
+                  className="flex-none"
+                  style={{ display: "inline-block", background: "#fff", color: "var(--brand)", padding: "13px 28px", borderRadius: "9999px", fontWeight: 600, whiteSpace: "nowrap" }}
+                >
+                  További csomagajánlataink
+                </a>
               </div>
             </Section>
 
