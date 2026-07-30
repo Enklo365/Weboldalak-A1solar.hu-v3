@@ -1,8 +1,20 @@
 import type { CSSProperties, ReactNode } from "react";
 
 import { OepHeroForm } from "@/components/page/campaign/OepHeroForm";
+import { ServiceTocNav } from "@/components/service/ServiceTocNav";
 import { SupportStatusDot } from "@/components/service/SupportStatusDot";
 import { SITE } from "@/lib/site";
+
+/** Sidebar in-page navigation for the OEP subpage (mirrors the service pages). */
+const OEP_TOC = [
+  { id: "webinarium", label: "Webinárium" },
+  { id: "csomagok", label: "Csomagajánlatok" },
+  { id: "extra-elonyok", label: "Extra előnyök" },
+  { id: "kinek-ajanlott", label: "Kinek ajánlott?" },
+  { id: "tamogatas-merteke", label: "Támogatás mértéke" },
+  { id: "jelentkezes-folyamat", label: "Jelentkezés" },
+  { id: "miert-minket", label: "Miért minket?" },
+];
 
 /** Customer-service sidebar widget (mirrors the service subpages). */
 const SupportWidget = () => (
@@ -79,10 +91,11 @@ type SectionProps = {
   title: string;
   intro?: string;
   children?: ReactNode;
+  id?: string;
 };
 
-const Section = ({ eyebrow, title, intro, children }: SectionProps) => (
-  <div>
+const Section = ({ eyebrow, title, intro, children, id }: SectionProps) => (
+  <div id={id} style={{ scrollMarginTop: "100px" }}>
     <Eyebrow>{eyebrow}</Eyebrow>
     <h2 className="text-[var(--ink)]" style={{ marginTop: "18px", fontSize: "30px", fontWeight: 600, lineHeight: 1.2 }}>
       {title}
@@ -546,6 +559,7 @@ export const LakossagiEnergiataroloTamogatas = () => (
           <div className="min-w-0 lg:pr-10">
         {/* WEBINÁRIUM */}
         <Section
+          id="webinarium"
           eyebrow="Webinárium"
           title="Otthoni Energiatároló Program webinárium"
           intro="Az Otthoni Energiatároló Program kapcsán online webináriumot tartunk, ahol a 2. szakasz benyújtási folyamatát, a szükséges tudnivalókat, valamint a következő lépéseket vesszük végig részletesen."
@@ -606,6 +620,7 @@ export const LakossagiEnergiataroloTamogatas = () => (
 
             {/* CSOMAGAJÁNLATOK — márkánként */}
             <Section
+              id="csomagok"
               eyebrow="Csomagok"
               title="Csomagajánlataink"
               intro="Az alábbi csomagajánlatokat kifejezetten az Otthoni Energiatároló Program feltételeihez igazítva állítottuk össze. A csomagok tartalmazzák a teljes körű tervezést és engedélyeztetést, a pályázatírást és projektmenedzsmentet, valamint – a program aktuális feltételei mellett – az ingyenes padlásfödém szigetelést is."
@@ -631,6 +646,7 @@ export const LakossagiEnergiataroloTamogatas = () => (
 
             {/* EXTRA ELŐNYÖK */}
             <Section
+              id="extra-elonyok"
               eyebrow="Extra előnyök"
               title="A pályázat és a kivitelezés nálunk csak a kezdet"
               intro="Extra előnyök, amiket máshol nem kapsz meg."
@@ -693,6 +709,7 @@ export const LakossagiEnergiataroloTamogatas = () => (
 
             {/* TÁJÉKOZTATÓ SZEKCIÓK — kifejtve (nem akkordeon) */}
             <Section
+              id="kinek-ajanlott"
               eyebrow="Kinek ajánlott?"
               title="Kiknek jelent ideális megoldást a program?"
               intro="A támogatás elsősorban azoknak a háztartásoknak kínál valódi előnyt, amelyek már kikerültek az éves szaldóelszámolásból, vagy legkésőbb 2030. december 31-ig átkerülnek abból. Ez leggyakrabban a 2015 előtt, illetve a közvetlenül azt követő években telepített rendszerek esetében fordul elő. Emellett a pályázat azok számára is elérhető, akik állami támogatás nélkül, önerőből létesítettek napelemes rendszert, és jelenleg bruttó elszámolásban vannak."
@@ -724,6 +741,7 @@ export const LakossagiEnergiataroloTamogatas = () => (
             <RowDivider />
 
             <Section
+              id="tamogatas-merteke"
               eyebrow="A támogatás mértéke"
               title="Mekkora támogatás igényelhető, és mire használható fel?"
               intro="A sikeres pályázók legfeljebb 2 500 000 Ft vissza nem térítendő támogatásban részesülhetnek, amely az akkumulátoros energiatároló rendszer beszerzéséhez és telepítéséhez kapcsolódó költségek széles körét fedezheti. Amennyiben a beruházás összköltsége meghaladja a támogatási összeget, a különbözet önerőből finanszírozandó."
@@ -748,6 +766,7 @@ export const LakossagiEnergiataroloTamogatas = () => (
             <RowDivider />
 
             <Section
+              id="jelentkezes-folyamat"
               eyebrow="Jelentkezési folyamat"
               title="Mikor és hogyan lehet jelentkezni?"
               intro="Az Otthoni Energiatároló Programra a pályázatok kizárólag elektronikus úton nyújthatók be az nffku.hu pályázati portálon keresztül. A pályázat benyújtásához KAÜ-azonosítás szükséges, amely az alábbi módokon történhet:"
@@ -877,6 +896,7 @@ export const LakossagiEnergiataroloTamogatas = () => (
             <RowDivider />
 
             <Section
+              id="miert-minket"
               eyebrow="Cégünkről"
               title="Miért válasszon minket?"
               intro="Az A1 Solar Kft. több mint egy évtizede foglalkozik napelemes rendszerek és energiatárolási megoldások tervezésével és kivitelezésével. Tapasztalatunk lehetővé teszi, hogy ügyfeleink számára biztonságos, hosszú távon is megbízható rendszereket kínáljunk."
@@ -899,9 +919,10 @@ export const LakossagiEnergiataroloTamogatas = () => (
             </Section>
           </div>
 
-          {/* ÜGYFÉLSZOLGÁLAT sidebar — a webináriumtól a footerig */}
+          {/* SIDEBAR — felül navigáció, alul ügyfélszolgálat (a webináriumtól a footerig) */}
           <aside className="lg:border-l lg:border-dashed lg:border-[#ececec] lg:pl-10">
-            <div className="lg:sticky lg:top-[110px]">
+            <div className="flex flex-col gap-6 lg:sticky lg:top-[110px]">
+              <ServiceTocNav items={OEP_TOC} />
               <SupportWidget />
             </div>
           </aside>
