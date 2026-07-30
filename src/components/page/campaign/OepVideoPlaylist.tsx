@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 type PlaylistVideo = { id: string; title: string };
 
@@ -31,12 +31,19 @@ const VIDEOS: PlaylistVideo[] = [
 export const OepVideoPlaylist = () => {
   const [activeId, setActiveId] = useState(VIDEOS[0].id);
   const [hasPlayed, setHasPlayed] = useState(false);
+  const trackRef = useRef<HTMLUListElement>(null);
 
   const src = `https://www.youtube-nocookie.com/embed/${activeId}?rel=0${hasPlayed ? "&autoplay=1" : ""}`;
 
   const onSelect = (id: string) => {
     setHasPlayed(true);
     setActiveId(id);
+  };
+
+  const scrollByAmount = (dir: 1 | -1) => {
+    const track = trackRef.current;
+    if (!track) return;
+    track.scrollBy({ left: dir * Math.round(track.clientWidth * 0.85), behavior: "smooth" });
   };
 
   return (
@@ -57,22 +64,52 @@ export const OepVideoPlaylist = () => {
         />
       </div>
 
-      {/* Playlist grid below the player */}
+      {/* Playlist slider below the player */}
       <div>
-        <div className="mb-3 flex items-center justify-between">
-          <span className="font-semibold text-[var(--ink)]" style={{ fontSize: "15px" }}>
-            Lejátszási lista
-          </span>
-          <span className="text-[var(--ink-muted)]" style={{ fontSize: "13px" }}>
-            {VIDEOS.length} videó
-          </span>
+        <div className="mb-3 flex items-center justify-between gap-3">
+          <div className="flex items-baseline gap-2">
+            <span className="font-semibold text-[var(--ink)]" style={{ fontSize: "15px" }}>
+              Lejátszási lista
+            </span>
+            <span className="text-[var(--ink-muted)]" style={{ fontSize: "13px" }}>
+              {VIDEOS.length} videó
+            </span>
+          </div>
+          <div className="flex flex-none gap-2">
+            <button
+              type="button"
+              onClick={() => scrollByAmount(-1)}
+              aria-label="Előző videók"
+              className="flex h-9 w-9 items-center justify-center rounded-full transition-colors hover:text-[var(--brand)]"
+              style={{ background: "var(--surface-3)", border: "1px solid var(--line)", color: "var(--ink)" }}
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M15 18l-6-6 6-6" />
+              </svg>
+            </button>
+            <button
+              type="button"
+              onClick={() => scrollByAmount(1)}
+              aria-label="További videók"
+              className="flex h-9 w-9 items-center justify-center rounded-full transition-colors hover:text-[var(--brand)]"
+              style={{ background: "var(--surface-3)", border: "1px solid var(--line)", color: "var(--ink)" }}
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M9 18l6-6-6-6" />
+              </svg>
+            </button>
+          </div>
         </div>
 
-        <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+        <ul
+          ref={trackRef}
+          className="video-slider flex snap-x snap-mandatory gap-3 overflow-x-auto pb-2"
+          style={{ scrollbarWidth: "none" }}
+        >
           {VIDEOS.map((video, index) => {
             const isActive = video.id === activeId;
             return (
-              <li key={video.id}>
+              <li key={video.id} className="w-[220px] flex-none snap-start sm:w-[240px]">
                 <button
                   type="button"
                   onClick={() => onSelect(video.id)}

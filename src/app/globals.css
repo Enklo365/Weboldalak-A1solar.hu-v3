@@ -2118,3 +2118,6 @@ img[data-fade].loaded {
   width: 25px;
   height: 25px;
 }
+
+/* OEP videótár slider — hide scrollbar (WebKit) */
+.video-slider::-webkit-scrollbar { display: none; }
