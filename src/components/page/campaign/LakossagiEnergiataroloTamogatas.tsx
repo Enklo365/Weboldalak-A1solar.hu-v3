@@ -525,7 +525,7 @@ export const LakossagiEnergiataroloTamogatas = () => (
               title="Válassza az A1 Solar Kft.-t megbízható kivitelező partnerként"
               intro="Regisztrált kivitelezőként nemcsak az ajánlatkéréstől a megvalósításig kísérjük végig, hanem az energiatároló rendszer teljes élettartama alatt partnerei maradunk – a pályázat lezárása után sem engedjük el a kezét."
             >
-              <div className="grid grid-cols-1 items-stretch gap-6 sm:grid-cols-2">
+              <div className="grid grid-cols-1 items-start gap-6 sm:grid-cols-2">
                 {/* Bal kártya — döntés előtt */}
                 <div className="flex flex-col rounded-[24px] p-8" style={{ background: "var(--surface-3)" }}>
                   <div className="flex items-center gap-4">
@@ -557,7 +557,13 @@ export const LakossagiEnergiataroloTamogatas = () => (
                     >
                       Előzetes árajánlat kérése
                     </a>
-                    <a href="#jelentkezes" className="inline-flex items-center gap-2" style={{ color: "var(--brand)", fontWeight: 600, fontSize: "15px" }}>
+                    <a
+                      href="https://otthonienergiatarolo.neuzrt.hu/regisztralt-vallalkozasok"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2"
+                      style={{ color: "var(--brand)", fontWeight: 600, fontSize: "15px" }}
+                    >
                       Megnézem a hivatalos kivitelezői listát
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                         <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -591,14 +597,6 @@ export const LakossagiEnergiataroloTamogatas = () => (
                     pályázati felületen – a műszaki tartalmat és az{" "}
                     <span style={{ color: "var(--brand)", fontWeight: 700 }}>árajánlatot ingyen elkészítjük</span>.
                   </p>
-                  <div className="mt-auto pt-7">
-                    <a
-                      href="#jelentkezes"
-                      style={{ display: "inline-block", background: "var(--brand)", color: "#fff", padding: "13px 26px", borderRadius: "9999px", fontWeight: 600 }}
-                    >
-                      Kérek ajánlatot
-                    </a>
-                  </div>
                 </div>
               </div>
             </Section>
