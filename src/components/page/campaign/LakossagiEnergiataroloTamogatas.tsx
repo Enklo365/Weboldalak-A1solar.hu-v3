@@ -88,18 +88,6 @@ const Bullets = ({ items }: { items: string[] }) => (
   </ul>
 );
 
-/** One highlight stat from the program brief. */
-const Stat = ({ value, label }: { value: string; label: string }) => (
-  <div
-    className="flex flex-col items-center justify-center px-4 py-8 text-center"
-    style={{ background: "var(--surface-3)", borderRadius: "20px" }}
-  >
-    <span style={{ color: "var(--brand)", fontSize: "clamp(22px, 3vw, 30px)", fontWeight: 700, lineHeight: 1 }}>{value}</span>
-    <span className="mt-3 text-[var(--ink-soft)]" style={{ fontSize: "13px", lineHeight: 1.4 }}>
-      {label}
-    </span>
-  </div>
-);
 
 /** One inverter / storage package tier from the OEP catalogue. */
 type StoragePackage = {
@@ -200,13 +188,6 @@ const PACKAGES: StoragePackage[] = [
   },
 ];
 
-/** Highlight stats derived directly from the program brief. */
-const PROGRAM_STATS: { value: string; label: string }[] = [
-  { value: "100 mrd Ft", label: "Program keretösszeg" },
-  { value: "2,5 M Ft", label: "Maximális támogatás háztartásonként" },
-  { value: "min. 10 kWh", label: "Támogatott tárolókapacitás" },
-  { value: "24 hónap", label: "A megvalósításra rendelkezésre álló idő" },
-];
 
 /** Two webinar tracks. */
 const WEBINARS: { badge: string; title: string; text: string }[] = [
@@ -388,7 +369,7 @@ const heroPillStyle: CSSProperties = {
 export const LakossagiEnergiataroloTamogatas = () => (
   <div className="w-full">
     {/* HERO — notch-os kép, a jelentkezési űrlap a jobb-alsó notch-kivágásba ültetve */}
-    <section className="w-full pt-8 md:pt-12">
+    <section className="w-full">
       <svg width="0" height="0" className="absolute" aria-hidden focusable="false">
         <defs>
           <clipPath id={HERO_NOTCH_ID} clipPathUnits="objectBoundingBox">
@@ -522,15 +503,6 @@ export const LakossagiEnergiataroloTamogatas = () => (
     {/* TARTALOM — teljes szélességű szekciók egymás alatt */}
     <section className="w-full pb-0">
       <div className="container">
-        {/* STATISZTIKA-SÁV */}
-        <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
-          {PROGRAM_STATS.map((stat) => (
-            <Stat key={stat.label} value={stat.value} label={stat.label} />
-          ))}
-        </div>
-
-        <RowDivider />
-
         {/* WEBINÁRIUM */}
         <Section
           eyebrow="Webinárium"
