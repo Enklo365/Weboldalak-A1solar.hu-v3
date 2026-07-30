@@ -72,8 +72,8 @@ export const OepHeroForm = () => {
   return (
     <form className="contact-card contact-card--bare" onSubmit={onSubmit}>
       <span
-        className="inline-block rounded-[30px] px-3 py-2 text-xs font-normal uppercase tracking-[1px]"
-        style={{ background: "rgba(194,29,32,0.14)", color: "var(--brand-dark)", marginBottom: "18px" }}
+        className="rounded-[30px] px-3 py-2 text-xs font-normal uppercase tracking-[1px]"
+        style={{ background: "rgba(194,29,32,0.14)", color: "var(--brand-dark)", alignSelf: "flex-start", width: "fit-content", marginBottom: "12px" }}
       >
         Kapcsolatfelvétel
       </span>

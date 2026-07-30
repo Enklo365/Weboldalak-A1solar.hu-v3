@@ -502,7 +502,7 @@ export const LakossagiEnergiataroloTamogatas = () => (
           {/* JELENTKEZÉSI FORM — mobil: kép/intro alatt flow-ban; desktop: a jobb-alsó notch-kivágásba ültetve, a kép alá lógva */}
           <div
             id="jelentkezes"
-            className="mt-8 lg:absolute lg:left-[49%] lg:right-0 lg:top-[86%] lg:z-20 lg:mt-0"
+            className="mt-8 lg:absolute lg:left-[49%] lg:right-0 lg:top-[79%] lg:z-20 lg:mt-0"
             style={{ scrollMarginTop: "var(--header-h)" }}
           >
             <OepHeroForm />
