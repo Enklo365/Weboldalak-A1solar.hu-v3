@@ -136,6 +136,24 @@ const Bullets = ({ items }: { items: string[] }) => (
   </ul>
 );
 
+/** Red-tinted notice box (exclusions) — pink background, brand-dark text + red bullets. */
+const NoticeBox = ({ title, items }: { title: string; items: string[] }) => (
+  <div className="rounded-[20px] p-6 md:p-8" style={{ background: "rgba(219,3,48,0.06)", border: "1px solid rgba(219,3,48,0.18)" }}>
+    <p style={{ margin: 0, fontSize: "16px", lineHeight: 1.7, fontWeight: 500, color: "var(--brand-dark)" }}>{title}</p>
+    <ul className="mt-4 flex flex-col gap-3" style={{ listStyle: "none", padding: 0, margin: 0 }}>
+      {items.map((item) => (
+        <li key={item} className="flex items-start gap-3">
+          <span
+            aria-hidden="true"
+            style={{ flexShrink: 0, width: "7px", height: "7px", borderRadius: "9999px", background: "var(--brand)", marginTop: "9px" }}
+          />
+          <span style={{ fontSize: "15px", lineHeight: 1.65, color: "var(--brand-dark)" }}>{item}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+);
+
 
 /** One inverter / storage package tier from the OEP catalogue. */
 type StoragePackage = {
@@ -749,18 +767,24 @@ export const LakossagiEnergiataroloTamogatas = () => (
                 Gazdasági tevékenységnek minősül, ha az ingatlanban tényleges üzleti működés zajlik – például termelés,
                 szolgáltatásnyújtás vagy ügyfélfogadás.
               </Body>
+              <p className="text-[var(--brand)]" style={{ margin: "28px 0 12px", fontSize: "16px", fontWeight: 700 }}>
+                Fontos változás: adminisztratív székhely már elfogadható.
+              </p>
               <Body>
-                Fontos változás: adminisztratív székhely már elfogadható. Önmagában nem kizáró ok, ha az ingatlan csupán
-                adminisztratív jelleggel van bejelentve székhelyként (vagy telephelyként/fióktelepként), például az alábbi
-                szervezeti formák esetén:
+                Önmagában nem kizáró ok, ha az ingatlan csupán adminisztratív jelleggel van bejelentve székhelyként (vagy
+                telephelyként/fióktelepként), például az alábbi szervezeti formák esetén:
               </Body>
               <Bullets items={ADMIN_ORG_FORMS} />
               <Body>
                 Ennek feltétele, hogy nyilatkozattal igazolható legyen, hogy a gazdasági tevékenység ténylegesen nem az
                 ingatlanban történik.
               </Body>
-              <SubHead>A támogatás nem vehető igénybe azon pályázók esetében, akiknél az alábbi feltételek bármelyike fennáll:</SubHead>
-              <Bullets items={EXCLUSIONS} />
+              <div className="mt-7">
+                <NoticeBox
+                  title="A támogatás nem vehető igénybe azon pályázók esetében, akiknél az alábbi feltételek bármelyike fennáll:"
+                  items={EXCLUSIONS}
+                />
+              </div>
             </Section>
 
             <RowDivider />
