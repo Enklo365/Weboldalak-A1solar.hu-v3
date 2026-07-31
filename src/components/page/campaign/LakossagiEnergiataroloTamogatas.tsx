@@ -688,16 +688,7 @@ export const LakossagiEnergiataroloTamogatas = () => (
 
             {/* TERMÉKSZEKCIÓ — támogatási részletek */}
             <Section eyebrow="Támogatási részletek" title="Akár 2,5 millió Ft támogatás energiatárolóra">
-              <div style={{ borderRadius: "20px", overflow: "hidden" }}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="/wp-content/uploads/2025/12/Uj-lakossagi-energiatarolos-tamogatasi-program-indul-1024x667.png"
-                  alt="Új lakossági energiatárolós támogatási program indul"
-                  loading="lazy"
-                  style={{ width: "100%", height: "auto", objectFit: "cover", display: "block" }}
-                />
-              </div>
-              <p className="mt-6 text-[var(--ink-soft)]" style={{ fontSize: "16px", lineHeight: 1.75 }}>
+              <p className="text-[var(--ink-soft)]" style={{ margin: 0, fontSize: "16px", lineHeight: 1.75 }}>
                 A lakossági energiatároló támogatási program 100 milliárd forintos keretösszeggel indul, és háztartásonként
                 legfeljebb 2,5 millió forint vissza nem térítendő támogatást biztosít akkumulátoros energiatároló rendszer
                 telepítésére. A támogatás elsősorban legalább 10 kWh kapacitású lakossági energiatárolók létesítésére vehető
@@ -708,9 +699,33 @@ export const LakossagiEnergiataroloTamogatas = () => (
                 otthonukban használják fel, ezáltal csökkentve a villanyszámlát, növelve az energiafüggetlenséget, valamint
                 mérsékelve a villamosenergia-hálózat terhelését.
               </p>
-              <div className="mt-8">
-                <a href="#jelentkezes" style={heroPillStyle}>
-                  Indítsd el velünk a kivitelezést!
+              <div className="mt-6" style={{ borderRadius: "20px", overflow: "hidden" }}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/wp-content/uploads/2025/12/Uj-lakossagi-energiatarolos-tamogatasi-program-indul-1024x667.png"
+                  alt="Új lakossági energiatárolós támogatási program indul"
+                  loading="lazy"
+                  style={{ width: "100%", height: "auto", objectFit: "cover", display: "block" }}
+                />
+              </div>
+              <div
+                className="mt-6 flex flex-col items-start gap-5 rounded-[20px] px-7 py-7 md:flex-row md:items-center md:justify-between"
+                style={{ background: "var(--brand)" }}
+              >
+                <div>
+                  <p style={{ margin: 0, color: "#fff", fontSize: "20px", fontWeight: 700, lineHeight: 1.3 }}>
+                    Indítsd el velünk a kivitelezést!
+                  </p>
+                  <p style={{ margin: "8px 0 0", color: "rgba(255,255,255,0.9)", fontSize: "15px" }}>
+                    Töltsd ki az űrlapot, és segítünk a megfelelő rendszer megvalósításában.
+                  </p>
+                </div>
+                <a
+                  href="#jelentkezes"
+                  className="flex-none"
+                  style={{ display: "inline-block", background: "#fff", color: "var(--brand)", padding: "13px 28px", borderRadius: "9999px", fontWeight: 600, whiteSpace: "nowrap" }}
+                >
+                  Kapcsolatfelvétel
                 </a>
               </div>
             </Section>
