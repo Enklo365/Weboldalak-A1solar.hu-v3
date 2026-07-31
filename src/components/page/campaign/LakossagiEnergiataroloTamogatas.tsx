@@ -795,13 +795,13 @@ export const LakossagiEnergiataroloTamogatas = () => (
               title="Mekkora támogatás igényelhető, és mire használható fel?"
               intro="A sikeres pályázók legfeljebb 2 500 000 Ft vissza nem térítendő támogatásban részesülhetnek, amely az akkumulátoros energiatároló rendszer beszerzéséhez és telepítéséhez kapcsolódó költségek széles körét fedezheti. Amennyiben a beruházás összköltsége meghaladja a támogatási összeget, a különbözet önerőből finanszírozandó."
             >
-              <SubHead>Elszámolható költségek a támogatás terhére:</SubHead>
+              <SubHead>1. Elszámolható költségek a támogatás terhére</SubHead>
               <Bullets items={ELIGIBLE_COSTS} />
               <Body>
                 Fontos megjegyezni, hogy a felhívás megjelenése előtt felmerült költségek nem számolhatók el, továbbá a
                 lakóingatlan teljes elektromos hálózatának korszerűsítése sem minősül elszámolható költségnek.
               </Body>
-              <SubHead>Önállóan is támogatható elemek:</SubHead>
+              <SubHead>2. Önállóan is támogatható elemek</SubHead>
               <Bullets items={STANDALONE_ELIGIBLE} />
               <Body>
                 Meglévő napelemes rendszer fejlesztésekor paneloldali bővítés nem támogatható, akkor sem, ha inverter- vagy
@@ -837,9 +837,17 @@ export const LakossagiEnergiataroloTamogatas = () => (
               />
               <Body>
                 Fontos: a 2. ütem nem indul el automatikusan 2026. március 16-án – az csak az 1. ütem lezárását és a döntést
-                követően, a jogosult pályázók számára nyílik meg. A fenntartási időszak 3 év, amely a záró elszámolás
-                elfogadásának napjától kezdődik – nem a kivitelezés befejezésétől és nem a szolgáltatói átvétel időpontjától
-                számítódik.
+                követően, a jogosult pályázók számára nyílik meg. Az igazolási szakasz kezdete a pályázati szakasz lezárását
+                követően kerül meghatározásra, és legkésőbb 2026. szeptember 30-ig tart.
+              </Body>
+              <Body>
+                A Felhívásban elvárt szaldó elszámolás igazolásához nem az elosztói engedélyes által újonnan kibocsátott
+                igazolás szükséges, hanem a Támogató (NEÜ Zrt.) végzi el az igazolást a megadott POD szám és felhasználási
+                hely alapján.
+              </Body>
+              <Body>
+                A fenntartási időszak 3 év, amely a záró elszámolás elfogadásának napjától kezdődik – nem a kivitelezés
+                befejezésétől és nem a szolgáltatói átvétel időpontjától számítódik.
               </Body>
             </Section>
 
