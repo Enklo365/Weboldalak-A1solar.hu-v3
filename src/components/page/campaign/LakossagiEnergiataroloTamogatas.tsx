@@ -1,5 +1,5 @@
 import type { LucideIcon } from "lucide-react";
-import { Gift, Plane } from "lucide-react";
+import { Gift, Info, Plane } from "lucide-react";
 import type { CSSProperties, ReactNode } from "react";
 
 import { OepHeroForm } from "@/components/page/campaign/OepHeroForm";
@@ -134,6 +134,19 @@ const Bullets = ({ items }: { items: string[] }) => (
       </li>
     ))}
   </ul>
+);
+
+/** Highlighted "important" callout — pale red box, info icon, strong brand-red text. */
+const InfoCallout = ({ children }: { children: ReactNode }) => (
+  <div className="my-4 flex items-start gap-4 rounded-[20px] p-5 md:p-6" style={{ background: "rgba(219,3,48,0.06)" }}>
+    <span
+      className="flex flex-none items-center justify-center rounded-full"
+      style={{ width: "40px", height: "40px", background: "rgba(219,3,48,0.12)" }}
+    >
+      <Info size={20} strokeWidth={2} style={{ color: "var(--brand)" }} />
+    </span>
+    <div style={{ fontSize: "15px", lineHeight: 1.7, color: "var(--brand-dark)", fontWeight: 500 }}>{children}</div>
+  </div>
 );
 
 /** Red-tinted notice box (exclusions) — pink background, brand-dark text + red bullets. */
@@ -797,10 +810,11 @@ export const LakossagiEnergiataroloTamogatas = () => (
             >
               <SubHead>1. Elszámolható költségek a támogatás terhére</SubHead>
               <Bullets items={ELIGIBLE_COSTS} />
-              <Body>
-                Fontos megjegyezni, hogy a felhívás megjelenése előtt felmerült költségek nem számolhatók el, továbbá a
-                lakóingatlan teljes elektromos hálózatának korszerűsítése sem minősül elszámolható költségnek.
-              </Body>
+              <InfoCallout>
+                <strong>Fontos megjegyezni</strong>, hogy a felhívás megjelenése előtt felmerült költségek nem
+                számolhatók el, továbbá a lakóingatlan teljes elektromos hálózatának korszerűsítése sem minősül
+                elszámolható költségnek.
+              </InfoCallout>
               <SubHead>2. Önállóan is támogatható elemek</SubHead>
               <Bullets items={STANDALONE_ELIGIBLE} />
               <Body>
@@ -835,11 +849,11 @@ export const LakossagiEnergiataroloTamogatas = () => (
                   "2. ütem – jogosultság igazolása, a projekt műszaki és szakmai tartalmának bemutatása, a vállalkozási szerződés megkötése és a dokumentumok benyújtása: 2026. március 16. (hétfő) 10:00 órától és legkésőbb 2026. szeptember 30-ig.",
                 ]}
               />
-              <Body>
-                Fontos: a 2. ütem nem indul el automatikusan 2026. március 16-án – az csak az 1. ütem lezárását és a döntést
-                követően, a jogosult pályázók számára nyílik meg. Az igazolási szakasz kezdete a pályázati szakasz lezárását
-                követően kerül meghatározásra, és legkésőbb 2026. szeptember 30-ig tart.
-              </Body>
+              <InfoCallout>
+                <strong>Fontos:</strong> a 2. ütem nem indul el automatikusan 2026. március 16-án – az csak az 1. ütem
+                lezárását és a döntést követően, a jogosult pályázók számára nyílik meg. Az igazolási szakasz kezdete a
+                pályázati szakasz lezárását követően kerül meghatározásra, és legkésőbb 2026. szeptember 30-ig tart.
+              </InfoCallout>
               <Body>
                 A Felhívásban elvárt szaldó elszámolás igazolásához nem az elosztói engedélyes által újonnan kibocsátott
                 igazolás szükséges, hanem a Támogató (NEÜ Zrt.) végzi el az igazolást a megadott POD szám és felhasználási
@@ -918,11 +932,12 @@ export const LakossagiEnergiataroloTamogatas = () => (
                   "Új rendszer telepítésekor az inverter maximális névleges teljesítménye 5 kW lehet, a napelem panelek összteljesítménye pedig legfeljebb az inverter névleges teljesítményének 120%-a, vagyis legfeljebb 6 kWp.",
                 ]}
               />
-              <Body>
-                A támogatás kizárólag elosztóhálózathoz csatlakozó rendszerekre vehető igénybe. A szigetüzemű működés nem
-                támogatható, ugyanakkor a rendszer működhet visszatáplálás-mentes (visszwattos) üzemmódban, azaz a közcélú
-                hálózat felé aktív teljesítményt nem táplál be.
-              </Body>
+              <InfoCallout>
+                <strong>Fontos kiegészítés:</strong> a támogatás kizárólag{" "}
+                <strong>elosztóhálózathoz csatlakozó rendszerekre</strong> vehető igénybe. A{" "}
+                <strong>szigetüzemű működés nem támogatható</strong>, ugyanakkor a rendszer működhet visszatáplálás-mentes
+                (visszwattos) üzemmódban, azaz a közcélú hálózat felé aktív teljesítményt nem táplál be.
+              </InfoCallout>
             </Section>
 
             <RowDivider />
@@ -943,11 +958,11 @@ export const LakossagiEnergiataroloTamogatas = () => (
                 kedvező árú megoldás található, az energiatárolók esetében a biztonság és a hosszú távú megbízhatóság kiemelt
                 szempont.
               </Body>
-              <Body>
-                Az ismeretlen eredetű vagy nem megfelelően minősített akkumulátorok használata komoly műszaki és biztonsági
-                kockázatot jelenthet, ezért kizárólag bevizsgált, megbízható gyártók által kínált energiatárolók alkalmazása
-                javasolt.
-              </Body>
+              <InfoCallout>
+                Az ismeretlen eredetű vagy nem megfelelően minősített akkumulátorok használata komoly műszaki és
+                biztonsági kockázatot jelenthet, ezért kizárólag{" "}
+                <strong>bevizsgált, megbízható gyártók által kínált energiatárolók</strong> alkalmazása javasolt.
+              </InfoCallout>
             </Section>
 
             <RowDivider />
