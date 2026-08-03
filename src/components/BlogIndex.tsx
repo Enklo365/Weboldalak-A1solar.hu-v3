@@ -40,10 +40,10 @@ const coverFor = (post: PostCard): string => {
 const Card = ({ post, index }: { post: PostCard; index: number }) => (
   <Link
     href={`/${post.slug}`}
-    className="blog-card-in group flex flex-col overflow-hidden rounded-[20px] bg-white"
+    className="blog-card-in group flex flex-col rounded-[20px]"
     style={{ animationDelay: `${index * 45}ms` }}
   >
-    <div className="relative aspect-[16/9] overflow-hidden bg-[var(--surface-3)]">
+    <div className="relative aspect-[16/9] overflow-hidden rounded-t-[20px] bg-[var(--surface-3)]">
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={coverFor(post)}
@@ -55,7 +55,7 @@ const Card = ({ post, index }: { post: PostCard; index: number }) => (
         <span className="notch-badge-pill">{post.category}</span>
       </span>
     </div>
-    <div className="flex flex-1 flex-col bg-[var(--surface-3)] p-6">
+    <div className="flex flex-1 flex-col rounded-b-[20px] bg-[var(--surface-3)] p-6">
       <h3 className="text-lg leading-snug text-[var(--ink)]" style={{ fontWeight: 500 }}>
         {post.title}
       </h3>
