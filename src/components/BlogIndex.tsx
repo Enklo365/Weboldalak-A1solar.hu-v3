@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import { NotchHero } from "@/components/page/NotchHero";
 import { HeroDivider, SidebarLayout } from "@/components/service/SidebarLayout";
 import { SupportWidget } from "@/components/service/SupportWidget";
@@ -15,18 +15,33 @@ type BlogIndexProps = {
 const PAGE_SIZE = 12;
 const ALL = "Összes";
 
-const Card = ({ post }: { post: PostCard }) => (
-  <Link className="post-card" href={`/${post.slug}`}>
-    <div className="post-card-media">
+/** Article card matching the homepage "Híreink" cards. */
+const Card = ({ post, index }: { post: PostCard; index: number }) => (
+  <Link
+    href={`/${post.slug}`}
+    className="blog-card-in group flex flex-col overflow-hidden rounded-[20px] bg-white"
+    style={{ animationDelay: `${index * 45}ms` }}
+  >
+    <div className="relative aspect-[16/9] overflow-hidden bg-[var(--surface-3)]">
       {post.cover ? (
         // eslint-disable-next-line @next/next/no-img-element
-        <img src={post.cover} alt={post.title} loading="lazy" />
+        <img
+          src={post.cover}
+          alt=""
+          loading="lazy"
+          className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+        />
       ) : null}
+      <span className="notch-badge">
+        <span className="notch-badge-pill">{post.category}</span>
+      </span>
     </div>
-    <div className="post-card-body">
-      <span className="post-cat">{post.category}</span>
-      <h3>{post.title}</h3>
-      <span className="post-meta">{post.dateDisplay}</span>
+    <div className="flex flex-1 flex-col bg-[var(--surface-3)] p-6">
+      <h3 className="text-lg leading-snug text-[var(--ink)]" style={{ fontWeight: 500 }}>
+        {post.title}
+      </h3>
+      <p className="mt-3 flex-1 text-sm leading-relaxed text-[var(--ink-soft)]">{post.excerpt}</p>
+      <span className="post-meta mt-4">{post.dateDisplay}</span>
     </div>
   </Link>
 );
@@ -34,6 +49,7 @@ const Card = ({ post }: { post: PostCard }) => (
 export const BlogIndex = ({ posts, categories }: BlogIndexProps) => {
   const [active, setActive] = useState<string>(ALL);
   const [page, setPage] = useState(1);
+  const topRef = useRef<HTMLDivElement>(null);
 
   const filtered = useMemo(
     () => (active === ALL ? posts : posts.filter((p) => p.category === active)),
@@ -46,6 +62,24 @@ export const BlogIndex = ({ posts, categories }: BlogIndexProps) => {
 
   const chips = [ALL, ...categories];
 
+  const scrollToTop = () => {
+    const el = topRef.current;
+    if (!el) return;
+    const y = el.getBoundingClientRect().top + window.scrollY - 100;
+    window.scrollTo({ top: y, behavior: "smooth" });
+  };
+
+  const onCategory = (c: string) => {
+    setActive(c);
+    setPage(1);
+    scrollToTop();
+  };
+
+  const onPage = (n: number) => {
+    setPage(n);
+    scrollToTop();
+  };
+
   const sidebar = (
     <>
       <nav className="rounded-[20px] p-6" style={{ background: "var(--surface-3)" }} aria-label="Kategóriák">
@@ -57,10 +91,7 @@ export const BlogIndex = ({ posts, categories }: BlogIndexProps) => {
               <li key={c}>
                 <button
                   type="button"
-                  onClick={() => {
-                    setActive(c);
-                    setPage(1);
-                  }}
+                  onClick={() => onCategory(c)}
                   aria-current={isActive ? "true" : undefined}
                   className="flex w-full items-center gap-3 rounded-[10px] px-3 py-2 text-left text-sm transition-colors"
                   style={isActive ? { background: "#fff", color: "var(--brand)", fontWeight: 600 } : { color: "var(--ink-soft)" }}
@@ -93,16 +124,19 @@ export const BlogIndex = ({ posts, categories }: BlogIndexProps) => {
       <HeroDivider />
 
       <SidebarLayout sidebar={sidebar}>
-        <div className="post-grid post-grid--sidebar">
-          {slice.map((p) => (
-            <Card key={p.slug} post={p} />
-          ))}
+        <div ref={topRef} style={{ scrollMarginTop: "100px" }}>
+          {/* key → remount on filter/page change so the entrance animation replays */}
+          <div key={`${active}-${current}`} className="post-grid post-grid--sidebar">
+            {slice.map((p, i) => (
+              <Card key={p.slug} post={p} index={i} />
+            ))}
+          </div>
         </div>
 
         {pages > 1 ? (
           <div className="pager">
             {current > 1 ? (
-              <a onClick={() => setPage(current - 1)} role="button" tabIndex={0}>
+              <a onClick={() => onPage(current - 1)} role="button" tabIndex={0}>
                 ‹
               </a>
             ) : null}
@@ -114,14 +148,14 @@ export const BlogIndex = ({ posts, categories }: BlogIndexProps) => {
                   {n === current ? (
                     <span className="current">{n}</span>
                   ) : (
-                    <a onClick={() => setPage(n)} role="button" tabIndex={0}>
+                    <a onClick={() => onPage(n)} role="button" tabIndex={0}>
                       {n}
                     </a>
                   )}
                 </span>
               ))}
             {current < pages ? (
-              <a onClick={() => setPage(current + 1)} role="button" tabIndex={0}>
+              <a onClick={() => onPage(current + 1)} role="button" tabIndex={0}>
                 ›
               </a>
             ) : null}

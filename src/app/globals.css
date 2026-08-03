@@ -1980,6 +1980,27 @@ img[data-fade].loaded {
   opacity: 1;
 }
 
+/* Blog list: cards fade + rise in when the category/page changes (self-contained,
+   no scroll observer — the grid remounts on filter change so this replays). */
+@keyframes blogCardIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.blog-card-in {
+  animation: blogCardIn 0.45s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .blog-card-in {
+    animation: none;
+  }
+}
+
 /* Hero copy: staggered rise on load. */
 .hero-copy > * {
   animation: heroRise 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) backwards;
