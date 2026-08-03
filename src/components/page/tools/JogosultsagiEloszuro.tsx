@@ -59,6 +59,7 @@ export const JogosultsagiEloszuro = () => (
           formName="Jogosultsági előszűrő"
           heading="Indítsuk el az előszűrést!"
           intro="Add meg elérhetőségeidet és néhány alapadatot – kollégánk hamarosan visszajelez a lehetőségeidről."
+          submitLabel="Előszűrés indítása"
         />
       </div>
     </section>

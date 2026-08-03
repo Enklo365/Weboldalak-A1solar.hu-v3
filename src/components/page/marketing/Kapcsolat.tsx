@@ -70,6 +70,7 @@ export const Kapcsolat = () => (
           formName="Kapcsolati űrlap"
           heading="Írj nekünk üzenetet!"
           intro="Kollégánk maximum 3 munkanapon belül felveszi veled a kapcsolatot."
+          submitLabel="Üzenet küldése"
         />
       </div>
     </SidebarLayout>

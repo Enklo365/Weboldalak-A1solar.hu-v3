@@ -469,6 +469,7 @@ export const Kepzeseink = () => (
           formName="Képzés jelentkezés"
           heading="Érdekel egy képzésünk?"
           intro="Töltsd ki az űrlapot, és kollégánk tájékoztat a részletekről és időpontokról."
+          submitLabel="Jelentkezés küldése"
         />
         <p style={{ marginTop: "20px", color: "var(--ink-muted)" }} className="text-center text-sm">
           Vagy keress minket: {SITE.email} · {SITE.phoneDisplay}

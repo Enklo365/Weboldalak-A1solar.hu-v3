@@ -334,6 +334,7 @@ export const SzakmaiNapRegisztracio = () => (
             formName="Szakmai nap regisztráció"
             heading="Regisztrálj a szakmai napra!"
             intro="Töltsd ki az űrlapot, és megerősítjük a részvételedet."
+            submitLabel="Regisztráció küldése"
           />
         </div>
       </div>

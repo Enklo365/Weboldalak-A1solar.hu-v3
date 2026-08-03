@@ -114,7 +114,7 @@ export default async function DynamicPage({
           {body}
           <section className="section-tight">
             <div className="container" style={{ display: "grid", placeItems: "center" }}>
-              <ContactForm formName="Kapcsolati űrlap" />
+              <ContactForm formName="Kapcsolati űrlap" submitLabel="Üzenet küldése" />
             </div>
           </section>
         </>

@@ -385,6 +385,7 @@ export const OepNyeremenyjatek = () => (
           formName="OEP nyereményjáték"
           heading="Vegyél részt a játékban!"
           intro="Töltsd ki az űrlapot a részvételhez – sok sikert!"
+          submitLabel="Jelentkezés küldése"
         />
       </div>
     </section>

@@ -274,6 +274,7 @@ export const OepHelysziniFelmeres = () => (
             formName="OEP helyszíni felmérés"
             heading="Kérj ingyenes helyszíni felmérést!"
             intro="Add meg elérhetőségeidet és a címet, kollégánk egyeztet egy időpontot."
+            submitLabel="Felmérés kérése"
           />
         </div>
       </div>
