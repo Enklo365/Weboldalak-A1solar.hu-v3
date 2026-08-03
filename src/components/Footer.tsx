@@ -69,21 +69,27 @@ const SocialRow = () => (
   </div>
 );
 
+const LANDING_DISCLAIMER =
+  "A weboldalon szereplő információk kizárólag általános tájékoztatást szolgálnak, és nem minősülnek kötelező érvényű ajánlatnak, műszaki vagy pénzügyi tanácsadásnak. Az áramszüneti (backup) működés, a rendelkezésre álló teljesítmény és az áthidalási idő minden esetben az inverter és az akkumulátor paramétereitől, az aktuális napelemes termeléstől, a csatlakoztatott fogyasztóktól, valamint az ingatlan elektromos hálózatának állapotától függ. A végleges műszaki tartalom, ár, határidő és a backup megvalósíthatósága kizárólag egyedi felmérés és írásbeli ajánlat alapján határozható meg. A 6 havi kamatmentes részletfizetés bizonyos feltételekhez kötött, pontos feltételeit az egyedi ajánlat és a szerződés tartalmazza. A megjelenített márkák (Deye, FoxESS, Sigenergy) nevei és a műszaki adatok tájékoztató jellegűek. A személyes adatok kezelése az Adatkezelési Tájékoztató szerint történik.";
+
 /** Minimal footer for landing pages — only legal + social links (no navigation). */
 const LandingFooter = () => (
   <footer className="site-footer">
     <div className="container">
-      <div className="landing-footer">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img className="footer-logo-img" src={LOGO} alt="A1 Solar" style={{ marginBottom: 0 }} />
-        <div className="footer-legal">
-          {FOOTER_LEGAL.map((l) => (
-            <Link key={l.href + l.label} href={l.href}>
-              {l.label}
-            </Link>
-          ))}
-        </div>
+      <hr className="landing-footer-divider" style={{ border: 0, borderTop: "1px dashed #ececec" }} />
+      <div className="landing-footer-top">
+        <span className="brand-logo" aria-label="A1 Solar">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={LOGO} alt="A1 Solar" />
+        </span>
         <SocialRow />
+      </div>
+      <div className="footer-legal landing-legal">
+        {FOOTER_LEGAL.map((l) => (
+          <Link key={l.href + l.label} href={l.href}>
+            {l.label}
+          </Link>
+        ))}
       </div>
       <div className="footer-copyright-row" style={{ marginTop: "20px" }}>
         <span>
@@ -93,7 +99,7 @@ const LandingFooter = () => (
           Built by Webbystep
         </a>
       </div>
-      <p className="footer-disclaimer">{DISCLAIMER}</p>
+      <p className="footer-disclaimer">{LANDING_DISCLAIMER}</p>
     </div>
   </footer>
 );
