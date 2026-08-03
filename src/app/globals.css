@@ -1248,31 +1248,33 @@ body.drawer-open .bottom-nav {
 .prose {
   max-width: 760px;
   margin-inline: auto;
-  font-size: 17px;
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--ink-soft);
 }
 /* Left-aligned prose (inside the sidebar layout — aligns with the title). */
 .prose--flush {
   margin-inline: 0;
 }
-.prose {
-  line-height: 1.75;
-  color: #2b2f34;
-}
 .prose p {
   margin: 0 0 1.25em;
 }
 .prose h2 {
-  font-size: 26px;
-  font-weight: 600;
-  margin: 1.8em 0 0.6em;
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--ink);
+  margin: 1.9em 0 0.5em;
 }
 .prose h3 {
-  font-size: 21px;
-  font-weight: 600;
-  margin: 1.5em 0 0.5em;
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--ink);
+  margin: 1.6em 0 0.5em;
 }
 .prose h4 {
+  font-size: 16px;
   font-weight: 600;
+  color: var(--ink);
 }
 /* WP headings often wrap their text in <strong>; keep the lighter heading weight. */
 .prose h2 strong,

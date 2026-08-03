@@ -93,7 +93,7 @@ type SectionProps = {
 const Section = ({ eyebrow, title, intro, children, id }: SectionProps) => (
   <div id={id} style={{ scrollMarginTop: "100px" }}>
     <Eyebrow>{eyebrow}</Eyebrow>
-    <h2 className="text-[var(--ink)]" style={{ marginTop: "18px", fontSize: "30px", fontWeight: 600, lineHeight: 1.2 }}>
+    <h2 className="text-[var(--ink)]" style={{ marginTop: "18px", fontSize: "30px", fontWeight: 500, lineHeight: 1.2 }}>
       {title}
     </h2>
     {intro !== undefined ? (

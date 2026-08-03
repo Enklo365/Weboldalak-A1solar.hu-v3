@@ -95,7 +95,7 @@ export const NotchHero = ({ eyebrow, titleLight, titleStrong, image, imageAlt, i
             style={
               compact
                 ? { color: "#fff", fontSize: "clamp(22px, 2.2vw, 32px)", fontWeight: 700, lineHeight: 1.2, marginBottom: "20px", maxWidth: "600px" }
-                : { color: "#fff", fontSize: "clamp(28px, 3.4vw, 42px)", fontWeight: 300, lineHeight: 1.18, marginBottom: "24px", maxWidth: "380px" }
+                : { color: "#fff", fontSize: "clamp(26px, 2.9vw, 34px)", fontWeight: 300, lineHeight: 1.18, marginBottom: "24px", maxWidth: "420px" }
             }
           >
             {titleLight ? (
@@ -141,7 +141,7 @@ export const NotchHero = ({ eyebrow, titleLight, titleStrong, image, imageAlt, i
             style={
               compact
                 ? { marginTop: "18px", color: "#fff", fontSize: "clamp(20px, 5.4vw, 24px)", fontWeight: 700, lineHeight: 1.22 }
-                : { marginTop: "20px", color: "#fff", fontSize: "clamp(22px, 6.2vw, 28px)", fontWeight: 300, lineHeight: 1.2 }
+                : { marginTop: "20px", color: "#fff", fontSize: "clamp(22px, 6.2vw, 26px)", fontWeight: 300, lineHeight: 1.2 }
             }
           >
             {titleLight ? <>{titleLight} </> : null}
