@@ -6,11 +6,12 @@ import { MirrorContent } from "@/components/MirrorContent";
 import { CAMPAIGN_PAGES } from "@/components/page/campaign";
 import { MARKETING_PAGES } from "@/components/page/marketing";
 import { SuccessPage, SUCCESS_PAGES } from "@/components/page/SuccessPage";
+import { NotchBanner } from "@/components/page/NotchHero";
 import { TextPage, TEXT_PAGES } from "@/components/page/TextPage";
 import { TOOL_PAGES } from "@/components/page/tools";
 import { ServicePage } from "@/components/service/ServicePage";
 import { SERVICE_PAGES } from "@/components/service/serviceData";
-import { HeroDivider, SidebarLayout } from "@/components/service/SidebarLayout";
+import { SidebarLayout } from "@/components/service/SidebarLayout";
 import { SupportWidget } from "@/components/service/SupportWidget";
 import { WpContent } from "@/components/WpContent";
 import {
@@ -131,33 +132,25 @@ export default async function DynamicPage({
 
   return (
     <article className="pb-6 md:pb-8">
-      {/* Editorial article header: banner image on top, title below (any length). */}
-      <header className="w-full pt-8 md:pt-12">
-        <div className="container">
-          <div className="overflow-hidden rounded-[24px]">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={cover} alt={post.title} style={{ width: "100%", aspectRatio: "1192 / 500", objectFit: "cover", display: "block" }} />
-          </div>
-          <div className="mt-8 max-w-[900px]">
-            <span
-              className="inline-block rounded-[30px] px-3 py-2 text-xs font-normal uppercase tracking-[1px]"
-              style={{ background: "rgba(194,29,32,0.14)", color: "var(--brand-dark)" }}
-            >
-              {category}
-            </span>
-            <h1 className="text-[var(--ink)]" style={{ margin: "18px 0 0", fontSize: "clamp(28px, 4vw, 44px)", fontWeight: 700, lineHeight: 1.15 }}>
-              {post.title}
-            </h1>
-            <p className="post-meta" style={{ marginTop: 14 }}>
-              {category} · {formatDate(post.date)}
-            </p>
-          </div>
-        </div>
-      </header>
+      {/* Content-less notch banner (same shape as other subpages); the article
+          badge + title + meta live in the main column below (no divider). */}
+      <NotchBanner image={cover} imageAlt={post.title} />
 
-      <HeroDivider />
+      <div className="mt-10 md:mt-12" />
 
       <SidebarLayout sidebar={<SupportWidget />}>
+        <span
+          className="inline-block rounded-[30px] px-3 py-2 text-xs font-normal uppercase tracking-[1px]"
+          style={{ background: "rgba(194,29,32,0.14)", color: "var(--brand-dark)" }}
+        >
+          {category}
+        </span>
+        <h1 className="text-[var(--ink)]" style={{ margin: "18px 0 0", fontSize: "clamp(26px, 3.4vw, 40px)", fontWeight: 700, lineHeight: 1.15 }}>
+          {post.title}
+        </h1>
+        <p className="post-meta" style={{ marginTop: 14, marginBottom: 28 }}>
+          {category} · {formatDate(post.date)}
+        </p>
         <div
           className="prose"
           // eslint-disable-next-line react/no-danger -- migrated CMS content

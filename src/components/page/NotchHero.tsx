@@ -16,6 +16,40 @@ export type NotchHeroProps = {
   compact?: boolean;
 };
 
+const NOTCH_PATH =
+  "M1403 0C1420.12 0 1434 13.8792 1434 31V394C1434 410.569 1420.57 424 1404 424H655C598.5 424 590 424 573 441.5C555.915 459.088 534.421 495.166 518.441 521.988C509.471 537.045 502.239 549.186 498.5 553.5C488.1 565.5 468.5 570.167 460 571H30C13.4315 571 0 557.569 0 541V31C0 13.8792 13.8792 0 31 0H1403Z";
+
+/**
+ * Content-less variant of the notch hero: just the shaped photo (same notch
+ * shape as the other subpages), with no overlaid title/intro. Used on article
+ * pages, where the badge + title + meta live in the main column instead.
+ */
+export const NotchBanner = ({ image, imageAlt }: { image: string; imageAlt: string }) => (
+  <section className="w-full">
+    <svg width="0" height="0" className="absolute" aria-hidden focusable="false">
+      <defs>
+        <clipPath id={HERO_CLIP_ID} clipPathUnits="objectBoundingBox">
+          <path transform="scale(0.00069735, 0.00175131)" d={NOTCH_PATH} />
+        </clipPath>
+      </defs>
+    </svg>
+    <div className="container hidden lg:block">
+      <div className="relative w-full" style={{ aspectRatio: "1192 / 571" }}>
+        <div className="absolute inset-0" style={{ clipPath: `url(#${HERO_CLIP_ID})` }}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={image} alt={imageAlt} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "50% 55%" }} />
+        </div>
+      </div>
+    </div>
+    <div className="lg:hidden px-4">
+      <div className="overflow-hidden rounded-[24px]">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src={image} alt={imageAlt} style={{ width: "100%", aspectRatio: "16 / 10", objectFit: "cover", display: "block" }} />
+      </div>
+    </div>
+  </section>
+);
+
 /**
  * The shared subpage hero — the homepage/service "svg_design-elem" shape (rounded
  * left + lower-right notch) filled by a photo, with the headline bottom-left and
