@@ -1274,6 +1274,13 @@ body.drawer-open .bottom-nav {
 .prose h4 {
   font-weight: 600;
 }
+/* WP headings often wrap their text in <strong>; keep the lighter heading weight. */
+.prose h2 strong,
+.prose h3 strong,
+.prose h4 strong,
+.prose h5 strong {
+  font-weight: inherit;
+}
 .prose a {
   color: var(--brand);
   text-decoration: underline;

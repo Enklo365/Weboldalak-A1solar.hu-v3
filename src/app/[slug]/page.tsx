@@ -160,12 +160,11 @@ export default async function DynamicPage({
         image={cover}
         imageAlt={post.title}
         notch={
-          <div>
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-3">
             <div style={{ fontSize: "13px", color: "var(--ink-muted)" }}>
               {category} · {formatDate(post.date)} · {readingMin} perc olvasás
             </div>
-            <div className="mt-3 flex items-center gap-2">
-              <span style={{ fontSize: "13px", color: "var(--ink-muted)" }}>Megosztás:</span>
+            <div className="flex items-center gap-2">
               {shareTargets.map(({ label, href, path }) => (
                 <a
                   key={label}
