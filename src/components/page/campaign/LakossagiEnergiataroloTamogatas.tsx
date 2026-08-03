@@ -889,22 +889,32 @@ export const LakossagiEnergiataroloTamogatas = () => (
             <RowDivider />
 
             <Section eyebrow="Kifizetések" title="Hogyan történik a támogatás kifizetése?">
-              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              <div className="flex flex-col gap-4">
                 {PAYOUTS.map((phase) => (
-                  <div key={phase.no} className="flex flex-col px-7 py-7" style={{ background: "var(--surface-3)", borderRadius: "20px" }}>
+                  <div
+                    key={phase.no}
+                    className="flex items-start gap-5 px-6 py-6 md:px-7"
+                    style={{ background: "var(--surface-3)", borderRadius: "20px" }}
+                  >
                     <span
-                      className="flex items-center justify-center"
+                      className="flex flex-none items-center justify-center"
                       style={{ width: "44px", height: "44px", borderRadius: "9999px", background: "rgba(194,29,32,0.14)", color: "var(--brand-dark)", fontSize: "18px", fontWeight: 700 }}
                     >
                       {phase.no}
                     </span>
-                    <h3 className="text-[var(--ink)]" style={{ margin: "18px 0 0", fontSize: "19px", fontWeight: 600 }}>
-                      {phase.title}
-                    </h3>
-                    <p style={{ margin: "4px 0 0", fontSize: "20px", fontWeight: 700, color: "var(--brand)" }}>{phase.amount}</p>
-                    <p className="mt-4 text-[var(--ink-soft)]" style={{ fontSize: "14px", lineHeight: 1.65 }}>
-                      {phase.text}
-                    </p>
+                    <div className="min-w-0 flex-1">
+                      <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
+                        <h3 className="text-[var(--ink)]" style={{ margin: 0, fontSize: "19px", fontWeight: 600 }}>
+                          {phase.title}
+                        </h3>
+                        <p style={{ margin: 0, fontSize: "19px", fontWeight: 700, color: "var(--brand)", whiteSpace: "nowrap" }}>
+                          {phase.amount}
+                        </p>
+                      </div>
+                      <p className="mt-3 text-[var(--ink-soft)]" style={{ fontSize: "15px", lineHeight: 1.7 }}>
+                        {phase.text}
+                      </p>
+                    </div>
                   </div>
                 ))}
               </div>
@@ -989,6 +999,13 @@ export const LakossagiEnergiataroloTamogatas = () => (
                 biztosítsunk a magyar háztartások számára.
               </Body>
             </Section>
+
+            <RowDivider />
+
+            {/* ZÁRÓ ŰRLAP — a main oszlopon belül, a sidebaros elrendezésben */}
+            <div className="pt-2">
+              <OepHeroForm />
+            </div>
           </div>
 
           {/* SIDEBAR — felül navigáció, alul ügyfélszolgálat (a webináriumtól a footerig) */}
@@ -998,18 +1015,6 @@ export const LakossagiEnergiataroloTamogatas = () => (
               <SupportWidget />
             </div>
           </aside>
-        </div>
-      </div>
-    </section>
-
-    {/* ZÁRÓ ŰRLAP — a hero jelentkezési űrlapjának másolata a lap alján */}
-    <div className="container">
-      <hr className="my-12 md:my-16" style={{ border: 0, borderTop: "1px dashed #ececec" }} />
-    </div>
-    <section className="w-full pb-4">
-      <div className="container">
-        <div className="mx-auto max-w-[880px]">
-          <OepHeroForm />
         </div>
       </div>
     </section>
