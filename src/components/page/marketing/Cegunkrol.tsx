@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { ReactNode } from "react";
 
 import { ServiceTocNav } from "@/components/service/ServiceTocNav";
@@ -23,8 +24,11 @@ const CEG_TOC = [
   { id: "velemenyek", label: "Vélemények" },
 ];
 
+/** Intro sentence seated in the lower-right hero notch (like the service pages). */
+const HERO_NOTCH_INTRO =
+  "Az A1 Solar magyar tulajdonú energetikai vállalat, amely lakossági, vállalati és ipari ügyfelei számára kínál komplex napelemes, energiatárolási és energiahatékonysági megoldásokat.";
+
 const STORY_LEAD = [
-  "Az A1 Solar magyar tulajdonú energetikai vállalat, amely lakossági, vállalati és ipari ügyfelei számára kínál komplex napelemes, energiatárolási és energiahatékonysági megoldásokat.",
   "Célunk nem egyszerűen berendezések értékesítése vagy napelemek telepítése. Olyan hosszú távon működő, megbízható energetikai rendszereket tervezünk és valósítunk meg, amelyek csökkentik ügyfeleink energiaköltségeit, növelik energiafüggetlenségüket, és kiszámíthatóbbá teszik működésüket.",
   "A tervezéstől és az engedélyeztetéstől kezdve a finanszírozáson és pályázati ügyintézésen át egészen a kivitelezésig, a távfelügyeletig és a szervizig végigkísérjük ügyfeleinket a teljes folyamaton.",
 ];
@@ -126,15 +130,22 @@ const HeroCopy = () => (
   <>
     <span
       className="inline-block rounded-full px-3 py-2 text-xs font-medium uppercase tracking-[1px] text-white"
-      style={{ background: "rgba(255,255,255,0.2)" }}
+      style={{ background: "rgba(255,255,255,0.2)", marginBottom: "20px" }}
     >
       Cégünkről
     </span>
-    <h1 style={{ marginTop: "20px", color: "#fff", fontSize: "clamp(26px, 2.9vw, 34px)", fontWeight: 300, lineHeight: 1.2 }}>
+    <h1 style={{ color: "#fff", fontSize: "clamp(26px, 2.9vw, 34px)", fontWeight: 300, lineHeight: 1.18, marginBottom: "24px" }}>
       A jövőre
       <br />
       <strong style={{ fontWeight: 700 }}>Optimalizálva</strong>
     </h1>
+    <Link
+      href="/kapcsolat"
+      className="inline-flex items-center rounded-full transition-opacity hover:opacity-90"
+      style={{ background: "var(--brand)", color: "#fff", padding: "12px 24px", fontSize: "15px", fontWeight: 500 }}
+    >
+      Kapcsolatfelvétel
+    </Link>
   </>
 );
 
@@ -151,7 +162,7 @@ export const Cegunkrol = () => (
           <clipPath id={HERO_CLIP_ID} clipPathUnits="objectBoundingBox">
             <path
               transform="scale(0.00069735, 0.00175131)"
-              d="M1403 0C1420.12 0 1434 13.8792 1434 31V394C1434 410.569 1420.57 424 1404 424H1305C1248.5 424 1240 424 1223 441.5C1205.915 459.088 1184.421 495.166 1168.441 521.988C1159.471 537.045 1152.239 549.186 1148.5 553.5C1138.1 565.5 1118.5 570.167 1110 571H30C13.4315 571 0 557.569 0 541V31C0 13.8792 13.8792 0 31 0H1403Z"
+              d="M1403 0C1420.12 0 1434 13.8792 1434 31V394C1434 410.569 1420.57 424 1404 424H655C598.5 424 590 424 573 441.5C555.915 459.088 534.421 495.166 518.441 521.988C509.471 537.045 502.239 549.186 498.5 553.5C488.1 565.5 468.5 570.167 460 571H30C13.4315 571 0 557.569 0 541V31C0 13.8792 13.8792 0 31 0H1403Z"
             />
           </clipPath>
         </defs>
@@ -175,13 +186,17 @@ export const Cegunkrol = () => (
             </video>
             <div className="absolute inset-0" style={{ background: GRADIENT }} />
           </div>
-          <div className="absolute bottom-0 left-0 z-10" style={{ padding: "40px" }}>
+          <div className="absolute bottom-0 left-0 z-10" style={{ padding: "40px", maxWidth: "620px" }}>
             <HeroCopy />
+          </div>
+          {/* Intro seated in the lower-right notch cut-out (like the service pages). */}
+          <div className="absolute z-10 flex items-center" style={{ left: "46%", right: "1.5%", top: "80%", bottom: "1%" }}>
+            <p style={{ fontSize: "16px", lineHeight: 1.6, color: "var(--ink-soft)" }}>{HERO_NOTCH_INTRO}</p>
           </div>
         </div>
       </div>
 
-      {/* Mobile (<lg) — rounded video card */}
+      {/* Mobile (<lg) — rounded video card + intro below */}
       <div className="lg:hidden px-4">
         <div className="relative flex min-h-[340px] flex-col justify-end overflow-hidden rounded-[24px] p-6">
           <video
@@ -200,6 +215,9 @@ export const Cegunkrol = () => (
             <HeroCopy />
           </div>
         </div>
+        <p className="mt-5 px-1" style={{ fontSize: "16px", lineHeight: 1.6, color: "var(--ink-soft)" }}>
+          {HERO_NOTCH_INTRO}
+        </p>
       </div>
     </section>
 
