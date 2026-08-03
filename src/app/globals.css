@@ -2246,6 +2246,61 @@ img[data-fade].loaded {
   }
 }
 
+/* Landing: mobile floating action bar replaces the header contact block. */
+.landing-fab {
+  display: none;
+}
+@media (max-width: 767px) {
+  .landing-contact {
+    display: none;
+  }
+  .landing-fab {
+    display: flex;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 60;
+    gap: 10px;
+    padding: 10px 14px calc(10px + env(safe-area-inset-bottom));
+    background: #fff;
+    border-top: 1px solid var(--line);
+    box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.08);
+  }
+  .landing-fab-call,
+  .landing-fab-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    height: 48px;
+    border-radius: 9999px;
+    font-weight: 600;
+    font-size: 15px;
+  }
+  .landing-fab-call {
+    flex: 0 0 auto;
+    padding: 0 20px;
+    background: var(--surface-3);
+    color: var(--ink);
+  }
+  .landing-fab-cta {
+    flex: 1;
+    background: var(--brand);
+    color: #fff;
+  }
+  /* Social icons under the logo, left-aligned on mobile. */
+  .landing-footer-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  /* Clearance so the fixed action bar never covers the footer bottom. */
+  .landing-footer-el {
+    padding-bottom: 76px;
+  }
+}
+
 /* Section-kit FAQ accordion (+ rotates into ×). */
 .faq-item summary::-webkit-details-marker { display: none; }
 .faq-plus { font-size: 22px; line-height: 1; transition: transform 0.2s ease; }

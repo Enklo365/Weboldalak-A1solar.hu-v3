@@ -237,7 +237,8 @@ export const Header = () => {
   // no navigation, so visitors cannot leave the page.
   if (LANDING_PATHS.has(pathname)) {
     return (
-      <header className="site-header">
+      <>
+        <header className="site-header">
         <div className="mainbar">
           <div className="container landing-bar">
             <span className="brand-logo" aria-label="A1 Solar">
@@ -279,7 +280,19 @@ export const Header = () => {
             </div>
           </div>
         </div>
-      </header>
+        </header>
+
+        {/* Mobile floating action bar — boosts landing conversion. */}
+        <div className="landing-fab" aria-label="Gyors műveletek">
+          <a className="landing-fab-call" href={`tel:${SITE.phoneRaw}`}>
+            <PhoneIcon />
+            <span>Hívás</span>
+          </a>
+          <a className="landing-fab-cta" href="#ajanlatkeres">
+            Kérek ajánlatot
+          </a>
+        </div>
+      </>
     );
   }
 
