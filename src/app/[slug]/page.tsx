@@ -131,10 +131,14 @@ export default async function DynamicPage({
 
   return (
     <article className="pb-6 md:pb-8">
-      {/* Editorial article header: title-first (handles any length), banner below. */}
+      {/* Editorial article header: banner image on top, title below (any length). */}
       <header className="w-full pt-8 md:pt-12">
         <div className="container">
-          <div className="max-w-[900px]">
+          <div className="overflow-hidden rounded-[24px]">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={cover} alt={post.title} style={{ width: "100%", aspectRatio: "1192 / 500", objectFit: "cover", display: "block" }} />
+          </div>
+          <div className="mt-8 max-w-[900px]">
             <span
               className="inline-block rounded-[30px] px-3 py-2 text-xs font-normal uppercase tracking-[1px]"
               style={{ background: "rgba(194,29,32,0.14)", color: "var(--brand-dark)" }}
@@ -147,10 +151,6 @@ export default async function DynamicPage({
             <p className="post-meta" style={{ marginTop: 14 }}>
               {category} · {formatDate(post.date)}
             </p>
-          </div>
-          <div className="mt-8 overflow-hidden rounded-[24px]">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={cover} alt={post.title} style={{ width: "100%", aspectRatio: "1192 / 500", objectFit: "cover", display: "block" }} />
           </div>
         </div>
       </header>
