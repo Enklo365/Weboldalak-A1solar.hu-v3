@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { KarrierApplyForm } from "@/components/page/marketing/KarrierApplyForm";
 import {
@@ -8,6 +7,8 @@ import {
   KARRIER_POSITIONS,
 } from "@/components/page/marketing/karrierData";
 import { NotchHero } from "@/components/page/NotchHero";
+import { ServiceTocNav } from "@/components/service/ServiceTocNav";
+import { SupportWidget } from "@/components/service/SupportWidget";
 
 type Params = { position: string };
 
@@ -33,8 +34,8 @@ const CheckIcon = () => (
   </svg>
 );
 
-const DetailCard = ({ title, items }: { title: string; items: string[] }) => (
-  <div className="rounded-[20px] p-6 md:p-8" style={{ background: "var(--surface-3)" }}>
+const DetailCard = ({ id, title, items }: { id: string; title: string; items: string[] }) => (
+  <div id={id} className="rounded-[20px] p-6 md:p-8" style={{ background: "var(--surface-3)", scrollMarginTop: "100px" }}>
     <h2 className="text-sm font-semibold uppercase tracking-[0.5px] text-[var(--ink)]" style={{ marginBottom: "16px" }}>
       {title}
     </h2>
@@ -56,6 +57,14 @@ export default async function KarrierPositionPage({ params }: { params: Promise<
   const pos = getKarrierPosition(position);
   if (!pos) notFound();
 
+  const toc = [
+    { id: "feladatok", label: "Feladatok" },
+    ...(pos.requirements ? [{ id: "elvarasok", label: "Elvárások" }] : []),
+    ...(pos.plus ? [{ id: "elonyt-jelent", label: "Előnyt jelent" }] : []),
+    ...(pos.offer ? [{ id: "amit-kinalunk", label: "Amit kínálunk" }] : []),
+    { id: "jelentkezes", label: "Jelentkezés" },
+  ];
+
   return (
     <article>
       <NotchHero
@@ -75,13 +84,13 @@ export default async function KarrierPositionPage({ params }: { params: Promise<
       <section className="w-full pb-0">
         <div className="container">
           <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_360px] lg:gap-0">
-            {/* Main — detail cards */}
+            {/* Main — detail cards + application form */}
             <div className="lg:pr-10">
               <div className="flex flex-col gap-6">
-                <DetailCard title="Feladatok" items={pos.tasks} />
-                {pos.requirements ? <DetailCard title="Elvárások" items={pos.requirements} /> : null}
-                {pos.plus ? <DetailCard title="Előnyt jelent" items={pos.plus} /> : null}
-                {pos.offer ? <DetailCard title="Amit kínálunk" items={pos.offer} /> : null}
+                <DetailCard id="feladatok" title="Feladatok" items={pos.tasks} />
+                {pos.requirements ? <DetailCard id="elvarasok" title="Elvárások" items={pos.requirements} /> : null}
+                {pos.plus ? <DetailCard id="elonyt-jelent" title="Előnyt jelent" items={pos.plus} /> : null}
+                {pos.offer ? <DetailCard id="amit-kinalunk" title="Amit kínálunk" items={pos.offer} /> : null}
               </div>
 
               <div className="mt-6 rounded-[20px] p-6 md:p-8" style={{ background: "var(--surface-3)" }}>
@@ -89,24 +98,16 @@ export default async function KarrierPositionPage({ params }: { params: Promise<
                 <span className="text-[var(--ink-soft)]">{pos.location}</span>
               </div>
 
-              <div className="extra-button-container mt-12 flex">
-                <Link href="/karrier" className="learn-more learn-more--back">
-                  <span className="circle" aria-hidden>
-                    <span className="extra-icon arrow" />
-                  </span>
-                  <span className="extra-button-text">Összes pozíció</span>
-                </Link>
+              <div id="jelentkezes" className="mt-10" style={{ scrollMarginTop: "100px" }}>
+                <KarrierApplyForm positionTitle={pos.title} />
               </div>
             </div>
 
-            {/* Sidebar — application form */}
-            <aside
-              id="jelentkezes"
-              className="lg:border-l lg:border-dashed lg:border-[#ececec] lg:pl-10"
-              style={{ scrollMarginTop: "var(--header-h)" }}
-            >
-              <div className="lg:sticky lg:top-[110px]">
-                <KarrierApplyForm positionTitle={pos.title} />
+            {/* Sidebar — in-page navigation + customer-service widget */}
+            <aside className="lg:border-l lg:border-dashed lg:border-[#ececec] lg:pl-10">
+              <div className="flex flex-col gap-6 lg:sticky lg:top-[110px]">
+                <ServiceTocNav items={toc} />
+                <SupportWidget />
               </div>
             </aside>
           </div>
