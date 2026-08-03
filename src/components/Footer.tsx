@@ -77,28 +77,32 @@ const LandingFooter = () => (
   <footer className="site-footer landing-footer-el">
     <div className="container">
       <hr className="landing-footer-divider" style={{ border: 0, borderTop: "1px dashed #ececec" }} />
-      <div className="landing-footer-top">
-        <span className="brand-logo" aria-label="A1 Solar">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={LOGO} alt="A1 Solar" />
-        </span>
-        <SocialRow />
+      <div className="landing-footer-panel">
+        <div className="landing-footer-top">
+          <span className="brand-logo" aria-label="A1 Solar">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={LOGO} alt="A1 Solar" />
+          </span>
+          <SocialRow />
+        </div>
+        <div className="footer-legal landing-legal">
+          {FOOTER_LEGAL.map((l) => (
+            <Link key={l.href + l.label} href={l.href}>
+              {l.label}
+            </Link>
+          ))}
+        </div>
+        <div className="footer-copyright-row" style={{ marginTop: "20px" }}>
+          <span>
+            © {YEAR} {SITE.legalName} – Minden jog fenntartva.
+          </span>
+          <a href="https://webbystep.hu" target="_blank" rel="noopener noreferrer">
+            Built by Webbystep
+          </a>
+        </div>
       </div>
-      <div className="footer-legal landing-legal">
-        {FOOTER_LEGAL.map((l) => (
-          <Link key={l.href + l.label} href={l.href}>
-            {l.label}
-          </Link>
-        ))}
-      </div>
-      <div className="footer-copyright-row" style={{ marginTop: "20px" }}>
-        <span>
-          © {YEAR} {SITE.legalName} – Minden jog fenntartva.
-        </span>
-        <a href="https://webbystep.hu" target="_blank" rel="noopener noreferrer">
-          Built by Webbystep
-        </a>
-      </div>
+    </div>
+    <div className="container">
       <p className="footer-disclaimer">{LANDING_DISCLAIMER}</p>
     </div>
   </footer>

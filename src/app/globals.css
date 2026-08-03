@@ -2218,6 +2218,17 @@ img[data-fade].loaded {
 .landing-footer-divider {
   margin: 44px 0 28px;
 }
+.landing-footer-panel {
+  background: #f6f6f6;
+  border-radius: 28px;
+  padding: 40px 48px;
+}
+@media (max-width: 640px) {
+  .landing-footer-panel {
+    padding: 28px 24px;
+    border-radius: 24px;
+  }
+}
 @media (min-width: 768px) {
   .landing-footer-divider {
     margin-top: 50px;
