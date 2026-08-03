@@ -23,13 +23,6 @@ const PinIcon = () => (
   </svg>
 );
 
-const ClockIcon = () => (
-  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" aria-hidden>
-    <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="2" />
-    <path d="M12 7.5V12l3 2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-  </svg>
-);
-
 const WrenchIcon = () => (
   <svg viewBox="0 0 24 24" width="20" height="20" fill="none" aria-hidden>
     <path
@@ -41,65 +34,40 @@ const WrenchIcon = () => (
   </svg>
 );
 
-type ContactItemProps = {
+type ContactCardProps = {
   icon: React.ReactNode;
   label: string;
   value: string;
   href?: string;
 };
 
-const ContactItem = ({ icon, label, value, href }: ContactItemProps) => (
-  <li className="flex items-start gap-4">
-    <span
-      className="grid h-12 w-12 shrink-0 place-items-center rounded-full"
-      style={{ background: "var(--surface-3)", color: "var(--brand)" }}
-      aria-hidden
-    >
+/** A single contact detail card shown in a row above the form. */
+const ContactCard = ({ icon, label, value, href }: ContactCardProps) => (
+  <div className="flex flex-col items-start gap-3 rounded-[20px] p-6" style={{ background: "var(--surface-3)" }}>
+    <span className="grid h-12 w-12 flex-none place-items-center rounded-full" style={{ background: "#fff", color: "var(--brand)" }} aria-hidden>
       {icon}
     </span>
-    <div className="min-w-0">
-      <div className="text-xs uppercase tracking-[1px] text-[var(--ink-muted)]">{label}</div>
-      {href ? (
-        <a
-          href={href}
-          className="text-lg font-medium text-[var(--ink)] transition-colors hover:text-[var(--brand)]"
-          style={{ wordBreak: "break-word" }}
-        >
-          {value}
-        </a>
-      ) : (
-        <div className="text-lg font-medium text-[var(--ink)]">{value}</div>
-      )}
-    </div>
-  </li>
-);
-
-/**
- * Native bespoke "Kapcsolat" marketing page — hero, a two-column layout with
- * brand-styled contact detail cards on the left and the {@link ContactForm} on
- * the right, plus a static address block. On-brand rounded / Inter design.
- */
-/** Contact details + service card shown in the sidebar. */
-const ContactDetails = () => (
-  <div className="rounded-[20px] p-6" style={{ background: "var(--surface-3)" }}>
-    <div className="text-[13px] font-semibold uppercase tracking-[1px] text-[var(--ink-muted)]">Elérhetőségek</div>
-    <ul className="mt-5 flex flex-col gap-5">
-      <ContactItem icon={<MailIcon />} label="E-mail" value={SITE.email} href={`mailto:${SITE.email}`} />
-      <ContactItem icon={<PinIcon />} label="Cím" value={SITE.address} />
-      <ContactItem
-        icon={<ClockIcon />}
-        label="Ügyfélszolgálat"
-        value={`Hétköznap ${SITE.supportHours} között`}
-      />
-      <ContactItem icon={<WrenchIcon />} label="Szerviz" value="szerviz@a1solar.hu" href="mailto:szerviz@a1solar.hu" />
-    </ul>
+    <div className="text-xs uppercase tracking-[1px] text-[var(--ink-muted)]">{label}</div>
+    {href ? (
+      <a
+        href={href}
+        className="font-medium text-[var(--ink)] transition-colors hover:text-[var(--brand)]"
+        style={{ wordBreak: "break-word" }}
+      >
+        {value}
+      </a>
+    ) : (
+      <div className="font-medium text-[var(--ink)]" style={{ wordBreak: "break-word" }}>
+        {value}
+      </div>
+    )}
   </div>
 );
 
 /**
  * Native bespoke "Kapcsolat" marketing page on the sidebar + notch-hero layout:
- * a shaped hero, the {@link ContactForm} in the main column and the contact
- * details + customer-service widget in a sticky sidebar.
+ * a shaped hero, three contact-detail cards + the {@link ContactForm} in the
+ * main column and the customer-service widget in a sticky sidebar.
  */
 export const Kapcsolat = () => (
   <div className="pb-6 md:pb-8">
@@ -114,23 +82,20 @@ export const Kapcsolat = () => (
 
     <HeroDivider />
 
-    <SidebarLayout
-      sidebar={
-        <>
-          <ContactDetails />
-          <SupportWidget />
-        </>
-      }
-    >
-      <h2 className="text-[var(--ink)]" style={{ margin: "0 0 24px", fontSize: "30px", fontWeight: 600, lineHeight: 1.2 }}>
-        Írj nekünk üzenetet!
-      </h2>
-      <ContactForm
-        bare
-        formName="Kapcsolati űrlap"
-        heading="Írj nekünk üzenetet!"
-        intro="Kollégánk maximum 3 munkanapon belül felveszi veled a kapcsolatot."
-      />
+    <SidebarLayout sidebar={<SupportWidget />}>
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+        <ContactCard icon={<MailIcon />} label="E-mail" value={SITE.email} href={`mailto:${SITE.email}`} />
+        <ContactCard icon={<WrenchIcon />} label="Szerviz" value="szerviz@a1solar.hu" href="mailto:szerviz@a1solar.hu" />
+        <ContactCard icon={<PinIcon />} label="Cím" value={SITE.address} />
+      </div>
+      <div className="mt-6">
+        <ContactForm
+          bare
+          formName="Kapcsolati űrlap"
+          heading="Írj nekünk üzenetet!"
+          intro="Kollégánk maximum 3 munkanapon belül felveszi veled a kapcsolatot."
+        />
+      </div>
     </SidebarLayout>
   </div>
 );
