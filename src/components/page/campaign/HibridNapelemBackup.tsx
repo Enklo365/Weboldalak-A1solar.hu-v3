@@ -56,7 +56,7 @@ const FAQ = [
  * landing chrome (minimal header/footer) so visitors cannot navigate away.
  */
 export const HibridNapelemBackup = () => (
-  <div className="pb-6 md:pb-8">
+  <div>
     <NotchHero
       eyebrow="Hibrid rendszer + backup"
       titleLight="Legyen áram otthonodban akkor is,"

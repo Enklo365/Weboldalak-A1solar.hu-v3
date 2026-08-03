@@ -2212,8 +2212,16 @@ img[data-fade].loaded {
     gap: 14px;
   }
 }
+.landing-footer-el {
+  margin-top: 0;
+}
 .landing-footer-divider {
-  margin: 0 0 28px;
+  margin: 44px 0 28px;
+}
+@media (min-width: 768px) {
+  .landing-footer-divider {
+    margin-top: 50px;
+  }
 }
 .landing-footer-top {
   display: flex;

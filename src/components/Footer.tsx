@@ -74,7 +74,7 @@ const LANDING_DISCLAIMER =
 
 /** Minimal footer for landing pages — only legal + social links (no navigation). */
 const LandingFooter = () => (
-  <footer className="site-footer">
+  <footer className="site-footer landing-footer-el">
     <div className="container">
       <hr className="landing-footer-divider" style={{ border: 0, borderTop: "1px dashed #ececec" }} />
       <div className="landing-footer-top">
