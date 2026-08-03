@@ -15,6 +15,24 @@ type BlogIndexProps = {
 const PAGE_SIZE = 12;
 const ALL = "Összes";
 
+/** Fallback cover images (real A1 Solar installs) for posts with no image. */
+const FALLBACK_COVERS = [
+  "/wp-content/uploads/2022/08/siofok-napelem-2-768x486.jpg",
+  "/wp-content/uploads/2022/08/Szentendre-Napelem-768x576.jpg",
+  "/wp-content/uploads/2022/08/Pecel-napelem-768x432.jpg",
+  "/wp-content/uploads/2022/08/Budapest-napelem.jpg",
+  "/wp-content/uploads/2022/08/Erd-napelem-768x346.jpg",
+  "/wp-content/uploads/2022/08/Budapest-2-napelem-768x346.jpg",
+];
+
+/** Stable cover for a post: its own first image, else a slug-hashed fallback. */
+const coverFor = (post: PostCard): string => {
+  if (post.cover) return post.cover;
+  let hash = 0;
+  for (let i = 0; i < post.slug.length; i += 1) hash = (hash + post.slug.charCodeAt(i)) % FALLBACK_COVERS.length;
+  return FALLBACK_COVERS[hash];
+};
+
 /** Article card matching the homepage "Híreink" cards. */
 const Card = ({ post, index }: { post: PostCard; index: number }) => (
   <Link
@@ -23,15 +41,13 @@ const Card = ({ post, index }: { post: PostCard; index: number }) => (
     style={{ animationDelay: `${index * 45}ms` }}
   >
     <div className="relative aspect-[16/9] overflow-hidden bg-[var(--surface-3)]">
-      {post.cover ? (
-        // eslint-disable-next-line @next/next/no-img-element
-        <img
-          src={post.cover}
-          alt=""
-          loading="lazy"
-          className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-        />
-      ) : null}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={coverFor(post)}
+        alt=""
+        loading="lazy"
+        className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+      />
       <span className="notch-badge">
         <span className="notch-badge-pill">{post.category}</span>
       </span>
