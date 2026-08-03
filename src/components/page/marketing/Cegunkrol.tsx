@@ -391,17 +391,39 @@ export const Cegunkrol = () => (
 
       <RowDivider />
 
-      <div className="rounded-[28px] px-8 py-12 text-center md:px-12 md:py-14" style={{ background: "var(--brand)" }}>
-        <span className="inline-block rounded-full px-3 py-2 text-xs font-medium uppercase tracking-[1px]" style={{ background: "rgba(255,255,255,0.2)", color: "#fff" }}>
-          Küldetésünk
-        </span>
-        <p className="mx-auto mt-6 max-w-[620px]" style={{ color: "#fff", fontSize: "clamp(18px, 2.2vw, 22px)", fontWeight: 500, lineHeight: 1.5 }}>
-          Korszerű, biztonságos és személyre szabott energetikai megoldásokkal segítjük ügyfeleinket az
-          energiafüggetlenség, a költséghatékonyabb működés és egy fenntarthatóbb jövő elérésében.
-        </p>
-        <p className="mt-5" style={{ color: "rgba(255,255,255,0.85)", fontSize: "14px", fontWeight: 600, letterSpacing: "1px", textTransform: "uppercase" }}>
-          A jövőre optimalizálva.
-        </p>
+      <div
+        className="relative overflow-hidden rounded-[24px] px-9 py-12 text-white md:px-12 md:py-14"
+        style={{
+          background: [
+            "radial-gradient(80% 70% at 102% -12%, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0) 52%)",
+            "repeating-radial-gradient(circle at 100% 0%, rgba(255,255,255,0) 0 62px, rgba(255,255,255,0.04) 62px 64px)",
+            "radial-gradient(95% 115% at -8% 116%, rgba(74,4,14,0.5) 0%, rgba(74,4,14,0) 55%)",
+            "var(--brand)",
+          ].join(", "),
+        }}
+      >
+        <div className="relative z-10">
+          <span
+            className="inline-block rounded-full px-3 py-2 text-xs font-medium uppercase tracking-[1px]"
+            style={{ background: "rgba(255,255,255,0.2)", marginBottom: "20px" }}
+          >
+            Küldetésünk
+          </span>
+          <h2 className="max-w-[620px]" style={{ color: "#fff", fontSize: "clamp(22px, 3.2vw, 30px)", fontWeight: 600, lineHeight: 1.25 }}>
+            A jövőre optimalizálva.
+          </h2>
+          <p className="mt-4 max-w-[620px] text-white/85">
+            Korszerű, biztonságos és személyre szabott energetikai megoldásokkal segítjük ügyfeleinket az
+            energiafüggetlenség, a költséghatékonyabb működés és egy fenntarthatóbb jövő elérésében.
+          </p>
+          <Link
+            href="/kapcsolat"
+            className="mt-9 inline-flex items-center rounded-full transition-opacity hover:opacity-90"
+            style={{ background: "#fff", color: "var(--brand)", padding: "14px 28px", fontSize: "15px", fontWeight: 600 }}
+          >
+            Kapcsolatfelvétel
+          </Link>
+        </div>
       </div>
     </SidebarLayout>
   </div>
