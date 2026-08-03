@@ -15,14 +15,17 @@ type BlogIndexProps = {
 const PAGE_SIZE = 12;
 const ALL = "Összes";
 
-/** Fallback cover images (real A1 Solar installs) for posts with no image. */
+/**
+ * Fallback cover images (real A1 Solar installs) for posts with no image.
+ * All are ~16:9 so object-cover frames them identically across cards.
+ */
 const FALLBACK_COVERS = [
-  "/wp-content/uploads/2022/08/siofok-napelem-2-768x486.jpg",
-  "/wp-content/uploads/2022/08/Szentendre-Napelem-768x576.jpg",
-  "/wp-content/uploads/2022/08/Pecel-napelem-768x432.jpg",
-  "/wp-content/uploads/2022/08/Budapest-napelem.jpg",
-  "/wp-content/uploads/2022/08/Erd-napelem-768x346.jpg",
-  "/wp-content/uploads/2022/08/Budapest-2-napelem-768x346.jpg",
+  "/wp-content/uploads/2022/08/Esztergom-napelem-scaled.jpg",
+  "/wp-content/uploads/2022/08/Paty-napelem-scaled.jpg",
+  "/wp-content/uploads/2022/08/Pecel-napelem-scaled.jpg",
+  "/wp-content/uploads/2022/08/Rad-napelem-scaled.jpg",
+  "/wp-content/uploads/2022/08/szuha-napelem-scaled.jpg",
+  "/wp-content/uploads/2022/08/budapest-3-napelem.jpg",
 ];
 
 /** Stable cover for a post: its own first image, else a slug-hashed fallback. */
