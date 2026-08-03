@@ -139,7 +139,7 @@ export const OtthonfelujitasiTamogatasAjanlatIII = () => (
           <Eyebrow>Információk</Eyebrow>
           <h2
             className="text-[var(--ink)]"
-            style={{ marginTop: "22px", fontSize: "30px", fontWeight: 600, lineHeight: 1.2 }}
+            style={{ marginTop: "22px", fontSize: "30px", fontWeight: 500, lineHeight: 1.2 }}
           >
             Összeszedtünk mindent, amit a támogatásról tudni érdemes...
           </h2>
@@ -211,7 +211,7 @@ export const OtthonfelujitasiTamogatasAjanlatIII = () => (
             <Eyebrow>Cégünkről</Eyebrow>
             <h2
               className="text-[var(--ink)]"
-              style={{ marginTop: "18px", fontSize: "30px", fontWeight: 600, lineHeight: 1.2 }}
+              style={{ marginTop: "18px", fontSize: "30px", fontWeight: 500, lineHeight: 1.2 }}
             >
               Miért válassza az A1 Solart?
             </h2>
@@ -244,7 +244,7 @@ export const OtthonfelujitasiTamogatasAjanlatIII = () => (
         <Eyebrow>+1 ok, amiért érdemes pályázni</Eyebrow>
         <h2
           className="text-[var(--ink)]"
-          style={{ marginTop: "22px", fontSize: "30px", fontWeight: 600, lineHeight: 1.2 }}
+          style={{ marginTop: "22px", fontSize: "30px", fontWeight: 500, lineHeight: 1.2 }}
         >
           Dinamikus elszámolás napszakokhoz igazodva
         </h2>
@@ -290,7 +290,7 @@ export const OtthonfelujitasiTamogatasAjanlatIII = () => (
           <Eyebrow>Kapcsolatfelvétel</Eyebrow>
           <h2
             className="text-[var(--ink)]"
-            style={{ marginTop: "22px", fontSize: "30px", fontWeight: 600, lineHeight: 1.2 }}
+            style={{ marginTop: "22px", fontSize: "30px", fontWeight: 500, lineHeight: 1.2 }}
           >
             Ne hagyja ki ezt a lehetőséget!
           </h2>

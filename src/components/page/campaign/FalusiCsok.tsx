@@ -106,7 +106,7 @@ export const FalusiCsok = () => (
             <Eyebrow>Korszerű otthon</Eyebrow>
             <h2
               className="text-[var(--ink)]"
-              style={{ marginTop: "22px", fontSize: "30px", fontWeight: 600, lineHeight: 1.2 }}
+              style={{ marginTop: "22px", fontSize: "30px", fontWeight: 500, lineHeight: 1.2 }}
             >
               Tedd otthonodat energiatakarékossá!
             </h2>
@@ -138,7 +138,7 @@ export const FalusiCsok = () => (
           <Eyebrow>Kapcsolatfelvétel</Eyebrow>
           <h2
             className="text-[var(--ink)]"
-            style={{ marginTop: "22px", fontSize: "30px", fontWeight: 600, lineHeight: 1.2 }}
+            style={{ marginTop: "22px", fontSize: "30px", fontWeight: 500, lineHeight: 1.2 }}
           >
             Munkatársunk 24 órán belül felveszi Veled a kapcsolatot!
           </h2>

@@ -225,7 +225,7 @@ export const OtthonfelujitasiTamogatasAjanlatII = () => (
           <div>
             <h2
               className="text-[var(--ink)]"
-              style={{ margin: 0, fontSize: "30px", fontWeight: 600, lineHeight: 1.2 }}
+              style={{ margin: 0, fontSize: "30px", fontWeight: 500, lineHeight: 1.2 }}
             >
               Hónapról hónapra egyre drágább a villanyszámla?
             </h2>
@@ -274,7 +274,7 @@ export const OtthonfelujitasiTamogatasAjanlatII = () => (
           <Eyebrow>Csomagajánlatok</Eyebrow>
           <h2
             className="text-[var(--ink)]"
-            style={{ marginTop: "22px", fontSize: "30px", fontWeight: 600, lineHeight: 1.2 }}
+            style={{ marginTop: "22px", fontSize: "30px", fontWeight: 500, lineHeight: 1.2 }}
           >
             Kedvezményes csomagajánlataink a vidéki otthonfelújítási támogatáshoz
           </h2>
@@ -423,7 +423,7 @@ export const OtthonfelujitasiTamogatasAjanlatII = () => (
           <Eyebrow>Információk</Eyebrow>
           <h2
             className="text-[var(--ink)]"
-            style={{ marginTop: "22px", fontSize: "30px", fontWeight: 600, lineHeight: 1.2 }}
+            style={{ marginTop: "22px", fontSize: "30px", fontWeight: 500, lineHeight: 1.2 }}
           >
             Összeszedtünk mindent, amit a támogatásról tudni érdemes
           </h2>
@@ -487,7 +487,7 @@ export const OtthonfelujitasiTamogatasAjanlatII = () => (
           <Eyebrow>Igénylés</Eyebrow>
           <h2
             className="text-[var(--ink)]"
-            style={{ marginTop: "22px", fontSize: "30px", fontWeight: 600, lineHeight: 1.2 }}
+            style={{ marginTop: "22px", fontSize: "30px", fontWeight: 500, lineHeight: 1.2 }}
           >
             Hogyan lehet igényelni?
           </h2>
@@ -534,7 +534,7 @@ export const OtthonfelujitasiTamogatasAjanlatII = () => (
             <Eyebrow>Cégünkről</Eyebrow>
             <h2
               className="text-[var(--ink)]"
-              style={{ marginTop: "22px", fontSize: "30px", fontWeight: 600, lineHeight: 1.2 }}
+              style={{ marginTop: "22px", fontSize: "30px", fontWeight: 500, lineHeight: 1.2 }}
             >
               Miért válassza az A1 Solart?
             </h2>
@@ -580,7 +580,7 @@ export const OtthonfelujitasiTamogatasAjanlatII = () => (
           <Eyebrow>Kapcsolatfelvétel</Eyebrow>
           <h2
             className="text-[var(--ink)]"
-            style={{ marginTop: "22px", fontSize: "30px", fontWeight: 600, lineHeight: 1.2 }}
+            style={{ marginTop: "22px", fontSize: "30px", fontWeight: 500, lineHeight: 1.2 }}
           >
             Ne hagyja ki ezt a lehetőséget!
           </h2>

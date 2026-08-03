@@ -58,7 +58,7 @@ export const Karrier = () => (
             >
               Nyitott pozíciók
             </span>
-            <h2 className="text-[var(--ink)]" style={{ marginTop: "16px", fontSize: "30px", fontWeight: 600, lineHeight: 1.2 }}>
+            <h2 className="text-[var(--ink)]" style={{ marginTop: "16px", fontSize: "30px", fontWeight: 500, lineHeight: 1.2 }}>
               Melyik nyitott pozíciónk érdekel?
             </h2>
             <p className="mt-4 text-[var(--ink-soft)]">Kattints egy pozícióra a részletekért és a jelentkezéshez.</p>

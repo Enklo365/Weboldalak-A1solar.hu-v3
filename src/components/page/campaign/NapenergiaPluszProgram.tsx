@@ -250,7 +250,7 @@ export const NapenergiaPluszProgram = () => (
           <Eyebrow>Információk</Eyebrow>
           <h2
             className="text-[var(--ink)]"
-            style={{ marginTop: "22px", fontSize: "30px", fontWeight: 600, lineHeight: 1.2 }}
+            style={{ marginTop: "22px", fontSize: "30px", fontWeight: 500, lineHeight: 1.2 }}
           >
             Előregisztrációja pozitív elbírálást kapott?
           </h2>
@@ -317,7 +317,7 @@ export const NapenergiaPluszProgram = () => (
           <Eyebrow>Csomagok</Eyebrow>
           <h2
             className="text-[var(--ink)]"
-            style={{ marginTop: "22px", fontSize: "30px", fontWeight: 600, lineHeight: 1.2 }}
+            style={{ marginTop: "22px", fontSize: "30px", fontWeight: 500, lineHeight: 1.2 }}
           >
             Kedvezményes csomagajánlatok!
           </h2>
@@ -435,7 +435,7 @@ export const NapenergiaPluszProgram = () => (
             <Eyebrow>Regisztráció</Eyebrow>
             <h2
               className="text-[var(--ink)]"
-              style={{ marginTop: "22px", fontSize: "30px", fontWeight: 600, lineHeight: 1.2 }}
+              style={{ marginTop: "22px", fontSize: "30px", fontWeight: 500, lineHeight: 1.2 }}
             >
               Még nem regisztrált a Napenergia Plusz Programra? Nem késő!
             </h2>
@@ -480,7 +480,7 @@ export const NapenergiaPluszProgram = () => (
           <Eyebrow>Kapcsolatfelvétel</Eyebrow>
           <h2
             className="text-[var(--ink)]"
-            style={{ marginTop: "22px", fontSize: "30px", fontWeight: 600, lineHeight: 1.2 }}
+            style={{ marginTop: "22px", fontSize: "30px", fontWeight: 500, lineHeight: 1.2 }}
           >
             Munkatársunk 24 órán belül felveszi Önnel a kapcsolatot!
           </h2>

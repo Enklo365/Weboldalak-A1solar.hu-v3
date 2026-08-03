@@ -183,7 +183,7 @@ export const JedlikAnyosFinanszirozasiSegitseg = () => (
             <Eyebrow>A probléma</Eyebrow>
             <h2
               className="text-[var(--ink)]"
-              style={{ marginTop: "22px", fontSize: "30px", fontWeight: 600, lineHeight: 1.2 }}
+              style={{ marginTop: "22px", fontSize: "30px", fontWeight: 500, lineHeight: 1.2 }}
             >
               A finanszírozás jelenti a legnagyobb akadályt
             </h2>
@@ -233,7 +233,7 @@ export const JedlikAnyosFinanszirozasiSegitseg = () => (
             <Eyebrow>A megoldás</Eyebrow>
             <h2
               className="text-[var(--ink)]"
-              style={{ marginTop: "22px", fontSize: "30px", fontWeight: 600, lineHeight: 1.2 }}
+              style={{ marginTop: "22px", fontSize: "30px", fontWeight: 500, lineHeight: 1.2 }}
             >
               Az A1 Solar megoldása
             </h2>
@@ -268,7 +268,7 @@ export const JedlikAnyosFinanszirozasiSegitseg = () => (
           <Eyebrow>Hogyan működik?</Eyebrow>
           <h2
             className="text-[var(--ink)]"
-            style={{ marginTop: "22px", fontSize: "30px", fontWeight: 600, lineHeight: 1.2 }}
+            style={{ marginTop: "22px", fontSize: "30px", fontWeight: 500, lineHeight: 1.2 }}
           >
             Hogyan működik a gyakorlatban?
           </h2>
@@ -319,7 +319,7 @@ export const JedlikAnyosFinanszirozasiSegitseg = () => (
             <Eyebrow>Pályázatírás</Eyebrow>
             <h2
               className="text-[var(--ink)]"
-              style={{ marginTop: "22px", fontSize: "30px", fontWeight: 600, lineHeight: 1.2 }}
+              style={{ marginTop: "22px", fontSize: "30px", fontWeight: 500, lineHeight: 1.2 }}
             >
               Mi történik a pályázatírással és projektmenedzsmenttel?
             </h2>
@@ -357,7 +357,7 @@ export const JedlikAnyosFinanszirozasiSegitseg = () => (
           <Eyebrow>Miért éri meg?</Eyebrow>
           <h2
             className="text-[var(--ink)]"
-            style={{ marginTop: "22px", fontSize: "30px", fontWeight: 600, lineHeight: 1.2 }}
+            style={{ marginTop: "22px", fontSize: "30px", fontWeight: 500, lineHeight: 1.2 }}
           >
             Mit nyersz ezzel kivitelezőként?
           </h2>
@@ -400,7 +400,7 @@ export const JedlikAnyosFinanszirozasiSegitseg = () => (
             <Eyebrow>Kinek szól ez az ajánlat?</Eyebrow>
             <h2
               className="text-[var(--ink)]"
-              style={{ marginTop: "22px", fontSize: "30px", fontWeight: 600, lineHeight: 1.2 }}
+              style={{ marginTop: "22px", fontSize: "30px", fontWeight: 500, lineHeight: 1.2 }}
             >
               Kinek ideális ez az együttműködés
             </h2>
@@ -438,7 +438,7 @@ export const JedlikAnyosFinanszirozasiSegitseg = () => (
         >
           Cégünkről
         </span>
-        <h2 style={{ marginTop: "22px", color: "#fff", fontSize: "30px", fontWeight: 600, lineHeight: 1.2 }}>
+        <h2 style={{ marginTop: "22px", color: "#fff", fontSize: "30px", fontWeight: 500, lineHeight: 1.2 }}>
           Miért válassz minket?
         </h2>
         <p
@@ -473,7 +473,7 @@ export const JedlikAnyosFinanszirozasiSegitseg = () => (
           <Eyebrow>Személyes konzultáció</Eyebrow>
           <h2
             className="text-[var(--ink)]"
-            style={{ marginTop: "18px", fontSize: "30px", fontWeight: 600, lineHeight: 1.2 }}
+            style={{ marginTop: "18px", fontSize: "30px", fontWeight: 500, lineHeight: 1.2 }}
           >
             Kérdésed maradt? Beszéljünk a lehetőségeidről!
           </h2>
@@ -505,7 +505,7 @@ export const JedlikAnyosFinanszirozasiSegitseg = () => (
           <Eyebrow>Kapcsolatfelvétel</Eyebrow>
           <h2
             className="text-[var(--ink)]"
-            style={{ marginTop: "22px", fontSize: "30px", fontWeight: 600, lineHeight: 1.2 }}
+            style={{ marginTop: "22px", fontSize: "30px", fontWeight: 500, lineHeight: 1.2 }}
           >
             Ne hagyd ki ezt a lehetőséget!
           </h2>

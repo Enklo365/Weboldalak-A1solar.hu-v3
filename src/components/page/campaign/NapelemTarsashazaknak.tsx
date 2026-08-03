@@ -128,7 +128,7 @@ export const NapelemTarsashazaknak = () => (
           <Eyebrow>Jogszabályok és engedélyek</Eyebrow>
           <h2
             className="text-[var(--ink)]"
-            style={{ marginTop: "22px", fontSize: "30px", fontWeight: 600, lineHeight: 1.2 }}
+            style={{ marginTop: "22px", fontSize: "30px", fontWeight: 500, lineHeight: 1.2 }}
           >
             Jogszabályi keretek és engedélyezés
           </h2>
@@ -204,7 +204,7 @@ export const NapelemTarsashazaknak = () => (
             <Eyebrow>Technikai feltételek</Eyebrow>
             <h2
               className="text-[var(--ink)]"
-              style={{ marginTop: "22px", fontSize: "30px", fontWeight: 600, lineHeight: 1.2 }}
+              style={{ marginTop: "22px", fontSize: "30px", fontWeight: 500, lineHeight: 1.2 }}
             >
               Technikai feltételek a társasházi napelemekhez
             </h2>
@@ -289,7 +289,7 @@ export const NapelemTarsashazaknak = () => (
           <Eyebrow>Elszámolás</Eyebrow>
           <h2
             className="text-[var(--ink)]"
-            style={{ marginTop: "22px", fontSize: "30px", fontWeight: 600, lineHeight: 1.2 }}
+            style={{ marginTop: "22px", fontSize: "30px", fontWeight: 500, lineHeight: 1.2 }}
           >
             Elszámolási modellek és hálózatra visszatáplálás
           </h2>
@@ -336,7 +336,7 @@ export const NapelemTarsashazaknak = () => (
           <Eyebrow>Elérhető támogatások</Eyebrow>
           <h2
             className="text-[var(--ink)]"
-            style={{ marginTop: "22px", fontSize: "30px", fontWeight: 600, lineHeight: 1.2 }}
+            style={{ marginTop: "22px", fontSize: "30px", fontWeight: 500, lineHeight: 1.2 }}
           >
             Támogatási lehetőségek társasházaknak (2025)
           </h2>
@@ -423,7 +423,7 @@ export const NapelemTarsashazaknak = () => (
           <Eyebrow>Gyakori kérdések</Eyebrow>
           <h2
             className="text-[var(--ink)]"
-            style={{ marginTop: "22px", fontSize: "30px", fontWeight: 600, lineHeight: 1.2 }}
+            style={{ marginTop: "22px", fontSize: "30px", fontWeight: 500, lineHeight: 1.2 }}
           >
             Kérdésed maradt?
           </h2>

@@ -166,7 +166,7 @@ export const JedlikAnyosEnergetikaiProgram = () => {
               <Eyebrow>A programról</Eyebrow>
               <h2
                 className="text-[var(--ink)]"
-                style={{ marginTop: "22px", fontSize: "30px", fontWeight: 600, lineHeight: 1.2 }}
+                style={{ marginTop: "22px", fontSize: "30px", fontWeight: 500, lineHeight: 1.2 }}
               >
                 Akár 1 milliárd forint támogatás cégednek
               </h2>
@@ -193,7 +193,7 @@ export const JedlikAnyosEnergetikaiProgram = () => {
           <Eyebrow>Pályázók köre</Eyebrow>
           <h2
             className="text-[var(--ink)]"
-            style={{ marginTop: "22px", fontSize: "30px", fontWeight: 600, lineHeight: 1.2 }}
+            style={{ marginTop: "22px", fontSize: "30px", fontWeight: 500, lineHeight: 1.2 }}
           >
             Kinek szól a Jedlik Ányos Energetikai Program?
           </h2>
@@ -223,7 +223,7 @@ export const JedlikAnyosEnergetikaiProgram = () => {
           <Eyebrow>Támogatható tevékenységek</Eyebrow>
           <h2
             className="text-[var(--ink)]"
-            style={{ marginTop: "22px", fontSize: "30px", fontWeight: 600, lineHeight: 1.2 }}
+            style={{ marginTop: "22px", fontSize: "30px", fontWeight: 500, lineHeight: 1.2 }}
           >
             Mire használható fel?
           </h2>
@@ -277,7 +277,7 @@ export const JedlikAnyosEnergetikaiProgram = () => {
           <Eyebrow>Támogatási intenzitás</Eyebrow>
           <h2
             className="text-[var(--ink)]"
-            style={{ marginTop: "22px", fontSize: "30px", fontWeight: 600, lineHeight: 1.2 }}
+            style={{ marginTop: "22px", fontSize: "30px", fontWeight: 500, lineHeight: 1.2 }}
           >
             A támogatás összege és mértéke
           </h2>
@@ -338,7 +338,7 @@ export const JedlikAnyosEnergetikaiProgram = () => {
           <Eyebrow>Miért éri meg?</Eyebrow>
           <h2
             className="text-[var(--ink)]"
-            style={{ marginTop: "22px", fontSize: "30px", fontWeight: 600, lineHeight: 1.2 }}
+            style={{ marginTop: "22px", fontSize: "30px", fontWeight: 500, lineHeight: 1.2 }}
           >
             5 ok, amiért megéri energiatárolót telepíteni
           </h2>
@@ -378,7 +378,7 @@ export const JedlikAnyosEnergetikaiProgram = () => {
           <Eyebrow>Folyamat</Eyebrow>
           <h2
             className="text-[var(--ink)]"
-            style={{ marginTop: "22px", fontSize: "30px", fontWeight: 600, lineHeight: 1.2 }}
+            style={{ marginTop: "22px", fontSize: "30px", fontWeight: 500, lineHeight: 1.2 }}
           >
             Hogyan pályázhatsz?
           </h2>
@@ -426,7 +426,7 @@ export const JedlikAnyosEnergetikaiProgram = () => {
             <Eyebrow>Cégünkről</Eyebrow>
             <h2
               className="text-[var(--ink)]"
-              style={{ marginTop: "22px", fontSize: "30px", fontWeight: 600, lineHeight: 1.2 }}
+              style={{ marginTop: "22px", fontSize: "30px", fontWeight: 500, lineHeight: 1.2 }}
             >
               Miért válassz minket?
             </h2>
@@ -452,7 +452,7 @@ export const JedlikAnyosEnergetikaiProgram = () => {
           <Eyebrow>Kapcsolatfelvétel</Eyebrow>
           <h2
             className="text-[var(--ink)]"
-            style={{ marginTop: "22px", fontSize: "30px", fontWeight: 600, lineHeight: 1.2 }}
+            style={{ marginTop: "22px", fontSize: "30px", fontWeight: 500, lineHeight: 1.2 }}
           >
             Ne hagyd ki ezt a lehetőséget!
           </h2>

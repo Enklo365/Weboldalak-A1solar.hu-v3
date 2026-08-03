@@ -105,7 +105,7 @@ export const Cegunkrol = () => (
             >
               Cégünkről
             </span>
-            <h2 style={{ marginTop: "22px", fontSize: "30px", fontWeight: 600, lineHeight: 1.15 }}>
+            <h2 style={{ marginTop: "22px", fontSize: "30px", fontWeight: 500, lineHeight: 1.15 }}>
               Az A1 solar Kft. története
             </h2>
             <div className="mt-6 flex flex-col gap-5">

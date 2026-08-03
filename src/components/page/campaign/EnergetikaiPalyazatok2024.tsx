@@ -156,7 +156,7 @@ export const EnergetikaiPalyazatok2024 = () => (
           <Eyebrow>Induló pályázatok 2024</Eyebrow>
           <h2
             className="text-[var(--ink)]"
-            style={{ marginTop: "22px", fontSize: "30px", fontWeight: 600, lineHeight: 1.2 }}
+            style={{ marginTop: "22px", fontSize: "30px", fontWeight: 500, lineHeight: 1.2 }}
           >
             Ne hagyja ki az új pályázati lehetőségeket!
           </h2>
@@ -257,7 +257,7 @@ export const EnergetikaiPalyazatok2024 = () => (
             <Eyebrow>Egykapus rendszer</Eyebrow>
             <h2
               className="text-[var(--ink)]"
-              style={{ marginTop: "22px", fontSize: "30px", fontWeight: 600, lineHeight: 1.2 }}
+              style={{ marginTop: "22px", fontSize: "30px", fontWeight: 500, lineHeight: 1.2 }}
             >
               Segítünk a pályázatírásban az első lépéstől a kivitelezésig
             </h2>
@@ -289,7 +289,7 @@ export const EnergetikaiPalyazatok2024 = () => (
           <Eyebrow>Kapcsolatfelvétel</Eyebrow>
           <h2
             className="text-[var(--ink)]"
-            style={{ marginTop: "22px", fontSize: "30px", fontWeight: 600, lineHeight: 1.2 }}
+            style={{ marginTop: "22px", fontSize: "30px", fontWeight: 500, lineHeight: 1.2 }}
           >
             Munkatársunk 24 órán belül felveszi Önnel a kapcsolatot!
           </h2>
