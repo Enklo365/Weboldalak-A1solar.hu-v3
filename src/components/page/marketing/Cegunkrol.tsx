@@ -1,5 +1,9 @@
 import type { ReactNode } from "react";
 
+import { ServiceTocNav } from "@/components/service/ServiceTocNav";
+import { HeroDivider, SidebarLayout } from "@/components/service/SidebarLayout";
+import { SupportWidget } from "@/components/service/SupportWidget";
+
 const HERO_CLIP_ID = "a1-cegunkrol-hero-shape";
 /* Same looped hero video as the homepage. */
 const HERO_VIDEO = "/nativ/hero-loop.mp4";
@@ -7,6 +11,17 @@ const HERO_POSTER = "/wp-content/uploads/2026/03/otthoni_energiatarolo_program-1
 const AWARD_IMAGE = "/wp-content/uploads/2026/06/2025.11.27.-Uzleti-Etikai-Dij-159-1-scaled.jpg";
 const GRADIENT = "linear-gradient(to right, #0A141Dcc 0%, rgba(10,20,29,0) 100%)";
 const FIRSTS_VIDEO = "a-3vU7MlPTU";
+
+const CEG_TOC = [
+  { id: "bemutatkozas", label: "Cégünkről" },
+  { id: "tortenet", label: "Történetünk" },
+  { id: "szolgaltatasok", label: "Több mint napelem" },
+  { id: "referenciak", label: "Referenciáink" },
+  { id: "nemzetkozi", label: "Nemzetközi projektek" },
+  { id: "miert-erdemes", label: "Miért éri meg?" },
+  { id: "elsok-voltunk", label: "Elsők voltunk" },
+  { id: "velemenyek", label: "Vélemények" },
+];
 
 const STORY_LEAD = [
   "Az A1 Solar magyar tulajdonú energetikai vállalat, amely lakossági, vállalati és ipari ügyfelei számára kínál komplex napelemes, energiatárolási és energiahatékonysági megoldásokat.",
@@ -87,6 +102,16 @@ const Body = ({ children }: { children: ReactNode }) => (
   </p>
 );
 
+/** Dashed row separator between the stacked main-column sections. */
+const RowDivider = () => <hr style={{ border: 0, borderTop: "1px dashed #ececec", margin: "48px 0" }} />;
+
+/** In-column section wrapper with a scroll anchor. */
+const Block = ({ id, children }: { id: string; children: ReactNode }) => (
+  <div id={id} style={{ scrollMarginTop: "100px" }}>
+    {children}
+  </div>
+);
+
 const StarRow = () => (
   <div className="flex gap-0.5" aria-hidden="true">
     {[0, 1, 2, 3, 4].map((i) => (
@@ -114,10 +139,9 @@ const HeroCopy = () => (
 );
 
 /**
- * "Cégünkről" page — faithful native rebuild of the live a1solar.hu about page:
- * video notch hero, company story, founding, "more than solar" services,
- * references, international work, 5 reasons, industry firsts + video, Google
- * reviews and the mission statement.
+ * "Cégünkről" page — same structure as the service subpages: a full-width notch
+ * (video) hero, a dashed divider, then a main column of stacked sections with a
+ * sticky sidebar (in-page nav + customer-service widget).
  */
 export const Cegunkrol = () => (
   <div className="pb-6 md:pb-8">
@@ -179,10 +203,19 @@ export const Cegunkrol = () => (
       </div>
     </section>
 
-    {/* Story lead — copy left, award photo right */}
-    <section className="w-full pt-16 md:pt-24">
-      <div className="container">
-        <div className="grid items-stretch gap-10 lg:grid-cols-2 lg:gap-16">
+    <HeroDivider />
+
+    <SidebarLayout
+      sidebar={
+        <>
+          <ServiceTocNav items={CEG_TOC} />
+          <SupportWidget />
+        </>
+      }
+    >
+      {/* Bemutatkozás — copy + award photo */}
+      <Block id="bemutatkozas">
+        <div className="grid items-stretch gap-8 lg:grid-cols-2 lg:gap-10">
           <div>
             <Eyebrow>Cégünkről</Eyebrow>
             <SectionTitle>A jövő energiáját építjük</SectionTitle>
@@ -202,100 +235,85 @@ export const Cegunkrol = () => (
             />
           </div>
         </div>
-      </div>
-    </section>
+      </Block>
 
-    {/* Így indult / Több mint napelem */}
-    <section className="w-full pt-16 md:pt-24">
-      <div className="container">
-        <div className="grid gap-14 lg:grid-cols-2 lg:gap-16">
-          <div>
-            <Eyebrow>Történetünk</Eyebrow>
-            <SectionTitle>Így indult az A1 Solar</SectionTitle>
-            <div className="mt-6 flex flex-col gap-5">
-              {FOUNDING.map((p) => (
-                <Body key={p.slice(0, 24)}>{p}</Body>
-              ))}
-            </div>
-          </div>
-          <div>
-            <Eyebrow>Több mint napelem</Eyebrow>
-            <SectionTitle>Teljes energetikai partner</SectionTitle>
-            <div className="mt-6 flex flex-col gap-5">
-              {MORE_THAN_SOLAR.map((p) => (
-                <Body key={p.slice(0, 24)}>{p}</Body>
-              ))}
-            </div>
-            <ul className="mt-6 grid grid-cols-1 gap-x-6 gap-y-3 sm:grid-cols-2">
-              {SERVICES.map((s) => (
-                <li key={s} className="flex items-start gap-3">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true" style={{ flexShrink: 0, marginTop: "1px" }}>
-                    <circle cx="12" cy="12" r="12" fill="var(--brand)" />
-                    <path d="M7 12.5l3 3 7-7" stroke="#fff" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                  <span className="text-[var(--ink-soft)]" style={{ fontSize: "15px", lineHeight: 1.5 }}>{s}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
+      <RowDivider />
 
-    {/* Referenciák + Nemzetközi */}
-    <section className="w-full pt-16 md:pt-24">
-      <div className="container">
-        <div className="grid gap-14 lg:grid-cols-2 lg:gap-16">
-          <div>
-            <Eyebrow>Referenciáink</Eyebrow>
-            <SectionTitle>Lakossági és vállalati tapasztalat</SectionTitle>
-            <div className="mt-6 flex flex-col gap-5">
-              {EXPERIENCE.map((p) => (
-                <Body key={p.slice(0, 24)}>{p}</Body>
-              ))}
-            </div>
-          </div>
-          <div>
-            <Eyebrow>Nemzetközi projektek</Eyebrow>
-            <SectionTitle>Magyar szakértelem nemzetközi környezetben</SectionTitle>
-            <div className="mt-6 flex flex-col gap-5">
-              {INTERNATIONAL.map((p) => (
-                <Body key={p.slice(0, 24)}>{p}</Body>
-              ))}
-            </div>
-            <div className="mt-6 flex flex-wrap gap-2">
-              {COUNTRIES.map((c) => (
-                <span
-                  key={c}
-                  className="rounded-full px-4 py-2 text-sm font-medium text-[var(--ink)]"
-                  style={{ background: "var(--surface-3)" }}
-                >
-                  {c}
-                </span>
-              ))}
-            </div>
-          </div>
+      <Block id="tortenet">
+        <Eyebrow>Történetünk</Eyebrow>
+        <SectionTitle>Így indult az A1 Solar</SectionTitle>
+        <div className="mt-6 flex flex-col gap-5">
+          {FOUNDING.map((p) => (
+            <Body key={p.slice(0, 24)}>{p}</Body>
+          ))}
         </div>
-      </div>
-    </section>
+      </Block>
 
-    {/* 5 ok */}
-    <section className="w-full pt-16 md:pt-24">
-      <div className="container">
-        <div className="mx-auto max-w-[760px] text-center">
-          <Eyebrow>Miért éri meg?</Eyebrow>
-          <SectionTitle>5 ok, amiért érdemes az A1 Solart választani</SectionTitle>
-          <p className="mx-auto mt-4 text-[var(--ink-soft)]" style={{ fontSize: "16px", lineHeight: 1.7 }}>
-            Az energiatároló rendszerek a napelemes beruházások hatékonyságát és megtérülését jelentősen növelik.
-          </p>
+      <RowDivider />
+
+      <Block id="szolgaltatasok">
+        <Eyebrow>Több mint napelem</Eyebrow>
+        <SectionTitle>Teljes energetikai partner</SectionTitle>
+        <div className="mt-6 flex flex-col gap-5">
+          {MORE_THAN_SOLAR.map((p) => (
+            <Body key={p.slice(0, 24)}>{p}</Body>
+          ))}
         </div>
-        <div className="mt-10 flex flex-col gap-4">
+        <ul className="mt-6 grid grid-cols-1 gap-x-6 gap-y-3 sm:grid-cols-2">
+          {SERVICES.map((s) => (
+            <li key={s} className="flex items-start gap-3">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true" style={{ flexShrink: 0, marginTop: "1px" }}>
+                <circle cx="12" cy="12" r="12" fill="var(--brand)" />
+                <path d="M7 12.5l3 3 7-7" stroke="#fff" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+              <span className="text-[var(--ink-soft)]" style={{ fontSize: "15px", lineHeight: 1.5 }}>{s}</span>
+            </li>
+          ))}
+        </ul>
+      </Block>
+
+      <RowDivider />
+
+      <Block id="referenciak">
+        <Eyebrow>Referenciáink</Eyebrow>
+        <SectionTitle>Lakossági és vállalati tapasztalat</SectionTitle>
+        <div className="mt-6 flex flex-col gap-5">
+          {EXPERIENCE.map((p) => (
+            <Body key={p.slice(0, 24)}>{p}</Body>
+          ))}
+        </div>
+      </Block>
+
+      <RowDivider />
+
+      <Block id="nemzetkozi">
+        <Eyebrow>Nemzetközi projektek</Eyebrow>
+        <SectionTitle>Magyar szakértelem nemzetközi környezetben</SectionTitle>
+        <div className="mt-6 flex flex-col gap-5">
+          {INTERNATIONAL.map((p) => (
+            <Body key={p.slice(0, 24)}>{p}</Body>
+          ))}
+        </div>
+        <div className="mt-6 flex flex-wrap gap-2">
+          {COUNTRIES.map((c) => (
+            <span key={c} className="rounded-full px-4 py-2 text-sm font-medium text-[var(--ink)]" style={{ background: "var(--surface-3)" }}>
+              {c}
+            </span>
+          ))}
+        </div>
+      </Block>
+
+      <RowDivider />
+
+      <Block id="miert-erdemes">
+        <Eyebrow>Miért éri meg?</Eyebrow>
+        <SectionTitle>5 ok, amiért érdemes az A1 Solart választani</SectionTitle>
+        <p className="mt-4 text-[var(--ink-soft)]" style={{ fontSize: "16px", lineHeight: 1.7 }}>
+          Az energiatároló rendszerek a napelemes beruházások hatékonyságát és megtérülését jelentősen növelik.
+        </p>
+        <div className="mt-8 flex flex-col gap-4">
           {REASONS.map((r) => (
-            <div
-              key={r.num}
-              className="flex items-start gap-5 rounded-[20px] px-6 py-6 md:px-7"
-              style={{ background: "var(--surface-3)" }}
-            >
+            <div key={r.num} className="flex items-start gap-5 rounded-[20px] px-6 py-6" style={{ background: "var(--surface-3)" }}>
               <span
                 className="flex flex-none items-center justify-center"
                 style={{ width: "48px", height: "48px", borderRadius: "9999px", background: "rgba(194,29,32,0.14)", color: "var(--brand-dark)", fontSize: "17px", fontWeight: 700 }}
@@ -309,45 +327,37 @@ export const Cegunkrol = () => (
             </div>
           ))}
         </div>
-      </div>
-    </section>
+      </Block>
 
-    {/* Elsők voltunk + videó */}
-    <section className="w-full pt-16 md:pt-24">
-      <div className="container">
-        <div className="mx-auto max-w-[820px] text-center">
-          <Eyebrow>Mindig az élen</Eyebrow>
-          <SectionTitle>Több jelentős eseménynél is elsők voltunk</SectionTitle>
-          <p className="mx-auto mt-4 text-[var(--ink-soft)]" style={{ fontSize: "16px", lineHeight: 1.75 }}>
-            Magyarország első Fox ESS G-MAX energiatároló rendszerének telepítése az A1 Solar közreműködésével valósult
-            meg. A beüzemelést olyan szakemberünk végezte, aki sikeresen elvégezte a Fox ESS hivatalos képzését, így a
-            kivitelezés mindenben megfelel a gyártói előírásoknak, miközben a garancia teljes mértékben megmarad.
-          </p>
-        </div>
-        <div className="mx-auto mt-10 max-w-[900px]">
-          <div className="relative aspect-video overflow-hidden rounded-[20px]" style={{ background: "#000", border: "1px solid var(--line)" }}>
-            <iframe
-              src={`https://www.youtube-nocookie.com/embed/${FIRSTS_VIDEO}?rel=0`}
-              title="Az első Fox ESS G-Max Magyarországon"
-              className="absolute inset-0 h-full w-full"
-              style={{ border: 0 }}
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-              loading="lazy"
-            />
-          </div>
-        </div>
-      </div>
-    </section>
+      <RowDivider />
 
-    {/* Vélemények */}
-    <section className="w-full pt-16 md:pt-24">
-      <div className="container">
-        <div className="text-center">
-          <Eyebrow>Vélemények</Eyebrow>
-          <SectionTitle>Ügyfeleink néhány visszajelzése</SectionTitle>
+      <Block id="elsok-voltunk">
+        <Eyebrow>Mindig az élen</Eyebrow>
+        <SectionTitle>Több jelentős eseménynél is elsők voltunk</SectionTitle>
+        <p className="mt-4 text-[var(--ink-soft)]" style={{ fontSize: "16px", lineHeight: 1.75 }}>
+          Magyarország első Fox ESS G-MAX energiatároló rendszerének telepítése az A1 Solar közreműködésével valósult
+          meg. A beüzemelést olyan szakemberünk végezte, aki sikeresen elvégezte a Fox ESS hivatalos képzését, így a
+          kivitelezés mindenben megfelel a gyártói előírásoknak, miközben a garancia teljes mértékben megmarad.
+        </p>
+        <div className="relative mt-6 aspect-video overflow-hidden rounded-[20px]" style={{ background: "#000", border: "1px solid var(--line)" }}>
+          <iframe
+            src={`https://www.youtube-nocookie.com/embed/${FIRSTS_VIDEO}?rel=0`}
+            title="Az első Fox ESS G-Max Magyarországon"
+            className="absolute inset-0 h-full w-full"
+            style={{ border: 0 }}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+            loading="lazy"
+          />
         </div>
-        <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      </Block>
+
+      <RowDivider />
+
+      <Block id="velemenyek">
+        <Eyebrow>Vélemények</Eyebrow>
+        <SectionTitle>Ügyfeleink néhány visszajelzése</SectionTitle>
+        <div className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2">
           {REVIEWS.map((r) => (
             <div key={r.name} className="flex flex-col rounded-[20px] p-6" style={{ background: "var(--surface-3)" }}>
               <StarRow />
@@ -359,25 +369,22 @@ export const Cegunkrol = () => (
             </div>
           ))}
         </div>
-      </div>
-    </section>
+      </Block>
 
-    {/* Küldetésünk */}
-    <section className="w-full pt-16 md:pt-24">
-      <div className="container">
-        <div className="rounded-[28px] px-8 py-12 text-center md:px-14 md:py-16" style={{ background: "var(--brand)" }}>
-          <span className="inline-block rounded-full px-3 py-2 text-xs font-medium uppercase tracking-[1px]" style={{ background: "rgba(255,255,255,0.2)", color: "#fff" }}>
-            Küldetésünk
-          </span>
-          <p className="mx-auto mt-6 max-w-[760px]" style={{ color: "#fff", fontSize: "clamp(18px, 2.4vw, 24px)", fontWeight: 500, lineHeight: 1.5 }}>
-            Korszerű, biztonságos és személyre szabott energetikai megoldásokkal segítjük ügyfeleinket az
-            energiafüggetlenség, a költséghatékonyabb működés és egy fenntarthatóbb jövő elérésében.
-          </p>
-          <p className="mt-5" style={{ color: "rgba(255,255,255,0.85)", fontSize: "15px", fontWeight: 600, letterSpacing: "1px", textTransform: "uppercase" }}>
-            A jövőre optimalizálva.
-          </p>
-        </div>
+      <RowDivider />
+
+      <div className="rounded-[28px] px-8 py-12 text-center md:px-12 md:py-14" style={{ background: "var(--brand)" }}>
+        <span className="inline-block rounded-full px-3 py-2 text-xs font-medium uppercase tracking-[1px]" style={{ background: "rgba(255,255,255,0.2)", color: "#fff" }}>
+          Küldetésünk
+        </span>
+        <p className="mx-auto mt-6 max-w-[620px]" style={{ color: "#fff", fontSize: "clamp(18px, 2.2vw, 22px)", fontWeight: 500, lineHeight: 1.5 }}>
+          Korszerű, biztonságos és személyre szabott energetikai megoldásokkal segítjük ügyfeleinket az
+          energiafüggetlenség, a költséghatékonyabb működés és egy fenntarthatóbb jövő elérésében.
+        </p>
+        <p className="mt-5" style={{ color: "rgba(255,255,255,0.85)", fontSize: "14px", fontWeight: 600, letterSpacing: "1px", textTransform: "uppercase" }}>
+          A jövőre optimalizálva.
+        </p>
       </div>
-    </section>
+    </SidebarLayout>
   </div>
 );
