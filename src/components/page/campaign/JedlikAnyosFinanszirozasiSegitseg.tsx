@@ -1,4 +1,8 @@
 import { ContactForm } from "@/components/ContactForm";
+import { NotchHero } from "@/components/page/NotchHero";
+import { HeroDivider, SidebarLayout } from "@/components/service/SidebarLayout";
+import { ServiceTocNav, type TocItem } from "@/components/service/ServiceTocNav";
+import { SupportWidget } from "@/components/service/SupportWidget";
 import { SITE } from "@/lib/site";
 
 /** Small brand-tint pill used as a section eyebrow. */
@@ -108,57 +112,69 @@ const IDEAL_FOR: string[] = [
   "Nem akarnak banki hitelbe menni csak egy pályázat miatt.",
 ];
 
+/** In-page navigáció a fő szakaszokhoz. */
+const TOC: TocItem[] = [
+  { id: "problema", label: "A probléma" },
+  { id: "megoldas", label: "A megoldás" },
+  { id: "hogyan-mukodik", label: "Hogyan működik" },
+  { id: "palyazatiras", label: "Pályázatírás" },
+  { id: "miert-eri-meg", label: "Miért éri meg" },
+  { id: "kinek-szol", label: "Kinek szól" },
+  { id: "ajanlatkeres", label: "Kapcsolat" },
+];
+
+/** Vékony szaggatott elválasztó a fő szakaszok között. */
+const SectionDivider = () => (
+  <hr className="my-10" style={{ border: 0, borderTop: "1px dashed #ececec" }} />
+);
+
 /**
- * "Jedlik Ányos finanszírozási segítség" landing — bespoke natív újraépítés az
- * A1 Solar design-nyelvén: hero, a finanszírozási probléma és megoldás
- * bemutatása, a gyakorlati folyamat lépései kártyákban, a pályázatírás,
- * a kivitelezői előnyök, a célközönség és a kapcsolatfelvételi űrlap.
+ * "Jedlik Ányos finanszírozási segítség" landing — az A1 Solar megosztott
+ * sidebar + notch-hero elrendezésébe rendezve: notch-hero, a finanszírozási
+ * probléma és megoldás bemutatása, a gyakorlati folyamat lépései kártyákban,
+ * a pályázatírás, a kivitelezői előnyök, a célközönség és a
+ * kapcsolatfelvételi űrlap, mellette ragadós navigáció + ügyfélszolgálat.
  */
 export const JedlikAnyosFinanszirozasiSegitseg = () => (
-  <div className="w-full">
-    {/* HERO */}
-    <section className="w-full">
-      <div className="mx-auto max-w-[var(--container)] px-6 py-16 text-center md:py-24">
-        <Eyebrow>Finanszírozás átvállalás</Eyebrow>
-        <h1
-          className="text-[var(--ink)]"
-          style={{ marginTop: "28px", fontSize: "clamp(34px, 6vw, 64px)", lineHeight: 1.1 }}
-        >
-          <span style={{ fontWeight: 300 }}>Jedlik Ányos </span>
-          <span style={{ fontWeight: 700 }}>finanszírozási segítség</span>
-        </h1>
-        <div className="mx-auto mt-8 flex max-w-[760px] flex-col gap-4">
-          {HERO_INTRO.map((paragraph) => (
-            <p
-              key={paragraph}
-              className="text-[var(--ink-soft)]"
-              style={{ margin: 0, fontSize: "clamp(16px, 2vw, 18px)", lineHeight: 1.7 }}
-            >
-              {paragraph}
-            </p>
-          ))}
-        </div>
-        <div className="mt-10">
-          <a
-            href="#ajanlatkeres"
-            style={{
-              display: "inline-block",
-              background: "var(--brand)",
-              color: "#fff",
-              padding: "14px 32px",
-              borderRadius: "9999px",
-              fontWeight: 500,
-            }}
-          >
-            Bővebben a megoldásról
-          </a>
-        </div>
-      </div>
-    </section>
+  <div className="pb-6 md:pb-8">
+    <NotchHero
+      eyebrow="Jedlik Ányos Finanszírozás"
+      titleLight="Jedlik Ányos"
+      titleStrong="finanszírozási segítség"
+      image="/wp-content/uploads/2025/06/jedlik-anyos-energetikai-program-2-1.png"
+      imageAlt="Jedlik Ányos energetikai program"
+      intro={HERO_INTRO[0]}
+      ctaLabel="Kérek konzultációt"
+      ctaHref="#ajanlatkeres"
+    />
 
-    {/* A PROBLÉMA */}
-    <section className="w-full">
-      <div className="mx-auto max-w-[var(--container)] px-6 pb-16 md:pb-24">
+    <HeroDivider />
+
+    <SidebarLayout
+      sidebar={
+        <>
+          <ServiceTocNav items={TOC} />
+          <SupportWidget />
+        </>
+      }
+    >
+      {/* BEVEZETŐ */}
+      <div className="flex flex-col gap-4">
+        {HERO_INTRO.slice(1).map((paragraph) => (
+          <p
+            key={paragraph}
+            className="text-[var(--ink-soft)]"
+            style={{ margin: 0, fontSize: "17px", lineHeight: 1.75 }}
+          >
+            {paragraph}
+          </p>
+        ))}
+      </div>
+
+      <SectionDivider />
+
+      {/* A PROBLÉMA */}
+      <section id="problema" style={{ scrollMarginTop: "100px" }}>
         <div
           className="grid grid-cols-1 gap-8 px-8 py-12 md:grid-cols-[1fr_1.05fr] md:gap-12 md:px-12 md:py-14"
           style={{ background: "var(--surface-3)", borderRadius: "28px" }}
@@ -206,12 +222,12 @@ export const JedlikAnyosFinanszirozasiSegitseg = () => (
             </p>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    {/* A MEGOLDÁS */}
-    <section className="w-full">
-      <div className="mx-auto max-w-[var(--container)] px-6 pb-16 md:pb-24">
+      <SectionDivider />
+
+      {/* A MEGOLDÁS */}
+      <section id="megoldas" style={{ scrollMarginTop: "100px" }}>
         <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-[1.1fr_1fr] md:gap-14">
           <div>
             <Eyebrow>A megoldás</Eyebrow>
@@ -242,12 +258,12 @@ export const JedlikAnyosFinanszirozasiSegitseg = () => (
             />
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    {/* HOGYAN MŰKÖDIK */}
-    <section className="w-full">
-      <div className="mx-auto max-w-[var(--container)] px-6 pb-16 md:pb-24">
+      <SectionDivider />
+
+      {/* HOGYAN MŰKÖDIK */}
+      <section id="hogyan-mukodik" style={{ scrollMarginTop: "100px" }}>
         <div className="text-center">
           <Eyebrow>Hogyan működik?</Eyebrow>
           <h2
@@ -264,7 +280,7 @@ export const JedlikAnyosFinanszirozasiSegitseg = () => (
           </p>
         </div>
 
-        <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2">
           {PROCESS_STEPS.map((step) => (
             <div
               key={step.num}
@@ -289,12 +305,12 @@ export const JedlikAnyosFinanszirozasiSegitseg = () => (
             </div>
           ))}
         </div>
-      </div>
-    </section>
+      </section>
 
-    {/* PÁLYÁZATÍRÁS */}
-    <section className="w-full">
-      <div className="mx-auto max-w-[var(--container)] px-6 pb-16 md:pb-24">
+      <SectionDivider />
+
+      {/* PÁLYÁZATÍRÁS */}
+      <section id="palyazatiras" style={{ scrollMarginTop: "100px" }}>
         <div
           className="grid grid-cols-1 gap-8 px-8 py-12 md:grid-cols-[1fr_1fr] md:gap-12 md:px-12 md:py-14"
           style={{ background: "var(--surface-3)", borderRadius: "28px" }}
@@ -331,12 +347,12 @@ export const JedlikAnyosFinanszirozasiSegitseg = () => (
             </p>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    {/* MIÉRT ÉRI MEG? */}
-    <section className="w-full">
-      <div className="mx-auto max-w-[var(--container)] px-6 pb-16 md:pb-24">
+      <SectionDivider />
+
+      {/* MIÉRT ÉRI MEG? */}
+      <section id="miert-eri-meg" style={{ scrollMarginTop: "100px" }}>
         <div className="text-center">
           <Eyebrow>Miért éri meg?</Eyebrow>
           <h2
@@ -350,7 +366,7 @@ export const JedlikAnyosFinanszirozasiSegitseg = () => (
           </p>
         </div>
 
-        <div className="mx-auto mt-10 grid max-w-[900px] grid-cols-1 gap-4 sm:grid-cols-2">
+        <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2">
           {BENEFITS.map((benefit) => (
             <div
               key={benefit}
@@ -364,12 +380,12 @@ export const JedlikAnyosFinanszirozasiSegitseg = () => (
             </div>
           ))}
         </div>
-      </div>
-    </section>
+      </section>
 
-    {/* KINEK SZÓL? */}
-    <section className="w-full">
-      <div className="mx-auto max-w-[var(--container)] px-6 pb-16 md:pb-24">
+      <SectionDivider />
+
+      {/* KINEK SZÓL? */}
+      <section id="kinek-szol" style={{ scrollMarginTop: "100px" }}>
         <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-[1fr_1.1fr] md:gap-14">
           <div>
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -407,90 +423,84 @@ export const JedlikAnyosFinanszirozasiSegitseg = () => (
             </p>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    {/* CÉGÜNKRŐL */}
-    <section className="w-full">
-      <div className="mx-auto max-w-[var(--container)] px-6 pb-16 md:pb-24">
-        <div
-          className="px-8 py-12 text-center md:px-16 md:py-16"
-          style={{ background: "var(--hero-dark)", borderRadius: "28px" }}
+      <SectionDivider />
+
+      {/* CÉGÜNKRŐL */}
+      <div
+        className="px-8 py-12 text-center md:px-16 md:py-16"
+        style={{ background: "var(--hero-dark)", borderRadius: "28px" }}
+      >
+        <span
+          className="inline-block rounded-[30px] px-3 py-2 text-xs font-normal uppercase tracking-[1px]"
+          style={{ background: "rgba(255,255,255,0.12)", color: "#fff" }}
         >
-          <span
-            className="inline-block rounded-[30px] px-3 py-2 text-xs font-normal uppercase tracking-[1px]"
-            style={{ background: "rgba(255,255,255,0.12)", color: "#fff" }}
-          >
-            Cégünkről
-          </span>
+          Cégünkről
+        </span>
+        <h2 style={{ marginTop: "22px", color: "#fff", fontSize: "30px", fontWeight: 600, lineHeight: 1.2 }}>
+          Miért válassz minket?
+        </h2>
+        <p
+          className="mx-auto mt-5 max-w-[880px]"
+          style={{ color: "rgba(255,255,255,0.82)", fontSize: "17px", lineHeight: 1.8 }}
+        >
+          Cégünk több éves tapasztalattal rendelkezik vállalati és ipari energiarendszerek területén,
+          amelyet stabil beszállítói kapcsolatok és több gyártóval fenntartott aktív disztribúciós
+          háttér támogat. Saját finanszírozási modellünknek köszönhetően a projektek pénzügyi
+          kockázatát is kezelni tudjuk, miközben kapcsolt pályázatíró és projektmenedzsment cégünk a
+          teljes adminisztratív hátteret biztosítja. Gyakorlatban működő Jedlik-projektekkel és
+          bizonyított referenciákkal garantáljuk a megbízhatóságot és a szakmai biztonságot a teljes
+          megvalósítási folyamat során.
+        </p>
+      </div>
+
+      <SectionDivider />
+
+      {/* SZEMÉLYES KONZULTÁCIÓ */}
+      <div
+        className="grid grid-cols-1 items-center gap-8 px-8 py-10 sm:grid-cols-[auto_1fr] md:gap-12 md:px-12 md:py-12"
+        style={{ background: "var(--surface-3)", borderRadius: "28px" }}
+      >
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/wp-content/uploads/2025/11/szenyan-endre.png"
+          alt="Szenyán Endre – társtulajdonos"
+          loading="lazy"
+          style={{ width: "160px", height: "160px", borderRadius: "9999px", objectFit: "cover" }}
+        />
+        <div>
+          <Eyebrow>Személyes konzultáció</Eyebrow>
           <h2
-            style={{ marginTop: "22px", color: "#fff", fontSize: "30px", fontWeight: 600, lineHeight: 1.2 }}
+            className="text-[var(--ink)]"
+            style={{ marginTop: "18px", fontSize: "30px", fontWeight: 600, lineHeight: 1.2 }}
           >
-            Miért válassz minket?
+            Kérdésed maradt? Beszéljünk a lehetőségeidről!
           </h2>
-          <p
-            className="mx-auto mt-5 max-w-[880px]"
-            style={{ color: "rgba(255,255,255,0.82)", fontSize: "17px", lineHeight: 1.8 }}
-          >
-            Cégünk több éves tapasztalattal rendelkezik vállalati és ipari energiarendszerek területén,
-            amelyet stabil beszállítói kapcsolatok és több gyártóval fenntartott aktív disztribúciós
-            háttér támogat. Saját finanszírozási modellünknek köszönhetően a projektek pénzügyi
-            kockázatát is kezelni tudjuk, miközben kapcsolt pályázatíró és projektmenedzsment cégünk a
-            teljes adminisztratív hátteret biztosítja. Gyakorlatban működő Jedlik-projektekkel és
-            bizonyított referenciákkal garantáljuk a megbízhatóságot és a szakmai biztonságot a teljes
-            megvalósítási folyamat során.
+          <p className="mt-4 text-[var(--ink-soft)]" style={{ fontSize: "16px", lineHeight: 1.7 }}>
+            Értékesítő kollégánk hétköznap 10:00–15:00 között elérhető – fordulj hozzá bizalommal!
           </p>
-        </div>
-      </div>
-    </section>
-
-    {/* SZEMÉLYES KONZULTÁCIÓ */}
-    <section className="w-full">
-      <div className="mx-auto max-w-[var(--container)] px-6 pb-16 md:pb-24">
-        <div
-          className="grid grid-cols-1 items-center gap-8 px-8 py-10 sm:grid-cols-[auto_1fr] md:gap-12 md:px-12 md:py-12"
-          style={{ background: "var(--surface-3)", borderRadius: "28px" }}
-        >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/wp-content/uploads/2025/11/szenyan-endre.png"
-            alt="Szenyán Endre – társtulajdonos"
-            loading="lazy"
-            style={{ width: "160px", height: "160px", borderRadius: "9999px", objectFit: "cover" }}
-          />
-          <div>
-            <Eyebrow>Személyes konzultáció</Eyebrow>
-            <h2
-              className="text-[var(--ink)]"
-              style={{ marginTop: "18px", fontSize: "30px", fontWeight: 600, lineHeight: 1.2 }}
-            >
-              Kérdésed maradt? Beszéljünk a lehetőségeidről!
-            </h2>
-            <p className="mt-4 text-[var(--ink-soft)]" style={{ fontSize: "16px", lineHeight: 1.7 }}>
-              Értékesítő kollégánk hétköznap 10:00–15:00 között elérhető – fordulj hozzá bizalommal!
+          <div className="mt-5">
+            <p className="text-[var(--ink)]" style={{ margin: 0, fontSize: "17px", fontWeight: 700 }}>
+              Szenyán Endre
             </p>
-            <div className="mt-5">
-              <p className="text-[var(--ink)]" style={{ margin: 0, fontSize: "17px", fontWeight: 700 }}>
-                Szenyán Endre
-              </p>
-              <p className="text-[var(--ink-muted)]" style={{ margin: 0, marginTop: "2px", fontSize: "14px" }}>
-                Társtulajdonos
-              </p>
-              <a
-                href="tel:+36203516383"
-                style={{ display: "inline-block", marginTop: "12px", color: "var(--brand)", fontSize: "18px", fontWeight: 700 }}
-              >
-                (+36) 20-351-6383
-              </a>
-            </div>
+            <p className="text-[var(--ink-muted)]" style={{ margin: 0, marginTop: "2px", fontSize: "14px" }}>
+              Társtulajdonos
+            </p>
+            <a
+              href="tel:+36203516383"
+              style={{ display: "inline-block", marginTop: "12px", color: "var(--brand)", fontSize: "18px", fontWeight: 700 }}
+            >
+              (+36) 20-351-6383
+            </a>
           </div>
         </div>
       </div>
-    </section>
 
-    {/* AJÁNLATKÉRÉS */}
-    <section id="ajanlatkeres" className="w-full">
-      <div className="mx-auto max-w-[var(--container)] px-6 pb-16 md:pb-24">
+      <SectionDivider />
+
+      {/* AJÁNLATKÉRÉS */}
+      <section id="ajanlatkeres" style={{ scrollMarginTop: "100px" }}>
         <div className="text-center">
           <Eyebrow>Kapcsolatfelvétel</Eyebrow>
           <h2
@@ -520,7 +530,7 @@ export const JedlikAnyosFinanszirozasiSegitseg = () => (
             intro="Töltsd ki az űrlapot, és kollégánk segít megtalálni a megfelelő finanszírozást."
           />
         </div>
-      </div>
-    </section>
+      </section>
+    </SidebarLayout>
   </div>
 );

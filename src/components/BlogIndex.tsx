@@ -2,6 +2,9 @@
 
 import Link from "next/link";
 import { useMemo, useState } from "react";
+import { NotchHero } from "@/components/page/NotchHero";
+import { HeroDivider, SidebarLayout } from "@/components/service/SidebarLayout";
+import { SupportWidget } from "@/components/service/SupportWidget";
 import type { PostCard } from "@/lib/content";
 
 type BlogIndexProps = {
@@ -43,35 +46,54 @@ export const BlogIndex = ({ posts, categories }: BlogIndexProps) => {
 
   const chips = [ALL, ...categories];
 
+  const sidebar = (
+    <>
+      <nav className="rounded-[20px] p-6" style={{ background: "var(--surface-3)" }} aria-label="Kategóriák">
+        <div className="text-[13px] font-semibold uppercase tracking-[1px] text-[var(--ink-muted)]">Kategóriák</div>
+        <ul className="mt-4 flex flex-col gap-1">
+          {chips.map((c) => {
+            const isActive = c === active;
+            return (
+              <li key={c}>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setActive(c);
+                    setPage(1);
+                  }}
+                  aria-current={isActive ? "true" : undefined}
+                  className="flex w-full items-center gap-3 rounded-[10px] px-3 py-2 text-left text-sm transition-colors"
+                  style={isActive ? { background: "#fff", color: "var(--brand)", fontWeight: 600 } : { color: "var(--ink-soft)" }}
+                >
+                  <span
+                    className="h-1.5 w-1.5 flex-none rounded-full"
+                    style={{ background: isActive ? "var(--brand)" : "var(--ink-muted)" }}
+                  />
+                  {c}
+                </button>
+              </li>
+            );
+          })}
+        </ul>
+      </nav>
+      <SupportWidget />
+    </>
+  );
+
   return (
-    <div className="blog-wrap">
-      <div className="container">
-        <div className="blog-header">
-          <span className="post-cat">Tudástár &amp; Blog</span>
-          <h1>Legfrissebb cikkeink</h1>
-          <p style={{ color: "var(--ink-soft)" }}>
-            Hasznos tudnivalók napelemről, energiatárolásról, pályázatokról és a
-            megújuló energia világáról.
-          </p>
-        </div>
+    <div className="pb-6 md:pb-8">
+      <NotchHero
+        eyebrow="Híreink"
+        titleStrong="Legfrissebb cikkeink"
+        image="/wp-content/uploads/2025/08/8024.jpg"
+        imageAlt="A1 Solar hírek"
+        intro="Hasznos tudnivalók napelemről, energiatárolásról, pályázatokról és a megújuló energia világáról."
+      />
 
-        <div className="cat-filter">
-          {chips.map((c) => (
-            <button
-              key={c}
-              type="button"
-              className={`cat-chip${c === active ? " active" : ""}`}
-              onClick={() => {
-                setActive(c);
-                setPage(1);
-              }}
-            >
-              {c}
-            </button>
-          ))}
-        </div>
+      <HeroDivider />
 
-        <div className="post-grid">
+      <SidebarLayout sidebar={sidebar}>
+        <div className="post-grid post-grid--sidebar">
           {slice.map((p) => (
             <Card key={p.slug} post={p} />
           ))}
@@ -85,12 +107,7 @@ export const BlogIndex = ({ posts, categories }: BlogIndexProps) => {
               </a>
             ) : null}
             {Array.from({ length: pages }, (_, i) => i + 1)
-              .filter(
-                (n) =>
-                  n === 1 ||
-                  n === pages ||
-                  (n >= current - 1 && n <= current + 1)
-              )
+              .filter((n) => n === 1 || n === pages || (n >= current - 1 && n <= current + 1))
               .map((n, idx, arr) => (
                 <span key={n} style={{ display: "contents" }}>
                   {idx > 0 && n - arr[idx - 1] > 1 ? <span>…</span> : null}
@@ -110,7 +127,7 @@ export const BlogIndex = ({ posts, categories }: BlogIndexProps) => {
             ) : null}
           </div>
         ) : null}
-      </div>
+      </SidebarLayout>
     </div>
   );
 };

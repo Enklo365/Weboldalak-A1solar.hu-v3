@@ -1,4 +1,6 @@
-import Link from "next/link";
+import { NotchHero } from "@/components/page/NotchHero";
+import { HeroDivider, SidebarLayout } from "@/components/service/SidebarLayout";
+import { SupportWidget } from "@/components/service/SupportWidget";
 
 export type TextPageContent = {
   eyebrow: string;
@@ -7,45 +9,47 @@ export type TextPageContent = {
   updated?: string;
 };
 
+/** Default hero image + intro line per eyebrow group. */
+const HERO_IMAGE = "/wp-content/uploads/2023/11/210363746_m_normal_none.jpg";
+const INTRO_BY_EYEBROW: Record<string, string> = {
+  "Jogi nyilatkozatok":
+    "Átlátható működés és felelős adatkezelés – az A1 Solar Kft. hivatalos jogi tájékoztatói egy helyen.",
+  "Promóciós szabályzat": "Promócióink hivatalos, mindenkor hatályos részvételi feltételei és szabályai.",
+};
+
 /**
- * Native long-form text page (legal / policy / prose). A clean brand hero band
- * with an eyebrow + title, then the migrated CMS body in the shared `.prose`
- * container. On-brand, no WP chrome.
+ * Native long-form text page (legal / policy / prose) on the sidebar +
+ * notch-hero layout: a shaped hero, then the migrated CMS body in the shared
+ * `.prose` container with a sticky customer-service sidebar.
  */
 export function TextPage({ content }: { content: TextPageContent }) {
+  const intro = INTRO_BY_EYEBROW[content.eyebrow] ?? "Az A1 Solar Kft. hivatalos dokumentuma és tájékoztatója.";
+
   return (
-    <article>
-      <div className="article-hero">
-        <div className="container">
-          <nav className="breadcrumb" aria-label="Morzsamenü">
-            <Link href="/">Kezdőlap</Link>
-            <span>/</span>
-            <span>{content.eyebrow}</span>
-          </nav>
-          <span
-            className="inline-block rounded-[30px] px-3 py-2 text-xs font-normal uppercase tracking-[1px]"
-            style={{ background: "rgba(194,29,32,0.14)", color: "var(--brand-dark)" }}
-          >
-            {content.eyebrow}
-          </span>
-          <h1 style={{ marginTop: 16 }}>{content.title}</h1>
-          {content.updated ? (
-            <p className="post-meta" style={{ marginTop: 8 }}>
-              Utolsó frissítés: {content.updated}
-            </p>
-          ) : null}
-        </div>
-      </div>
-      <div className="article-body">
-        <div className="container">
-          <div
-            className="prose"
-            // eslint-disable-next-line react/no-danger -- migrated CMS content
-            dangerouslySetInnerHTML={{ __html: content.html }}
-          />
-        </div>
-      </div>
-    </article>
+    <div className="pb-6 md:pb-8">
+      <NotchHero
+        eyebrow={content.eyebrow}
+        titleStrong={content.title}
+        image={HERO_IMAGE}
+        imageAlt={content.title}
+        intro={intro}
+      />
+
+      <HeroDivider />
+
+      <SidebarLayout sidebar={<SupportWidget />}>
+        {content.updated ? (
+          <p className="post-meta" style={{ marginBottom: 16 }}>
+            Utolsó frissítés: {content.updated}
+          </p>
+        ) : null}
+        <div
+          className="prose"
+          // eslint-disable-next-line react/no-danger -- migrated CMS content
+          dangerouslySetInnerHTML={{ __html: content.html }}
+        />
+      </SidebarLayout>
+    </div>
   );
 }
 

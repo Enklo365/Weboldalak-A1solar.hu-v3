@@ -6,12 +6,16 @@ import { MirrorContent } from "@/components/MirrorContent";
 import { CAMPAIGN_PAGES } from "@/components/page/campaign";
 import { MARKETING_PAGES } from "@/components/page/marketing";
 import { SuccessPage, SUCCESS_PAGES } from "@/components/page/SuccessPage";
+import { NotchHero } from "@/components/page/NotchHero";
 import { TextPage, TEXT_PAGES } from "@/components/page/TextPage";
 import { TOOL_PAGES } from "@/components/page/tools";
 import { ServicePage } from "@/components/service/ServicePage";
 import { SERVICE_PAGES } from "@/components/service/serviceData";
+import { HeroDivider, SidebarLayout } from "@/components/service/SidebarLayout";
+import { SupportWidget } from "@/components/service/SupportWidget";
 import { WpContent } from "@/components/WpContent";
 import {
+  firstImage,
   formatDate,
   getPage,
   getPages,
@@ -124,42 +128,38 @@ export default async function DynamicPage({
 
   const category = post.categories[0] ?? "Hírek";
   const html = processHtml(post.content);
+  const cover = firstImage(post.content) ?? "/wp-content/uploads/2023/11/210363746_m_normal_none.jpg";
+  const excerpt = post.excerpt.trim() ? plainExcerpt(post.excerpt, 150) : plainExcerpt(post.content, 150);
 
   return (
-    <article>
-      <div className="article-hero">
-        <div className="container">
-          <nav className="breadcrumb" aria-label="Morzsamenü">
-            <Link href="/">Kezdőlap</Link>
-            <span>/</span>
-            <Link href="/tudastar-blog">Tudástár</Link>
-            <span>/</span>
-            <span>{category}</span>
-          </nav>
-          <h1>{post.title}</h1>
-          <p className="post-meta" style={{ marginTop: 8 }}>
-            {category} · {formatDate(post.date)}
-          </p>
-        </div>
-      </div>
-      <div className="article-body">
-        <div className="container">
-          <div
-            className="prose"
-            // eslint-disable-next-line react/no-danger -- migrated CMS content
-            dangerouslySetInnerHTML={{ __html: html }}
-          />
-        </div>
-      </div>
-      <section className="section-tight">
-        <div className="container" style={{ display: "grid", placeItems: "center" }}>
-          <ContactForm
-            formName={`Cikk – ${post.title}`}
-            heading="Érdekli a napelem vagy energiatárolás?"
-            intro="Kérjen ingyenes, személyre szabott ajánlatot szakértő munkatársainktól."
-          />
-        </div>
-      </section>
+    <article className="pb-6 md:pb-8">
+      <NotchHero
+        eyebrow={category}
+        titleStrong={post.title}
+        image={cover}
+        imageAlt={post.title}
+        intro={excerpt}
+      />
+
+      <HeroDivider />
+
+      <SidebarLayout sidebar={<SupportWidget />}>
+        <p className="post-meta" style={{ marginBottom: 20 }}>
+          {category} · {formatDate(post.date)}
+        </p>
+        <div
+          className="prose"
+          // eslint-disable-next-line react/no-danger -- migrated CMS content
+          dangerouslySetInnerHTML={{ __html: html }}
+        />
+        <hr className="my-10" style={{ border: 0, borderTop: "1px dashed #ececec" }} />
+        <ContactForm
+          bare
+          formName={`Cikk – ${post.title}`}
+          heading="Érdekli a napelem vagy energiatárolás?"
+          intro="Kérjen ingyenes, személyre szabott ajánlatot szakértő munkatársainktól."
+        />
+      </SidebarLayout>
     </article>
   );
 }

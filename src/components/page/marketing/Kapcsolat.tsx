@@ -1,19 +1,13 @@
 import { ContactForm } from "@/components/ContactForm";
+import { NotchHero } from "@/components/page/NotchHero";
+import { HeroDivider, SidebarLayout } from "@/components/service/SidebarLayout";
+import { SupportWidget } from "@/components/service/SupportWidget";
 import { SITE } from "@/lib/site";
 
 const MailIcon = () => (
   <svg viewBox="0 0 24 24" width="20" height="20" fill="none" aria-hidden>
     <rect x="3" y="5" width="18" height="14" rx="2.5" stroke="currentColor" strokeWidth="2" />
     <path d="m4 7.5 8 5.5 8-5.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-  </svg>
-);
-
-const PhoneIcon = () => (
-  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" aria-hidden>
-    <path
-      d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .58 3.6 1 1 0 0 1-.24 1L6.6 10.8Z"
-      fill="currentColor"
-    />
   </svg>
 );
 
@@ -85,116 +79,58 @@ const ContactItem = ({ icon, label, value, href }: ContactItemProps) => (
  * brand-styled contact detail cards on the left and the {@link ContactForm} on
  * the right, plus a static address block. On-brand rounded / Inter design.
  */
+/** Contact details + service card shown in the sidebar. */
+const ContactDetails = () => (
+  <div className="rounded-[20px] p-6" style={{ background: "var(--surface-3)" }}>
+    <div className="text-[13px] font-semibold uppercase tracking-[1px] text-[var(--ink-muted)]">Elérhetőségek</div>
+    <ul className="mt-5 flex flex-col gap-5">
+      <ContactItem icon={<MailIcon />} label="E-mail" value={SITE.email} href={`mailto:${SITE.email}`} />
+      <ContactItem icon={<PinIcon />} label="Cím" value={SITE.address} />
+      <ContactItem
+        icon={<ClockIcon />}
+        label="Ügyfélszolgálat"
+        value={`Hétköznap ${SITE.supportHours} között`}
+      />
+      <ContactItem icon={<WrenchIcon />} label="Szerviz" value="szerviz@a1solar.hu" href="mailto:szerviz@a1solar.hu" />
+    </ul>
+  </div>
+);
+
+/**
+ * Native bespoke "Kapcsolat" marketing page on the sidebar + notch-hero layout:
+ * a shaped hero, the {@link ContactForm} in the main column and the contact
+ * details + customer-service widget in a sticky sidebar.
+ */
 export const Kapcsolat = () => (
-  <>
-    <section className="w-full py-16 md:py-24">
-      <div className="container">
-        <div className="mx-auto max-w-[760px] text-center">
-          <span
-            className="inline-block rounded-[30px] px-3 py-2 text-xs font-normal uppercase tracking-[1px]"
-            style={{ background: "rgba(194,29,32,0.14)", color: "var(--brand-dark)" }}
-          >
-            Kapcsolat
-          </span>
-          <h1
-            className="text-[var(--ink)]"
-            style={{ marginTop: "20px", fontSize: "clamp(30px, 5vw, 52px)", lineHeight: 1.12 }}
-          >
-            <span style={{ fontWeight: 300 }}>Vedd fel velünk </span>
-            <span style={{ fontWeight: 700 }}>a kapcsolatot!</span>
-          </h1>
-          <p className="mx-auto mt-5 max-w-[620px] text-lg text-[var(--ink-soft)]">
-            Írj nekünk egy üzenetet az űrlapunkon keresztül és kollégánk maximum 3 munkanapon belül felveszi veled
-            a kapcsolatot a megadott elérhetőségeid egyikén.
-          </p>
-        </div>
-      </div>
-    </section>
+  <div className="pb-6 md:pb-8">
+    <NotchHero
+      eyebrow="Kapcsolat"
+      titleLight="Vedd fel velünk"
+      titleStrong="a kapcsolatot!"
+      image="/wp-content/uploads/2023/11/210363746_m_normal_none.jpg"
+      imageAlt="A1 Solar ügyfélszolgálat"
+      intro="Írj nekünk egy üzenetet az űrlapunkon, és kollégánk maximum 3 munkanapon belül felveszi veled a kapcsolatot."
+    />
 
-    <section className="w-full pb-16 md:pb-24">
-      <div className="container">
-        <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-14">
-          <div>
-            <h2
-              className="text-[var(--ink)]"
-              style={{ fontSize: "clamp(22px, 3vw, 30px)", fontWeight: 600, lineHeight: 1.2 }}
-            >
-              Keress minket elérhetőségeinken:
-            </h2>
+    <HeroDivider />
 
-            <ul className="mt-8 flex flex-col gap-6">
-              <ContactItem icon={<MailIcon />} label="E-mail" value={SITE.email} href={`mailto:${SITE.email}`} />
-              <ContactItem
-                icon={<PhoneIcon />}
-                label="Telefon"
-                value={SITE.phoneDisplay}
-                href={`tel:${SITE.phoneRaw}`}
-              />
-              <ContactItem icon={<PinIcon />} label="Cím" value={SITE.address} />
-              <ContactItem
-                icon={<ClockIcon />}
-                label="Ügyfélszolgálat"
-                value={`Telefonos ügyfélszolgálatunk minden hétköznap ${SITE.supportHours} között elérhető.`}
-              />
-            </ul>
-
-            <div
-              className="mt-8 flex items-start gap-4 rounded-[20px] p-6"
-              style={{ background: "var(--surface-3)" }}
-            >
-              <span
-                className="grid h-12 w-12 shrink-0 place-items-center rounded-full"
-                style={{ background: "#fff", color: "var(--brand)" }}
-                aria-hidden
-              >
-                <WrenchIcon />
-              </span>
-              <div className="min-w-0">
-                <div className="text-lg font-semibold text-[var(--ink)]">Szerviz</div>
-                <div className="mt-1 text-[var(--ink-soft)]">
-                  Hibabejelentés:{" "}
-                  <a
-                    href="mailto:szerviz@a1solar.hu"
-                    className="font-medium text-[var(--brand)] transition-opacity hover:opacity-80"
-                  >
-                    szerviz@a1solar.hu
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <div
-              className="mt-8 flex flex-col items-center gap-3 rounded-[24px] px-6 py-12 text-center"
-              style={{ background: "var(--surface-3)" }}
-            >
-              <span
-                className="grid h-14 w-14 place-items-center rounded-full"
-                style={{ background: "#fff", color: "var(--brand)" }}
-                aria-hidden
-              >
-                <PinIcon />
-              </span>
-              <div className="text-lg font-semibold text-[var(--ink)]">{SITE.address}</div>
-              <div className="text-sm text-[var(--ink-muted)]">A1 Solar iroda — látogatás előzetes egyeztetéssel</div>
-            </div>
-          </div>
-
-          <div>
-            <h2
-              className="text-[var(--ink)]"
-              style={{ marginBottom: "24px", fontSize: "clamp(22px, 3vw, 30px)", fontWeight: 600, lineHeight: 1.2 }}
-            >
-              Írj nekünk üzenetet!
-            </h2>
-            <ContactForm
-              bare
-              formName="Kapcsolati űrlap"
-              heading="Írj nekünk üzenetet!"
-              intro="Kollégánk maximum 3 munkanapon belül felveszi veled a kapcsolatot."
-            />
-          </div>
-        </div>
-      </div>
-    </section>
-  </>
+    <SidebarLayout
+      sidebar={
+        <>
+          <ContactDetails />
+          <SupportWidget />
+        </>
+      }
+    >
+      <h2 className="text-[var(--ink)]" style={{ margin: "0 0 24px", fontSize: "30px", fontWeight: 600, lineHeight: 1.2 }}>
+        Írj nekünk üzenetet!
+      </h2>
+      <ContactForm
+        bare
+        formName="Kapcsolati űrlap"
+        heading="Írj nekünk üzenetet!"
+        intro="Kollégánk maximum 3 munkanapon belül felveszi veled a kapcsolatot."
+      />
+    </SidebarLayout>
+  </div>
 );

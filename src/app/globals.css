@@ -1388,6 +1388,16 @@ body.drawer-open .bottom-nav {
     grid-template-columns: 1fr;
   }
 }
+/* Blog list inside the sidebar layout: narrower main column → 2 columns. */
+.post-grid--sidebar {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+@media (max-width: 560px) {
+  .post-grid--sidebar {
+    grid-template-columns: 1fr;
+  }
+}
 .post-card {
   display: flex;
   flex-direction: column;
