@@ -12,6 +12,8 @@ export type NotchHeroProps = {
   intro: string;
   ctaLabel?: string;
   ctaHref?: string;
+  /** Smaller, clamped title — for long titles (e.g. blog posts). */
+  compact?: boolean;
 };
 
 /**
@@ -20,7 +22,7 @@ export type NotchHeroProps = {
  * the intro paragraph seated in the lower-right notch cut-out. Reused across the
  * service subpages and the career page so they read as one design.
  */
-export const NotchHero = ({ eyebrow, titleLight, titleStrong, image, imageAlt, intro, ctaLabel, ctaHref }: NotchHeroProps) => (
+export const NotchHero = ({ eyebrow, titleLight, titleStrong, image, imageAlt, intro, ctaLabel, ctaHref, compact = false }: NotchHeroProps) => (
   <section className="w-full">
     <svg width="0" height="0" className="absolute" aria-hidden focusable="false">
       <defs>
@@ -41,14 +43,21 @@ export const NotchHero = ({ eyebrow, titleLight, titleStrong, image, imageAlt, i
           <img src={image} alt={imageAlt} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "50% 55%" }} />
           <div className="absolute inset-0" style={{ background: GRADIENT }} />
         </div>
-        <div className="absolute bottom-0 left-0 z-10 text-white" style={{ padding: "40px", maxWidth: "620px" }}>
+        <div className="absolute bottom-0 left-0 z-10 text-white" style={{ padding: "40px", maxWidth: compact ? "680px" : "620px" }}>
           <span
             className="inline-block rounded-full px-3 py-2 text-xs font-medium uppercase tracking-[1px] text-white"
             style={{ background: "rgba(255,255,255,0.2)", marginBottom: "20px" }}
           >
             {eyebrow}
           </span>
-          <h1 style={{ color: "#fff", fontSize: "clamp(28px, 3.4vw, 42px)", fontWeight: 300, lineHeight: 1.18, marginBottom: "24px", maxWidth: "380px" }}>
+          <h1
+            className={compact ? "notch-title-clamp" : undefined}
+            style={
+              compact
+                ? { color: "#fff", fontSize: "clamp(22px, 2.2vw, 32px)", fontWeight: 700, lineHeight: 1.2, marginBottom: "20px", maxWidth: "600px" }
+                : { color: "#fff", fontSize: "clamp(28px, 3.4vw, 42px)", fontWeight: 300, lineHeight: 1.18, marginBottom: "24px", maxWidth: "380px" }
+            }
+          >
             {titleLight ? (
               <>
                 {titleLight}
@@ -87,7 +96,14 @@ export const NotchHero = ({ eyebrow, titleLight, titleStrong, image, imageAlt, i
           >
             {eyebrow}
           </span>
-          <h1 style={{ marginTop: "20px", color: "#fff", fontSize: "clamp(22px, 6.2vw, 28px)", fontWeight: 300, lineHeight: 1.2 }}>
+          <h1
+            className={compact ? "notch-title-clamp--mobile" : undefined}
+            style={
+              compact
+                ? { marginTop: "18px", color: "#fff", fontSize: "clamp(20px, 5.4vw, 24px)", fontWeight: 700, lineHeight: 1.22 }
+                : { marginTop: "20px", color: "#fff", fontSize: "clamp(22px, 6.2vw, 28px)", fontWeight: 300, lineHeight: 1.2 }
+            }
+          >
             {titleLight ? <>{titleLight} </> : null}
             <strong style={{ fontWeight: 700 }}>{titleStrong}</strong>
           </h1>

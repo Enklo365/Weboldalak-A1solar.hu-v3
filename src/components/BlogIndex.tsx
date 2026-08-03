@@ -42,8 +42,8 @@ const Card = ({ post, index }: { post: PostCard; index: number }) => (
     {/* Inner clip wrapper on its own compositing layer (translateZ) so Chrome
         renders the rounded corners without a faint antialiased seam. */}
     <div
-      className="flex w-full flex-col overflow-hidden rounded-[20px] bg-[var(--surface-3)]"
-      style={{ transform: "translateZ(0)" }}
+      className="flex w-full flex-col overflow-hidden rounded-[20px] bg-[var(--surface-3)] transition-shadow duration-300 group-hover:shadow-[0_2px_6px_rgba(16,24,40,0.05),0_12px_28px_rgba(16,24,40,0.09)]"
+      style={{ transform: "translateZ(0)", boxShadow: "0 1px 2px rgba(16,24,40,0.04), 0 6px 20px rgba(16,24,40,0.06)" }}
     >
       <div className="relative aspect-[16/9] overflow-hidden">
         {/* eslint-disable-next-line @next/next/no-img-element */}

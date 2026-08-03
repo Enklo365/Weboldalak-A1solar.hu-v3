@@ -1995,6 +1995,20 @@ img[data-fade].loaded {
 .blog-card-in {
   animation: blogCardIn 0.45s cubic-bezier(0.2, 0.7, 0.2, 1) both;
 }
+/* NotchHero compact title (blog posts): cap very long titles so they never
+   overflow the fixed-aspect hero band. */
+.notch-title-clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.notch-title-clamp--mobile {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
 @media (prefers-reduced-motion: reduce) {
   .blog-card-in {
     animation: none;

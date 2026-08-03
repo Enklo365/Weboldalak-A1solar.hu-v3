@@ -134,6 +134,7 @@ export default async function DynamicPage({
   return (
     <article className="pb-6 md:pb-8">
       <NotchHero
+        compact
         eyebrow={category}
         titleStrong={post.title}
         image={cover}
