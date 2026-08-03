@@ -1189,11 +1189,19 @@ body.drawer-open .bottom-nav {
   .footer-notch {
     padding: 26px 20px 24px;
   }
+  .footer-logo-img {
+    height: 34px;
+    margin-bottom: 14px;
+  }
   .footer-inner {
     padding: 14px 20px 8px;
   }
   .footer-bottom {
     margin: 0 20px;
+  }
+  .footer-legal {
+    flex-direction: column;
+    gap: 12px;
   }
   .footer-copyright-row {
     flex-direction: column;
