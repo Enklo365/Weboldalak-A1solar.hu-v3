@@ -44,7 +44,7 @@ export function TextPage({ content }: { content: TextPageContent }) {
           </p>
         ) : null}
         <div
-          className="prose"
+          className="prose prose--flush"
           // eslint-disable-next-line react/no-danger -- migrated CMS content
           dangerouslySetInnerHTML={{ __html: content.html }}
         />

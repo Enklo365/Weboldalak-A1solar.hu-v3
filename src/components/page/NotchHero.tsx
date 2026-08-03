@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { ReactNode } from "react";
 
 const HERO_CLIP_ID = "a1-notch-hero-shape";
 const GRADIENT = "linear-gradient(to right, #0A141Dcc 0%, rgba(10,20,29,0) 100%)";
@@ -24,7 +25,7 @@ const NOTCH_PATH =
  * shape as the other subpages), with no overlaid title/intro. Used on article
  * pages, where the badge + title + meta live in the main column instead.
  */
-export const NotchBanner = ({ image, imageAlt }: { image: string; imageAlt: string }) => (
+export const NotchBanner = ({ image, imageAlt, notch }: { image: string; imageAlt: string; notch?: ReactNode }) => (
   <section className="w-full">
     <svg width="0" height="0" className="absolute" aria-hidden focusable="false">
       <defs>
@@ -39,6 +40,11 @@ export const NotchBanner = ({ image, imageAlt }: { image: string; imageAlt: stri
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={image} alt={imageAlt} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "50% 55%" }} />
         </div>
+        {notch ? (
+          <div className="absolute z-10 flex items-center" style={{ left: "47%", right: "1.5%", top: "78%", bottom: "1%" }}>
+            {notch}
+          </div>
+        ) : null}
       </div>
     </div>
     <div className="lg:hidden px-4">

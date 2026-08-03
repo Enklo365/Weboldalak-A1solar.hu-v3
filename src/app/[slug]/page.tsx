@@ -129,12 +129,31 @@ export default async function DynamicPage({
   const category = post.categories[0] ?? "Hírek";
   const html = processHtml(post.content);
   const cover = firstImage(post.content) ?? "/wp-content/uploads/2023/11/210363746_m_normal_none.jpg";
+  const wordCount = post.content.replace(/<[^>]+>/g, " ").split(/\s+/).filter(Boolean).length;
+  const readingMin = Math.max(1, Math.ceil(wordCount / 200));
 
   return (
     <article className="pb-6 md:pb-8">
       {/* Content-less notch banner (same shape as other subpages); the article
-          badge + title + meta live in the main column below (no divider). */}
-      <NotchBanner image={cover} imageAlt={post.title} />
+          badge + title + meta live in the main column below (no divider). The
+          lower-right notch holds the reading time + a back-to-blog link. */}
+      <NotchBanner
+        image={cover}
+        imageAlt={post.title}
+        notch={
+          <div>
+            <div style={{ fontSize: "13px", fontWeight: 600, letterSpacing: "1px", textTransform: "uppercase", color: "var(--ink-muted)" }}>
+              {readingMin} perc olvasás
+            </div>
+            <Link href="/tudastar-blog" className="learn-more learn-more--back" style={{ marginTop: "12px" }}>
+              <span className="circle" aria-hidden="true">
+                <span className="extra-icon arrow" />
+              </span>
+              <span className="extra-button-text">Vissza a Híreinkhez</span>
+            </Link>
+          </div>
+        }
+      />
 
       <div className="mt-10 md:mt-12" />
 
@@ -152,7 +171,7 @@ export default async function DynamicPage({
           {category} · {formatDate(post.date)}
         </p>
         <div
-          className="prose"
+          className="prose prose--flush"
           // eslint-disable-next-line react/no-danger -- migrated CMS content
           dangerouslySetInnerHTML={{ __html: html }}
         />

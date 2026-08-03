@@ -1249,6 +1249,12 @@ body.drawer-open .bottom-nav {
   max-width: 760px;
   margin-inline: auto;
   font-size: 17px;
+}
+/* Left-aligned prose (inside the sidebar layout — aligns with the title). */
+.prose--flush {
+  margin-inline: 0;
+}
+.prose {
   line-height: 1.75;
   color: #2b2f34;
 }
