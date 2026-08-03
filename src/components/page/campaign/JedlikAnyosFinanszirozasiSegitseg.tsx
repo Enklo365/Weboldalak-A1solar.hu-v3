@@ -164,7 +164,7 @@ export const JedlikAnyosFinanszirozasiSegitseg = () => (
           <p
             key={paragraph}
             className="text-[var(--ink-soft)]"
-            style={{ margin: 0, fontSize: "17px", lineHeight: 1.75 }}
+            style={{ margin: 0, fontSize: "16px", lineHeight: 1.75 }}
           >
             {paragraph}
           </p>
@@ -237,13 +237,13 @@ export const JedlikAnyosFinanszirozasiSegitseg = () => (
             >
               Az A1 Solar megoldása
             </h2>
-            <p className="mt-5 text-[var(--ink-soft)]" style={{ fontSize: "17px", lineHeight: 1.75 }}>
+            <p className="mt-5 text-[var(--ink-soft)]" style={{ fontSize: "16px", lineHeight: 1.75 }}>
               Az A1 Solar átvállalja a Jedlik-projektek finanszírozási terhét, miközben te maradsz a
               kivitelező, a munkát a saját áradon végzed, és ugyanúgy megkapod a díjad, mintha saját
               forrásból finanszíroznád a projektet. Nem kell hitelt felvenned, és nem te viseled a
               hónapokig tartó likviditási kockázatot.
             </p>
-            <p className="mt-4 text-[var(--ink-soft)]" style={{ fontSize: "17px", lineHeight: 1.75 }}>
+            <p className="mt-4 text-[var(--ink-soft)]" style={{ fontSize: "16px", lineHeight: 1.75 }}>
               A modell célja egyszerű: te a kivitelezésre és az ügyfélkapcsolatokra fókuszálhatsz, míg a
               finanszírozási kockázatot mi kezeljük.
             </p>
@@ -272,7 +272,7 @@ export const JedlikAnyosFinanszirozasiSegitseg = () => (
           >
             Hogyan működik a gyakorlatban?
           </h2>
-          <p className="mx-auto mt-4 max-w-[760px] text-[var(--ink-soft)]" style={{ fontSize: "17px", lineHeight: 1.7 }}>
+          <p className="mx-auto mt-4 max-w-[760px] text-[var(--ink-soft)]" style={{ fontSize: "16px", lineHeight: 1.7 }}>
             Te hozod a projektet és az ügyfelet. Mi átvizsgáljuk a pályázati és műszaki feltételeket, majd
             megállapodást kötünk a kivitelezésről. A szükséges eszközöket és az energiatároló rendszert mi
             biztosítjuk, és mi vállaljuk az előfinanszírozást a támogatás kifizetéséig. A kivitelezést
@@ -295,7 +295,7 @@ export const JedlikAnyosFinanszirozasiSegitseg = () => (
               </span>
               <h3
                 className="text-[var(--ink)]"
-                style={{ margin: 0, marginTop: "16px", fontSize: "19px", fontWeight: 600, lineHeight: 1.3 }}
+                style={{ margin: 0, marginTop: "16px", fontSize: "20px", fontWeight: 600, lineHeight: 1.3 }}
               >
                 {step.title}
               </h3>
@@ -361,7 +361,7 @@ export const JedlikAnyosFinanszirozasiSegitseg = () => (
           >
             Mit nyersz ezzel kivitelezőként?
           </h2>
-          <p className="mx-auto mt-4 max-w-[680px] text-[var(--ink-soft)]" style={{ fontSize: "17px", lineHeight: 1.7 }}>
+          <p className="mx-auto mt-4 max-w-[680px] text-[var(--ink-soft)]" style={{ fontSize: "16px", lineHeight: 1.7 }}>
             Az együttműködés kézzelfogható pénzügyi előnyöket biztosít a kivitelezők számára:
           </p>
         </div>
@@ -404,7 +404,7 @@ export const JedlikAnyosFinanszirozasiSegitseg = () => (
             >
               Kinek ideális ez az együttműködés
             </h2>
-            <p className="mt-5 text-[var(--ink-soft)]" style={{ fontSize: "17px", lineHeight: 1.7 }}>
+            <p className="mt-5 text-[var(--ink-soft)]" style={{ fontSize: "16px", lineHeight: 1.7 }}>
               Az alábbi kivitelezők számára jelent valódi megoldást és könnyebbséget a finanszírozás terén:
             </p>
             <ul className="mt-6 flex flex-col gap-4" style={{ listStyle: "none", padding: 0, margin: 0 }}>
@@ -443,7 +443,7 @@ export const JedlikAnyosFinanszirozasiSegitseg = () => (
         </h2>
         <p
           className="mx-auto mt-5 max-w-[880px]"
-          style={{ color: "rgba(255,255,255,0.82)", fontSize: "17px", lineHeight: 1.8 }}
+          style={{ color: "rgba(255,255,255,0.82)", fontSize: "16px", lineHeight: 1.8 }}
         >
           Cégünk több éves tapasztalattal rendelkezik vállalati és ipari energiarendszerek területén,
           amelyet stabil beszállítói kapcsolatok és több gyártóval fenntartott aktív disztribúciós
@@ -481,7 +481,7 @@ export const JedlikAnyosFinanszirozasiSegitseg = () => (
             Értékesítő kollégánk hétköznap 10:00–15:00 között elérhető – fordulj hozzá bizalommal!
           </p>
           <div className="mt-5">
-            <p className="text-[var(--ink)]" style={{ margin: 0, fontSize: "17px", fontWeight: 700 }}>
+            <p className="text-[var(--ink)]" style={{ margin: 0, fontSize: "16px", fontWeight: 700 }}>
               Szenyán Endre
             </p>
             <p className="text-[var(--ink-muted)]" style={{ margin: 0, marginTop: "2px", fontSize: "14px" }}>
@@ -509,12 +509,12 @@ export const JedlikAnyosFinanszirozasiSegitseg = () => (
           >
             Ne hagyd ki ezt a lehetőséget!
           </h2>
-          <p className="mx-auto mt-4 max-w-[720px] text-[var(--ink-soft)]" style={{ fontSize: "17px", lineHeight: 1.7 }}>
+          <p className="mx-auto mt-4 max-w-[720px] text-[var(--ink-soft)]" style={{ fontSize: "16px", lineHeight: 1.7 }}>
             Töltsd ki az alábbi űrlapot, és kollégánk rövid időn belül felveszi veled a kapcsolatot.
             Szívesen egyeztetünk konkrét projektről, vagy akár általánosságban az együttműködés
             feltételeiről is. A beszélgetés teljesen bizalmas.
           </p>
-          <p className="mt-4 text-[var(--ink-soft)]" style={{ fontSize: "17px" }}>
+          <p className="mt-4 text-[var(--ink-soft)]" style={{ fontSize: "16px" }}>
             Vagy hívj minket most:{" "}
             <a href={`tel:${SITE.phoneRaw}`} style={{ color: "var(--brand)", fontWeight: 700 }}>
               {SITE.phoneDisplay}

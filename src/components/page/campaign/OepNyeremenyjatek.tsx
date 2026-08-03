@@ -101,14 +101,14 @@ export const OepNyeremenyjatek = () => (
         <Eyebrow>Nyereményjáték</Eyebrow>
         <h1
           className="text-[var(--ink)]"
-          style={{ marginTop: "28px", fontSize: "clamp(34px, 6vw, 64px)", lineHeight: 1.1 }}
+          style={{ marginTop: "28px", fontSize: "clamp(26px, 2.9vw, 34px)", lineHeight: 1.1 }}
         >
           <span style={{ fontWeight: 300 }}>Energiafüggetlenség otthon. </span>
           <span style={{ fontWeight: 700 }}>Élmények a világban.</span>
         </h1>
         <p
           className="mx-auto mt-6 text-[var(--ink-soft)]"
-          style={{ maxWidth: "720px", margin: "24px auto 0", fontSize: "clamp(17px, 2.2vw, 20px)", lineHeight: 1.7 }}
+          style={{ maxWidth: "720px", margin: "24px auto 0", fontSize: "clamp(16px, 2vw, 18px)", lineHeight: 1.7 }}
         >
           Az Otthoni Energiatároló Programban az A1 Solar Kft.-vel megvalósított projekted után
           100 000 Ft értékű kupont kapsz, és részt veszel egy 2 főre szóló, 5 napos utazás sorsolásán.
@@ -142,7 +142,7 @@ export const OepNyeremenyjatek = () => (
           >
             Hogyan vehetsz részt?
           </h2>
-          <p className="mx-auto mt-4 text-[var(--ink-soft)]" style={{ maxWidth: "680px", fontSize: "17px", lineHeight: 1.7 }}>
+          <p className="mx-auto mt-4 text-[var(--ink-soft)]" style={{ maxWidth: "680px", fontSize: "16px", lineHeight: 1.7 }}>
             A kuponra és a nyereményjátékban való részvételre azok az ügyfelek jogosultak, akik
             együttesen megfelelnek az alábbi feltételeknek.
           </p>
@@ -171,7 +171,7 @@ export const OepNyeremenyjatek = () => (
               </span>
               <h3
                 className="text-[var(--ink)]"
-                style={{ margin: 0, marginTop: "18px", fontSize: "19px", fontWeight: 600, lineHeight: 1.3 }}
+                style={{ margin: 0, marginTop: "18px", fontSize: "20px", fontWeight: 600, lineHeight: 1.3 }}
               >
                 {step.title}
               </h3>
@@ -195,7 +195,7 @@ export const OepNyeremenyjatek = () => (
           >
             Mit kapsz a program végén?
           </h2>
-          <p className="mx-auto mt-4 text-[var(--ink-soft)]" style={{ maxWidth: "680px", fontSize: "17px", lineHeight: 1.7 }}>
+          <p className="mx-auto mt-4 text-[var(--ink-soft)]" style={{ maxWidth: "680px", fontSize: "16px", lineHeight: 1.7 }}>
             A sikeres projektzárás után két extra előny jár automatikusan: egy garantált kupon a
             jövőbeli fejlesztésekhez, valamint részvétel egy exkluzív utazás sorsolásán.
           </p>

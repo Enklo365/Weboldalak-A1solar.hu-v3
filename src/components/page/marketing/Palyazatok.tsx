@@ -71,14 +71,14 @@ export const Palyazatok = () => (
         <Eyebrow>Pályázatok</Eyebrow>
         <h1
           className="text-[var(--ink)]"
-          style={{ marginTop: "28px", fontSize: "clamp(34px, 6vw, 64px)", lineHeight: 1.1 }}
+          style={{ marginTop: "28px", fontSize: "clamp(26px, 2.9vw, 34px)", lineHeight: 1.1 }}
         >
           <span style={{ fontWeight: 300 }}>Aktuális </span>
           <span style={{ fontWeight: 700 }}>pályázatok!</span>
         </h1>
         <p
           className="mx-auto mt-6 max-w-[720px] text-[var(--ink-soft)]"
-          style={{ fontSize: "clamp(16px, 2vw, 19px)" }}
+          style={{ fontSize: "clamp(16px, 2vw, 18px)" }}
         >
           Segítünk megtalálni a hozzád illő pályázati forrást, és levesszük a válladról a papírmunkát:
           a jogosultság felmérésétől a teljes pályázatírásig végigkísérünk, hogy a támogatásból tényleg
@@ -170,11 +170,11 @@ export const Palyazatok = () => (
             >
               Beszéljünk a lehetőségeidről!
             </h2>
-            <p className="mt-4 text-[var(--ink-soft)]" style={{ fontSize: "17px", lineHeight: 1.7 }}>
+            <p className="mt-4 text-[var(--ink-soft)]" style={{ fontSize: "16px", lineHeight: 1.7 }}>
               Értékesítő kollégánk hétköznap 10:00–15:00 között elérhető – fordulj hozzá bizalommal!
             </p>
             <div className="mt-6">
-              <p className="text-[var(--ink)]" style={{ margin: 0, fontSize: "19px", fontWeight: 600 }}>
+              <p className="text-[var(--ink)]" style={{ margin: 0, fontSize: "20px", fontWeight: 600 }}>
                 Harasztosi Szabolcs
               </p>
               <p className="text-[var(--ink-muted)]" style={{ margin: 0, marginTop: "2px", fontSize: "15px" }}>
@@ -205,7 +205,7 @@ export const Palyazatok = () => (
           </h2>
           <p
             className="max-w-[620px]"
-            style={{ margin: 0, color: "rgba(255,255,255,0.9)", fontSize: "17px", lineHeight: 1.6 }}
+            style={{ margin: 0, color: "rgba(255,255,255,0.9)", fontSize: "16px", lineHeight: 1.6 }}
           >
             Vedd fel velünk a kapcsolatot, és megkeressük a beruházásodhoz leginkább illeszkedő
             támogatási forrást — a pályázatírást pedig bízd ránk.

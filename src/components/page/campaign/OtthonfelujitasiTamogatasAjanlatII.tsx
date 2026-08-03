@@ -178,14 +178,14 @@ export const OtthonfelujitasiTamogatasAjanlatII = () => (
         <Eyebrow>Ajánlat</Eyebrow>
         <h1
           className="text-[var(--ink)]"
-          style={{ marginTop: "28px", fontSize: "clamp(34px, 6vw, 64px)", lineHeight: 1.1 }}
+          style={{ marginTop: "28px", fontSize: "clamp(26px, 2.9vw, 34px)", lineHeight: 1.1 }}
         >
           <span style={{ fontWeight: 300 }}>Csökkentse rezsijét </span>
           <span style={{ fontWeight: 700 }}>napelemmel!</span>
         </h1>
         <p
           className="mx-auto mt-8 text-[var(--ink-soft)]"
-          style={{ maxWidth: "760px", marginTop: "26px", fontSize: "clamp(16px, 2vw, 19px)", lineHeight: 1.7 }}
+          style={{ maxWidth: "760px", marginTop: "26px", fontSize: "clamp(16px, 2vw, 18px)", lineHeight: 1.7 }}
         >
           A Vidéki Otthonfelújítási Támogatás 2025 segítségével most kedvezményesen telepíthet
           napelemes rendszert akkumulátoros kiegészítéssel és okosotthon technológiával. Készüljön
@@ -229,14 +229,14 @@ export const OtthonfelujitasiTamogatasAjanlatII = () => (
             >
               Hónapról hónapra egyre drágább a villanyszámla?
             </h2>
-            <p className="mt-4 text-[var(--ink-soft)]" style={{ fontSize: "17px", lineHeight: 1.7 }}>
+            <p className="mt-4 text-[var(--ink-soft)]" style={{ fontSize: "16px", lineHeight: 1.7 }}>
               A villamosenergia ára folyamatosan emelkedik, ami jelentős terhet róhat a
               háztartásokra. Az energiafüggetlenség azt jelenti, hogy saját napelemes rendszerrel
               részben vagy teljesen leválhat a hálózatról, így kevésbé lesz kiszolgáltatva az
               árváltozásoknak. Ez nem csupán hosszú távú megtakarítást eredményez, hanem biztonságot
               és stabilitást is nyújt.
             </p>
-            <p className="mt-4 text-[var(--ink-soft)]" style={{ fontSize: "17px", lineHeight: 1.7 }}>
+            <p className="mt-4 text-[var(--ink-soft)]" style={{ fontSize: "16px", lineHeight: 1.7 }}>
               Ma már elérhető megoldásokkal bárki élvezheti az energiafüggetlenség előnyeit, így ez
               nem luxus, hanem okos döntés a jövő érdekében.
             </p>
@@ -391,7 +391,7 @@ export const OtthonfelujitasiTamogatasAjanlatII = () => (
           </h2>
           <p
             className="mx-auto mt-4 text-[var(--ink-soft)]"
-            style={{ maxWidth: "760px", fontSize: "17px", lineHeight: 1.7 }}
+            style={{ maxWidth: "760px", fontSize: "16px", lineHeight: 1.7 }}
           >
             Beleértve az akkumulátoros és okosotthon megoldásokat is, hogy otthona fenntarthatóbb,
             költséghatékonyabb és jövőálló legyen. Ingyenes helyszíni felmérés és személyes
@@ -429,7 +429,7 @@ export const OtthonfelujitasiTamogatasAjanlatII = () => (
           </h2>
           <p
             className="mx-auto mt-4 text-[var(--ink-soft)]"
-            style={{ maxWidth: "820px", fontSize: "17px", lineHeight: 1.7 }}
+            style={{ maxWidth: "820px", fontSize: "16px", lineHeight: 1.7 }}
           >
             A Vidéki Otthonfelújítási Támogatás 2025. január 1-jétől elérhető állami program, amelynek
             célja a kistelepüléseken élő családok lakhatási körülményeinek javítása. A támogatás
@@ -538,7 +538,7 @@ export const OtthonfelujitasiTamogatasAjanlatII = () => (
             >
               Miért válassza az A1 Solart?
             </h2>
-            <p className="mt-4 text-[var(--ink-soft)]" style={{ fontSize: "17px", lineHeight: 1.7 }}>
+            <p className="mt-4 text-[var(--ink-soft)]" style={{ fontSize: "16px", lineHeight: 1.7 }}>
               Cégünk teljes körű támogatást nyújt a pályázati ügyintézésben, beleértve a szükséges
               dokumentumok előkészítését és benyújtását. Több mint 10 éves tapasztalatunkkal és több
               mint 4000 telepített rendszerrel garantáljuk a megbízhatóságot, a szakértelmet és a
@@ -586,7 +586,7 @@ export const OtthonfelujitasiTamogatasAjanlatII = () => (
           </h2>
           <p
             className="mx-auto mt-4 text-[var(--ink-soft)]"
-            style={{ maxWidth: "760px", fontSize: "17px", lineHeight: 1.7 }}
+            style={{ maxWidth: "760px", fontSize: "16px", lineHeight: 1.7 }}
           >
             Kombinálja az energiatárolást, az okosotthon technológiát és a napelemes rendszert az A1
             Solar szakértelmével. Vegye fel velünk a kapcsolatot, és kérjen ingyenes helyszíni

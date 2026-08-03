@@ -49,14 +49,14 @@ export const Ft1000 = () => (
         <Eyebrow>Cégünkről</Eyebrow>
         <h1
           className="text-[var(--ink)]"
-          style={{ marginTop: "28px", fontSize: "clamp(34px, 6vw, 64px)", lineHeight: 1.1 }}
+          style={{ marginTop: "28px", fontSize: "clamp(26px, 2.9vw, 34px)", lineHeight: 1.1 }}
         >
           <span style={{ fontWeight: 300 }}>Magyarország leggyorsabban </span>
           <span style={{ fontWeight: 700 }}>növekvő energetikai vállalata</span>
         </h1>
         <p
           className="mx-auto mt-6 max-w-[680px] text-[var(--ink-soft)]"
-          style={{ fontSize: "clamp(16px, 2vw, 19px)", lineHeight: 1.6 }}
+          style={{ fontSize: "clamp(16px, 2vw, 18px)", lineHeight: 1.6 }}
         >
           Fenntartható energetikai megoldások lakossági és céges ügyfeleknek, tervezéstől a
           kivitelezésig – egy kézből.
@@ -98,12 +98,12 @@ export const Ft1000 = () => (
             >
               Az A1 Solar Európa 12. leggyorsabban növekvő vállalata lett!
             </h2>
-            <p className="mt-5" style={{ color: "rgba(255,255,255,0.92)", fontSize: "17px", lineHeight: 1.7 }}>
+            <p className="mt-5" style={{ color: "rgba(255,255,255,0.92)", fontSize: "16px", lineHeight: 1.7 }}>
               Nagy büszkeség számunkra, hogy az A1 Solar Kft. a Financial Times FT1000 listáján
               Európa 12. leggyorsabban növekvő vállalata lett, közel 7000%-os növekedéssel,
               Magyarországon pedig az első helyet szerezte meg!
             </p>
-            <p className="mt-4" style={{ color: "rgba(255,255,255,0.92)", fontSize: "17px", lineHeight: 1.7 }}>
+            <p className="mt-4" style={{ color: "rgba(255,255,255,0.92)", fontSize: "16px", lineHeight: 1.7 }}>
               A Financial Times és a Statista minden évben összeállítja az FT1000: Europe’s Fastest
               Growing Companies rangsort, amely Európa ezer legdinamikusabban növekvő vállalatát
               tartalmazza. A lista az árbevétel növekedése alapján rangsorol, és csak azok a cégek
@@ -155,7 +155,7 @@ export const Ft1000 = () => (
               <p
                 key={p.slice(0, 24)}
                 className="text-[var(--ink-soft)] first:mt-0"
-                style={{ marginTop: "20px", fontSize: "17px", lineHeight: 1.7 }}
+                style={{ marginTop: "20px", fontSize: "16px", lineHeight: 1.7 }}
               >
                 {p}
               </p>
@@ -177,7 +177,7 @@ export const Ft1000 = () => (
             <span style={{ fontWeight: 300 }}>Nemzetközi </span>
             <span style={{ fontWeight: 700 }}>jelenlétünk</span>
           </h2>
-          <p className="mx-auto mt-6 max-w-[680px] text-[var(--ink-soft)]" style={{ fontSize: "17px", lineHeight: 1.7 }}>
+          <p className="mx-auto mt-6 max-w-[680px] text-[var(--ink-soft)]" style={{ fontSize: "16px", lineHeight: 1.7 }}>
             Magyarországon kívül Ausztriában és Romániában is jelen vagyunk kivitelezői
             tevékenységünkkel. Kereskedelmi területen eltérő márkanév alatt működünk a fent említett
             országokban, és ősszel Horvátországban és Szerbiában is bővítjük jelenlétünket. A jövőben
@@ -231,7 +231,7 @@ export const Ft1000 = () => (
               <span style={{ fontWeight: 300 }}>A nap energiája </span>
               <span style={{ fontWeight: 700 }}>cégeknek</span>
             </h2>
-            <p className="mt-5 text-[var(--ink-soft)]" style={{ fontSize: "17px", lineHeight: 1.7 }}>
+            <p className="mt-5 text-[var(--ink-soft)]" style={{ fontSize: "16px", lineHeight: 1.7 }}>
               A vállalkozásoknak, kis- és nagyüzemeknek, gazdasági szereplőknek és ipari
               nagyfogyasztóknak továbbra is megéri napelemes erőművet építeni. Egy 150-250 kWp
               rendszer akár már 3 év alatt visszahozhatja az árát, miközben optimalizálhatók a céges
@@ -268,7 +268,7 @@ export const Ft1000 = () => (
           </h2>
           <p
             className="max-w-[620px]"
-            style={{ margin: 0, color: "rgba(255,255,255,0.9)", fontSize: "17px", lineHeight: 1.6 }}
+            style={{ margin: 0, color: "rgba(255,255,255,0.9)", fontSize: "16px", lineHeight: 1.6 }}
           >
             Több mint 4000 elégedett ügyfél választotta már az A1 Solart. Beszéljük át energetikai
             céljaidat, és állítsunk össze egy megoldást, ami a te igényeidre van optimalizálva.

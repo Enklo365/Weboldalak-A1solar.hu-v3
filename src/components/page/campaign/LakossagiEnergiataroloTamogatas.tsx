@@ -23,7 +23,7 @@ const OEP_TOC = [
 /** Customer-service sidebar widget (mirrors the service subpages). */
 const SupportWidget = () => (
   <div className="rounded-[20px] p-6" style={{ background: "var(--surface-3)" }}>
-    <h3 style={{ fontSize: "19px", fontWeight: 500, lineHeight: 1.25, color: "var(--ink)" }}>Beszéljünk a lehetőségeidről!</h3>
+    <h3 style={{ fontSize: "20px", fontWeight: 500, lineHeight: 1.25, color: "var(--ink)" }}>Beszéljünk a lehetőségeidről!</h3>
     <p className="mt-3 text-sm leading-relaxed text-[var(--ink-soft)]">
       Ügyfélszolgálatunk hétköznap {SITE.supportHours} között elérhető – fordulj hozzánk bizalommal!
     </p>
@@ -97,7 +97,7 @@ const Section = ({ eyebrow, title, intro, children, id }: SectionProps) => (
       {title}
     </h2>
     {intro !== undefined ? (
-      <p className="mt-5 text-[var(--ink-soft)]" style={{ fontSize: "17px", lineHeight: 1.75 }}>
+      <p className="mt-5 text-[var(--ink-soft)]" style={{ fontSize: "16px", lineHeight: 1.75 }}>
         {intro}
       </p>
     ) : null}
@@ -474,12 +474,12 @@ export const LakossagiEnergiataroloTamogatas = () => (
 
           {/* INTRO + garanciák — mobil: kép alatt, teljes szélességben; desktop: a kép alatt balra (46%) */}
           <div className="mt-8 lg:absolute lg:left-0 lg:top-full lg:mt-6 lg:w-[46%]">
-            <p className="text-[var(--ink-soft)]" style={{ fontSize: "17px", lineHeight: 1.75 }}>
+            <p className="text-[var(--ink-soft)]" style={{ fontSize: "16px", lineHeight: 1.75 }}>
               Az Otthoni Energiatároló Program keretében segítünk a pályázati adminisztrációban, a rendszer
               kiválasztásában, tervezésében és kivitelezésében, hogy otthonod számára megbízható, hosszú távú megoldás
               valósuljon meg.
             </p>
-            <p className="text-[var(--ink)]" style={{ margin: "24px 0 16px", fontSize: "17px", fontWeight: 700 }}>
+            <p className="text-[var(--ink)]" style={{ margin: "24px 0 16px", fontSize: "16px", fontWeight: 700 }}>
               Amit az A1 Solar garantál:
             </p>
             <ul className="flex flex-col gap-4" style={{ listStyle: "none", padding: 0, margin: 0 }}>
@@ -904,10 +904,10 @@ export const LakossagiEnergiataroloTamogatas = () => (
                     </span>
                     <div className="min-w-0 flex-1">
                       <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
-                        <h3 className="text-[var(--ink)]" style={{ margin: 0, fontSize: "19px", fontWeight: 600 }}>
+                        <h3 className="text-[var(--ink)]" style={{ margin: 0, fontSize: "20px", fontWeight: 600 }}>
                           {phase.title}
                         </h3>
-                        <p style={{ margin: 0, fontSize: "19px", fontWeight: 700, color: "var(--brand)", whiteSpace: "nowrap" }}>
+                        <p style={{ margin: 0, fontSize: "20px", fontWeight: 700, color: "var(--brand)", whiteSpace: "nowrap" }}>
                           {phase.amount}
                         </p>
                       </div>

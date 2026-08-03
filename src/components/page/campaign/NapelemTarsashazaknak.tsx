@@ -88,14 +88,14 @@ export const NapelemTarsashazaknak = () => (
         <Eyebrow>Napelem társasházaknak</Eyebrow>
         <h1
           className="text-[var(--ink)]"
-          style={{ marginTop: "28px", fontSize: "clamp(34px, 6vw, 64px)", lineHeight: 1.1 }}
+          style={{ marginTop: "28px", fontSize: "clamp(26px, 2.9vw, 34px)", lineHeight: 1.1 }}
         >
           <span style={{ fontWeight: 300 }}>Jogszabályok </span>
           <span style={{ fontWeight: 700 }}>és támogatások!</span>
         </h1>
         <p
           className="mx-auto mt-6 max-w-[760px] text-[var(--ink-soft)]"
-          style={{ fontSize: "clamp(16px, 2vw, 19px)", lineHeight: 1.7 }}
+          style={{ fontSize: "clamp(16px, 2vw, 18px)", lineHeight: 1.7 }}
         >
           2025 őszére a szabályozási környezet radikálisan kedvezőbbé vált a társasházi napelemes
           beruházások számára. Az energiaközösségek bevezetése, az egyszerű többséggel hozható
@@ -208,7 +208,7 @@ export const NapelemTarsashazaknak = () => (
             >
               Technikai feltételek a társasházi napelemekhez
             </h2>
-            <p className="mt-5 text-[var(--ink-soft)]" style={{ fontSize: "17px", lineHeight: 1.7 }}>
+            <p className="mt-5 text-[var(--ink-soft)]" style={{ fontSize: "16px", lineHeight: 1.7 }}>
               A közös tulajdonú tetőfelület napelemek telepítésére használható, ennek feltétele írásbeli
               megállapodás és a közgyűlés előzetes hozzájárulása. A rendszer jogilag a társasház összekötő
               berendezéséhez csatlakozik, tehát a ház belső hálózatára termel – a telepítés előtt műszaki
@@ -235,7 +235,7 @@ export const NapelemTarsashazaknak = () => (
 
         <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3">
           <div className="flex flex-col px-8 py-8" style={{ background: "var(--surface-3)", borderRadius: "24px" }}>
-            <h3 className="text-[var(--ink)]" style={{ margin: 0, fontSize: "19px", fontWeight: 600, lineHeight: 1.3 }}>
+            <h3 className="text-[var(--ink)]" style={{ margin: 0, fontSize: "20px", fontWeight: 600, lineHeight: 1.3 }}>
               HMKE teljesítménykorlát
             </h3>
             <p className="mt-3 text-[var(--ink-soft)]" style={{ fontSize: "15px", lineHeight: 1.65 }}>
@@ -245,7 +245,7 @@ export const NapelemTarsashazaknak = () => (
             </p>
           </div>
           <div className="flex flex-col px-8 py-8" style={{ background: "var(--surface-3)", borderRadius: "24px" }}>
-            <h3 className="text-[var(--ink)]" style={{ margin: 0, fontSize: "19px", fontWeight: 600, lineHeight: 1.3 }}>
+            <h3 className="text-[var(--ink)]" style={{ margin: 0, fontSize: "20px", fontWeight: 600, lineHeight: 1.3 }}>
               Okos mérők és mérőcsere
             </h3>
             <p className="mt-3 text-[var(--ink-soft)]" style={{ fontSize: "15px", lineHeight: 1.65 }}>
@@ -255,7 +255,7 @@ export const NapelemTarsashazaknak = () => (
             </p>
           </div>
           <div className="flex flex-col px-8 py-8" style={{ background: "var(--surface-3)", borderRadius: "24px" }}>
-            <h3 className="text-[var(--ink)]" style={{ margin: 0, fontSize: "19px", fontWeight: 600, lineHeight: 1.3 }}>
+            <h3 className="text-[var(--ink)]" style={{ margin: 0, fontSize: "20px", fontWeight: 600, lineHeight: 1.3 }}>
               Építéstechnika és biztonság
             </h3>
             <p className="mt-3 text-[var(--ink-soft)]" style={{ fontSize: "15px", lineHeight: 1.65 }}>
@@ -267,7 +267,7 @@ export const NapelemTarsashazaknak = () => (
         </div>
 
         <div className="mt-6 px-8 py-8" style={{ background: "var(--surface-3)", borderRadius: "24px" }}>
-          <h3 className="text-[var(--ink)]" style={{ margin: 0, fontSize: "19px", fontWeight: 600, lineHeight: 1.3 }}>
+          <h3 className="text-[var(--ink)]" style={{ margin: 0, fontSize: "20px", fontWeight: 600, lineHeight: 1.3 }}>
             Meglévő rendszerek bővítése és korszerűsítése
           </h3>
           <p className="mt-3 text-[var(--ink-soft)]" style={{ fontSize: "16px", lineHeight: 1.65 }}>
@@ -293,7 +293,7 @@ export const NapelemTarsashazaknak = () => (
           >
             Elszámolási modellek és hálózatra visszatáplálás
           </h2>
-          <p className="mt-5 text-[var(--ink-soft)]" style={{ fontSize: "17px", lineHeight: 1.7 }}>
+          <p className="mt-5 text-[var(--ink-soft)]" style={{ fontSize: "16px", lineHeight: 1.7 }}>
             A jogszabály – a 273/2007. (X.19.) Korm. rendelet, a VET végrehajtási rendelete – háromféle
             elszámolási modellt tesz lehetővé a társasházi energiaközösségek számára. A közösség bármikor
             módosíthatja a modellt vagy az arányokat, ha azt a tagok közösen kérik.
@@ -307,7 +307,7 @@ export const NapelemTarsashazaknak = () => (
               className="flex flex-col px-8 py-8"
               style={{ background: "var(--surface-3)", borderRadius: "24px" }}
             >
-              <h3 className="text-[var(--ink)]" style={{ margin: 0, fontSize: "19px", fontWeight: 600, lineHeight: 1.3 }}>
+              <h3 className="text-[var(--ink)]" style={{ margin: 0, fontSize: "20px", fontWeight: 600, lineHeight: 1.3 }}>
                 {m.title}
               </h3>
               <p className="mt-3 flex-1 text-[var(--ink-soft)]" style={{ fontSize: "15px", lineHeight: 1.65 }}>
@@ -344,7 +344,7 @@ export const NapelemTarsashazaknak = () => (
 
         <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2">
           <div className="px-8 py-8" style={{ background: "#fff", borderRadius: "24px" }}>
-            <h3 className="text-[var(--ink)]" style={{ margin: 0, fontSize: "19px", fontWeight: 600, lineHeight: 1.3 }}>
+            <h3 className="text-[var(--ink)]" style={{ margin: 0, fontSize: "20px", fontWeight: 600, lineHeight: 1.3 }}>
               Napenergia Plusz Program (lezárult)
             </h3>
             <p className="mt-3 text-[var(--ink-soft)]" style={{ fontSize: "15px", lineHeight: 1.65 }}>
@@ -363,7 +363,7 @@ export const NapelemTarsashazaknak = () => (
           </div>
 
           <div className="px-8 py-8" style={{ background: "#fff", borderRadius: "24px" }}>
-            <h3 className="text-[var(--ink)]" style={{ margin: 0, fontSize: "19px", fontWeight: 600, lineHeight: 1.3 }}>
+            <h3 className="text-[var(--ink)]" style={{ margin: 0, fontSize: "20px", fontWeight: 600, lineHeight: 1.3 }}>
               Önkormányzati (helyi) pályázatok
             </h3>
             <p className="mt-3 text-[var(--ink-soft)]" style={{ fontSize: "15px", lineHeight: 1.65 }}>
@@ -375,7 +375,7 @@ export const NapelemTarsashazaknak = () => (
           </div>
 
           <div className="px-8 py-8" style={{ background: "#fff", borderRadius: "24px" }}>
-            <h3 className="text-[var(--ink)]" style={{ margin: 0, fontSize: "19px", fontWeight: 600, lineHeight: 1.3 }}>
+            <h3 className="text-[var(--ink)]" style={{ margin: 0, fontSize: "20px", fontWeight: 600, lineHeight: 1.3 }}>
               Kedvezményes hitelek
             </h3>
             <p className="mt-3 text-[var(--ink-soft)]" style={{ fontSize: "15px", lineHeight: 1.65 }}>
@@ -393,7 +393,7 @@ export const NapelemTarsashazaknak = () => (
           </div>
 
           <div className="px-8 py-8" style={{ background: "#fff", borderRadius: "24px" }}>
-            <h3 className="text-[var(--ink)]" style={{ margin: 0, fontSize: "19px", fontWeight: 600, lineHeight: 1.3 }}>
+            <h3 className="text-[var(--ink)]" style={{ margin: 0, fontSize: "20px", fontWeight: 600, lineHeight: 1.3 }}>
               Önfinanszírozó modell – a közös költség szerepe
             </h3>
             <p className="mt-3 text-[var(--ink-soft)]" style={{ fontSize: "15px", lineHeight: 1.65 }}>
@@ -475,7 +475,7 @@ export const NapelemTarsashazaknak = () => (
             <h2 style={{ marginTop: "22px", color: "#fff", fontSize: "clamp(26px, 4vw, 38px)", fontWeight: 700, lineHeight: 1.2 }}>
               Miért válassz minket?
             </h2>
-            <p className="mt-5" style={{ color: "rgba(255,255,255,0.92)", fontSize: "17px", lineHeight: 1.7 }}>
+            <p className="mt-5" style={{ color: "rgba(255,255,255,0.92)", fontSize: "16px", lineHeight: 1.7 }}>
               Teljes körű támogatást nyújtunk a pályázati ügyintézésben, a szükséges dokumentumok
               előkészítésétől a benyújtásig. Szakértelmünkkel a napelemes rendszereket intelligens
               eszközökkel ötvözzük, hogy energiafogyasztásod optimális legyen. Átfogó szolgáltatásaink az

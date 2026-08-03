@@ -68,7 +68,7 @@ export const OepHelysziniFelmeres = () => (
         <Eyebrow>Helyszíni felmérés</Eyebrow>
         <h1
           className="text-[var(--ink)]"
-          style={{ marginTop: "28px", fontSize: "clamp(34px, 6vw, 64px)", lineHeight: 1.1 }}
+          style={{ marginTop: "28px", fontSize: "clamp(26px, 2.9vw, 34px)", lineHeight: 1.1 }}
         >
           <span style={{ fontWeight: 300 }}>Jóváhagyták a pályázatát? </span>
           <span style={{ fontWeight: 700 }}>Bízza ránk a kivitelezést!</span>
@@ -78,7 +78,7 @@ export const OepHelysziniFelmeres = () => (
           style={{
             maxWidth: "760px",
             marginTop: "20px",
-            fontSize: "clamp(17px, 2.2vw, 20px)",
+            fontSize: "clamp(16px, 2vw, 18px)",
             lineHeight: 1.7,
           }}
         >
@@ -128,14 +128,14 @@ export const OepHelysziniFelmeres = () => (
             >
               A legjobb tervezés a helyszínen kezdődik
             </h2>
-            <p className="mt-4 text-[var(--ink-soft)]" style={{ fontSize: "17px", lineHeight: 1.7 }}>
+            <p className="mt-4 text-[var(--ink-soft)]" style={{ fontSize: "16px", lineHeight: 1.7 }}>
               Egy előzetes ajánlat sokszor csak általános adatokra épül, a pontos tervezéshez viszont
               ismerni kell az ingatlan valós műszaki adottságait. Az A1 Solar ingyenes helyszíni felmérése
               segít meghatározni, milyen energiatároló rendszer illeszkedik az ingatlanhoz és a meglévő
               napelemes rendszerhez. A felmérés során időben kiderülhetnek azok a műszaki tényezők is,
               amelyek később többletköltséget okozhatnának.
             </p>
-            <p className="mt-4 text-[var(--ink-soft)]" style={{ fontSize: "17px", lineHeight: 1.7 }}>
+            <p className="mt-4 text-[var(--ink-soft)]" style={{ fontSize: "16px", lineHeight: 1.7 }}>
               Így a szükséges elemek még időben bekerülhetnek a végleges műszaki tartalomba, és csökkenthető
               annak kockázata, hogy a kivitelezés során el nem számolható költségek merüljenek fel.
             </p>
@@ -162,13 +162,13 @@ export const OepHelysziniFelmeres = () => (
           >
             Az elfogadott pályázat után következnek a legfontosabb döntések
           </h2>
-          <p className="mt-6 text-[var(--ink-soft)]" style={{ fontSize: "17px", lineHeight: 1.7 }}>
+          <p className="mt-6 text-[var(--ink-soft)]" style={{ fontSize: "16px", lineHeight: 1.7 }}>
             A pályázat elfogadása után az egyik legfontosabb feladat a megfelelő műszaki tartalom
             meghatározása. Ez nemcsak a szakmailag megalapozott tervezéshez elengedhetetlen, hanem a
             pályázat további lépéseihez, mivel a napelemes rendszer engedélyeztetése csak a végleges műszaki
             tartalom alapján indítható el.
           </p>
-          <p className="mt-4 text-[var(--ink-soft)]" style={{ fontSize: "17px", lineHeight: 1.7 }}>
+          <p className="mt-4 text-[var(--ink-soft)]" style={{ fontSize: "16px", lineHeight: 1.7 }}>
             A nem megfelelő műszaki tervezés a pályázat későbbi lépéseiben is problémát okozhat, többek
             között a műszaki megfelelőség, az engedélyezés, a dokumentáció és az elszámolhatóság területén.
           </p>
@@ -229,12 +229,12 @@ export const OepHelysziniFelmeres = () => (
             >
               Miért válasszon minket?
             </h2>
-            <p className="mt-4 text-[var(--ink-soft)]" style={{ fontSize: "17px", lineHeight: 1.7 }}>
+            <p className="mt-4 text-[var(--ink-soft)]" style={{ fontSize: "16px", lineHeight: 1.7 }}>
               Az A1 Solar Kft. több mint egy évtizede foglalkozik napelemes rendszerek és energiatárolási
               megoldások tervezésével és kivitelezésével. Tapasztalatunk lehetővé teszi, hogy ügyfeleink
               számára biztonságos, hosszú távon is megbízható rendszereket kínáljunk.
             </p>
-            <p className="mt-4 text-[var(--ink-soft)]" style={{ fontSize: "17px", lineHeight: 1.7 }}>
+            <p className="mt-4 text-[var(--ink-soft)]" style={{ fontSize: "16px", lineHeight: 1.7 }}>
               Az A1 Solart az innováció, a fenntarthatóság és az ügyfélközpontú szemlélet jellemzi. Célunk,
               hogy a napelemes rendszerekhez kapcsolódó energiatárolással valódi, mérhető megtakarítást és
               nagyobb energiafüggetlenséget biztosítsunk a magyar háztartások számára.

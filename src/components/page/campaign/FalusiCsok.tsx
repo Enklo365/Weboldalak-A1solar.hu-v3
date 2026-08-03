@@ -52,14 +52,14 @@ export const FalusiCsok = () => (
         <Eyebrow>Támogatás</Eyebrow>
         <h1
           className="text-[var(--ink)]"
-          style={{ marginTop: "28px", fontSize: "clamp(34px, 6vw, 64px)", lineHeight: 1.1 }}
+          style={{ marginTop: "28px", fontSize: "clamp(26px, 2.9vw, 34px)", lineHeight: 1.1 }}
         >
           <span style={{ fontWeight: 300 }}>Falusi CSOK </span>
           <span style={{ fontWeight: 700 }}>2024</span>
         </h1>
         <p
           className="mx-auto mt-6 text-[var(--ink-soft)]"
-          style={{ maxWidth: "680px", marginTop: "20px", fontSize: "clamp(17px, 2.2vw, 20px)", lineHeight: 1.7 }}
+          style={{ maxWidth: "680px", marginTop: "20px", fontSize: "clamp(16px, 2vw, 18px)", lineHeight: 1.7 }}
         >
           Tervezz okosan, élj korszerűen! A Falusi CSOK lehetőséget nyújt, hogy otthonod a legmodernebb
           technológiákkal szereld fel. Használd ki a támogatást, és tedd otthonodat energiatakarékossá!
@@ -71,7 +71,7 @@ export const FalusiCsok = () => (
           {HERO_BENEFITS.map((benefit) => (
             <li key={benefit} className="flex items-center gap-3">
               <CheckIcon />
-              <span className="text-[var(--ink)]" style={{ fontSize: "clamp(16px, 2vw, 19px)" }}>
+              <span className="text-[var(--ink)]" style={{ fontSize: "clamp(16px, 2vw, 18px)" }}>
                 {benefit}
               </span>
             </li>
@@ -110,7 +110,7 @@ export const FalusiCsok = () => (
             >
               Tedd otthonodat energiatakarékossá!
             </h2>
-            <p className="mt-4 text-[var(--ink-soft)]" style={{ fontSize: "17px", lineHeight: 1.7 }}>
+            <p className="mt-4 text-[var(--ink-soft)]" style={{ fontSize: "16px", lineHeight: 1.7 }}>
               A Falusi CSOK lehetőséget nyújt, hogy otthonod a legmodernebb technológiákkal szereld fel.
               Segítünk kiválasztani és összehangolni a támogatással megvalósítható korszerűsítéseket — akár
               a teljes ügyintézéssel is.

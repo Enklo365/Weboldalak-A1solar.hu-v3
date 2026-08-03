@@ -152,7 +152,7 @@ const BenefitsSection = ({ data }: { data: NonNullable<ServicePageData["benefits
       className="mt-8 flex flex-col items-start gap-6 rounded-[20px] p-8 md:flex-row md:items-center md:justify-between md:gap-10"
       style={{ background: "var(--surface-3)" }}
     >
-      <p className="text-[var(--ink)]" style={{ fontWeight: 500, fontSize: "17px", lineHeight: 1.5 }}>
+      <p className="text-[var(--ink)]" style={{ fontWeight: 500, fontSize: "16px", lineHeight: 1.5 }}>
         {data.note}
       </p>
       <div className="flex-none">
@@ -294,7 +294,7 @@ const GrantSection = ({ data }: { data: NonNullable<ServicePageData["grant"]> })
 /** Customer-service card in the sidebar (bg #f6f6f6, no border). */
 const SupportWidget = () => (
   <div className="rounded-[20px] p-6" style={{ background: "var(--surface-3)" }}>
-    <h3 style={{ fontSize: "19px", fontWeight: 500, lineHeight: 1.25, color: "var(--ink)" }}>Beszéljünk a lehetőségeidről!</h3>
+    <h3 style={{ fontSize: "20px", fontWeight: 500, lineHeight: 1.25, color: "var(--ink)" }}>Beszéljünk a lehetőségeidről!</h3>
     <p className="mt-3 text-sm leading-relaxed text-[var(--ink-soft)]">
       Ügyfélszolgálatunk hétköznap {SITE.supportHours} között elérhető – fordulj hozzánk bizalommal!
     </p>

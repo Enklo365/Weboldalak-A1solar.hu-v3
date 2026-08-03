@@ -183,7 +183,7 @@ export const NapenergiaPluszProgram = () => (
         <Eyebrow>75 milliárd forint keretösszeg</Eyebrow>
         <h1
           className="text-[var(--ink)]"
-          style={{ marginTop: "28px", fontSize: "clamp(34px, 6vw, 64px)", lineHeight: 1.1 }}
+          style={{ marginTop: "28px", fontSize: "clamp(26px, 2.9vw, 34px)", lineHeight: 1.1 }}
         >
           <span style={{ fontWeight: 300 }}>Napenergia Plusz </span>
           <span style={{ fontWeight: 700 }}>Program</span>
@@ -195,7 +195,7 @@ export const NapenergiaPluszProgram = () => (
           {HERO_BENEFITS.map((benefit) => (
             <li key={benefit} className="flex items-center gap-3">
               <CheckIcon />
-              <span className="text-[var(--ink)]" style={{ fontSize: "clamp(16px, 2vw, 19px)" }}>
+              <span className="text-[var(--ink)]" style={{ fontSize: "clamp(16px, 2vw, 18px)" }}>
                 {benefit}
               </span>
             </li>
@@ -396,7 +396,7 @@ export const NapenergiaPluszProgram = () => (
                     <p className="mt-3 text-[var(--ink-muted)]" style={{ margin: "12px 0 0", fontSize: "13px" }}>
                       Bruttó önerő
                     </p>
-                    <p style={{ margin: 0, marginTop: "2px", fontSize: "19px", fontWeight: 700, color: "var(--brand)" }}>
+                    <p style={{ margin: 0, marginTop: "2px", fontSize: "20px", fontWeight: 700, color: "var(--brand)" }}>
                       {pkg.ownFund}
                     </p>
                   </div>
@@ -439,7 +439,7 @@ export const NapenergiaPluszProgram = () => (
             >
               Még nem regisztrált a Napenergia Plusz Programra? Nem késő!
             </h2>
-            <p className="mt-4 text-[var(--ink-soft)]" style={{ fontSize: "17px", lineHeight: 1.7 }}>
+            <p className="mt-4 text-[var(--ink-soft)]" style={{ fontSize: "16px", lineHeight: 1.7 }}>
               Segítünk a teljes regisztrációs és pályázati folyamatban, hogy minél előbb benyújthassa
               támogatási kérelmét! A pályázatról röviden:
             </p>
@@ -484,7 +484,7 @@ export const NapenergiaPluszProgram = () => (
           >
             Munkatársunk 24 órán belül felveszi Önnel a kapcsolatot!
           </h2>
-          <p className="mt-4 text-[var(--ink-soft)]" style={{ fontSize: "17px" }}>
+          <p className="mt-4 text-[var(--ink-soft)]" style={{ fontSize: "16px" }}>
             Vagy hívjon minket most:{" "}
             <a href={`tel:${SITE.phoneRaw}`} style={{ color: "var(--brand)", fontWeight: 700 }}>
               {SITE.phoneDisplay}

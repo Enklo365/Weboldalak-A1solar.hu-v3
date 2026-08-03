@@ -92,14 +92,14 @@ export const OtthonfelujitasiTamogatasAjanlatIII = () => (
         <Eyebrow>Otthonfelújítási támogatás 2025</Eyebrow>
         <h1
           className="text-[var(--ink)]"
-          style={{ marginTop: "28px", fontSize: "clamp(34px, 6vw, 64px)", lineHeight: 1.1 }}
+          style={{ marginTop: "28px", fontSize: "clamp(26px, 2.9vw, 34px)", lineHeight: 1.1 }}
         >
           <span style={{ fontWeight: 300 }}>Használd ki </span>
           <span style={{ fontWeight: 700 }}>a lehetőséget!</span>
         </h1>
         <p
           className="mx-auto mt-8 text-[var(--ink-soft)]"
-          style={{ maxWidth: "720px", fontSize: "clamp(16px, 2vw, 19px)", lineHeight: 1.7 }}
+          style={{ maxWidth: "720px", fontSize: "clamp(16px, 2vw, 18px)", lineHeight: 1.7 }}
         >
           Alakítsd az otthonod fogyasztását okosotthonnal arra az időszakra, amikor a napelemek termelnek
           vagy amikor a legkevesebbet fizetsz az áramért, majd mindezt kombináld a 2025-ben induló új
@@ -145,7 +145,7 @@ export const OtthonfelujitasiTamogatasAjanlatIII = () => (
           </h2>
           <p
             className="mx-auto mt-6 text-[var(--ink-soft)]"
-            style={{ maxWidth: "860px", fontSize: "17px", lineHeight: 1.7 }}
+            style={{ maxWidth: "860px", fontSize: "16px", lineHeight: 1.7 }}
           >
             A Vidéki Otthonfelújítási Támogatás 2025. január 1-jétől elérhető állami program, amelynek célja
             a kistelepüléseken élő családok lakhatási körülményeinek javítása, a vidéki lakásállomány
@@ -202,7 +202,7 @@ export const OtthonfelujitasiTamogatasAjanlatIII = () => (
             >
               4000+
             </span>
-            <p className="mt-2 text-[var(--ink-soft)]" style={{ fontSize: "17px", fontWeight: 500 }}>
+            <p className="mt-2 text-[var(--ink-soft)]" style={{ fontSize: "16px", fontWeight: 500 }}>
               Elégedett ügyfél
             </p>
           </div>
@@ -250,7 +250,7 @@ export const OtthonfelujitasiTamogatasAjanlatIII = () => (
         </h2>
         <p
           className="mx-auto mt-6 text-[var(--ink-soft)]"
-          style={{ maxWidth: "820px", fontSize: "17px", lineHeight: 1.7 }}
+          style={{ maxWidth: "820px", fontSize: "16px", lineHeight: 1.7 }}
         >
           Az otthonfelújítási támogatás lehetőséget ad arra, hogy otthona előnyére fordítsa a dinamikus
           elszámolást. Napelemes rendszerekkel és okosotthon megoldásokkal az áramfogyasztás az olcsóbb
@@ -258,7 +258,7 @@ export const OtthonfelujitasiTamogatasAjanlatIII = () => (
         </p>
         <p
           className="mx-auto mt-4 text-[var(--ink-soft)]"
-          style={{ maxWidth: "820px", fontSize: "17px", lineHeight: 1.7 }}
+          style={{ maxWidth: "820px", fontSize: "16px", lineHeight: 1.7 }}
         >
           Hallgassa meg a dinamikus elszámolásról készült podcastunkat, amelyben bemutatjuk, hogy jelenleg
           milyen információk állnak rendelkezésünkre az új elszámolási módról.
@@ -296,13 +296,13 @@ export const OtthonfelujitasiTamogatasAjanlatIII = () => (
           </h2>
           <p
             className="mx-auto mt-4 text-[var(--ink-soft)]"
-            style={{ maxWidth: "760px", fontSize: "17px", lineHeight: 1.7 }}
+            style={{ maxWidth: "760px", fontSize: "16px", lineHeight: 1.7 }}
           >
             Vezérelje otthonát akkor, amikor Önnek a legkedvezőbb az áramvételezés! Kombinálja az okosotthon
             technológiát és a napelemes rendszert az A1 Solar szakértelmével. Vegye fel velünk a kapcsolatot,
             és foglalja le az első konzultációt!
           </p>
-          <p className="mt-4 text-[var(--ink-soft)]" style={{ fontSize: "17px" }}>
+          <p className="mt-4 text-[var(--ink-soft)]" style={{ fontSize: "16px" }}>
             Vagy hívjon minket most:{" "}
             <a href={`tel:${SITE.phoneRaw}`} style={{ color: "var(--brand)", fontWeight: 700 }}>
               {SITE.phoneDisplay}

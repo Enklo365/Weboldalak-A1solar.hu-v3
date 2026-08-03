@@ -265,7 +265,7 @@ export const OtthonfelujitasiTamogatas2025 = () => (
             </h1>
             <p
               className="text-[var(--ink-soft)]"
-              style={{ marginTop: "22px", fontSize: "clamp(16px, 2vw, 19px)", lineHeight: 1.7 }}
+              style={{ marginTop: "22px", fontSize: "clamp(16px, 2vw, 18px)", lineHeight: 1.7 }}
             >
               Akár 3 millió forint vissza nem térítendő támogatás vidéki otthonok energetikai
               korszerűsítésére, beleértve napelemes rendszerek telepítését, energiatárolást,
@@ -318,7 +318,7 @@ export const OtthonfelujitasiTamogatas2025 = () => (
           </h2>
           <p
             className="mx-auto mt-5 text-[var(--ink-soft)]"
-            style={{ maxWidth: "820px", fontSize: "17px", lineHeight: 1.7 }}
+            style={{ maxWidth: "820px", fontSize: "16px", lineHeight: 1.7 }}
           >
             A Vidéki Otthonfelújítási Támogatás 2025. január 1-jétől elérhető állami program, amely a
             kistelepüléseken élő családok lakhatási körülményeinek javítását és a vidéki lakásállomány
@@ -394,7 +394,7 @@ export const OtthonfelujitasiTamogatas2025 = () => (
             >
               Mire használható a támogatás?
             </h2>
-            <p className="mt-4 text-[var(--ink-soft)]" style={{ fontSize: "17px", lineHeight: 1.7 }}>
+            <p className="mt-4 text-[var(--ink-soft)]" style={{ fontSize: "16px", lineHeight: 1.7 }}>
               A támogatás széles körben felhasználható az otthon energetikai korszerűsítésére – többek
               között az alábbi munkálatokra:
             </p>
@@ -404,7 +404,7 @@ export const OtthonfelujitasiTamogatas2025 = () => (
             {USE_CASES.map((useCase) => (
               <li key={useCase} className="flex items-center gap-3">
                 <CheckIcon />
-                <span className="text-[var(--ink)]" style={{ fontSize: "17px" }}>
+                <span className="text-[var(--ink)]" style={{ fontSize: "16px" }}>
                   {useCase}
                 </span>
               </li>
@@ -503,7 +503,7 @@ export const OtthonfelujitasiTamogatas2025 = () => (
               </span>
               <h3
                 className="text-[var(--ink)]"
-                style={{ marginTop: "20px", marginBottom: 0, fontSize: "19px", fontWeight: 700 }}
+                style={{ marginTop: "20px", marginBottom: 0, fontSize: "20px", fontWeight: 700 }}
               >
                 {step.title}
               </h3>
@@ -529,7 +529,7 @@ export const OtthonfelujitasiTamogatas2025 = () => (
           </h2>
           <p
             className="mx-auto mt-5 text-[var(--ink-soft)]"
-            style={{ maxWidth: "760px", fontSize: "17px", lineHeight: 1.7 }}
+            style={{ maxWidth: "760px", fontSize: "16px", lineHeight: 1.7 }}
           >
             Csomagajánlataink tájékoztató jellegűek, a végleges ár meghatározásához kérjen személyes
             konzultációt és ingyenes helyszíni felmérést.
@@ -673,7 +673,7 @@ export const OtthonfelujitasiTamogatas2025 = () => (
             </p>
             <a
               href="tel:+36203345849"
-              style={{ display: "inline-block", marginTop: "8px", color: "var(--brand)", fontWeight: 700, fontSize: "17px" }}
+              style={{ display: "inline-block", marginTop: "8px", color: "var(--brand)", fontWeight: 700, fontSize: "16px" }}
             >
               (+36) 20-334-5849
             </a>
@@ -693,7 +693,7 @@ export const OtthonfelujitasiTamogatas2025 = () => (
           >
             Ne hagyd ki ezt a lehetőséget!
           </h2>
-          <p className="mx-auto mt-4 text-[var(--ink-soft)]" style={{ maxWidth: "720px", fontSize: "17px" }}>
+          <p className="mx-auto mt-4 text-[var(--ink-soft)]" style={{ maxWidth: "720px", fontSize: "16px" }}>
             Vedd fel velünk a kapcsolatot, és foglald le az első konzultációt, hogy 2025-ben elsőként
             élhess a lehetőségekkel! Vagy hívj minket most:{" "}
             <a href={`tel:${SITE.phoneRaw}`} style={{ color: "var(--brand)", fontWeight: 700 }}>

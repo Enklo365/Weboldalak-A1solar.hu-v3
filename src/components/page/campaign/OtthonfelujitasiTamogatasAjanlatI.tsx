@@ -138,7 +138,7 @@ export const OtthonfelujitasiTamogatasAjanlatI = () => (
               <span style={{ fontWeight: 300 }}>Búcsúzzon el a </span>
               <span style={{ fontWeight: 700 }}>magas energiaszámláktól!</span>
             </h1>
-            <p className="mt-6 text-[var(--ink-soft)]" style={{ fontSize: "clamp(16px, 2vw, 19px)", lineHeight: 1.7 }}>
+            <p className="mt-6 text-[var(--ink-soft)]" style={{ fontSize: "clamp(16px, 2vw, 18px)", lineHeight: 1.7 }}>
               Váltson hibrid inverterre, egészítse ki meglévő napelemes rendszerét akkumulátorral és
               okosotthon technológiával, hogy biztosítsa otthona energiafüggetlenségét! Ráadásul a
               Vidéki Otthonfelújítási Támogatás igénybevételével még kedvezőbb feltételekkel valósíthatja
@@ -161,7 +161,7 @@ export const OtthonfelujitasiTamogatasAjanlatI = () => (
               <a
                 href={`tel:${SITE.phoneRaw}`}
                 className="text-[var(--ink)]"
-                style={{ fontWeight: 600, fontSize: "17px" }}
+                style={{ fontWeight: 600, fontSize: "16px" }}
               >
                 Vagy hívjon: {SITE.phoneDisplay}
               </a>
@@ -192,7 +192,7 @@ export const OtthonfelujitasiTamogatasAjanlatI = () => (
           >
             Mit tartalmaz a csomag?
           </h2>
-          <p className="mx-auto mt-4 max-w-[720px] text-[var(--ink-soft)]" style={{ fontSize: "17px", lineHeight: 1.7 }}>
+          <p className="mx-auto mt-4 max-w-[720px] text-[var(--ink-soft)]" style={{ fontSize: "16px", lineHeight: 1.7 }}>
             Segítünk, hogy meglévő napelemes rendszerét a dinamikus elszámolásra optimalizálja –
             egyszerűen, érthetően és hatékonyan.
           </p>
@@ -249,7 +249,7 @@ export const OtthonfelujitasiTamogatasAjanlatI = () => (
             >
               <h3
                 className="text-[var(--ink)]"
-                style={{ margin: 0, fontSize: "19px", fontWeight: 600, lineHeight: 1.35 }}
+                style={{ margin: 0, fontSize: "20px", fontWeight: 600, lineHeight: 1.35 }}
               >
                 {point.question}
               </h3>
@@ -270,7 +270,7 @@ export const OtthonfelujitasiTamogatasAjanlatI = () => (
           >
             Ne aggódjon, van kiút!
           </h3>
-          <p className="mx-auto mt-4 max-w-[760px] text-[var(--ink-soft)]" style={{ fontSize: "17px", lineHeight: 1.7 }}>
+          <p className="mx-auto mt-4 max-w-[760px] text-[var(--ink-soft)]" style={{ fontSize: "16px", lineHeight: 1.7 }}>
             Segítünk, hogy meglévő napelemes rendszerét a dinamikus elszámolásra optimalizálja, hibrid
             inverterrel, akkumulátorral és okosotthon technológiával. A Vidéki Otthonfelújítási Támogatás
             igénybevételével még kedvezőbb feltételekkel valósíthatja meg fejlesztéseit.
@@ -311,7 +311,7 @@ export const OtthonfelujitasiTamogatasAjanlatI = () => (
           >
             Összeszedtünk mindent, amit a támogatásról tudni érdemes
           </h2>
-          <p className="mx-auto mt-5 max-w-[820px] text-[var(--ink-soft)]" style={{ fontSize: "17px", lineHeight: 1.7 }}>
+          <p className="mx-auto mt-5 max-w-[820px] text-[var(--ink-soft)]" style={{ fontSize: "16px", lineHeight: 1.7 }}>
             A Vidéki Otthonfelújítási Támogatás 2025. január 1-jétől elérhető állami program, amelynek
             célja a kistelepüléseken élő családok lakhatási körülményeinek javítása és a vidéki
             lakásállomány megújulása. A támogatás vissza nem térítendő lakáscélú állami támogatásként és
@@ -405,12 +405,12 @@ export const OtthonfelujitasiTamogatasAjanlatI = () => (
               <span style={{ fontWeight: 300 }}>Miért válassza </span>
               <span style={{ fontWeight: 700 }}>az A1 Solart?</span>
             </h2>
-            <p className="mt-5 text-[var(--ink-soft)]" style={{ fontSize: "17px", lineHeight: 1.7 }}>
+            <p className="mt-5 text-[var(--ink-soft)]" style={{ fontSize: "16px", lineHeight: 1.7 }}>
               Cégünk teljes körű támogatást nyújt a pályázati ügyintézésben, a szükséges dokumentumok
               előkészítésétől azok benyújtásáig. Szakértelmünk révén hatékonyan ötvözzük a napelemes
               rendszereket az intelligens eszközökkel, hogy energiafogyasztását optimalizáljuk.
             </p>
-            <p className="mt-4 text-[var(--ink-soft)]" style={{ fontSize: "17px", lineHeight: 1.7 }}>
+            <p className="mt-4 text-[var(--ink-soft)]" style={{ fontSize: "16px", lineHeight: 1.7 }}>
               Több mint 10 éves tapasztalatunkkal és több mint 4000 telepített rendszerrel garantáljuk a
               megbízhatóságot, a szakértelmet és a biztonságot – az első konzultációtól egészen a
               fenntartásig.
@@ -456,7 +456,7 @@ export const OtthonfelujitasiTamogatasAjanlatI = () => (
           >
             Dinamikus elszámolás – napszakokhoz igazodva
           </h2>
-          <p className="mx-auto mt-5 max-w-[820px] text-[var(--ink-soft)]" style={{ fontSize: "17px", lineHeight: 1.7 }}>
+          <p className="mx-auto mt-5 max-w-[820px] text-[var(--ink-soft)]" style={{ fontSize: "16px", lineHeight: 1.7 }}>
             Az otthonfelújítási támogatás lehetőséget ad arra, hogy otthona előnyére fordítsa a dinamikus
             elszámolást. Napelemes rendszerekkel és okosotthon megoldásokkal az áramfogyasztás az olcsóbb
             időszakokra időzíthető, ezzel csökkentve a rezsiköltségeket és növelve az energiahatékonyságot.
@@ -476,11 +476,11 @@ export const OtthonfelujitasiTamogatasAjanlatI = () => (
           >
             Ne hagyja ki ezt a lehetőséget!
           </h2>
-          <p className="mx-auto mt-4 max-w-[720px] text-[var(--ink-soft)]" style={{ fontSize: "17px", lineHeight: 1.7 }}>
+          <p className="mx-auto mt-4 max-w-[720px] text-[var(--ink-soft)]" style={{ fontSize: "16px", lineHeight: 1.7 }}>
             Kombinálja az energiatárolást, az okosotthon technológiát és a napelemes rendszert az A1 Solar
             szakértelmével. Vegye fel velünk a kapcsolatot, és kérjen ingyenes helyszíni felmérést!
           </p>
-          <p className="mt-4 text-[var(--ink-soft)]" style={{ fontSize: "17px" }}>
+          <p className="mt-4 text-[var(--ink-soft)]" style={{ fontSize: "16px" }}>
             Vagy hívjon most:{" "}
             <a href={`tel:${SITE.phoneRaw}`} style={{ color: "var(--brand)", fontWeight: 700 }}>
               {SITE.phoneDisplay}

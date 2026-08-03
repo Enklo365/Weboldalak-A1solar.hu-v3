@@ -8,7 +8,7 @@ import { SITE } from "@/lib/site";
  */
 export const SupportWidget = () => (
   <div className="rounded-[20px] p-6" style={{ background: "var(--surface-3)" }}>
-    <h3 style={{ fontSize: "19px", fontWeight: 500, lineHeight: 1.25, color: "var(--ink)" }}>Beszéljünk a lehetőségeidről!</h3>
+    <h3 style={{ fontSize: "20px", fontWeight: 500, lineHeight: 1.25, color: "var(--ink)" }}>Beszéljünk a lehetőségeidről!</h3>
     <p className="mt-3 text-sm leading-relaxed text-[var(--ink-soft)]">
       Ügyfélszolgálatunk hétköznap {SITE.supportHours} között elérhető – fordulj hozzánk bizalommal!
     </p>

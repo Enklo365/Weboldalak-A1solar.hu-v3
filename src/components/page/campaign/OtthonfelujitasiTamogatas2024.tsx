@@ -66,14 +66,14 @@ export const OtthonfelujitasiTamogatas2024 = () => (
         <Eyebrow>Akár 3,5 milliós támogatás hőszivattyús rendszerre!</Eyebrow>
         <h1
           className="text-[var(--ink)]"
-          style={{ marginTop: "28px", fontSize: "clamp(34px, 6vw, 64px)", lineHeight: 1.1 }}
+          style={{ marginTop: "28px", fontSize: "clamp(26px, 2.9vw, 34px)", lineHeight: 1.1 }}
         >
           <span style={{ fontWeight: 300 }}>Otthonfelújítási </span>
           <span style={{ fontWeight: 700 }}>Program 2024</span>
         </h1>
         <p
           className="mx-auto text-[var(--ink-soft)]"
-          style={{ marginTop: "24px", maxWidth: "760px", fontSize: "clamp(16px, 2vw, 19px)", lineHeight: 1.7 }}
+          style={{ marginTop: "24px", maxWidth: "760px", fontSize: "clamp(16px, 2vw, 18px)", lineHeight: 1.7 }}
         >
           A támogatás célja magánberuházások ösztönzése és a magyarországi lakóépületek
           energiahatékonyságának javítása kombinált kölcsön és vissza nem térítendő támogatással.
@@ -177,7 +177,7 @@ export const OtthonfelujitasiTamogatas2024 = () => (
           <Eyebrow>Támogatás mértéke</Eyebrow>
           <p
             className="mx-auto text-[var(--ink-soft)]"
-            style={{ marginTop: "22px", maxWidth: "820px", fontSize: "clamp(16px, 2vw, 19px)", lineHeight: 1.7 }}
+            style={{ marginTop: "22px", maxWidth: "820px", fontSize: "clamp(16px, 2vw, 18px)", lineHeight: 1.7 }}
           >
             A vissza nem térítendő támogatás aránya a korszerűsítendő ingatlan fekvése szerinti járás
             átlagjövedelmének az országos átlagjövedelemhez viszonyításától függően, sávosan kerül
@@ -231,7 +231,7 @@ export const OtthonfelujitasiTamogatas2024 = () => (
           >
             Fűtésre, hűtésre és használati melegvíz előállítására is!
           </h2>
-          <p className="mt-6 text-[var(--ink-soft)]" style={{ fontSize: "17px", lineHeight: 1.7 }}>
+          <p className="mt-6 text-[var(--ink-soft)]" style={{ fontSize: "16px", lineHeight: 1.7 }}>
             A hőszivattyú hatékony és energiatakarékos megoldást kínál lakóházak, társasházak,
             valamint kis- és közepes méretű irodaházak és középületek fűtésére, hűtésére és
             használati meleg víz előállítására. Ezek az eszközök magas COP értékkel rendelkeznek,
@@ -239,7 +239,7 @@ export const OtthonfelujitasiTamogatas2024 = () => (
             alakítását, ezáltal jelentős költségmegtakarítást és csökkentett szén-dioxid-kibocsátást
             eredményezve.
           </p>
-          <p className="mt-5 text-[var(--ink-soft)]" style={{ fontSize: "17px", lineHeight: 1.7 }}>
+          <p className="mt-5 text-[var(--ink-soft)]" style={{ fontSize: "16px", lineHeight: 1.7 }}>
             A hőszivattyúk a fosszilis energiahordozók helyett a környezeti hőforrásokat – mint
             például a levegőt, a talajt vagy a vizet – hasznosítják, így nemcsak költséghatékonyak,
             hanem a fenntarthatósági célokkal is összhangban állnak. Rugalmas konfigurációs
@@ -264,14 +264,14 @@ export const OtthonfelujitasiTamogatas2024 = () => (
           >
             Az energiahatékonyság kulcsa!
           </h2>
-          <p className="mt-6 text-[var(--ink-soft)]" style={{ fontSize: "17px", lineHeight: 1.7 }}>
+          <p className="mt-6 text-[var(--ink-soft)]" style={{ fontSize: "16px", lineHeight: 1.7 }}>
             Az intelligens vezérlés az okosotthon technológián keresztül valósul meg, ahol a ház
             összes rendszerét — mint a fűtés, hűtés, világítás, biztonsági rendszerek és háztartási
             gépek — egy központi rendszer integrálja és automatizálja. Ez a technológia lehetővé
             teszi a lakók számára, hogy távolról, okostelefon vagy más intelligens eszköz
             segítségével irányítsák és monitorozzák otthonuk funkcióit.
           </p>
-          <p className="mt-5 text-[var(--ink-soft)]" style={{ fontSize: "17px", lineHeight: 1.7 }}>
+          <p className="mt-5 text-[var(--ink-soft)]" style={{ fontSize: "16px", lineHeight: 1.7 }}>
             Az intelligens vezérlés nemcsak hogy növeli az otthoni kényelmet és biztonságot, hanem
             jelentős energiamegtakarítást is eredményezhet azáltal, hogy optimalizálja az
             energiafelhasználást, csökkenti a felesleges pazarlást és adaptálódik a lakók napi

@@ -118,14 +118,14 @@ export const EnergetikaiPalyazatok2024 = () => (
         <Eyebrow>Pályázatok</Eyebrow>
         <h1
           className="text-[var(--ink)]"
-          style={{ marginTop: "28px", fontSize: "clamp(34px, 6vw, 64px)", lineHeight: 1.1 }}
+          style={{ marginTop: "28px", fontSize: "clamp(26px, 2.9vw, 34px)", lineHeight: 1.1 }}
         >
           <span style={{ fontWeight: 300 }}>Induló energetikai pályázatok </span>
           <span style={{ fontWeight: 700 }}>vállalkozásoknak</span>
         </h1>
         <p
           className="mx-auto mt-6 text-[var(--ink-soft)]"
-          style={{ maxWidth: "760px", marginTop: "24px", fontSize: "clamp(16px, 2vw, 19px)", lineHeight: 1.7 }}
+          style={{ maxWidth: "760px", marginTop: "24px", fontSize: "clamp(16px, 2vw, 18px)", lineHeight: 1.7 }}
         >
           A következő időszakban több pályázat is kiírásra kerül vállalkozások számára, többek között
           energetikai fejlesztésre is! Készüljön fel időben, és biztosítson támogatást vállalkozása
@@ -261,7 +261,7 @@ export const EnergetikaiPalyazatok2024 = () => (
             >
               Segítünk a pályázatírásban az első lépéstől a kivitelezésig
             </h2>
-            <p className="mt-4 text-[var(--ink-soft)]" style={{ fontSize: "17px", lineHeight: 1.7 }}>
+            <p className="mt-4 text-[var(--ink-soft)]" style={{ fontSize: "16px", lineHeight: 1.7 }}>
               Cégünk egykapus rendszere által a teljes folyamatot egy kézben tartjuk: a pályázat
               megírásától és beadásától a napelemes rendszer tervezésén át egészen a kivitelezésig.
               Készüljön fel időben, és biztosítson támogatást vállalkozása számára!
@@ -293,7 +293,7 @@ export const EnergetikaiPalyazatok2024 = () => (
           >
             Munkatársunk 24 órán belül felveszi Önnel a kapcsolatot!
           </h2>
-          <p className="mt-4 text-[var(--ink-soft)]" style={{ fontSize: "17px" }}>
+          <p className="mt-4 text-[var(--ink-soft)]" style={{ fontSize: "16px" }}>
             Vagy hívjon minket most:{" "}
             <a href={`tel:${SITE.phoneRaw}`} style={{ color: "var(--brand)", fontWeight: 700 }}>
               {SITE.phoneDisplay}

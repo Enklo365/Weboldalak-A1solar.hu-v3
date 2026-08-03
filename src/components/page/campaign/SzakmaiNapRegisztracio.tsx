@@ -101,14 +101,14 @@ export const SzakmaiNapRegisztracio = () => (
         <Eyebrow>Szakmai nap</Eyebrow>
         <h1
           className="text-[var(--ink)]"
-          style={{ marginTop: "28px", fontSize: "clamp(34px, 6vw, 64px)", lineHeight: 1.1 }}
+          style={{ marginTop: "28px", fontSize: "clamp(26px, 2.9vw, 34px)", lineHeight: 1.1 }}
         >
           <span style={{ fontWeight: 300 }}>II. A1 Solar </span>
           <span style={{ fontWeight: 700 }}>szakmai nap</span>
         </h1>
         <p
           className="mx-auto mt-6 text-[var(--ink-soft)]"
-          style={{ maxWidth: "680px", marginTop: "24px", fontSize: "clamp(16px, 2vw, 19px)", lineHeight: 1.7 }}
+          style={{ maxWidth: "680px", marginTop: "24px", fontSize: "clamp(16px, 2vw, 18px)", lineHeight: 1.7 }}
         >
           A Deye és a Powerack támogatásával! Csatlakozz az iparág szakértőihez egy napra,
           ahol a tanulás mellett hálózatépítésről és tapasztalatcseréről is szó lesz.
@@ -172,7 +172,7 @@ export const SzakmaiNapRegisztracio = () => (
           </h2>
           <p
             className="mx-auto mt-4 text-[var(--ink-soft)]"
-            style={{ maxWidth: "760px", fontSize: "17px", lineHeight: 1.7 }}
+            style={{ maxWidth: "760px", fontSize: "16px", lineHeight: 1.7 }}
           >
             Vendégeink a Ningbo Deye Inverter Technology Co., Ltd. munkatársai Kínából, akik
             gyakorlati bemutatóval készülnek invertereik és akkumulátoraik telepítése kapcsán,
@@ -243,7 +243,7 @@ export const SzakmaiNapRegisztracio = () => (
             >
               <h3
                 className="text-[var(--ink)]"
-                style={{ margin: 0, fontSize: "19px", fontWeight: 700, lineHeight: 1.3 }}
+                style={{ margin: 0, fontSize: "20px", fontWeight: 700, lineHeight: 1.3 }}
               >
                 {speaker.name}
               </h3>
@@ -271,7 +271,7 @@ export const SzakmaiNapRegisztracio = () => (
             >
               Ne hagyd ki az év szakmai eseményét!
             </h2>
-            <p className="mt-4 text-[var(--ink-soft)]" style={{ fontSize: "17px", lineHeight: 1.7 }}>
+            <p className="mt-4 text-[var(--ink-soft)]" style={{ fontSize: "16px", lineHeight: 1.7 }}>
               A szakmai nap nemcsak a tanulásról, hanem hálózatépítésről és tapasztalatcseréről is
               szól. Íme, amit egy nap alatt megkapsz:
             </p>
@@ -304,7 +304,7 @@ export const SzakmaiNapRegisztracio = () => (
               <span style={{ fontWeight: 300 }}>Hivatalos DEYE ESS </span>
               <span style={{ fontWeight: 700 }}>disztribútorok lettünk!</span>
             </h2>
-            <p className="mt-4 text-[var(--ink-soft)]" style={{ fontSize: "17px", lineHeight: 1.7 }}>
+            <p className="mt-4 text-[var(--ink-soft)]" style={{ fontSize: "16px", lineHeight: 1.7 }}>
               A Deye ESS termékek hivatalos disztribúciós partnerei lettünk Magyarországon és
               Ausztriában. A Ningbo Deye Inverter Technology Co., Ltd. a napenergia-ipar egyik
               innovatív vezetője, amely magas minőségű invertereket és energiatároló rendszereket

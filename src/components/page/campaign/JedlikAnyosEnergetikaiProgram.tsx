@@ -170,7 +170,7 @@ export const JedlikAnyosEnergetikaiProgram = () => {
               >
                 Akár 1 milliárd forint támogatás cégednek
               </h2>
-              <p className="mt-4 text-[var(--ink-soft)]" style={{ fontSize: "17px", lineHeight: 1.7 }}>
+              <p className="mt-4 text-[var(--ink-soft)]" style={{ fontSize: "16px", lineHeight: 1.7 }}>
                 Összefoglaltuk a legfontosabb tudnivalókat: kik pályázhatnak, mire igényelhető forrás,
                 mekkora összegre, és hogyan segít az A1 Solar a teljes megvalósításban – az
                 előminősítéstől a kivitelezésig.
@@ -342,7 +342,7 @@ export const JedlikAnyosEnergetikaiProgram = () => {
           >
             5 ok, amiért megéri energiatárolót telepíteni
           </h2>
-          <p className="mt-4 text-[var(--ink-soft)]" style={{ maxWidth: "680px", fontSize: "17px", lineHeight: 1.6 }}>
+          <p className="mt-4 text-[var(--ink-soft)]" style={{ maxWidth: "680px", fontSize: "16px", lineHeight: 1.6 }}>
             Az energiatároló rendszerek a napelemes beruházások hatékonyságát és megtérülését
             jelentősen növelik.
           </p>
@@ -359,7 +359,7 @@ export const JedlikAnyosEnergetikaiProgram = () => {
                 </span>
                 <h3
                   className="text-[var(--ink)]"
-                  style={{ margin: 0, marginTop: "14px", fontSize: "19px", fontWeight: 600, lineHeight: 1.3 }}
+                  style={{ margin: 0, marginTop: "14px", fontSize: "20px", fontWeight: 600, lineHeight: 1.3 }}
                 >
                   {reason.title}
                 </h3>
@@ -382,7 +382,7 @@ export const JedlikAnyosEnergetikaiProgram = () => {
           >
             Hogyan pályázhatsz?
           </h2>
-          <p className="mt-4 text-[var(--ink-soft)]" style={{ maxWidth: "680px", fontSize: "17px", lineHeight: 1.6 }}>
+          <p className="mt-4 text-[var(--ink-soft)]" style={{ maxWidth: "680px", fontSize: "16px", lineHeight: 1.6 }}>
             Nem vagy egyedül a folyamatban – mi végigkísérünk! Így zajlik a pályázás menete:
           </p>
 
@@ -431,12 +431,12 @@ export const JedlikAnyosEnergetikaiProgram = () => {
               Miért válassz minket?
             </h2>
             <div className="mt-8 grid grid-cols-1 gap-5">
-              <p className="text-[var(--ink-soft)]" style={{ margin: 0, fontSize: "17px", lineHeight: 1.7 }}>
+              <p className="text-[var(--ink-soft)]" style={{ margin: 0, fontSize: "16px", lineHeight: 1.7 }}>
                 Cégünk teljes körű támogatást nyújt a pályázati ügyintézésben, beleértve a szükséges
                 dokumentumok előkészítését és benyújtását. Szakértelmünk révén hatékonyan ötvözzük a
                 napelemes rendszereket az intelligens eszközökkel, hogy energiafogyasztását optimalizáljuk.
               </p>
-              <p className="text-[var(--ink-soft)]" style={{ margin: 0, fontSize: "17px", lineHeight: 1.7 }}>
+              <p className="text-[var(--ink-soft)]" style={{ margin: 0, fontSize: "16px", lineHeight: 1.7 }}>
                 Több mint 10 éves tapasztalatunkkal és több mint 5000 telepített rendszerrel garantáljuk
                 a megbízhatóságot, a szakértelmet és a biztonságot. Átfogó szolgáltatásaink az első
                 konzultációtól egészen a fenntartásig tartanak.
@@ -456,13 +456,13 @@ export const JedlikAnyosEnergetikaiProgram = () => {
           >
             Ne hagyd ki ezt a lehetőséget!
           </h2>
-          <p className="mt-4 text-[var(--ink-soft)]" style={{ maxWidth: "760px", fontSize: "17px", lineHeight: 1.7 }}>
+          <p className="mt-4 text-[var(--ink-soft)]" style={{ maxWidth: "760px", fontSize: "16px", lineHeight: 1.7 }}>
             A Jedlik Ányos Energetikai Program segítségével vállalkozásod akár 50%-os vissza nem
             térítendő támogatást kaphat energiatároló és megújuló energiát hasznosító rendszerek
             telepítésére. Töltsd ki az alábbi űrlapot és foglald le az első konzultációt, hogy az
             elsők között élhess a lehetőségekkel!
           </p>
-          <p className="mt-4 text-[var(--ink-soft)]" style={{ fontSize: "17px" }}>
+          <p className="mt-4 text-[var(--ink-soft)]" style={{ fontSize: "16px" }}>
             Vagy hívjon minket most:{" "}
             <a href={`tel:${SITE.phoneRaw}`} style={{ color: "var(--brand)", fontWeight: 700 }}>
               {SITE.phoneDisplay}
