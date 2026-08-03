@@ -136,7 +136,10 @@ export const NotchHero = ({ eyebrow, titleLight, titleStrong, image, imageAlt, i
           >
             {eyebrow}
           </span>
-          <h1
+          {/* Mobile heading is a <p> (not <h1>) so the page keeps ONE semantic h1
+              in the HTML — the desktop <h1> above. */}
+          <p
+            aria-hidden="true"
             className={compact ? "notch-title-clamp--mobile" : undefined}
             style={
               compact
@@ -146,7 +149,7 @@ export const NotchHero = ({ eyebrow, titleLight, titleStrong, image, imageAlt, i
           >
             {titleLight ? <>{titleLight} </> : null}
             <strong style={{ fontWeight: 700 }}>{titleStrong}</strong>
-          </h1>
+          </p>
           {ctaLabel && ctaHref ? (
             <div className="mt-5">
               <Link

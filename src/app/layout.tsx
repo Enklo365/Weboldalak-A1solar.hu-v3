@@ -32,12 +32,26 @@ export const metadata: Metadata = {
   icons: { icon: "/favicon.ico" },
 };
 
+const organizationLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: SITE.legalName,
+  alternateName: SITE.name,
+  url: SITE.url,
+  logo: `${SITE.url}/wp-content/uploads/2024/11/A1solar-logo.svg`,
+  email: SITE.email,
+  telephone: SITE.phoneDisplay,
+  address: { "@type": "PostalAddress", streetAddress: SITE.address, addressCountry: "HU" },
+  sameAs: Object.values(SITE.social ?? {}).filter(Boolean),
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="hu" className={inter.variable}>
       <body>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationLd) }} />
         <Header />
         <main>{children}</main>
         <Footer />

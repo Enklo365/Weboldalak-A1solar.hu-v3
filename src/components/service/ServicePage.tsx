@@ -114,9 +114,10 @@ const ServiceHero = ({ data }: { data: ServicePageData["hero"] }) => (
           >
             {data.eyebrow}
           </span>
-          <h1 style={{ marginTop: "20px", color: "#fff", fontSize: "clamp(22px, 6.2vw, 26px)", fontWeight: 300, lineHeight: 1.2 }}>
+          {/* Mobile heading as <p> so the page keeps ONE semantic h1 (the desktop one). */}
+          <p aria-hidden="true" style={{ marginTop: "20px", color: "#fff", fontSize: "clamp(22px, 6.2vw, 26px)", fontWeight: 300, lineHeight: 1.2 }}>
             {data.titleLight} <strong style={{ fontWeight: 700 }}>{data.titleStrong}</strong>
-          </h1>
+          </p>
           <div className="mt-5">
             <PillCta href={data.ctaHref}>{data.ctaLabel}</PillCta>
           </div>

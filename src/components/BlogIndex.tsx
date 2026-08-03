@@ -20,12 +20,12 @@ const ALL = "Összes";
  * All are ~16:9 so object-cover frames them identically across cards.
  */
 const FALLBACK_COVERS = [
-  "/wp-content/uploads/2022/08/Esztergom-napelem-scaled.jpg",
-  "/wp-content/uploads/2022/08/Paty-napelem-scaled.jpg",
-  "/wp-content/uploads/2022/08/Pecel-napelem-scaled.jpg",
-  "/wp-content/uploads/2022/08/Rad-napelem-scaled.jpg",
-  "/wp-content/uploads/2022/08/szuha-napelem-scaled.jpg",
-  "/wp-content/uploads/2022/08/budapest-3-napelem.jpg",
+  "/wp-content/uploads/2022/08/Esztergom-napelem-scaled-blog1024.jpg",
+  "/wp-content/uploads/2022/08/Paty-napelem-scaled-blog1024.jpg",
+  "/wp-content/uploads/2022/08/Pecel-napelem-scaled-blog1024.jpg",
+  "/wp-content/uploads/2022/08/Rad-napelem-scaled-blog1024.jpg",
+  "/wp-content/uploads/2022/08/szuha-napelem-scaled-blog1024.jpg",
+  "/wp-content/uploads/2022/08/budapest-3-napelem-blog1024.jpg",
 ];
 
 /** Stable cover for a post: its own first image, else a slug-hashed fallback. */

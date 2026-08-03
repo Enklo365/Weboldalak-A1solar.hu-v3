@@ -40,22 +40,64 @@ export function generateStaticParams(): Params[] {
   return [...slugs].map((slug) => ({ slug }));
 }
 
+/** Hand-tuned SEO title + description for the key conversion pages. */
+const SEO_OVERRIDES: Record<string, { title: string; description: string }> = {
+  "lakossagi-napelem": {
+    title: "Lakossági napelem és energiatároló – teljes ügyintézéssel | A1 Solar",
+    description:
+      "Lakossági napelemes rendszerek tervezéstől a kivitelezésig: engedélyeztetés, pályázati ügyintézés, saját kivitelezés és szervizháttér egy kézben.",
+  },
+  "vallalati-napelem": {
+    title: "Vállalati napelem és energiatárolás | A1 Solar",
+    description:
+      "Vállalati napelemes és energiatárolási rendszerek fogyasztásra szabott tervezéssel, megtérülési vizsgálattal, saját kivitelezéssel és teljes körű garanciával.",
+  },
+  "lakossagi-napelem-tisztitas-es-karbantartas": {
+    title: "Lakossági napelem-tisztítás és karbantartás | A1 Solar",
+    description:
+      "Professzionális napelem-tisztítás és teljes körű állapotfelmérés: ioncserélt vizes tisztítás, villamos ellenőrzés, inverter- és hőkamerás vizsgálat.",
+  },
+  "lakossagi-energiatarolo-tamogatas": {
+    title: "Otthoni Energiatároló Program – kivitelezés és csomagok | A1 Solar",
+    description:
+      "Jóváhagyták OETP-pályázatát? Ingyenes helyszíni felmérés, végleges műszaki tartalom, engedélyeztetés és energiatároló-kivitelezés egy kézben.",
+  },
+};
+
 export async function generateMetadata({
   params,
 }: {
   params: Promise<Params>;
 }): Promise<Metadata> {
   const { slug } = await params;
+
+  // Confirmation ("sikeres…") pages must not be indexed.
+  const success = SUCCESS_PAGES[slug];
+  if (success) {
+    return {
+      title: `${success.title} | A1 Solar`,
+      robots: { index: false, follow: true },
+      alternates: { canonical: `/${slug}` },
+    };
+  }
+
+  const override = SEO_OVERRIDES[slug];
   const entry = getPage(slug) ?? getPost(slug);
-  if (!entry) return {};
-  const description = entry.excerpt.trim()
-    ? plainExcerpt(entry.excerpt)
-    : plainExcerpt(entry.content);
+  if (!entry && !override) return {};
+
+  const rawDescription = entry
+    ? entry.excerpt.trim()
+      ? plainExcerpt(entry.excerpt)
+      : plainExcerpt(entry.content)
+    : "";
+  const title = override?.title ?? entry?.title ?? "A1 Solar";
+  const description = override?.description ?? rawDescription;
+
   return {
-    title: entry.title,
+    title,
     description,
     alternates: { canonical: `/${slug}` },
-    openGraph: { title: entry.title, description },
+    openGraph: { title, description },
   };
 }
 
@@ -151,8 +193,26 @@ export default async function DynamicPage({
     },
   ];
 
+  const articleLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.title,
+    datePublished: post.date,
+    dateModified: post.date,
+    image: cover.startsWith("http") ? cover : `${SITE.url}${cover}`,
+    author: { "@type": "Organization", name: SITE.legalName },
+    publisher: {
+      "@type": "Organization",
+      name: SITE.legalName,
+      logo: { "@type": "ImageObject", url: `${SITE.url}/wp-content/uploads/2024/11/A1solar-logo.svg` },
+    },
+    mainEntityOfPage: shareUrl,
+    articleSection: category,
+  };
+
   return (
     <article className="pb-6 md:pb-8">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleLd) }} />
       {/* Content-less notch banner (same shape as other subpages); the article
           badge + title live in the main column below (no divider). The lower-right
           notch holds the meta, reading time and share icons. */}

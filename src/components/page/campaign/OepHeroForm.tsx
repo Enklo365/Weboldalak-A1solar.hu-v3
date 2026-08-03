@@ -64,7 +64,7 @@ export const OepHeroForm = () => {
       <div className="contact-card contact-card--bare contact-success">
         <div className="contact-success__icon">✓</div>
         <h3>Köszönjük megkeresését!</h3>
-        <p>Munkatársunk 48 órán belül felveszi Önnel a kapcsolatot.</p>
+        <p>Munkatársunk 24 órán belül felveszi Önnel a kapcsolatot.</p>
       </div>
     );
   }
@@ -79,7 +79,7 @@ export const OepHeroForm = () => {
       </span>
       <h3>Töltse ki az alábbi űrlapot!</h3>
       <p className="contact-intro">
-        Munkatársunk 48 órán belül felveszi Önnel a kapcsolatot a megadott elérhetőségei egyikén.
+        Munkatársunk 24 órán belül felveszi Önnel a kapcsolatot a megadott elérhetőségei egyikén.
       </p>
 
       {/* Honeypot — hidden from users; bots that fill it are silently dropped. */}

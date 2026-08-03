@@ -264,7 +264,7 @@ export const OepHelysziniFelmeres = () => (
             className="text-[var(--ink)]"
             style={{ marginTop: "22px", fontSize: "30px", fontWeight: 500, lineHeight: 1.2 }}
           >
-            Munkatársunk 48 órán belül felveszi Önnel a kapcsolatot
+            Munkatársunk 24 órán belül felveszi Önnel a kapcsolatot
           </h2>
         </div>
 

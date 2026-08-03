@@ -53,7 +53,7 @@ export const Kapcsolat = () => (
       titleStrong="a kapcsolatot!"
       image="/wp-content/uploads/2023/11/210363746_m_normal_none.jpg"
       imageAlt="A1 Solar ügyfélszolgálat"
-      intro="Írj nekünk egy üzenetet az űrlapunkon, és kollégánk maximum 3 munkanapon belül felveszi veled a kapcsolatot."
+      intro="Írj nekünk egy üzenetet az űrlapunkon, és kollégánk 24 órán belül felveszi veled a kapcsolatot."
     />
 
     <HeroDivider />
@@ -69,7 +69,7 @@ export const Kapcsolat = () => (
           bare
           formName="Kapcsolati űrlap"
           heading="Írj nekünk üzenetet!"
-          intro="Kollégánk maximum 3 munkanapon belül felveszi veled a kapcsolatot."
+          intro="Kollégánk 24 órán belül felveszi veled a kapcsolatot."
           submitLabel="Üzenet küldése"
         />
       </div>

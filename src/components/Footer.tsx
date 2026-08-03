@@ -10,7 +10,7 @@ import {
 
 const LOGO = "/wp-content/uploads/2024/11/A1solar-logo.svg";
 const BADGES = "/wp-content/uploads/2025/07/a1solar_badgek-1024x127.png";
-const YEAR = 2026;
+const YEAR = new Date().getFullYear();
 
 /** Footer link that opens external targets in a new tab. */
 const FooterLink = ({ href, label, external }: NavChild) =>
