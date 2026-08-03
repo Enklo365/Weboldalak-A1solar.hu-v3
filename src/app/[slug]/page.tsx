@@ -62,6 +62,11 @@ const SEO_OVERRIDES: Record<string, { title: string; description: string }> = {
     description:
       "Jóváhagyták OETP-pályázatát? Ingyenes helyszíni felmérés, végleges műszaki tartalom, engedélyeztetés és energiatároló-kivitelezés egy kézben.",
   },
+  "hibrid-napelem-backup": {
+    title: "Hibrid napelemes rendszer backuppal | A1 Solar",
+    description:
+      "Hibrid napelemes rendszer energiatárolóval és áramszüneti backup funkcióval. Kérj személyre szabott ajánlatot az A1 Solartól, akár 6 havi kamatmentes részletfizetéssel.",
+  },
 };
 
 export async function generateMetadata({

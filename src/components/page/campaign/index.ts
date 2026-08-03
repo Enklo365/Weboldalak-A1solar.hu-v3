@@ -2,6 +2,7 @@ import type { ComponentType } from "react";
 import { EnergetikaiPalyazatok2024 } from "@/components/page/campaign/EnergetikaiPalyazatok2024";
 import { FalusiCsok } from "@/components/page/campaign/FalusiCsok";
 import { Ft1000 } from "@/components/page/campaign/Ft1000";
+import { HibridNapelemBackup } from "@/components/page/campaign/HibridNapelemBackup";
 import { JedlikAnyosEnergetikaiProgram } from "@/components/page/campaign/JedlikAnyosEnergetikaiProgram";
 import { JedlikAnyosFinanszirozasiSegitseg } from "@/components/page/campaign/JedlikAnyosFinanszirozasiSegitseg";
 import { Kepzeseink } from "@/components/page/campaign/Kepzeseink";
@@ -36,4 +37,5 @@ export const CAMPAIGN_PAGES: Record<string, ComponentType> = {
   "oep-nyeremenyjatek": OepNyeremenyjatek,
   "oep-helyszini-felmeres": OepHelysziniFelmeres,
   "szakmai-nap-regisztracio": SzakmaiNapRegisztracio,
+  "hibrid-napelem-backup": HibridNapelemBackup,
 };

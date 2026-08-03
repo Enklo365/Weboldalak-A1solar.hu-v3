@@ -1,9 +1,13 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import {
   FOOTER_COMMERCIAL,
   FOOTER_LEGAL,
   FOOTER_NAV,
   FOOTER_RESIDENTIAL,
+  LANDING_PATHS,
   type NavChild,
   SITE,
 } from "@/lib/site";
@@ -48,7 +52,57 @@ const Instagram = () => (
   </svg>
 );
 
-export const Footer = () => (
+const SocialRow = () => (
+  <div className="footer-social">
+    <a href={SITE.social.facebook} aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+      <Facebook />
+    </a>
+    <a href={SITE.social.youtube} aria-label="YouTube" target="_blank" rel="noopener noreferrer">
+      <YouTube />
+    </a>
+    <a href={SITE.social.linkedin} aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+      <LinkedIn />
+    </a>
+    <a href={SITE.social.instagram} aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+      <Instagram />
+    </a>
+  </div>
+);
+
+/** Minimal footer for landing pages — only legal + social links (no navigation). */
+const LandingFooter = () => (
+  <footer className="site-footer">
+    <div className="container">
+      <div className="landing-footer">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img className="footer-logo-img" src={LOGO} alt="A1 Solar" style={{ marginBottom: 0 }} />
+        <div className="footer-legal">
+          {FOOTER_LEGAL.map((l) => (
+            <Link key={l.href + l.label} href={l.href}>
+              {l.label}
+            </Link>
+          ))}
+        </div>
+        <SocialRow />
+      </div>
+      <div className="footer-copyright-row" style={{ marginTop: "20px" }}>
+        <span>
+          © {YEAR} {SITE.legalName} – Minden jog fenntartva.
+        </span>
+        <a href="https://webbystep.hu" target="_blank" rel="noopener noreferrer">
+          Built by Webbystep
+        </a>
+      </div>
+      <p className="footer-disclaimer">{DISCLAIMER}</p>
+    </div>
+  </footer>
+);
+
+export const Footer = () => {
+  const pathname = usePathname();
+  if (LANDING_PATHS.has(pathname)) return <LandingFooter />;
+
+  return (
   <footer className="site-footer">
     <div className="container">
       <div className="footer-shell">
@@ -173,4 +227,5 @@ export const Footer = () => (
       <p className="footer-disclaimer">{DISCLAIMER}</p>
     </div>
   </footer>
-);
+  );
+};

@@ -22,6 +22,9 @@ export const SITE = {
   },
 } as const;
 
+/** Landing pages get a stripped chrome: minimal header + minimal footer (no nav). */
+export const LANDING_PATHS = new Set<string>(["/hibrid-napelem-backup"]);
+
 export type NavChild = { href: string; label: string; external?: boolean };
 export type NavEntry = {
   href: string;

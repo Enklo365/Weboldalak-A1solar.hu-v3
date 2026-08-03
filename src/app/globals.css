@@ -2194,3 +2194,41 @@ img[data-fade].loaded {
 
 /* OEP videótár slider — hide scrollbar (WebKit) */
 .video-slider::-webkit-scrollbar { display: none; }
+
+/* Landing pages: minimal header/footer chrome. */
+.landing-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.landing-contact {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+@media (max-width: 700px) {
+  .landing-contact {
+    gap: 14px;
+  }
+}
+.landing-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 18px 28px;
+  padding-top: 28px;
+}
+.landing-footer .footer-legal {
+  border-bottom: 0;
+  padding-bottom: 0;
+  margin-right: auto;
+}
+.landing-footer .footer-social {
+  margin-left: auto;
+}
+
+/* Section-kit FAQ accordion (+ rotates into ×). */
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-plus { font-size: 22px; line-height: 1; transition: transform 0.2s ease; }
+.faq-item[open] .faq-plus { transform: rotate(45deg); }

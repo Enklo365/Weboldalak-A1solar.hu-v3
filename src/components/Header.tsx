@@ -1,8 +1,9 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { MAIN_NAV, MEGA_MENUS, SITE, type NavEntry } from "@/lib/site";
+import { LANDING_PATHS, MAIN_NAV, MEGA_MENUS, SITE, type NavEntry } from "@/lib/site";
 
 const LOGO = "/wp-content/uploads/2022/09/A1solar-logo.svg";
 
@@ -229,6 +230,58 @@ export const Header = () => {
     setOpen(false);
     setExpanded(null);
   };
+
+  const pathname = usePathname();
+
+  // Landing pages: minimal header — logo left, contact info (with icons) right,
+  // no navigation, so visitors cannot leave the page.
+  if (LANDING_PATHS.has(pathname)) {
+    return (
+      <header className="site-header">
+        <div className="mainbar">
+          <div className="container landing-bar">
+            <span className="brand-logo" aria-label="A1 Solar">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={LOGO} alt="A1 Solar" />
+            </span>
+            <div className="landing-contact">
+              <div className="topbar-item">
+                <span className="topbar-icon">
+                  <MailIcon />
+                </span>
+                <span className="topbar-text">
+                  <span className="topbar-label">E-mail cím:</span>
+                  <a className="topbar-value" href={`mailto:${SITE.email}`}>
+                    {SITE.email}
+                  </a>
+                </span>
+              </div>
+              <div className="topbar-item">
+                <span className="topbar-icon">
+                  <PhoneIcon />
+                </span>
+                <span className="topbar-text">
+                  <span className="topbar-label">Telefonszám:</span>
+                  <a className="topbar-value" href={`tel:${SITE.phoneRaw}`}>
+                    {SITE.phoneDisplay}
+                  </a>
+                </span>
+              </div>
+              <div className="topbar-item hide-sm">
+                <span className="topbar-icon">
+                  <ClockIcon />
+                </span>
+                <span className="topbar-text">
+                  <span className="topbar-label">Telefonos ügyfélszolgálat</span>
+                  <span className="topbar-value muted">{SITE.supportHours}</span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+    );
+  }
 
   return (
     <header className="site-header">
