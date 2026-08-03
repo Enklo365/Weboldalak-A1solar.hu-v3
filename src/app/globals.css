@@ -1262,12 +1262,17 @@ body.drawer-open .bottom-nav {
   margin: 0 0 1.25em;
 }
 .prose h2 {
-  font-size: 28px;
+  font-size: 26px;
+  font-weight: 600;
   margin: 1.8em 0 0.6em;
 }
 .prose h3 {
-  font-size: 22px;
+  font-size: 21px;
+  font-weight: 600;
   margin: 1.5em 0 0.5em;
+}
+.prose h4 {
+  font-weight: 600;
 }
 .prose a {
   color: var(--brand);

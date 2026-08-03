@@ -26,6 +26,7 @@ import {
   RESERVED_SLUGS,
 } from "@/lib/content";
 import { getMirror } from "@/lib/mirror";
+import { SITE } from "@/lib/site";
 
 type Params = { slug: string };
 
@@ -131,26 +132,56 @@ export default async function DynamicPage({
   const cover = firstImage(post.content) ?? "/wp-content/uploads/2023/11/210363746_m_normal_none.jpg";
   const wordCount = post.content.replace(/<[^>]+>/g, " ").split(/\s+/).filter(Boolean).length;
   const readingMin = Math.max(1, Math.ceil(wordCount / 200));
+  const shareUrl = `${SITE.url}/${slug}`;
+  const shareTargets = [
+    {
+      label: "Megosztás Facebookon",
+      href: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`,
+      path: "M15.12 5.32H17V2.14A26.11 26.11 0 0 0 14.26 2c-2.72 0-4.58 1.66-4.58 4.7v2.6H6.61v3.56h3.07V22h3.68v-9.14h3.06l.46-3.56h-3.52V7.05c0-1.03.28-1.73 1.76-1.73z",
+    },
+    {
+      label: "Megosztás LinkedInen",
+      href: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`,
+      path: "M4.98 3.5C4.98 4.88 3.87 6 2.5 6S.02 4.88.02 3.5 1.13 1 2.5 1s2.48 1.12 2.48 2.5zM.24 8h4.52v14H.24V8zM8.34 8h4.33v1.92h.06c.6-1.14 2.08-2.34 4.28-2.34 4.58 0 5.42 3.01 5.42 6.92V22h-4.52v-6.7c0-1.6-.03-3.66-2.23-3.66-2.23 0-2.57 1.74-2.57 3.54V22H8.34V8z",
+    },
+    {
+      label: "Megosztás X-en",
+      href: `https://twitter.com/intent/tweet?url=${encodeURIComponent(shareUrl)}`,
+      path: "M18.9 1.5h3.4l-7.43 8.49L23 22.5h-6.8l-5.33-6.97-6.1 6.97H1.37l7.95-9.08L1.5 1.5h6.97l4.82 6.37zm-1.2 18h1.88L6.38 3.4H4.36z",
+    },
+  ];
 
   return (
     <article className="pb-6 md:pb-8">
       {/* Content-less notch banner (same shape as other subpages); the article
-          badge + title + meta live in the main column below (no divider). The
-          lower-right notch holds the reading time + a back-to-blog link. */}
+          badge + title live in the main column below (no divider). The lower-right
+          notch holds the meta, reading time and share icons. */}
       <NotchBanner
         image={cover}
         imageAlt={post.title}
         notch={
           <div>
-            <div style={{ fontSize: "13px", fontWeight: 600, letterSpacing: "1px", textTransform: "uppercase", color: "var(--ink-muted)" }}>
-              {readingMin} perc olvasás
+            <div style={{ fontSize: "13px", color: "var(--ink-muted)" }}>
+              {category} · {formatDate(post.date)} · {readingMin} perc olvasás
             </div>
-            <Link href="/tudastar-blog" className="learn-more learn-more--back" style={{ marginTop: "12px" }}>
-              <span className="circle" aria-hidden="true">
-                <span className="extra-icon arrow" />
-              </span>
-              <span className="extra-button-text">Vissza a Híreinkhez</span>
-            </Link>
+            <div className="mt-3 flex items-center gap-2">
+              <span style={{ fontSize: "13px", color: "var(--ink-muted)" }}>Megosztás:</span>
+              {shareTargets.map(({ label, href, path }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
+                  className="flex h-9 w-9 items-center justify-center rounded-full text-[var(--ink-soft)] transition-colors hover:text-[var(--brand)]"
+                  style={{ background: "var(--surface-3)" }}
+                >
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d={path} />
+                  </svg>
+                </a>
+              ))}
+            </div>
           </div>
         }
       />
@@ -164,12 +195,9 @@ export default async function DynamicPage({
         >
           {category}
         </span>
-        <h1 className="text-[var(--ink)]" style={{ margin: "18px 0 0", fontSize: "clamp(26px, 3.4vw, 40px)", fontWeight: 700, lineHeight: 1.15 }}>
+        <h1 className="text-[var(--ink)]" style={{ margin: "18px 0 28px", fontSize: "30px", fontWeight: 500, lineHeight: 1.2 }}>
           {post.title}
         </h1>
-        <p className="post-meta" style={{ marginTop: 14, marginBottom: 28 }}>
-          {category} · {formatDate(post.date)}
-        </p>
         <div
           className="prose prose--flush"
           // eslint-disable-next-line react/no-danger -- migrated CMS content
