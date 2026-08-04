@@ -7,6 +7,7 @@ import { JedlikAnyosEnergetikaiProgram } from "@/components/page/campaign/Jedlik
 import { JedlikAnyosFinanszirozasiSegitseg } from "@/components/page/campaign/JedlikAnyosFinanszirozasiSegitseg";
 import { Kepzeseink } from "@/components/page/campaign/Kepzeseink";
 import { LakossagiEnergiataroloTamogatas } from "@/components/page/campaign/LakossagiEnergiataroloTamogatas";
+import { NapelemReszletfizetes } from "@/components/page/campaign/NapelemReszletfizetes";
 import { OepHelysziniFelmeres } from "@/components/page/campaign/OepHelysziniFelmeres";
 import { OepNyeremenyjatek } from "@/components/page/campaign/OepNyeremenyjatek";
 import { SzakmaiNapRegisztracio } from "@/components/page/campaign/SzakmaiNapRegisztracio";
@@ -38,4 +39,5 @@ export const CAMPAIGN_PAGES: Record<string, ComponentType> = {
   "oep-helyszini-felmeres": OepHelysziniFelmeres,
   "szakmai-nap-regisztracio": SzakmaiNapRegisztracio,
   "hibrid-napelem-backup": HibridNapelemBackup,
+  "napelem-energiatarolo-reszletfizetes": NapelemReszletfizetes,
 };

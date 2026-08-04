@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 const ZoomIcon = () => (
   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
@@ -26,6 +26,36 @@ export function ReferenceGallery({ images }: { images: string[] }) {
   );
   const next = useCallback(() => setIndex((i) => (i === null ? i : (i + 1) % images.length)), [images.length]);
 
+  // Self-reveal so the gallery works outside the ServicePage animation harness
+  // (e.g. on the landing): fade tiles in on scroll and images on decode.
+  const gridRef = useRef<HTMLDivElement | null>(null);
+  useEffect(() => {
+    const grid = gridRef.current;
+    if (!grid) return undefined;
+    grid.querySelectorAll<HTMLImageElement>("img[data-fade]").forEach((img) => {
+      if (img.complete && img.naturalWidth > 0) img.classList.add("loaded");
+    });
+    const tiles = Array.from(grid.querySelectorAll<HTMLElement>("[data-animate]"));
+    const reduce = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches ?? false;
+    if (reduce || !("IntersectionObserver" in window)) {
+      tiles.forEach((t) => t.classList.add("in"));
+      return undefined;
+    }
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add("in");
+            io.unobserve(e.target);
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: "0px 0px -5% 0px" }
+    );
+    tiles.forEach((t) => io.observe(t));
+    return () => io.disconnect();
+  }, []);
+
   useEffect(() => {
     if (!open) return;
     const prevOverflow = document.body.style.overflow;
@@ -44,7 +74,7 @@ export function ReferenceGallery({ images }: { images: string[] }) {
 
   return (
     <>
-      <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3">
+      <div ref={gridRef} className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3">
         {images.map((src, i) => (
           <button
             key={src}
@@ -60,6 +90,7 @@ export function ReferenceGallery({ images }: { images: string[] }) {
               data-fade
               src={src}
               alt="A1 Solar telepített napelemes rendszer"
+              onLoad={(e) => e.currentTarget.classList.add("loaded")}
               className="ref-img object-cover object-center"
               style={{ height: "100%", width: "100%" }}
             />

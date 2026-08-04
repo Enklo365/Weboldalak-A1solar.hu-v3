@@ -15,6 +15,12 @@ export type NotchHeroProps = {
   ctaHref?: string;
   /** Smaller, clamped title — for long titles (e.g. blog posts). */
   compact?: boolean;
+  /** object-position for the hero photo (default "50% 55%"). */
+  imagePosition?: string;
+  /** max-width of the headline block (default "420px") — widen so a longer light line stays on one row. */
+  titleMaxWidth?: string;
+  /** desktop headline font-size (default "clamp(26px, 2.9vw, 34px)") — shrink so a longer headline fits 2 rows. */
+  titleFontSize?: string;
 };
 
 const NOTCH_PATH =
@@ -62,7 +68,7 @@ export const NotchBanner = ({ image, imageAlt, notch }: { image: string; imageAl
  * the intro paragraph seated in the lower-right notch cut-out. Reused across the
  * service subpages and the career page so they read as one design.
  */
-export const NotchHero = ({ eyebrow, titleLight, titleStrong, image, imageAlt, intro, ctaLabel, ctaHref, compact = false }: NotchHeroProps) => (
+export const NotchHero = ({ eyebrow, titleLight, titleStrong, image, imageAlt, intro, ctaLabel, ctaHref, compact = false, imagePosition = "50% 55%", titleMaxWidth = "420px", titleFontSize = "clamp(26px, 2.9vw, 34px)" }: NotchHeroProps) => (
   <section className="w-full">
     <svg width="0" height="0" className="absolute" aria-hidden focusable="false">
       <defs>
@@ -80,7 +86,7 @@ export const NotchHero = ({ eyebrow, titleLight, titleStrong, image, imageAlt, i
       <div className="relative w-full" style={{ aspectRatio: "1192 / 571" }}>
         <div className="absolute inset-0" style={{ clipPath: `url(#${HERO_CLIP_ID})` }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={image} alt={imageAlt} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "50% 55%" }} />
+          <img src={image} alt={imageAlt} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: imagePosition }} />
           <div className="absolute inset-0" style={{ background: GRADIENT }} />
         </div>
         <div className="absolute bottom-0 left-0 z-10 text-white" style={{ padding: "40px", maxWidth: compact ? "680px" : "620px" }}>
@@ -95,7 +101,7 @@ export const NotchHero = ({ eyebrow, titleLight, titleStrong, image, imageAlt, i
             style={
               compact
                 ? { color: "#fff", fontSize: "clamp(22px, 2.2vw, 32px)", fontWeight: 700, lineHeight: 1.2, marginBottom: "20px", maxWidth: "600px" }
-                : { color: "#fff", fontSize: "clamp(26px, 2.9vw, 34px)", fontWeight: 300, lineHeight: 1.18, marginBottom: "24px", maxWidth: "420px" }
+                : { color: "#fff", fontSize: titleFontSize, fontWeight: 300, lineHeight: 1.18, marginBottom: "24px", maxWidth: titleMaxWidth }
             }
           >
             {titleLight ? (
@@ -127,7 +133,7 @@ export const NotchHero = ({ eyebrow, titleLight, titleStrong, image, imageAlt, i
     <div className="lg:hidden px-4">
       <div className="relative flex min-h-[360px] flex-col justify-end overflow-hidden rounded-[24px] p-6 text-white">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={image} alt={imageAlt} className="absolute inset-0" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+        <img src={image} alt={imageAlt} className="absolute inset-0" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: imagePosition }} />
         <div className="absolute inset-0" style={{ background: GRADIENT }} />
         <div className="relative z-10">
           <span

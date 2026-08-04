@@ -25,6 +25,7 @@ export const ContactForm = ({
   formName = "Kapcsolati űrlap",
   heading = "Kérjen ingyenes ajánlatot",
   intro = "Töltse ki az űrlapot, és munkatársunk 24 órán belül felveszi Önnel a kapcsolatot.",
+  compact = false,
   bare = false,
   submitLabel = "Ajánlatkérő űrlap küldése",
 }: ContactFormProps) => {
@@ -117,10 +118,14 @@ export const ContactForm = ({
         <span>E-mail cím *</span>
         <input name="email" type="email" required maxLength={120} autoComplete="email" placeholder="pelda@email.hu" />
       </label>
-      <label className="field">
-        <span>Üzenet *</span>
-        <textarea name="message" required minLength={5} maxLength={2000} rows={5} placeholder="Miben segíthetünk?" />
-      </label>
+      {compact ? (
+        <input type="hidden" name="message" value={`Ajánlatkérés a(z) „${formName}” űrlapról.`} />
+      ) : (
+        <label className="field">
+          <span>Üzenet *</span>
+          <textarea name="message" required minLength={5} maxLength={2000} rows={5} placeholder="Miben segíthetünk?" />
+        </label>
+      )}
 
       <label className="mt-1 flex items-start gap-3 text-sm text-[var(--ink-soft)]">
         <input name="consent" type="checkbox" required className="mt-1 h-4 w-4 shrink-0" style={{ accentColor: "var(--brand)" }} />

@@ -1,0 +1,13 @@
+{
+  "$description": "A1 Solar logo usage rules for Brand OS placement (clear space, minimum size, background safety). Files are true vector SVGs.",
+  "files": {
+    "primary": "public/wp-content/uploads/2024/11/A1solar-logo.svg",
+    "mono": "public/wp-content/uploads/2024/11/A1solar-feher-logo.svg",
+    "mark": "public/wp-content/uploads/2024/11/A1solar-logo.svg"
+  },
+  "clearSpace": { "value": 1, "unit": "logo-height" },
+  "minWidth": { "print": "24mm", "screen": "120px" },
+  "onDark": "mono",
+  "forbidden": ["átszínezés", "torzítás", "elforgatás", "árnyék", "körberajzolás"],
+  "safeBackgrounds": ["paper", "sand", "ink"]
+}

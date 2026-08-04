@@ -8,35 +8,150 @@
 @import "../styles/normalize.css";
 @import "tailwindcss";
 
+/* @tokens:start — GENERÁLT a tokens/brand.tokens.json-ból (node scripts/build-tokens.mjs). Kézzel NE szerkeszd. */
 @theme {
+  /* Colour roles (Brand OS contract) */
+  --color-primary: #db0330;
+  --color-primary-hover: #c21d20;
+  --color-primary-press: #a3151c;
+  --color-primary-deep: #7d0f1f;
+  --color-primary-tint: #fdeaef;
+  --color-on-primary: #ffffff;
+  --color-text-on-primary-soft: #ffffffd9;
+  --color-accent: #ea0029;
+  --color-ink: #212529;
+  --color-ink-soft: #4b5563;
+  --color-ink-750: #374151;
+  --color-ink-deep: #0a141d;
+  --color-on-ink: #ffffff;
+  --color-text-on-ink-body: #ffffffd9;
+  --color-paper: #ffffff;
+  --color-paper-alt: #f9f9f9;
+  --color-sand: #f6f6f6;
+  --color-steel: #9ca3af;
+  --color-hairline: #e5e7eb;
+  --color-hairline-onink: #ffffff26;
+  --color-success: #16a34a;
+  --color-warning: #f5b100;
+  --color-danger: #dc2626;
+  --color-on-danger: #ffffff;
+
+  /* Legacy colour aliases (used by Tailwind utilities across the app) */
   --color-brand: #db0330;
   --color-brand-dark: #c21d20;
   --color-brand-logo: #ea0029;
-  --color-ink: #212529;
-  --color-ink-soft: #4b5563;
-  --color-ink-muted: #7a7a7a;
+  --color-ink-muted: #6b6b6b;
   --color-surface: #ffffff;
   --color-surface-2: #f9f9f9;
   --color-surface-3: #f6f6f6;
   --color-line: #e5e7eb;
   --color-hero-dark: #0a141d;
+
+  /* Type families */
   --font-sans: var(--font-inter), system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   --font-heading: var(--font-inter), system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --font-display: Inter;
+  --font-body: Inter;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  /* Font sizes (t-shirt scale) */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+  --text-5xl: 3rem;
+  --text-6xl: 3.75rem;
+  --text-7xl: 4.5rem;
+
+  /* Font weights (numbers) */
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-mono-bold: 700;
+
+  /* Line heights (numbers) */
+  --leading-tight: 1.15;
+  --leading-snug: 1.3;
+  --leading-normal: 1.6;
+  --leading-relaxed: 1.75;
+
+  /* Letter spacing */
+  --tracking-tight: -0.01em;
+  --tracking-normal: 0em;
+  --tracking-wide: 0.02em;
+  --tracking-wider: 0.05em;
+
+  /* Radii */
+  --radius-none: 0;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
 }
 
 :root {
+  /* Legacy aliases consumed by inline styles — keep these names stable */
   --brand: #db0330;
   --brand-dark: #c21d20;
   --ink: #212529;
   --ink-soft: #4b5563;
-  --ink-muted: #7a7a7a;
+  --ink-muted: #6b6b6b;
   --surface-2: #f9f9f9;
   --surface-3: #f6f6f6;
   --line: #e5e7eb;
   --radius: 14px;
-  --container: 1240px;
+  --container: 77.5rem;
   --header-h: 88px;
+
+  /* Semantic colour roles */
+  --primary: #db0330;
+  --primary-hover: #c21d20;
+  --primary-press: #a3151c;
+  --primary-deep: #7d0f1f;
+  --primary-tint: #fdeaef;
+  --on-primary: #ffffff;
+  --accent: #ea0029;
+  --ink-deep: #0a141d;
+  --paper: #ffffff;
+  --paper-alt: #f9f9f9;
+  --sand: #f6f6f6;
+  --steel: #9ca3af;
+  --hairline: #e5e7eb;
+  --success: #16a34a;
+  --warning: #f5b100;
+  --danger: #dc2626;
+  --on-danger: #ffffff;
+
+  /* Spacing scale */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+
+  /* Borders */
+  --border-hairline: 1px;
+  --border-default: 1px;
+  --border-thick: 2px;
+  --border-accent-bar: 3px;
+
+  /* Layout / grid & measure */
+  --grid-columns: 12;
+  --gutter: 1.5rem;
+  --margin: 1.5rem;
+  --max-width: 77.5rem;
+  --measure: 68ch;
+  --section-space: 6rem;
 }
+/* @tokens:end */
 
 * {
   box-sizing: border-box;

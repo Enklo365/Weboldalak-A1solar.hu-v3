@@ -1,17 +1,27 @@
-import { ContactForm } from "@/components/ContactForm";
-import { NotchHero } from "@/components/page/NotchHero";
+import { Clock, Gauge, Maximize2, Network, Plug, Zap } from "lucide-react";
+
+import { BackupLeadForm } from "@/components/page/campaign/BackupLeadForm";
+import { NotchFormHero } from "@/components/page/NotchFormHero";
 import {
   Body,
-  Bullets,
+  BrandRow,
+  CheckList,
+  CompareCards,
   CtaButton,
+  FactorGrid,
   FaqList,
+  InfoCallout,
   InfoCard,
-  NumberedList,
+  OfferCallout,
+  Reveal,
   RowDivider,
   Section,
+  StatBanner,
+  StepTimeline,
 } from "@/components/section/SectionKit";
+import { ReferenceGallery } from "@/components/service/ReferenceGallery";
 import { ServiceTocNav } from "@/components/service/ServiceTocNav";
-import { HeroDivider, SidebarLayout } from "@/components/service/SidebarLayout";
+import { SidebarLayout } from "@/components/service/SidebarLayout";
 import { SupportWidget } from "@/components/service/SupportWidget";
 
 const TOC = [
@@ -20,18 +30,19 @@ const TOC = [
   { id: "melyik", label: "Melyik való neked?" },
   { id: "markak", label: "Gyártók" },
   { id: "reszletfizetes", label: "Részletfizetés" },
-  { id: "miert-a1", label: "Miért minket?" },
+  { id: "cegunkrol", label: "Cégünkről" },
+  { id: "referenciak", label: "Referenciák" },
   { id: "folyamat", label: "Folyamat" },
   { id: "gyik", label: "GYIK" },
   { id: "ajanlatkeres", label: "Ajánlatkérés" },
 ];
 
 const REASONS = [
-  { num: "1", title: "5000+ megvalósított rendszer", text: "Több ezer lakossági és vállalati telepítés tapasztalatával segítünk megtalálni az otthonodhoz megfelelő megoldást." },
-  { num: "2", title: "Személyre szabott tervezés", text: "A rendszert az ingatlanod fogyasztása, elektromos hálózata, a használni kívánt berendezések és az elvárt áramszüneti működés alapján tervezzük meg." },
-  { num: "3", title: "Teljes körű szolgáltatás", text: "A műszaki felméréstől és tervezéstől a kivitelezésen át az üzembe helyezésig végigkísérjük a beruházást." },
-  { num: "4", title: "Országos lefedettség", text: "Szakértőink Magyarország egész területén elérhetők." },
-  { num: "5", title: "Megbízható szakmai háttér", text: "Tapasztalt mérnöki, kivitelezői és ügyintézői csapat dolgozik azon, hogy a rendszer ne csak elkészüljön, hanem hosszú távon is biztonságosan és hatékonyan működjön." },
+  { title: "5000+ megvalósított rendszer", text: "Több ezer lakossági és vállalati telepítés tapasztalatával segítünk megtalálni az otthonodhoz megfelelő megoldást." },
+  { title: "Személyre szabott tervezés", text: "A rendszert az ingatlanod fogyasztása, elektromos hálózata, a használni kívánt berendezések és az elvárt áramszüneti működés alapján tervezzük meg." },
+  { title: "Teljes körű szolgáltatás", text: "A műszaki felméréstől és tervezéstől a kivitelezésen át az üzembe helyezésig végigkísérjük a beruházást." },
+  { title: "Országos lefedettség", text: "Szakértőink Magyarország egész területén elérhetők." },
+  { title: "Megbízható szakmai háttér", text: "Tapasztalt mérnöki, kivitelezői és ügyintézői csapat dolgozik azon, hogy a rendszer ne csak elkészüljön, hanem hosszú távon is biztonságosan és hatékonyan működjön." },
 ];
 
 const STEPS = [
@@ -39,6 +50,44 @@ const STEPS = [
   { num: "2", title: "Műszaki egyeztetés", text: "Átbeszéljük az energiafogyasztást, a nagyobb berendezéseket, az elvárt áramszüneti működést és az ingatlan alapvető adottságait." },
   { num: "3", title: "Felmérés és személyre szabott ajánlat", text: "Szükség esetén helyszíni felmérést végzünk, majd elkészítjük a műszaki tartalmat és a részletes ajánlatot." },
   { num: "4", title: "Kivitelezés és üzembe helyezés", text: "A jóváhagyott rendszer telepítése után elvégezzük a szükséges beállításokat, teszteljük a működést, és átadjuk a kész rendszert." },
+];
+
+const MELYIK_CARDS = [
+  {
+    title: "Kis backup – a legfontosabb fogyasztókhoz",
+    subtitle: "Ha áramszünetkor elsősorban a kritikus eszközöket szeretnéd működtetni.",
+    points: [
+      "Hűtő, internet, világítás, riasztó",
+      "Fűtés keringetőszivattyúja",
+      "Telefon és laptop töltése",
+      "Költséghatékonyabb kialakítás",
+    ],
+    footnote: "Alap komfort és biztonság fenntartása áramszünet esetén.",
+  },
+  {
+    title: "Teljes házas backup",
+    subtitle: "Ha több áramkört vagy az egész házat szeretnéd ellátni.",
+    points: [
+      "Több áramkör vagy a teljes ház",
+      "Nagyobb fogyasztók is (feltételekkel)",
+      "Gateway / átkapcsoló alapú megoldás",
+      "Nagyobb inverter- és akkumulátorkapacitás",
+    ],
+    footnote: "Jelentősebb beruházás, mindig egyedi műszaki tervezéssel.",
+    highlighted: true,
+  },
+];
+
+const REFERENCE_IMAGES = [
+  "/wp-content/uploads/2022/08/szuha-napelem-scaled.jpg",
+  "/wp-content/uploads/2022/08/Esztergom-napelem-scaled.jpg",
+  "/wp-content/uploads/2022/08/budapest-3-napelem.jpg",
+  "/wp-content/uploads/2022/08/Pecel-napelem-scaled.jpg",
+  "/wp-content/uploads/2022/08/Budapest-2-napelem.jpg",
+  "/wp-content/uploads/2022/08/Erd-napelem.jpg",
+  "/wp-content/uploads/2022/08/Paty-napelem-scaled.jpg",
+  "/wp-content/uploads/2022/08/siofok-napelem-2-scaled.jpg",
+  "/wp-content/uploads/2022/08/Szentendre-Napelem.jpg",
 ];
 
 const FAQ = [
@@ -57,18 +106,22 @@ const FAQ = [
  */
 export const HibridNapelemBackup = () => (
   <div>
-    <NotchHero
+    <NotchFormHero
       eyebrow="Hibrid rendszer + backup"
       titleLight="Legyen áram otthonodban akkor is,"
       titleStrong="amikor a hálózat leáll"
-      image="/wp-content/uploads/2025/08/8024.jpg"
-      imageAlt="Hibrid napelemes rendszer energiatárolóval"
-      intro="Hibrid napelemes rendszer energiatárolóval és személyre szabott backup megoldással az A1 Solartól."
-      ctaLabel="Kérek személyre szabott ajánlatot"
-      ctaHref="#ajanlatkeres"
+      image="/wp-content/uploads/2025/08/hibrid-napelem-backup-hero.jpg"
+      imageAlt="Napelemes családi ház energiatárolóval, kivilágítva egy viharos, áramszünetes estén"
+      imagePosition="50% 45%"
+      ctaLabel="Ajánlatot kérek"
+      ctaHref="#ajanlatkeres-fej"
+      intro="Egy hagyományos napelemes rendszer áramszünetkor biztonsági okból leáll. Megfelelő hibrid inverterrel, energiatárolóval és szabályosan kialakított backuppal viszont otthonod legfontosabb berendezései tovább működhetnek."
+      guaranteesTitle="Amit az A1 Solar biztosít:"
+      guarantees={REASONS.map((r) => r.title)}
+      badges="/wp-content/uploads/2025/07/a1solar_badgek-1024x127.png"
+      formId="ajanlatkeres-fej"
+      form={<BackupLeadForm />}
     />
-
-    <HeroDivider />
 
     <SidebarLayout
       sidebar={
@@ -78,24 +131,7 @@ export const HibridNapelemBackup = () => (
         </>
       }
     >
-      {/* Lead */}
-      <div className="flex flex-col gap-5">
-        <Body>
-          Egy hagyományos, hálózatra kapcsolt napelemes rendszer áramszünet esetén általában biztonsági okokból leáll.
-          Megfelelő hibrid inverterrel, akkumulátorral és szabályosan kialakított backup rendszerrel azonban otthonod
-          legfontosabb berendezései tovább működhetnek.
-        </Body>
-        <Body>
-          Az A1 Solar az ingatlanod fogyasztása, elektromos hálózata és az elvárt áramszüneti működés alapján tervezi
-          meg a megfelelő rendszert – a legfontosabb fogyasztók ellátásától akár a teljes házas backupig.
-        </Body>
-        <Body>A kivitelezést akár 6 havi kamatmentes részletfizetéssel is kérheted.</Body>
-        <CtaButton href="#ajanlatkeres">Kérek személyre szabott ajánlatot</CtaButton>
-      </div>
-
-      <RowDivider />
-
-      <Section id="miert-nem" eyebrow="Hogyan működik?" title="Miért nem működik minden napelemes rendszer áramszünetben?">
+      <Reveal><Section id="miert-nem" eyebrow="Hogyan működik?" title="Miért nem működik minden napelemes rendszer áramszünetben?">
         <Body>
           Sokan úgy gondolják, hogy ha napelem van a házon, akkor áramszünet esetén is lesz villamos energia. Ez azonban
           nem feltétlenül igaz.
@@ -105,7 +141,7 @@ export const HibridNapelemBackup = () => (
           abba a közcélú hálózatba, amelyen közben szakemberek dolgozhatnak.
         </Body>
         <Body>Az áramszüneti működéshez önmagában a napelem vagy a hibrid inverter sem elegendő. Szükség van:</Body>
-        <Bullets
+        <CheckList
           items={[
             "megfelelő energiatárolóra",
             "valódi backup funkcióra",
@@ -114,23 +150,31 @@ export const HibridNapelemBackup = () => (
             "az ingatlan adottságaihoz illeszkedő villamos kialakításra",
           ]}
         />
+        <InfoCallout>
+          Napelem a tetőn nem egyenlő az árammal áramszünetben. A biztonságos áramszüneti működéshez energiatároló, valódi
+          backup funkció és szabályos hálózati leválasztás is kell.
+        </InfoCallout>
         <Body>
           A legtöbb hálózati csatlakozással rendelkező családi háznál nem a teljesen szigetüzemű rendszer a
           legészszerűbb választás. Általában egy hibrid napelemes rendszer, energiatárolóval és megfelelően kialakított
           backuppal biztosítja a legjobb egyensúlyt a használhatóság, a biztonság és a beruházási költség között.
         </Body>
-      </Section>
+      </Section></Reveal>
 
       <RowDivider />
 
-      <Section id="backup-megoldasok" eyebrow="Backup megoldások" title="Kétféle backup megoldás">
-        <InfoCard title="Backup a legfontosabb fogyasztókhoz">
+      <Reveal><Section id="backup-megoldasok" eyebrow="Backup megoldások" title="Kétféle backup megoldás">
+        <InfoCard
+          title="Backup a legfontosabb fogyasztókhoz"
+          image="/wp-content/uploads/2025/08/backup-legfontosabb-fogyasztok.jpg"
+          imageAlt="Áramszünetben csak a legfontosabb fogyasztók – konyha, hűtő, világítás – kapnak áramot"
+        >
           <Body>
             Ez a költséghatékonyabb megoldás akkor lehet megfelelő, ha áramszünet esetén elsősorban az otthonod
             legfontosabb berendezéseit szeretnéd működtetni.
           </Body>
           <Body>Ilyen lehet például:</Body>
-          <Bullets
+          <CheckList
             items={[
               "a hűtőszekrény",
               "az internetes router",
@@ -155,7 +199,11 @@ export const HibridNapelemBackup = () => (
           <CtaButton href="#ajanlatkeres">Megnézem, milyen backup rendszer illik az otthonomhoz</CtaButton>
         </InfoCard>
 
-        <InfoCard title="Teljes házas backup">
+        <InfoCard
+          title="Teljes házas backup"
+          image="/wp-content/uploads/2025/08/backup-teljes-hazas.jpg"
+          imageAlt="Áramszünetben a teljes ház – minden helyiség és nagyobb fogyasztó – árammal ellátva"
+        >
           <Body>
             Megfelelő műszaki tervezés mellett akár az egész ház vagy annak előre meghatározott hálózati részei is
             elláthatók áramszünet esetén.
@@ -172,14 +220,14 @@ export const HibridNapelemBackup = () => (
             A következő berendezések működtetéséhez például nagyobb inverterteljesítményre és akkumulátorkapacitásra lehet
             szükség:
           </Body>
-          <Bullets
+          <CheckList
             items={["hőszivattyú", "villanybojler", "indukciós főzőlap", "klímaberendezés", "szauna", "elektromosautó-töltő"]}
           />
           <Body>
             A teljes házas backup az alap napelemes és energiatárolós rendszerhez képest jelentős többletköltséget
             jelenthet. A pontos összeg függhet többek között:
           </Body>
-          <Bullets
+          <CheckList
             items={[
               "a gateway vagy átkapcsolóberendezés típusától",
               "a szükséges hálózati leválasztástól",
@@ -194,36 +242,36 @@ export const HibridNapelemBackup = () => (
             kell megtervezni.
           </Body>
         </InfoCard>
-      </Section>
+      </Section></Reveal>
 
       <RowDivider />
 
-      <Section id="melyik" eyebrow="Döntés" title="Melyik megoldás való neked?">
-        <Body>
-          A kisebb backup jó választás lehet, ha áramszünet esetén elsősorban a hűtőt, az internetet, a világítást és
-          néhány kritikus berendezést szeretnéd működtetni.
-        </Body>
-        <Body>
-          A teljes házas backup akkor lehet indokolt, ha több áramkört szeretnél megtartani, vagy otthonod működése
-          nagymértékben függ elektromos berendezésektől.
-        </Body>
-        <Body>A megfelelő rendszer kiválasztásához nem elég csak az éves energiafogyasztást ismerni. Meg kell vizsgálni:</Body>
-        <Bullets
+      <Reveal><Section id="melyik" eyebrow="Döntés" title="Melyik megoldás való neked?">
+        <CompareCards items={MELYIK_CARDS} />
+        <Body>A megfelelő rendszer kiválasztásához nem elég csak az éves energiafogyasztást ismerni. Ezeket vizsgáljuk meg:</Body>
+        <FactorGrid
           items={[
-            "a pillanatnyi csúcsterhelést",
-            "az egy- vagy háromfázisú kialakítást",
-            "a nagyobb fogyasztók teljesítményét",
-            "az elvárt áthidalási időt",
-            "az elektromos hálózat állapotát",
-            "a későbbi bővítés lehetőségét",
+            { icon: <Gauge size={20} strokeWidth={1.9} />, label: "Pillanatnyi csúcsterhelés" },
+            { icon: <Plug size={20} strokeWidth={1.9} />, label: "Egy- vagy háromfázisú kialakítás" },
+            { icon: <Zap size={20} strokeWidth={1.9} />, label: "Nagyobb fogyasztók teljesítménye" },
+            { icon: <Clock size={20} strokeWidth={1.9} />, label: "Elvárt áthidalási idő" },
+            { icon: <Network size={20} strokeWidth={1.9} />, label: "Elektromos hálózat állapota" },
+            { icon: <Maximize2 size={20} strokeWidth={1.9} />, label: "Későbbi bővítés lehetősége" },
           ]}
         />
         <Body>Az A1 Solar szakemberei ezek alapján készítik el a személyre szabott műszaki javaslatot.</Body>
-      </Section>
+        <OfferCallout
+          title="Nem vagy biztos benne, melyik megoldás való neked?"
+          body="Segítünk eldönteni. Egy rövid műszaki egyeztetés alapján megmondjuk, hogy otthonodhoz a legfontosabb fogyasztókat ellátó kisebb backup vagy egy teljes házas megoldás illik-e jobban."
+          prompt="Kérj személyre szabott javaslatot díjmentesen, megrendelési kötelezettség nélkül."
+          ctaLabel="Ajánlatot kérek"
+          ctaHref="#ajanlatkeres"
+        />
+      </Section></Reveal>
 
       <RowDivider />
 
-      <Section id="markak" eyebrow="Gyártók" title="Nem egyetlen márkát ajánlunk minden otthonhoz">
+      <Reveal><Section id="markak" eyebrow="Gyártók" title="Nem egyetlen márkát ajánlunk minden otthonhoz">
         <Body>
           Az adott ingatlan és az elvárt backup működés alapján többek között Deye, FoxESS és Sigenergy rendszerekkel is
           tervezünk megoldásokat.
@@ -233,58 +281,91 @@ export const HibridNapelemBackup = () => (
           javasoljuk, amely az ingatlan adottságaihoz, a fogyasztási szokásokhoz és a rendelkezésre álló költségkerethez
           is megfelelő.
         </Body>
-      </Section>
+        <BrandRow
+          items={[
+            { name: "Deye", logo: "/wp-content/uploads/brands/deye.png" },
+            { name: "FoxESS", logo: "/wp-content/uploads/brands/foxess.png" },
+            { name: "Sigenergy", logo: "/wp-content/uploads/brands/sigenergy.svg" },
+          ]}
+        />
+      </Section></Reveal>
 
       <RowDivider />
 
-      <Section id="reszletfizetes" eyebrow="Finanszírozás" title="Akár 6 havi kamatmentes részletfizetéssel">
-        <Body>A beruházás teljes költségét nem feltétlenül kell egy összegben kifizetned.</Body>
-        <Body>Az A1 Solar kivitelezése bizonyos feltételek mellett akár 6 havi kamatmentes részletfizetéssel is elérhető.</Body>
-        <Body>A részletfizetés pontos feltételeit az egyedi ajánlat és a szerződés tartalmazza.</Body>
-        <CtaButton href="#ajanlatkeres">Kérek ajánlatot részletfizetéssel</CtaButton>
-      </Section>
+      <Reveal><Section id="reszletfizetes" eyebrow="Finanszírozás" title="Akár 6 havi kamatmentes részletfizetéssel">
+        <Body>
+          A beruházás teljes költségét nem feltétlenül kell egy összegben kifizetned – az A1 Solar kivitelezése bizonyos
+          feltételek mellett akár 6 havi kamatmentes részletfizetéssel is elérhető.
+        </Body>
+        <StatBanner
+          stats={[
+            { value: "0%", label: "kamat" },
+            { value: "6 hó", label: "futamidő" },
+          ]}
+          body="A részletfizetés pontos feltételeit az egyedi ajánlat és a szerződés tartalmazza."
+          ctaLabel="Kérek ajánlatot részletfizetéssel"
+          ctaHref="#ajanlatkeres"
+        />
+      </Section></Reveal>
 
       <RowDivider />
 
-      <Section id="miert-a1" eyebrow="Miért minket?" title="Miért válaszd az A1 Solart?">
-        <NumberedList items={REASONS} />
-      </Section>
+      <Reveal><Section id="cegunkrol" eyebrow="Cégünkről" title="Miért válassz minket?">
+        <Body>
+          Több mint 10 éves tapasztalatunkkal és több mint 5000 telepített rendszerrel garantáljuk a megbízhatóságot, a
+          szakértelmet és a biztonságot. Átfogó szolgáltatásaink az első konzultációtól egészen a fenntartásig tartanak.
+        </Body>
+        <div
+          className="flex min-h-[180px] flex-col items-center justify-center gap-2 rounded-[20px] p-8 text-center"
+          style={{ background: "var(--surface-3)" }}
+        >
+          <div aria-hidden className="text-lg tracking-wide" style={{ color: "#f5b100" }}>
+            ★★★★★
+          </div>
+          <p className="text-sm" style={{ color: "var(--ink-muted)" }}>
+            Ügyfeleink Google-értékelései hamarosan itt jelennek meg.
+          </p>
+        </div>
+      </Section></Reveal>
 
       <RowDivider />
 
-      <Section id="folyamat" eyebrow="Folyamat" title="Így készül el a rendszered">
-        <NumberedList items={STEPS} />
+      <Reveal><Section id="referenciak" eyebrow="Referenciák" title="Tekintsd meg korábbi munkáink">
+        <ReferenceGallery images={REFERENCE_IMAGES} />
+      </Section></Reveal>
+
+      <RowDivider />
+
+      <Reveal><Section id="folyamat" eyebrow="Folyamat" title="Így készül el a rendszered">
+        <StepTimeline items={STEPS} />
         <Body>
           Érdemes időben elindítani az egyeztetést, mert a megfelelő rendszer kiválasztása műszaki felmérést, esetenként
           hálózati átalakítást és különböző eszközök beszerzését is igényelheti.
         </Body>
-      </Section>
+      </Section></Reveal>
 
       <RowDivider />
 
-      <Section id="gyik" eyebrow="GYIK" title="Gyakori kérdések">
+      <Reveal><Section id="gyik" eyebrow="GYIK" title="Gyakori kérdések">
         <FaqList items={FAQ} />
-      </Section>
+      </Section></Reveal>
 
       <RowDivider />
 
-      <Section id="ajanlatkeres" eyebrow="Ajánlatkérés" title="Készülj fel tudatosan az áramszünetekre">
+      <Reveal><Section id="ajanlatkeres" eyebrow="Ajánlatkérés" title="Készülj fel tudatosan az áramszünetekre">
         <Body>
           Kérj személyre szabott műszaki javaslatot, és segítünk eldönteni, hogy otthonodhoz a legfontosabb fogyasztókat
           ellátó kisebb backup vagy egy teljes házas megoldás illik-e jobban.
         </Body>
         <Body>A kivitelezést bizonyos feltételek mellett akár 6 havi kamatmentes részletfizetéssel is kérheted.</Body>
-        <Body>Az ajánlatkérés díjmentes, és nem jár megrendelési kötelezettséggel.</Body>
         <div className="pt-2">
-          <ContactForm
-            bare
-            formName="Hibrid napelem + backup ajánlatkérés"
-            heading="Kérek díjmentes műszaki konzultációt"
-            intro="Add meg az elérhetőségeidet és az alapvető igényeidet – munkatársunk 24 órán belül felveszi Önnel a kapcsolatot."
+          <BackupLeadForm
+            hideHeader
             submitLabel="Ajánlatkérő űrlap küldése"
+            microcopy="Az ajánlatkérés díjmentes, és nem jár megrendelési kötelezettséggel."
           />
         </div>
-      </Section>
+      </Section></Reveal>
     </SidebarLayout>
   </div>
 );

@@ -55,6 +55,7 @@ export const MAIN_NAV: NavEntry[] = [
     href: "#",
     label: "Finanszírozás",
     children: [
+      { href: "/napelem-energiatarolo-reszletfizetes", label: "Kamatmentes részletfizetés" },
       { href: "/palyazatok", label: "Pályázatok" },
       { href: "/jedlik-anyos-energetikai-program", label: "Jedlik Ányos Energetikai Program" },
       { href: "/jedlik-anyos-finanszirozasi-segitseg", label: "Jedlik Ányos finanszírozási segítség" },
@@ -120,8 +121,9 @@ export const MEGA_MENUS: Record<string, MegaMenu> = {
         ],
       },
       {
-        heading: "Jedlik Ányos & hitel",
+        heading: "Részletfizetés & hitel",
         links: [
+          { href: "/napelem-energiatarolo-reszletfizetes", label: "Kamatmentes részletfizetés", desc: "Napelem 6 havi, 0% kamattal.", icon: "coins" },
           { href: "/jedlik-anyos-energetikai-program", label: "Jedlik Ányos program", desc: "Energetikai pályázat.", icon: "award" },
           { href: "/jedlik-anyos-finanszirozasi-segitseg", label: "Jedlik finanszírozás", desc: "Segítség a hiteledhez.", icon: "coins" },
         ],

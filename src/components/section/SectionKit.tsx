@@ -1,3 +1,4 @@
+import { Info } from "lucide-react";
 import type { ReactNode } from "react";
 
 /**
@@ -79,12 +80,32 @@ export const CtaButton = ({ href, children }: { href: string; children: string }
 );
 
 /** Grey info card with a bold sub-heading (e.g. the two backup solutions). */
-export const InfoCard = ({ title, children }: { title: string; children: ReactNode }) => (
-  <div className="rounded-[20px] p-6 md:p-8" style={{ background: "var(--surface-3)" }}>
-    <h3 className="text-[var(--ink)]" style={{ margin: 0, fontSize: "20px", fontWeight: 600, lineHeight: 1.3 }}>
-      {title}
-    </h3>
-    <div className="mt-4 flex flex-col gap-4">{children}</div>
+export const InfoCard = ({
+  title,
+  image,
+  imageAlt,
+  children,
+}: {
+  title: string;
+  image?: string;
+  imageAlt?: string;
+  children: ReactNode;
+}) => (
+  <div className="overflow-hidden rounded-[20px]" style={{ background: "var(--surface-3)" }}>
+    {image ? (
+      // eslint-disable-next-line @next/next/no-img-element
+      <img
+        src={image}
+        alt={imageAlt ?? ""}
+        style={{ width: "100%", aspectRatio: "16 / 9", objectFit: "cover", display: "block" }}
+      />
+    ) : null}
+    <div className="p-6 md:p-8">
+      <h3 className="text-[var(--ink)]" style={{ margin: 0, fontSize: "20px", fontWeight: 600, lineHeight: 1.3 }}>
+        {title}
+      </h3>
+      <div className="mt-4 flex flex-col gap-4">{children}</div>
+    </div>
   </div>
 );
 
@@ -114,24 +135,274 @@ export const NumberedList = ({ items }: { items: NumberedItem[] }) => (
   </div>
 );
 
-export type FaqItem = { q: string; a: string };
+export type Feature = { title: string; text: string };
 
-/** FAQ accordion (native <details>, no client JS). */
-export const FaqList = ({ items }: { items: FaqItem[] }) => (
-  <div className="flex flex-col gap-3">
+/** Icon-led benefit cards in a responsive grid (distinct from NumberedList). */
+export const FeatureGrid = ({ items }: { items: Feature[] }) => (
+  <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
     {items.map((f) => (
-      <details key={f.q} className="faq-item rounded-[16px] p-5" style={{ background: "var(--surface-3)" }}>
-        <summary className="flex cursor-pointer items-center justify-between gap-4 font-semibold text-[var(--ink)]" style={{ listStyle: "none" }}>
-          {f.q}
-          <span className="faq-plus flex-none text-[var(--brand)]" aria-hidden="true">
-            +
-          </span>
-        </summary>
-        <p className="mt-3 text-[var(--ink-soft)]" style={{ fontSize: "15px", lineHeight: 1.7 }}>
-          {f.a}
+      <div key={f.title} className="rounded-[20px] p-6" style={{ background: "var(--surface-3)" }}>
+        <span className="flex h-11 w-11 items-center justify-center rounded-full" style={{ background: "rgba(219,3,48,0.10)" }} aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+            <path d="m5 12.5 4.2 4.2L19 7" stroke="var(--brand)" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </span>
+        <h3 className="text-[var(--ink)]" style={{ margin: "16px 0 0", fontSize: "18px", fontWeight: 600, lineHeight: 1.3 }}>
+          {f.title}
+        </h3>
+        <p className="mt-2 text-[var(--ink-soft)]" style={{ fontSize: "15px", lineHeight: 1.6 }}>
+          {f.text}
         </p>
-      </details>
+      </div>
     ))}
+  </div>
+);
+
+/** Small brand-red check icon used by CheckList / CompareCards. */
+const CheckIcon = ({ size = 20 }: { size?: number }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" aria-hidden="true" className="flex-none">
+    <path d="m5 12.5 4.2 4.2L19 7" stroke="var(--brand)" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+);
+
+/** Compact pill/tag row — for neutral "factors / criteria" lists (not benefits),
+ *  so they read differently from the brand check lists. */
+export const TagList = ({ items }: { items: string[] }) => (
+  <div className="flex flex-wrap gap-2.5">
+    {items.map((t) => (
+      <span
+        key={t}
+        className="inline-flex items-center gap-2 rounded-full"
+        style={{ background: "var(--surface-3)", padding: "9px 16px", fontSize: "14px", lineHeight: 1.3, color: "var(--ink)" }}
+      >
+        <span aria-hidden="true" style={{ flexShrink: 0, width: "6px", height: "6px", borderRadius: "9999px", background: "var(--brand)" }} />
+        {t}
+      </span>
+    ))}
+  </div>
+);
+
+export type Factor = { icon: ReactNode; label: string };
+
+/** Icon + label grid for neutral "factors we assess" lists — a small brand-tinted
+ *  icon circle beside each label (distinct from the benefit check lists). */
+export const FactorGrid = ({ items }: { items: Factor[] }) => (
+  <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+    {items.map((f) => (
+      <div key={f.label} className="flex items-center gap-3.5 rounded-[14px]" style={{ background: "var(--surface-3)", padding: "14px 16px" }}>
+        <span
+          className="flex flex-none items-center justify-center rounded-full"
+          style={{ width: "40px", height: "40px", background: "rgba(219,3,48,0.10)", color: "var(--brand)" }}
+          aria-hidden="true"
+        >
+          {f.icon}
+        </span>
+        <span style={{ fontSize: "15px", lineHeight: 1.35, color: "var(--ink)" }}>{f.label}</span>
+      </div>
+    ))}
+  </div>
+);
+
+/** Checklist — like Bullets but with brand check icons (reads as benefits / requirements). */
+export const CheckList = ({ items }: { items: string[] }) => (
+  <ul className="flex flex-col gap-3" style={{ listStyle: "none", padding: 0, margin: 0 }}>
+    {items.map((item) => (
+      <li key={item} className="flex items-start gap-3">
+        <span style={{ marginTop: "1px" }}>
+          <CheckIcon size={20} />
+        </span>
+        <span className="text-[var(--ink-soft)]" style={{ fontSize: "15px", lineHeight: 1.65 }}>
+          {item}
+        </span>
+      </li>
+    ))}
+  </ul>
+);
+
+/** Highlighted "important" callout — pale red box, info icon, strong brand-red text. */
+export const InfoCallout = ({ children }: { children: ReactNode }) => (
+  <div className="flex items-start gap-4 rounded-[20px] p-5 md:p-6" style={{ background: "rgba(219,3,48,0.06)" }}>
+    <span className="flex flex-none items-center justify-center rounded-full" style={{ width: "40px", height: "40px", background: "rgba(219,3,48,0.12)" }}>
+      <Info size={20} strokeWidth={2} style={{ color: "var(--brand)" }} />
+    </span>
+    <div style={{ fontSize: "15px", lineHeight: 1.7, color: "var(--brand-dark)", fontWeight: 500 }}>{children}</div>
+  </div>
+);
+
+export type CompareCard = {
+  title: string;
+  subtitle?: string;
+  points: string[];
+  footnote?: string;
+  /** subtle brand tint + border to mark the "bigger" option */
+  highlighted?: boolean;
+};
+
+/** Two (or more) side-by-side option cards for a decision section. */
+export const CompareCards = ({ items }: { items: CompareCard[] }) => (
+  <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
+    {items.map((c) => (
+      <div
+        key={c.title}
+        className="flex flex-col rounded-[20px] p-6 md:p-7"
+        style={c.highlighted ? { background: "rgba(219,3,48,0.06)" } : { background: "var(--surface-3)" }}
+      >
+        <h3 className="text-[var(--ink)]" style={{ margin: 0, fontSize: "20px", fontWeight: 600, lineHeight: 1.3 }}>
+          {c.title}
+        </h3>
+        {c.subtitle ? (
+          <p className="mt-2 text-[var(--ink-soft)]" style={{ fontSize: "15px", lineHeight: 1.6 }}>
+            {c.subtitle}
+          </p>
+        ) : null}
+        <ul className="flex flex-col gap-3" style={{ listStyle: "none", padding: 0, margin: "24px 0 0" }}>
+          {c.points.map((p) => (
+            <li key={p} className="flex items-start gap-3">
+              <span style={{ marginTop: "1px" }}>
+                <CheckIcon size={19} />
+              </span>
+              <span className="text-[var(--ink-soft)]" style={{ fontSize: "15px", lineHeight: 1.55 }}>
+                {p}
+              </span>
+            </li>
+          ))}
+        </ul>
+        {c.footnote ? (
+          <p className="mt-6 pt-5" style={{ borderTop: "1px dashed rgba(0,0,0,0.10)", fontSize: "14px", lineHeight: 1.55, color: "var(--ink-muted)" }}>
+            {c.footnote}
+          </p>
+        ) : null}
+      </div>
+    ))}
+  </div>
+);
+
+export type Brand = { name: string; logo?: string };
+
+/** Row of partner-manufacturer cards — brand logo when available, styled text otherwise. */
+export const BrandRow = ({ items }: { items: Brand[] }) => (
+  <div className="flex flex-wrap items-center gap-3">
+    {items.map((b) => (
+      <span
+        key={b.name}
+        className="inline-flex items-center justify-center rounded-[14px]"
+        style={{ background: "var(--surface-3)", padding: "16px 26px", minHeight: "64px" }}
+      >
+        {b.logo ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img src={b.logo} alt={b.name} style={{ height: "30px", width: "auto", display: "block" }} />
+        ) : (
+          <span style={{ fontSize: "18px", fontWeight: 700, letterSpacing: "0.3px", color: "var(--ink)" }}>{b.name}</span>
+        )}
+      </span>
+    ))}
+  </div>
+);
+
+export type Stat = { value: string; label: string };
+
+/** Bold stat highlight strip (e.g. financing "0% / 6 hó"). */
+export const StatHighlight = ({ stats, note }: { stats: Stat[]; note?: string }) => (
+  <div className="rounded-[20px] p-6 md:p-8" style={{ background: "rgba(219,3,48,0.05)", border: "1px solid rgba(219,3,48,0.16)" }}>
+    <div className="flex flex-wrap gap-8 md:gap-12">
+      {stats.map((s) => (
+        <div key={s.label} className="flex flex-col">
+          <span style={{ fontSize: "clamp(34px, 4vw, 46px)", fontWeight: 700, lineHeight: 1, color: "var(--brand)" }}>{s.value}</span>
+          <span className="mt-2" style={{ fontSize: "14px", fontWeight: 500, color: "var(--ink-soft)" }}>{s.label}</span>
+        </div>
+      ))}
+    </div>
+    {note ? (
+      <p className="mt-5" style={{ fontSize: "14px", lineHeight: 1.6, color: "var(--ink-muted)" }}>
+        {note}
+      </p>
+    ) : null}
+  </div>
+);
+
+// Client components (need scroll / interaction) — re-exported so the section kit
+// stays the single import surface.
+export { FaqList, type FaqItem } from "./FaqList";
+export { Reveal } from "./Reveal";
+export { StepTimeline, type Step } from "./StepTimeline";
+
+const SUNLIGHT_BG = [
+  "radial-gradient(80% 70% at 102% -12%, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0) 52%)",
+  "repeating-radial-gradient(circle at 100% 0%, rgba(255,255,255,0) 0 62px, rgba(255,255,255,0.04) 62px 64px)",
+  "radial-gradient(95% 115% at -8% 116%, rgba(74,4,14,0.5) 0%, rgba(74,4,14,0) 55%)",
+  "var(--brand)",
+].join(", ");
+
+export type StatBannerProps = {
+  stats: Stat[];
+  body?: string;
+  ctaLabel?: string;
+  ctaHref?: string;
+};
+
+/** Red "sunlight" highlight with big white stats + short copy + white CTA — for
+ *  a punchy on-brand block (e.g. the financing "0% / 6 hó"). */
+export const StatBanner = ({ stats, body, ctaLabel, ctaHref }: StatBannerProps) => (
+  <div className="relative overflow-hidden rounded-[24px] px-8 py-10 text-white md:px-11 md:py-11" style={{ background: SUNLIGHT_BG }}>
+    <div className="relative z-10">
+      <div className="flex flex-wrap gap-x-12 gap-y-6">
+        {stats.map((s) => (
+          <div key={s.label} className="flex flex-col">
+            <span style={{ fontSize: "clamp(40px, 5vw, 56px)", fontWeight: 700, lineHeight: 1, color: "#fff" }}>{s.value}</span>
+            <span className="mt-2" style={{ fontSize: "14px", fontWeight: 500, color: "rgba(255,255,255,0.85)" }}>{s.label}</span>
+          </div>
+        ))}
+      </div>
+      {body ? (
+        <p className="mt-7 max-w-[620px]" style={{ color: "rgba(255,255,255,0.9)", fontSize: "16px", lineHeight: 1.65 }}>
+          {body}
+        </p>
+      ) : null}
+      {ctaLabel && ctaHref ? (
+        <a
+          href={ctaHref}
+          className="mt-8 inline-flex items-center rounded-full transition-opacity hover:opacity-90"
+          style={{ background: "#fff", color: "var(--brand)", padding: "14px 28px", fontSize: "15px", fontWeight: 600 }}
+        >
+          {ctaLabel}
+        </a>
+      ) : null}
+    </div>
+  </div>
+);
+
+export type OfferCalloutProps = {
+  title: string;
+  body: string;
+  /** Prompt line shown bottom-left, next to the white CTA button. */
+  prompt: string;
+  ctaLabel: string;
+  ctaHref: string;
+};
+
+/** Red "sunlight" callout: title + body, a dashed rule, then a bottom row with a
+ *  prompt line (left) and a white pill CTA (right). Stacks on mobile. */
+export const OfferCallout = ({ title, body, prompt, ctaLabel, ctaHref }: OfferCalloutProps) => (
+  <div className="relative overflow-hidden rounded-[24px] px-8 py-10 text-white md:px-11 md:py-11" style={{ background: SUNLIGHT_BG }}>
+    <div className="relative z-10">
+      <h3 style={{ margin: 0, color: "#fff", fontSize: "clamp(20px, 2.6vw, 26px)", fontWeight: 700, lineHeight: 1.25 }}>{title}</h3>
+      <p className="mt-4 max-w-[760px]" style={{ color: "rgba(255,255,255,0.9)", fontSize: "16px", lineHeight: 1.7 }}>
+        {body}
+      </p>
+      <hr style={{ border: 0, borderTop: "1px dashed rgba(255,255,255,0.35)", margin: "28px 0" }} />
+      <div className="flex flex-col items-start gap-5 md:flex-row md:items-center md:justify-between">
+        <p className="max-w-[520px]" style={{ margin: 0, color: "rgba(255,255,255,0.92)", fontSize: "16px", lineHeight: 1.6 }}>
+          {prompt}
+        </p>
+        <a
+          href={ctaHref}
+          className="inline-flex flex-none items-center rounded-full transition-opacity hover:opacity-90"
+          style={{ background: "#fff", color: "var(--brand)", padding: "14px 28px", fontSize: "15px", fontWeight: 600 }}
+        >
+          {ctaLabel}
+        </a>
+      </div>
+    </div>
   </div>
 );
 

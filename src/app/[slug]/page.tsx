@@ -67,6 +67,11 @@ const SEO_OVERRIDES: Record<string, { title: string; description: string }> = {
     description:
       "Hibrid napelemes rendszer energiatárolóval és áramszüneti backup funkcióval. Kérj személyre szabott ajánlatot az A1 Solartól, akár 6 havi kamatmentes részletfizetéssel.",
   },
+  "napelem-energiatarolo-reszletfizetes": {
+    title: "Napelem és energiatároló 6 havi kamatmentes részletfizetéssel | A1 Solar",
+    description:
+      "Napelemes és energiatárolós rendszer akár 6 havi, 0% kamatos részletfizetéssel. Backup a legfontosabb fogyasztókhoz vagy teljes ingatlanra – kérj díjmentes ajánlatot az A1 Solartól.",
+  },
 };
 
 export async function generateMetadata({

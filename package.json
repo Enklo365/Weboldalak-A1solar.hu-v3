@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "tokens": "node scripts/build-tokens.mjs"
   },
   "dependencies": {
     "embla-carousel-react": "^8.6.0",
