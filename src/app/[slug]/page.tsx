@@ -72,6 +72,16 @@ const SEO_OVERRIDES: Record<string, { title: string; description: string }> = {
     description:
       "Napelemes és energiatárolós rendszer akár 6 havi, 0% kamatos részletfizetéssel. Backup a legfontosabb fogyasztókhoz vagy teljes ingatlanra – kérj díjmentes ajánlatot az A1 Solartól.",
   },
+  "ertekesito-eloszuro": {
+    title: "Értékesítő előszűrő – vállalkozói értékesítői lehetőség | A1 Solar",
+    description:
+      "Építs sikeres értékesítői karriert az A1 Solarral: vállalkozói, jutalékalapú együttműködés, központi leadtámogatás és modern CRM. Töltsd ki az előszűrőt.",
+  },
+  "regiovezeto-eloszures": {
+    title: "Régióvezető előszűrő – építs saját értékesítői csapatot | A1 Solar",
+    description:
+      "Régióvezetői lehetőség az A1 Solarnál: vállalkozói, jutalékalapú együttműködés, saját régió és csapat, erős vállalati háttérrel. Töltsd ki az előszűrőt.",
+  },
 };
 
 export async function generateMetadata({

@@ -1,0 +1,1064 @@
+{
+  "$comment": "GENERÁLT VÁZLAT — nézd át, töltsd ki a KITÖLTENDŐ mezőket, és töröld a `review` sorokat, amiket ellenőriztél.",
+  "version": "1.0.0",
+  "components": [
+    {
+      "name": "BackupLeadForm",
+      "file": "src/components/page/campaign/BackupLeadForm.tsx",
+      "role": "section",
+      "purpose": "Kampány-specifikus lead-bekérő űrlap a backup-rendszerekhez.",
+      "useWhen": "Kampányoldal nyitószekciójában vagy közvetlenül alatta.",
+      "avoidWhen": "Ne használd általános szolgáltatás-oldalon — arra a ContactForm való.",
+      "slots": [
+        {
+          "name": "subhead",
+          "kind": "text",
+          "role": "subtitle"
+        },
+        {
+          "name": "body",
+          "kind": "text",
+          "role": "body"
+        },
+        {
+          "name": "label",
+          "kind": "text",
+          "role": "label"
+        },
+        {
+          "name": "eyebrow",
+          "kind": "text",
+          "role": "eyebrow"
+        },
+        {
+          "name": "ctaLabel",
+          "kind": "cta"
+        }
+      ],
+      "layout": {
+        "kind": "stack"
+      },
+      "unsupported": [
+        "form"
+      ],
+      "review": [
+        "A purpose/useWhen/avoidWhen a FORRÁSBÓL és a tényleges használatból íródott. Olvasd át: ez szabja meg, mikor teszi ki a rendszer.",
+        "A slot-neveket szerep szerint adtuk (subhead, body, label, eyebrow, ctaLabel). Nevezd át a saját prop-neveidre.",
+        "A szöveg-SZEREPEKET betűméretből és HTML-elemből következtettük — ez a leggyakoribb tévedési pont."
+      ]
+    },
+    {
+      "name": "Body",
+      "file": "src/components/section/SectionKit.tsx",
+      "role": "section",
+      "purpose": "Bekezdés-szöveg a szekciók törzséhez.",
+      "useWhen": "Magyarázó szöveghez a szekción belül.",
+      "avoidWhen": "Ne használd címhez vagy kiemeléshez — arra a szerep szerinti szöveg-csomópont való.",
+      "slots": [
+        {
+          "name": "body",
+          "kind": "text",
+          "role": "body"
+        }
+      ],
+      "layout": {
+        "kind": "stack"
+      },
+      "coveredBy": "text",
+      "review": [
+        "A purpose/useWhen/avoidWhen a FORRÁSBÓL és a tényleges használatból íródott. Olvasd át: ez szabja meg, mikor teszi ki a rendszer.",
+        "A slot-neveket szerep szerint adtuk (body). Nevezd át a saját prop-neveidre.",
+        "A szöveg-SZEREPEKET betűméretből és HTML-elemből következtettük — ez a leggyakoribb tévedési pont.",
+        "PRIMITÍV: a recept-nyelv `text` csomópontja lefedi, ezért az import KIHAGYJA. Ha mégis önálló szekció, töröld a `coveredBy` mezőt."
+      ]
+    },
+    {
+      "name": "BrandRow",
+      "file": "src/components/section/SectionKit.tsx",
+      "role": "section",
+      "purpose": "Partner- és gyártólogók sora, egymás mellett, egységes magassággal.",
+      "useWhen": "Bizonyításként, a referenciák vagy a műszaki tartalom közelében.",
+      "avoidWhen": "Ne használd négy logónál kevesebbel. Ne a nyitóképernyőn — ott a saját üzenet az elsődleges.",
+      "slots": [
+        {
+          "name": "items",
+          "kind": "list",
+          "item": [
+            {
+              "name": "image",
+              "kind": "image",
+              "ratio": "4:3"
+            },
+            {
+              "name": "body",
+              "kind": "text",
+              "role": "body"
+            }
+          ]
+        }
+      ],
+      "layout": {
+        "kind": "row"
+      },
+      "review": [
+        "A purpose/useWhen/avoidWhen a FORRÁSBÓL és a tényleges használatból íródott. Olvasd át: ez szabja meg, mikor teszi ki a rendszer.",
+        "A slot-neveket szerep szerint adtuk (items). Nevezd át a saját prop-neveidre.",
+        "Az ismétlődő tétel mezőit a szerkezetből olvastuk ki. Ellenőrizd, hogy a fajta (szöveg/kép) stimmel-e."
+      ]
+    },
+    {
+      "name": "Bullets",
+      "file": "src/components/section/SectionKit.tsx",
+      "role": "section",
+      "purpose": "Pontozott felsorolás rövid tételekhez, márkaszínű jelölővel.",
+      "useWhen": "Magyarázó szövegen belül, ha három-hat rövid tétel olvashatóbb a bekezdésnél.",
+      "avoidWhen": "Ne használd ígéret vagy csomag-tartalom felsorolására — ott a CheckList pipája többet mond.",
+      "slots": [
+        {
+          "name": "items",
+          "kind": "list",
+          "item": [
+            {
+              "name": "body",
+              "kind": "text",
+              "role": "body"
+            },
+            {
+              "name": "label",
+              "kind": "text",
+              "role": "label"
+            }
+          ]
+        }
+      ],
+      "layout": {
+        "kind": "stack"
+      },
+      "review": [
+        "A purpose/useWhen/avoidWhen a FORRÁSBÓL és a tényleges használatból íródott. Olvasd át: ez szabja meg, mikor teszi ki a rendszer.",
+        "A slot-neveket szerep szerint adtuk (items). Nevezd át a saját prop-neveidre.",
+        "Az ismétlődő tétel mezőit a szerkezetből olvastuk ki. Ellenőrizd, hogy a fajta (szöveg/kép) stimmel-e."
+      ]
+    },
+    {
+      "name": "CheckList",
+      "file": "src/components/section/SectionKit.tsx",
+      "role": "section",
+      "purpose": "Pipás felsorolás: mit tartalmaz a szolgáltatás, mi jár a csomaghoz.",
+      "useWhen": "Szekción belül, ha a lista LEZÁRT: ami benne van, az a teljes tartalom.",
+      "avoidWhen": "Ne használd sorrendet jelölő lépésekhez — arra a StepTimeline való. Egy szekcióban ne keverd a Bullets-szel.",
+      "slots": [
+        {
+          "name": "items",
+          "kind": "list",
+          "item": [
+            {
+              "name": "body",
+              "kind": "text",
+              "role": "body"
+            },
+            {
+              "name": "label",
+              "kind": "text",
+              "role": "label"
+            }
+          ]
+        }
+      ],
+      "layout": {
+        "kind": "stack"
+      },
+      "review": [
+        "A purpose/useWhen/avoidWhen a FORRÁSBÓL és a tényleges használatból íródott. Olvasd át: ez szabja meg, mikor teszi ki a rendszer.",
+        "A slot-neveket szerep szerint adtuk (items). Nevezd át a saját prop-neveidre.",
+        "Az ismétlődő tétel mezőit a szerkezetből olvastuk ki. Ellenőrizd, hogy a fajta (szöveg/kép) stimmel-e."
+      ]
+    },
+    {
+      "name": "CompareCards",
+      "file": "src/components/section/SectionKit.tsx",
+      "role": "section",
+      "purpose": "Összehasonlító kártyák: két megoldás egymás mellett, címmel és jellemzőkkel.",
+      "useWhen": "Amikor a látogatónak két út között kell választania — például hibrid és hagyományos rendszer.",
+      "avoidWhen": "Ne használd kettőnél több opcióhoz. Ne akkor, ha az egyik változat nyilvánvalóan jobb — az ajánlás, nem összehasonlítás.",
+      "slots": [
+        {
+          "name": "items",
+          "kind": "list",
+          "item": [
+            {
+              "name": "subhead",
+              "kind": "text",
+              "role": "subtitle"
+            },
+            {
+              "name": "body",
+              "kind": "text",
+              "role": "body"
+            },
+            {
+              "name": "label",
+              "kind": "text",
+              "role": "label"
+            }
+          ]
+        }
+      ],
+      "layout": {
+        "kind": "grid",
+        "columns": 2
+      },
+      "review": [
+        "A purpose/useWhen/avoidWhen a FORRÁSBÓL és a tényleges használatból íródott. Olvasd át: ez szabja meg, mikor teszi ki a rendszer.",
+        "A slot-neveket szerep szerint adtuk (items). Nevezd át a saját prop-neveidre.",
+        "Az ismétlődő tétel mezőit a szerkezetből olvastuk ki. Ellenőrizd, hogy a fajta (szöveg/kép) stimmel-e."
+      ]
+    },
+    {
+      "name": "ContactForm",
+      "file": "src/components/ContactForm.tsx",
+      "role": "section",
+      "purpose": "Kapcsolatfelvételi űrlap: név, e-mail, üzenet.",
+      "useWhen": "Az oldal konverziós pontján, jellemzően a lap alján.",
+      "avoidWhen": "Ne használd ugyanazon az oldalon a BackupLeadForm mellett — két űrlap megosztja a figyelmet.",
+      "slots": [
+        {
+          "name": "subhead",
+          "kind": "text",
+          "role": "subtitle"
+        },
+        {
+          "name": "body",
+          "kind": "text",
+          "role": "body"
+        },
+        {
+          "name": "label",
+          "kind": "text",
+          "role": "label"
+        },
+        {
+          "name": "ctaLabel",
+          "kind": "cta"
+        }
+      ],
+      "layout": {
+        "kind": "stack"
+      },
+      "unsupported": [
+        "form"
+      ],
+      "review": [
+        "A purpose/useWhen/avoidWhen a FORRÁSBÓL és a tényleges használatból íródott. Olvasd át: ez szabja meg, mikor teszi ki a rendszer.",
+        "A slot-neveket szerep szerint adtuk (subhead, body, label, ctaLabel). Nevezd át a saját prop-neveidre.",
+        "A szöveg-SZEREPEKET betűméretből és HTML-elemből következtettük — ez a leggyakoribb tévedési pont."
+      ]
+    },
+    {
+      "name": "CtaBanner",
+      "file": "src/components/section/SectionKit.tsx",
+      "role": "section",
+      "purpose": "Záró cselekvésre hívó sáv: felirat, cím, rövid szöveg és gomb.",
+      "useWhen": "Az oldal végén, utolsó szekcióként.",
+      "avoidWhen": "Ne használd az oldal közepén, és ne egy oldalon többször — a záró hívásból egy van.",
+      "slots": [
+        {
+          "name": "label",
+          "kind": "text",
+          "role": "label"
+        },
+        {
+          "name": "eyebrow",
+          "kind": "text",
+          "role": "eyebrow"
+        },
+        {
+          "name": "headline",
+          "kind": "text",
+          "role": "title"
+        },
+        {
+          "name": "body",
+          "kind": "text",
+          "role": "body"
+        },
+        {
+          "name": "ctaLabel",
+          "kind": "cta"
+        }
+      ],
+      "layout": {
+        "kind": "stack"
+      },
+      "review": [
+        "A purpose/useWhen/avoidWhen a FORRÁSBÓL és a tényleges használatból íródott. Olvasd át: ez szabja meg, mikor teszi ki a rendszer.",
+        "A slot-neveket szerep szerint adtuk (label, eyebrow, headline, body, ctaLabel). Nevezd át a saját prop-neveidre.",
+        "A szöveg-SZEREPEKET betűméretből és HTML-elemből következtettük — ez a leggyakoribb tévedési pont."
+      ]
+    },
+    {
+      "name": "CtaButton",
+      "file": "src/components/section/SectionKit.tsx",
+      "role": "section",
+      "purpose": "Elsődleges gomb hivatkozással.",
+      "useWhen": "Ahol a látogatónak egy konkrét következő lépést kínálsz.",
+      "avoidWhen": "Ne tegyél egy szekcióba kettőnél többet — az elsődleges hívás egy.",
+      "slots": [
+        {
+          "name": "ctaLabel",
+          "kind": "cta"
+        }
+      ],
+      "layout": {
+        "kind": "stack"
+      },
+      "coveredBy": "cta",
+      "review": [
+        "A purpose/useWhen/avoidWhen a FORRÁSBÓL és a tényleges használatból íródott. Olvasd át: ez szabja meg, mikor teszi ki a rendszer.",
+        "A slot-neveket szerep szerint adtuk (ctaLabel). Nevezd át a saját prop-neveidre.",
+        "PRIMITÍV: a recept-nyelv `cta` csomópontja lefedi, ezért az import KIHAGYJA. Ha mégis önálló szekció, töröld a `coveredBy` mezőt."
+      ]
+    },
+    {
+      "name": "Eyebrow",
+      "file": "src/components/section/SectionKit.tsx",
+      "role": "section",
+      "purpose": "Kis, nagybetűs felirat a cím fölött.",
+      "useWhen": "Szekció-cím fölött, a téma megnevezésére.",
+      "avoidWhen": "Ne használd önállóan, cím nélkül, és ne mondathoz.",
+      "slots": [
+        {
+          "name": "eyebrow",
+          "kind": "text",
+          "role": "eyebrow"
+        },
+        {
+          "name": "label",
+          "kind": "text",
+          "role": "label"
+        }
+      ],
+      "layout": {
+        "kind": "stack"
+      },
+      "coveredBy": "text",
+      "review": [
+        "A purpose/useWhen/avoidWhen a FORRÁSBÓL és a tényleges használatból íródott. Olvasd át: ez szabja meg, mikor teszi ki a rendszer.",
+        "A slot-neveket szerep szerint adtuk (eyebrow, label). Nevezd át a saját prop-neveidre.",
+        "A szöveg-SZEREPEKET betűméretből és HTML-elemből következtettük — ez a leggyakoribb tévedési pont.",
+        "PRIMITÍV: a recept-nyelv `text` csomópontja lefedi, ezért az import KIHAGYJA. Ha mégis önálló szekció, töröld a `coveredBy` mezőt."
+      ]
+    },
+    {
+      "name": "FactorGrid",
+      "file": "src/components/section/SectionKit.tsx",
+      "role": "section",
+      "purpose": "Szempont-rács: rövid címke–érték párok két hasábban, döntési szempontok áttekintésére.",
+      "useWhen": "Összehasonlítás előkészítésére: mely tényezők számítanak a választásnál.",
+      "avoidWhen": "Ne használd magyarázó szöveghez — itt minden tétel egysoros.",
+      "slots": [
+        {
+          "name": "items",
+          "kind": "list",
+          "item": [
+            {
+              "name": "label",
+              "kind": "text",
+              "role": "label"
+            }
+          ]
+        }
+      ],
+      "layout": {
+        "kind": "grid",
+        "columns": 2
+      },
+      "review": [
+        "A purpose/useWhen/avoidWhen a FORRÁSBÓL és a tényleges használatból íródott. Olvasd át: ez szabja meg, mikor teszi ki a rendszer.",
+        "A slot-neveket szerep szerint adtuk (items). Nevezd át a saját prop-neveidre.",
+        "Az ismétlődő tétel mezőit a szerkezetből olvastuk ki. Ellenőrizd, hogy a fajta (szöveg/kép) stimmel-e."
+      ]
+    },
+    {
+      "name": "FaqList",
+      "file": "src/components/section/FaqList.tsx",
+      "role": "section",
+      "purpose": "Nyitható-csukható kérdés-válasz lista.",
+      "useWhen": "Az oldal vége felé, a döntést hátráltató kérdések eloszlatására.",
+      "avoidWhen": "Ne használd öt kérdésnél kevesebbel. Ne tegyél bele olyat, amit a szöveg már megválaszolt.",
+      "slots": [
+        {
+          "name": "items",
+          "kind": "list",
+          "item": [
+            {
+              "name": "body",
+              "kind": "text",
+              "role": "body"
+            }
+          ]
+        }
+      ],
+      "layout": {
+        "kind": "stack"
+      },
+      "unsupported": [
+        "accordion"
+      ],
+      "review": [
+        "A purpose/useWhen/avoidWhen a FORRÁSBÓL és a tényleges használatból íródott. Olvasd át: ez szabja meg, mikor teszi ki a rendszer.",
+        "A slot-neveket szerep szerint adtuk (items). Nevezd át a saját prop-neveidre.",
+        "Az ismétlődő tétel mezőit a szerkezetből olvastuk ki. Ellenőrizd, hogy a fajta (szöveg/kép) stimmel-e."
+      ]
+    },
+    {
+      "name": "FeatureGrid",
+      "file": "src/components/section/SectionKit.tsx",
+      "role": "section",
+      "purpose": "Előny-rács: ikonos kártyák címmel és rövid leírással, két hasábban.",
+      "useWhen": "Négy-hat érv felsorolására, jellemzően a „miért mi\" szekcióban.",
+      "avoidWhen": "Ne használd három tétel alatt — a rács üresnek hat. Ne tegyél bele bekezdésnyi szöveget.",
+      "slots": [
+        {
+          "name": "items",
+          "kind": "list",
+          "item": [
+            {
+              "name": "subhead",
+              "kind": "text",
+              "role": "subtitle"
+            },
+            {
+              "name": "body",
+              "kind": "text",
+              "role": "body"
+            }
+          ]
+        }
+      ],
+      "layout": {
+        "kind": "grid",
+        "columns": 2
+      },
+      "review": [
+        "A purpose/useWhen/avoidWhen a FORRÁSBÓL és a tényleges használatból íródott. Olvasd át: ez szabja meg, mikor teszi ki a rendszer.",
+        "A slot-neveket szerep szerint adtuk (items). Nevezd át a saját prop-neveidre.",
+        "Az ismétlődő tétel mezőit a szerkezetből olvastuk ki. Ellenőrizd, hogy a fajta (szöveg/kép) stimmel-e."
+      ]
+    },
+    {
+      "name": "InfoCallout",
+      "file": "src/components/section/SectionKit.tsx",
+      "role": "section",
+      "purpose": "Kiemelt magyarázó doboz a szövegtörzsön belül.",
+      "useWhen": "Fontos megjegyzéshez vagy figyelmeztetéshez, ami kilóg a folyó szövegből.",
+      "avoidWhen": "Ne használd oldalanként többször — a kiemelés az ismétléstől elveszti az erejét.",
+      "slots": [
+        {
+          "name": "label",
+          "kind": "text",
+          "role": "label"
+        }
+      ],
+      "layout": {
+        "kind": "stack"
+      },
+      "coveredBy": "text",
+      "review": [
+        "A purpose/useWhen/avoidWhen a FORRÁSBÓL és a tényleges használatból íródott. Olvasd át: ez szabja meg, mikor teszi ki a rendszer.",
+        "A slot-neveket szerep szerint adtuk (label). Nevezd át a saját prop-neveidre.",
+        "A szöveg-SZEREPEKET betűméretből és HTML-elemből következtettük — ez a leggyakoribb tévedési pont.",
+        "PRIMITÍV: a recept-nyelv `text` csomópontja lefedi, ezért az import KIHAGYJA. Ha mégis önálló szekció, töröld a `coveredBy` mezőt."
+      ]
+    },
+    {
+      "name": "InfoCard",
+      "file": "src/components/section/SectionKit.tsx",
+      "role": "section",
+      "purpose": "Képes kártya: fotó, cím és magyarázó szöveg egy dobozban.",
+      "useWhen": "Egy-két kiemelt eset vagy megoldás bemutatására, ahol a kép önmagában is beszél.",
+      "avoidWhen": "Ne használd kép nélkül. Kettőnél többet ne sorolj egymás mellé — arra a FeatureGrid való.",
+      "slots": [
+        {
+          "name": "subhead",
+          "kind": "text",
+          "role": "subtitle"
+        },
+        {
+          "name": "image",
+          "kind": "image",
+          "ratio": "4:3"
+        }
+      ],
+      "layout": {
+        "kind": "stack"
+      },
+      "review": [
+        "A purpose/useWhen/avoidWhen a FORRÁSBÓL és a tényleges használatból íródott. Olvasd át: ez szabja meg, mikor teszi ki a rendszer.",
+        "A slot-neveket szerep szerint adtuk (subhead, image). Nevezd át a saját prop-neveidre.",
+        "A szöveg-SZEREPEKET betűméretből és HTML-elemből következtettük — ez a leggyakoribb tévedési pont."
+      ]
+    },
+    {
+      "name": "LandingHero",
+      "file": "src/components/page/LandingHero.tsx",
+      "role": "section",
+      "purpose": "Kampányoldal nyitóképe: háttérkép fölött cím, alcím és gomb.",
+      "useWhen": "Kampány-landing legelső szekciójaként.",
+      "avoidWhen": "Ne használd szolgáltatás-oldalon — ott a NotchHero a bevett.",
+      "slots": [
+        {
+          "name": "eyebrow",
+          "kind": "text",
+          "role": "eyebrow"
+        },
+        {
+          "name": "label",
+          "kind": "text",
+          "role": "label"
+        },
+        {
+          "name": "headline",
+          "kind": "text",
+          "role": "title"
+        },
+        {
+          "name": "body",
+          "kind": "text",
+          "role": "body"
+        },
+        {
+          "name": "image",
+          "kind": "image",
+          "ratio": "4:3"
+        },
+        {
+          "name": "ctaLabel",
+          "kind": "cta"
+        }
+      ],
+      "layout": {
+        "kind": "stack"
+      },
+      "unsupported": [
+        "overlay"
+      ],
+      "review": [
+        "A purpose/useWhen/avoidWhen a FORRÁSBÓL és a tényleges használatból íródott. Olvasd át: ez szabja meg, mikor teszi ki a rendszer.",
+        "A slot-neveket szerep szerint adtuk (eyebrow, label, headline, body, image, ctaLabel). Nevezd át a saját prop-neveidre.",
+        "A szöveg-SZEREPEKET betűméretből és HTML-elemből következtettük — ez a leggyakoribb tévedési pont."
+      ]
+    },
+    {
+      "name": "NotchBanner",
+      "file": "src/components/page/NotchHero.tsx",
+      "role": "section",
+      "purpose": "Bevágott formájú képes sáv: rövidebb változat a teljes nyitókép helyett.",
+      "useWhen": "Aloldalakon, ahol a teljes magasságú nyitókép sok lenne.",
+      "avoidWhen": "Ne használd ugyanazon az oldalon NotchHero-val.",
+      "slots": [
+        {
+          "name": "image",
+          "kind": "image",
+          "ratio": "4:3"
+        }
+      ],
+      "layout": {
+        "kind": "stack"
+      },
+      "unsupported": [
+        "overlay"
+      ],
+      "review": [
+        "A purpose/useWhen/avoidWhen a FORRÁSBÓL és a tényleges használatból íródott. Olvasd át: ez szabja meg, mikor teszi ki a rendszer.",
+        "A slot-neveket szerep szerint adtuk (image). Nevezd át a saját prop-neveidre."
+      ]
+    },
+    {
+      "name": "NotchFormHero",
+      "file": "src/components/page/NotchFormHero.tsx",
+      "role": "section",
+      "purpose": "Nyitókép beépített lead-űrlappal: a kampány üzenete és a jelentkezés egy képernyőn.",
+      "useWhen": "Kampány-landingen, ahol a konverzió azonnal kell.",
+      "avoidWhen": "Ne használd, ha az oldalon lejjebb is van űrlap — a kettő versenyezne.",
+      "slots": [
+        {
+          "name": "label",
+          "kind": "text",
+          "role": "label"
+        },
+        {
+          "name": "eyebrow",
+          "kind": "text",
+          "role": "eyebrow"
+        },
+        {
+          "name": "headline",
+          "kind": "text",
+          "role": "title"
+        },
+        {
+          "name": "body",
+          "kind": "text",
+          "role": "body"
+        },
+        {
+          "name": "image",
+          "kind": "image",
+          "ratio": "4:3"
+        },
+        {
+          "name": "ctaLabel",
+          "kind": "cta"
+        },
+        {
+          "name": "items",
+          "kind": "list",
+          "item": [
+            {
+              "name": "body",
+              "kind": "text",
+              "role": "body"
+            }
+          ]
+        },
+        {
+          "name": "image2",
+          "kind": "image",
+          "ratio": "4:3"
+        }
+      ],
+      "layout": {
+        "kind": "stack"
+      },
+      "unsupported": [
+        "overlay"
+      ],
+      "review": [
+        "A purpose/useWhen/avoidWhen a FORRÁSBÓL és a tényleges használatból íródott. Olvasd át: ez szabja meg, mikor teszi ki a rendszer.",
+        "A slot-neveket szerep szerint adtuk (label, eyebrow, headline, body, image, ctaLabel, items, image). Nevezd át a saját prop-neveidre.",
+        "Az ismétlődő tétel mezőit a szerkezetből olvastuk ki. Ellenőrizd, hogy a fajta (szöveg/kép) stimmel-e.",
+        "A szöveg-SZEREPEKET betűméretből és HTML-elemből következtettük — ez a leggyakoribb tévedési pont."
+      ]
+    },
+    {
+      "name": "NotchHero",
+      "file": "src/components/page/NotchHero.tsx",
+      "role": "section",
+      "purpose": "Szolgáltatás-oldal nyitóképe bevágott (notch) formájú kerettel.",
+      "useWhen": "Szolgáltatás- és tartalmi oldalak legelső szekciójaként.",
+      "avoidWhen": "Ne használd kampány-landingen (LandingHero), és ne az oldal közepén.",
+      "slots": [
+        {
+          "name": "label",
+          "kind": "text",
+          "role": "label"
+        },
+        {
+          "name": "eyebrow",
+          "kind": "text",
+          "role": "eyebrow"
+        },
+        {
+          "name": "headline",
+          "kind": "text",
+          "role": "title"
+        },
+        {
+          "name": "body",
+          "kind": "text",
+          "role": "body"
+        },
+        {
+          "name": "image",
+          "kind": "image",
+          "ratio": "4:3"
+        },
+        {
+          "name": "ctaLabel",
+          "kind": "cta"
+        }
+      ],
+      "layout": {
+        "kind": "stack"
+      },
+      "unsupported": [
+        "overlay"
+      ],
+      "review": [
+        "A purpose/useWhen/avoidWhen a FORRÁSBÓL és a tényleges használatból íródott. Olvasd át: ez szabja meg, mikor teszi ki a rendszer.",
+        "A slot-neveket szerep szerint adtuk (label, eyebrow, headline, body, image, ctaLabel). Nevezd át a saját prop-neveidre.",
+        "A szöveg-SZEREPEKET betűméretből és HTML-elemből következtettük — ez a leggyakoribb tévedési pont."
+      ]
+    },
+    {
+      "name": "NumberedList",
+      "file": "src/components/section/SectionKit.tsx",
+      "role": "section",
+      "purpose": "Sorszámozott tételek kártyákban: cím és leírás, a sorrend látható.",
+      "useWhen": "Ahol a sorrend számít, de nem folyamatról van szó — rangsor vagy prioritási lista.",
+      "avoidWhen": "Ne használd folyamat bemutatására (StepTimeline), és ne, ha a sorrend valójában közömbös (Bullets).",
+      "slots": [
+        {
+          "name": "items",
+          "kind": "list",
+          "item": [
+            {
+              "name": "body",
+              "kind": "text",
+              "role": "body"
+            },
+            {
+              "name": "subhead",
+              "kind": "text",
+              "role": "subtitle"
+            }
+          ]
+        }
+      ],
+      "layout": {
+        "kind": "stack"
+      },
+      "review": [
+        "A purpose/useWhen/avoidWhen a FORRÁSBÓL és a tényleges használatból íródott. Olvasd át: ez szabja meg, mikor teszi ki a rendszer.",
+        "A slot-neveket szerep szerint adtuk (items). Nevezd át a saját prop-neveidre.",
+        "Az ismétlődő tétel mezőit a szerkezetből olvastuk ki. Ellenőrizd, hogy a fajta (szöveg/kép) stimmel-e."
+      ]
+    },
+    {
+      "name": "OfferCallout",
+      "file": "src/components/section/SectionKit.tsx",
+      "role": "section",
+      "purpose": "Ajánlat-kiemelés sötét háttéren: kérdés, rövid magyarázat és cselekvésre hívó gomb.",
+      "useWhen": "Amikor a látogató bizonytalan lehet a választásban — az összehasonlítás után, segítséget kínálva.",
+      "avoidWhen": "Ne használd az oldal legvégén záró elemként — arra a CtaBanner való. Egy oldalon ne ismételd.",
+      "slots": [
+        {
+          "name": "subhead",
+          "kind": "text",
+          "role": "subtitle"
+        },
+        {
+          "name": "body",
+          "kind": "text",
+          "role": "body"
+        },
+        {
+          "name": "ctaLabel",
+          "kind": "cta"
+        }
+      ],
+      "layout": {
+        "kind": "stack"
+      },
+      "review": [
+        "A purpose/useWhen/avoidWhen a FORRÁSBÓL és a tényleges használatból íródott. Olvasd át: ez szabja meg, mikor teszi ki a rendszer.",
+        "A slot-neveket szerep szerint adtuk (subhead, body, ctaLabel). Nevezd át a saját prop-neveidre.",
+        "A szöveg-SZEREPEKET betűméretből és HTML-elemből következtettük — ez a leggyakoribb tévedési pont."
+      ]
+    },
+    {
+      "name": "ReferenceGallery",
+      "file": "src/components/service/ReferenceGallery.tsx",
+      "role": "section",
+      "purpose": "Referencia-galéria: elkészült munkák fotói.",
+      "useWhen": "Bizonyításként, a műszaki tartalom után, mielőtt a látogató dönt.",
+      "avoidWhen": "Ne használd négy képnél kevesebbel. Ne olyan fotóval, amin nem a saját munka látszik.",
+      "slots": [
+        {
+          "name": "items",
+          "kind": "list",
+          "item": [
+            {
+              "name": "image",
+              "kind": "image",
+              "ratio": "4:3"
+            },
+            {
+              "name": "body",
+              "kind": "text",
+              "role": "body"
+            }
+          ]
+        },
+        {
+          "name": "image",
+          "kind": "image",
+          "ratio": "4:3"
+        },
+        {
+          "name": "ctaLabel",
+          "kind": "cta"
+        }
+      ],
+      "layout": {
+        "kind": "grid",
+        "columns": 3
+      },
+      "review": [
+        "A purpose/useWhen/avoidWhen a FORRÁSBÓL és a tényleges használatból íródott. Olvasd át: ez szabja meg, mikor teszi ki a rendszer.",
+        "A slot-neveket szerep szerint adtuk (items, image, ctaLabel). Nevezd át a saját prop-neveidre.",
+        "Az ismétlődő tétel mezőit a szerkezetből olvastuk ki. Ellenőrizd, hogy a fajta (szöveg/kép) stimmel-e."
+      ]
+    },
+    {
+      "name": "Reveal",
+      "file": "src/components/section/Reveal.tsx",
+      "role": "section",
+      "purpose": "Megjelenési animáció burkolója görgetéskor. Nem tartalmi elem.",
+      "useWhen": "Az oldalon, más elemek köré. A Brand OS-be NEM kerül át: a nyomdai és képi kimeneten nincs értelmezése.",
+      "avoidWhen": "Ne várd el, hogy a design systemben megjelenjen — ez kizárólag a webes megjelenítés része.",
+      "slots": [],
+      "layout": {
+        "kind": "stack"
+      },
+      "coveredBy": "text",
+      "review": [
+        "A purpose/useWhen/avoidWhen a FORRÁSBÓL és a tényleges használatból íródott. Olvasd át: ez szabja meg, mikor teszi ki a rendszer.",
+        "PRIMITÍV: a recept-nyelv `text` csomópontja lefedi, ezért az import KIHAGYJA. Ha mégis önálló szekció, töröld a `coveredBy` mezőt."
+      ]
+    },
+    {
+      "name": "RowDivider",
+      "file": "src/components/section/SectionKit.tsx",
+      "role": "section",
+      "purpose": "Szaggatott elválasztó vonal szekciók között.",
+      "useWhen": "Két tartalmi egység között, ahol a térköz önmagában kevés a tagoláshoz.",
+      "avoidWhen": "Ne használd minden szekció után — az elválasztó a ritmus kivétele, nem a szabálya.",
+      "slots": [],
+      "layout": {
+        "kind": "stack"
+      },
+      "coveredBy": "divider",
+      "review": [
+        "A purpose/useWhen/avoidWhen a FORRÁSBÓL és a tényleges használatból íródott. Olvasd át: ez szabja meg, mikor teszi ki a rendszer.",
+        "PRIMITÍV: a recept-nyelv `divider` csomópontja lefedi, ezért az import KIHAGYJA. Ha mégis önálló szekció, töröld a `coveredBy` mezőt."
+      ]
+    },
+    {
+      "name": "Section",
+      "file": "src/components/section/SectionKit.tsx",
+      "role": "section",
+      "purpose": "Szekció-fejléc: felirat, cím és bevezető, alatta a szekció tartalma. Ez tagolja a hosszabb tartalmi oldalakat.",
+      "useWhen": "Minden önálló tartalmi egység elején. Egy hosszabb szolgáltatás- vagy kampányoldal jellemzően 6–14 ilyet használ.",
+      "avoidWhen": "Ne használd a nyitószekcióban — ott a hero visz. Bevezető szöveg önmagában nem indokol új szekciót.",
+      "slots": [
+        {
+          "name": "eyebrow",
+          "kind": "text",
+          "role": "eyebrow"
+        },
+        {
+          "name": "headline",
+          "kind": "text",
+          "role": "title"
+        },
+        {
+          "name": "body",
+          "kind": "text",
+          "role": "body"
+        }
+      ],
+      "layout": {
+        "kind": "stack"
+      },
+      "review": [
+        "A purpose/useWhen/avoidWhen a FORRÁSBÓL és a tényleges használatból íródott. Olvasd át: ez szabja meg, mikor teszi ki a rendszer.",
+        "A slot-neveket szerep szerint adtuk (eyebrow, headline, body). Nevezd át a saját prop-neveidre.",
+        "A szöveg-SZEREPEKET betűméretből és HTML-elemből következtettük — ez a leggyakoribb tévedési pont."
+      ]
+    },
+    {
+      "name": "StatBanner",
+      "file": "src/components/section/SectionKit.tsx",
+      "role": "section",
+      "purpose": "Szám-sáv márkaszínű háttéren: kulcs-mutatók, záró szöveg és gomb.",
+      "useWhen": "Az oldal közepén vagy vége felé, a bizonyítás lezárásaként, konverziós ponthoz vezetve.",
+      "avoidWhen": "Ne használd egy oldalon többször. Ne tedd közvetlenül egy másik sötét, márkaszínű sáv mellé.",
+      "slots": [
+        {
+          "name": "items",
+          "kind": "list",
+          "item": [
+            {
+              "name": "value",
+              "kind": "text",
+              "role": "num"
+            },
+            {
+              "name": "label",
+              "kind": "text",
+              "role": "label"
+            }
+          ]
+        },
+        {
+          "name": "body",
+          "kind": "text",
+          "role": "body"
+        },
+        {
+          "name": "ctaLabel",
+          "kind": "cta"
+        }
+      ],
+      "layout": {
+        "kind": "row"
+      },
+      "review": [
+        "A purpose/useWhen/avoidWhen a FORRÁSBÓL és a tényleges használatból íródott. Olvasd át: ez szabja meg, mikor teszi ki a rendszer.",
+        "A slot-neveket szerep szerint adtuk (items, body, ctaLabel). Nevezd át a saját prop-neveidre.",
+        "Az ismétlődő tétel mezőit a szerkezetből olvastuk ki. Ellenőrizd, hogy a fajta (szöveg/kép) stimmel-e.",
+        "A szöveg-SZEREPEKET betűméretből és HTML-elemből következtettük — ez a leggyakoribb tévedési pont."
+      ]
+    },
+    {
+      "name": "StatHighlight",
+      "file": "src/components/section/SectionKit.tsx",
+      "role": "section",
+      "purpose": "Kiemelt számok halvány márkaszínű dobozban, alatta magyarázó megjegyzéssel.",
+      "useWhen": "Egy állítás alátámasztására a szövegtörzsön belül, ahol a szám a bizonyíték.",
+      "avoidWhen": "Ne használd forrás nélküli számhoz. Ne ugyanazon az oldalon a StatBanner mellé — a kettő ugyanazt tölti be.",
+      "slots": [
+        {
+          "name": "items",
+          "kind": "list",
+          "item": [
+            {
+              "name": "value",
+              "kind": "text",
+              "role": "num"
+            },
+            {
+              "name": "label",
+              "kind": "text",
+              "role": "label"
+            }
+          ]
+        },
+        {
+          "name": "body",
+          "kind": "text",
+          "role": "body"
+        }
+      ],
+      "layout": {
+        "kind": "row"
+      },
+      "review": [
+        "A purpose/useWhen/avoidWhen a FORRÁSBÓL és a tényleges használatból íródott. Olvasd át: ez szabja meg, mikor teszi ki a rendszer.",
+        "A slot-neveket szerep szerint adtuk (items, body). Nevezd át a saját prop-neveidre.",
+        "Az ismétlődő tétel mezőit a szerkezetből olvastuk ki. Ellenőrizd, hogy a fajta (szöveg/kép) stimmel-e.",
+        "A szöveg-SZEREPEKET betűméretből és HTML-elemből következtettük — ez a leggyakoribb tévedési pont."
+      ]
+    },
+    {
+      "name": "StepTimeline",
+      "file": "src/components/section/StepTimeline.tsx",
+      "role": "section",
+      "purpose": "Folyamat-idővonal: a lépések sorrendben, címmel és leírással.",
+      "useWhen": "A „hogyan zajlik\" szekcióban, ahol a sorrend és a kiszámíthatóság a lényeg.",
+      "avoidWhen": "Ne használd hét lépésnél többhöz. Ne olyan felsoroláshoz, ahol a sorrend közömbös.",
+      "slots": [
+        {
+          "name": "items",
+          "kind": "list",
+          "item": [
+            {
+              "name": "body",
+              "kind": "text",
+              "role": "body"
+            }
+          ]
+        },
+        {
+          "name": "body",
+          "kind": "text",
+          "role": "body"
+        },
+        {
+          "name": "subhead",
+          "kind": "text",
+          "role": "subtitle"
+        }
+      ],
+      "layout": {
+        "kind": "stack"
+      },
+      "review": [
+        "A purpose/useWhen/avoidWhen a FORRÁSBÓL és a tényleges használatból íródott. Olvasd át: ez szabja meg, mikor teszi ki a rendszer.",
+        "A slot-neveket szerep szerint adtuk (items, body, subhead). Nevezd át a saját prop-neveidre.",
+        "Az ismétlődő tétel mezőit a szerkezetből olvastuk ki. Ellenőrizd, hogy a fajta (szöveg/kép) stimmel-e.",
+        "A szöveg-SZEREPEKET betűméretből és HTML-elemből következtettük — ez a leggyakoribb tévedési pont."
+      ]
+    },
+    {
+      "name": "SupportWidget",
+      "file": "src/components/service/SupportWidget.tsx",
+      "role": "section",
+      "purpose": "Lebegő segítség-gomb elérhetőséggel.",
+      "useWhen": "Szolgáltatás-oldalakon, a tartalom mellett, folyamatosan elérhető kapcsolatfelvételként.",
+      "avoidWhen": "Ne használd olyan oldalon, ahol már van beágyazott űrlap — a kettő ugyanazt kéri.",
+      "slots": [
+        {
+          "name": "subhead",
+          "kind": "text",
+          "role": "subtitle"
+        },
+        {
+          "name": "body",
+          "kind": "text",
+          "role": "body"
+        },
+        {
+          "name": "label",
+          "kind": "text",
+          "role": "label"
+        },
+        {
+          "name": "ctaLabel",
+          "kind": "cta"
+        }
+      ],
+      "layout": {
+        "kind": "stack"
+      },
+      "coveredBy": "cta",
+      "review": [
+        "A purpose/useWhen/avoidWhen a FORRÁSBÓL és a tényleges használatból íródott. Olvasd át: ez szabja meg, mikor teszi ki a rendszer.",
+        "A slot-neveket szerep szerint adtuk (subhead, body, label, ctaLabel). Nevezd át a saját prop-neveidre.",
+        "A szöveg-SZEREPEKET betűméretből és HTML-elemből következtettük — ez a leggyakoribb tévedési pont.",
+        "PRIMITÍV: a recept-nyelv `cta` csomópontja lefedi, ezért az import KIHAGYJA. Ha mégis önálló szekció, töröld a `coveredBy` mezőt."
+      ]
+    },
+    {
+      "name": "TagList",
+      "file": "src/components/section/SectionKit.tsx",
+      "role": "section",
+      "purpose": "Címke-sor: rövid kulcsszavak pontozott jelölővel, egymás mellett.",
+      "useWhen": "Lefedett területek, típusok vagy kompatibilis eszközök gyors felsorolására.",
+      "avoidWhen": "Ne használd mondatokhoz, és ne, ha a tételek fontossági sorrendben állnának.",
+      "slots": [
+        {
+          "name": "items",
+          "kind": "list",
+          "item": [
+            {
+              "name": "label",
+              "kind": "text",
+              "role": "label"
+            }
+          ]
+        }
+      ],
+      "layout": {
+        "kind": "row"
+      },
+      "review": [
+        "A purpose/useWhen/avoidWhen a FORRÁSBÓL és a tényleges használatból íródott. Olvasd át: ez szabja meg, mikor teszi ki a rendszer.",
+        "A slot-neveket szerep szerint adtuk (items). Nevezd át a saját prop-neveidre.",
+        "Az ismétlődő tétel mezőit a szerkezetből olvastuk ki. Ellenőrizd, hogy a fajta (szöveg/kép) stimmel-e."
+      ]
+    }
+  ]
+}

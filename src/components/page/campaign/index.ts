@@ -1,5 +1,6 @@
 import type { ComponentType } from "react";
 import { EnergetikaiPalyazatok2024 } from "@/components/page/campaign/EnergetikaiPalyazatok2024";
+import { ErtekesitoEloszuro } from "@/components/page/campaign/ErtekesitoEloszuro";
 import { FalusiCsok } from "@/components/page/campaign/FalusiCsok";
 import { Ft1000 } from "@/components/page/campaign/Ft1000";
 import { HibridNapelemBackup } from "@/components/page/campaign/HibridNapelemBackup";
@@ -8,6 +9,7 @@ import { JedlikAnyosFinanszirozasiSegitseg } from "@/components/page/campaign/Je
 import { Kepzeseink } from "@/components/page/campaign/Kepzeseink";
 import { LakossagiEnergiataroloTamogatas } from "@/components/page/campaign/LakossagiEnergiataroloTamogatas";
 import { NapelemReszletfizetes } from "@/components/page/campaign/NapelemReszletfizetes";
+import { RegiovezetoEloszures } from "@/components/page/campaign/RegiovezetoEloszures";
 import { OepHelysziniFelmeres } from "@/components/page/campaign/OepHelysziniFelmeres";
 import { OepNyeremenyjatek } from "@/components/page/campaign/OepNyeremenyjatek";
 import { SzakmaiNapRegisztracio } from "@/components/page/campaign/SzakmaiNapRegisztracio";
@@ -40,4 +42,6 @@ export const CAMPAIGN_PAGES: Record<string, ComponentType> = {
   "szakmai-nap-regisztracio": SzakmaiNapRegisztracio,
   "hibrid-napelem-backup": HibridNapelemBackup,
   "napelem-energiatarolo-reszletfizetes": NapelemReszletfizetes,
+  "ertekesito-eloszuro": ErtekesitoEloszuro,
+  "regiovezeto-eloszures": RegiovezetoEloszures,
 };
