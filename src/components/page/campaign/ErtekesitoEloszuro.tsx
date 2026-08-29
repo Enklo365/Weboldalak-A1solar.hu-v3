@@ -1,4 +1,4 @@
-import { KarrierApplyForm } from "@/components/page/marketing/KarrierApplyForm";
+import { ScreeningQuiz, type QuizField } from "@/components/page/campaign/ScreeningQuiz";
 import { NotchHero } from "@/components/page/NotchHero";
 import { Body, NumberedList, Reveal, RowDivider, Section } from "@/components/section/SectionKit";
 import { ServiceTocNav } from "@/components/service/ServiceTocNav";
@@ -22,9 +22,25 @@ const REASONS = [
   { num: "9", title: "Teljesítményalapú kereseti lehetőség", text: "A konstrukció jutalékalapú. Minél jobb eredményt érsz el, annál magasabb lehet a jövedelmed – nem fix plafonban, hanem teljesítményben gondolkodunk." },
 ];
 
+const QUESTIONS: QuizField[] = [
+  { name: "terulet", type: "radio", required: true, label: "Melyik értékesítési terület érdekel elsősorban?", options: ["Lakossági", "Vállalati", "Mindkettő"] },
+  { name: "tapasztalat", type: "select", required: true, label: "Hány év értékesítési tapasztalatod van?", options: ["Nincs még értékesítési tapasztalatom", "Kevesebb mint 1 év", "1–3 év", "Több, mint 3 év"] },
+  { name: "tipus", type: "radio", required: true, label: "Milyen típusú értékesítésben szerezted a legtöbb tapasztalatot?", options: ["Lakossági / B2C", "Vállalati / B2B", "Telefonos értékesítés", "Helyszíni / személyes értékesítés", "Műszaki / tanácsadói értékesítés"] },
+  { name: "muszaki_tapasztalat", type: "radio", required: true, label: "Dolgoztál már napelemes, energetikai vagy más műszaki termék értékesítésében?", options: ["Igen, napelemes / energetikai területen", "Igen, más műszaki területen", "Nem, de van értékesítési tapasztalatom", "Nincs még ilyen tapasztalatom"] },
+  { name: "elso7nap", type: "textarea", required: true, label: "Tegyük fel, kapsz 20 új érdeklődőt. Hogyan dolgoznál velük az első 7 napban?" },
+  { name: "stilus", type: "radio", required: true, label: "Melyik állítás áll hozzád közelebb?", options: ["Inkább sok érdeklődőből szeretek gyorsan üzleteket kötni.", "Inkább kevesebb, de nagyobb értékű és összetettebb ügyletet szeretek felépíteni.", "Mindkét típusú értékesítés közel áll hozzám."] },
+  { name: "muszaki_komfort", type: "radio", required: true, label: "Mennyire érzed magad komfortosan műszaki kérdésekben?", options: ["Kifejezetten szeretem és értem a műszaki témákat.", "Nem vagyok szakértő, de gyorsan tanulok.", "Inkább az értékesítési oldal az erősségem; a műszaki témák kevésbé állnak közel hozzám."] },
+  { name: "arres", type: "select", required: true, label: "Melyik áll hozzád közelebb?", options: ["Kevesebb üzletkötés, de nagy árréssel", "Több üzlet, kisebb árréssel"] },
+  { name: "konstrukcio", type: "select", required: true, label: "A pozíció vállalkozói, számlás és teljesítményalapú. Megfelel számodra ez a konstrukció?", options: ["Igen", "Nem"] },
+  { name: "jovedelem_cel", type: "text", required: true, label: "Mekkora havi jövedelmi célt tartasz reálisnak 6–12 hónap után?", placeholder: "pl. 800 000 Ft" },
+  { name: "regio", type: "select", required: true, label: "Melyik régióban szeretnél dolgozni?", options: ["Budapest és Pest megye", "Nyugat-Dunántúl", "Észak-Dunántúl", "Dél-Dunántúl", "Észak-Magyarország", "Észak-Alföld", "Dél-Alföld"] },
+  { name: "miert_sikeres", type: "textarea", required: true, label: "Miért gondolod, hogy sikeres lennél az A1 Solar értékesítőjeként?" },
+  { name: "egyeb", type: "textarea", label: "Amit fontosnak tartasz még leírni" },
+];
+
 /**
  * Értékesítő előszűrő — recruitment funnel (sidebar subpage layout). Built from
- * existing components: NotchHero + SidebarLayout + NumberedList + KarrierApplyForm.
+ * existing components + the native ScreeningQuiz (Fluent Forms quiz equivalent).
  */
 export const ErtekesitoEloszuro = () => (
   <div>
@@ -79,11 +95,11 @@ export const ErtekesitoEloszuro = () => (
       <Reveal>
         <Section id="jelentkezes" eyebrow="Előszűrő" title="Töltsd ki az értékesítői előszűrőt">
           <Body>
-            Add meg az elérhetőségeidet, és írd le pár mondatban, miért lennél sikeres értékesítő az A1 Solarnál.
-            Munkatársunk a beérkezés után felveszi veled a kapcsolatot a részletes előszűrő kérdésekkel.
+            Néhány perc alatt kitölthető. A válaszaid alapján kiderül, érdemes-e tovább beszélnünk – a beérkezés után
+            felvesszük veled a kapcsolatot.
           </Body>
           <div className="pt-2">
-            <KarrierApplyForm positionTitle="Értékesítő" />
+            <ScreeningQuiz formName="Értékesítő előszűrő" questions={QUESTIONS} />
           </div>
         </Section>
       </Reveal>

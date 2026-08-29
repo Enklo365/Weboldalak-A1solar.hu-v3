@@ -91,6 +91,11 @@ export const SUCCESS_PAGES: Record<string, SuccessContent> = {
   "sikeres-kapcsolatfelvetel": { title: "Üzeneted beérkezett hozzánk!" },
   "sikeres-kapcsolatfelvetel-jedlik": { title: "Üzeneted beérkezett hozzánk!" },
   "sikeres-kapcsolatfelvetel-vop": { title: "Üzeneted beérkezett hozzánk!" },
+  "sikeres-kapcsolatfelvetel-lakossagi-hibrid-napelem-backup": { title: "Üzeneted beérkezett hozzánk!" },
+  "sikeres-ajanlatkeres-reszletfizetes": {
+    title: "Ajánlatkérésed beérkezett hozzánk!",
+    message: "Ajánlatkérésed sikeresen megkaptuk, hamarosan felvesszük Veled a kapcsolatot!",
+  },
   "sikeres-kapcsolatfelvetel-tarsashaz": {
     title: "Adataid beérkeztek hozzánk!",
     message: "Adataidat sikeresen megkaptuk, hamarosan felvesszük veled a kapcsolatot!",

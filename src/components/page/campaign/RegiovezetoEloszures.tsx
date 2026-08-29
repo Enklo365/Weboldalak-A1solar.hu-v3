@@ -1,4 +1,4 @@
-import { KarrierApplyForm } from "@/components/page/marketing/KarrierApplyForm";
+import { ScreeningQuiz, type QuizField } from "@/components/page/campaign/ScreeningQuiz";
 import { NotchHero } from "@/components/page/NotchHero";
 import { Body, NumberedList, Reveal, RowDivider, Section } from "@/components/section/SectionKit";
 import { ServiceTocNav } from "@/components/service/ServiceTocNav";
@@ -21,9 +21,23 @@ const REASONS = [
   { num: "8", title: "Valódi vezetői lehetőség", text: "Nem egyszerű értékesítői pozícióról van szó. Saját régiót, saját értékesítői csapatot és hosszabb távon komoly üzletet építhetsz velünk." },
 ];
 
+const QUESTIONS: QuizField[] = [
+  { name: "csapat_meret", type: "select", required: true, label: "Hány fős értékesítési csapatot vezettél eddig?", options: ["Nem voltam még vezető", "2–5 fő", "6–10 fő", "11 fő felett"] },
+  { name: "felepites_90nap", type: "text", required: true, label: "Hány aktív értékesítőt tudnál reálisan felépíteni magad alatt 90 napon belül?", placeholder: "pl. 5" },
+  { name: "elso5", type: "textarea", required: true, label: "Ha holnap kezdenél nálunk, honnan szereznéd meg az első 5 értékesítődet?" },
+  { name: "alulteljesites", type: "textarea", required: true, label: "Tegyük fel, hogy 8 értékesítőd van, de közülük csak 3 hoz rendszeresen szerződést. Mit csinálnál a következő 30 napban?" },
+  { name: "kpi", type: "textarea", required: true, label: "Milyen rendszerességgel és milyen KPI-ok alapján követnéd az értékesítőid teljesítményét?" },
+  { name: "gyenge_lancszem", type: "textarea", required: true, label: "Volt-e olyan értékesítőd, aki alulteljesített? Mit tettél vele?" },
+  { name: "stilus", type: "radio", required: true, label: "Melyik állítás áll hozzád közelebb?", options: ["Inkább kapok egy kész, jól működő csapatot, és abból hozom ki a maximumot.", "Szeretek nulláról felépíteni egy csapatot."] },
+  { name: "konstrukcio", type: "select", required: true, label: "A pozíció vállalkozói, számlás és teljesítményalapú. Megfelel számodra ez a konstrukció?", options: ["Igen", "Nem"] },
+  { name: "jovedelem_cel", type: "text", required: true, label: "Mekkora havi jövedelmi célt tartasz reálisnak ebben a pozícióban 6–12 hónap után?", placeholder: "pl. 1 500 000 Ft" },
+  { name: "miert_sikeres", type: "textarea", required: true, label: "Miért gondolod, hogy sikeres lennél egy olyan iparágban, amelyben jelenleg nincs tapasztalatod?" },
+  { name: "egyeb", type: "textarea", label: "Amit fontosnak tartasz még leírni" },
+];
+
 /**
  * Régióvezető előszűrés — recruitment funnel (sidebar subpage layout). Built from
- * existing components: NotchHero + SidebarLayout + NumberedList + KarrierApplyForm.
+ * existing components + the native ScreeningQuiz (Fluent Forms quiz equivalent).
  */
 export const RegiovezetoEloszures = () => (
   <div>
@@ -78,11 +92,11 @@ export const RegiovezetoEloszures = () => (
       <Reveal>
         <Section id="jelentkezes" eyebrow="Előszűrő" title="Töltsd ki a régióvezetői előszűrőt">
           <Body>
-            Add meg az elérhetőségeidet, és írd le pár mondatban, miért lennél sikeres régióvezető az A1 Solarnál.
-            Munkatársunk a beérkezés után felveszi veled a kapcsolatot a részletes előszűrő kérdésekkel.
+            Néhány perc alatt kitölthető. A válaszaid alapján kiderül, érdemes-e tovább beszélnünk – a beérkezés után
+            felvesszük veled a kapcsolatot.
           </Body>
           <div className="pt-2">
-            <KarrierApplyForm positionTitle="Régióvezető" />
+            <ScreeningQuiz formName="Régióvezető előszűrő" questions={QUESTIONS} />
           </div>
         </Section>
       </Reveal>
