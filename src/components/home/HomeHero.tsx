@@ -222,7 +222,7 @@ export function HomeHero() {
 
         {/* Cards stacked beneath on mobile — notched top-right corner (the arrow
             badge nests into a scooped-out corner, echoing the desktop cards). */}
-        <div className="mt-6 grid grid-cols-1 gap-4 px-4 sm:grid-cols-2">
+        <div className="mt-6 grid grid-cols-1 gap-4 px-4 sm:grid-cols-2 md:grid-cols-3">
           {A1_SERVICE_CARDS.map((c) => (
             <Link key={c.href} href={c.href} className="group relative block aspect-[365/254] transition-opacity hover:opacity-95">
               <div
