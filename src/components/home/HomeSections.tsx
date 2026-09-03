@@ -53,7 +53,7 @@ export function HomeAbout() {
   return (
     <section className="w-full">
       <div className="mx-auto grid max-w-[var(--container)] grid-cols-1 items-center gap-10 px-6 lg:grid-cols-2 lg:gap-16">
-        <div data-animate="up" className="aspect-[4/3] overflow-hidden rounded-[20px] bg-[var(--surface-3)]">
+        <div data-animate="up" className="mx-auto aspect-[4/3] w-full max-w-[420px] overflow-hidden rounded-[20px] bg-[var(--surface-3)] lg:max-w-none">
           <video
             autoPlay
             loop
@@ -110,7 +110,7 @@ export function HomeZanzibar() {
             <LearnMore href={ZANZIBAR.ctaHref}>{ZANZIBAR.ctaLabel}</LearnMore>
           </div>
         </div>
-        <div data-animate="up" style={{ transitionDelay: "120ms" }} className="order-first aspect-[4/3] overflow-hidden rounded-[20px] lg:order-none">
+        <div data-animate="up" style={{ transitionDelay: "120ms" }} className="order-first mx-auto aspect-[4/3] w-full max-w-[420px] overflow-hidden rounded-[20px] lg:order-none lg:max-w-none">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             data-fade
