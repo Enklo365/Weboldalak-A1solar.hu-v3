@@ -224,7 +224,7 @@ const HIGHLIGHTS: HighlightBand[] = [
 const HighlightBandBlock = ({ band }: { band: HighlightBand }) => (
   <div className="grid items-center gap-10 lg:grid-cols-2">
     <div className={band.imageLeft ? "lg:order-1" : "lg:order-2"}>
-      <div className="overflow-hidden rounded-[28px]" style={{ aspectRatio: "16 / 11" }}>
+      <div className="mx-auto w-full max-w-[460px] overflow-hidden rounded-[28px] lg:max-w-none" style={{ aspectRatio: "16 / 11" }}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={band.image}

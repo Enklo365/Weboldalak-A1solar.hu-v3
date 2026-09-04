@@ -243,7 +243,7 @@ export const Cegunkrol = () => (
               ))}
             </div>
           </div>
-          <div className="order-first aspect-[4/3] overflow-hidden rounded-[24px] lg:order-none lg:aspect-auto" style={{ background: "var(--surface-3)" }}>
+          <div className="order-first mx-auto aspect-[4/3] w-full max-w-[440px] overflow-hidden rounded-[24px] lg:order-none lg:aspect-auto lg:max-w-none" style={{ background: "var(--surface-3)" }}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={AWARD_IMAGE}

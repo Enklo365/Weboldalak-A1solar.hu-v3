@@ -53,10 +53,13 @@ export const NotchBanner = ({ image, imageAlt, notch }: { image: string; imageAl
         ) : null}
       </div>
     </div>
+    {/* Below `lg` the shaped hero becomes a plain rounded photo. Tablets get a
+        wider crop so the banner stays close to the desktop proportion instead of
+        towering over the article. */}
     <div className="lg:hidden px-4">
-      <div className="overflow-hidden rounded-[24px]">
+      <div className="aspect-[16/10] overflow-hidden rounded-[24px] md:aspect-[2/1]">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={image} alt={imageAlt} style={{ width: "100%", aspectRatio: "16 / 10", objectFit: "cover", display: "block" }} />
+        <img src={image} alt={imageAlt} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
       </div>
     </div>
   </section>

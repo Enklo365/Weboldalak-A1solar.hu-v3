@@ -134,7 +134,7 @@ export const NapelemTarsashazaknak = () => (
           </h2>
         </div>
 
-        <div className="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-3">
+        <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           <div className="flex flex-col px-8 py-8" style={{ background: "var(--surface-3)", borderRadius: "24px" }}>
             <h3 className="text-[var(--ink)]" style={{ margin: 0, fontSize: "20px", fontWeight: 600, lineHeight: 1.3 }}>
               Energiaközösségek – VET módosítás
@@ -220,7 +220,7 @@ export const NapelemTarsashazaknak = () => (
               elszámolási modellt, valamint rögzíteni a megállapodás időtartamát.
             </p>
           </div>
-          <div className="overflow-hidden" style={{ borderRadius: "24px" }}>
+          <div className="mx-auto w-full max-w-[460px] overflow-hidden lg:max-w-none" style={{ borderRadius: "24px" }}>
             <div className="aspect-[16/10] w-full">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
@@ -300,7 +300,7 @@ export const NapelemTarsashazaknak = () => (
           </p>
         </div>
 
-        <div className="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-3">
+        <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {ACCOUNTING_MODELS.map((m) => (
             <div
               key={m.title}

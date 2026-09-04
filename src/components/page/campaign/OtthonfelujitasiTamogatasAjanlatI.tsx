@@ -319,7 +319,7 @@ export const OtthonfelujitasiTamogatasAjanlatI = () => (
           </p>
         </div>
 
-        <div className="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-2">
+        <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2">
           <div className="px-8 py-9" style={{ background: "var(--surface-3)", borderRadius: "24px" }}>
             <h3 className="text-[var(--ink)]" style={{ margin: 0, fontSize: "20px", fontWeight: 700 }}>
               A támogatás és a hitel feltételei
@@ -353,7 +353,7 @@ export const OtthonfelujitasiTamogatasAjanlatI = () => (
           </div>
         </div>
 
-        <div className="mt-6 grid grid-cols-1 gap-6 lg:grid-cols-2">
+        <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2">
           <div className="px-8 py-9" style={{ background: "var(--surface-3)", borderRadius: "24px" }}>
             <h3 className="text-[var(--ink)]" style={{ margin: 0, fontSize: "20px", fontWeight: 700 }}>
               Mire használhatja a támogatást?

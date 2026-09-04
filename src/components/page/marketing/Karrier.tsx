@@ -97,7 +97,7 @@ export const Karrier = () => (
 
           {/* Sidebar — "why join us" widget */}
           <aside className="lg:border-l lg:border-dashed lg:border-[#ececec] lg:pl-10">
-            <div className="lg:sticky lg:top-[110px]">
+            <div className="mx-auto w-full max-w-[520px] lg:sticky lg:top-[110px] lg:max-w-none">
               <div className="rounded-[20px] p-5" style={{ background: "var(--surface-3)" }}>
                 <h2 className="text-[var(--ink)]" style={{ fontSize: "18px", fontWeight: 500, lineHeight: 1.25 }}>
                   Miért érdemes csatlakozni hozzánk?
