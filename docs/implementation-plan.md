@@ -1,5 +1,10 @@
 # A1 Solar v3 – 8 fejlesztési szakasz
 
+> Állapot 2026-09-11: az 1–8. szakasz stagingig elkészült. Az elfogadott,
+> stagingen futó kódrevision `9ca9e84702cf7444f2fbd9336bb2b92b67873e0e`.
+> Merge és production deploy nem történt. A részletes folytatási állapot:
+> [HANDOFF-2026-09-11.md](HANDOFF-2026-09-11.md).
+
 ## 1. Repository-alapozás
 
 - A teljes örökség, minden ág és tag egyszeri átvitele az új v3 repositoryba.
@@ -48,3 +53,9 @@
 - Build, route- és redirecttesztek, reszponzív ellenőrzés 768, 820 és 1024 px szélességen.
 - Azonos build telepítése a `*.homokozo.uk` stagingre és smoke test.
 - A valódi `*.hu` production környezet változatlan marad a külön „Mehet élesbe” jóváhagyásig.
+
+## Következő ellenőrzési kapu
+
+- Kézi desktop- és mobilnézeti vizuális QA a staging URL-en.
+- A vizuális QA eredményének rögzítése a PR-ben vagy projekt-dokumentációban.
+- `main` merge és production deploy csak külön emberi jóváhagyással.

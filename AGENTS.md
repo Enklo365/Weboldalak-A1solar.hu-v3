@@ -9,30 +9,42 @@ This version has breaking changes — APIs, conventions, and file structure may 
 Ezek a projekt kötelező szabályai minden agentnek (Codex, Claude Code, stb.).
 Mielőtt bármit írnál, olvasd el a `MIGRATION.md`-t, és nézd át a `src/` szerkezetét.
 
+Az aktuális projektállapot és a következő engedélyezett lépés a
+`docs/HANDOFF-2026-09-11.md` fájlban található. Új munkamenetben ezt is kötelező
+elolvasni bármilyen módosítás előtt.
+
 ## A projekt
 
 Az a1solar.hu (WordPress + Elementor) migrációja Next.js-re.
 
 - Next.js 16 (App Router, Turbopack), React 19, TypeScript, Tailwind 4
-- Élesben: https://a1solar.vercel.app — a `main` branchre pusholt commit
-  automatikusan deployol a Vercelre (~30-45 mp). Emiatt a main mindig
-  release-kész kell legyen.
+- Staging: `https://teszta1solar.homokozo.uk/` — soha nem production.
+- Production: `https://a1solar.hu/` és `https://www.a1solar.hu/` — kizárólag
+  külön emberi „Mehet élesbe” jóváhagyással módosítható.
+- A `main` mindig release-kész, jóváhagyott állapot. Közvetlenül nem fejlesztünk
+  rajta, és sem a merge, sem bármely automatikus vagy kézi deploy nem tekinthető
+  engedélyezettnek külön production-jóváhagyás nélkül.
 - Nyelv: a teljes felület magyar. A user-facing szövegek magyarul íródnak,
   a KÓD (változónevek, kommentek, commit üzenetek) viszont angolul.
 
 ## Architektúra — ezt értsd meg először
 
-Kétféle oldal létezik, és ez a legfontosabb, amit tudni kell:
+Három együtt élő tartalmi forrás van:
 
-1. **NATÍV oldalak** — saját React komponensek (`src/components/page/**`,
+1. **V3 copy deck oldalak** — generált tartalom
+   (`src/content/v3-pages.generated.json`) és egyszerű közös React megjelenítés
+   (`src/components/v3/**`). Pontosan 35 jóváhagyott tartalmi oldal.
+2. **NATÍV oldalak** — saját React komponensek (`src/components/page/**`,
    `src/components/service/**`). Az újabb munka mind ide megy.
-2. **MIRROR oldalak** — a régi WP oldal renderelt `<main>` HTML-je JSON-ben
+3. **MIRROR oldalak** — a régi WP oldal renderelt `<main>` HTML-je JSON-ben
    (`content/mirror.json`), scope-olt WP/Elementor CSS-sel `.mirror-root` alatt.
    Ezek átmeneti megoldások, amiket fokozatosan natívra cserélünk.
 
-A routing központja: `src/app/[slug]/page.tsx`. Egy slug feloldási sorrendje:
-SERVICE_PAGES → MARKETING_PAGES → TOOL_PAGES → CAMPAIGN_PAGES → SUCCESS_PAGES
-→ TEXT_PAGES → (mirror/WP tartalom) → 404.
+A routing központja: `src/app/[slug]/page.tsx`, valamint a v3 hierarchikus
+URL-ekhez `src/app/[slug]/[...subslug]/page.tsx`. Egy egyszegmenses slug
+feloldása a V3_PAGES ellenőrzésével indul, majd SERVICE_PAGES →
+MARKETING_PAGES → TOOL_PAGES → CAMPAIGN_PAGES → SUCCESS_PAGES → TEXT_PAGES →
+(mirror/WP tartalom) → 404 következik.
 
 Új natív oldal = komponens + regisztráció a megfelelő registry mapbe. NE hozz
 létre új route fájlt a `src/app` alatt, hacsak nem tényleg külön útvonal kell.
