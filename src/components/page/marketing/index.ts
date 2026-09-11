@@ -4,6 +4,7 @@ import { Kapcsolat } from "@/components/page/marketing/Kapcsolat";
 import { Karrier } from "@/components/page/marketing/Karrier";
 import { Palyazatok } from "@/components/page/marketing/Palyazatok";
 import { Szolgaltatasaink } from "@/components/page/marketing/Szolgaltatasaink";
+import { Teszttarolas } from "@/components/page/marketing/Teszttarolas";
 
 /** Slug → bespoke native marketing page component. */
 export const MARKETING_PAGES: Record<string, ComponentType> = {
@@ -12,4 +13,5 @@ export const MARKETING_PAGES: Record<string, ComponentType> = {
   szolgaltatasaink: Szolgaltatasaink,
   palyazatok: Palyazatok,
   karrier: Karrier,
+  teszttarolas: Teszttarolas,
 };

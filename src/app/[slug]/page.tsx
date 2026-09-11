@@ -35,6 +35,7 @@ const APPEND_CONTACT_FORM = new Set(["kapcsolat"]);
 
 export function generateStaticParams(): Params[] {
   const slugs = new Set<string>();
+  slugs.add("teszttarolas");
   for (const p of getPages()) if (!RESERVED_SLUGS.has(p.slug)) slugs.add(p.slug);
   for (const p of getPosts()) if (!slugs.has(p.slug)) slugs.add(p.slug);
   return [...slugs].map((slug) => ({ slug }));
@@ -51,6 +52,11 @@ const SEO_OVERRIDES: Record<string, { title: string; description: string }> = {
     title: "Vállalati napelem és energiatárolás | A1 Solar",
     description:
       "Vállalati napelemes és energiatárolási rendszerek fogyasztásra szabott tervezéssel, megtérülési vizsgálattal, saját kivitelezéssel és teljes körű garanciával.",
+  },
+  teszttarolas: {
+    title: "Vállalati energiatárolás – rendszerfelmérés",
+    description:
+      "Vállalati energiatárolás fogyasztási adatokra tervezve: költségoptimalizálás, csúcsterhelés-kezelés, backup és intelligens energiakezelés.",
   },
   "lakossagi-napelem-tisztitas-es-karbantartas": {
     title: "Lakossági napelem-tisztítás és karbantartás | A1 Solar",
