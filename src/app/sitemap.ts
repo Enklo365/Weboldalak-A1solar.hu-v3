@@ -14,13 +14,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
   const seen = new Set(entries.map((entry) => entry.url.replace(/\/$/, "")));
   for (const post of getPosts()) {
-    const url = `${SITE.url}/${post.slug}`;
-    if (!seen.has(url)) entries.push({ url, lastModified: post.date, priority: 0.6 });
+    const url = `${SITE.url}/${post.slug}/`;
+    if (!seen.has(url.replace(/\/$/, ""))) entries.push({ url, lastModified: post.date, priority: 0.6 });
   }
   for (const legal of FOOTER_LEGAL) {
     if (legal.external) continue;
-    const url = `${SITE.url}${legal.href}`;
-    if (!seen.has(url)) entries.push({ url, priority: 0.3 });
+    const url = `${SITE.url}${legal.href.replace(/\/$/, "")}/`;
+    if (!seen.has(url.replace(/\/$/, ""))) entries.push({ url, priority: 0.3 });
   }
   return entries;
 }

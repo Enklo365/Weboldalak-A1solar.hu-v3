@@ -118,7 +118,7 @@ export async function generateMetadata({
     return {
       title: `${success.title} | A1 Solar`,
       robots: { index: false, follow: true },
-      alternates: { canonical: `/${slug}` },
+      alternates: { canonical: `/${slug}/` },
     };
   }
 
@@ -137,7 +137,7 @@ export async function generateMetadata({
   return {
     title,
     description,
-    alternates: { canonical: `/${slug}` },
+    alternates: { canonical: `/${slug}/` },
     openGraph: { title, description },
   };
 }
@@ -218,7 +218,7 @@ export default async function DynamicPage({
   const cover = firstImage(post.content) ?? "/wp-content/uploads/2023/11/210363746_m_normal_none.jpg";
   const wordCount = post.content.replace(/<[^>]+>/g, " ").split(/\s+/).filter(Boolean).length;
   const readingMin = Math.max(1, Math.ceil(wordCount / 200));
-  const shareUrl = `${SITE.url}/${slug}`;
+  const shareUrl = `${SITE.url}/${slug}/`;
   const shareTargets = [
     {
       label: "Megosztás Facebookon",

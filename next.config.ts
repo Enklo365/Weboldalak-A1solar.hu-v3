@@ -2,6 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   output: "standalone",
+  trailingSlash: true,
   async redirects() {
     return [
       ["/cegunkrol", "/rolunk/cegunkrol/"],
@@ -19,7 +20,7 @@ const nextConfig: NextConfig = {
       ["/foxess-inverter-energiatarolas", "/technologiak/foxess/"],
       ["/karrier", "/rolunk/karrier/"],
       ["/tudastar-blog", "/cikkek/"],
-    ].map(([source, destination]) => ({ source, destination, permanent: true }));
+    ].map(([source, destination]) => ({ source, destination, statusCode: 301 as const }));
   },
 };
 

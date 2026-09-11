@@ -18,3 +18,12 @@ Az éles felmérés megismételhető:
 ```text
 node scripts/capture-live-url-baseline.mjs YYYY-MM-DD
 ```
+
+## Ismert Next.js 404 logzaj
+
+A catch-all route-ok `dynamicParams = false` beállítása gondoskodik arról, hogy
+az ismeretlen útvonalak helyes statikus `404` választ adjanak, és a megerősített
+read-only konténerben ne próbáljanak prerender cache-t írni. A Next.js 16.2.6
+eközben `Internal: NoFallbackError` sort ír a naplóba (vercel/next.js #90537),
+noha a 404 válasz helyes. Szándékosan nem szűrjük a `console.error` kimenetét és
+nem építünk egyedi cache-kezelőt egy kizárólag naplózási hiba elfedésére.
