@@ -6,6 +6,8 @@ import { getV3Page, V3_PAGES } from "@/lib/v3-pages";
 type Params = { slug: string; subslug: string[] };
 const pathFor = ({ slug, subslug }: Params) => `/${[slug, ...subslug].join("/")}/`;
 
+export const dynamicParams = false;
+
 export function generateStaticParams(): Params[] {
   return V3_PAGES
     .map((page) => new URL(page.url, "https://a1solar.hu").pathname.split("/").filter(Boolean))

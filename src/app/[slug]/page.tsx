@@ -28,9 +28,14 @@ import {
 } from "@/lib/content";
 import { getMirror } from "@/lib/mirror";
 import { SITE } from "@/lib/site";
-import { getV3Page } from "@/lib/v3-pages";
+import { getV3Page, V3_PAGES } from "@/lib/v3-pages";
 
 type Params = { slug: string };
+
+// Every supported one-segment URL is known at build time. Disabling runtime
+// fallback keeps the hardened read-only container from trying to persist
+// prerender entries for unknown URLs.
+export const dynamicParams = false;
 
 /** Contact page gets an appended working form (the mirrored one is static). */
 const APPEND_CONTACT_FORM = new Set(["kapcsolat"]);
@@ -39,6 +44,10 @@ export function generateStaticParams(): Params[] {
   const slugs = new Set<string>();
   for (const p of getPages()) if (!RESERVED_SLUGS.has(p.slug)) slugs.add(p.slug);
   for (const p of getPosts()) if (!slugs.has(p.slug)) slugs.add(p.slug);
+  for (const page of V3_PAGES) {
+    const parts = new URL(page.url, "https://a1solar.hu").pathname.split("/").filter(Boolean);
+    if (parts.length === 1) slugs.add(parts[0]);
+  }
   return [...slugs].map((slug) => ({ slug }));
 }
 
