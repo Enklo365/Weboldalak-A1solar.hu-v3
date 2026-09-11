@@ -1,0 +1,4086 @@
+[
+  {
+    "number": 1,
+    "name": "FŐOLDAL",
+    "breadcrumb": "Főoldal",
+    "url": "https://a1solar.hu/",
+    "seoTitle": "A1 Solar | Napelem, energiatárolás, backup és BESS",
+    "metaDescription": "A1 Solar: 13 év szakmai tapasztalat, 2019 óta stabil működés, 5000+ napelemes rendszer, lakossági energiatárolás, backup, vállalati és ipari energetikai megoldások.",
+    "h1": "A1 Solar – komplett energetikai megoldások hosszú távra",
+    "intro": [
+      {
+        "kind": "paragraph",
+        "text": "Napelem, energiatárolás, backup, vállalati és ipari energetikai megoldások egy kézből."
+      },
+      {
+        "kind": "paragraph",
+        "text": "Az A1 Solar szakmai háttere 13 évre nyúlik vissza, jelenlegi működési formájában pedig 2019 óta stabilan van jelen a magyar energetikai piacon. Ez idő alatt több mint 5000 napelemes rendszer megvalósításában vettünk részt Magyarországon."
+      },
+      {
+        "kind": "paragraph",
+        "text": "Ma már nemcsak napelemet telepítünk. Lakossági, vállalati és ipari ügyfeleink számára komplett energetikai rendszereket tervezünk és valósítunk meg a felméréstől és tervezéstől a kivitelezésen át a monitoringig, szervizig és garanciális támogatásig."
+      },
+      {
+        "kind": "paragraph",
+        "text": "13 év szakmai tapasztalat | 2019 óta stabil A1 Solar működés | 5000+ rendszer | országos kivitelezés és szerviz"
+      },
+      {
+        "kind": "cta",
+        "label": "Ajánlatot kérek"
+      },
+      {
+        "kind": "editorial",
+        "mediaType": "KÉP",
+        "placement": "HERO",
+        "details": "Saját A1 Solar projektfotó, lehetőleg olyan rendszer, ahol egyszerre látszik inverter, energiatároló és rendezett műszaki kivitelezés.\nKépcím: A1 Solar komplett napelemes és energiatároló rendszer kivitelezése"
+      }
+    ],
+    "sections": [
+      {
+        "id": "lakossagi-napelem-energiatarolo",
+        "title": "Lakossági napelem + energiatároló",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "Új lakossági rendszereknél a napelemet, az invertert és az energiatárolót már a kezdetektől egy rendszerként tervezzük. A méretezést az ingatlan fogyasztásához, villamos hálózatához, későbbi bővíthetőségéhez és a kívánt backup funkcióhoz igazítjuk."
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "KÉP",
+            "placement": "",
+            "details": "Saját lakossági napelem + energiatároló projekt.\nKépcím: A1 Solar lakossági napelem és energiatároló rendszer – [HELYSZÍN]"
+          },
+          {
+            "kind": "link",
+            "label": "Napelem + energiatároló",
+            "href": "/lakossagi/napelem-energiataroloval/",
+            "external": false
+          }
+        ]
+      },
+      {
+        "id": "meglevo-napelem-bovitese-energiataroloval",
+        "title": "Meglévő napelem bővítése energiatárolóval",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "Ha már működik napelemes rendszer az ingatlanon, sok esetben utólag is kialakítható akkumulátoros energiatárolás. Felmérjük a meglévő invertert, a kompatibilitást, a villamos kialakítást és azt, hogy szükséges-e invertercsere vagy más műszaki átalakítás."
+          },
+          {
+            "kind": "link",
+            "label": "Meglévő napelem bővítése",
+            "href": "/lakossagi/meglevo-napelem-bovitese-energiataroloval/",
+            "external": false
+          }
+        ]
+      },
+      {
+        "id": "backup-es-energiabiztonsag",
+        "title": "Backup és energiabiztonság",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "A hagyományos hálózatra kapcsolt napelemes rendszer áramszünet esetén leáll. Ha fontos, hogy hálózati kimaradás idején is működjenek meghatározott fogyasztók, a backup funkciót megfelelő inverterrel, energiatárolóval, leválasztással és villamos kialakítással kell megtervezni."
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "VIDEÓ",
+            "placement": "",
+            "details": "Saját backup teszt vagy áramszünet-szimuláció.\nVideócím: Így működik egy A1 Solar backup rendszer áramszünet esetén"
+          },
+          {
+            "kind": "link",
+            "label": "Backup / áramszüneti megoldások",
+            "href": "/lakossagi/backup-aramszuneti-megoldasok/",
+            "external": false
+          }
+        ]
+      },
+      {
+        "id": "vallalati-energetikai-megoldasok",
+        "title": "Vállalati energetikai megoldások",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "Vállalati ügyfeleink számára napelemes rendszereket, energiatárolást, meglévő rendszerek bővítését, energetikai optimalizációt, O&M szolgáltatást és finanszírozott/PPA konstrukciókhoz kapcsolódó projektmegoldásokat kínálunk."
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "KÉP",
+            "placement": "",
+            "details": "Saját vállalati napelem + energiatároló projekt.\nKépcím: A1 Solar vállalati energetikai rendszer – [HELYSZÍN]"
+          },
+          {
+            "kind": "link",
+            "label": "Cégeknek",
+            "href": "/vallalati/napelem-energiatarolassal/",
+            "external": false
+          }
+        ]
+      },
+      {
+        "id": "ipari-projektek-es-bess",
+        "title": "Ipari projektek és BESS",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "Ipari projektekben nagy naperőművekkel, BESS rendszerekkel, standalone energiatárolással, PV + storage megoldásokkal, valamint aggregációs és flexibilitási lehetőségekkel foglalkozunk."
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "KÉP",
+            "placement": "",
+            "details": "Saját ipari/BESS projekt.\nKépcím: A1 Solar ipari BESS energiatároló rendszer – [HELYSZÍN]"
+          },
+          {
+            "kind": "link",
+            "label": "BESS / ipari energiatárolás",
+            "href": "/ipari/bess-ipari-energiatarolas/",
+            "external": false
+          }
+        ]
+      },
+      {
+        "id": "nem-egyetlen-termeket-adunk-rendszert-tervezunk",
+        "title": "Nem egyetlen terméket adunk. Rendszert tervezünk.",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "Egy energetikai beruházás akkor működik jól, ha a napelem, az inverter, az energiatároló, a vezérlés, a monitoring és szükség esetén a backup funkció egymással összehangolt rendszerként működik."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Az A1 Solar ezért minden projektet az ügyfél tényleges fogyasztása, műszaki adottságai és energetikai céljai alapján tervez meg."
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "GRAFIKA",
+            "placement": "",
+            "details": "Napelem → inverter → energiatároló → fogyasztók → backup → monitoring\nGrafikacím: Az A1 Solar komplett energetikai rendszerének felépítése"
+          }
+        ]
+      },
+      {
+        "id": "tobb-vezeto-gyarto-technologiajaval-dolgozunk",
+        "title": "Több vezető gyártó technológiájával dolgozunk",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "Deye, Huawei, Sigenergy és FoxESS rendszerekkel egyaránt dolgozunk. A gyártói kompetenciaoldalakon a technológiák mellett saját telepítési tapasztalatainkat, gyártói kapcsolatainkat és referenciáinkat is bemutatjuk."
+          },
+          {
+            "kind": "linkList",
+            "links": [
+              {
+                "label": "Deye",
+                "href": "/technologiak/deye/"
+              },
+              {
+                "label": "[BELSŐ LINK] Huawei",
+                "href": "/technologiak/huawei/"
+              },
+              {
+                "label": "[BELSŐ LINK] Sigenergy",
+                "href": "/technologiak/sigenergy/"
+              },
+              {
+                "label": "[BELSŐ LINK] FoxESS",
+                "href": "/technologiak/foxess/"
+              }
+            ],
+            "external": false
+          }
+        ]
+      },
+      {
+        "id": "valodi-tapasztalat-valodi-projektek",
+        "title": "Valódi tapasztalat. Valódi projektek.",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "A családi házas rendszerektől a több MWh-s vállalati és ipari energiatárolásig különböző méretű és összetettségű projekteken dolgozunk. A referenciáknál a fotók mellett a fontosabb műszaki adatokat, a projekt célját és az A1 Solar feladatát is bemutatjuk."
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "KÉP",
+            "placement": "",
+            "details": "3–4 saját referencia mozaikban.\nKépcímek: A1 Solar lakossági energiatároló rendszer – [HELYSZÍN] | A1 Solar backup rendszer – [HELYSZÍN] | Magyarország első FoxESS G-MAX energiatároló rendszere | A1 Solar vállalati BESS projekt – [HELYSZÍN]"
+          },
+          {
+            "kind": "link",
+            "label": "Referenciák",
+            "href": "/referenciak/energiatarolas/",
+            "external": false
+          }
+        ]
+      },
+      {
+        "id": "a-rendszer-atadasa-utan-is-szamithatsz-rank",
+        "title": "A rendszer átadása után is számíthatsz ránk",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "A kivitelezés mellett monitoringgal, műszaki támogatással, szervizzel és garanciális ügyintézéssel is segítjük ügyfeleinket. A kiemelt gyártókkal fennálló közvetlen kapcsolataink és a cégcsoport disztribúciós háttere műszaki kérdés esetén is erős szakmai hátteret ad."
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "KÉP",
+            "placement": "",
+            "details": "Saját A1 Solar szervizmunka.\nKépcím: A1 Solar szerviz és hosszú távú műszaki támogatás"
+          },
+          {
+            "kind": "link",
+            "label": "Szerviz és garancia",
+            "href": "/rolunk/szerviz-es-garancia/",
+            "external": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 2,
+    "name": "CÉGÜNKRŐL",
+    "breadcrumb": "Rólunk → Cégünkről",
+    "url": "/rolunk/cegunkrol/",
+    "seoTitle": "A1 Solar | Cégünkről",
+    "metaDescription": "Ismerd meg az A1 Solart: 13 év szakmai múlt, 2019 óta stabil működés, 5000+ napelemes rendszer, energiatárolás, BESS, gyártói kapcsolatok és szerviz.",
+    "h1": "A1 Solar – stabil energetikai partner hosszú távra",
+    "intro": [
+      {
+        "kind": "paragraph",
+        "text": "Az A1 Solar magyar tulajdonú energetikai vállalat, amely lakossági, vállalati és ipari ügyfelek számára valósít meg napelemes, energiatárolási és komplex energetikai rendszereket."
+      },
+      {
+        "kind": "paragraph",
+        "text": "Szakmai múltunk 13 évre nyúlik vissza, az A1 Solar pedig 2019 óta működik jelenlegi formájában. Ez idő alatt több mint 5000 napelemes rendszer megvalósításában vettünk részt."
+      },
+      {
+        "kind": "paragraph",
+        "text": "Számunkra a stabilitás azt jelenti, hogy ügyfeleink nemcsak a kivitelezés napján, hanem évekkel később is számíthatnak szakmai támogatásunkra, monitoringra és szervizre."
+      },
+      {
+        "kind": "paragraph",
+        "text": "13 év szakmai múlt | 2019 óta stabil A1 Solar működés | 5000+ napelemes rendszer | lakossági és ipari energiatárolás"
+      },
+      {
+        "kind": "editorial",
+        "mediaType": "KÉP",
+        "placement": "HERO",
+        "details": "Saját csapatfotó.\nKépcím: Az A1 Solar csapata"
+      }
+    ],
+    "sections": [
+      {
+        "id": "ket-szakmai-terulet-talalkozasabol-szuletett-az-a1-solar",
+        "title": "Két szakmai terület találkozásából született az A1 Solar",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "Az A1 Solar története két egymást jól kiegészítő szakmai háttér találkozásával kezdődött."
+          },
+          {
+            "kind": "paragraph",
+            "text": "A Szorgos Vill már az A1 Solar létrejötte előtt jelentős tapasztalatot szerzett napelemes rendszerek kivitelezésében, míg a Blyxa Consulting energetikai pályázatok előkészítésével, kezelésével és beruházások szakmai támogatásával foglalkozott."
+          },
+          {
+            "kind": "paragraph",
+            "text": "A két terület összekapcsolásából 2019-ben jött létre az A1 Solar jelenlegi vállalati formája."
+          },
+          {
+            "kind": "paragraph",
+            "text": "A cél már akkor is az volt, hogy az ügyfél ne külön szereplőktől kapja a műszaki tervezést, az ügyintézést, a kivitelezést és a projektkoordinációt, hanem egyetlen szakmai partner kezelje a teljes folyamatot."
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "KÉP",
+            "placement": "",
+            "details": "Régebbi napelemes kivitelezés.\nKépcím: Az A1 Solar szakmai előzményei – napelemes kivitelezés"
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "KÉP",
+            "placement": "",
+            "details": "Korai projektcsapat vagy irodai szakmai kép.\nKépcím: Az A1 Solar szakmai előzményei – energetikai projektmenedzsment"
+          }
+        ]
+      },
+      {
+        "id": "fontosabb-merfoldkoveink",
+        "title": "Fontosabb mérföldköveink",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "A szakmai alapok több mint egy évtizedre nyúlnak vissza. A 2019-ben létrejött A1 Solar néhány év alatt országosan működő energetikai vállalattá fejlődött."
+          },
+          {
+            "kind": "paragraph",
+            "text": "A napelemes rendszerek mellett egyre nagyobb szerepet kaptak az energiatároló, backup és vállalati BESS megoldások. Ma már projektjeink a családi házas rendszerektől a több MWh-s vállalati energiatárolásig terjednek."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Kiemelt szakmai mérföldkő volt Magyarország első FoxESS G-MAX energiatároló rendszerének telepítése, valamint a nemzetközi jelenlét bővülése ausztriai és afrikai projektekkel."
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "GRAFIKA",
+            "placement": "",
+            "details": "Vizuális idővonal saját képekkel.\nPontok: szakmai alapok → 2019 A1 Solar → 5000+ rendszer → energiatárolás és backup → BESS → FoxESS G-MAX → nemzetközi projektek"
+          }
+        ]
+      },
+      {
+        "id": "ma-mar-tobb-mint-napelem",
+        "title": "Ma már több mint napelem",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "Az energetikai piac jelentősen átalakult."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Ma már nemcsak az számít, mennyi energiát termelünk, hanem az is, mennyit tudunk helyben felhasználni, eltárolni, intelligensen vezérelni és szükség esetén tartalék energiaforrásként használni."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Ezért az A1 Solar ma már teljes energetikai rendszerben gondolkodik."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Lakossági és vállalati ügyfeleink számára napelemes rendszereket, energiatárolást, backup megoldásokat, vállalati BESS rendszereket, monitoringot és szervizhátteret biztosítunk."
+          },
+          {
+            "kind": "linkList",
+            "links": [
+              {
+                "label": "Lakossági napelem",
+                "href": "/lakossagi/napelem-energiataroloval/"
+              },
+              {
+                "label": "Lakossági energiatárolás",
+                "href": "/lakossagi/napelem-energiataroloval/"
+              },
+              {
+                "label": "Backup",
+                "href": "/lakossagi/backup-aramszuneti-megoldasok/"
+              },
+              {
+                "label": "Vállalati energiatárolás",
+                "href": "/vallalati/napelem-energiatarolassal/"
+              },
+              {
+                "label": "Szerviz és garancia",
+                "href": "/rolunk/szerviz-es-garancia/"
+              }
+            ],
+            "external": false
+          }
+        ]
+      },
+      {
+        "id": "kozvetlen-kapcsolat-a-gyartokkal",
+        "title": "Közvetlen kapcsolat a gyártókkal",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "Az A1 Solar több vezető inverter- és energiatároló gyártóval dolgozik közvetlen szakmai kapcsolatban."
+          },
+          {
+            "kind": "paragraph",
+            "text": "A Deye esetében többéves kivitelezési tapasztalattal, ezres nagyságrendű telepítési volumennel és többszöri ningbói gyárlátogatással rendelkezünk."
+          },
+          {
+            "kind": "paragraph",
+            "text": "A FoxESS rendszerekkel már 2022–2023 óta dolgozunk, több száz rendszert telepítettünk Magyarországon, és szakembereink részt vettek a gyártó C&I képzésén is."
+          },
+          {
+            "kind": "paragraph",
+            "text": "A Sigenergy esetében az Energrosso disztribúciós háttere mellett 2026-os gyárlátogatással és közvetlen gyártói kapcsolattal rendelkezünk."
+          },
+          {
+            "kind": "paragraph",
+            "text": "A Huawei esetében Key Account partnerként közvetlen gyártói támogatási háttérrel dolgozunk, és részt vettünk a Huawei Global Installer Summit kínai rendezvényén is."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Az A1 Solar cégcsoport tagja az Energrosso Kft., amely több kiemelt energetikai gyártó hivatalos disztribúciós partnere. Ennek köszönhetően csapatunk közvetlenül hozzáfér gyártói képzésekhez, technikai információkhoz, support- és szervizcsatornákhoz."
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "KÉP",
+            "placement": "",
+            "details": "Deye Ningbo\nKépcím: A1 Solar a Deye ningbói gyárában"
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "KÉP",
+            "placement": "",
+            "details": "FoxESS China\nKépcím: A1 Solar szakmai látogatás a FoxESS kínai központjában"
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "KÉP",
+            "placement": "",
+            "details": "Sigenergy 2026\nKépcím: A1 Solar szakmai látogatás a Sigenergy gyárában – 2026"
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "KÉP",
+            "placement": "",
+            "details": "Huawei Summit\nKépcím: A1 Solar a Huawei Global Installer Summit rendezvényén"
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "VIDEÓ",
+            "placement": "",
+            "details": "60–90 másodperces összeállítás.\nVideócím: A1 Solar közvetlenül a világ vezető energetikai gyártóinál"
+          }
+        ]
+      },
+      {
+        "id": "nemzetkozi-tapasztalat-stabil-magyar-hatter",
+        "title": "Nemzetközi tapasztalat, stabil magyar háttér",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "Az A1 Solar fejlődése Magyarország határain túl is folytatódott."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Ausztriai kivitelezések mellett 2024-től az A1 Solar Zanzibar révén afrikai lakossági, kereskedelmi és ipari energetikai projekteken is dolgozunk."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Az ilyen környezetekben az energiatárolás, az energiafüggetlenség és a hálózatbiztonság nem elméleti kérdés, hanem a mindennapi működés része. Az itt megszerzett tapasztalatot magyarországi projektjeinkben is hasznosítjuk."
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "KÉP",
+            "placement": "",
+            "details": "Ausztriai projekt.\nKépcím: A1 Solar energetikai projekt Ausztriában – [HELYSZÍN]"
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "KÉP",
+            "placement": "",
+            "details": "Afrikai projekt.\nKépcím: A1 Solar energetikai projekt Afrikában – [HELYSZÍN]"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Nem csak telepítjük. Hosszú távon is mögötte állunk."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Egy napelemes vagy energiatároló rendszer hosszú éveken keresztül működik."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Ezért a rendszer átadása számunkra nem a projekt vége. Monitoringgal, diagnosztikával, szervizzel és garanciális ügyintézéssel is rendelkezésre állunk."
+          },
+          {
+            "kind": "paragraph",
+            "text": "A célunk az, hogy ügyfeleink hosszú távon is olyan szakmai partnerre támaszkodhassanak, aki ismeri a rendszerüket és szükség esetén a gyártóval is közvetlenül tud egyeztetni."
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "KÉP",
+            "placement": "",
+            "details": "Szervizes A1 kolléga.\nKépcím: A1 Solar monitoring és szerviz"
+          },
+          {
+            "kind": "link",
+            "label": "Szerviz és garancia",
+            "href": "/rolunk/szerviz-es-garancia/",
+            "external": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 3,
+    "name": "A1 SOLAR A MÉDIÁBAN",
+    "breadcrumb": "Rólunk → A1 Solar a médiában",
+    "url": "/rolunk/media/",
+    "seoTitle": "A1 Solar a médiában | Sajtómegjelenések és interjúk",
+    "metaDescription": "Az A1 Solar rendszeresen szerepel vezető magyar gazdasági és hírportálokon. Válogatás a Portfolio, Telex, Index, HVG, 24.hu, Világgazdaság és más médiumok megjelenéseiből.",
+    "h1": "A1 Solar a médiában",
+    "intro": [
+      {
+        "kind": "paragraph",
+        "text": "Az A1 Solar az elmúlt években rendszeresen szerepelt vezető magyar gazdasági és hírportálokon."
+      },
+      {
+        "kind": "paragraph",
+        "text": "A megszólalások és cikkek fő témái a magyar napelemes piac változásai, az energiatárolás, az energiabiztonság, a támogatási programok és az otthoni energiagazdálkodás fejlődése voltak."
+      },
+      {
+        "kind": "paragraph",
+        "text": "Az A1 Solarról többek között a Portfolio, a Telex/G7, az Index, a HVG, a 24.hu, a Világgazdaság és más országos gazdasági és hírportálok is írtak."
+      }
+    ],
+    "sections": [
+      {
+        "id": "kiemelt-mediamegjelenesek",
+        "title": "Kiemelt médiamegjelenések",
+        "items": [
+          {
+            "kind": "subheading",
+            "text": "Telex / G7 – Menny és pokol öt év alatt, így építették fel a négymilliárdos napelemes céget"
+          },
+          {
+            "kind": "paragraph",
+            "text": "A G7 részletes cégportréban mutatta be az A1 Solar történetét, növekedését, valamint azt, hogyan alkalmazkodott a vállalat a magyar napelemes piac néhány év alatt bekövetkezett jelentős változásaihoz. 2025. május 3."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Elolvasom a Telex/G7 cikkét →"
+          },
+          {
+            "kind": "subheading",
+            "text": "Portfolio – Pár év alatt nemzetközi sikertörténetet írt egy magyar napelemes cég"
+          },
+          {
+            "kind": "paragraph",
+            "text": "A Portfolio önálló cégprofilban foglalkozott az A1 Solar fejlődésével, a vállalat növekedésével és a hazai napelemes piac kihívásaival. 2025. március 16."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Elolvasom a Portfolio cikkét →"
+          },
+          {
+            "kind": "subheading",
+            "text": "HVG – Már eldőltek az első dominók: választás utáni összeomlástól fél a napelemes szakma"
+          },
+          {
+            "kind": "paragraph",
+            "text": "A HVG részletes háttérelemzésben vizsgálta a hazai napelemes piac helyzetét, a támogatási programok hatását és az iparági szereplők előtt álló kihívásokat. A cikkben az A1 Solar tapasztalatai és szakmai álláspontja is hangsúlyosan megjelent. 2024. június 5."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Elolvasom a HVG cikkét →"
+          },
+          {
+            "kind": "subheading",
+            "text": "Index – A kormány százezrek életéről döntött, és már túl is lehet a nehezén"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Az Index részletes szakmai anyagban foglalkozott a napelemes piac változásaival, az új szabályozási környezettel és az energiatárolás szerepével. A cikkben az A1 Solar szakértői tapasztalatai is megjelentek. 2024. január 22."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Elolvasom az Index cikkét →"
+          },
+          {
+            "kind": "subheading",
+            "text": "Portfolio – Szabadesésben a hazai lakossági és céges napelemes piac"
+          },
+          {
+            "kind": "paragraph",
+            "text": "A Portfolio elemzése a magyar lakossági és vállalati napelemes piac jelentős visszaesését és annak okait vizsgálta. Az anyag elkészítéséhez az A1 Solar piaci tapasztalatait és adatait is felhasználták. 2024. június 5."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Elolvasom a Portfolio cikkét →"
+          },
+          {
+            "kind": "subheading",
+            "text": "HVG – Egy budafoki napelemcég lett Magyarország leggyorsabban növekvő vállalata"
+          },
+          {
+            "kind": "paragraph",
+            "text": "A HVG az A1 Solar Financial Times FT1000 rangsorban elért eredményéről számolt be. A vállalat a rangsorban a leggyorsabban növekvő magyar vállalkozásként szerepelt. 2025. március 4."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Elolvasom a HVG cikkét →"
+          },
+          {
+            "kind": "subheading",
+            "text": "Világgazdaság – Napelem áramszünet alatt? Így alakíthatja át bombabiztosra otthonát"
+          },
+          {
+            "kind": "paragraph",
+            "text": "A Világgazdaság az otthoni energiatárolás és a tartalék energiaellátás lehetőségeit mutatta be az A1 Solar szakmai tapasztalatain keresztül, kitérve a különböző backup-megoldások műszaki és költségoldalára is. 2026. augusztus 11."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Elolvasom a Világgazdaság cikkét →"
+          }
+        ]
+      },
+      {
+        "id": "hol-jelent-meg-az-a1-solar",
+        "title": "Hol jelent meg az A1 Solar?",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "Portfolio · Telex / G7 · Index · HVG · 24.hu · Világgazdaság · Forbes · Pénzcentrum · Economx · Infostart"
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "KÉP / LOGÓSOR",
+            "placement": "",
+            "details": "A médiumok logói. Vizuálisan a Telex, Portfolio, Index, HVG, 24.hu és Világgazdaság legyen a legerősebben kiemelve."
+          }
+        ]
+      },
+      {
+        "id": "fo-szakmai-temaink-a-sajtoban",
+        "title": "Fő szakmai témáink a sajtóban",
+        "items": [
+          {
+            "kind": "subheading",
+            "text": "Napelemes piac"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Hogyan változik a magyar lakossági és vállalati napelemes piac, és milyen hatással vannak rá az energiaárak, a szabályozás és az új technológiák?"
+          },
+          {
+            "kind": "subheading",
+            "text": "Energiatárolás"
+          },
+          {
+            "kind": "paragraph",
+            "text": "A napelemes rendszerek következő fejlődési lépcsője egyre inkább az akkumulátoros energiatárolás. A megtermelt energia így nemcsak azonnal használható fel, hanem későbbi időpontra is eltárolható."
+          },
+          {
+            "kind": "subheading",
+            "text": "Energiabiztonság és kisebb hálózati függőség"
+          },
+          {
+            "kind": "paragraph",
+            "text": "A megfelelően kialakított napelemes és energiatárolós rendszer növelheti a saját energia felhasználását, egyes rendszerek pedig áramszünet esetén tartalék energiaellátást is biztosíthatnak."
+          },
+          {
+            "kind": "subheading",
+            "text": "Napelemes és energiatárolási támogatások"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Az állami támogatási programok jelentős hatással vannak a hazai piacra. Az A1 Solar szakértőit rendszeresen kérdezik a pályázatok gyakorlati tapasztalatairól és várható piaci hatásairól."
+          },
+          {
+            "kind": "subheading",
+            "text": "Intelligens energiakezelés"
+          },
+          {
+            "kind": "paragraph",
+            "text": "A modern energiarendszerekben egyre fontosabbá válik, hogy a napelem, az akkumulátor, az inverter és az otthon fogyasztói összehangoltan működjenek."
+          }
+        ]
+      },
+      {
+        "id": "tovabbi-mediamegjelenesek",
+        "title": "További médiamegjelenések",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "Az A1 Solar számos további cikkben, interjúban és szakmai anyagban szerepelt az elmúlt években."
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "LENYITHATÓ ARCHÍVUM",
+            "placement": "",
+            "details": "Évenként csoportosított lista. Egy sor: dátum – médium – cikk címe – „Megnyitás” link."
+          }
+        ]
+      },
+      {
+        "id": "sajtokapcsolat",
+        "title": "Sajtókapcsolat",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "Újságíróként vagy szakmai médium képviselőjeként energetikai, napelemes vagy energiatárolási témában keres szakmai megszólalót? Az A1 Solar szakértői rendszeresen nyilatkoznak a hazai napelemes és energiatárolási piacról, támogatási programokról, energiabiztonságról, akkumulátoros rendszerekről és az otthoni energiagazdálkodás fejlődéséről."
+          },
+          {
+            "kind": "link",
+            "label": "Sajtómegkeresés / Kapcsolat",
+            "href": "/kapcsolat/",
+            "external": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 4,
+    "name": "SZERVIZ ÉS GARANCIA",
+    "breadcrumb": "Rólunk → Szerviz és garancia",
+    "url": "/rolunk/szerviz-es-garancia/",
+    "seoTitle": "Napelem és energiatároló szerviz, garancia | A1 Solar",
+    "metaDescription": "Napelem, inverter, energiatároló és backup szerviz. Garanciális ügyintézés, monitoring, közvetlen gyártói kapcsolatok és országos A1 Solar műszaki háttér.",
+    "h1": "Napelem és energiatároló szerviz, garancia és hosszú távú támogatás",
+    "intro": [
+      {
+        "kind": "paragraph",
+        "text": "Egy energetikai rendszer értéke nem a telepítés napján dől el, hanem abban, hogy évek múlva is van-e mögötte működő műszaki és szervizháttér."
+      },
+      {
+        "kind": "paragraph",
+        "text": "Az A1 Solar ügyfelei számára a tervezéstől és telepítéstől a monitoringon és műszaki támogatáson át a garanciális ügyintézésig hosszú távú hátteret biztosít."
+      },
+      {
+        "kind": "paragraph",
+        "text": "13 év szakmai tapasztalat | 2019 óta stabil A1 Solar működés | 5000+ napelemes rendszer | közvetlen gyártói kapcsolatok"
+      },
+      {
+        "kind": "editorial",
+        "mediaType": "KÉP",
+        "placement": "HERO",
+        "details": "Saját szervizes kolléga rendszer előtt.\nKépcím: A1 Solar napelem és energiatároló szerviz"
+      }
+    ],
+    "sections": [
+      {
+        "id": "nem-er-veget-a-kapcsolat-a-telepitessel",
+        "title": "Nem ér véget a kapcsolat a telepítéssel",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "Napelemes és energiatároló rendszereknél az inverter, az akkumulátor, a kommunikáció, a monitoring és a vezérlés hosszú éveken keresztül együtt működik."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Ha műszaki probléma merül fel, fontos, hogy legyen olyan szakmai partner, aki ismeri a rendszert, hozzáfér a szükséges gyártói információkhoz, képes kezelni a monitoringot és konfigurációt, és szükség esetén közvetlenül a gyártóval is tud egyeztetni."
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "KÉP",
+            "placement": "",
+            "details": "Monitoringot vizsgáló A1 kolléga.\nKépcím: A1 Solar távoli monitoring és műszaki diagnosztika"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Miben segít az A1 Solar szerviz?"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Napelemes rendszer esetén inverterhiba, termelési probléma, kommunikációs vagy monitoring hiba és villamos rendszerellenőrzés esetén tudunk támogatást nyújtani."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Energiatároló rendszereknél akkumulátorral, BMS-kommunikációval, töltéssel, inverter–akkumulátor kapcsolattal és rendszervezérléssel kapcsolatos problémák vizsgálatát végezzük."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Backup rendszereknél ellenőrizzük az átkapcsolást, a backup működést, a fogyasztói köröket és a rendszer konfigurációját."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Garanciális ügy esetén kezeljük a szükséges műszaki dokumentációt és a gyártói folyamatot az adott termék feltételei szerint."
+          }
+        ]
+      },
+      {
+        "id": "igy-tortenik-a-szervizbejelentes",
+        "title": "Így történik a szervizbejelentés",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "A hibabejelentés után elsőként megvizsgáljuk, hogy a probléma távolról diagnosztizálható-e."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Ha rendelkezésre áll monitoringadat vagy hibakód, ezek alapján megkezdjük a műszaki ellenőrzést."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Ha szükséges, közvetlenül egyeztetünk a gyártó supportjával, és ha a probléma helyszíni beavatkozást igényel, megszervezzük a kiszállást."
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "GRAFIKA",
+            "placement": "",
+            "details": "Bejelentés → távoli diagnosztika → műszaki egyeztetés → helyszíni szerviz → lezárás"
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "GRAFIKACÍM",
+            "placement": "",
+            "details": "Az A1 Solar szervizfolyamata"
+          }
+        ]
+      },
+      {
+        "id": "kozvetlen-gyartoi-hatter",
+        "title": "Közvetlen gyártói háttér",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "A Deye esetében ezres nagyságrendű telepítési tapasztalattal, gyártói képzésekkel, többszöri ningbói látogatással és disztribúciós múlttal rendelkezünk."
+          },
+          {
+            "kind": "paragraph",
+            "text": "A FoxESS-nél több száz megvalósított rendszer, közvetlen gyártói kapcsolat és C&I képzés áll mögöttünk."
+          },
+          {
+            "kind": "paragraph",
+            "text": "A Sigenergy esetében az Energrosso disztribúciós partnerként közvetlen gyártói információhoz és szakmai háttérhez biztosít hozzáférést."
+          },
+          {
+            "kind": "paragraph",
+            "text": "A Huawei esetében Key Account partnerként közvetlen gyártói támogatási háttérrel dolgozunk."
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "KÉP",
+            "placement": "",
+            "details": "Gyártónként 1 szakmai saját fotó."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Garancia: mit jelent a gyakorlatban?"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Egy napelemes vagy energiatároló rendszer hosszú távú beruházás, ezért fontos, hogy ne csak a kivitelezés, hanem a berendezések mögött is megfelelő garanciális háttér álljon."
+          },
+          {
+            "kind": "paragraph",
+            "text": "A mai minőségi napelemeknél jellemzően 15–25 év körüli termékgarancia és 25–30 év teljesítménygarancia érhető el."
+          },
+          {
+            "kind": "paragraph",
+            "text": "A vezető inverter- és energiatároló gyártók megfelelő termékeinél jellemzően 10 év körüli gyártói garancia érhető el."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Az A1 Solar magára a kivitelezési munkára 2 év garanciát vállal."
+          },
+          {
+            "kind": "paragraph",
+            "text": "A pontos gyártói garanciális időtartamot mindig az adott márka és konkrét terméktípus feltételei határozzák meg."
+          },
+          {
+            "kind": "paragraph",
+            "text": "A hosszú garancia önmagában azonban nem elég. Fontos, hogy legyen mögötte olyan kivitelező és gyártói kapcsolat, amely egy esetleges garanciális ügyet ténylegesen végig tud vinni."
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "GRAFIKA",
+            "placement": "",
+            "details": ""
+          },
+          {
+            "kind": "paragraph",
+            "text": "Napelem: jellemzően 15–25 év termékgarancia\nNapelem: jellemzően 25–30 év teljesítménygarancia\nInverter: jellemzően 10 év gyártói garancia\nAkkumulátor: jellemzően 10 év gyártói garancia\nA1 Solar kivitelezési munka: 2 év"
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "GRAFIKACÍM",
+            "placement": "",
+            "details": "Napelemes és energiatároló rendszerek jellemző garanciális háttere"
+          }
+        ]
+      },
+      {
+        "id": "stabil-ceg-kell-egy-hosszu-elettartamu-rendszer-moge",
+        "title": "Stabil cég kell egy hosszú élettartamú rendszer mögé",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "Egy energetikai rendszer élettartama jóval hosszabb annál, mint amennyi idő alatt maga a telepítés elkészül."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Ezért a kivitelező kiválasztásakor nemcsak az ár számít, hanem az is, hogy ki lesz elérhető három, öt vagy akár tíz év múlva."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Az A1 Solar mögött 13 év szakmai tapasztalat, 2019 óta stabil működés, több mint 5000 megvalósított napelemes rendszer és közvetlen gyártói kapcsolatok állnak."
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "KÉP",
+            "placement": "",
+            "details": "A1 csapat / telephely.\nKépcím: A1 Solar – hosszú távú energetikai és szervizpartner"
+          }
+        ]
+      },
+      {
+        "id": "szervizbejelentes",
+        "title": "Szervizbejelentés",
+        "items": []
+      },
+      {
+        "id": "ha-a1-solar-altal-telepitett-rendszerrel-kapcsolatban-muszaki-problemat-tapasztalsz-irj",
+        "title": "Ha A1 Solar által telepített rendszerrel kapcsolatban műszaki problémát tapasztalsz, írj:",
+        "items": []
+      },
+      {
+        "id": "szerviz-a1solar-hu",
+        "title": "szerviz@a1solar.hu",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "A gyorsabb ügyintézéshez add meg a neved, a telepítés címét, az inverter márkáját és pontos típusát, a hibajelenséget, a hibakódot, és lehetőség szerint csatolj fényképet vagy képernyőképet."
+          },
+          {
+            "kind": "cta",
+            "label": "Szervizbejelentést küldök"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 5,
+    "name": "KARRIER",
+    "breadcrumb": "Rólunk → Karrier",
+    "url": "/rolunk/karrier/",
+    "seoTitle": "Karrier az A1 Solarnál | Energetikai és napelemes állások",
+    "metaDescription": "Csatlakozz az A1 Solar csapatához. Energetikai, műszaki, kivitelezési, szerviz és projektmenedzsment karrierlehetőségek egy fejlődő magyar vállalatnál.",
+    "h1": "Karrier az A1 Solarnál",
+    "intro": [
+      {
+        "kind": "paragraph",
+        "text": "Az energetikai piac gyorsan változik. A napelem, az energiatárolás, a backup, a vállalati BESS és az intelligens energiakezelés egyre összetettebb szakmai tudást igényel."
+      },
+      {
+        "kind": "paragraph",
+        "text": "Olyan kollégákat keresünk, akik szeretnének valódi projekteken dolgozni, szakmailag fejlődni, és hosszú távon részt venni az A1 Solar építésében."
+      },
+      {
+        "kind": "editorial",
+        "mediaType": "KÉP",
+        "placement": "HERO",
+        "details": "Valódi A1 Solar csapatfotó.\nKépcím: Az A1 Solar csapata"
+      }
+    ],
+    "sections": [
+      {
+        "id": "milyen-teruleteken-dolgozunk",
+        "title": "Milyen területeken dolgozunk?",
+        "items": [
+          {
+            "kind": "bullets",
+            "items": [
+              "lakossági napelemes és energiatároló rendszerek",
+              "backup és energiabiztonsági megoldások",
+              "vállalati napelem és energiatárolás",
+              "ipari BESS és naperőmű projektek",
+              "monitoring, szerviz és műszaki támogatás",
+              "projektmenedzsment, értékesítés és ügyfélkapcsolat"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "nyitott-poziciok",
+        "title": "Nyitott pozíciók",
+        "items": [
+          {
+            "kind": "editorial",
+            "mediaType": "ÁLLÁSLISTA",
+            "placement": "",
+            "details": "Aktuális nyitott pozíciók kártyákban. Pozíciónként: munkakör – helyszín – rövid leírás – Jelentkezem gomb.\n[KITÖLTENDŐ] Aktuális pozíciók."
+          }
+        ]
+      },
+      {
+        "id": "nincs-most-neked-valo-nyitott-pozicio",
+        "title": "Nincs most neked való nyitott pozíció?",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "Ha úgy érzed, hogy szakmai tapasztalatoddal, hozzáállásoddal és érdeklődéseddel értéket tudnál adni az A1 Solar csapatának, küldd el bemutatkozásodat és önéletrajzodat."
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "ŰRLAP",
+            "placement": "",
+            "details": "Név | E-mail | Telefonszám | Szakterület | Rövid üzenet | CV feltöltés"
+          },
+          {
+            "kind": "cta",
+            "label": "Jelentkezem az A1 Solarhoz"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 6,
+    "name": "NAPELEM + ENERGIATÁROLÓ",
+    "breadcrumb": "Lakosságnak → Napelem + energiatároló",
+    "url": "/lakossagi/napelem-energiataroloval/",
+    "seoTitle": "Napelem akkumulátorral, otthoni energiatároló | A1 Solar",
+    "metaDescription": "Napelem + akkumulátor egy rendszerben. Otthoni energiatároló, Deye, Huawei, Sigenergy és FoxESS, backup, méretezés, országos kivitelezés és szerviz.",
+    "h1": "Napelem + energiatároló családi házakhoz",
+    "intro": [
+      {
+        "kind": "paragraph",
+        "text": "Ha most építesz új napelemes rendszert, érdemes a napelemet, az invertert és az akkumulátoros energiatárolót már a kezdetektől egy rendszerként megtervezni."
+      },
+      {
+        "kind": "paragraph",
+        "text": "Az A1 Solar a fogyasztás, a tető és villamos hálózat adottságai, az esti energiaigény, a nagyobb fogyasztók, a későbbi bővíthetőség és a kívánt backup funkció alapján méretezi a rendszert."
+      },
+      {
+        "kind": "paragraph",
+        "text": "13 év szakmai tapasztalat | 2019 óta stabil A1 Solar működés | 5000+ rendszer | országos kivitelezés és szerviz"
+      },
+      {
+        "kind": "cta",
+        "label": "Napelem + energiatároló ajánlatot kérek"
+      },
+      {
+        "kind": "editorial",
+        "mediaType": "KÉP",
+        "placement": "HERO",
+        "details": "Saját családi házas napelem + energiatároló rendszer.\nKépcím: A1 Solar napelemes rendszer akkumulátorral – [HELYSZÍN]"
+      }
+    ],
+    "sections": [
+      {
+        "id": "nem-kulon-napelemet-es-akkumulatort-valasztunk-rendszert-tervezunk",
+        "title": "Nem külön napelemet és akkumulátort választunk. Rendszert tervezünk.",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "Két hasonló családi ház energiafelhasználása is teljesen eltérő lehet. Ezért a rendszer teljesítményét és az energiatároló kapacitását nem előre összeállított csomag alapján határozzuk meg."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Megvizsgáljuk a háztartás fogyasztását, a nappali napelemes termelést, az esti és éjszakai energiaigényt, az egy- vagy háromfázisú kialakítást, a hőszivattyút, elektromosautó-töltést és azt is, hogy szükség van-e áramszüneti backup működésre."
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "GRAFIKA",
+            "placement": "",
+            "details": "Napelem → inverter → akkumulátor → nappali/esti fogyasztás → backup\nGrafikacím: Egy komplett otthoni napelem + energiatároló rendszer működése"
+          }
+        ]
+      },
+      {
+        "id": "mit-ad-az-energiatarolo-a-napelemes-rendszerhez",
+        "title": "Mit ad az energiatároló a napelemes rendszerhez?",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "A napközbeni napelemes többlet eltárolható, majd este, éjszaka vagy nagyobb fogyasztás idején felhasználható. Ez növelheti a saját termelés helyben történő felhasználását és csökkentheti a hálózattól való függést."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Megfelelő rendszerkialakítás esetén az energiatároló a backup funkció része is lehet, de az akkumulátor önmagában még nem jelent tartalék energiaellátást."
+          },
+          {
+            "kind": "link",
+            "label": "Backup / áramszüneti megoldások",
+            "href": "/lakossagi/backup-aramszuneti-megoldasok/",
+            "external": false
+          }
+        ]
+      },
+      {
+        "id": "mekkora-akkumulator-kell",
+        "title": "Mekkora akkumulátor kell?",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "Erre nincs minden otthonra érvényes válasz. A kWh kapacitás mellett azt is vizsgálni kell, mekkora teljesítményt képes a rendszer egyszerre leadni, és milyen fogyasztókat kell ellátnia."
+          },
+          {
+            "kind": "paragraph",
+            "text": "A cél nem a lehető legnagyobb akkumulátor telepítése, hanem az, hogy a rendszer ténylegesen ki legyen használva és hosszú távon is illeszkedjen az otthon energiaigényéhez."
+          }
+        ]
+      },
+      {
+        "id": "deye-huawei-sigenergy-es-foxess",
+        "title": "Deye, Huawei, Sigenergy és FoxESS",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "Több vezető gyártó rendszerével dolgozunk, így nem egyetlen márkához igazítjuk minden ügyfelünk rendszerét. A technológiát az adott projekt műszaki igénye és a kívánt funkciók alapján választjuk ki."
+          },
+          {
+            "kind": "linkList",
+            "links": [
+              {
+                "label": "Deye",
+                "href": "/technologiak/deye/"
+              },
+              {
+                "label": "[BELSŐ LINK] Huawei",
+                "href": "/technologiak/huawei/"
+              },
+              {
+                "label": "[BELSŐ LINK] Sigenergy",
+                "href": "/technologiak/sigenergy/"
+              },
+              {
+                "label": "[BELSŐ LINK] FoxESS",
+                "href": "/technologiak/foxess/"
+              }
+            ],
+            "external": false
+          }
+        ]
+      },
+      {
+        "id": "lakossagi-referenciak-nem-csak-igeretek",
+        "title": "Lakossági referenciák, nem csak ígéretek",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "A referenciaoldalakon a fotó mellett a rendszer fő műszaki adatai és a projekt célja is jelenjen meg."
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "KÉP",
+            "placement": "",
+            "details": "Legalább 6 valós napelem + energiatároló projekt.\nKártyánként: helyszín | napelem kWp | inverter | akkumulátor kWh | backup igen/nem | projekt célja.\nKépcím: A1 Solar napelem + energiatároló referencia – [HELYSZÍN]"
+          },
+          {
+            "kind": "linkList",
+            "links": [
+              {
+                "label": "Lakossági referenciák",
+                "href": "/referenciak/lakossagi/"
+              },
+              {
+                "label": "[BELSŐ LINK] Energiatároló referenciák",
+                "href": "/referenciak/energiatarolas/"
+              }
+            ],
+            "external": false
+          }
+        ]
+      },
+      {
+        "id": "a-rendszer-atadasa-utan-is-szamithatsz-rank",
+        "title": "A rendszer átadása után is számíthatsz ránk",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "Monitoringgal, műszaki támogatással, szervizzel és garanciális ügyintézéssel is rendelkezésre állunk."
+          },
+          {
+            "kind": "cta",
+            "label": "Személyre szabott napelem + energiatároló ajánlatot kérek"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 7,
+    "name": "MEGLÉVŐ NAPELEM BŐVÍTÉSE ENERGIATÁROLÓVAL",
+    "breadcrumb": "Lakosságnak → Meglévő napelem bővítése energiatárolóval",
+    "url": "/lakossagi/meglevo-napelem-bovitese-energiataroloval/",
+    "seoTitle": "Meglévő napelem bővítése akkumulátorral | A1 Solar",
+    "metaDescription": "Meglévő napelemes rendszer akkumulátoros bővítése felméréstől a kivitelezésig. Kompatibilitásvizsgálat, inverter, energiatárolás, backup és szerviz.",
+    "h1": "Meglévő napelemes rendszer bővítése akkumulátorral",
+    "intro": [
+      {
+        "kind": "paragraph",
+        "text": "Ha már van működő napelemes rendszered, sok esetben utólag is kiegészíthető akkumulátoros energiatárolással."
+      },
+      {
+        "kind": "paragraph",
+        "text": "Az A1 Solar felméri a meglévő rendszert, ellenőrzi az inverter és az energiatároló kompatibilitását, megtervezi a szükséges műszaki átalakítást, majd elvégzi a kivitelezést és beüzemelést."
+      },
+      {
+        "kind": "paragraph",
+        "text": "Nem feltétel, hogy az eredeti napelemes rendszert az A1 Solar telepítette."
+      },
+      {
+        "kind": "cta",
+        "label": "Megnézetem a rendszerem bővítési lehetőségeit"
+      },
+      {
+        "kind": "editorial",
+        "mediaType": "KÉP",
+        "placement": "HERO",
+        "details": "Saját olyan projekt, ahol meglévő napelemhez került energiatároló.\nKépcím: Meglévő napelemes rendszer akkumulátoros bővítése – A1 Solar"
+      }
+    ],
+    "sections": [
+      {
+        "id": "nem-minden-napelemes-rendszert-ugyanugy-kell-boviteni",
+        "title": "Nem minden napelemes rendszert ugyanúgy kell bővíteni",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "A meglévő rendszer műszaki adottságai határozzák meg, milyen energiatárolási megoldás alkalmazható."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Megvizsgáljuk az inverter pontos típusát, az akkumulátor-kompatibilitást, a napelemes rendszer teljesítményét, az egy- vagy háromfázisú kialakítást, a villamos elosztót, a fogyasztást és a backup igényt."
+          },
+          {
+            "kind": "paragraph",
+            "text": "A cél nem az, hogy automatikusan lecseréljük a meglévő berendezéseket. Ha a rendszer egy része műszakilag megfelelően tovább használható, azt figyelembe vesszük a tervezés során."
+          }
+        ]
+      },
+      {
+        "id": "meglevo-hibrid-inverter-akkumulator",
+        "title": "Meglévő hibrid inverter + akkumulátor",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "Ha a jelenlegi inverter alkalmas akkumulátor kezelésére, sok esetben megtartható."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Ilyenkor a megfelelő kompatibilis energiatárolót, vezérlést és szükséges kiegészítő elemeket illesztjük a rendszerhez."
+          }
+        ]
+      },
+      {
+        "id": "invertercsere-akkumulator",
+        "title": "Invertercsere + akkumulátor",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "Ha a meglévő inverter nem alkalmas energiatároló kezelésére, korszerű hibrid inverterre történő csere lehet indokolt."
+          },
+          {
+            "kind": "paragraph",
+            "text": "A döntést minden esetben műszaki vizsgálat alapján hozzuk meg."
+          }
+        ]
+      },
+      {
+        "id": "egyedi-rendszerkialakitas",
+        "title": "Egyedi rendszerkialakítás",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "Bizonyos meglévő rendszereknél más műszaki megoldás lehet megfelelő."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Ezért a bővítés előtt mindig az adott rendszerből indulunk ki, nem egy előre meghatározott termékcsomagból."
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "GRAFIKA",
+            "placement": "",
+            "details": "Meglévő inverter megtartása\nInvertercsere\nEgyedi kialakítás"
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "GRAFIKACÍM",
+            "placement": "",
+            "details": "Meglévő napelemes rendszer akkumulátoros bővítésének lehetséges útjai"
+          }
+        ]
+      },
+      {
+        "id": "backup-is-kialakithato",
+        "title": "Backup is kialakítható",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "Az energiatároló telepítése lehetőséget ad arra is, hogy megfelelő műszaki feltételek mellett tartalék energiaellátást alakítsunk ki."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Az akkumulátor önmagában azonban nem jelent backupot. Ehhez az inverternek, a villamos rendszernek, a hálózati leválasztásnak és a fogyasztói köröknek is alkalmasnak kell lenniük."
+          },
+          {
+            "kind": "link",
+            "label": "Backup megoldások",
+            "href": "/lakossagi/backup-aramszuneti-megoldasok/",
+            "external": false
+          },
+          {
+            "kind": "paragraph",
+            "text": "Mekkora akkumulátort érdemes telepíteni?"
+          },
+          {
+            "kind": "paragraph",
+            "text": "A megfelelő kapacitást a nappali napelemes többlet, az esti és éjszakai fogyasztás, a nagyobb fogyasztók, a backup igény és a szükséges teljesítmény együtt határozza meg."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Nem a legnagyobb akkumulátort szeretnénk telepíteni, hanem azt, amelyet a háztartás valóban ki tud használni."
+          }
+        ]
+      },
+      {
+        "id": "valodi-bovitesi-referenciak",
+        "title": "Valódi bővítési referenciák",
+        "items": []
+      },
+      {
+        "id": "meglevo-inverter-megtartasa-helyszin",
+        "title": "Meglévő inverter megtartása – [HELYSZÍN]",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "A meglévő [KITÖLTENDŐ] kWp rendszer megtartása mellett [KITÖLTENDŐ] kWh energiatároló került telepítésre."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Meglévő inverter: [KITÖLTENDŐ]\nÚj akkumulátor: [KITÖLTENDŐ]\nKapacitás: [KITÖLTENDŐ] kWh\nBackup: [igen / nem]"
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "KÉP",
+            "placement": "",
+            "details": "Előtte/utána fotópár.\nKépcím: Meglévő napelemes rendszer energiatárolós bővítése – [HELYSZÍN]"
+          }
+        ]
+      },
+      {
+        "id": "invertercsere-akkumulator-helyszin",
+        "title": "Invertercsere + akkumulátor – [HELYSZÍN]",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "A projekt során a meglévő [KITÖLTENDŐ] invertert [KITÖLTENDŐ] inverterre cseréltük, és [KITÖLTENDŐ] kWh energiatárolót telepítettünk."
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "KÉP",
+            "placement": "",
+            "details": "Valódi projektfotó."
+          }
+        ]
+      },
+      {
+        "id": "mas-kivitelezo-rendszerenek-bovitese-helyszin",
+        "title": "Más kivitelező rendszerének bővítése – [HELYSZÍN]",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "Az eredeti rendszert nem az A1 Solar telepítette. A műszaki felmérés után [KITÖLTENDŐ] megoldást alakítottunk ki, [KITÖLTENDŐ] kWh energiatárolóval."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Projekt célja: [KITÖLTENDŐ]"
+          },
+          {
+            "kind": "cta",
+            "label": "Meglévő rendszerem bővítésére kérek ajánlatot"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 8,
+    "name": "BACKUP / ÁRAMSZÜNETI MEGOLDÁSOK",
+    "breadcrumb": "Lakosságnak → Backup / áramszüneti megoldások",
+    "url": "/lakossagi/backup-aramszuneti-megoldasok/",
+    "seoTitle": "Backup napelemes rendszer áramszünetre | A1 Solar",
+    "metaDescription": "Backup rendszer napelemhez és energiatárolóhoz. Kritikus fogyasztók vagy nagyobb fogyasztói kör tartalékellátása megfelelő inverterrel és villamos kialakítással.",
+    "h1": "Legyen áram otthonodban akkor is, amikor a hálózat leáll",
+    "intro": [
+      {
+        "kind": "paragraph",
+        "text": "A hagyományos hálózatra kapcsolt napelemes rendszer áramszünetkor biztonsági okból leáll."
+      },
+      {
+        "kind": "paragraph",
+        "text": "Attól, hogy van napelem a tetőn, sőt még attól sem feltétlenül, hogy akkumulátor is van a rendszerben, nem lesz automatikusan áram az otthonban hálózati kimaradás esetén."
+      },
+      {
+        "kind": "paragraph",
+        "text": "Valódi backup működéshez megfelelő inverterre, energiatárolóra, szabályos hálózati leválasztásra, megfelelő villamos kialakításra és helyesen megtervezett fogyasztói körökre van szükség."
+      },
+      {
+        "kind": "paragraph",
+        "text": "13 év szakmai tapasztalat | 5000+ rendszer | backup és energiatárolási kompetencia | országos kivitelezés"
+      },
+      {
+        "kind": "editorial",
+        "mediaType": "KÉP",
+        "placement": "HERO",
+        "details": "Saját backup rendszer.\nKépcím: A1 Solar backup és energiatároló rendszer – [HELYSZÍN]"
+      }
+    ],
+    "sections": [
+      {
+        "id": "az-akkumulator-onmagaban-nem-backup",
+        "title": "Az akkumulátor önmagában nem backup",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "A tartalék energiaellátás egy komplett rendszerfunkció."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Az A1 Solar ezért az invertert, az akkumulátort, a hálózati leválasztást, a védelmeket, a fogyasztói köröket és a vezérlést egységes rendszerként tervezi meg."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Csak így biztosítható, hogy áramszünet esetén a rendszer biztonságosan és megfelelő teljesítménnyel működjön."
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "GRAFIKA",
+            "placement": "",
+            "details": "Hálózat → leválasztás → inverter → akkumulátor → backup fogyasztók"
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "GRAFIKACÍM",
+            "placement": "",
+            "details": "Egy valódi backup rendszer felépítése"
+          }
+        ]
+      },
+      {
+        "id": "kritikus-fogyasztok-backupja",
+        "title": "Kritikus fogyasztók backupja",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "Ebben a kialakításban a legfontosabb fogyasztók kapnak tartalék energiaellátást."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Ilyen lehet a hűtő, a világítás, az internet, a kapu, a keringetőszivattyú vagy más olyan berendezés, amelynek áramszünet esetén is működnie kell."
+          },
+          {
+            "kind": "paragraph",
+            "text": "A rendszer teljesítményét ezeknek a fogyasztóknak az egyidejű energiaigénye alapján tervezzük meg."
+          }
+        ]
+      },
+      {
+        "id": "nagyobb-fogyasztoi-kor-vagy-teljes-hazas-backup",
+        "title": "Nagyobb fogyasztói kör vagy teljes házas backup",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "Megfelelő inverter-, akkumulátor- és villamos kialakítással az otthon nagyobb része, műszakilag megfelelő esetben akár a teljes ház is ellátható."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Ilyenkor különösen fontos az inverter teljesítménye, az akkumulátor kisütési képessége, a fázisok száma és a nagyobb indulási áramú fogyasztók figyelembevétele."
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "VIDEÓ",
+            "placement": "",
+            "details": "Valós áramszünet-szimuláció.\nVideócím: Teljes házas backup rendszer tesztje – A1 Solar"
+          }
+        ]
+      },
+      {
+        "id": "tobb-vezeto-backup-technologiaval-dolgozunk",
+        "title": "Több vezető backup technológiával dolgozunk",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "Deye, FoxESS, Sigenergy és Huawei rendszerekkel is valósítunk meg backup megoldásokat."
+          },
+          {
+            "kind": "paragraph",
+            "text": "A gyártó és rendszer kiválasztását mindig az adott ingatlan műszaki adottságai és a kívánt tartalékellátási szint alapján végezzük."
+          }
+        ]
+      },
+      {
+        "id": "backup-referencia-helyszin",
+        "title": "Backup referencia – [HELYSZÍN]",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "A projekt során [KITÖLTENDŐ] inverterrel és [KITÖLTENDŐ] kWh akkumulátorral [KITÖLTENDŐ] típusú backup rendszert valósítottunk meg."
+          },
+          {
+            "kind": "paragraph",
+            "text": "A rendszer áramszünet esetén [KITÖLTENDŐ] fogyasztók ellátását biztosítja."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Inverter: [KITÖLTENDŐ]\nAkkumulátor: [KITÖLTENDŐ] kWh\nFázisszám: [KITÖLTENDŐ]\nEllátott fogyasztók: [KITÖLTENDŐ]"
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "KÉP",
+            "placement": "",
+            "details": "Projektfotó.\nKépcím: A1 Solar backup rendszer – [HELYSZÍN]"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Legalább 3–5 ilyen referencia kerüljön ki."
+          },
+          {
+            "kind": "cta",
+            "label": "Backup rendszerre kérek ajánlatot"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 9,
+    "name": "SZIGETÜZEMŰ NAPELEMES RENDSZEREK",
+    "breadcrumb": "Lakosságnak → Szigetüzemű napelemes rendszerek",
+    "url": "/lakossagi/szigetuzemu-napelemes-rendszer/",
+    "seoTitle": "Szigetüzemű napelemes rendszer akkumulátorral | A1 Solar",
+    "metaDescription": "Szigetüzemű és off-grid napelemes rendszerek akkumulátoros energiatárolással. Egyedi méretezés hálózat nélküli vagy részben hálózatfüggetlen energiaellátáshoz.",
+    "h1": "Szigetüzemű napelemes rendszer akkumulátorral",
+    "intro": [
+      {
+        "kind": "paragraph",
+        "text": "A szigetüzemű napelemes rendszer olyan energiaellátási megoldás, amely a villamos hálózattól függetlenül, vagy attól elkülönítetten képes működni."
+      },
+      {
+        "kind": "paragraph",
+        "text": "Ilyen rendszerre lehet szükség hálózattal nem rendelkező ingatlannál, távoli telephelynél, mezőgazdasági vagy turisztikai helyszínen, illetve olyan esetben, amikor a nagyobb energiafüggetlenség kiemelt cél."
+      },
+      {
+        "kind": "cta",
+        "label": "Szigetüzemű rendszerre kérek műszaki javaslatot"
+      },
+      {
+        "kind": "editorial",
+        "mediaType": "KÉP",
+        "placement": "HERO",
+        "details": "Valódi szigetüzemű/off-grid A1 Solar projekt.\nKépcím: A1 Solar szigetüzemű napelemes rendszer – [HELYSZÍN]"
+      }
+    ],
+    "sections": [
+      {
+        "id": "a-szigetuzem-nem-ugyanaz-mint-a-backup",
+        "title": "A szigetüzem nem ugyanaz, mint a backup",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "Backup esetén alaphelyzetben rendelkezésre áll a közcélú hálózat, és a rendszer áramszünetkor lát el meghatározott fogyasztókat. Szigetüzemben a rendszernek hálózat nélkül is önállóan kell biztosítania az energiaellátást."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Ezért a méretezésnél nemcsak az akkumulátor kapacitását, hanem a napi és szezonális fogyasztást, a napelemes termelést, az inverter teljesítményét, az indulási áramokat és az energiaellátás kívánt biztonságát is vizsgálni kell."
+          },
+          {
+            "kind": "link",
+            "label": "Backup / áramszüneti megoldások",
+            "href": "/lakossagi/backup-aramszuneti-megoldasok/",
+            "external": false
+          }
+        ]
+      },
+      {
+        "id": "mibol-all-egy-szigetuzemu-rendszer",
+        "title": "Miből áll egy szigetüzemű rendszer?",
+        "items": [
+          {
+            "kind": "bullets",
+            "items": [
+              "napelem és megfelelő méretezésű PV-mező",
+              "szigetüzemre alkalmas inverter",
+              "akkumulátoros energiatároló",
+              "vezérlés és védelmi rendszer",
+              "fogyasztói körök megfelelő kialakítása",
+              "szükség esetén kiegészítő tartalék energiaforrás integrációjának lehetősége"
+            ]
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "GRAFIKA",
+            "placement": "",
+            "details": "Napelem → inverter → akkumulátor → fogyasztók, hálózati kapcsolat nélkül\nGrafikacím: Egy szigetüzemű energiarendszer alapfelépítése"
+          }
+        ]
+      },
+      {
+        "id": "mekkora-akkumulator-kell-szigetuzemhez",
+        "title": "Mekkora akkumulátor kell szigetüzemhez?",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "A méretet nem egy általános csomag határozza meg. A napi fogyasztás, az egymást követő gyengébb termelésű időszakok, a nagyobb fogyasztók és a kívánt üzembiztonság együtt dönti el, mekkora tárolókapacitás és teljesítmény szükséges."
+          }
+        ]
+      },
+      {
+        "id": "szigetuzemu-referenciak",
+        "title": "Szigetüzemű referenciák",
+        "items": [
+          {
+            "kind": "editorial",
+            "mediaType": "KÉP",
+            "placement": "",
+            "details": "3–5 valós szigetüzemű vagy részben szigetüzemű projekt.\nKártyánként: helyszín | napelem kWp | inverter | akkumulátor kWh | ellátott fogyasztók | rendszer célja."
+          },
+          {
+            "kind": "cta",
+            "label": "Szigetüzemű rendszerre kérek ajánlatot"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 10,
+    "name": "SZERVIZ, KARBANTARTÁS ÉS TISZTÍTÁS",
+    "breadcrumb": "Lakosságnak → Szerviz, karbantartás és tisztítás",
+    "url": "/lakossagi/szerviz-karbantartas/",
+    "seoTitle": "Napelem karbantartás, tisztítás és szerviz | A1 Solar",
+    "metaDescription": "Lakossági napelem karbantartás, napelem tisztítás, inverter- és monitoringellenőrzés, energiatároló és backup rendszerdiagnosztika A1 Solar műszaki háttérrel.",
+    "h1": "Napelem, energiatároló és backup rendszer karbantartása",
+    "intro": [
+      {
+        "kind": "paragraph",
+        "text": "Egy napelemes vagy energiatároló rendszer hosszú távú beruházás. A megfelelő működéshez időnként érdemes ellenőrizni a termelést, a villamos csatlakozásokat, az inverter és az energiatároló állapotát, valamint a monitoringot."
+      },
+      {
+        "kind": "editorial",
+        "mediaType": "KÉP",
+        "placement": "HERO",
+        "details": "A1 Solar szervizes kolléga lakossági rendszer ellenőrzése közben.\nKépcím: A1 Solar lakossági napelem és energiatároló karbantartás"
+      }
+    ],
+    "sections": [
+      {
+        "id": "miben-tudunk-segiteni",
+        "title": "Miben tudunk segíteni?",
+        "items": [
+          {
+            "kind": "bullets",
+            "items": [
+              "napelemes rendszer műszaki ellenőrzése",
+              "inverter- és monitoringdiagnosztika",
+              "energiatároló és inverter kommunikációjának ellenőrzése",
+              "backup funkció és átkapcsolás ellenőrzése",
+              "napelemek állapotának vizsgálata és indokolt esetben tisztítása",
+              "hibakódok és teljesítményproblémák kivizsgálása"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "mikor-indokolt-a-napelem-tisztitasa",
+        "title": "Mikor indokolt a napelem tisztítása?",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "A tisztítás szükségessége függ a tető dőlésszögétől, a környezet portól és növényzettől való terhelésétől, a madárszennyeződéstől és attól, hogy a szennyeződés láthatóan befolyásolja-e a termelést. Nem automatikusan minden rendszernek van szüksége azonos gyakoriságú tisztításra."
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "KÉP",
+            "placement": "",
+            "details": "Előtte/utána napelem tisztítás saját projekten.\nKépcím: Napelem tisztítás az A1 Solar karbantartási munkája során"
+          }
+        ]
+      },
+      {
+        "id": "tavoli-monitoring-es-diagnosztika",
+        "title": "Távoli monitoring és diagnosztika",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "Ha a rendszer monitoringadatai elérhetők, sok hiba vagy teljesítményeltérés első körben távolról is vizsgálható. Ez segíthet abban, hogy a helyszíni kiszállás már célzott műszaki feladattal történjen."
+          },
+          {
+            "kind": "link",
+            "label": "Szerviz és garancia",
+            "href": "/rolunk/szerviz-es-garancia/",
+            "external": false
+          },
+          {
+            "kind": "cta",
+            "label": "Karbantartást / szervizt kérek"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 11,
+    "name": "LAKOSSÁGI PÁLYÁZATOK ÉS TÁMOGATÁSOK",
+    "breadcrumb": "Lakosságnak → Pályázatok és támogatások",
+    "url": "/lakossagi/palyazatok-tamogatasok/",
+    "seoTitle": "Napelem és energiatároló pályázatok, támogatások | A1 Solar",
+    "metaDescription": "Aktuális lakossági napelem- és energiatároló támogatások, műszaki rendszertervezés és kivitelezés egy kézből az A1 Solarral.",
+    "h1": "Lakossági napelem- és energiatároló pályázatok",
+    "intro": [
+      {
+        "kind": "paragraph",
+        "text": "A lakossági energetikai támogatások és pályázati konstrukciók időről időre változnak. Ezért ezen az oldalon mindig az aktuálisan elérhető programokat és az A1 Solar kapcsolódó műszaki megoldásait mutatjuk be."
+      },
+      {
+        "kind": "editorial",
+        "mediaType": "AKTUÁLIS PROGRAM",
+        "placement": "KIEMELT BLOKK",
+        "details": "Program neve | ki jogosult | mire használható | fő határidők | A1 Solar szerepe | jelentkezés.\n[KITÖLTENDŐ / FOLYAMATOSAN FRISSÍTENDŐ]"
+      }
+    ],
+    "sections": [
+      {
+        "id": "nem-csak-a-palyazatot-kell-megnyerni-a-rendszernek-mukodnie-is-kell",
+        "title": "Nem csak a pályázatot kell megnyerni. A rendszernek működnie is kell.",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "A támogatás önmagában nem helyettesíti a műszaki tervezést. A napelemet, az invertert, az energiatárolót és szükség esetén a backup funkciót az ingatlan fogyasztása és villamos adottságai alapján kell kialakítani."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Az A1 Solar a műszaki rendszertervezést, kivitelezést, beüzemelést és a kapcsolódó támogatási folyamatban vállalt feladatokat összehangoltan kezeli."
+          }
+        ]
+      },
+      {
+        "id": "mire-figyelj-palyazati-rendszer-valasztasakor",
+        "title": "Mire figyelj pályázati rendszer választásakor?",
+        "items": [
+          {
+            "kind": "bullets",
+            "items": [
+              "ne csak a támogatható terméket, hanem a teljes rendszer kompatibilitását vizsgáld",
+              "legyen világos, milyen energiatároló kapacitás és teljesítmény indokolt",
+              "ha backup a cél, már a tervezéskor legyen meghatározva",
+              "legyen hosszú távú monitoring- és szervizháttér"
+            ]
+          },
+          {
+            "kind": "link",
+            "label": "Napelem + energiatároló",
+            "href": "/lakossagi/napelem-energiataroloval/",
+            "external": false
+          },
+          {
+            "kind": "cta",
+            "label": "Pályázati / támogatott rendszerhez kérek ajánlatot"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 12,
+    "name": "VÁLLALATI NAPELEM",
+    "breadcrumb": "Cégeknek → Vállalati napelem",
+    "url": "/vallalati/napelem/",
+    "seoTitle": "Vállalati napelem tervezés és kivitelezés | A1 Solar",
+    "metaDescription": "Vállalati napelemes rendszerek felmérése, tervezése és kivitelezése fogyasztási adatok alapján. Ipari csarnokok, telephelyek, monitoring és szerviz.",
+    "h1": "Vállalati napelemes rendszerek",
+    "intro": [
+      {
+        "kind": "paragraph",
+        "text": "Vállalati napelemnél nem pusztán a rendelkezésre álló tetőfelületből indulunk ki. A cél az, hogy a rendszer a telephely valós fogyasztásához, termelési profiljához, hálózati adottságaihoz és üzleti céljaihoz illeszkedjen."
+      },
+      {
+        "kind": "cta",
+        "label": "Vállalati napelemes felmérést kérek"
+      },
+      {
+        "kind": "editorial",
+        "mediaType": "KÉP",
+        "placement": "HERO",
+        "details": "Saját vállalati tetős vagy telephelyi napelemes projekt.\nKépcím: A1 Solar vállalati napelemes rendszer – [HELYSZÍN]"
+      }
+    ],
+    "sections": [
+      {
+        "id": "adatokbol-indulunk-ki",
+        "title": "Adatokból indulunk ki",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "Megvizsgáljuk a fogyasztási adatokat, a napi és szezonális profilt, a rendelkezésre álló tető- vagy területkapacitást, a hálózati csatlakozást, a visszatáplálási lehetőségeket és a jövőbeni energiaigényt."
+          }
+        ]
+      },
+      {
+        "id": "napelem-onmagaban-vagy-energiatarolassal",
+        "title": "Napelem önmagában vagy energiatárolással",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "Ha a napelemes termelés és a vállalati fogyasztás időben jól illeszkedik, önálló PV-rendszer is megfelelő lehet. Ha jelentős termelési többlet, hálózati korlát vagy teljesítménycsúcs jelentkezik, az energiatárolás további lehetőségeket nyithat."
+          },
+          {
+            "kind": "link",
+            "label": "Vállalati napelem + energiatárolás",
+            "href": "/vallalati/napelem-energiatarolassal/",
+            "external": false
+          }
+        ]
+      },
+      {
+        "id": "teljes-projektfolyamat",
+        "title": "Teljes projektfolyamat",
+        "items": [
+          {
+            "kind": "editorial",
+            "mediaType": "GRAFIKA",
+            "placement": "",
+            "details": "Felmérés → fogyasztási elemzés → tervezés → engedélyezés → kivitelezés → monitoring → szerviz\nGrafikacím: Vállalati napelemes projekt az A1 Solarral"
+          }
+        ]
+      },
+      {
+        "id": "vallalati-referenciak",
+        "title": "Vállalati referenciák",
+        "items": [
+          {
+            "kind": "editorial",
+            "mediaType": "KÉP",
+            "placement": "",
+            "details": "Legalább 4–8 saját vállalati napelemes referencia.\nKártyánként: helyszín | rendszer kWp | éves/üzemi cél | inverter | A1 Solar feladata."
+          },
+          {
+            "kind": "link",
+            "label": "Vállalati referenciák",
+            "href": "/referenciak/vallalati/",
+            "external": false
+          },
+          {
+            "kind": "cta",
+            "label": "Vállalati napelemes ajánlatot kérek"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 13,
+    "name": "VÁLLALATI NAPELEM + ENERGIATÁROLÁS",
+    "breadcrumb": "Cégeknek → Vállalati napelem + energiatárolás",
+    "url": "/vallalati/napelem-energiatarolassal/",
+    "seoTitle": "Vállalati napelem és energiatárolás | A1 Solar",
+    "metaDescription": "Vállalati napelem + akkumulátoros energiatárolás adatalapú méretezéssel. PV-többlet hasznosítás, peak shaving, energiaoptimalizálás, monitoring és szerviz.",
+    "h1": "Vállalati napelem + energiatárolás egy rendszerben",
+    "intro": [
+      {
+        "kind": "paragraph",
+        "text": "A napelemes termelés és a vállalati fogyasztás nem mindig ugyanabban az időszakban jelentkezik. Az energiatárolás lehetőséget ad arra, hogy a PV-többlet később legyen felhasználható, és megfelelő projektben a teljesítménycsúcsok vagy más energetikai korlátok kezelésében is szerepet kapjon."
+      },
+      {
+        "kind": "paragraph",
+        "text": "Az A1 Solar a fogyasztási és termelési adatok elemzésétől a rendszertervezésen és kivitelezésen át a monitoringig és szervizig egy kézben kezeli a projektet."
+      },
+      {
+        "kind": "cta",
+        "label": "Vállalati PV + storage elemzést kérek"
+      },
+      {
+        "kind": "editorial",
+        "mediaType": "KÉP",
+        "placement": "HERO",
+        "details": "Saját vállalati napelem + energiatároló projekt.\nKépcím: A1 Solar vállalati napelem és energiatárolás – [HELYSZÍN]"
+      }
+    ],
+    "sections": [
+      {
+        "id": "mikor-lehet-indokolt-az-energiatarolas",
+        "title": "Mikor lehet indokolt az energiatárolás?",
+        "items": [
+          {
+            "kind": "bullets",
+            "items": [
+              "a napelemes termelés és a fogyasztás időben nem esik egybe",
+              "jelentős rövid idejű teljesítménycsúcsok jelentkeznek",
+              "visszatáplálási vagy hálózati korlátok vannak",
+              "a saját termelés helyben történő felhasználását növelni szeretnék",
+              "üzembiztonsági vagy backup cél is megjelenik"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "nem-akkumulatorkapacitassal-kezdunk-hanem-adatokkal",
+        "title": "Nem akkumulátorkapacitással kezdünk, hanem adatokkal",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "Megvizsgáljuk a 15 perces fogyasztási adatokat, a napelemes termelési profilt, a teljesítménycsúcsokat, a lekötött hálózati teljesítményt, a visszatáplálási lehetőségeket és a jövőbeni energiaigényt."
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "GRAFIKA",
+            "placement": "",
+            "details": "Valós anonimizált fogyasztási görbe + PV-termelés + energiatároló működés.\nGrafikacím: Vállalati napelem és energiatárolás adatalapú méretezése"
+          }
+        ]
+      },
+      {
+        "id": "mikor-kell-inkabb-ipari-bess-megoldas",
+        "title": "Mikor kell inkább ipari BESS megoldás?",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "Nagyobb teljesítményű, önálló vagy több MWh-s energiatárolási projekt esetén az ipari BESS megoldás külön projektkategória. Ilyenkor a teljesítményelektronika, EMS, tűz- és villamosbiztonsági rendszerek, hálózati csatlakozás és üzemeltetési logika még hangsúlyosabb."
+          },
+          {
+            "kind": "link",
+            "label": "BESS / ipari energiatárolás",
+            "href": "/ipari/bess-ipari-energiatarolas/",
+            "external": false
+          }
+        ]
+      },
+      {
+        "id": "referenciak",
+        "title": "Referenciák",
+        "items": [
+          {
+            "kind": "editorial",
+            "mediaType": "KÉP",
+            "placement": "",
+            "details": "4–8 vállalati PV + storage projekt, műszaki adatokkal.\nKépcím: A1 Solar vállalati napelem + energiatároló referencia – [HELYSZÍN]"
+          },
+          {
+            "kind": "cta",
+            "label": "Vállalati napelem + energiatároló ajánlatot kérek"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 14,
+    "name": "MEGLÉVŐ VÁLLALATI RENDSZER BŐVÍTÉSE ENERGIATÁROLÓVAL",
+    "breadcrumb": "Cégeknek → Meglévő rendszer bővítése energiatárolóval",
+    "url": "/vallalati/meglevo-rendszer-bovitese-energiataroloval/",
+    "seoTitle": "Meglévő vállalati napelem bővítése energiatárolóval | A1 Solar",
+    "metaDescription": "Meglévő vállalati napelemes rendszer bővítése akkumulátoros energiatárolással. Fogyasztási elemzés, kompatibilitás, BESS/PV integráció és kivitelezés.",
+    "h1": "Meglévő vállalati napelemes rendszer bővítése energiatárolóval",
+    "intro": [
+      {
+        "kind": "paragraph",
+        "text": "Ha egy telephelyen már működik napelemes rendszer, az energiatárolás utólagos hozzáadása sok esetben új energetikai lehetőségeket nyithat. A műszaki megoldást azonban mindig a meglévő rendszerből és a vállalat valós fogyasztási adataiból kell kiindítani."
+      },
+      {
+        "kind": "cta",
+        "label": "Meglévő rendszerem bővítését megvizsgáltatom"
+      },
+      {
+        "kind": "editorial",
+        "mediaType": "KÉP",
+        "placement": "HERO",
+        "details": "Vállalati retrofit projekt, meglévő PV + új energiatároló.\nKépcím: Meglévő vállalati napelemes rendszer energiatárolós bővítése – [HELYSZÍN]"
+      }
+    ],
+    "sections": [
+      {
+        "id": "mit-vizsgalunk-meg",
+        "title": "Mit vizsgálunk meg?",
+        "items": [
+          {
+            "kind": "bullets",
+            "items": [
+              "meglévő inverterek és rendszerarchitektúra",
+              "15 perces fogyasztási és termelési adatok",
+              "visszatáplálási és hálózati korlátok",
+              "csúcsteljesítmények és lekötött teljesítmény",
+              "energiatároló csatlakozási és vezérlési lehetőségei",
+              "backup vagy üzembiztonsági igény"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "nem-automatikusan-csereljuk-le-a-meglevo-rendszert",
+        "title": "Nem automatikusan cseréljük le a meglévő rendszert",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "Ha a meglévő berendezések és rendszerkomponensek műszakilag megfelelően tovább használhatók, ezt figyelembe vesszük. Más esetben új inverteres, AC-csatolt vagy egyedi rendszerarchitektúra lehet indokolt."
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "GRAFIKA",
+            "placement": "",
+            "details": "Meglévő PV → műszaki és adatelemzés → integrációs út → energiatároló / EMS\nGrafikacím: Vállalati energiatárolós retrofit lehetséges útjai"
+          }
+        ]
+      },
+      {
+        "id": "valodi-retrofit-referenciak",
+        "title": "Valódi retrofit referenciák",
+        "items": [
+          {
+            "kind": "editorial",
+            "mediaType": "KÉP",
+            "placement": "",
+            "details": "Legalább 3–5 vállalati retrofit projekt.\nKártyánként: meglévő PV kWp | új tároló kWh | teljesítmény kW | technológia | projekt célja | A1 Solar feladata."
+          },
+          {
+            "kind": "cta",
+            "label": "Vállalati energiatárolós bővítésre kérek javaslatot"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 15,
+    "name": "ENERGETIKAI OPTIMALIZÁCIÓ / O&M",
+    "breadcrumb": "Cégeknek → Energetikai optimalizáció / O&M",
+    "url": "/vallalati/energetikai-optimalizacio-om/",
+    "seoTitle": "Energetikai optimalizáció és O&M vállalatoknak | A1 Solar",
+    "metaDescription": "Vállalati napelemes és energiatároló rendszerek monitoringja, O&M, teljesítményelemzése és energetikai optimalizációja az A1 Solar szakmai hátterével.",
+    "h1": "Energetikai optimalizáció és O&M vállalatoknak",
+    "intro": [
+      {
+        "kind": "paragraph",
+        "text": "Egy vállalati energetikai rendszer értékét nemcsak a telepített kapacitás, hanem a hosszú távú működés, a rendelkezésre állás és a termelés-fogyasztás összehangolása határozza meg."
+      },
+      {
+        "kind": "paragraph",
+        "text": "Az A1 Solar O&M és energetikai optimalizációs szolgáltatásai a meglévő napelemes, energiatároló és kapcsolódó energetikai rendszerek teljesítményének követését és javítását támogatják."
+      },
+      {
+        "kind": "editorial",
+        "mediaType": "KÉP",
+        "placement": "HERO",
+        "details": "Monitoring/irányítástechnikai képernyő + telephelyi rendszer.\nKépcím: A1 Solar vállalati energetikai monitoring és O&M"
+      }
+    ],
+    "sections": [
+      {
+        "id": "mire-terjedhet-ki-az-o-m",
+        "title": "Mire terjedhet ki az O&M?",
+        "items": [
+          {
+            "kind": "bullets",
+            "items": [
+              "rendszeres monitoring és teljesítményfigyelés",
+              "termelési eltérések és hibajelenségek vizsgálata",
+              "inverter, energiatároló és kommunikációs rendszer ellenőrzése",
+              "helyszíni megelőző karbantartás",
+              "riportok és műszaki javaslatok",
+              "gyártói support és garanciális folyamat támogatása"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "energetikai-optimalizacio",
+        "title": "Energetikai optimalizáció",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "Az adatok alapján vizsgálható, hogy a napelemes termelés hogyan illeszkedik a fogyasztáshoz, hol jelentkeznek teljesítménycsúcsok, van-e kihasználatlan PV-többlet, és indokolt-e vezérlési, energiatárolási vagy más műszaki beavatkozás."
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "GRAFIKA",
+            "placement": "",
+            "details": "Adatgyűjtés → elemzés → eltérés / lehetőség → műszaki javaslat → visszamérés\nGrafikacím: Energetikai optimalizáció folyamata"
+          },
+          {
+            "kind": "link",
+            "label": "Szerviz és távfelügyelet",
+            "href": "/vallalati/szerviz-tavfelugyelet/",
+            "external": false
+          },
+          {
+            "kind": "cta",
+            "label": "O&M / energetikai optimalizációs egyeztetést kérek"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 16,
+    "name": "FINANSZÍROZOTT / PPA PROJEKTEK",
+    "breadcrumb": "Cégeknek → Finanszírozott / PPA projektek",
+    "url": "/vallalati/ppa-finanszirozott-projektek/",
+    "seoTitle": "PPA és finanszírozott napelemes projektek | A1 Solar",
+    "metaDescription": "Vállalati napelemes és energetikai projektek PPA vagy finanszírozott konstrukcióban. Műszaki felmérés, projekttervezés és megvalósítás az A1 Solarral.",
+    "h1": "Finanszírozott és PPA energetikai projektek vállalatoknak",
+    "intro": [
+      {
+        "kind": "paragraph",
+        "text": "Egy vállalati napelemes vagy komplex energetikai beruházás nem minden esetben kizárólag saját beruházási forrásból valósul meg. Megfelelő projekt esetén finanszírozott vagy PPA jellegű konstrukció is szóba jöhet."
+      },
+      {
+        "kind": "paragraph",
+        "text": "Az A1 Solar a műszaki oldalt a telephely fogyasztásától, a rendszer méretezésétől és a várható termeléstől indulva készíti elő, és a projektet a választott finanszírozási konstrukcióhoz igazítja."
+      },
+      {
+        "kind": "editorial",
+        "mediaType": "KÉP",
+        "placement": "HERO",
+        "details": "Nagy vállalati napelemes projekt.\nKépcím: Finanszírozott vállalati napelemes projekt – A1 Solar – [HELYSZÍN]"
+      }
+    ],
+    "sections": [
+      {
+        "id": "mi-az-a-ppa",
+        "title": "Mi az a PPA?",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "A PPA – Power Purchase Agreement – olyan hosszabb távú energiaértékesítési megállapodás, amelyben a projekt finanszírozási és tulajdonosi struktúrája eltérhet a hagyományos saját beruházástól. A konkrét konstrukció minden esetben projekt- és partnerfüggő."
+          }
+        ]
+      },
+      {
+        "id": "mivel-kezdunk",
+        "title": "Mivel kezdünk?",
+        "items": [
+          {
+            "kind": "bullets",
+            "items": [
+              "fogyasztási adatok és telephelyi adottságok",
+              "műszakilag megvalósítható napelemes kapacitás",
+              "saját fogyasztás és termelési profil illeszkedése",
+              "energiatárolás indokoltsága",
+              "projektkockázatok és megvalósítási keretek"
+            ]
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "GRAFIKA",
+            "placement": "",
+            "details": "Telephelyi adatok → műszaki koncepció → pénzügyi konstrukció → megvalósítás → üzemeltetés\nGrafikacím: Finanszírozott energetikai projekt előkészítése"
+          },
+          {
+            "kind": "cta",
+            "label": "PPA / finanszírozott projektről egyeztetek"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 17,
+    "name": "VÁLLALATI SZERVIZ ÉS TÁVFELÜGYELET",
+    "breadcrumb": "Cégeknek → Szerviz és távfelügyelet",
+    "url": "/vallalati/szerviz-tavfelugyelet/",
+    "seoTitle": "Vállalati napelem szerviz és távfelügyelet | A1 Solar",
+    "metaDescription": "Vállalati napelemes és energiatároló rendszerek távfelügyelete, monitoringja, műszaki diagnosztikája, helyszíni szervize és gyártói támogatása.",
+    "h1": "Vállalati szerviz és távfelügyelet",
+    "intro": [
+      {
+        "kind": "paragraph",
+        "text": "Egy vállalati napelemes vagy energiatároló rendszer leállása vagy teljesítményromlása közvetlen üzleti hatással járhat. Ezért fontos, hogy a rendszer működése folyamatosan követhető és műszaki probléma esetén gyorsan diagnosztizálható legyen."
+      },
+      {
+        "kind": "editorial",
+        "mediaType": "KÉP",
+        "placement": "HERO",
+        "details": "A1 Solar monitoringot vizsgáló műszaki kolléga.\nKépcím: A1 Solar vállalati távfelügyelet és műszaki diagnosztika"
+      }
+    ],
+    "sections": [
+      {
+        "id": "tavfelugyelet",
+        "title": "Távfelügyelet",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "A rendelkezésre álló monitoringrendszerből figyelhető a termelés, az inverterek állapota, az energiatároló működése, a kommunikáció és a fontosabb hibajelzések."
+          }
+        ]
+      },
+      {
+        "id": "muszaki-diagnosztika-es-helyszini-szerviz",
+        "title": "Műszaki diagnosztika és helyszíni szerviz",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "Ha egy probléma távolról nem oldható meg, a monitoring- és hibakódadatok alapján célzott helyszíni vizsgálat szervezhető. Szükség esetén közvetlen gyártói supporttal is egyeztetünk."
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "GRAFIKA",
+            "placement": "",
+            "details": "Riasztás / eltérés → távoli diagnosztika → gyártói egyeztetés → helyszíni szerviz → lezárás\nGrafikacím: Vállalati szervizfolyamat"
+          },
+          {
+            "kind": "link",
+            "label": "Energetikai optimalizáció / O&M",
+            "href": "/vallalati/energetikai-optimalizacio-om/",
+            "external": false
+          },
+          {
+            "kind": "cta",
+            "label": "Vállalati szerviz / távfelügyelet egyeztetést kérek"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 18,
+    "name": "VÁLLALATI PÁLYÁZATOK ÉS TÁMOGATÁSOK",
+    "breadcrumb": "Cégeknek → Pályázatok és támogatások",
+    "url": "/vallalati/palyazatok-tamogatasok/",
+    "seoTitle": "Vállalati napelem és energiatároló pályázatok | A1 Solar",
+    "metaDescription": "Aktuális vállalati energetikai pályázatok és támogatások napelemre, energiatárolásra és energiahatékonysági fejlesztésekre. Műszaki projektelőkészítés és kivitelezés.",
+    "h1": "Vállalati energetikai pályázatok és támogatások",
+    "intro": [
+      {
+        "kind": "paragraph",
+        "text": "A vállalati energetikai támogatások programonként, időszakonként és jogosultsági feltételek szerint változnak. Ezen az oldalon azokat az aktuális lehetőségeket mutatjuk be, amelyek napelemhez, energiatároláshoz vagy kapcsolódó energetikai fejlesztéshez illeszkednek."
+      },
+      {
+        "kind": "editorial",
+        "mediaType": "AKTUÁLIS PROGRAM",
+        "placement": "KIEMELT BLOKK",
+        "details": "Program neve | jogosultság | támogatható műszaki tartalom | támogatási intenzitás / keret | határidő | A1 Solar szerepe.\n[KITÖLTENDŐ / FOLYAMATOSAN FRISSÍTENDŐ]"
+      }
+    ],
+    "sections": [
+      {
+        "id": "a-muszaki-projektet-a-palyazattol-fuggetlenul-is-jol-kell-megtervezni",
+        "title": "A műszaki projektet a pályázattól függetlenül is jól kell megtervezni",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "A pályázati kiírás meghatározhatja a támogatható elemeket, de a rendszer méretezésének továbbra is a vállalat fogyasztásából, termelési profiljából, hálózati adottságaiból és üzleti céljaiból kell kiindulnia."
+          }
+        ]
+      },
+      {
+        "id": "a1-solar-szerepe",
+        "title": "A1 Solar szerepe",
+        "items": [
+          {
+            "kind": "bullets",
+            "items": [
+              "műszaki felmérés és koncepció",
+              "napelem és energiatárolás méretezése",
+              "projektköltség és műszaki tartalom összehangolása",
+              "kivitelezés, beüzemelés, monitoring és szerviz"
+            ]
+          },
+          {
+            "kind": "cta",
+            "label": "Vállalati pályázati projektről egyeztetek"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 19,
+    "name": "NAGY NAPERŐMŰVEK",
+    "breadcrumb": "Ipari projektek → Nagy naperőművek",
+    "url": "/ipari/naperomuvek/",
+    "seoTitle": "Naperőmű és napelempark projektek | A1 Solar",
+    "metaDescription": "Nagy naperőmű és napelempark projektek műszaki előkészítése, tervezése, kivitelezése, monitoringja és kapcsolódó energiatárolási integrációja.",
+    "h1": "Nagy naperőművek és napelempark projektek",
+    "intro": [
+      {
+        "kind": "paragraph",
+        "text": "Nagyobb naperőművi projektek esetén a műszaki megoldást a helyszín, a hálózati csatlakozás, az engedélyezési feltételek, a projektcél és a későbbi üzemeltetés együtt határozza meg."
+      },
+      {
+        "kind": "paragraph",
+        "text": "Az A1 Solar a projektben vállalt szerepkörtől függően műszaki előkészítésben, rendszertervezésben, kivitelezésben, projektkoordinációban, monitoringban és kapcsolódó energiatárolási megoldások integrációjában vesz részt."
+      },
+      {
+        "kind": "editorial",
+        "mediaType": "KÉP",
+        "placement": "HERO",
+        "details": "Saját nagy naperőmű / napelempark projekt.\nKépcím: A1 Solar naperőmű projekt – [HELYSZÍN]"
+      }
+    ],
+    "sections": [
+      {
+        "id": "naperomu-energiatarolas",
+        "title": "Naperőmű + energiatárolás",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "A megújuló termelés és az energiatárolás integrációja olyan projektekben lehet fontos, ahol a hálózati korlátok, a termelési profil, az energiapiaci cél vagy a flexibilitás indokolja a tároló alkalmazását."
+          },
+          {
+            "kind": "link",
+            "label": "PV + storage",
+            "href": "/ipari/pv-storage/",
+            "external": false
+          }
+        ]
+      },
+      {
+        "id": "projektfolyamat",
+        "title": "Projektfolyamat",
+        "items": [
+          {
+            "kind": "editorial",
+            "mediaType": "GRAFIKA",
+            "placement": "",
+            "details": "Helyszín / hálózat → koncepció → tervezés és engedélyezés → kivitelezés → beüzemelés → monitoring / O&M\nGrafikacím: Naperőmű projekt fő szakaszai"
+          }
+        ]
+      },
+      {
+        "id": "naperomu-referenciak",
+        "title": "Naperőmű referenciák",
+        "items": [
+          {
+            "kind": "editorial",
+            "mediaType": "KÉP",
+            "placement": "",
+            "details": "Naperőmű projektek.\nKártyánként: helyszín | MWp | státusz | technológia | A1 Solar szerepe | év.\n[KITÖLTENDŐ] Valós projektadatok."
+          },
+          {
+            "kind": "link",
+            "label": "Naperőmű referenciák",
+            "href": "/referenciak/naperomu/",
+            "external": false
+          },
+          {
+            "kind": "cta",
+            "label": "Naperőmű projektről egyeztetek"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 20,
+    "name": "BESS / IPARI ENERGIATÁROLÁS",
+    "breadcrumb": "Ipari projektek → BESS / ipari energiatárolás",
+    "url": "/ipari/bess-ipari-energiatarolas/",
+    "seoTitle": "Ipari energiatárolás és BESS rendszerek | A1 Solar",
+    "metaDescription": "Ipari BESS rendszerek tervezése és kivitelezése. Több MWh-s energiatárolás, EMS, peak shaving, PV-integráció, adatalapú méretezés, monitoring és szerviz.",
+    "h1": "Ipari energiatárolás – BESS rendszerek",
+    "intro": [
+      {
+        "kind": "paragraph",
+        "text": "Nem akkumulátort értékesítünk. Energetikai problémát oldunk meg."
+      },
+      {
+        "kind": "paragraph",
+        "text": "Az A1 Solar ipari ügyfelek és nagyobb projektek számára tervez és valósít meg akkumulátoros energiatároló, BESS rendszereket. A fogyasztási és termelési adatok elemzésétől a műszaki tervezésen, engedélyezésen és kivitelezésen át a monitoringig és hosszú távú szervizig kezeljük a projektet."
+      },
+      {
+        "kind": "paragraph",
+        "text": "13 év energetikai tapasztalat | 5000+ napelemes rendszer | több MWh-s energiatárolási projektek"
+      },
+      {
+        "kind": "cta",
+        "label": "Ipari BESS projektet egyeztetek"
+      },
+      {
+        "kind": "editorial",
+        "mediaType": "KÉP",
+        "placement": "HERO",
+        "details": "Saját nagy C&I/BESS projekt.\nKépcím: A1 Solar ipari BESS energiatároló rendszer – [HELYSZÍN]"
+      }
+    ],
+    "sections": [
+      {
+        "id": "mikor-lehet-indokolt-a-bess",
+        "title": "Mikor lehet indokolt a BESS?",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "Ipari energiatárolás akkor lehet indokolt, ha jelentős teljesítménycsúcsok jelentkeznek, ha a napelemes termelés és a fogyasztás időben nem esik egybe, ha hálózati korlátok nehezítik a működést, vagy ha az üzembiztonság és a flexibilitás kiemelt szempont."
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "GRAFIKA",
+            "placement": "",
+            "details": "Peak shaving / PV-többlet / energiaoptimalizálás / backup / flexibilitás\nGrafikacím: Az ipari BESS fő felhasználási területei"
+          }
+        ]
+      },
+      {
+        "id": "nem-akkumulatorkapacitassal-kezdunk-hanem-adatokkal",
+        "title": "Nem akkumulátorkapacitással kezdünk, hanem adatokkal",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "Megvizsgáljuk a 15 perces fogyasztási adatokat, a teljesítménycsúcsokat, a termelési profilt, a hálózati korlátokat, a lekötött teljesítményt, az energiapiaci és üzemeltetési célokat, valamint a jövőbeni energiaigényt."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Ezek alapján határozzuk meg a szükséges kWh/MWh kapacitást, kW/MW teljesítményt, rendszerarchitektúrát és vezérlési logikát."
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "GRAFIKA",
+            "placement": "",
+            "details": "Valódi anonimizált 15 perces fogyasztási görbe.\nGrafikacím: Peak shaving ipari energiatárolóval – valós fogyasztási profil"
+          }
+        ]
+      },
+      {
+        "id": "mi-az-a-bess",
+        "title": "Mi az a BESS?",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "A BESS – Battery Energy Storage System – olyan akkumulátoros energiatároló rendszer, amely az akkumulátor mellett teljesítményelektronikából, vezérlésből, biztonsági rendszerekből és jellemzően EMS-ből áll."
+          }
+        ]
+      },
+      {
+        "id": "magyarorszag-elso-foxess-g-max-projektje",
+        "title": "Magyarország első FoxESS G-MAX projektje",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "Magyarország első FoxESS G-MAX energiatároló rendszerének telepítése az A1 Solar közreműködésével valósult meg."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Helyszín: [KITÖLTENDŐ]\nKapacitás: [KITÖLTENDŐ] kWh\nTeljesítmény: [KITÖLTENDŐ] kW\nProjekt célja: [KITÖLTENDŐ]\nA1 Solar szerepe: [KITÖLTENDŐ]"
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "KÉP",
+            "placement": "",
+            "details": "Nagy G-MAX projektfotó.\nKépcím: Magyarország első FoxESS G-MAX energiatároló rendszere"
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "VIDEÓ",
+            "placement": "",
+            "details": "Beüzemelés vagy gyártói jelenlét.\nVideócím: Magyarország első FoxESS G-MAX rendszerének beüzemelése az A1 Solarral"
+          }
+        ]
+      },
+      {
+        "id": "7-mwh-energiatarolasi-projekt",
+        "title": "7 MWh energiatárolási projekt",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "Jelenlegi legnagyobb energiatárolási projektünk 7 MWh tárolókapacitású vállalati/ipari BESS rendszer."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Helyszín: [KITÖLTENDŐ]\nTárolókapacitás: 7 MWh\nTeljesítmény: [KITÖLTENDŐ] MW\nTechnológia: [KITÖLTENDŐ]\nProjekt célja: [KITÖLTENDŐ]\nA1 Solar szerepe: [KITÖLTENDŐ]\nStátusz: [KITÖLTENDŐ]"
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "KÉP",
+            "placement": "",
+            "details": "Ha kommunikálható.\nKépcím: A1 Solar 7 MWh energiatárolási projekt – [HELYSZÍN]"
+          }
+        ]
+      },
+      {
+        "id": "mennyi-ido-alatt-terul-meg",
+        "title": "Mennyi idő alatt térül meg?",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "Erre nincs minden projektre érvényes válasz. A megtérülés függ a fogyasztási és termelési profiltól, az energiaáraktól, a teljesítménycsúcsoktól, a hálózati korlátoktól, a rendszer kihasználtságától és attól, milyen feladatokat lát el a BESS."
+          },
+          {
+            "kind": "cta",
+            "label": "Műszaki és gazdasági BESS elemzést kérek"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 21,
+    "name": "STANDALONE ENERGIATÁROLÁS",
+    "breadcrumb": "Ipari projektek → Standalone energiatárolás",
+    "url": "/ipari/standalone-energiatarolas/",
+    "seoTitle": "Standalone energiatároló és BESS rendszerek | A1 Solar",
+    "metaDescription": "Önálló, napelemtől független standalone BESS energiatároló rendszerek ipari és hálózati projektekhez. Műszaki koncepció, EMS, integráció és kivitelezés.",
+    "h1": "Standalone energiatárolás – önálló BESS rendszerek",
+    "intro": [
+      {
+        "kind": "paragraph",
+        "text": "A standalone energiatároló nem egy helyszíni napelemes rendszer kiegészítője, hanem önálló energiatárolási projekt. A rendszer a hálózathoz vagy más energiapiaci és ipari környezethez kapcsolódva működik, saját teljesítményelektronikával, vezérléssel és biztonsági rendszerrel."
+      },
+      {
+        "kind": "editorial",
+        "mediaType": "KÉP",
+        "placement": "HERO",
+        "details": "Saját vagy gyártói engedéllyel használható standalone BESS projektkép.\nKépcím: Standalone BESS energiatároló rendszer – A1 Solar"
+      }
+    ],
+    "sections": [
+      {
+        "id": "mire-hasznalhato",
+        "title": "Mire használható?",
+        "items": [
+          {
+            "kind": "bullets",
+            "items": [
+              "energiaterhelés időbeli áthelyezése",
+              "hálózati vagy telephelyi teljesítménykezelés",
+              "flexibilitási és aggregációs szolgáltatások műszaki alapja",
+              "megújuló termelés közvetett támogatása",
+              "egyedi energiapiaci vagy hálózati projektcélok"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "a-rendszer-nem-csak-akkumulator",
+        "title": "A rendszer nem csak akkumulátor",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "Egy standalone BESS az akkumulátormodulokon túl teljesítményelektronikát, EMS-t, védelmi és biztonsági rendszereket, kommunikációt, hálózati csatlakozást és megfelelő műszaki környezetet igényel."
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "GRAFIKA",
+            "placement": "",
+            "details": "Hálózat ↔ PCS/inverter ↔ akkumulátor ↔ EMS / vezérlés\nGrafikacím: Standalone BESS rendszer alaparchitektúrája"
+          }
+        ]
+      },
+      {
+        "id": "projektelokeszites",
+        "title": "Projektelőkészítés",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "A tervezés a projektcél, a szükséges MW teljesítmény, MWh kapacitás, ciklusszám, csatlakozási feltételek, helyszíni adottságok és üzemeltetési modell meghatározásával kezdődik."
+          },
+          {
+            "kind": "link",
+            "label": "Aggregáció / flexibilitás",
+            "href": "/ipari/aggregacio-flexibilitas/",
+            "external": false
+          },
+          {
+            "kind": "cta",
+            "label": "Standalone BESS projektről egyeztetek"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 22,
+    "name": "PV + STORAGE",
+    "breadcrumb": "Ipari projektek → PV + storage",
+    "url": "/ipari/pv-storage/",
+    "seoTitle": "PV + storage – naperőmű energiatárolóval | A1 Solar",
+    "metaDescription": "Naperőmű és BESS integrált PV + storage megoldások. Napelemes termelés, energiatárolás, EMS, hálózati integráció és projektmegvalósítás.",
+    "h1": "PV + storage – naperőmű és energiatárolás egy rendszerben",
+    "intro": [
+      {
+        "kind": "paragraph",
+        "text": "A PV + storage projektben a naperőmű és az akkumulátoros energiatároló nem különálló beruházás, hanem összehangolt energetikai rendszer."
+      },
+      {
+        "kind": "paragraph",
+        "text": "A cél lehet a napelemes termelés időbeli áthelyezése, hálózati korlátok kezelése, termelési profil optimalizálása vagy más energiapiaci és üzemeltetési feladat."
+      },
+      {
+        "kind": "editorial",
+        "mediaType": "KÉP",
+        "placement": "HERO",
+        "details": "Naperőmű + BESS projekt.\nKépcím: A1 Solar PV + storage projekt – [HELYSZÍN]"
+      }
+    ],
+    "sections": [
+      {
+        "id": "a-meretezes-ket-rendszer-osszehangolasa",
+        "title": "A méretezés két rendszer összehangolása",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "Megvizsgáljuk a PV-termelési profilt, a hálózati csatlakozást, a tárolás célját, a szükséges MW/MWh arányt, az EMS vezérlést, a töltési-kisütési logikát és a projekt üzemeltetési modelljét."
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "GRAFIKA",
+            "placement": "",
+            "details": "PV-termelés → EMS → BESS → hálózat / fogyasztó\nGrafikacím: Integrált PV + storage rendszer működése"
+          }
+        ]
+      },
+      {
+        "id": "uj-es-meglevo-naperomu-melle-is-vizsgalhato",
+        "title": "Új és meglévő naperőmű mellé is vizsgálható",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "Az energiatárolás új naperőművi projekt részeként és meglévő PV-rendszer kiegészítéseként is vizsgálható. A műszaki megoldás a csatlakozási és projektfeltételektől függ."
+          },
+          {
+            "kind": "linkList",
+            "links": [
+              {
+                "label": "Nagy naperőművek",
+                "href": "/ipari/naperomuvek/"
+              },
+              {
+                "label": "[BELSŐ LINK] BESS / ipari energiatárolás",
+                "href": "/ipari/bess-ipari-energiatarolas/"
+              }
+            ],
+            "external": false
+          },
+          {
+            "kind": "cta",
+            "label": "PV + storage projektről egyeztetek"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 23,
+    "name": "AGGREGÁCIÓ / FLEXIBILITÁSI SZOLGÁLTATÁSOK",
+    "breadcrumb": "Ipari projektek → Aggregáció / flexibilitási szolgáltatások",
+    "url": "/ipari/aggregacio-flexibilitas/",
+    "seoTitle": "Energiaaggregáció és flexibilitási szolgáltatások | A1 Solar",
+    "metaDescription": "Energiatárolók és rugalmas fogyasztók aggregációs, flexibilitási és energiapiaci lehetőségei. Műszaki alkalmasság, vezérlés, mérés és rendszerintegráció.",
+    "h1": "Aggregáció és flexibilitási szolgáltatások",
+    "intro": [
+      {
+        "kind": "paragraph",
+        "text": "A modern energiarendszerek értéke egyre kevésbé csak a megtermelt vagy eltárolt energia mennyiségéről szól. Fontossá válik az is, hogy a rendszer mikor és milyen gyorsan képes termelést, fogyasztást vagy energiatárolást módosítani."
+      },
+      {
+        "kind": "paragraph",
+        "text": "Az aggregáció több különálló rugalmas energiaeszköz összehangolt kezelését teszi lehetővé. Ilyen eszköz lehet például akkumulátoros energiatároló, napelemes rendszerhez kapcsolódó tároló vagy más vezérelhető fogyasztó."
+      },
+      {
+        "kind": "editorial",
+        "mediaType": "GRAFIKA",
+        "placement": "",
+        "details": "Több telephely / BESS / fogyasztó → aggregátor / vezérlés → energia- és flexibilitási piac\nGrafikacím: Energiaaggregáció működési elve"
+      }
+    ],
+    "sections": [
+      {
+        "id": "mi-kell-a-flexibilitashoz",
+        "title": "Mi kell a flexibilitáshoz?",
+        "items": [
+          {
+            "kind": "bullets",
+            "items": [
+              "mérhető és vezérelhető energiaeszköz",
+              "megfelelő kommunikáció és adatkapcsolat",
+              "EMS vagy más vezérlési réteg",
+              "műszaki és piaci alkalmasság",
+              "az adott konstrukcióhoz illeszkedő szerződéses és üzemeltetési modell"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "az-a1-solar-szerepe",
+        "title": "Az A1 Solar szerepe",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "Az A1 Solar a műszaki oldalon a napelem, energiatároló, mérés, vezérlés és kapcsolódó rendszerek integrációját tudja támogatni. Az adott aggregációs vagy flexibilitási konstrukció pontos keretei mindig a konkrét projekt és piaci partner függvényei."
+          },
+          {
+            "kind": "linkList",
+            "links": [
+              {
+                "label": "Standalone energiatárolás",
+                "href": "/ipari/standalone-energiatarolas/"
+              },
+              {
+                "label": "[BELSŐ LINK] BESS / ipari energiatárolás",
+                "href": "/ipari/bess-ipari-energiatarolas/"
+              }
+            ],
+            "external": false
+          },
+          {
+            "kind": "cta",
+            "label": "Aggregációs / flexibilitási projektről egyeztetek"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 24,
+    "name": "LAKOSSÁGI REFERENCIÁK",
+    "breadcrumb": "Referenciák → Lakossági referenciák",
+    "url": "/referenciak/lakossagi/",
+    "seoTitle": "Lakossági napelem és energiatároló referenciák | A1 Solar",
+    "metaDescription": "A1 Solar lakossági referenciák: napelem + akkumulátor, meglévő rendszer bővítés, backup és szigetüzemű projektek műszaki adatokkal.",
+    "h1": "Lakossági referenciáink",
+    "intro": [
+      {
+        "kind": "paragraph",
+        "text": "A fotók mellett a projekt legfontosabb műszaki adatait és célját is megmutatjuk, hogy látható legyen, milyen rendszer milyen feladatra készült."
+      },
+      {
+        "kind": "editorial",
+        "mediaType": "SZŰRŐK",
+        "placement": "",
+        "details": "Napelem + energiatároló | Retrofit | Backup | Szigetüzem | Deye | Huawei | Sigenergy | FoxESS"
+      }
+    ],
+    "sections": [
+      {
+        "id": "lakossagi-napelem-energiatarolo-helyszin",
+        "title": "Lakossági napelem + energiatároló – [HELYSZÍN]",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "Projekt célja: [KITÖLTENDŐ]\nNapelem: [KITÖLTENDŐ] kWp\nInverter: [KITÖLTENDŐ]\nAkkumulátor: [KITÖLTENDŐ]\nKapacitás: [KITÖLTENDŐ] kWh\nBackup: [igen / nem]\nA1 Solar feladata: [KITÖLTENDŐ]"
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "KÉP",
+            "placement": "",
+            "details": "1 nagy projektfotó + 1 műszaki részlet.\nKépcím: A1 Solar lakossági referencia – [HELYSZÍN]"
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "ISMÉTLENDŐ PROJEKTKÁRTYA",
+            "placement": "",
+            "details": "Legalább 8–12 valós lakossági projekt ugyanezzel a struktúrával."
+          },
+          {
+            "kind": "cta",
+            "label": "Hasonló lakossági rendszert szeretnék"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 25,
+    "name": "ENERGIATÁROLÓ REFERENCIÁK",
+    "breadcrumb": "Referenciák → Energiatároló referenciák",
+    "url": "/referenciak/energiatarolas/",
+    "seoTitle": "Energiatároló referenciák | A1 Solar",
+    "metaDescription": "A1 Solar energiatároló referenciák: lakossági akkumulátorok, backup rendszerek és vállalati BESS projektek Deye, FoxESS, Sigenergy és Huawei technológiával.",
+    "h1": "Energiatároló referenciáink",
+    "intro": [],
+    "sections": [
+      {
+        "id": "lakossagi-rendszerektol-a-tobb-mwh-s-ipari-energiatarolasig",
+        "title": "Lakossági rendszerektől a több MWh-s ipari energiatárolásig",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "Az A1 Solar lakossági, vállalati és ipari ügyfelek számára valósít meg akkumulátoros energiatároló rendszereket Magyarország egész területén."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Referenciáink között megtalálhatók új napelem + energiatároló rendszerek, meglévő rendszerek akkumulátoros bővítései, backup megoldások és vállalati BESS projektek."
+          },
+          {
+            "kind": "paragraph",
+            "text": "13 év szakmai tapasztalat | 5000+ napelemes rendszer | lakossági és több MWh-s energiatárolási tapasztalat"
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "KÉP",
+            "placement": "HERO",
+            "details": "4 saját projekt mozaikban.\nKépcím: A1 Solar energiatároló referenciák"
+          }
+        ]
+      },
+      {
+        "id": "magyarorszag-elso-foxess-g-max-energiatarolo-rendszere",
+        "title": "Magyarország első FoxESS G-MAX energiatároló rendszere",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "Magyarország első FoxESS G-MAX energiatároló rendszerének telepítése az A1 Solar közreműködésével valósult meg."
+          },
+          {
+            "kind": "paragraph",
+            "text": "A projekt helyszíne [KITÖLTENDŐ], a rendszer tárolókapacitása [KITÖLTENDŐ] kWh, teljesítménye pedig [KITÖLTENDŐ] kW."
+          },
+          {
+            "kind": "paragraph",
+            "text": "A projekt célja [KITÖLTENDŐ], az A1 Solar feladata pedig [KITÖLTENDŐ] volt."
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "KÉP",
+            "placement": "",
+            "details": "Nagy G-MAX rendszerfotó.\nKépcím: Magyarország első FoxESS G-MAX energiatároló rendszere"
+          }
+        ]
+      },
+      {
+        "id": "7-mwh-energiatarolasi-projekt",
+        "title": "7 MWh energiatárolási projekt",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "Jelenlegi legnagyobb energiatárolási projektünk 7 MWh tárolókapacitású vállalati/ipari rendszer."
+          },
+          {
+            "kind": "paragraph",
+            "text": "A projekt [KITÖLTENDŐ] helyszínen valósul meg, [KITÖLTENDŐ] technológiával."
+          },
+          {
+            "kind": "paragraph",
+            "text": "A1 Solar szerepe: [KITÖLTENDŐ]\nProjekt célja: [KITÖLTENDŐ]\nStátusz: [KITÖLTENDŐ]"
+          }
+        ]
+      },
+      {
+        "id": "lakossagi-energiatarolo-referencia-helyszin",
+        "title": "Lakossági energiatároló referencia – [HELYSZÍN]",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "A projekt során [KITÖLTENDŐ] kWp napelemes rendszerhez [KITÖLTENDŐ] invertert és [KITÖLTENDŐ] kWh energiatárolót telepítettünk."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Az ügyfél célja [KITÖLTENDŐ] volt."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Inverter: [KITÖLTENDŐ]\nAkkumulátor: [KITÖLTENDŐ]\nKapacitás: [KITÖLTENDŐ] kWh\nBackup: [igen / nem]\nA1 Solar feladata: [KITÖLTENDŐ]"
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "KÉP",
+            "placement": "",
+            "details": "1 nagy projektkép + 1 technikai részlet."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Ugyanezzel a teljes szöveges struktúrával kerüljön ki legalább 6–10 lakossági projekt."
+          }
+        ]
+      },
+      {
+        "id": "backup-referencia-helyszin",
+        "title": "Backup referencia – [HELYSZÍN]",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "A projekt célja az volt, hogy áramszünet esetén [KITÖLTENDŐ] fogyasztók továbbra is működjenek."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Ehhez [KITÖLTENDŐ] invertert és [KITÖLTENDŐ] kWh energiatárolót telepítettünk."
+          },
+          {
+            "kind": "paragraph",
+            "text": "A backup rendszer [KITÖLTENDŐ] fázison működik, és [KITÖLTENDŐ] fogyasztói kört lát el."
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "KÉP",
+            "placement": "",
+            "details": "Projektfotó.\n[VIDEÓ] Ha van, valós backup teszt."
+          }
+        ]
+      },
+      {
+        "id": "deye-referenciak",
+        "title": "Deye referenciák",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "Az A1 Solar ezres nagyságrendben telepített Deye inverteres rendszereket Magyarországon."
+          },
+          {
+            "kind": "paragraph",
+            "text": "A kiemelt Deye referenciák között lakossági energiatároló, backup és vállalati projektek egyaránt szerepelnek."
+          },
+          {
+            "kind": "link",
+            "label": "Deye inverter és energiatárolás",
+            "href": "/technologiak/deye/",
+            "external": false
+          }
+        ]
+      },
+      {
+        "id": "foxess-referenciak",
+        "title": "FoxESS referenciák",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "Több száz megvalósított FoxESS rendszerrel rendelkezünk, lakossági és vállalati projektekben egyaránt."
+          },
+          {
+            "kind": "paragraph",
+            "text": "A referenciák között megtalálhatók RRF-projektek, lakossági energiatárolók és vállalati G-MAX rendszerek is."
+          },
+          {
+            "kind": "link",
+            "label": "FoxESS inverter és energiatárolás",
+            "href": "/technologiak/foxess/",
+            "external": false
+          }
+        ]
+      },
+      {
+        "id": "sigenergy-referenciak",
+        "title": "Sigenergy referenciák",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "Sigenergy SigenStor rendszereink között olyan projektek szerepelnek, ahol az energiatárolás, intelligens vezérlés, backup és adott esetben EV-integráció egységes rendszerként működik."
+          },
+          {
+            "kind": "link",
+            "label": "Sigenergy inverter és energiatárolás",
+            "href": "/technologiak/sigenergy/",
+            "external": false
+          }
+        ]
+      },
+      {
+        "id": "huawei-referenciak",
+        "title": "Huawei referenciák",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "Lakossági és vállalati FusionSolar rendszerekkel egyaránt dolgozunk."
+          },
+          {
+            "kind": "paragraph",
+            "text": "A referenciák között inverteres, energiatárolós és C&I projektek is szerepelnek."
+          },
+          {
+            "kind": "link",
+            "label": "Huawei inverter és energiatárolás",
+            "href": "/technologiak/huawei/",
+            "external": false
+          },
+          {
+            "kind": "paragraph",
+            "text": "Hasonló projektet tervezel?"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Akár lakossági energiatárolót, akár backup rendszert, akár vállalati BESS megoldást tervezel, az A1 Solar a rendszertervezéstől a kivitelezésen át a beüzemelésig és szervizig végig tudja vinni a projektet."
+          },
+          {
+            "kind": "cta",
+            "label": "Energiatároló ajánlatot kérek"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 26,
+    "name": "BACKUP REFERENCIÁK",
+    "breadcrumb": "Referenciák → Backup referenciák",
+    "url": "/referenciak/backup/",
+    "seoTitle": "Backup rendszer referenciák | A1 Solar",
+    "metaDescription": "Valós A1 Solar backup referenciák: kritikus fogyasztók és nagyobb fogyasztói körök tartalékellátása, inverter, akkumulátor és áramszüneti tesztek.",
+    "h1": "Backup referenciáink",
+    "intro": [
+      {
+        "kind": "paragraph",
+        "text": "Egy backup rendszer értékét az mutatja meg, hogy áramszünet esetén ténylegesen a megtervezett fogyasztókat látja-e el. Ezért ezen az oldalon a rendszeradatok mellett lehetőség szerint valós backup teszteket is bemutatunk."
+      }
+    ],
+    "sections": [
+      {
+        "id": "backup-rendszer-helyszin",
+        "title": "Backup rendszer – [HELYSZÍN]",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "Projekt célja: [KITÖLTENDŐ]\nInverter: [KITÖLTENDŐ]\nAkkumulátor: [KITÖLTENDŐ] kWh\nFázisszám: [KITÖLTENDŐ]\nEllátott fogyasztók: [KITÖLTENDŐ]\nBackup típusa: [kritikus kör / nagyobb fogyasztói kör / teljes ház]"
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "KÉP",
+            "placement": "",
+            "details": "Valódi projektfotó.\nKépcím: A1 Solar backup referencia – [HELYSZÍN]"
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "VIDEÓ",
+            "placement": "",
+            "details": "Valós áramszünet-szimuláció vagy backup teszt.\nVideócím: A1 Solar backup rendszer működés közben – [HELYSZÍN]"
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "ISMÉTLENDŐ PROJEKTKÁRTYA",
+            "placement": "",
+            "details": "Legalább 3–5 valós backup referencia."
+          },
+          {
+            "kind": "link",
+            "label": "Backup / áramszüneti megoldások",
+            "href": "/lakossagi/backup-aramszuneti-megoldasok/",
+            "external": false
+          },
+          {
+            "kind": "cta",
+            "label": "Backup rendszerre kérek ajánlatot"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 27,
+    "name": "VÁLLALATI REFERENCIÁK",
+    "breadcrumb": "Referenciák → Vállalati referenciák",
+    "url": "/referenciak/vallalati/",
+    "seoTitle": "Vállalati napelem és energiatároló referenciák | A1 Solar",
+    "metaDescription": "A1 Solar vállalati referenciák: napelemes rendszerek, PV + storage, retrofit, O&M és energetikai optimalizáció valós projektadatokkal.",
+    "h1": "Vállalati referenciáink",
+    "intro": [
+      {
+        "kind": "paragraph",
+        "text": "Vállalati projektek esetén a rendszer mérete önmagában kevés információ. Ezért a referenciáknál a projekt célját, a fogyasztási vagy hálózati problémát, a kialakított megoldást és az A1 Solar feladatát is bemutatjuk."
+      },
+      {
+        "kind": "editorial",
+        "mediaType": "SZŰRŐK",
+        "placement": "",
+        "details": "Napelem | Napelem + energiatárolás | Retrofit | O&M | PPA / finanszírozott"
+      }
+    ],
+    "sections": [
+      {
+        "id": "vallalati-projekt-helyszin",
+        "title": "Vállalati projekt – [HELYSZÍN]",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "Projekt célja: [KITÖLTENDŐ]\nNapelem: [KITÖLTENDŐ] kWp\nEnergiatároló: [KITÖLTENDŐ] kWh / nincs\nTeljesítmény: [KITÖLTENDŐ] kW\nTechnológia: [KITÖLTENDŐ]\nA1 Solar feladata: [KITÖLTENDŐ]"
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "KÉP",
+            "placement": "",
+            "details": "Nagy telephelyi projektfotó + műszaki részlet.\nKépcím: A1 Solar vállalati referencia – [HELYSZÍN]"
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "ISMÉTLENDŐ PROJEKTKÁRTYA",
+            "placement": "",
+            "details": "Legalább 6–10 vállalati projekt."
+          },
+          {
+            "kind": "cta",
+            "label": "Vállalati projektről egyeztetek"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 28,
+    "name": "IPARI / BESS REFERENCIÁK",
+    "breadcrumb": "Referenciák → Ipari / BESS referenciák",
+    "url": "/referenciak/bess-ipari/",
+    "seoTitle": "Ipari BESS referenciák | A1 Solar",
+    "metaDescription": "A1 Solar ipari és BESS referenciák: több MWh-s energiatárolási projektek, FoxESS G-MAX, standalone és PV + storage megoldások.",
+    "h1": "Ipari és BESS referenciáink",
+    "intro": [
+      {
+        "kind": "paragraph",
+        "text": "A nagyobb energiatárolási projekteknél a tárolókapacitás és teljesítmény mellett a projekt célja, a vezérlési logika, a hálózati környezet és az A1 Solar szerepe is fontos."
+      }
+    ],
+    "sections": [
+      {
+        "id": "magyarorszag-elso-foxess-g-max-energiatarolo-rendszere",
+        "title": "Magyarország első FoxESS G-MAX energiatároló rendszere",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "Helyszín: [KITÖLTENDŐ]\nKapacitás: [KITÖLTENDŐ] kWh\nTeljesítmény: [KITÖLTENDŐ] kW\nProjekt célja: [KITÖLTENDŐ]\nA1 Solar szerepe: [KITÖLTENDŐ]"
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "KÉP",
+            "placement": "",
+            "details": "Nagy G-MAX rendszerfotó.\nKépcím: Magyarország első FoxESS G-MAX energiatároló rendszere"
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "VIDEÓ",
+            "placement": "",
+            "details": "G-MAX beüzemelés / gyártói jelenlét, ha használható."
+          }
+        ]
+      },
+      {
+        "id": "7-mwh-energiatarolasi-projekt",
+        "title": "7 MWh energiatárolási projekt",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "Tárolókapacitás: 7 MWh\nTeljesítmény: [KITÖLTENDŐ] MW\nTechnológia: [KITÖLTENDŐ]\nHelyszín: [KITÖLTENDŐ]\nProjekt célja: [KITÖLTENDŐ]\nA1 Solar szerepe: [KITÖLTENDŐ]\nStátusz: [KITÖLTENDŐ]"
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "KÉP",
+            "placement": "",
+            "details": "Ha kommunikálható.\nKépcím: A1 Solar 7 MWh BESS projekt – [HELYSZÍN]"
+          }
+        ]
+      },
+      {
+        "id": "tovabbi-ipari-projektek",
+        "title": "További ipari projektek",
+        "items": [
+          {
+            "kind": "editorial",
+            "mediaType": "ISMÉTLENDŐ PROJEKTKÁRTYA",
+            "placement": "",
+            "details": "Standalone / PV + storage / egyéb BESS projekt. Minden kártyán MW, MWh, technológia, cél, A1 Solar szerepe, státusz."
+          },
+          {
+            "kind": "link",
+            "label": "BESS / ipari energiatárolás",
+            "href": "/ipari/bess-ipari-energiatarolas/",
+            "external": false
+          },
+          {
+            "kind": "cta",
+            "label": "Ipari energiatárolási projektről egyeztetek"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 29,
+    "name": "NAPERŐMŰ REFERENCIÁK",
+    "breadcrumb": "Referenciák → Naperőmű referenciák",
+    "url": "/referenciak/naperomu/",
+    "seoTitle": "Naperőmű és napelempark referenciák | A1 Solar",
+    "metaDescription": "A1 Solar naperőmű és napelempark referenciák: projektméret, helyszín, technológia, megvalósítási státusz és A1 Solar szerepe.",
+    "h1": "Naperőmű referenciáink",
+    "intro": [
+      {
+        "kind": "paragraph",
+        "text": "A nagy naperőművi projekteknél a referencia bemutatásának célja, hogy egyértelmű legyen a projekt mérete, státusza, technológiája és az A1 Solar pontos szerepe."
+      }
+    ],
+    "sections": [
+      {
+        "id": "naperomu-projekt-helyszin",
+        "title": "Naperőmű projekt – [HELYSZÍN]",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "Projektméret: [KITÖLTENDŐ] MWp\nStátusz: [KITÖLTENDŐ]\nTechnológia: [KITÖLTENDŐ]\nÉv: [KITÖLTENDŐ]\nA1 Solar szerepe: [KITÖLTENDŐ]"
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "KÉP",
+            "placement": "",
+            "details": "Légifotó / drónkép + műszaki részlet.\nKépcím: A1 Solar naperőmű referencia – [HELYSZÍN]"
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "ISMÉTLENDŐ PROJEKTKÁRTYA",
+            "placement": "",
+            "details": "Az összes kommunikálható naperőművi projekt ugyanezzel a struktúrával."
+          },
+          {
+            "kind": "link",
+            "label": "Nagy naperőművek",
+            "href": "/ipari/naperomuvek/",
+            "external": false
+          },
+          {
+            "kind": "cta",
+            "label": "Naperőmű projektről egyeztetek"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 30,
+    "name": "DEYE",
+    "breadcrumb": "Technológiák → Deye",
+    "url": "/technologiak/deye/",
+    "seoTitle": "Deye inverter és energiatárolás | A1 Solar",
+    "metaDescription": "Deye inverter és energiatároló rendszerek. Ezres nagyságrendű A1 Solar telepítés, ningbói gyárlátogatások, backup, képzések és országos kivitelezés.",
+    "h1": "Deye inverter és energiatárolás – közvetlen gyártói kapcsolattal",
+    "intro": [
+      {
+        "kind": "paragraph",
+        "text": "Az A1 Solar évek óta dolgozik Deye inverterekkel és energiatároló rendszerekkel lakossági és vállalati projektekben."
+      },
+      {
+        "kind": "paragraph",
+        "text": "Tapasztalatunk nem néhány rendszerre épül: ezres nagyságrendben telepítettünk Deye inverteres rendszereket Magyarországon, különösen NPP pályázati és saját beruházási projektekben."
+      },
+      {
+        "kind": "paragraph",
+        "text": "Csapatunk több alkalommal járt a Deye ningbói központjában és gyárában, az A1 Solar pedig a cégcsoport eredeti Deye Battery disztribútora volt."
+      },
+      {
+        "kind": "paragraph",
+        "text": "Többéves Deye tapasztalat | ezres nagyságrendű telepítés | ningbói gyárlátogatások | disztribúciós múlt"
+      },
+      {
+        "kind": "editorial",
+        "mediaType": "KÉP",
+        "placement": "HERO",
+        "details": "A1 Solar csapat a Deye gyárban.\nKépcím: A1 Solar a Deye ningbói gyárában"
+      },
+      {
+        "kind": "paragraph",
+        "text": "Miért Deye?"
+      },
+      {
+        "kind": "paragraph",
+        "text": "A Deye egyik legfontosabb erőssége a rugalmas hibrid és energiatároló rendszerkialakítás."
+      },
+      {
+        "kind": "paragraph",
+        "text": "Megfelelő konfigurációval a napelemes termelés, az akkumulátoros energiatárolás, a hálózati energiaellátás, a backup és az intelligens energiamenedzsment egy rendszerben kezelhető."
+      },
+      {
+        "kind": "paragraph",
+        "text": "Bizonyos Deye rendszerek olyan projektekhez is jó alapot adnak, ahol a nagyobb hálózati függetlenség vagy részben szigetüzemű működés a cél."
+      },
+      {
+        "kind": "editorial",
+        "mediaType": "KÉP",
+        "placement": "",
+        "details": "Saját Deye telepítés.\nKépcím: Deye inverter és energiatároló rendszer – A1 Solar – [HELYSZÍN]"
+      }
+    ],
+    "sections": [
+      {
+        "id": "tobbszor-jartunk-a-deye-ningboi-gyaraban",
+        "title": "Többször jártunk a Deye ningbói gyárában",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "Az A1 Solar szakmai csapata több alkalommal látogatott el a Deye kínai, ningbói központjába és gyártóüzemébe."
+          },
+          {
+            "kind": "paragraph",
+            "text": "A gyárlátogatások és közvetlen szakmai egyeztetések során első kézből ismerhettük meg a termékeket, a fejlesztési irányokat, a konfigurációs megoldásokat és a gyártói műszaki elvárásokat."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Ez azért fontos, mert egy összetett inverteres és energiatároló rendszer megfelelő működése nem kizárólag a termék kiválasztásán múlik. Ugyanilyen fontos a helyes konfiguráció, a BMS-kommunikáció, a backup logika, a firmware és a gyártói műszaki előírások pontos ismerete."
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "KÉP",
+            "placement": "",
+            "details": "Gyártósor.\nKépcím: Deye inverter- és energiatároló gyártás Ningbóban"
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "KÉP",
+            "placement": "",
+            "details": "Deye mérnökökkel.\nKépcím: A1 Solar szakmai egyeztetés a Deye mérnökeivel"
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "VIDEÓ",
+            "placement": "",
+            "details": "Gyárlátogatási összeállítás.\nVideócím: A1 Solar a Deye ningbói gyárában"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Nemcsak telepítjük. Oktatjuk is."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Az A1 Solar és a cégcsoport országos Deye roadshow-kon, szakmai bemutatókon és képzéseken is aktívan részt vesz."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Nemcsak saját csapatunk tudását fejlesztjük folyamatosan, hanem más telepítők számára is bemutatjuk a Deye inverteres és energiatároló rendszerek telepítésének, konfigurációjának és beüzemelésének gyakorlati oldalát."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Ez a többéves szakmai és oktatási tapasztalat közvetlenül hasznosul az ügyfelek rendszereinek tervezése és kivitelezése során."
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "KÉP",
+            "placement": "",
+            "details": "Deye roadshow.\nKépcím: A1 Solar Deye szakmai roadshow"
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "KÉP",
+            "placement": "",
+            "details": "Telepítői oktatás.\nKépcím: Deye szakmai képzés az A1 Solar közreműködésével"
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "VIDEÓ",
+            "placement": "",
+            "details": "Roadshow részlet.\nVideócím: Deye szakmai oktatás és roadshow – A1 Solar"
+          }
+        ]
+      },
+      {
+        "id": "lakossagi-es-vallalati-deye-rendszerek",
+        "title": "Lakossági és vállalati Deye rendszerek",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "Deye technológiával lakossági és vállalati energiatárolási, backup és intelligens energiakezelési feladatokat egyaránt megvalósítunk."
+          },
+          {
+            "kind": "paragraph",
+            "text": "A rendszer méretét és kialakítását mindig az adott projekt energiaigénye, villamos hálózata és műszaki célja alapján határozzuk meg."
+          }
+        ]
+      },
+      {
+        "id": "kozvetlen-gyartoi-es-disztribucios-hatter",
+        "title": "Közvetlen gyártói és disztribúciós háttér",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "A cégcsoport Deye-jal fennálló többéves kapcsolatának köszönhetően hozzáférünk gyártói képzésekhez, technikai információkhoz, support- és szervizcsatornákhoz."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Ez lehetővé teszi, hogy egy összetettebb műszaki kérdésnél ne kizárólag általános dokumentációból dolgozzunk, hanem közvetlen szakmai háttérre is támaszkodhassunk."
+          }
+        ]
+      },
+      {
+        "id": "deye-referencia-helyszin",
+        "title": "Deye referencia – [HELYSZÍN]",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "A projekt során [KITÖLTENDŐ] Deye invertert és [KITÖLTENDŐ] kWh energiatárolót telepítettünk."
+          },
+          {
+            "kind": "paragraph",
+            "text": "A rendszer célja [KITÖLTENDŐ] volt."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Inverter: [KITÖLTENDŐ]\nAkkumulátor: [KITÖLTENDŐ]\nKapacitás: [KITÖLTENDŐ] kWh\nBackup: [igen / nem]"
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "KÉP",
+            "placement": "",
+            "details": "Projektfotó."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Legalább 6 valós Deye projekt ugyanezzel a struktúrával."
+          },
+          {
+            "kind": "cta",
+            "label": "Deye rendszerre kérek ajánlatot"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 31,
+    "name": "HUAWEI",
+    "breadcrumb": "Technológiák → Huawei",
+    "url": "/technologiak/huawei/",
+    "seoTitle": "Huawei inverter és energiatárolás | A1 Solar",
+    "metaDescription": "Huawei inverter és energiatároló rendszerek lakossági és C&I projektekhez. Key Account kapcsolat, FusionSolar, közvetlen gyártói support és országos kivitelezés.",
+    "h1": "Huawei inverter és energiatárolás – közvetlen gyártói háttérrel",
+    "intro": [
+      {
+        "kind": "paragraph",
+        "text": "Az A1 Solar évek óta dolgozik Huawei inverteres és energiatároló rendszerekkel, lakossági és vállalati projektekben egyaránt."
+      },
+      {
+        "kind": "paragraph",
+        "text": "A Huawei esetében kapcsolatunk különösen erős: Key Account partnerként közvetlen gyártói támogatási háttérrel dolgozunk."
+      },
+      {
+        "kind": "paragraph",
+        "text": "A FusionSolar ökoszisztémában a napelemes termelés, az energiatárolás, az intelligens vezérlés és a monitoring egységes rendszerként működhet."
+      },
+      {
+        "kind": "paragraph",
+        "text": "Huawei Key Account | FusionSolar | lakossági és C&I | közvetlen support"
+      },
+      {
+        "kind": "editorial",
+        "mediaType": "KÉP",
+        "placement": "HERO",
+        "details": "Huawei Global Installer Summit vagy erős saját Huawei projekt.\nKépcím: A1 Solar – Huawei Key Account és FusionSolar szakmai háttér"
+      }
+    ],
+    "sections": [
+      {
+        "id": "kulonosen-eros-c-i-megoldasok",
+        "title": "Különösen erős C&I megoldások",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "A Huawei egyik fontos fejlesztési területe a Commercial & Industrial energetika."
+          },
+          {
+            "kind": "paragraph",
+            "text": "A vállalati rendszereknél a napelemes termelés és az energiatárolás integrált PV + ESS rendszerként kezelhető, intelligens vezérléssel és központi monitoringgal."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Az A1 Solar vállalati projekt esetén a fogyasztási és termelési adatokból indul ki, és ezek alapján tervezi meg a megfelelő Huawei rendszer műszaki kialakítását."
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "KÉP",
+            "placement": "",
+            "details": "Saját Huawei C&I projekt.\nHelyszín: [KITÖLTENDŐ]\nProjektméret: [KITÖLTENDŐ]\nInverter: [KITÖLTENDŐ]\nEnergiatárolás: [KITÖLTENDŐ]"
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "KÉPCÍM",
+            "placement": "",
+            "details": "Huawei FusionSolar C&I rendszer – A1 Solar – [HELYSZÍN]"
+          }
+        ]
+      },
+      {
+        "id": "a1-solar-a-huawei-global-installer-summiton",
+        "title": "A1 Solar a Huawei Global Installer Summiton",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "Az A1 Solar csapata Kínában is részt vett a Huawei Global Installer Summit rendezvényén, ahová a gyártó a világ számos országából hívott meg vezető telepítő és kivitelező vállalatokat."
+          },
+          {
+            "kind": "paragraph",
+            "text": "A szakmai program során közvetlenül a Huawei szakembereitől ismerhettük meg az új inverteres megoldásokat, az energiatárolási fejlesztéseket, a C&I stratégiát, a FusionSolar új funkcióit és a gyártó következő technológiai irányait."
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "KÉP",
+            "placement": "",
+            "details": "A1 csapat az eseményen.\nKépcím: A1 Solar a Huawei Global Installer Summit rendezvényén Kínában"
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "KÉP",
+            "placement": "",
+            "details": "Technológiai bemutató.\nKépcím: Huawei FusionSolar és C&I technológiai bemutató"
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "KÉP",
+            "placement": "",
+            "details": "Huawei campus.\nKépcím: A1 Solar szakmai program a Huawei kínai központjában"
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "VIDEÓ",
+            "placement": "",
+            "details": "Saját eseményösszefoglaló.\nVideócím: A1 Solar a Huawei Global Installer Summiton"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Huawei Key Account partner"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Az A1 Solar Huawei Key Account partnerként közvetlenebb műszaki és szakmai háttérrel dolgozik."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Ennek értéke különösen a rendszertervezés, konfiguráció, beüzemelés, monitoring és későbbi műszaki támogatás során jelentkezik."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Ha összetettebb műszaki kérdés merül fel, a közvetlen partneri kapcsolat gyorsabb és hatékonyabb szakmai egyeztetést tesz lehetővé."
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "KÉP",
+            "placement": "",
+            "details": "Partnermeeting / Key Account esemény, ha van.\nKépcím: A1 Solar Huawei Key Account partner"
+          }
+        ]
+      },
+      {
+        "id": "fusionsolar-okoszisztema",
+        "title": "FusionSolar ökoszisztéma",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "A Huawei rendszerében az inverter, az energiatároló, a napelemes termelés, az intelligens vezérlés és a monitoring egységes környezetben működhet."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Ez lakossági és nagyobb vállalati projektekben egyaránt erős rendszerintegrációt biztosít."
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "GRAFIKA",
+            "placement": "",
+            "details": "PV → inverter → LUNA energiatároló → monitoring → energiamenedzsment"
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "GRAFIKACÍM",
+            "placement": "",
+            "details": "Huawei FusionSolar integrált energiarendszer"
+          }
+        ]
+      },
+      {
+        "id": "huawei-referencia-helyszin",
+        "title": "Huawei referencia – [HELYSZÍN]",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "A projekt során [KITÖLTENDŐ] kWp rendszerhez [KITÖLTENDŐ] Huawei invertert és [KITÖLTENDŐ] kWh energiatárolót telepítettünk."
+          },
+          {
+            "kind": "paragraph",
+            "text": "A projekt típusa [lakossági / C&I], célja pedig [KITÖLTENDŐ] volt."
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "KÉP",
+            "placement": "",
+            "details": "Saját projektfotó."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Legalább 6–8 saját Huawei referencia kerüljön ki."
+          },
+          {
+            "kind": "cta",
+            "label": "Huawei rendszerre kérek ajánlatot"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 32,
+    "name": "SIGENERGY",
+    "breadcrumb": "Technológiák → Sigenergy",
+    "url": "/technologiak/sigenergy/",
+    "seoTitle": "Sigenergy SigenStor inverter és energiatárolás | A1 Solar",
+    "metaDescription": "Sigenergy SigenStor intelligens, integrált energiatároló rendszerek. Közvetlen gyártói kapcsolat, 2026-os gyárlátogatás, Energrosso disztribúciós háttér és backup.",
+    "h1": "Sigenergy SigenStor – intelligens, integrált energiatároló rendszer",
+    "intro": [
+      {
+        "kind": "paragraph",
+        "text": "A Sigenergy az új generációs energiatárolás egyik legmodernebb megközelítését képviseli."
+      },
+      {
+        "kind": "paragraph",
+        "text": "A SigenStor egyetlen rendszerben képes összekapcsolni az invertert, az akkumulátort, az intelligens energiamenedzsmentet, a backup funkciót és akár az elektromos autó töltését is."
+      },
+      {
+        "kind": "paragraph",
+        "text": "Az A1 Solar Sigenergy rendszereket olyan ügyfelek számára tervez és telepít, akiknél a műszaki teljesítmény mellett a letisztult megjelenés, az intelligens vezérlés, az energiabiztonság és a hosszú távú bővíthetőség is fontos."
+      },
+      {
+        "kind": "editorial",
+        "mediaType": "KÉP",
+        "placement": "HERO",
+        "details": "Saját látványos SigenStor telepítés.\nKépcím: Sigenergy SigenStor intelligens energiatároló rendszer – A1 Solar – [HELYSZÍN]"
+      }
+    ],
+    "sections": [
+      {
+        "id": "egyetlen-integralt-energiarendszer",
+        "title": "Egyetlen integrált energiarendszer",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "A Sigenergy egyik legnagyobb erőssége, hogy nem különálló eszközökben, hanem egységes energiaökoszisztémában gondolkodik."
+          },
+          {
+            "kind": "paragraph",
+            "text": "A SigenStor rendszerben a napelemes termelés, az inverter, az akkumulátoros energiatárolás, az intelligens vezérlés, a backup és akár az elektromos autó töltése is egy közös rendszer része lehet."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Ez egyszerűbb, letisztultabb és könnyebben átlátható rendszerarchitektúrát eredményezhet."
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "KÉP",
+            "placement": "",
+            "details": "Prémium telepítés közelről.\nKépcím: Sigenergy SigenStor integrált energiarendszer"
+          }
+        ]
+      },
+      {
+        "id": "kozvetlen-kapcsolat-a-sigenergy-gyartoval",
+        "title": "Közvetlen kapcsolat a Sigenergy gyártóval",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "2026-ban az A1 Solar csapata személyesen is ellátogatott a Sigenergy gyárába."
+          },
+          {
+            "kind": "paragraph",
+            "text": "A látogatás során közvetlenül a gyártó szakembereivel ismerhettük meg a fejlesztési irányokat, a gyártási folyamatokat és az új technológiai megoldásokat."
+          },
+          {
+            "kind": "paragraph",
+            "text": "A szakmai program mellett a Sigenergy csapatával egy barátságos futballmérkőzést is játszottunk. Számunkra ez is jól mutatja, hogy a kapcsolat túlmutat egy egyszerű beszállítói viszonyon."
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "KÉP",
+            "placement": "",
+            "details": "Gyárlátogatás.\nKépcím: A1 Solar szakmai látogatás a Sigenergy gyárában – 2026"
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "KÉP",
+            "placement": "",
+            "details": "Gyártósor.\nKépcím: Sigenergy energiatároló rendszerek gyártása"
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "KÉP",
+            "placement": "",
+            "details": "Közös csapatfotó.\nKépcím: A1 Solar és a Sigenergy csapata – 2026"
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "KÉP",
+            "placement": "",
+            "details": "Focimeccs.\nKépcím: A1 Solar × Sigenergy – barátságos focimeccs a szakmai gyárlátogatás során"
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "VIDEÓ",
+            "placement": "",
+            "details": "45–90 mp gyárlátogatási videó.\nVideócím: A1 Solar a Sigenergy gyárában – 2026"
+          }
+        ]
+      },
+      {
+        "id": "elso-kezbol-erkezo-gyartoi-tudas",
+        "title": "Első kézből érkező gyártói tudás",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "Az A1 Solar cégcsoportjához tartozó Energrosso Kft. a Sigenergy disztribúciós partnere."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Ennek köszönhetően közvetlenül értesülünk az új termékekről, fejlesztésekről, műszaki változásokról és gyártói ajánlásokról."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Ez az ügyfél számára is fontos: nemcsak egy termék kerül telepítésre, hanem közvetlen szakmai és support háttér is áll a rendszer mögött."
+          }
+        ]
+      },
+      {
+        "id": "intelligens-energiamenedzsment",
+        "title": "Intelligens energiamenedzsment",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "A rendszer célja, hogy összehangolja a napelemes termelést, az akkumulátor töltését, a tárolt energia felhasználását, a hálózati energiaellátást, a backup működést és adott esetben az elektromos autó töltését."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Ez már túlmutat a hagyományos „napelem + akkumulátor” gondolkodáson."
+          },
+          {
+            "kind": "paragraph",
+            "text": "A cél egy olyan energiarendszer kialakítása, amely folyamatosan alkalmazkodik az épület energiaigényéhez."
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "KÉP",
+            "placement": "",
+            "details": "Monitoring/app, személyes adatok nélkül.\nKépcím: Sigenergy intelligens energiamenedzsment"
+          }
+        ]
+      },
+      {
+        "id": "backup-es-energiabiztonsag",
+        "title": "Backup és energiabiztonság",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "Megfelelő rendszerkialakítással a Sigenergy az épület tartalék energiaellátásában is szerepet kaphat."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Az A1 Solar minden esetben a teljes rendszert tervezi meg: az invertert, az akkumulátort, a Gatewayt, a villamos hálózatot, a fogyasztói köröket és a vezérlést."
+          }
+        ]
+      },
+      {
+        "id": "elektromos-auto-az-energiarendszer-reszekent",
+        "title": "Elektromos autó az energiarendszer részeként",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "A Sigenergy egyik fontos fejlesztési iránya az elektromos autó és az otthoni energiarendszer összekapcsolása."
+          },
+          {
+            "kind": "paragraph",
+            "text": "A napelem, az otthoni akkumulátor, az épület és az elektromos autó így nem különálló rendszerek, hanem egyetlen energiaökoszisztéma részeként kezelhetők."
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "KÉP",
+            "placement": "",
+            "details": "Csak saját EV-integrációs projekt esetén.\nProjekt: [KITÖLTENDŐ]"
+          }
+        ]
+      },
+      {
+        "id": "sigenergy-referencia-helyszin",
+        "title": "Sigenergy referencia – [HELYSZÍN]",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "A projekt során [KITÖLTENDŐ] teljesítményű SigenStor rendszert és [KITÖLTENDŐ] kWh energiatárolót telepítettünk."
+          },
+          {
+            "kind": "paragraph",
+            "text": "A rendszer backup funkciója [KITÖLTENDŐ], az EV-integráció pedig [igen / nem]."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Projekt célja: [KITÖLTENDŐ]"
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "KÉP",
+            "placement": "",
+            "details": "Saját referenciafotó."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Legalább 4–8 ilyen, vizuálisan erős referencia jelenjen meg."
+          },
+          {
+            "kind": "cta",
+            "label": "Sigenergy rendszerre kérek ajánlatot"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 33,
+    "name": "FOXESS",
+    "breadcrumb": "Technológiák → FoxESS",
+    "url": "/technologiak/foxess/",
+    "seoTitle": "FoxESS inverter és energiatárolás | A1 Solar",
+    "metaDescription": "FoxESS inverterek és energiatárolók. Több száz hazai A1 Solar telepítés, közvetlen gyártói kapcsolat, G-MAX/T-MAX képzés és országos kivitelezés.",
+    "h1": "FoxESS inverter és energiatárolás – több száz megvalósított rendszerrel",
+    "intro": [
+      {
+        "kind": "paragraph",
+        "text": "Az A1 Solar már 2022–2023-ban elkezdett FoxESS inverteres és energiatároló rendszerekkel dolgozni, így a technológia korai hazai alkalmazói közé tartozunk."
+      },
+      {
+        "kind": "paragraph",
+        "text": "Azóta több száz FoxESS rendszert telepítettünk Magyarországon. Az RRF-program kivitelezéseiben különösen nagy arányban használtunk FoxESS technológiát."
+      },
+      {
+        "kind": "paragraph",
+        "text": "Kapcsolatunk közvetlen a gyártóval: csapatunk Kínában is járt a FoxESS központjában."
+      },
+      {
+        "kind": "paragraph",
+        "text": "2022–2023 óta FoxESS | több száz hazai telepítés | közvetlen gyártói kapcsolat | első magyarországi G-MAX"
+      },
+      {
+        "kind": "editorial",
+        "mediaType": "KÉP",
+        "placement": "HERO",
+        "details": "FoxESS kínai látogatás.\nKépcím: A1 Solar szakmai látogatás a FoxESS kínai központjában"
+      }
+    ],
+    "sections": [
+      {
+        "id": "tobb-szaz-foxess-rendszer-magyarorszagon",
+        "title": "Több száz FoxESS rendszer Magyarországon",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "A nagy telepítési volumen jelentős gyakorlati tapasztalatot adott csapatunknak a rendszertervezés, telepítés, konfiguráció, beüzemelés, monitoring és műszaki támogatás területén."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Lakossági és vállalati projektekben egyaránt dolgozunk FoxESS technológiával."
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "KÉP",
+            "placement": "",
+            "details": "Több saját FoxESS telepítésből mozaik.\nKépcím: A1 Solar FoxESS inverteres és energiatároló telepítések Magyarországon"
+          }
+        ]
+      },
+      {
+        "id": "kozvetlen-gyartoi-kapcsolat",
+        "title": "Közvetlen gyártói kapcsolat",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "Az A1 Solar szakmai csapata a FoxESS kínai központjában is járt."
+          },
+          {
+            "kind": "paragraph",
+            "text": "A látogatás során közvetlenül a gyártó szakembereivel és mérnökeivel ismerhettük meg a termékeket, a fejlesztési irányokat és a nagyobb energiatároló rendszerek műszaki hátterét."
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "KÉP",
+            "placement": "",
+            "details": "Közös fotó FoxESS szakemberekkel.\nKépcím: A1 Solar és FoxESS – közvetlen szakmai kapcsolat"
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "VIDEÓ",
+            "placement": "",
+            "details": "Gyárlátogatás.\nVideócím: A1 Solar a FoxESS-nél Kínában"
+          }
+        ]
+      },
+      {
+        "id": "gyartoi-c-i-kepzes-hollandiaban",
+        "title": "Gyártói C&I képzés Hollandiában",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "Az A1 Solar szakemberei elsőként végezték el Hollandiában a FoxESS nagyobb kereskedelmi és ipari energiatároló rendszereihez kapcsolódó gyártói képzést."
+          },
+          {
+            "kind": "paragraph",
+            "text": "A G-MAX és utódja, a T-MAX esetében a megfelelő szakmai felkészültség a szakszerű telepítés és a hosszú távú garanciális feltételek szempontjából is kiemelten fontos."
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "KÉP",
+            "placement": "",
+            "details": "Holland képzés / oklevél / csoportkép.\nKépcím: A1 Solar a FoxESS C&I gyártói képzésén Hollandiában"
+          }
+        ]
+      },
+      {
+        "id": "magyarorszag-elso-foxess-g-max-telepitese",
+        "title": "Magyarország első FoxESS G-MAX telepítése",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "Az A1 Solar közreműködésével valósult meg Magyarország első FoxESS G-MAX energiatároló rendszerének telepítése."
+          },
+          {
+            "kind": "paragraph",
+            "text": "A rendszer helyszíne [KITÖLTENDŐ], kapacitása [KITÖLTENDŐ] kWh, teljesítménye pedig [KITÖLTENDŐ] kW."
+          },
+          {
+            "kind": "paragraph",
+            "text": "A projekt célja [KITÖLTENDŐ] volt."
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "KÉP",
+            "placement": "",
+            "details": "G-MAX teljes rendszer.\nKépcím: Magyarország első FoxESS G-MAX energiatároló rendszere"
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "VIDEÓ",
+            "placement": "",
+            "details": "Beüzemelés.\nVideócím: FoxESS G-MAX beüzemelés az A1 Solarral"
+          }
+        ]
+      },
+      {
+        "id": "nemcsak-telepitjuk-oktatjuk-is",
+        "title": "Nemcsak telepítjük – oktatjuk is",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "Az A1 Solar és a cégcsoport országos FoxESS roadshow-kon, szakmai bemutatókon és oktatásokon is részt vesz."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Nemcsak saját kivitelező csapatunkat képezzük, hanem más telepítőkkel is megosztjuk a FoxESS rendszerek telepítésével, konfigurációjával és üzembe helyezésével kapcsolatos gyakorlati tudást."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Nemcsak használjuk a technológiát – szakmai tudást is építünk köré Magyarországon."
+          },
+          {
+            "kind": "editorial",
+            "mediaType": "KÉP",
+            "placement": "",
+            "details": "Roadshow.\nKépcím: FoxESS roadshow és telepítői képzés – A1 Solar"
+          }
+        ]
+      },
+      {
+        "id": "lakossagi-es-vallalati-foxess-rendszerek",
+        "title": "Lakossági és vállalati FoxESS rendszerek",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "Lakossági inverteres és energiatároló rendszerektől a nagyobb C&I megoldásokig dolgozunk FoxESS technológiával."
+          },
+          {
+            "kind": "paragraph",
+            "text": "A megfelelő rendszert minden esetben az adott fogyasztási, teljesítmény- és backup igény alapján tervezzük meg."
+          },
+          {
+            "kind": "cta",
+            "label": "FoxESS rendszerre kérek ajánlatot"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 34,
+    "name": "CIKKEK",
+    "breadcrumb": "Cikkek",
+    "url": "/cikkek/",
+    "seoTitle": "Napelem, energiatárolás és BESS cikkek | A1 Solar",
+    "metaDescription": "A1 Solar szakmai cikkek napelemről, energiatárolásról, backup rendszerekről, BESS-ről, szigetüzemről, pályázatokról és energetikai technológiákról.",
+    "h1": "Cikkek és szakmai útmutatók",
+    "intro": [
+      {
+        "kind": "paragraph",
+        "text": "Gyakorlati, szakmai anyagok napelemről, energiatárolásról, backup rendszerekről, vállalati és ipari BESS megoldásokról, támogatásokról és a kapcsolódó technológiákról."
+      },
+      {
+        "kind": "editorial",
+        "mediaType": "KATEGÓRIASZŰRŐ",
+        "placement": "",
+        "details": "Napelem | Energiatárolás | Backup | Szigetüzem | Vállalati energetika | BESS / ipari | Pályázatok | Technológiák"
+      }
+    ],
+    "sections": [
+      {
+        "id": "kiemelt-cikkek",
+        "title": "Kiemelt cikkek",
+        "items": [
+          {
+            "kind": "editorial",
+            "mediaType": "CIKK KÁRTYÁK",
+            "placement": "",
+            "details": "3–6 kiemelt/friss cikk. Kártyánként: kép | kategória | cím | rövid leírás | dátum | Megnyitás."
+          }
+        ]
+      },
+      {
+        "id": "legfrissebb-cikkek",
+        "title": "Legfrissebb cikkek",
+        "items": [
+          {
+            "kind": "editorial",
+            "mediaType": "CIKKLISTA",
+            "placement": "",
+            "details": "Meglévő cikkek automatikus listázása időrendben, lapozással vagy „Továbbiak betöltése” funkcióval."
+          }
+        ]
+      },
+      {
+        "id": "nem-altalanos-tartalomgyartas-a-cel",
+        "title": "Nem általános tartalomgyártás a cél",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "A cikkek olyan valódi ügyfélkérdésekre adjanak pontos és használható választ, amelyek segítik a megfelelő műszaki döntést. A szolgáltatásválasztást segítő oldalak mindig linkeljenek a releváns A1 Solar szolgáltatás- és referenciaoldalakra."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 35,
+    "name": "KAPCSOLAT",
+    "breadcrumb": "Kapcsolat",
+    "url": "/kapcsolat/",
+    "seoTitle": "Kapcsolat | A1 Solar",
+    "metaDescription": "Lépj kapcsolatba az A1 Solarral lakossági, vállalati, ipari, szerviz vagy sajtómegkereséssel. Ajánlatkérés és szakmai egyeztetés egy helyen.",
+    "h1": "Kapcsolat",
+    "intro": [
+      {
+        "kind": "paragraph",
+        "text": "Írd meg, milyen energetikai projektről van szó, és a megfelelő A1 Solar csapathoz irányítjuk a megkeresést."
+      },
+      {
+        "kind": "editorial",
+        "mediaType": "KÉP",
+        "placement": "HERO",
+        "details": "A1 Solar csapat / iroda / telephely.\nKépcím: Kapcsolat az A1 Solar csapatával"
+      }
+    ],
+    "sections": [
+      {
+        "id": "miben-segithetunk",
+        "title": "Miben segíthetünk?",
+        "items": [
+          {
+            "kind": "editorial",
+            "mediaType": "VÁLASZTÓ KÁRTYÁK",
+            "placement": "",
+            "details": "Lakossági ajánlatkérés | Vállalati projekt | Ipari / BESS projekt | Szerviz / garancia | Sajtómegkeresés"
+          }
+        ]
+      },
+      {
+        "id": "ajanlatkeres-projektmegkereses",
+        "title": "Ajánlatkérés / projektmegkeresés",
+        "items": [
+          {
+            "kind": "editorial",
+            "mediaType": "ŰRLAP",
+            "placement": "",
+            "details": "Név | Cég (ha releváns) | E-mail | Telefonszám | Irányítószám / helyszín | Érdeklődés típusa | Rövid projektleírás | Fájl feltöltés | Adatkezelési checkbox"
+          }
+        ]
+      },
+      {
+        "id": "szervizbejelentes",
+        "title": "Szervizbejelentés",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "A gyorsabb ügyintézéshez add meg a neved, a telepítés címét, az inverter márkáját és pontos típusát, a hibajelenséget, a hibakódot, és lehetőség szerint csatolj fényképet vagy képernyőképet."
+          },
+          {
+            "kind": "paragraph",
+            "text": "Szerviz e-mail: szerviz@a1solar.hu"
+          },
+          {
+            "kind": "link",
+            "label": "Szerviz és garancia",
+            "href": "/rolunk/szerviz-es-garancia/",
+            "external": false
+          }
+        ]
+      },
+      {
+        "id": "altalanos-elerhetosegek",
+        "title": "Általános elérhetőségek",
+        "items": [
+          {
+            "kind": "editorial",
+            "mediaType": "KITÖLTENDŐ",
+            "placement": "",
+            "details": "Központi telefonszám | általános e-mail | iroda / telephely címe | nyitvatartás | cégadatok."
+          }
+        ]
+      },
+      {
+        "id": "hol-hallott-rolunk",
+        "title": "Hol hallott rólunk?",
+        "items": [
+          {
+            "kind": "paragraph",
+            "text": "Az ajánlatkérő űrlapon legyen opcionális „Hol hallott rólunk?” mező, külön „ChatGPT / AI kereső” válaszlehetőséggel, hogy az AI-ból érkező érdeklődések üzleti hatása mérhető legyen."
+          }
+        ]
+      }
+    ]
+  }
+]

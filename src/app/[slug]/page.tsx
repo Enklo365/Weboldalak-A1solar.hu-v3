@@ -14,6 +14,7 @@ import { SERVICE_PAGES } from "@/components/service/serviceData";
 import { SidebarLayout } from "@/components/service/SidebarLayout";
 import { SupportWidget } from "@/components/service/SupportWidget";
 import { WpContent } from "@/components/WpContent";
+import { CopydeckPage } from "@/components/v3/CopydeckPage";
 import {
   firstImage,
   formatDate,
@@ -27,6 +28,7 @@ import {
 } from "@/lib/content";
 import { getMirror } from "@/lib/mirror";
 import { SITE } from "@/lib/site";
+import { getV3Page } from "@/lib/v3-pages";
 
 type Params = { slug: string };
 
@@ -91,6 +93,16 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
 
+  const v3Page = getV3Page(`/${slug}/`);
+  if (v3Page) {
+    return {
+      title: { absolute: v3Page.seoTitle },
+      description: v3Page.metaDescription,
+      alternates: { canonical: `/${slug}/` },
+      openGraph: { title: v3Page.seoTitle, description: v3Page.metaDescription },
+    };
+  }
+
   // Confirmation ("sikeres…") pages must not be indexed.
   const success = SUCCESS_PAGES[slug];
   if (success) {
@@ -128,6 +140,9 @@ export default async function DynamicPage({
 }) {
   const { slug } = await params;
   if (RESERVED_SLUGS.has(slug)) notFound();
+
+  const v3Page = getV3Page(`/${slug}/`);
+  if (v3Page) return <CopydeckPage page={v3Page} />;
 
   // Natively rebuilt service subpages take over from the WP mirror.
   const service = SERVICE_PAGES[slug];
