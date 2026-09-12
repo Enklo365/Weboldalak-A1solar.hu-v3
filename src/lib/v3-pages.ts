@@ -7,7 +7,7 @@ export type CopyItem =
   | { kind: "cta"; label: string }
   | { kind: "link"; label: string; href: string; external?: boolean }
   | { kind: "linkList"; links: { label: string; href: string }[]; external?: boolean }
-  | { kind: "editorial"; mediaType: string; placement: string; details: string }
+  | { kind: "editorial"; mediaType: string; placement: string; details: string; src?: string; poster?: string; alt?: string }
   | { kind: "note"; text: string };
 
 export type CopySection = { id: string; title: string; items: CopyItem[] };

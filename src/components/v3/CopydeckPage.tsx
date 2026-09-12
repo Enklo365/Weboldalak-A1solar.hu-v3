@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { Bullets } from "@/components/section/SectionKit";
 import { Breadcrumbs } from "@/components/v3/Breadcrumbs";
@@ -28,30 +29,51 @@ const RenderItems = ({ items, compact = false }: { items: CopyItem[]; compact?: 
   </div>
 );
 
+const HeroBackdrop = ({ item }: { item?: CopyItem }) => {
+  const media = item?.kind === "editorial" ? item : undefined;
+  const isVideo = media?.mediaType.trim().toUpperCase().includes("VIDEÓ");
+
+  return (
+    <div className="v3-hero__media" aria-hidden="true">
+      {media?.src && isVideo ? (
+        <video autoPlay loop muted playsInline preload="metadata" poster={media.poster}>
+          <source src={media.src} />
+        </video>
+      ) : media?.src ? (
+        <Image src={media.src} alt="" fill priority sizes="100vw" />
+      ) : null}
+    </div>
+  );
+};
+
 export const CopydeckPage = ({ page }: { page: CopyPage }) => {
   const layout = getV3Layout(page);
   const heroSupplement = hasV3HeroSupplement(page.number);
-  const heroSlot = heroSupplement ? undefined : page.intro.find((item) => item.kind === "editorial");
-  const heroCopy = page.intro.filter((item) => item !== heroSlot && !(heroSupplement && item.kind === "editorial"));
+  const heroSlotIndex = page.intro.findIndex(
+    (item) => item.kind === "editorial" && item.placement.trim().toUpperCase() === "HERO",
+  );
+  const heroSlot = heroSlotIndex >= 0 ? page.intro[heroSlotIndex] : undefined;
+  const ctaIndex = page.intro.findIndex((item) => item.kind === "cta");
+  const heroCopyIndexes = new Set([ctaIndex].filter((index) => index >= 0));
+  const heroCopy = page.intro.filter((_, index) => heroCopyIndexes.has(index));
+  const introRemainder = page.intro.filter((item, index) => (
+    index !== heroSlotIndex
+    && !heroCopyIndexes.has(index)
+    && !(heroSupplement && item.kind === "editorial")
+  ));
   const hasSidebar = layout === "service" && page.sections.length >= 5;
 
   return (
     <article className={`v3-page v3-page--${layout}`}>
       <header className="v3-hero">
+        <HeroBackdrop item={heroSlot} />
         <div className="container">
           <Breadcrumbs value={page.breadcrumb} />
           <div className="v3-hero__grid">
             <div className="v3-hero__copy">
               <span className="v3-kicker">{page.name}</span>
               <h1>{page.h1}</h1>
-              <RenderItems items={heroCopy} compact />
-            </div>
-            <div className="v3-hero__visual">
-              {heroSupplement ? <V3HeroSupplement pageNumber={page.number} /> : heroSlot?.kind === "editorial" ? (
-                <EditorialSlot type={heroSlot.mediaType} placement={heroSlot.placement} details={heroSlot.details} />
-              ) : (
-                <div className="v3-hero__monogram" aria-hidden="true">A1</div>
-              )}
+              {heroCopy.length ? <RenderItems items={heroCopy} compact /> : null}
             </div>
           </div>
         </div>
@@ -69,6 +91,12 @@ export const CopydeckPage = ({ page }: { page: CopyPage }) => {
         ) : null}
 
         <div className="v3-sections">
+          {introRemainder.length || heroSupplement ? (
+            <section className="v3-intro-continuation" aria-label="Bevezető részletek">
+              <RenderItems items={introRemainder} />
+              {heroSupplement ? <div className="v3-intro-supplement"><V3HeroSupplement pageNumber={page.number} /></div> : null}
+            </section>
+          ) : null}
           {page.sections.map((section, index) => {
             const supplemented = hasV3Supplement(page.number, section.id);
             const editorial = supplemented ? undefined : section.items.find((item) => item.kind === "editorial");
