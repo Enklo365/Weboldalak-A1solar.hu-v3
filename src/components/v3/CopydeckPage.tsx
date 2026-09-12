@@ -1,6 +1,6 @@
 import Link from "next/link";
-import Image from "next/image";
 import { ArrowRight } from "lucide-react";
+import { FramedHero, type FramedHeroMedia } from "@/components/hero/FramedHero";
 import { Bullets } from "@/components/section/SectionKit";
 import { Breadcrumbs } from "@/components/v3/Breadcrumbs";
 import { EditorialSlot } from "@/components/v3/EditorialSlot";
@@ -30,7 +30,7 @@ const RenderItems = ({ items, compact = false }: { items: CopyItem[]; compact?: 
   </div>
 );
 
-const HeroBackdrop = ({ item, path }: { item?: CopyItem; path: string }) => {
+const resolveHeroMedia = (item: CopyItem | undefined, path: string): FramedHeroMedia => {
   const media = item?.kind === "editorial" ? item : undefined;
   const fallback = getV3HeroMedia(path);
   const src = media?.src ?? fallback.src;
@@ -40,17 +40,7 @@ const HeroBackdrop = ({ item, path }: { item?: CopyItem; path: string }) => {
     ? media.mediaType.trim().toUpperCase().includes("VIDEÓ")
     : fallback.type === "video";
 
-  return (
-    <div className="v3-hero__media" aria-hidden="true">
-      {isVideo ? (
-        <video autoPlay loop muted playsInline preload="metadata" poster={poster} style={{ objectPosition: position }}>
-          <source src={src} />
-        </video>
-      ) : (
-        <Image src={src} alt="" fill priority sizes="100vw" style={{ objectPosition: position }} />
-      )}
-    </div>
-  );
+  return { type: isVideo ? "video" : "image", src, poster, position };
 };
 
 export const CopydeckPage = ({ page }: { page: CopyPage }) => {
@@ -59,6 +49,7 @@ export const CopydeckPage = ({ page }: { page: CopyPage }) => {
     (item) => item.kind === "editorial" && item.placement.trim().toUpperCase() === "HERO",
   );
   const heroSlot = heroSlotIndex >= 0 ? page.intro[heroSlotIndex] : undefined;
+  const heroMedia = resolveHeroMedia(heroSlot, page.url);
   const ctaIndex = page.intro.findIndex((item) => item.kind === "cta");
   const heroCopyIndexes = new Set([ctaIndex].filter((index) => index >= 0));
   const heroCopy = page.intro.filter((_, index) => heroCopyIndexes.has(index));
@@ -66,17 +57,18 @@ export const CopydeckPage = ({ page }: { page: CopyPage }) => {
   return (
     <article className={`v3-page v3-page--${layout}`}>
       <header className="v3-hero">
-        <HeroBackdrop item={heroSlot} path={page.url} />
-        <div className="container">
-          <Breadcrumbs value={page.breadcrumb} />
-          <div className="v3-hero__grid">
-            <div className="v3-hero__copy">
-              <span className="v3-kicker">{page.name}</span>
-              <h1>{page.h1}</h1>
-              {heroCopy.length ? <RenderItems items={heroCopy} compact /> : null}
+        <FramedHero className="v3-hero__frame" media={heroMedia}>
+          <div className="container v3-hero__inner">
+            <Breadcrumbs value={page.breadcrumb} />
+            <div className="v3-hero__grid">
+              <div className="v3-hero__copy">
+                <span className="v3-kicker">{page.name}</span>
+                <h1>{page.h1}</h1>
+                {heroCopy.length ? <RenderItems items={heroCopy} compact /> : null}
+              </div>
             </div>
           </div>
-        </div>
+        </FramedHero>
       </header>
 
       <CopydeckBody page={page} />
