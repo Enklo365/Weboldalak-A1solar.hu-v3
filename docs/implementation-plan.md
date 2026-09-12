@@ -1,9 +1,10 @@
 # A1 Solar v3 – 8 fejlesztési szakasz
 
-> Állapot 2026-09-11: az 1–8. szakasz stagingig elkészült. Az elfogadott,
-> stagingen futó kódrevision `9ca9e84702cf7444f2fbd9336bb2b92b67873e0e`.
+> Állapot 2026-09-12: az 1–8. szakasz és a blokkoló vizuális QA-javítások
+> stagingig elkészültek. A stagingen futó kódrevision
+> `1b7c07c9c69d2b5f6d7e8e88ec5e650ce7f105a3`.
 > Merge és production deploy nem történt. A részletes folytatási állapot:
-> [HANDOFF-2026-09-11.md](HANDOFF-2026-09-11.md).
+> [HANDOFF-2026-09-12.md](HANDOFF-2026-09-12.md).
 
 ## 1. Repository-alapozás
 
@@ -56,6 +57,7 @@
 
 ## Következő ellenőrzési kapu
 
-- Kézi desktop- és mobilnézeti vizuális QA a staging URL-en.
-- A vizuális QA eredményének rögzítése a PR-ben vagy projekt-dokumentációban.
+- A kézi desktop- és mobilnézeti vizuális QA megfelelt; jegyzőkönyve:
+  [VISUAL-QA-2026-09-12.md](VISUAL-QA-2026-09-12.md).
+- Következő döntési pont a Draft PR #1 merge-e.
 - `main` merge és production deploy csak külön emberi jóváhagyással.

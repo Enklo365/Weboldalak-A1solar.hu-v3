@@ -10,7 +10,7 @@ Ezek a projekt kötelező szabályai minden agentnek (Codex, Claude Code, stb.).
 Mielőtt bármit írnál, olvasd el a `MIGRATION.md`-t, és nézd át a `src/` szerkezetét.
 
 Az aktuális projektállapot és a következő engedélyezett lépés a
-`docs/HANDOFF-2026-09-11.md` fájlban található. Új munkamenetben ezt is kötelező
+`docs/HANDOFF-2026-09-12.md` fájlban található. Új munkamenetben ezt is kötelező
 elolvasni bármilyen módosítás előtt.
 
 ## A projekt

@@ -3,7 +3,7 @@
 Az `a1solar.hu` Next.js 16 alapú új weboldala. A projekt aktuális, folytatáshoz
 szükséges Git-, staging-, redirect-, SEO- és QA-állapota itt található:
 
-**[Fejlesztési átadás – 2026-09-11](docs/HANDOFF-2026-09-11.md)**
+**[Fejlesztési átadás – 2026-09-12](docs/HANDOFF-2026-09-12.md)**
 
 Fontos: a `teszta1solar.homokozo.uk` staging, a `.hu` címek production
 környezetek. Merge és production deploy csak külön emberi jóváhagyással

@@ -3,7 +3,7 @@
 Ez a könyvtár az `a1solar.hu` jelenlegi szerkezetének és a v3 URL-migráció döntéseinek auditálható alapja.
 
 Az aktuális staging- és folytatási állapot:
-[`docs/HANDOFF-2026-09-11.md`](../HANDOFF-2026-09-11.md).
+[`docs/HANDOFF-2026-09-12.md`](../HANDOFF-2026-09-12.md).
 
 ## Fájlok
 
@@ -16,7 +16,7 @@ Az aktuális staging- és folytatási állapot:
 
 A `confirmed` sorok a copy deckben megadott vagy egyértelműen átnevezett URL-ek. A `candidate` sorok csak a Search Console ellenőrzése után válhatnak végleges 301-es átirányítássá. Az egyedi cikkek URL-je változatlan marad.
 
-2026-09-11-i státusz: 15 `confirmed` redirect stagingen ellenőrizve, mindegyik
+2026-09-12-i státusz: 15 `confirmed` redirect stagingen ellenőrizve, mindegyik
 egyetlen közvetlen `301` lépéssel ér célba. A 16 `candidate` sor továbbra is
 Search Console-adatra vár és nincs aktiválva.
 

@@ -1,7 +1,7 @@
 # A1 Solar — WordPress → Next.js migráció
 
-> **Aktuális v3 állapot (2026-09-11):** a folytatás előtt kötelező elolvasni a
-> [`docs/HANDOFF-2026-09-11.md`](docs/HANDOFF-2026-09-11.md) fájlt. A staging
+> **Aktuális v3 állapot (2026-09-12):** a folytatás előtt kötelező elolvasni a
+> [`docs/HANDOFF-2026-09-12.md`](docs/HANDOFF-2026-09-12.md) fájlt. A staging
 > címe `https://teszta1solar.homokozo.uk/`. A valódi production cím
 > `https://a1solar.hu/` és annak `www` változata; ezek változatlanok. Merge és
 > production deploy nem történt, és csak külön emberi jóváhagyással történhet.
