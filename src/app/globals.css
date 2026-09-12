@@ -564,6 +564,13 @@ img {
   min-height: var(--header-h);
   transition: min-height 0.25s ease;
 }
+@media (min-width: 1440px) {
+  .topbar .container,
+  .mainbar .container {
+    max-width: 1614px;
+    padding-inline: 0;
+  }
+}
 /* Scrolled state — condense the sticky nav bar. */
 .mainbar.scrolled .container {
   min-height: 62px;

@@ -2,7 +2,6 @@ import Link from "next/link";
 import { A1_SERVICE_CARDS } from "@/components/home/serviceCards.data";
 
 const HERO_BG = "/wp-content/uploads/2026/03/otthoni_energiatarolo_program-1.png";
-const HERO_VIDEO = "/nativ/hero-loop.mp4";
 const HERO_BG_MOBILE = "/wp-content/uploads/2026/03/ChatGPT-Image-2026.-marc.-13.-21_20_16.png";
 const CTA_PRIO_MASK = "/wp-content/uploads/2025/07/cta_prio.svg";
 const CTA_NORMAL_MASK = "/wp-content/uploads/2025/07/cta_normal.svg";
@@ -86,18 +85,13 @@ const HeroPhoto = () => (
       </defs>
     </svg>
     <div className="absolute inset-0" style={{ clipPath: `url(#${HERO_CLIP_ID})` }}>
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        preload="auto"
-        poster={HERO_BG}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={HERO_BG}
+        alt=""
         aria-hidden
         style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "50% 100%" }}
-      >
-        <source src={HERO_VIDEO} type="video/mp4" />
-      </video>
+      />
       <div className="absolute inset-0" style={{ background: GRADIENT }} />
     </div>
   </>
@@ -106,7 +100,8 @@ const HeroPhoto = () => (
 /**
  * Homepage hero — native reproduction of the a1solar.hu WordPress hero.
  *
- * Desktop (≥lg): a max-1290px band (aspect-ratio 1290/571) with the shaped
+ * Desktop (≥lg): a max-1614px band with the original 1434/571 shape ratio,
+ * matching the live WordPress hero at wide desktop sizes. It contains the shaped
  * `HeroPhoto`, left-dark gradient, headline bottom-left, and the three service
  * cards nesting into the notch.
  *
@@ -121,8 +116,8 @@ export function HomeHero() {
       {/* aspect-ratio (not a fixed 571px height) keeps the photo crop identical
           at every width — otherwise narrow viewports crop less off the top and
           the image's sky shows as empty space above the subject. */}
-      <div className="container hidden lg:block">
-        <div className="relative w-full" style={{ aspectRatio: "1192 / 571" }}>
+      <div className="mx-auto hidden w-full max-w-[1614px] lg:block">
+        <div className="relative w-full" style={{ aspectRatio: "1434 / 571" }}>
         {/* Shaped photo (clip-path + real <img>) */}
         <HeroPhoto />
 
@@ -180,22 +175,17 @@ export function HomeHero() {
 
       {/* ── Mobile hero (<lg) ──────────────────────────────────────────── */}
       <div className="lg:hidden">
-        {/* Rounded hero card with the looped video (matches the desktop). */}
+        {/* Rounded hero card using the original mobile artwork. */}
         <div className="px-4">
           <div className="relative flex min-h-[340px] flex-col justify-end overflow-hidden rounded-[24px] p-6 text-white">
-            <video
-              autoPlay
-              loop
-              muted
-              playsInline
-              preload="auto"
-              poster={HERO_BG_MOBILE}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={HERO_BG_MOBILE}
+              alt=""
               aria-hidden
               className="absolute inset-0"
               style={{ width: "100%", height: "100%", objectFit: "cover" }}
-            >
-              <source src={HERO_VIDEO} type="video/mp4" />
-            </video>
+            />
             <div className="absolute inset-0" style={{ background: GRADIENT }} />
             <div className="relative z-10">
               <span
@@ -257,7 +247,7 @@ export function HomeHero() {
       {/* Company intro — aligned to the hero image's left edge (~10px) and, on
           desktop, vertically centred in the band-bottom → cards-bottom gap
           (the cards overhang the hero mask by ~106px). */}
-      <div className="container flex items-center lg:min-h-[118px]">
+      <div className="mx-auto flex w-full max-w-[1614px] items-center px-3 lg:min-h-[118px]">
         <p className="mt-10 max-w-md text-[var(--ink-soft)] lg:mt-0">{HERO.intro}</p>
       </div>
     </section>

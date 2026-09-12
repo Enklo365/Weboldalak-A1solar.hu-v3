@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
-import { CopydeckPage } from "@/components/v3/CopydeckPage";
+import { Motion } from "@/components/Motion";
+import { HomeHero } from "@/components/home/HomeHero";
+import { CopydeckBody } from "@/components/v3/CopydeckPage";
 import { getV3Page } from "@/lib/v3-pages";
 
 export const metadata: Metadata = {
@@ -16,5 +18,13 @@ export const metadata: Metadata = {
 export default function HomePage() {
   const page = getV3Page("/");
   if (!page) return null;
-  return <CopydeckPage page={page} />;
+  return (
+    <>
+      <Motion />
+      <HomeHero />
+      <article className="v3-page v3-page--narrative">
+        <CopydeckBody page={page} />
+      </article>
+    </>
+  );
 }

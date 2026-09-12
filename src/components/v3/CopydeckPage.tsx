@@ -55,7 +55,6 @@ const HeroBackdrop = ({ item, path }: { item?: CopyItem; path: string }) => {
 
 export const CopydeckPage = ({ page }: { page: CopyPage }) => {
   const layout = getV3Layout(page);
-  const heroSupplement = hasV3HeroSupplement(page.number);
   const heroSlotIndex = page.intro.findIndex(
     (item) => item.kind === "editorial" && item.placement.trim().toUpperCase() === "HERO",
   );
@@ -63,12 +62,6 @@ export const CopydeckPage = ({ page }: { page: CopyPage }) => {
   const ctaIndex = page.intro.findIndex((item) => item.kind === "cta");
   const heroCopyIndexes = new Set([ctaIndex].filter((index) => index >= 0));
   const heroCopy = page.intro.filter((_, index) => heroCopyIndexes.has(index));
-  const introRemainder = page.intro.filter((item, index) => (
-    index !== heroSlotIndex
-    && !heroCopyIndexes.has(index)
-    && !(heroSupplement && item.kind === "editorial")
-  ));
-  const hasSidebar = layout === "service" && page.sections.length >= 5;
 
   return (
     <article className={`v3-page v3-page--${layout}`}>
@@ -86,7 +79,27 @@ export const CopydeckPage = ({ page }: { page: CopyPage }) => {
         </div>
       </header>
 
-      <div className={`container v3-content${hasSidebar ? " v3-content--sidebar" : ""}`}>
+      <CopydeckBody page={page} />
+    </article>
+  );
+};
+
+export const CopydeckBody = ({ page }: { page: CopyPage }) => {
+  const layout = getV3Layout(page);
+  const heroSupplement = hasV3HeroSupplement(page.number);
+  const heroSlotIndex = page.intro.findIndex(
+    (item) => item.kind === "editorial" && item.placement.trim().toUpperCase() === "HERO",
+  );
+  const ctaIndex = page.intro.findIndex((item) => item.kind === "cta");
+  const introRemainder = page.intro.filter((item, index) => (
+    index !== heroSlotIndex
+    && index !== ctaIndex
+    && !(heroSupplement && item.kind === "editorial")
+  ));
+  const hasSidebar = layout === "service" && page.sections.length >= 5;
+
+  return (
+    <div className={`container v3-content${hasSidebar ? " v3-content--sidebar" : ""}`}>
         {hasSidebar ? (
           <aside className="v3-toc">
             <span>Az oldalon</span>
@@ -125,6 +138,5 @@ export const CopydeckPage = ({ page }: { page: CopyPage }) => {
           })}
         </div>
       </div>
-    </article>
   );
 };
