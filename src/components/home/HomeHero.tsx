@@ -100,7 +100,7 @@ const HeroPhoto = () => (
 /**
  * Homepage hero — native reproduction of the a1solar.hu WordPress hero.
  *
- * Desktop (≥lg): a max-1614px band with the original 1434/571 shape ratio,
+ * Desktop (≥lg): a max-1290px band with the original 1434/571 shape ratio,
  * matching the live WordPress hero at wide desktop sizes. It contains the shaped
  * `HeroPhoto`, left-dark gradient, headline bottom-left, and the three service
  * cards nesting into the notch.
@@ -116,7 +116,7 @@ export function HomeHero() {
       {/* aspect-ratio (not a fixed 571px height) keeps the photo crop identical
           at every width — otherwise narrow viewports crop less off the top and
           the image's sky shows as empty space above the subject. */}
-      <div className="mx-auto hidden w-full max-w-[1614px] lg:block">
+      <div className="mx-auto hidden w-full max-w-[1290px] lg:block">
         <div className="relative w-full" style={{ aspectRatio: "1434 / 571" }}>
         {/* Shaped photo (clip-path + real <img>) */}
         <HeroPhoto />
@@ -247,7 +247,7 @@ export function HomeHero() {
       {/* Company intro — aligned to the hero image's left edge (~10px) and, on
           desktop, vertically centred in the band-bottom → cards-bottom gap
           (the cards overhang the hero mask by ~106px). */}
-      <div className="mx-auto flex w-full max-w-[1614px] items-center px-3 lg:min-h-[118px]">
+      <div className="mx-auto flex w-full max-w-[1290px] items-center px-3 lg:min-h-[118px]">
         <p className="mt-10 max-w-md text-[var(--ink-soft)] lg:mt-0">{HERO.intro}</p>
       </div>
     </section>

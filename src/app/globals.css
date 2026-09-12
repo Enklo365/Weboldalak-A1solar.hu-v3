@@ -567,7 +567,7 @@ img {
 @media (min-width: 1440px) {
   .topbar .container,
   .mainbar .container {
-    max-width: 1614px;
+    max-width: 1290px;
     padding-inline: 0;
   }
 }
