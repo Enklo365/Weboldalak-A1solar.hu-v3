@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { FramedHero, type FramedHeroMedia } from "@/components/hero/FramedHero";
@@ -41,6 +42,13 @@ const resolveHeroMedia = (item: CopyItem | undefined, path: string): FramedHeroM
     : fallback.type === "video";
 
   return { type: isVideo ? "video" : "image", src, poster, position };
+};
+
+const HOME_SECTION_IMAGES: Record<string, { src: string; alt: string }> = {
+  "meglevo-napelem-bovitese-energiataroloval": {
+    src: "/wp-content/uploads/2025/08/7854.jpg",
+    alt: "Meglévő napelemes rendszer bővítése energiatárolóval",
+  },
 };
 
 export const CopydeckPage = ({ page }: { page: CopyPage }) => {
@@ -112,8 +120,9 @@ export const CopydeckBody = ({ page }: { page: CopyPage }) => {
           {page.sections.map((section, index) => {
             const supplemented = hasV3Supplement(page.number, section.id);
             const editorial = supplemented ? undefined : section.items.find((item) => item.kind === "editorial");
+            const sectionImage = page.number === 1 ? HOME_SECTION_IMAGES[section.id] : undefined;
             const textItems = section.items.filter((item) => item !== editorial && !(supplemented && item.kind === "editorial"));
-            const split = Boolean(editorial) && layout !== "listing";
+            const split = Boolean(editorial || sectionImage) && layout !== "listing";
             return (
               <section key={section.id} id={section.id} className={`v3-section${split ? " v3-section--split" : ""}${index % 2 ? " v3-section--reverse" : ""}`}>
                 <div className="v3-section__copy">
@@ -124,6 +133,10 @@ export const CopydeckBody = ({ page }: { page: CopyPage }) => {
                 </div>
                 {editorial?.kind === "editorial" ? (
                   <div className="v3-section__visual"><EditorialSlot type={editorial.mediaType} placement={editorial.placement} details={editorial.details} /></div>
+                ) : sectionImage ? (
+                  <div className="v3-section__visual v3-section__visual--image">
+                    <Image src={sectionImage.src} alt={sectionImage.alt} fill sizes="(max-width: 1024px) 100vw, 46vw" />
+                  </div>
                 ) : null}
               </section>
             );

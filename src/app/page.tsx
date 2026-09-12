@@ -22,7 +22,7 @@ export default function HomePage() {
     <>
       <Motion />
       <HomeHero />
-      <article className="v3-page v3-page--narrative">
+      <article className="v3-page v3-page--narrative v3-page--home">
         <CopydeckBody page={page} />
       </article>
     </>
