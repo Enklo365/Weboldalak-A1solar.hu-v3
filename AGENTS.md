@@ -113,6 +113,24 @@ reprezentatív oldalon ellenőrizd a hatást desktop-, tablet- és mobilnézetbe
 A technikai működés mellett a régi WordPress oldal szintjét elérő vagy meghaladó
 vizuális minőség is követelmény.
 
+## Hatékony munkamód
+
+- Egy feladat egy jól körülhatárolt módosítás legyen.
+- Új munkamenetben az állapotot az `AGENTS.md`, a `docs/HANDOFF.md`, a Git és a
+  tényleges staging alapján állapítsd meg; ne dolgozd fel újra a teljes korábbi
+  beszélgetést.
+- Normál esetben csak rövid, összesített parancskimenetet olvass vissza. Teljes
+  build-, Docker-, böngésző- vagy egyéb logot csak hiba esetén vizsgálj.
+- Közös komponens módosításakor programozottan ellenőrizheted az összes érintett
+  oldalt, vizuálisan azonban csak reprezentatív oldalakat ellenőrizz.
+- A vizuális QA minimuma: főoldal, egy hosszú szolgáltatási oldal, egy
+  technológiai oldal, valamint mobil- és tabletnézet.
+- Ne ismételj meg ellenőrzést, ha az előző eredmény még érvényes.
+- Staging deploynál a meglévő folyamatot használd. Pusztán token- vagy
+  időmegtakarításért ne építs új CI-t, deploy-rendszert vagy automatizmust.
+- A végén röviden jelentsd a commit, build, staging és QA állapotát, valamint az
+  esetleges hibát. Ha nincs hiba, ne adj hosszú technikai naplót.
+
 ## Parancsok
 
 ```
