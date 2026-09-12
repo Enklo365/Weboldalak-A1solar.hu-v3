@@ -1,13 +1,18 @@
 # A1 Solar v3
 
 Az `a1solar.hu` Next.js 16 alapú új weboldala. A projekt aktuális, folytatáshoz
-szükséges Git-, staging-, redirect-, SEO- és QA-állapota itt található:
+szükséges Git-, staging- és PR-állapota itt található:
 
-**[Fejlesztési átadás – 2026-09-12](docs/HANDOFF-2026-09-12.md)**
+**[Aktuális fejlesztési átadás](docs/HANDOFF.md)**
 
 Fontos: a `teszta1solar.homokozo.uk` staging, a `.hu` címek production
-környezetek. Merge és production deploy csak külön emberi jóváhagyással
-történhet.
+környezetek. A `main` merge és a production deploy két külön döntési pont;
+production módosítás mindig külön, egyértelmű emberi jóváhagyást igényel.
+A `main` merge önmagában csak a tényleges deployment-konfiguráció ismeretében
+tekinthető production deployt kiváltó eseménynek.
+
+A dátumozott HANDOFF- és QA-fájlok változatlan történeti állapotnaplók. Ha
+ellentmondás van, a tényleges Git-, GitHub- és futó staging-állapot az elsődleges.
 
 ## Technológia
 

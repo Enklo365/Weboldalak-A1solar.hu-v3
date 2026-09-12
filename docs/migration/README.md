@@ -3,7 +3,7 @@
 Ez a könyvtár az `a1solar.hu` jelenlegi szerkezetének és a v3 URL-migráció döntéseinek auditálható alapja.
 
 Az aktuális staging- és folytatási állapot:
-[`docs/HANDOFF-2026-09-12.md`](../HANDOFF-2026-09-12.md).
+[`docs/HANDOFF.md`](../HANDOFF.md).
 
 ## Fájlok
 

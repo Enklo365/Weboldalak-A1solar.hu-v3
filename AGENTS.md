@@ -10,8 +10,11 @@ Ezek a projekt kötelező szabályai minden agentnek (Codex, Claude Code, stb.).
 Mielőtt bármit írnál, olvasd el a `MIGRATION.md`-t, és nézd át a `src/` szerkezetét.
 
 Az aktuális projektállapot és a következő engedélyezett lépés a
-`docs/HANDOFF-2026-09-12.md` fájlban található. Új munkamenetben ezt is kötelező
+`docs/HANDOFF.md` fájlban található. Új munkamenetben ezt is kötelező
 elolvasni bármilyen módosítás előtt.
+
+A dátumozott HANDOFF- és QA-fájlok változatlan történeti naplók. Eltérés esetén
+a tényleges Git-, GitHub- és futó staging-állapot fontosabb bármely handoffnál.
 
 ## A projekt
 
@@ -21,9 +24,13 @@ Az a1solar.hu (WordPress + Elementor) migrációja Next.js-re.
 - Staging: `https://teszta1solar.homokozo.uk/` — soha nem production.
 - Production: `https://a1solar.hu/` és `https://www.a1solar.hu/` — kizárólag
   külön emberi „Mehet élesbe” jóváhagyással módosítható.
-- A `main` mindig release-kész, jóváhagyott állapot. Közvetlenül nem fejlesztünk
-  rajta, és sem a merge, sem bármely automatikus vagy kézi deploy nem tekinthető
-  engedélyezettnek külön production-jóváhagyás nélkül.
+- Kötelező folyamat: fejlesztési ág → staging → ellenőrzés → emberi jóváhagyás
+  → `main` → külön production deploy.
+- A `main` mindig release-kész, jóváhagyott állapot; közvetlenül nem fejlesztünk
+  rajta. A `main` merge és a production deploy két külön döntési pont.
+- Dokumentáció alapján soha ne feltételezd, hogy a `main` merge automatikusan
+  production deployt indít. Ezt csak a tényleges deployment-konfiguráció alapján
+  lehet kijelenteni.
 - Nyelv: a teljes felület magyar. A user-facing szövegek magyarul íródnak,
   a KÓD (változónevek, kommentek, commit üzenetek) viszont angolul.
 
@@ -74,21 +81,17 @@ ne szerkeszd kézzel, a forrás a `tokens/brand.tokens.json` + `npm run tokens`.
 ## Ha nincs megfelelő komponens
 
 Ha olyan feladat érkezik, amit a meglévő komponensekből NEM lehet összerakni:
-NE találj ki magadtól új komponenst, és ne oldd meg egyedi, eldobható
-markuppal — mert azzal szétesik a design rendszer.
+először dokumentáltan vizsgáld meg a meglévő közös komponenseket és azok
+összeállítási lehetőségeit. Ne készíts egyszer használatos workaroundot vagy
+eldobható markupot csak azért, hogy egy oldal elkészüljön.
 
-Helyette fogalmazz meg egy e-mailt az igényekkel a **hello@webbystep.hu** címre.
-Az e-mail tartalmazza:
+Ha valóban új reusable komponens szükséges, röviden javasold a felhasználónak,
+írd le az igényt és azt, hogy a meglévő elemek miért nem elegendők, majd várj a
+döntésére. A külső WebbyStep fejlesztő jóváhagyása és a neki írt e-mail nem része
+a fejlesztési folyamatnak.
 
-- melyik oldalról / feladatról van szó,
-- mit kellene a szakasznak megjelenítenie és tudnia (tartalom, viselkedés),
-- miért nem fedi le egyik meglévő komponens sem (melyeket néztél meg és
-  miért nem elegendők),
-- ha van rá javaslatod, milyen komponens oldaná meg — de a döntés nem a tiéd.
-
-Az e-mailt te fogalmazd meg, konkrétan és tömören. Amíg nem jön rá válasz,
-ne implementáld a hiányzó részt — inkább haladj a feladat többi részével,
-és jelezd, mi maradt függőben.
+Ne építs CMS-t, page buildert, layout engine-t vagy más általános rendszert
+valódi, jóváhagyott igény nélkül. A KISS-elv az alapértelmezett.
 
 ## Reszponzivitás
 
@@ -104,6 +107,12 @@ kap: nemrég ment végig rajta egy teljes optimalizálás. Amit tarts be:
 
 Ellenőrizd 768 / 820 / 1024 px-en, mielőtt késznek mondasz valamit.
 
+Vizuális módosításkor meglévő szöveget vagy tartalmat ne törölj, hacsak erre
+nincs külön utasítás. Közös vagy globális komponens módosításakor több
+reprezentatív oldalon ellenőrizd a hatást desktop-, tablet- és mobilnézetben.
+A technikai működés mellett a régi WordPress oldal szintjét elérő vagy meghaladó
+vizuális minőség is követelmény.
+
 ## Parancsok
 
 ```
@@ -118,8 +127,9 @@ lockfile-káosz lesz a diffben).
 
 ## Amit NE csinálj
 
-- NE pusholj magadtól. Commitolj, és szólj, hogy kész — a push külön döntés,
-  mert a main azonnal élesedik.
+- Feature ágról `main`-re csak emberi jóváhagyással merge-ölj. A feature ág
+  pusholása és a PR frissítése nem production deploy; a production telepítéshez
+  ettől független, egyértelmű jóváhagyás szükséges.
 - NE commitolj `.env` / `.env.local` fájlt (gitignore-olt, és úgy is marad).
   A Resend env változók (`RESEND_API_KEY`, `RESEND_FROM_EMAIL`,
   `RESEND_TO_EMAIL`) külön érkeznek; enélkül az `/api/contact` űrlap nem küld

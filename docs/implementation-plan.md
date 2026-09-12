@@ -3,8 +3,8 @@
 > Állapot 2026-09-12: az 1–8. szakasz és a blokkoló vizuális QA-javítások
 > stagingig elkészültek. A stagingen futó kódrevision
 > `1b7c07c9c69d2b5f6d7e8e88ec5e650ce7f105a3`.
-> Merge és production deploy nem történt. A részletes folytatási állapot:
-> [HANDOFF-2026-09-12.md](HANDOFF-2026-09-12.md).
+> Ez történeti megvalósítási terv; a valós, aktuális Git-, PR- és staging-állapot:
+> [HANDOFF.md](HANDOFF.md).
 
 ## 1. Repository-alapozás
 
@@ -55,9 +55,10 @@
 - Azonos build telepítése a `*.homokozo.uk` stagingre és smoke test.
 - A valódi `*.hu` production környezet változatlan marad a külön „Mehet élesbe” jóváhagyásig.
 
-## Következő ellenőrzési kapu
+## A terv lezárásakor rögzített ellenőrzési kapu
 
 - A kézi desktop- és mobilnézeti vizuális QA megfelelt; jegyzőkönyve:
   [VISUAL-QA-2026-09-12.md](VISUAL-QA-2026-09-12.md).
-- Következő döntési pont a Draft PR #1 merge-e.
-- `main` merge és production deploy csak külön emberi jóváhagyással.
+- A további döntési pontokat az aktuális [HANDOFF.md](HANDOFF.md) tartalmazza.
+- A `main` merge és a production deploy külön döntési pont; production
+  módosítás csak külön emberi jóváhagyással történhet.

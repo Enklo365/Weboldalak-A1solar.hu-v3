@@ -1,15 +1,17 @@
 # A1 Solar — WordPress → Next.js migráció
 
-> **Aktuális v3 állapot (2026-09-12):** a folytatás előtt kötelező elolvasni a
-> [`docs/HANDOFF-2026-09-12.md`](docs/HANDOFF-2026-09-12.md) fájlt. A staging
+> **Aktuális v3 állapot:** a folytatás előtt kötelező elolvasni a
+> [`docs/HANDOFF.md`](docs/HANDOFF.md) fájlt. A staging
 > címe `https://teszta1solar.homokozo.uk/`. A valódi production cím
-> `https://a1solar.hu/` és annak `www` változata; ezek változatlanok. Merge és
-> production deploy nem történt, és csak külön emberi jóváhagyással történhet.
+> `https://a1solar.hu/` és annak `www` változata. A `main` merge és a production
+> deploy külön döntési pont; production módosítás csak külön emberi
+> jóváhagyással történhet.
 > Az alábbi Vercel-adatok örökölt történeti információk, nem jelentenek aktuális
 > production célt vagy deployengedélyt.
 
 Az `a1solar.hu` WordPress (Elementor + Blocksy) oldal hű átültetése
-**React / Next.js 16 / Vercel** alapokra.
+**React / Next.js 16** alapokra, saját Git repositoryban és fokozatosan a saját
+AX41 infrastruktúrán üzemeltetve.
 
 - **Örökölt Vercel preview:** https://a1solar.vercel.app
 - **Örökölt Vercel projekt:** `webbysteps-projects/a1solar`
@@ -69,7 +71,16 @@ yarn build    # production build; jelenlegi ellenőrzött eredmény: 346 útvona
 ```
 
 ## Ismert korlátok
-- Néhány blog-borítókép üres (a poszt első képe külső domainről hivatkozott, vagy hiányzik).
 - A Google-vélemények (`[trustindex]`) widget nincs migrálva (külső script).
 - A mirror-oldalakon lévő eredeti WP-űrlapok statikusak; a működő űrlap a
   `/kapcsolat` oldalon és minden cikk alján érhető el.
+
+## Jelenlegi fejlesztési fókusz
+
+A technikai alap nagy része elkészült. A következő szakasz feladata a jelenlegi
+új oldal vizuális minőségének javítása, a régi WordPress oldalhoz képest legalább
+azonos vagy jobb megjelenés elérése, valamint a 35 új oldal tartalmi és vizuális
+finomítása. A képek, videók, referenciák és más hiányzó tartalmak fokozatosan
+kerülnek a kijelölt helyükre. Ezt követheti az Avora bekötése, végül a WordPress
+kontrollált leváltása. Új infrastruktúra vagy általános framework építése nem
+önálló cél.
