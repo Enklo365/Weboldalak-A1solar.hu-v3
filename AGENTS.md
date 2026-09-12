@@ -121,13 +121,24 @@ vizuális minőség is követelmény.
   beszélgetést.
 - Normál esetben csak rövid, összesített parancskimenetet olvass vissza. Teljes
   build-, Docker-, böngésző- vagy egyéb logot csak hiba esetén vizsgálj.
+- A munka elején határozd meg a szükséges minimális bizonyítékot, és az
+  összetartozó read-only ellenőrzéseket lehetőleg vond össze. Ne olvass be
+  irreleváns fájlokat vagy teljes naplókat megelőző jelleggel.
 - Közös komponens módosításakor programozottan ellenőrizheted az összes érintett
   oldalt, vizuálisan azonban csak reprezentatív oldalakat ellenőrizz.
 - A vizuális QA minimuma: főoldal, egy hosszú szolgáltatási oldal, egy
   technológiai oldal, valamint mobil- és tabletnézet.
+- Vizuális ellenőrzéshez célzott nézetet vagy elemet vizsgálj; teljes oldalas
+  képernyőképet csak akkor készíts, ha az egész oldal ritmusa a feladat tárgya.
 - Ne ismételj meg ellenőrzést, ha az előző eredmény még érvényes.
+- A production buildet a módosítások véglegesítése után egyszer futtasd. Sikeres,
+  változatlan buildet vagy QA-t ne futtass újra; hiba esetén először csak a
+  releváns naplórészletet vizsgáld.
 - Staging deploynál a meglévő folyamatot használd. Pusztán token- vagy
   időmegtakarításért ne építs új CI-t, deploy-rendszert vagy automatizmust.
+- Hosszú külső folyamat állapotát egyszer ellenőrizd. Ha még fut és nincs más
+  érdemi teendő, jelentsd röviden az állapotot és állj meg.
+- Köztes felhasználói üzenetet csak érdemi mérföldkőnél vagy problémánál adj.
 - A végén röviden jelentsd a commit, build, staging és QA állapotát, valamint az
   esetleges hibát. Ha nincs hiba, ne adj hosszú technikai naplót.
 

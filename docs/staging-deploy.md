@@ -22,6 +22,17 @@ trace saját `.pnpm/node_modules` tárából állítja helyre. Az image-et publi
 routing nélkül, az éles Compose-éval azonos read-only, tmpfs, cap-drop és
 `no-new-privileges` beállításokkal kell először health checkelni.
 
+## Hatékony végrehajtás
+
+- A végleges módosítás után egyetlen production build és staging image készüljön.
+- Siker esetén csak a commitot, image taget, OCI revisiont, health/read-only
+  állapotot, HTTP státuszt és `X-Robots-Tag` értéket olvasd vissza.
+- `docker inspect` esetén formázott mezőket kérj, ne a teljes JSON-t. Teljes
+  build- vagy konténernaplót csak hiba esetén vizsgálj.
+- Ugyanazon HEAD már ellenőrzött buildjét vagy deploylépését ne ismételd meg.
+- A nagy médiacsomag miatt hosszú csomagolás vagy feltöltés nem indok új CI- vagy
+  deploy-rendszer építésére; a meglévő folyamat marad az elsődleges.
+
 ## Compose aktiválás
 
 - Projektkönyvtár: `/home/endre/a1solar-staging/teszta1solar`
