@@ -5,6 +5,7 @@ import { Bullets } from "@/components/section/SectionKit";
 import { Breadcrumbs } from "@/components/v3/Breadcrumbs";
 import { EditorialSlot } from "@/components/v3/EditorialSlot";
 import { hasV3HeroSupplement, hasV3Supplement, V3HeroSupplement, V3Supplement } from "@/components/v3/V3Supplement";
+import { getV3HeroMedia } from "@/lib/v3-hero-media";
 import { getV3Layout, type CopyItem, type CopyPage } from "@/lib/v3-pages";
 
 const RenderItems = ({ items, compact = false }: { items: CopyItem[]; compact?: boolean }) => (
@@ -29,19 +30,25 @@ const RenderItems = ({ items, compact = false }: { items: CopyItem[]; compact?: 
   </div>
 );
 
-const HeroBackdrop = ({ item }: { item?: CopyItem }) => {
+const HeroBackdrop = ({ item, path }: { item?: CopyItem; path: string }) => {
   const media = item?.kind === "editorial" ? item : undefined;
-  const isVideo = media?.mediaType.trim().toUpperCase().includes("VIDEÓ");
+  const fallback = getV3HeroMedia(path);
+  const src = media?.src ?? fallback.src;
+  const poster = media?.poster ?? fallback.poster;
+  const position = fallback.position ?? "center";
+  const isVideo = media?.src
+    ? media.mediaType.trim().toUpperCase().includes("VIDEÓ")
+    : fallback.type === "video";
 
   return (
     <div className="v3-hero__media" aria-hidden="true">
-      {media?.src && isVideo ? (
-        <video autoPlay loop muted playsInline preload="metadata" poster={media.poster}>
-          <source src={media.src} />
+      {isVideo ? (
+        <video autoPlay loop muted playsInline preload="metadata" poster={poster} style={{ objectPosition: position }}>
+          <source src={src} />
         </video>
-      ) : media?.src ? (
-        <Image src={media.src} alt="" fill priority sizes="100vw" />
-      ) : null}
+      ) : (
+        <Image src={src} alt="" fill priority sizes="100vw" style={{ objectPosition: position }} />
+      )}
     </div>
   );
 };
@@ -66,7 +73,7 @@ export const CopydeckPage = ({ page }: { page: CopyPage }) => {
   return (
     <article className={`v3-page v3-page--${layout}`}>
       <header className="v3-hero">
-        <HeroBackdrop item={heroSlot} />
+        <HeroBackdrop item={heroSlot} path={page.url} />
         <div className="container">
           <Breadcrumbs value={page.breadcrumb} />
           <div className="v3-hero__grid">
