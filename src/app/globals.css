@@ -297,6 +297,7 @@ body {
 .v3-section { display: grid; gap: clamp(28px, 5vw, 64px); padding: clamp(58px, 8vw, 104px) 0; border-bottom: 1px dashed #ddd; scroll-margin-top: 112px; }
 .v3-section:last-child { border-bottom: 0; }
 .v3-section--split { grid-template-columns: minmax(0, 1.05fr) minmax(300px, .95fr); align-items: center; }
+.v3-hero__copy, .v3-section__copy { min-width: 0; }
 .v3-section--reverse .v3-section__copy { order: 2; }
 .v3-section--reverse .v3-section__visual { order: 1; }
 .v3-section__number { display: block; margin-bottom: 15px; color: var(--brand); font-size: 13px; font-weight: 700; letter-spacing: .1em; }
@@ -357,6 +358,7 @@ body {
   .v3-hero::after { display: none; }
   .v3-hero h1 { font-size: 40px; }
   .v3-copy--compact p { font-size: 16px; }
+  .v3-page .btn { max-width: 100%; justify-content: center; text-align: center; white-space: normal; }
   .v3-content { padding-top: 18px; }
   .v3-section { padding: 54px 0; }
   .v3-page--listing .v3-section { padding: 26px; }
