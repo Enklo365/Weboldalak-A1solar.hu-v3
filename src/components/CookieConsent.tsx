@@ -28,7 +28,7 @@ export const CookieConsent = () => {
       <div className="cookie-card">
         <div className="cookie-brand">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/wp-content/uploads/2022/09/A1solar-logo.svg" alt="A1 Solar" />
+          <img src="/images/brand/a1solar-logo.svg" alt="A1 Solar" />
           <strong>Cookie beállítások</strong>
         </div>
         <p>

@@ -29,7 +29,10 @@ export const metadata: Metadata = {
     url: SITE.url,
     siteName: SITE.name,
   },
-  icons: { icon: "/favicon.ico" },
+  icons: {
+    icon: [{ url: "/images/brand/a1solar-favicon.svg", type: "image/svg+xml" }],
+    shortcut: "/images/brand/a1solar-favicon.svg",
+  },
 };
 
 const organizationLd = {
@@ -38,7 +41,7 @@ const organizationLd = {
   name: SITE.legalName,
   alternateName: SITE.name,
   url: SITE.url,
-  logo: `${SITE.url}/wp-content/uploads/2024/11/A1solar-logo.svg`,
+  logo: `${SITE.url}/images/brand/a1solar-logo.svg`,
   email: SITE.email,
   telephone: SITE.phoneDisplay,
   address: { "@type": "PostalAddress", streetAddress: SITE.address, addressCountry: "HU" },

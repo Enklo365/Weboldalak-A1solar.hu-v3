@@ -11,7 +11,10 @@ import type { ReactNode } from "react";
 export const Eyebrow = ({ children }: { children: string }) => (
   <span
     className="inline-block rounded-[30px] px-3 py-2 text-xs font-normal uppercase tracking-[1px]"
-    style={{ background: "rgba(194,29,32,0.14)", color: "var(--brand-dark)" }}
+    style={{
+      background: "var(--section-accent-soft, rgba(194,29,32,0.14))",
+      color: "var(--section-accent-strong, var(--brand-dark))",
+    }}
   >
     {children}
   </span>
@@ -73,7 +76,7 @@ export const CtaButton = ({ href, children }: { href: string; children: string }
   <a
     href={href}
     className="transition-opacity hover:opacity-90"
-    style={{ alignSelf: "flex-start", display: "inline-block", background: "var(--brand)", color: "#fff", padding: "13px 26px", borderRadius: "9999px", fontWeight: 500 }}
+    style={{ alignSelf: "flex-start", display: "inline-block", background: "var(--section-accent, var(--brand))", color: "#fff", padding: "13px 26px", borderRadius: "9999px", fontWeight: 500 }}
   >
     {children}
   </a>
@@ -323,6 +326,29 @@ export const StatHighlight = ({ stats, note }: { stats: Stat[]; note?: string })
 // Client components (need scroll / interaction) — re-exported so the section kit
 // stays the single import surface.
 export { FaqList, type FaqItem } from "./FaqList";
+export { BIG_STATS_ITEMS, BigStats, type BigStatItem, type BigStatsProps } from "./BigStats";
+export { DarkFeature, type DarkFeatureItem, type DarkFeatureProps } from "./DarkFeature";
+export { ProjectMosaic, type ProjectMosaicItem, type ProjectMosaicProps } from "./ProjectMosaic";
+export { StatementSection, type StatementSectionProps } from "./StatementSection";
+export {
+  FeatureTiles,
+  FeatureTilesEqualGraphite,
+  FeatureTilesEqualRed,
+  FeatureTilesMosaicGraphite,
+  FeatureTilesMosaicRed,
+  type FeatureTileItem,
+  type FeatureTilesProps,
+  type FeatureTilesVariantProps,
+} from "./FeatureTiles";
+export {
+  ImageOverlap,
+  ImageOverlapLeftGraphite,
+  ImageOverlapLeftRed,
+  ImageOverlapRightGraphite,
+  ImageOverlapRightRed,
+  type ImageOverlapProps,
+  type ImageOverlapVariantProps,
+} from "./ImageOverlap";
 export { Reveal } from "./Reveal";
 export { StepTimeline, type Step } from "./StepTimeline";
 

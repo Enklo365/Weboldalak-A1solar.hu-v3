@@ -1,8 +1,8 @@
 import Link from "next/link";
+import { FramedHero } from "@/components/hero/FramedHero";
 import { A1_SERVICE_CARDS } from "@/components/home/serviceCards.data";
 
 const HERO_BG = "/wp-content/uploads/2026/03/otthoni_energiatarolo_program-1.png";
-const HERO_VIDEO = "/nativ/hero-loop.mp4";
 const HERO_BG_MOBILE = "/wp-content/uploads/2026/03/ChatGPT-Image-2026.-marc.-13.-21_20_16.png";
 const CTA_PRIO_MASK = "/wp-content/uploads/2025/07/cta_prio.svg";
 const CTA_NORMAL_MASK = "/wp-content/uploads/2025/07/cta_normal.svg";
@@ -62,52 +62,11 @@ const CardBody = ({ title, text, icon }: { title: string; text: string; icon: st
 );
 
 /**
- * Hero photo — the `svg_design-elem` shape (rounded corners on the left +
- * lower-right notch) as a scalable `clip-path`, filled by a real `<img>`.
- *
- * Why a component (not `background-image` + `mask`): a real `<img>` with
- * `object-cover object-bottom` gives a rock-solid, predictable crop, and a
- * `clipPath` in `objectBoundingBox` units scales exactly to the element at any
- * width (no `mask-size` letterbox/stretch quirks, no stray white bands). The
- * path is the exact `svg_design-elem.svg` geometry, transformed into 0–1 space
- * (÷1434 wide, ÷571 tall).
- */
-const HERO_CLIP_ID = "a1-hero-shape";
-const HeroPhoto = () => (
-  <>
-    <svg width="0" height="0" className="absolute" aria-hidden focusable="false">
-      <defs>
-        <clipPath id={HERO_CLIP_ID} clipPathUnits="objectBoundingBox">
-          <path
-            transform="scale(0.00069735, 0.00175131)"
-            d="M1403 0C1420.12 0 1434 13.8792 1434 31V394C1434 410.569 1420.57 424 1404 424H655C598.5 424 590 424 573 441.5C555.915 459.088 534.421 495.166 518.441 521.988C509.471 537.045 502.239 549.186 498.5 553.5C488.1 565.5 468.5 570.167 460 571H30C13.4315 571 0 557.569 0 541V31C0 13.8792 13.8792 0 31 0H1403Z"
-          />
-        </clipPath>
-      </defs>
-    </svg>
-    <div className="absolute inset-0" style={{ clipPath: `url(#${HERO_CLIP_ID})` }}>
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        preload="auto"
-        poster={HERO_BG}
-        aria-hidden
-        style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "50% 100%" }}
-      >
-        <source src={HERO_VIDEO} type="video/mp4" />
-      </video>
-      <div className="absolute inset-0" style={{ background: GRADIENT }} />
-    </div>
-  </>
-);
-
-/**
  * Homepage hero — native reproduction of the a1solar.hu WordPress hero.
  *
- * Desktop (≥lg): a max-1290px band (aspect-ratio 1290/571) with the shaped
- * `HeroPhoto`, left-dark gradient, headline bottom-left, and the three service
+ * Desktop (≥lg): a max-1290px band with the original 1434/571 shape ratio,
+ * matching the live WordPress hero at wide desktop sizes. It contains the shaped
+ * shared framed photo, left-dark gradient, headline bottom-left, and the three service
  * cards nesting into the notch.
  *
  * Mobile (<lg): the `.hero-masked` block — a 300px clip-path banner with the
@@ -121,14 +80,11 @@ export function HomeHero() {
       {/* aspect-ratio (not a fixed 571px height) keeps the photo crop identical
           at every width — otherwise narrow viewports crop less off the top and
           the image's sky shows as empty space above the subject. */}
-      <div className="container hidden lg:block">
-        <div className="relative w-full" style={{ aspectRatio: "1192 / 571" }}>
-        {/* Shaped photo (clip-path + real <img>) */}
-        <HeroPhoto />
-
-        {/* Headline content, bottom-left — equal inset from the bottom and the
-            left of the hero shape (40px / 40px). */}
-        <div className="hero-copy absolute bottom-0 left-0 z-10 text-white" style={{ padding: "40px", maxWidth: "600px" }}>
+      <div className="mx-auto hidden w-full max-w-[1290px] lg:block">
+        <FramedHero media={{ type: "image", src: HERO_BG, position: "50% 100%" }}>
+          {/* Headline content, bottom-left — equal inset from the bottom and the
+              left of the hero shape (40px / 40px). */}
+          <div className="hero-copy absolute bottom-0 left-0 z-10 text-white" style={{ padding: "40px", maxWidth: "600px" }}>
           <span
             className="inline-block rounded-full px-3 py-2 text-xs font-medium uppercase tracking-[1px] text-white"
             style={{ background: "rgba(255,255,255,0.2)", marginBottom: "20px" }}
@@ -175,27 +131,22 @@ export function HomeHero() {
             );
           })}
         </div>
-        </div>
+        </FramedHero>
       </div>
 
       {/* ── Mobile hero (<lg) ──────────────────────────────────────────── */}
       <div className="lg:hidden">
-        {/* Rounded hero card with the looped video (matches the desktop). */}
+        {/* Rounded hero card using the original mobile artwork. */}
         <div className="px-4">
           <div className="relative flex min-h-[340px] flex-col justify-end overflow-hidden rounded-[24px] p-6 text-white">
-            <video
-              autoPlay
-              loop
-              muted
-              playsInline
-              preload="auto"
-              poster={HERO_BG_MOBILE}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={HERO_BG_MOBILE}
+              alt=""
               aria-hidden
               className="absolute inset-0"
               style={{ width: "100%", height: "100%", objectFit: "cover" }}
-            >
-              <source src={HERO_VIDEO} type="video/mp4" />
-            </video>
+            />
             <div className="absolute inset-0" style={{ background: GRADIENT }} />
             <div className="relative z-10">
               <span
@@ -257,7 +208,7 @@ export function HomeHero() {
       {/* Company intro — aligned to the hero image's left edge (~10px) and, on
           desktop, vertically centred in the band-bottom → cards-bottom gap
           (the cards overhang the hero mask by ~106px). */}
-      <div className="container flex items-center lg:min-h-[118px]">
+      <div className="mx-auto flex w-full max-w-[1290px] items-center px-3 lg:min-h-[118px]">
         <p className="mt-10 max-w-md text-[var(--ink-soft)] lg:mt-0">{HERO.intro}</p>
       </div>
     </section>

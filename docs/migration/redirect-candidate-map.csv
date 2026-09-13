@@ -1,0 +1,32 @@
+source,target,status,reason
+/cegunkrol/,/rolunk/cegunkrol/,confirmed,Copy deck mapping
+/a1-solar-a-mediaban/,/rolunk/media/,confirmed,Copy deck mapping
+/szerviz-garancia/,/rolunk/szerviz-es-garancia/,confirmed,Copy deck mapping
+/lakossagi-napelem/,/lakossagi/napelem-energiataroloval/,confirmed,Copy deck mapping
+/lakossagi-energiatarolas/,/lakossagi/napelem-energiataroloval/,confirmed,Copy deck mapping
+/meglevo-napelem-akkumulatoros-bovitese/,/lakossagi/meglevo-napelem-bovitese-energiataroloval/,confirmed,Copy deck mapping
+/hibrid-napelem-backup/,/lakossagi/backup-aramszuneti-megoldasok/,confirmed,Copy deck mapping
+/vallalati-energiatarolas/,/vallalati/napelem-energiatarolassal/,confirmed,Copy deck mapping
+/energiatarolo-referenciak/,/referenciak/energiatarolas/,confirmed,Copy deck mapping
+/deye-inverter-energiatarolas/,/technologiak/deye/,confirmed,Copy deck mapping
+/huawei-inverter-energiatarolas/,/technologiak/huawei/,confirmed,Copy deck mapping
+/sigenergy-inverter-energiatarolas/,/technologiak/sigenergy/,confirmed,Copy deck mapping
+/foxess-inverter-energiatarolas/,/technologiak/foxess/,confirmed,Copy deck mapping
+/karrier/,/rolunk/karrier/,confirmed,Same page moved under final hierarchy
+/tudastar-blog/,/cikkek/,confirmed,Article index moved; individual post URLs stay unchanged
+/palyazatok/,/lakossagi/palyazatok-tamogatasok/,candidate,General legacy intent requires Search Console review
+/lakossagi-energiatarolo-tamogatas/,/lakossagi/palyazatok-tamogatasok/,candidate,Campaign intent requires Search Console review
+/jogosultsagi-eloszuro/,/lakossagi/palyazatok-tamogatasok/#eloszures,candidate,Form intent requires Search Console review
+/oep-helyszini-felmeres/,/lakossagi/palyazatok-tamogatasok/,candidate,Campaign intent requires Search Console review
+/oep-nyeremenyjatek/,/lakossagi/palyazatok-tamogatasok/,candidate,Campaign intent requires Search Console review
+/napenergia-plusz-program/,/lakossagi/palyazatok-tamogatasok/,candidate,Expired program requires Search Console review
+/falusi-csok/,/lakossagi/palyazatok-tamogatasok/,candidate,Program intent requires Search Console review
+/otthonfelujitasi-tamogatas-2024/,/lakossagi/palyazatok-tamogatasok/,candidate,Expired program requires Search Console review
+/otthonfelujitasi-tamogatas-2025/,/lakossagi/palyazatok-tamogatasok/,candidate,Program intent requires Search Console review
+/energetikai-palyazatok-2024/,/vallalati/palyazatok-tamogatasok/,candidate,Legacy program requires Search Console review
+/jedlik-anyos-energetikai-program/,/vallalati/palyazatok-tamogatasok/,candidate,Program intent requires Search Console review
+/jedlik-anyos-finanszirozasi-segitseg/,/vallalati/palyazatok-tamogatasok/,candidate,Program intent requires Search Console review
+/napelem-tarsashazaknak/,/vallalati/napelem/,candidate,Audience intent requires Search Console review
+/kepzeseink/,/rolunk/cegunkrol/#szakmai-tudas,candidate,Legacy training intent requires Search Console review
+/szakmai-nap-regisztracio/,/rolunk/cegunkrol/#szakmai-tudas,candidate,Expired event requires Search Console review
+/ft1000/,/rolunk/media/,candidate,Existing indexed recognition page requires Search Console review

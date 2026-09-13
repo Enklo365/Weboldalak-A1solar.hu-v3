@@ -181,7 +181,20 @@ export function processHtml(html: string): string {
 export function firstImage(html: string): string | null {
   const m = html.match(/<img[^>]+src=["']([^"']+)["']/i);
   if (!m) return null;
-  return m[1].replace(LEGACY_HOST, "");
+  const source = m[1];
+  if (/^https?:\/\//i.test(source) && !/^https?:\/\/(www\.)?a1solar\.hu(?:\/|$)/i.test(source)) {
+    return null;
+  }
+
+  const localPath = source.replace(LEGACY_HOST, "");
+  if (!localPath.startsWith("/wp-content/uploads/")) return localPath;
+
+  const mirroredAsset = path.join(process.cwd(), "public", ...localPath.split("/").filter(Boolean));
+  if (fs.existsSync(mirroredAsset)) return localPath;
+
+  const restoredCover = `/article-covers/${path.posix.basename(localPath)}`;
+  const restoredAsset = path.join(process.cwd(), "public", ...restoredCover.split("/").filter(Boolean));
+  return fs.existsSync(restoredAsset) ? restoredCover : localPath;
 }
 
 export function plainExcerpt(html: string, max = 160): string {

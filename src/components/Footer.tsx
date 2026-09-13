@@ -12,8 +12,8 @@ import {
   SITE,
 } from "@/lib/site";
 
-const LOGO = "/wp-content/uploads/2024/11/A1solar-logo.svg";
-const BADGES = "/wp-content/uploads/2025/07/a1solar_badgek-1024x127.png";
+const LOGO = "/images/brand/a1solar-logo.svg";
+const BADGES = "/images/brand/a1solar-badges.svg";
 const YEAR = new Date().getFullYear();
 
 /** Footer link that opens external targets in a new tab. */

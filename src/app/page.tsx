@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Motion } from "@/components/Motion";
 import { HomeHero } from "@/components/home/HomeHero";
-import { HomeAbout, HomeArticles, HomeZanzibar, SectionDivider } from "@/components/home/HomeSections";
+import { CopydeckBody } from "@/components/v3/CopydeckPage";
+import { getV3Page } from "@/lib/v3-pages";
 
 export const metadata: Metadata = {
   title: "A1 Solar – Napelem, energiatárolás és finanszírozás egy helyről",
@@ -15,16 +16,15 @@ export const metadata: Metadata = {
  * the `/nativ` preview route; promoted to `/` after sign-off).
  */
 export default function HomePage() {
+  const page = getV3Page("/");
+  if (!page) return null;
   return (
     <>
       <Motion />
       <HomeHero />
-      <SectionDivider />
-      <HomeAbout />
-      <SectionDivider />
-      <HomeZanzibar />
-      <SectionDivider />
-      <HomeArticles />
+      <article className="v3-page v3-page--narrative v3-page--home">
+        <CopydeckBody page={page} />
+      </article>
     </>
   );
 }
