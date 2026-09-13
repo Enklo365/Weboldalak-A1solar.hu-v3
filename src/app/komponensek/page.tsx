@@ -280,15 +280,7 @@ const KomponensekPage = () => (
       </Demo>
 
       <Demo name="BigStats" full>
-        <BigStats
-          items={[
-            { value: "13 év", label: "szakmai tapasztalat" },
-            { value: "2019 óta", label: "stabil A1 Solar működés" },
-            { value: "5000+", label: "telepített rendszer" },
-            { value: "Országos", label: "kivitelezés" },
-            { value: "Stabil", label: "pénzügyileg stabil vállalkozás" },
-          ]}
-        />
+        <BigStats />
       </Demo>
 
       <Demo name="NumberedList">

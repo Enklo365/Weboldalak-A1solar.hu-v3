@@ -1,7 +1,3 @@
-import { NotchHero } from "@/components/page/NotchHero";
-import { HeroDivider, SidebarLayout } from "@/components/service/SidebarLayout";
-import { SupportWidget } from "@/components/service/SupportWidget";
-
 export type TextPageContent = {
   eyebrow: string;
   title: string;
@@ -17,38 +13,51 @@ const INTRO_BY_EYEBROW: Record<string, string> = {
   "Promóciós szabályzat": "Promócióink hivatalos, mindenkor hatályos részvételi feltételei és szabályai.",
 };
 
+export const CompactLegalHero = ({ eyebrow, title, intro }: { eyebrow: string; title: string; intro: string }) => (
+  <header className="legal-hero">
+    <div className="container">
+      <div className="legal-hero__panel">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src={HERO_IMAGE} alt={title} className="legal-hero__image" />
+        <div className="legal-hero__overlay" aria-hidden="true" />
+        <div className="legal-hero__content">
+          <div>
+            <span className="legal-hero__eyebrow">{eyebrow}</span>
+            <h1>{title}</h1>
+          </div>
+          <p>{intro}</p>
+        </div>
+      </div>
+    </div>
+  </header>
+);
+
 /**
- * Native long-form text page (legal / policy / prose) on the sidebar +
- * notch-hero layout: a shaped hero, then the migrated CMS body in the shared
- * `.prose` container with a sticky customer-service sidebar.
+ * Native full-width long-form text page for legal and policy content.
  */
 export function TextPage({ content }: { content: TextPageContent }) {
   const intro = INTRO_BY_EYEBROW[content.eyebrow] ?? "Az A1 Solar Kft. hivatalos dokumentuma és tájékoztatója.";
 
   return (
     <div className="pb-6 md:pb-8">
-      <NotchHero
+      <CompactLegalHero
         eyebrow={content.eyebrow}
-        titleStrong={content.title}
-        image={HERO_IMAGE}
-        imageAlt={content.title}
+        title={content.title}
         intro={intro}
       />
 
-      <HeroDivider />
-
-      <SidebarLayout sidebar={<SupportWidget />}>
+      <div className="container text-page__layout">
         {content.updated ? (
           <p className="post-meta" style={{ marginBottom: 16 }}>
             Utolsó frissítés: {content.updated}
           </p>
         ) : null}
         <div
-          className="prose prose--flush"
+          className="prose prose--flush text-page__prose"
           // eslint-disable-next-line react/no-danger -- migrated CMS content
           dangerouslySetInnerHTML={{ __html: content.html }}
         />
-      </SidebarLayout>
+      </div>
     </div>
   );
 }

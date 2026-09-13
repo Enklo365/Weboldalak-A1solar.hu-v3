@@ -5,6 +5,8 @@ export type ImageOverlapProps = {
   image: string;
   imageAlt: string;
   children: ReactNode;
+  /** Optional overflow copy rendered in a full-width box below the image. */
+  continuation?: ReactNode;
   /** Side where the text card overlaps the image on wide screens. */
   side?: "left" | "right";
   /** Accent palette inherited by compatible SectionKit content. */
@@ -22,6 +24,7 @@ export const ImageOverlap = ({
   image,
   imageAlt,
   children,
+  continuation,
   side = "right",
   tone = "red",
   imagePosition = "center",
@@ -38,6 +41,7 @@ export const ImageOverlap = ({
       />
     </div>
     <div className="image-overlap__card">{children}</div>
+    {continuation ? <div className="image-overlap__continuation">{continuation}</div> : null}
   </div>
 );
 

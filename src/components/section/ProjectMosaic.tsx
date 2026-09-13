@@ -18,7 +18,7 @@ export type ProjectMosaicProps = {
 
 /** Editorial reference gallery with one dominant image and supporting projects. */
 export const ProjectMosaic = ({ items, className = "" }: ProjectMosaicProps) => (
-  <div className={`project-mosaic${className ? ` ${className}` : ""}`}>
+  <div className={`project-mosaic project-mosaic--${Math.min(items.length, 5)}${className ? ` ${className}` : ""}`}>
     {items.map((item, index) => (
       <article className="project-mosaic__item" key={`${item.location}-${item.title}-${index}`}>
         <Image

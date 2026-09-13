@@ -1,11 +1,14 @@
+import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import type { ReactNode } from "react";
+
+const BADGES = "/images/brand/a1solar-badges.svg";
 
 export type FeatureTileItem = {
   icon: ReactNode;
   eyebrow?: string;
   title: string;
-  text: string;
+  text?: ReactNode;
   href?: string;
   linkLabel?: string;
 };
@@ -27,7 +30,7 @@ export const FeatureTiles = ({
   className = "",
 }: FeatureTilesProps) => (
   <div
-    className={`feature-tiles feature-tiles--${layout} feature-tiles--${tone}${className ? ` ${className}` : ""}`}
+    className={`feature-tiles feature-tiles--${layout} feature-tiles--${tone} feature-tiles--count-${items.length}${className ? ` ${className}` : ""}`}
   >
     {items.map((item, index) => (
       <article className="feature-tiles__item" key={`${item.title}-${index}`}>
@@ -37,7 +40,7 @@ export const FeatureTiles = ({
         <div className="feature-tiles__content">
           {item.eyebrow ? <span className="feature-tiles__eyebrow">{item.eyebrow}</span> : null}
           <h3>{item.title}</h3>
-          <p>{item.text}</p>
+          {item.text ? <div className="feature-tiles__text">{item.text}</div> : null}
         </div>
         {item.href ? (
           <a className="feature-tiles__link" href={item.href}>
@@ -47,6 +50,11 @@ export const FeatureTiles = ({
         ) : null}
       </article>
     ))}
+    {layout === "mosaic" && items.length >= 5 && items.length % 4 !== 0 ? (
+      <aside className="feature-tiles__badges" aria-label="A1 Solar díjak és minősítések">
+        <Image src={BADGES} alt="A1 Solar díjak és minősítések" width={1024} height={127} sizes="(max-width: 1024px) 50vw, 40vw" unoptimized />
+      </aside>
+    ) : null}
   </div>
 );
 

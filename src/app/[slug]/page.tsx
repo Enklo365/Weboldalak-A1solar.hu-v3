@@ -248,7 +248,7 @@ export default async function DynamicPage({
     publisher: {
       "@type": "Organization",
       name: SITE.legalName,
-      logo: { "@type": "ImageObject", url: `${SITE.url}/wp-content/uploads/2024/11/A1solar-logo.svg` },
+      logo: { "@type": "ImageObject", url: `${SITE.url}/images/brand/a1solar-logo.svg` },
     },
     mainEntityOfPage: shareUrl,
     articleSection: category,
