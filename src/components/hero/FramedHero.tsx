@@ -8,10 +8,12 @@ export type FramedHeroMedia = {
   position?: string;
 };
 
-type FramedHeroProps = {
+export type FramedHeroProps = {
   children: ReactNode;
   className?: string;
   media: FramedHeroMedia;
+  /** Optional content placed in the white lower-right notch on wide screens. */
+  notch?: ReactNode;
 };
 
 const CLIP_ID = "a1-framed-hero-shape";
@@ -23,7 +25,7 @@ const CLIP_ID = "a1-framed-hero-shape";
  * rounded corners and lower-right notch. Pages only provide their media and
  * copy; a later hero type can live beside this component without changing it.
  */
-export function FramedHero({ children, className = "", media }: FramedHeroProps) {
+export function FramedHero({ children, className = "", media, notch }: FramedHeroProps) {
   const position = media.position ?? "center";
 
   return (
@@ -51,6 +53,17 @@ export function FramedHero({ children, className = "", media }: FramedHeroProps)
       </div>
 
       {children}
+      {notch ? <div className="a1-framed-hero__notch">{notch}</div> : null}
     </div>
+  );
+}
+
+/** Accepted framed hero with the A1 Solar award/qualification strip in its notch. */
+export function FramedHeroBadges(props: Omit<FramedHeroProps, "notch">) {
+  return (
+    <FramedHero
+      {...props}
+      notch={<img src="/images/brand/a1solar-badges.svg" alt="A1 Solar szakmai és pénzügyi minősítései" />}
+    />
   );
 }

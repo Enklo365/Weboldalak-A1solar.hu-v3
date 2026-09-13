@@ -11,6 +11,7 @@ export type FeatureTileItem = {
   text?: ReactNode;
   href?: string;
   linkLabel?: string;
+  external?: boolean;
 };
 
 export type FeatureTilesProps = {
@@ -43,7 +44,12 @@ export const FeatureTiles = ({
           {item.text ? <div className="feature-tiles__text">{item.text}</div> : null}
         </div>
         {item.href ? (
-          <a className="feature-tiles__link" href={item.href}>
+          <a
+            className="feature-tiles__link"
+            href={item.href}
+            target={item.external ? "_blank" : undefined}
+            rel={item.external ? "noopener noreferrer" : undefined}
+          >
             <span>{item.linkLabel ?? "Részletek"}</span>
             <ArrowUpRight size={18} strokeWidth={1.8} aria-hidden="true" />
           </a>

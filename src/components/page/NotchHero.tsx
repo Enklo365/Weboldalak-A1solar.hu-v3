@@ -19,7 +19,7 @@ export type NotchHeroProps = {
   imagePosition?: string;
   /** max-width of the headline block (default "420px") — widen so a longer light line stays on one row. */
   titleMaxWidth?: string;
-  /** desktop headline font-size (default "clamp(26px, 2.9vw, 34px)") — shrink so a longer headline fits 2 rows. */
+  /** @deprecated The shared primary-title role now controls every page title. */
   titleFontSize?: string;
 };
 
@@ -71,7 +71,7 @@ export const NotchBanner = ({ image, imageAlt, notch }: { image: string; imageAl
  * the intro paragraph seated in the lower-right notch cut-out. Reused across the
  * service subpages and the career page so they read as one design.
  */
-export const NotchHero = ({ eyebrow, titleLight, titleStrong, image, imageAlt, intro, ctaLabel, ctaHref, compact = false, imagePosition = "50% 55%", titleMaxWidth = "420px", titleFontSize = "clamp(26px, 2.9vw, 34px)" }: NotchHeroProps) => (
+export const NotchHero = ({ eyebrow, titleLight, titleStrong, image, imageAlt, intro, ctaLabel, ctaHref, compact = false, imagePosition = "50% 55%", titleMaxWidth = "420px" }: NotchHeroProps) => (
   <section className="w-full">
     <svg width="0" height="0" className="absolute" aria-hidden focusable="false">
       <defs>
@@ -103,8 +103,8 @@ export const NotchHero = ({ eyebrow, titleLight, titleStrong, image, imageAlt, i
             className={compact ? "notch-title-clamp" : undefined}
             style={
               compact
-                ? { color: "#fff", fontSize: "clamp(22px, 2.2vw, 32px)", fontWeight: 700, lineHeight: 1.2, marginBottom: "20px", maxWidth: "600px" }
-                : { color: "#fff", fontSize: titleFontSize, fontWeight: 300, lineHeight: 1.18, marginBottom: "24px", maxWidth: titleMaxWidth }
+                ? { color: "#fff", fontSize: "var(--type-primary-title)", fontWeight: 700, lineHeight: "var(--type-primary-title-leading)", letterSpacing: "-0.025em", marginBottom: "20px", maxWidth: "600px" }
+                : { color: "#fff", fontSize: "var(--type-primary-title)", fontWeight: 300, lineHeight: "var(--type-primary-title-leading)", letterSpacing: "-0.025em", marginBottom: "24px", maxWidth: titleMaxWidth }
             }
           >
             {titleLight ? (
@@ -127,7 +127,7 @@ export const NotchHero = ({ eyebrow, titleLight, titleStrong, image, imageAlt, i
         </div>
         {/* Intro text seated in the lower-right notch cut-out. */}
         <div className="absolute z-10 flex items-center" style={{ left: "46%", right: "1.5%", top: "80%", bottom: "1%" }}>
-          <p style={{ fontSize: "16px", lineHeight: 1.6, color: "var(--ink-soft)" }}>{intro}</p>
+          <p style={{ fontSize: "var(--type-body-copy)", lineHeight: "var(--type-body-leading)", color: "var(--ink-soft)" }}>{intro}</p>
         </div>
       </div>
     </div>
@@ -152,8 +152,8 @@ export const NotchHero = ({ eyebrow, titleLight, titleStrong, image, imageAlt, i
             className={compact ? "notch-title-clamp--mobile" : undefined}
             style={
               compact
-                ? { marginTop: "18px", color: "#fff", fontSize: "clamp(20px, 5.4vw, 24px)", fontWeight: 700, lineHeight: 1.22 }
-                : { marginTop: "20px", color: "#fff", fontSize: "clamp(22px, 6.2vw, 26px)", fontWeight: 300, lineHeight: 1.2 }
+                ? { marginTop: "18px", color: "#fff", fontSize: "var(--type-primary-title)", fontWeight: 700, lineHeight: "var(--type-primary-title-leading)", letterSpacing: "-0.025em" }
+                : { marginTop: "20px", color: "#fff", fontSize: "var(--type-primary-title)", fontWeight: 300, lineHeight: "var(--type-primary-title-leading)", letterSpacing: "-0.025em" }
             }
           >
             {titleLight ? <>{titleLight} </> : null}

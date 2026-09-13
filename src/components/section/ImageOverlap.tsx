@@ -62,3 +62,15 @@ export const ImageOverlapRightGraphite = (props: ImageOverlapVariantProps) => (
 export const ImageOverlapLeftGraphite = (props: ImageOverlapVariantProps) => (
   <ImageOverlap {...props} side="left" tone="graphite" />
 );
+
+const floatingClassName = (className = "") => `image-overlap--floating${className ? ` ${className}` : ""}`;
+
+/** Compact text card entering the image from the right, slightly below its centre line. */
+export const ImageOverlapRightFloatingGraphite = ({ className, ...props }: ImageOverlapVariantProps) => (
+  <ImageOverlap {...props} className={floatingClassName(className)} side="right" tone="graphite" />
+);
+
+/** Compact text card entering the image from the left, slightly below its centre line. */
+export const ImageOverlapLeftFloatingGraphite = ({ className, ...props }: ImageOverlapVariantProps) => (
+  <ImageOverlap {...props} className={floatingClassName(className)} side="left" tone="graphite" />
+);

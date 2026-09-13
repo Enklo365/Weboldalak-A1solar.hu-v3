@@ -6,6 +6,7 @@ import { BackupLeadForm } from "@/components/page/campaign/BackupLeadForm";
 import { LandingHero } from "@/components/page/LandingHero";
 import { NotchBanner, NotchHero } from "@/components/page/NotchHero";
 import { NotchFormHero } from "@/components/page/NotchFormHero";
+import { FramedHeroBadges } from "@/components/hero/FramedHero";
 import {
   Body,
   BigStats,
@@ -17,7 +18,7 @@ import {
   CtaButton,
   DarkFeature,
   Eyebrow,
-  FactorGrid,
+  FactorGridCompact,
   FaqList,
   FeatureTilesEqualGraphite,
   FeatureTilesEqualRed,
@@ -26,9 +27,11 @@ import {
   FeatureGrid,
   InfoCallout,
   InfoCard,
+  ImageOverlapLeftFloatingGraphite,
   ImageOverlapLeftGraphite,
   ImageOverlapLeftRed,
   ImageOverlapRightGraphite,
+  ImageOverlapRightFloatingGraphite,
   ImageOverlapRightRed,
   NumberedList,
   OfferCallout,
@@ -40,9 +43,11 @@ import {
   StatHighlight,
   StepTimeline,
   TagList,
+  Typography,
 } from "@/components/section/SectionKit";
 import { ReferenceGallery } from "@/components/service/ReferenceGallery";
 import { SupportWidget } from "@/components/service/SupportWidget";
+import { GoogleReviews } from "@/components/section/GoogleReviews";
 
 export const metadata = {
   title: "Komponens katalógus | A1 Solar",
@@ -93,16 +98,17 @@ const FEATURE_TILE_ITEMS = [
 ];
 
 const COMPONENTS = [
-  "Eyebrow", "Body", "CtaButton", "Bullets", "CheckList", "TagList", "FactorGrid", "FeatureGrid",
+  "Typography", "Eyebrow", "Body", "CtaButton", "Bullets", "CheckList", "TagList", "FactorGridCompact", "FeatureGrid",
   "NumberedList", "StepTimeline", "InfoCard", "CompareCards", "InfoCallout", "BrandRow",
   "FeatureTilesEqualRed", "FeatureTilesEqualGraphite", "FeatureTilesMosaicRed", "FeatureTilesMosaicGraphite",
   "DarkFeature",
   "ProjectMosaic",
-  "BigStats",
+  "BigStats", "GoogleReviews",
+  "ImageOverlapRightFloatingGraphite", "ImageOverlapLeftFloatingGraphite",
   "ImageOverlapRightRed", "ImageOverlapLeftRed", "ImageOverlapRightGraphite", "ImageOverlapLeftGraphite",
   "StatHighlight", "StatBanner", "OfferCallout", "CtaBanner", "FaqList", "Reveal", "RowDivider",
   "Section", "SupportWidget", "ContactForm", "BackupLeadForm", "ReferenceGallery",
-  "NotchHero", "NotchBanner", "NotchFormHero", "LandingHero",
+  "FramedHeroBadges", "NotchHero", "NotchBanner", "NotchFormHero", "LandingHero",
 ];
 
 /** Labeled demo wrapper. */
@@ -127,8 +133,8 @@ const KomponensekPage = () => (
   <div>
     <div className="container" style={{ paddingTop: "40px", paddingBottom: "80px" }}>
       <Eyebrow>Katalógus</Eyebrow>
-      <h1 style={{ fontSize: "34px", fontWeight: 700, color: "var(--ink)", margin: "16px 0 0" }}>Komponens katalógus</h1>
-      <p style={{ fontSize: "16px", color: "var(--ink-soft)", margin: "12px 0 0", maxWidth: "680px" }}>
+      <h1 className="type-primary-title" style={{ fontWeight: 700, color: "var(--ink)", margin: "16px 0 0" }}>Komponens katalógus</h1>
+      <p className="type-body-copy" style={{ color: "var(--ink-soft)", margin: "12px 0 0", maxWidth: "680px" }}>
         Az összes újrahasználható komponens élőben, mintaadatokkal. A kliens-komponensek (StepTimeline, FaqList,
         űrlapok) interaktívak.
       </p>
@@ -146,6 +152,23 @@ const KomponensekPage = () => (
         ))}
       </div>
 
+      <Demo name="Typography">
+        <Typography title="Mérnöki energiarendszerek, egységes vizuális nyelven">
+          <Body>Ez a közös törzsszöveg-méret jelenik meg a kép melletti szövegdobozokban, a bevezetőkben és a tartalmi szakaszokban is.</Body>
+        </Typography>
+      </Demo>
+
+      <Demo name="FramedHeroBadges" full>
+        <FramedHeroBadges media={{ type: "image", src: HERO_IMG, position: "center" }}>
+          <div style={{ position: "relative", zIndex: 1, padding: "54px", color: "#fff", maxWidth: "660px" }}>
+            <Eyebrow>Prémium hero</Eyebrow>
+            <h2 className="type-primary-title" style={{ margin: "18px 0 0", color: "#fff", fontWeight: 600 }}>
+              Keretezett hero szakmai badge-sorral
+            </h2>
+          </div>
+        </FramedHeroBadges>
+      </Demo>
+
       <Demo name="Eyebrow"><Eyebrow>Címke szöveg</Eyebrow></Demo>
 
       <Demo name="Body"><Body>Ez egy standard bekezdés (16px, #4b5563). Több sornyi kifejtő szöveghez használjuk a szakaszokban.</Body></Demo>
@@ -158,8 +181,8 @@ const KomponensekPage = () => (
 
       <Demo name="TagList"><TagList items={["Csúcsterhelés", "Háromfázisú kialakítás", "Áthidalási idő", "Hálózat állapota"]} /></Demo>
 
-      <Demo name="FactorGrid">
-        <FactorGrid
+      <Demo name="FactorGridCompact">
+        <FactorGridCompact
           items={[
             { icon: <Gauge size={20} strokeWidth={1.9} />, label: "Pillanatnyi csúcsterhelés" },
             { icon: <Plug size={20} strokeWidth={1.9} />, label: "Egy- vagy háromfázisú kialakítás" },
@@ -283,6 +306,10 @@ const KomponensekPage = () => (
         <BigStats />
       </Demo>
 
+      <Demo name="GoogleReviews" full>
+        <GoogleReviews />
+      </Demo>
+
       <Demo name="NumberedList">
         <NumberedList
           items={[
@@ -314,6 +341,26 @@ const KomponensekPage = () => (
             <Body>Opcionális 16:9 kép a kártya tetején.</Body>
           </InfoCard>
         </div>
+      </Demo>
+
+      <Demo name="ImageOverlapRightFloatingGraphite" full>
+        <ImageOverlapRightFloatingGraphite image={HERO_IMG} imageAlt="Napelemes rendszer – jobbról belógó kompakt szövegdoboz">
+          <Section
+            eyebrow="Jobb oldali lebegő változat"
+            title="A szöveg jobbról, kissé lejjebb lóg a képbe"
+            intro="A doboz csak a tartalom magasságát veszi fel, így a fotó nagyobb része látható marad."
+          />
+        </ImageOverlapRightFloatingGraphite>
+      </Demo>
+
+      <Demo name="ImageOverlapLeftFloatingGraphite" full>
+        <ImageOverlapLeftFloatingGraphite image={REF_IMAGES[0]} imageAlt="Napelemes rendszer – balról belógó kompakt szövegdoboz" imagePosition="center 58%">
+          <Section
+            eyebrow="Bal oldali lebegő változat"
+            title="A szöveg balról, kissé lejjebb lóg a képbe"
+            intro="A tükrözött, tartalommagasságú változat váltakozó szakaszritmushoz használható."
+          />
+        </ImageOverlapLeftFloatingGraphite>
       </Demo>
 
       <Demo name="ImageOverlapRightRed" full>
@@ -434,7 +481,7 @@ const KomponensekPage = () => (
       <Demo name="RowDivider"><RowDivider /></Demo>
 
       <Demo name="Section" full>
-        <Section eyebrow="Szakasz" title="Szakasz-cím (30px / 500)" intro="Opcionális bevezető szöveg a cím alatt.">
+        <Section eyebrow="Szakasz" title="Szakaszcím a közös főcímmérettel" intro="Opcionális bevezető szöveg a cím alatt.">
           <Body>A Section összefogja az eyebrow-t, címet, bevezetőt és a gyerek-tartalmat.</Body>
           <CheckList items={["Beágyazott lista is mehet", "És bármi más"]} />
         </Section>

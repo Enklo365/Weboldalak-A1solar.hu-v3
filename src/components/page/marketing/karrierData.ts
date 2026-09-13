@@ -1,4 +1,4 @@
-/** Shared career hero image (used on /karrier and every position subpage). */
+/** Shared career hero image. */
 export const KARRIER_HERO_IMAGE = "/wp-content/uploads/2023/11/210363746_m_normal_none.jpg";
 
 export type KarrierPosition = {
@@ -13,7 +13,7 @@ export type KarrierPosition = {
   offer?: string[];
 };
 
-/** Open positions — each rendered as a card on /karrier and its own /karrier/<slug> subpage. */
+/** Open positions rendered as linked sections on the consolidated career page. */
 export const KARRIER_POSITIONS: KarrierPosition[] = [
   {
     slug: "napelem-energiatarolo-ertekesito",
@@ -128,6 +128,6 @@ export const KARRIER_BENEFITS: string[] = [
   "Versenyképes fizetés",
 ];
 
-/** Look up a single position by its subpage slug. */
+/** Look up a single position by its legacy slug or in-page anchor. */
 export const getKarrierPosition = (slug: string): KarrierPosition | undefined =>
   KARRIER_POSITIONS.find((p) => p.slug === slug);

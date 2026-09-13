@@ -10,7 +10,7 @@ export type Step = { num: string; title: string; text: string };
  * moment the fill line actually reaches it — node positions are measured (the
  * steps have unequal heights), so the colour change lines up with the fill.
  */
-export const StepTimeline = ({ items }: { items: Step[] }) => {
+export const StepTimeline = ({ items, variant = "steps" }: { items: Step[]; variant?: "steps" | "years" }) => {
   const ref = useRef<HTMLDivElement | null>(null);
   const nodeRefs = useRef<(HTMLSpanElement | null)[]>([]);
   const [progress, setProgress] = useState(0);
@@ -73,11 +73,13 @@ export const StepTimeline = ({ items }: { items: Step[] }) => {
   }, []);
 
   const lastIndex = Math.max(items.length - 1, 1);
+  const nodeWidth = variant === "years" ? 88 : 48;
+  const trackLeft = nodeWidth / 2 - 1;
 
   return (
     <div ref={ref} className="relative flex flex-col">
       {/* Track + fill (line runs from the first node centre to the last). */}
-      <span aria-hidden="true" className="absolute" style={{ left: "23px", top: "24px", bottom: "24px", width: "2px", background: "var(--line)" }}>
+      <span aria-hidden="true" className="absolute" style={{ left: `${trackLeft}px`, top: "24px", bottom: "24px", width: "2px", background: "var(--line)" }}>
         <span
           className="absolute left-0 top-0"
           style={{ width: "2px", height: `${progress * 100}%`, background: "var(--brand)", transition: "height 80ms linear" }}
@@ -96,12 +98,12 @@ export const StepTimeline = ({ items }: { items: Step[] }) => {
               }}
               className="relative z-10 flex flex-none items-center justify-center"
               style={{
-                width: "48px",
+                width: `${nodeWidth}px`,
                 height: "48px",
                 borderRadius: "9999px",
                 background: active ? "var(--brand)" : "var(--line)",
                 color: active ? "#fff" : "var(--ink)",
-                fontSize: "17px",
+                fontSize: variant === "years" ? "13px" : "17px",
                 fontWeight: 700,
                 transform: active ? "scale(1.06)" : "scale(1)",
                 transition: "background 250ms ease, color 250ms ease, transform 250ms ease",

@@ -1,21 +1,46 @@
-import Link from "next/link";
-import { ArrowRight, Clock3, Mail, MapPin, Phone } from "lucide-react";
+import { ArrowRight, Briefcase, Clock3, Mail, MapPin, Phone } from "lucide-react";
 import type { ReactNode } from "react";
+import { KarrierApplyForm } from "@/components/page/marketing/KarrierApplyForm";
 import { KARRIER_POSITIONS } from "@/components/page/marketing/karrierData";
+import { CheckList, Eyebrow, FeatureTilesEqualGraphite } from "@/components/section/SectionKit";
 import { ArticleArchive, FeaturedArticles } from "@/components/v3/ArticleArchive";
 import { getPosts, postCard } from "@/lib/content";
 import { SITE } from "@/lib/site";
 
 const CareerCards = () => (
-  <div className="v3-career-grid">
-    {KARRIER_POSITIONS.map((position) => (
-      <Link key={position.slug} className="v3-career-card" href={`/karrier/${position.slug}/`}>
-        <span>{position.location}</span>
-        <strong>{position.title}</strong>
-        <p>{position.teaser}</p>
-        <span className="v3-inline-link">Részletek és jelentkezés <ArrowRight size={15} /></span>
-      </Link>
-    ))}
+  <div className="v3-career-positions">
+    <FeatureTilesEqualGraphite
+      className="v3-career-position-tiles"
+      items={KARRIER_POSITIONS.map((position) => ({
+        icon: <Briefcase size={24} strokeWidth={1.8} />,
+        eyebrow: position.location,
+        title: position.title,
+        text: position.teaser,
+        href: `#${position.slug}`,
+        linkLabel: "Részletek és jelentkezés",
+      }))}
+    />
+    <div className="v3-career-position-list">
+      {KARRIER_POSITIONS.map((position) => (
+        <article id={position.slug} className="v3-career-position-detail" key={position.slug}>
+          <header className="v3-career-position-detail__header">
+            <Eyebrow>Nyitott pozíció</Eyebrow>
+            <h2>{position.title}</h2>
+            <p>{position.summary}</p>
+            <span><MapPin size={18} aria-hidden="true" />{position.location}</span>
+          </header>
+          <div className="v3-career-position-detail__groups">
+            <div><h3>Feladatok</h3><CheckList items={position.tasks} /></div>
+            {position.requirements ? <div><h3>Elvárások</h3><CheckList items={position.requirements} /></div> : null}
+            {position.plus ? <div><h3>Előnyt jelent</h3><CheckList items={position.plus} /></div> : null}
+            {position.offer ? <div><h3>Amit kínálunk</h3><CheckList items={position.offer} /></div> : null}
+          </div>
+          <div className="v3-career-position-detail__form">
+            <KarrierApplyForm positionTitle={position.title} />
+          </div>
+        </article>
+      ))}
+    </div>
   </div>
 );
 

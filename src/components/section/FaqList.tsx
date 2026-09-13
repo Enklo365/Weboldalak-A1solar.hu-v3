@@ -1,8 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import type { ReactNode } from "react";
 
-export type FaqItem = { q: string; a: string };
+export type FaqItem = { q: string; a: ReactNode };
 
 /**
  * Animated FAQ accordion. Smooth open/close via the grid-template-rows 0fr→1fr
@@ -55,9 +56,9 @@ export const FaqList = ({ items }: { items: FaqItem[] }) => {
               }}
             >
               <div style={{ overflow: "hidden" }}>
-                <p style={{ margin: 0, padding: "0 20px 18px", fontSize: "15px", lineHeight: 1.7, color: "var(--ink-soft)" }}>
+                <div className="faq-list__answer" style={{ margin: 0, padding: "0 20px 18px", fontSize: "15px", lineHeight: 1.7, color: "var(--ink-soft)" }}>
                   {f.a}
-                </p>
+                </div>
               </div>
             </div>
           </div>

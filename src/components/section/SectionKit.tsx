@@ -8,7 +8,7 @@ import type { ReactNode } from "react";
  */
 
 /** Brand-tint uppercase pill used above section headings. */
-export const Eyebrow = ({ children }: { children: string }) => (
+export const Eyebrow = ({ children }: { children: ReactNode }) => (
   <span
     className="inline-block rounded-[30px] px-3 py-2 text-xs font-normal uppercase tracking-[1px]"
     style={{
@@ -23,11 +23,19 @@ export const Eyebrow = ({ children }: { children: string }) => (
 /** Dashed separator between stacked sections. */
 export const RowDivider = () => <hr style={{ border: 0, borderTop: "1px dashed #ececec", margin: "48px 0" }} />;
 
-/** Standard body paragraph (16px / #4b5563). */
+/** Standard body paragraph (shared semantic body role / #4b5563). */
 export const Body = ({ children }: { children: ReactNode }) => (
-  <p className="text-[var(--ink-soft)]" style={{ margin: 0, fontSize: "16px", lineHeight: 1.75 }}>
+  <p className="text-[var(--ink-soft)]" style={{ margin: 0, fontSize: "var(--type-body-copy)", lineHeight: "var(--type-body-leading)" }}>
     {children}
   </p>
+);
+
+/** Text-led section using the shared title and body roles. */
+export const Typography = ({ id, title, children }: { id?: string; title: string; children: ReactNode }) => (
+  <section id={id} className="typography-section">
+    <h2>{title}</h2>
+    <div className="typography-section__body">{children}</div>
+  </section>
 );
 
 export type SectionProps = {
@@ -38,15 +46,15 @@ export type SectionProps = {
   children?: ReactNode;
 };
 
-/** Section wrapper: optional eyebrow + 30px/500 heading + optional intro + body. */
+/** Section wrapper: optional eyebrow + shared primary title + optional intro + body. */
 export const Section = ({ id, eyebrow, title, intro, children }: SectionProps) => (
   <div id={id} style={id ? { scrollMarginTop: "100px" } : undefined}>
     {eyebrow ? <Eyebrow>{eyebrow}</Eyebrow> : null}
-    <h2 className="text-[var(--ink)]" style={{ margin: eyebrow ? "18px 0 0" : 0, fontSize: "30px", fontWeight: 500, lineHeight: 1.2 }}>
+    <h2 className="text-[var(--ink)]" style={{ margin: eyebrow ? "18px 0 0" : 0, fontSize: "var(--type-primary-title)", fontWeight: 500, lineHeight: "var(--type-primary-title-leading)", letterSpacing: "-0.025em" }}>
       {title}
     </h2>
     {intro ? (
-      <p className="mt-5 text-[var(--ink-soft)]" style={{ fontSize: "16px", lineHeight: 1.75 }}>
+      <p className="mt-5 text-[var(--ink-soft)]" style={{ fontSize: "var(--type-body-copy)", lineHeight: "var(--type-body-leading)" }}>
         {intro}
       </p>
     ) : null}
@@ -189,8 +197,8 @@ export type Factor = { icon: ReactNode; label: string };
 
 /** Icon + label grid for neutral "factors we assess" lists — a small brand-tinted
  *  icon circle beside each label (distinct from the benefit check lists). */
-export const FactorGrid = ({ items }: { items: Factor[] }) => (
-  <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+export const FactorGridCompact = ({ items, columns = 2 }: { items: Factor[]; columns?: 2 | 3 }) => (
+  <div className={`factor-grid factor-grid--${columns}`}>
     {items.map((f) => (
       <div key={f.label} className="flex items-center gap-3.5 rounded-[14px]" style={{ background: "var(--surface-3)", padding: "14px 16px" }}>
         <span
@@ -200,11 +208,14 @@ export const FactorGrid = ({ items }: { items: Factor[] }) => (
         >
           {f.icon}
         </span>
-        <span style={{ fontSize: "15px", lineHeight: 1.35, color: "var(--ink)" }}>{f.label}</span>
+        <span style={{ fontSize: "var(--type-body-copy)", lineHeight: 1.35, color: "var(--ink)", fontWeight: 600 }}>{f.label}</span>
       </div>
     ))}
   </div>
 );
+
+/** Backwards-compatible name for existing page implementations. */
+export const FactorGrid = FactorGridCompact;
 
 /** Checklist — like Bullets but with brand check icons (reads as benefits / requirements). */
 export const CheckList = ({ items }: { items: string[] }) => (
@@ -342,9 +353,11 @@ export {
 } from "./FeatureTiles";
 export {
   ImageOverlap,
+  ImageOverlapLeftFloatingGraphite,
   ImageOverlapLeftGraphite,
   ImageOverlapLeftRed,
   ImageOverlapRightGraphite,
+  ImageOverlapRightFloatingGraphite,
   ImageOverlapRightRed,
   type ImageOverlapProps,
   type ImageOverlapVariantProps,
