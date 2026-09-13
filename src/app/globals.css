@@ -292,7 +292,7 @@ body {
 .editorial-slot__label { color: var(--brand-dark); font-size: 12px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; }
 .editorial-slot__details { white-space: pre-line; color: var(--ink-soft); font-size: 14px; line-height: 1.6; }
 
-.v3-content { position: relative; z-index: 2; padding-top: 32px; padding-bottom: clamp(80px, 10vw, 140px); }
+.v3-content { position: relative; z-index: 2; padding-top: 32px; padding-bottom: 0; }
 .v3-content--sidebar { display: grid; grid-template-columns: 270px minmax(0, 1fr); gap: clamp(48px, 7vw, 92px); align-items: start; }
 .v3-toc { position: sticky; top: 116px; display: flex; flex-direction: column; gap: 18px; padding: 26px; border: 1px solid var(--line); border-radius: 22px; background: #fff; box-shadow: 0 18px 50px rgba(15,23,42,.06); }
 .v3-toc > span { color: var(--ink-muted); font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
@@ -306,7 +306,7 @@ body {
 .v3-intro-continuation .editorial-slot { width: 100%; max-width: 760px; margin-top: 12px; }
 .v3-intro-supplement { width: 100%; max-width: 760px; margin-top: 28px; }
 .v3-section { display: grid; gap: clamp(28px, 5vw, 64px); padding: clamp(58px, 8vw, 104px) 0; border-bottom: 1px dashed #ddd; scroll-margin-top: 112px; }
-.v3-section:last-child { border-bottom: 0; }
+.v3-section:last-child { padding-bottom: 24px; border-bottom: 0; }
 .v3-section--split { grid-template-columns: minmax(0, 1.05fr) minmax(300px, .95fr); align-items: center; }
 .v3-hero__copy, .v3-section__copy { min-width: 0; }
 .v3-section--reverse .v3-section__copy { order: 2; }
@@ -353,7 +353,6 @@ body {
 
 /* Homepage copydeck refinements: wide intro, highlighted proof line and balanced alternating sections. */
 .v3-page--home { --home-highlight: #db0660; }
-.v3-page--home .v3-content { padding-bottom: 0; }
 .v3-page--home .v3-intro-continuation .v3-copy,
 .v3-page--home .v3-intro-continuation .v3-copy p { max-width: none; width: 100%; }
 .v3-page--home .v3-intro-continuation .v3-copy > p:last-child {
@@ -372,8 +371,6 @@ body {
 .v3-page--home #tobb-vezeto-gyarto-technologiajaval-dolgozunk h2 { margin-inline: auto; }
 .v3-page--home #tobb-vezeto-gyarto-technologiajaval-dolgozunk .v3-copy { align-items: center; }
 .v3-page--home #tobb-vezeto-gyarto-technologiajaval-dolgozunk .v3-link-list { justify-content: center; }
-.v3-page--home #a-rendszer-atadasa-utan-is-szamithatsz-rank { padding-bottom: 24px; }
-
 @media (min-width: 1025px) {
   .v3-page--home .v3-intro-continuation .v3-copy > p:last-child { white-space: nowrap; }
 }
