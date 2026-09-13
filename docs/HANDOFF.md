@@ -12,11 +12,11 @@ korábbi beszélgetést ne dolgozd fel újra. Eltérés esetén mindig a tényle
 
 ## Aktuális állapot
 
-- Fejlesztési ág: `codex/feature-image-overlap`
-- Utolsó alkalmazáskód-commit: `8f9035322e91d3a06569d8ffd34777687ecee4a6`
+- Fejlesztési ág: `codex/feature-v3-visual-refactor`
+- Utolsó alkalmazáskód-commit: `e2bda28ce7c4b0bd3a696848114c1259450e0e84`
 - Staging: [https://teszta1solar.homokozo.uk/](https://teszta1solar.homokozo.uk/)
-- Staging image: `a1solar-nextjs:v3-8f90353`
-- Staging OCI revision: `8f9035322e91d3a06569d8ffd34777687ecee4a6`
+- Staging image: `a1solar-nextjs:v3-e2bda28`
+- Staging OCI revision: `e2bda28ce7c4b0bd3a696848114c1259450e0e84`
 - Staging állapot: `healthy`, read-only, `noindex, nofollow, noarchive`
 - `main`: `c3e41bac88e381939720aa09f4309c604852b464`
 - Production (`a1solar.hu`, `www.a1solar.hu`): nem módosult.
@@ -25,6 +25,8 @@ korábbi beszélgetést ne dolgozd fel újra. Eltérés esetén mindig a tényle
   utasításra indul.
 - A Draft PR #1 ága (`codex/feature-site-v3`) és az önálló
   `codex/feature-image-overlap` ág is tartalmazza a jóváhagyott sabloncommitot.
+- A `codex/feature-v3-visual-refactor` ág fel van pusholva az originre; a mostani
+  staging release közvetlenül ennek az alkalmazáskód-commitjából készült.
 - A lezáró dokumentációs commit miatt a fejlesztési ág HEAD-je a fenti
   alkalmazáskód-commit dokumentációs leszármazottja lesz; az aktuális SHA-t
   Gitből olvasd ki.
@@ -56,14 +58,33 @@ korábbi beszélgetést ne dolgozd fel újra. Eltérés esetén mindig a tényle
 - Helyi reszponzív QA készült 390, 768, 820, 1024 és 1440 px-en; túlcsordulás
   nem volt. A staging konténer `healthy`, read-only, a katalógusban mind az öt
   új sabloncsalád ellenőrzötten jelen van.
+- A 35 v3 tartalmi oldal kizárólag vizuális refaktort kapott a közös
+  `FramedHero`, `ImageOverlap`, `FeatureTiles`, `DarkFeature`, `ProjectMosaic`,
+  `StatementSection` és `SectionKit` elemekkel; a copy deck és a generált
+  tartalom ellenőrzőösszege változatlan maradt.
+- Az `Az oldalon` oldalsáv minden v3 aloldalról lekerült, a hosszú
+  képátfedéses szövegek teljes szélességű folytatódobozt kapnak, a páratlan
+  csemperácsok üres helyét pedig az A1 Solar minősítési badge tölti ki.
+- A `BigStats` kizárólag a jóváhagyott öt állandó vállalati állítást jeleníti
+  meg; oldalankénti automatikus szövegkivonás nincs.
+- A fejléc, lábléc, cookie-panel, favicon és strukturált adatok a hivatalos
+  design-system SVG logót, LogoMark favicont és az eredeti minősítési SVG-t
+  használják.
+- A hat kiemelt jogi/OEP oldal oldalsáv nélküli, teljes konténerszélességű
+  tartalmat és külön kompakt hero-fejlécet használ (300 px desktop, 230 px
+  mobil).
+- Az `e2bda28` release production buildje sikeres volt: 345 statikusan
+  generált oldal. A staging smoke tesztben a főoldal, szolgáltatási oldal,
+  cikklista, jogi oldal és mindhárom új SVG asset `200` választ adott; az
+  `X-Robots-Tag` változatlanul `noindex, nofollow, noarchive`.
 
 ## Nyitott ellenőrzés és következő lépés
 
 - A felhasználó a telefonos megjelenést később, kézzel ellenőrzi.
 - A felhasználó az összes új sablont jóváhagyta; azok későbbi natív oldalakba
   szabadon beilleszthetők és tovább finomíthatók.
-- Következő lépésként a felhasználó a staging `/komponensek/` katalógusát
-  ellenőrizheti, vagy megadhatja, mely oldalakon használjuk először a sablonokat.
+- Következő lépésként a felhasználó a stagingen ellenőrizheti a 35 refaktorált
+  oldalt, a `/komponensek/` katalógust és a kompakt jogi oldalfejléceket.
 - A változatlan nagy médiacsomag staging feltöltésének gyorsítását külön
   feladatban először csak elemezni kell, 2–3 KISS megoldási lehetőséggel;
   implementációra ez önmagában nem ad engedélyt.
