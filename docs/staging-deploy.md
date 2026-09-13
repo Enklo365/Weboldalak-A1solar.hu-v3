@@ -3,6 +3,18 @@
 Ez a runbook kizárólag a `teszta1solar.homokozo.uk` staging környezetre
 érvényes. A `.hu` production címekhez nem ad deployengedélyt.
 
+## Indítási kapu
+
+- Ezt a runbookot csak külön, egyértelmű „Mehet stagingre” vagy azzal
+  egyenértékű felhasználói utasítás után szabad végrehajtani.
+- Egy helyi vizuális eredmény elfogadása, például a „jó” visszajelzés önmagában
+  nem staging-deploy engedély.
+- Kis vizuális módosításoknál először helyi preview és célzott QA készüljön; a
+  folyamat ezután álljon meg. Több elfogadott módosítást lehetőleg egyetlen
+  staging release-be kell összevonni.
+- Staging jóváhagyás nélkül ne készüljön staging image, ne változzon a Compose,
+  és ne induljon staging smoke test.
+
 ## Image
 
 1. Futtasd a production buildet, és ellenőrizd a v3 struktúrát.
@@ -24,7 +36,8 @@ routing nélkül, az éles Compose-éval azonos read-only, tmpfs, cap-drop és
 
 ## Hatékony végrehajtás
 
-- A végleges módosítás után egyetlen production build és staging image készüljön.
+- A stagingre jóváhagyott, végleges módosításcsomag után egyetlen production
+  build és staging image készüljön.
 - Siker esetén csak a commitot, image taget, OCI revisiont, health/read-only
   állapotot, HTTP státuszt és `X-Robots-Tag` értéket olvasd vissza.
 - `docker inspect` esetén formázott mezőket kérj, ne a teljes JSON-t. Teljes

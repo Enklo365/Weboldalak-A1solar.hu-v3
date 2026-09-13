@@ -14,6 +14,18 @@ tekinthető production deployt kiváltó eseménynek.
 A dátumozott HANDOFF- és QA-fájlok változatlan történeti állapotnaplók. Ha
 ellentmondás van, a tényleges Git-, GitHub- és futó staging-állapot az elsődleges.
 
+## Fejlesztési ritmus
+
+Kis vizuális módosítások először csak helyi preview-ban készülnek el, célzott
+böngészős ellenőrzéssel. Ilyenkor nincs automatikus build, commit, push vagy
+staging deploy. Több elfogadott változtatás egy munkacsomagba gyűjthető.
+
+Staging release csak külön „Mehet stagingre” utasításra indul. A staging
+jóváhagyása nem jelent engedélyt a `main` merge-re vagy a `.hu` production
+környezet módosítására; ehhez továbbra is külön „Mehet élesbe” jóváhagyás kell.
+Részletes szabályok: [`AGENTS.md`](AGENTS.md), deploy-runbook:
+[`docs/staging-deploy.md`](docs/staging-deploy.md).
+
 ## Technológia
 
 - Next.js 16 App Router, React 19, TypeScript, Tailwind 4

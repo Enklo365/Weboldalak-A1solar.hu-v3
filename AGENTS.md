@@ -24,8 +24,12 @@ Az a1solar.hu (WordPress + Elementor) migrációja Next.js-re.
 - Staging: `https://teszta1solar.homokozo.uk/` — soha nem production.
 - Production: `https://a1solar.hu/` és `https://www.a1solar.hu/` — kizárólag
   külön emberi „Mehet élesbe” jóváhagyással módosítható.
-- Kötelező folyamat: fejlesztési ág → staging → ellenőrzés → emberi jóváhagyás
-  → `main` → külön production deploy.
+- Kötelező release-folyamat: fejlesztési ág → helyi ellenőrzés → külön
+  „Mehet stagingre” jóváhagyás → staging → ellenőrzés → emberi „Mehet élesbe”
+  jóváhagyás → `main` → külön production deploy.
+- A helyi elfogadás, például a „jó” visszajelzés nem jelent staging- vagy
+  production-deploy engedélyt. A két környezethez külön, egyértelmű jóváhagyás
+  szükséges.
 - A `main` mindig release-kész, jóváhagyott állapot; közvetlenül nem fejlesztünk
   rajta. A `main` merge és a production deploy két külön döntési pont.
 - Dokumentáció alapján soha ne feltételezd, hogy a `main` merge automatikusan
@@ -116,38 +120,69 @@ vizuális minőség is követelmény.
 ## Hatékony munkamód
 
 - Egy feladat egy jól körülhatárolt módosítás legyen.
+- Kis vizuális módosításnál az alapfolyamat: módosítás → helyi preview → az
+  érintett rész célzott böngészős ellenőrzése és legfeljebb 1–2 releváns
+  screenshot → eredmény bemutatása → STOP. Ebben a gyors körben ne induljon
+  production build, commit, push, PR-frissítés vagy staging deploy.
+- A felhasználói finomításokat ugyanabban a helyi preview-körben kell
+  összegyűjteni. Az elfogadott helyi eredmény után egyértelműen jelentsd:
+  „helyben kész; még nincs commit, push vagy staging deploy”.
+- Staging deploy kizárólag külön, kifejezett „Mehet stagingre” vagy azzal
+  egyenértékű utasításra indulhat. Több elfogadott vizuális módosítást lehetőleg
+  egy buildbe, commitba és staging release-be vonj össze.
+- A staging jóváhagyása után futtasd a szükséges production buildet, készíts
+  commitot és push/PR-frissítést, majd használd a dokumentált staging-folyamatot.
+  A staging jóváhagyása továbbra sem engedély `main` merge-re vagy production
+  deployra.
 - Új munkamenetben az állapotot az `AGENTS.md`, a `docs/HANDOFF.md`, a Git és a
   tényleges staging alapján állapítsd meg; ne dolgozd fel újra a teljes korábbi
   beszélgetést.
+- Új munkamenetet természetes mérföldkőnél érdemes kezdeni, nem minden apró
+  igazítás után. Egy koherens vizuális munkacsomag maradjon egy munkamenetben;
+  a következő témát vagy külön staging/release feladatot a `HANDOFF.md` alapján
+  új munkamenet folytathatja.
+- Rutinfeladatnál ne elemezd újra a teljes repositoryt. Csak a kötelező
+  szabályokat, az érintett komponenst vagy stílust és a releváns diffet olvasd.
 - Normál esetben csak rövid, összesített parancskimenetet olvass vissza. Teljes
   build-, Docker-, böngésző- vagy egyéb logot csak hiba esetén vizsgálj.
 - A munka elején határozd meg a szükséges minimális bizonyítékot, és az
   összetartozó read-only ellenőrzéseket lehetőleg vond össze. Ne olvass be
   irreleváns fájlokat vagy teljes naplókat megelőző jelleggel.
-- Közös komponens módosításakor programozottan ellenőrizheted az összes érintett
-  oldalt, vizuálisan azonban csak reprezentatív oldalakat ellenőrizz.
-- A vizuális QA minimuma: főoldal, egy hosszú szolgáltatási oldal, egy
-  technológiai oldal, valamint mobil- és tabletnézet.
+- A QA mindig legyen változásarányos. Lokális spacing-, szín- vagy
+  igazításmódosításnál elég az érintett nézet és a releváns mobil/desktop
+  viewport; a nem érintett route-okat, redirecteket, sitemapet és teljes
+  oldalkészletet ne ellenőrizd újra.
+- Közös vagy globális komponens módosításakor programozottan ellenőrizheted az
+  összes érintett oldalt, vizuálisan azonban csak 3–5 reprezentatív oldalt és a
+  releváns desktop-, tablet- és mobilnézeteket ellenőrizd.
+- Teljes QA csak valódi release-mérföldkőnél, széles hatású architekturális vagy
+  routing-változásnál, illetve production jóváhagyás előtti indokolt kapunál
+  fusson.
 - Vizuális ellenőrzéshez célzott nézetet vagy elemet vizsgálj; teljes oldalas
   képernyőképet csak akkor készíts, ha az egész oldal ritmusa a feladat tárgya.
 - Ne ismételj meg ellenőrzést, ha az előző eredmény még érvényes.
-- A production buildet a módosítások véglegesítése után egyszer futtasd. Sikeres,
-  változatlan buildet vagy QA-t ne futtass újra; hiba esetén először csak a
-  releváns naplórészletet vizsgáld.
-- Staging deploynál a meglévő folyamatot használd. Pusztán token- vagy
-  időmegtakarításért ne építs új CI-t, deploy-rendszert vagy automatizmust.
+- A production buildet az elfogadott módosításcsomag véglegesítése után,
+  commit előtt egyszer futtasd. Gyors helyi vizuális iterációk között ne
+  buildelj. Sikeres, változatlan buildet vagy QA-t ne futtass újra; hiba esetén
+  először csak a releváns naplórészletet vizsgáld.
+- Kizárólag dokumentációt érintő commit előtt production build nem szükséges;
+  ilyenkor a Markdown-diff és a formázás célzott ellenőrzése elegendő.
+- Staging deploynál, a külön jóváhagyás után, a meglévő folyamatot használd.
+  Pusztán token- vagy időmegtakarításért ne építs új CI-t, deploy-rendszert vagy
+  automatizmust.
 - Hosszú külső folyamat állapotát egyszer ellenőrizd. Ha még fut és nincs más
   érdemi teendő, jelentsd röviden az állapotot és állj meg.
 - Köztes felhasználói üzenetet csak érdemi mérföldkőnél vagy problémánál adj.
-- A végén röviden jelentsd a commit, build, staging és QA állapotát, valamint az
-  esetleges hibát. Ha nincs hiba, ne adj hosszú technikai naplót.
+- A végén röviden és egyértelműen jelentsd, hogy a módosítás csak helyben van-e,
+  illetve történt-e build, commit, push, staging vagy QA. Ha nincs hiba, ne adj
+  hosszú technikai naplót.
 
 ## Parancsok
 
 ```
 yarn install
 yarn dev        # http://localhost:3000
-yarn build      # ezt MINDIG futtasd le, mielőtt commitolsz
+yarn build      # alkalmazáskód commitja előtt kötelező; docs-only commitnál nem
 npx tsc --noEmit
 ```
 

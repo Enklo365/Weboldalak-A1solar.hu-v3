@@ -12,7 +12,7 @@ korábbi beszélgetést ne dolgozd fel újra. Eltérés esetén mindig a tényle
 
 ## Aktuális állapot
 
-- Fejlesztési ág: `codex/fix-footer-spacing`
+- Fejlesztési ág: `codex/feature-workflow-streamlining`
 - Utolsó alkalmazáskód-commit: `ddd766393a3f62d83e4ebb491cfec476676368bf`
 - Staging: [https://teszta1solar.homokozo.uk/](https://teszta1solar.homokozo.uk/)
 - Staging image: `a1solar-nextjs:v3-ddd7663`
@@ -20,6 +20,9 @@ korábbi beszélgetést ne dolgozd fel újra. Eltérés esetén mindig a tényle
 - Staging állapot: `healthy`, read-only, `noindex, nofollow, noarchive`
 - `main`: `c3e41bac88e381939720aa09f4309c604852b464`
 - Production (`a1solar.hu`, `www.a1solar.hu`): nem módosult.
+- A projekt új alapértelmezett munkamódja: kis vizuális változtatás először
+  csak helyi preview és célzott QA; staging kizárólag külön „Mehet stagingre”
+  utasításra indul.
 - A lezáró dokumentációs commit miatt a fejlesztési ág HEAD-je a fenti alkalmazáskód
   commit dokumentációs leszármazottja lesz; az aktuális SHA-t Gitből olvasd ki.
 
@@ -44,12 +47,16 @@ korábbi beszélgetést ne dolgozd fel újra. Eltérés esetén mindig a tényle
 
 - A felhasználó a telefonos megjelenést később, kézzel ellenőrzi.
 - További módosítás csak új felhasználói utasításra indulhat.
+- A változatlan nagy médiacsomag staging feltöltésének gyorsítását külön
+  feladatban először csak elemezni kell, 2–3 KISS megoldási lehetőséggel;
+  implementációra ez önmagában nem ad engedélyt.
 - Merge és production deploy nincs jóváhagyva.
 
 ## Hatékony folytatás
 
-Egy feladat egy körülhatárolt módosítás legyen. Csak releváns fájlokat és rövid,
-összesített kimeneteket olvass vissza. A végleges változtatás után egyszer fusson
-build; vizuálisan csak reprezentatív oldalakat és nézeteket ellenőrizz. Teljes
+Egy feladat egy körülhatárolt módosítás legyen. Kis vizuális kérésnél helyi
+preview és célzott nézetellenőrzés után állj meg, és jelezd, hogy még nem történt
+build, commit, push vagy staging. Build, commit/push és staging release csak a
+külön jóváhagyott munkacsomagnál induljon. A QA legyen változásarányos; teljes
 log vagy ismételt ellenőrzés csak konkrét hiba vagy bizonytalanság esetén kell.
 A részletes szabályok az `AGENTS.md` „Hatékony munkamód” részében találhatók.
