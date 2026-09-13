@@ -12,19 +12,22 @@ korábbi beszélgetést ne dolgozd fel újra. Eltérés esetén mindig a tényle
 
 ## Aktuális állapot
 
-- Fejlesztési ág: `codex/feature-workflow-streamlining`
-- Utolsó alkalmazáskód-commit: `ddd766393a3f62d83e4ebb491cfec476676368bf`
+- Fejlesztési ág: `codex/feature-image-overlap`
+- Utolsó alkalmazáskód-commit: `8f9035322e91d3a06569d8ffd34777687ecee4a6`
 - Staging: [https://teszta1solar.homokozo.uk/](https://teszta1solar.homokozo.uk/)
-- Staging image: `a1solar-nextjs:v3-ddd7663`
-- Staging OCI revision: `ddd766393a3f62d83e4ebb491cfec476676368bf`
+- Staging image: `a1solar-nextjs:v3-8f90353`
+- Staging OCI revision: `8f9035322e91d3a06569d8ffd34777687ecee4a6`
 - Staging állapot: `healthy`, read-only, `noindex, nofollow, noarchive`
 - `main`: `c3e41bac88e381939720aa09f4309c604852b464`
 - Production (`a1solar.hu`, `www.a1solar.hu`): nem módosult.
 - A projekt új alapértelmezett munkamódja: kis vizuális változtatás először
   csak helyi preview és célzott QA; staging kizárólag külön „Mehet stagingre”
   utasításra indul.
-- A lezáró dokumentációs commit miatt a fejlesztési ág HEAD-je a fenti alkalmazáskód
-  commit dokumentációs leszármazottja lesz; az aktuális SHA-t Gitből olvasd ki.
+- A Draft PR #1 ága (`codex/feature-site-v3`) és az önálló
+  `codex/feature-image-overlap` ág is tartalmazza a jóváhagyott sabloncommitot.
+- A lezáró dokumentációs commit miatt a fejlesztési ág HEAD-je a fenti
+  alkalmazáskód-commit dokumentációs leszármazottja lesz; az aktuális SHA-t
+  Gitből olvasd ki.
 
 ## Ma elkészült
 
@@ -42,15 +45,30 @@ korábbi beszélgetést ne dolgozd fel újra. Eltérés esetén mindig a tényle
   túlcsordulás-ellenőrzés sikeres.
 - A footer-térközt 390, 820 és 1440 px szélességen a főoldalon, hosszú
   szolgáltatási oldalon, technológiai oldalon és a cikklistán ellenőriztük.
+- Elkészült és a közös `SectionKit` exportjain keresztül újrahasználható az
+  `ImageOverlap` négy sablonja: jobb/bal elrendezés, piros/grafit tónus.
+- Elkészült a `FeatureTiles` négy sablonja: Equal/Mosaic elrendezés,
+  piros/grafit tónus.
+- Elkészült a grafit `DarkFeature`, az ötképes `ProjectMosaic` és a minimalista
+  grafit `BigStats` sablon.
+- Az összes új sablon élő mintával szerepel a `/komponensek/` katalógusban.
+- A sabloncsomag production buildje sikeres volt: 346 statikus útvonal.
+- Helyi reszponzív QA készült 390, 768, 820, 1024 és 1440 px-en; túlcsordulás
+  nem volt. A staging konténer `healthy`, read-only, a katalógusban mind az öt
+  új sabloncsalád ellenőrzötten jelen van.
 
 ## Nyitott ellenőrzés és következő lépés
 
 - A felhasználó a telefonos megjelenést később, kézzel ellenőrzi.
-- További módosítás csak új felhasználói utasításra indulhat.
+- A felhasználó az összes új sablont jóváhagyta; azok későbbi natív oldalakba
+  szabadon beilleszthetők és tovább finomíthatók.
+- Következő lépésként a felhasználó a staging `/komponensek/` katalógusát
+  ellenőrizheti, vagy megadhatja, mely oldalakon használjuk először a sablonokat.
 - A változatlan nagy médiacsomag staging feltöltésének gyorsítását külön
   feladatban először csak elemezni kell, 2–3 KISS megoldási lehetőséggel;
   implementációra ez önmagában nem ad engedélyt.
-- Merge és production deploy nincs jóváhagyva.
+- Merge és production deploy nincs jóváhagyva; a valódi `.hu` production
+  környezet változatlan.
 
 ## Hatékony folytatás
 
