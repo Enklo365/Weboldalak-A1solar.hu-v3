@@ -1,21 +1,25 @@
+import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, BatteryCharging, Building2, Cpu, DraftingCompass, FileCheck2, Gauge, HardHat, Play, ShieldCheck, SunMedium, Wrench } from "lucide-react";
+import { ArrowRight, BatteryCharging, Building2, Cpu, DraftingCompass, FileCheck2, Gauge, HardHat, ShieldCheck, SunMedium, Wrench } from "lucide-react";
 import { Fragment } from "react";
-import { FramedHero, type FramedHeroMedia } from "@/components/hero/FramedHero";
+import { FramedHeroBadges, type FramedHeroMedia } from "@/components/hero/FramedHero";
 import {
   Bullets,
   BigStats,
+  BrandBadges,
   CtaButton,
   DarkFeature,
   Eyebrow,
   FactorGrid,
-  FaqList,
   FeatureGrid,
   FeatureTiles,
   FeatureTilesEqualRed,
   ImageOverlap,
+  ImageOverlapLeftFloatingGraphite,
   ImageOverlapLeftGraphite,
+  ImageOverlapRightFloatingGraphite,
   ProjectMosaic,
+  Section,
   StepTimeline,
   StatementSection,
   Typography,
@@ -27,6 +31,9 @@ import { Breadcrumbs } from "@/components/v3/Breadcrumbs";
 import { EditorialSlot } from "@/components/v3/EditorialSlot";
 import { hasV3HeroSupplement, hasV3Supplement, V3HeroSupplement, V3Supplement } from "@/components/v3/V3Supplement";
 import { getV3HeroMedia } from "@/lib/v3-hero-media";
+import { getV3SectionMedia } from "@/lib/v3-curated-media";
+import { MEDIA_OUTLETS } from "@/lib/media-outlets";
+import { RESIDENTIAL_STORAGE_PROJECTS } from "@/lib/residential-storage-projects";
 import { getV3Layout, type CopyItem, type CopyPage, type CopySection } from "@/lib/v3-pages";
 
 type ParagraphFlow = "wide" | "column" | "preserve";
@@ -106,23 +113,7 @@ const resolveHeroMedia = (item: CopyItem | undefined, path: string): FramedHeroM
   return { type: isVideo ? "video" : "image", src, poster, position };
 };
 
-const HOME_SECTION_IMAGES: Record<string, { src: string; alt: string }> = {
-  "meglevo-napelem-bovitese-energiataroloval": {
-    src: "/wp-content/uploads/2025/08/7854.jpg",
-    alt: "Meglévő napelemes rendszer bővítése energiatárolóval",
-  },
-};
-
 type VisualFamily = "home" | "about" | "residential" | "commercial" | "industrial" | "references" | "technology" | "articles" | "contact";
-
-const VISUAL_IMAGES = [
-  "/wp-content/uploads/2022/08/szuha-napelem-scaled.jpg",
-  "/wp-content/uploads/2022/08/Esztergom-napelem-scaled.jpg",
-  "/wp-content/uploads/2022/08/budapest-3-napelem.jpg",
-  "/wp-content/uploads/2022/08/Pecel-napelem-scaled.jpg",
-  "/wp-content/uploads/2022/08/Budapest-2-napelem.jpg",
-  "/wp-content/uploads/2022/08/Erd-napelem.jpg",
-];
 
 const MEDIA_MENTIONS = [
   {
@@ -211,11 +202,9 @@ const visualFamilyFor = (page: CopyPage): VisualFamily => {
   return "contact";
 };
 
-const sectionImageFor = (page: CopyPage, sectionIndex: number, mediaIndex = 0) => {
-  const hero = getV3HeroMedia(page.url);
-  const heroImage = hero.type === "image" ? hero.src : hero.poster;
-  const images = heroImage ? [heroImage, ...VISUAL_IMAGES] : VISUAL_IMAGES;
-  return images[(page.number + sectionIndex + mediaIndex) % images.length];
+const sectionImageFor = (page: CopyPage, sectionId: string, mediaIndex = 0) => {
+  const media = getV3SectionMedia(page.url, sectionId, mediaIndex);
+  return media.type === "video" ? media.poster ?? getV3HeroMedia(page.url).src : media.src;
 };
 
 const mediaBrief = (item: Extract<CopyItem, { kind: "editorial" }>) => (
@@ -229,16 +218,22 @@ const mosaicItemFor = (
   page: CopyPage,
   section: CopySection,
   item: Extract<CopyItem, { kind: "editorial" }>,
-  sectionIndex: number,
   mediaIndex: number,
 ): ProjectMosaicItem => {
   const lines = item.details.split(/\r?\n/).filter(Boolean);
+  const media = getV3SectionMedia(page.url, section.id, mediaIndex);
+  const aboutImageTitle = page.number === 2
+    ? lines.find((line) => /^Képcím:/i.test(line))?.replace(/^Képcím:\s*/i, "")
+        .replace("[HELYSZÍN]", "Zanzibár")
+    : undefined;
   return {
-    image: sectionImageFor(page, sectionIndex, mediaIndex),
-    imageAlt: `${page.h1} – ${section.title}`,
-    location: `${item.mediaType}${item.placement ? ` · ${item.placement}` : ""}`,
-    title: lines[0] || section.title,
-    meta: lines.slice(1).join(" "),
+    image: media.type === "video" ? media.poster ?? sectionImageFor(page, section.id, mediaIndex) : media.src,
+    video: media.type === "video" && item.mediaType.toUpperCase().includes("VIDEÓ") ? media.src : undefined,
+    imageAlt: media.alt,
+    imagePosition: media.position,
+    location: page.number === 2 ? "" : `${item.mediaType}${item.placement ? ` · ${item.placement}` : ""}`,
+    title: aboutImageTitle || lines[0] || section.title,
+    meta: page.number === 2 ? undefined : lines.slice(1).join(" "),
   };
 };
 
@@ -297,8 +292,10 @@ const V3Section = ({ page, section, index, layout }: { page: CopyPage; section: 
     : section.items.filter((item): item is Extract<CopyItem, { kind: "editorial" }> => item.kind === "editorial");
   const textItems = section.items.filter((item) => item.kind !== "editorial");
   const number = String(index + 1).padStart(2, "0");
-  const image = HOME_SECTION_IMAGES[section.id]?.src ?? sectionImageFor(page, index);
-  const imageAlt = HOME_SECTION_IMAGES[section.id]?.alt ?? `${page.h1} – ${section.title}`;
+  const sectionMedia = getV3SectionMedia(page.url, section.id);
+  const image = sectionMedia.type === "video" ? sectionMedia.poster ?? getV3HeroMedia(page.url).src : sectionMedia.src;
+  const imageAlt = sectionMedia.alt;
+  const sectionVideo = sectionMedia.type === "video" ? sectionMedia.src : undefined;
   const tone = family === "industrial" || family === "technology" || family === "commercial" ? "graphite" : "red";
   const supplement = <V3Supplement pageNumber={page.number} sectionId={section.id} />;
 
@@ -356,6 +353,46 @@ const V3Section = ({ page, section, index, layout }: { page: CopyPage; section: 
       );
     }
 
+    if (section.id === "hol-jelent-meg-az-a1-solar") {
+      return (
+        <section id={section.id} className="v3-section v3-media-outlets">
+          <div className="v3-section__heading">
+            <span className="v3-section__number">02</span>
+            <h2>{section.title}</h2>
+          </div>
+          <div className="v3-media-outlets__panel">
+            {MEDIA_OUTLETS.map((outlet) => (
+              <article className="v3-media-outlet" key={outlet.name}>
+                <a
+                  className="v3-media-outlet__brand"
+                  href={outlet.articles[0].href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${outlet.name} – legfrissebb megjelenés`}
+                >
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={outlet.logo} alt={`${outlet.name} logó`} />
+                  <strong>{outlet.name}</strong>
+                  <ArrowRight size={18} aria-hidden="true" />
+                </a>
+                <details className="v3-media-outlet__details">
+                  <summary>{outlet.articles.length > 1 ? `${outlet.articles.length} megjelenés` : "Cikk megnyitása"}</summary>
+                  <div className="v3-media-outlet__articles">
+                    {outlet.articles.map((article) => (
+                      <a href={article.href} target="_blank" rel="noopener noreferrer" key={`${article.date}-${article.title}`}>
+                        <span>{article.date}</span>
+                        <strong>{article.title}</strong>
+                      </a>
+                    ))}
+                  </div>
+                </details>
+              </article>
+            ))}
+          </div>
+        </section>
+      );
+    }
+
     if (section.id === "fo-szakmai-temaink-a-sajtoban") {
       const topics: { title: string; text: string }[] = [];
       for (const item of section.items) {
@@ -386,25 +423,374 @@ const V3Section = ({ page, section, index, layout }: { page: CopyPage; section: 
             <h2>{section.title}</h2>
             <RenderItems items={textItems} paragraphFlow="wide" />
           </div>
-          <div className="v3-media-archive">
-            <h3>Összes médiamegjelenés</h3>
-            <FaqList
-              items={MEDIA_ARTICLES.map((article) => ({
-                q: `${article.outlet} – ${article.title}`,
-                a: (
-                  <>
-                    <p>{article.intro}</p>
-                    <a href={article.href} target="_blank" rel="noopener noreferrer">
-                      Cikk megnyitása <ArrowRight size={15} aria-hidden="true" />
-                    </a>
-                  </>
-                ),
-              }))}
-            />
+        </section>
+      );
+    }
+  }
+
+  if (page.number === 4) {
+    if (section.id === "nem-er-veget-a-kapcsolat-a-telepitessel") {
+      const editorialIndex = section.items.findIndex((item) => item.kind === "editorial");
+      const leadItems = section.items.slice(0, editorialIndex).filter((item) => item.kind !== "editorial");
+      const helpItems = section.items.slice(editorialIndex + 1).filter((item) => item.kind !== "editorial");
+      const helpTitle = helpItems[0]?.kind === "paragraph" ? helpItems[0].text : "Miben segít az A1 Solar szerviz?";
+      const helpBody = helpItems[0]?.kind === "paragraph" ? helpItems.slice(1) : helpItems;
+
+      return (
+        <section id={section.id} className="v3-section v3-section--overlap v3-service-intro">
+          <ImageOverlap
+            image={image}
+            imageAlt={imageAlt}
+            imagePosition={sectionMedia.position}
+            side="right"
+            tone="graphite"
+            continuation={(
+              <div className="v3-service-intro__help">
+                <h3>{helpTitle}</h3>
+                <RenderItems items={helpBody} paragraphFlow="wide" />
+              </div>
+            )}
+          >
+            <div className="v3-section__copy">
+              <span className="v3-section__number">{number}</span>
+              <h2>{section.title}</h2>
+              <RenderItems items={leadItems} />
+            </div>
+          </ImageOverlap>
+        </section>
+      );
+    }
+
+    if (section.id === "igy-tortenik-a-szervizbejelentes") {
+      const paragraphs = section.items.filter((item) => item.kind === "paragraph");
+      const process = section.items.find((item) => item.kind === "editorial" && item.mediaType === "GRAFIKA");
+
+      return (
+        <section id={section.id} className="v3-section v3-section--overlap v3-service-process">
+          <ImageOverlapLeftFloatingGraphite
+            image={image}
+            imageAlt={imageAlt}
+            imagePosition={sectionMedia.position}
+          >
+            <div className="v3-section__copy">
+              <span className="v3-section__number">{number}</span>
+              <h2>{section.title}</h2>
+              <RenderItems items={paragraphs} />
+              {process?.kind === "editorial" ? <p className="v3-service-process__steps">{process.details}</p> : null}
+            </div>
+          </ImageOverlapLeftFloatingGraphite>
+        </section>
+      );
+    }
+
+    if (section.id === "kozvetlen-gyartoi-hatter") {
+      return (
+        <section id={section.id} className="v3-section v3-service-manufacturers">
+          <div className="v3-section__heading">
+            <span className="v3-section__number">{number}</span>
+            <h2>{section.title}</h2>
+            <RenderItems items={textItems} paragraphFlow="wide" />
           </div>
         </section>
       );
     }
+
+    if (section.id === "stabil-ceg-kell-egy-hosszu-elettartamu-rendszer-moge") {
+      return (
+        <section id={section.id} className="v3-section v3-service-stability">
+          <div className="v3-section__heading">
+            <span className="v3-section__number">{number}</span>
+            <h2>{section.title}</h2>
+            <RenderItems items={textItems} paragraphFlow="wide" />
+          </div>
+          <BrandBadges />
+        </section>
+      );
+    }
+
+    if (section.id === "szervizbejelentes") {
+      const promptSection = page.sections.find((candidate) => candidate.id === "ha-a1-solar-altal-telepitett-rendszerrel-kapcsolatban-muszaki-problemat-tapasztalsz-irj");
+      const emailSection = page.sections.find((candidate) => candidate.id === "szerviz-a1solar-hu");
+      const serviceText = emailSection?.items.find((item) => item.kind === "paragraph");
+      const serviceCta = emailSection?.items.find((item) => item.kind === "cta");
+
+      return (
+        <div className="v3-section v3-section--dark v3-service-contact">
+          <DarkFeature id={section.id} eyebrow={number} title={section.title}>
+            <h3>{promptSection?.title}</h3>
+            <a className="v3-service-contact__email" href="mailto:szerviz@a1solar.hu">szerviz@a1solar.hu</a>
+            {serviceText?.kind === "paragraph" ? <p>{serviceText.text}</p> : null}
+            <a className="btn btn-primary" href="mailto:szerviz@a1solar.hu">
+              {serviceCta?.kind === "cta" ? serviceCta.label : "Szervizbejelentést küldök"}
+              <ArrowRight size={17} />
+            </a>
+          </DarkFeature>
+        </div>
+      );
+    }
+
+    if (
+      section.id === "ha-a1-solar-altal-telepitett-rendszerrel-kapcsolatban-muszaki-problemat-tapasztalsz-irj"
+      || section.id === "szerviz-a1solar-hu"
+    ) return null;
+  }
+
+  if (page.number === 6) {
+    if (section.id === "nem-kulon-napelemet-es-akkumulatort-valasztunk-rendszert-tervezunk") {
+      return (
+        <section id={section.id} className="v3-section v3-section--overlap v3-residential-design">
+          <ImageOverlapRightFloatingGraphite
+            image={sectionImageFor(page, section.id)}
+            imageAlt={sectionMedia.alt}
+            imagePosition={sectionMedia.position}
+          >
+            <div className="v3-section__copy">
+              <span className="v3-section__number">{number}</span>
+              <h2>{section.title}</h2>
+              <RenderItems items={textItems} />
+            </div>
+          </ImageOverlapRightFloatingGraphite>
+          <figure className="v3-residential-design__graphic">
+            <Image
+              src="/media/v3/images/residential-storage-design-process.webp"
+              alt="Az A1 Solar személyre szabott napelem, inverter, akkumulátor, fogyasztás és backup tervezési folyamata"
+              width={1672}
+              height={941}
+              sizes="(max-width: 1280px) 100vw, 1200px"
+            />
+          </figure>
+        </section>
+      );
+    }
+
+    if (section.id === "mit-ad-az-energiatarolo-a-napelemes-rendszerhez") {
+      const batterySection = page.sections.find((candidate) => candidate.id === "mekkora-akkumulator-kell");
+      return (
+        <section className="v3-section v3-residential-duo" aria-label="Az energiatároló előnyei és méretezése">
+          <div className="v3-residential-duo__item">
+            <Section id={section.id} eyebrow={number} title={section.title}>
+              <RenderItems items={section.items} paragraphFlow="wide" />
+            </Section>
+          </div>
+          {batterySection ? (
+            <div className="v3-residential-duo__item">
+              <Section id={batterySection.id} eyebrow="03" title={batterySection.title}>
+                <RenderItems items={batterySection.items} paragraphFlow="wide" />
+              </Section>
+            </div>
+          ) : null}
+        </section>
+      );
+    }
+
+    if (section.id === "mekkora-akkumulator-kell") return null;
+
+    if (section.id === "deye-huawei-sigenergy-es-foxess") {
+      const brands = [
+        { name: "Deye", href: "/technologiak/deye/", logo: "/wp-content/uploads/brands/deye.png" },
+        { name: "Huawei", href: "/technologiak/huawei/", logo: "/wp-content/uploads/brands/huawei.webp" },
+        { name: "Sigenergy", href: "/technologiak/sigenergy/", logo: "/wp-content/uploads/brands/sigenergy.svg" },
+        { name: "FoxESS", href: "/technologiak/foxess/", logo: "/wp-content/uploads/brands/foxess.png" },
+      ];
+
+      return (
+        <section id={section.id} className="v3-section v3-residential-brand-section">
+          <div className="v3-residential-brand-section__copy">
+            <Section eyebrow={number} title={section.title}>
+              <RenderItems items={section.items.filter((item) => item.kind !== "linkList")} paragraphFlow="wide" />
+            </Section>
+          </div>
+          <div className="v3-residential-brands" aria-label="Lakossági energiatároló technológiai partnerek">
+            {brands.map((brand) => (
+              <Link className="v3-residential-brand" href={brand.href} key={brand.name} aria-label={`${brand.name} technológiai oldal`}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={brand.logo} alt={`${brand.name} logó`} />
+                <ArrowRight size={18} aria-hidden="true" />
+              </Link>
+            ))}
+          </div>
+        </section>
+      );
+    }
+
+    if (section.id === "a-rendszer-atadasa-utan-is-szamithatsz-rank") {
+      return (
+        <section className="v3-section v3-residential-text-section">
+          <Section id={section.id} eyebrow={number} title={section.title}>
+            <RenderItems items={section.items} paragraphFlow="wide" />
+          </Section>
+        </section>
+      );
+    }
+
+    if (section.id === "lakossagi-referenciak-nem-csak-igeretek") {
+      const referenceLinks = section.items.filter((item) => item.kind === "linkList");
+      return (
+        <section id={section.id} className="v3-section v3-residential-references">
+          <div className="v3-section__heading">
+            <span className="v3-section__number">{number}</span>
+            <h2>{section.title}</h2>
+            <p>Valós A1 Solar projektek a telepített rendszer legfontosabb műszaki adataival.</p>
+          </div>
+          <div className="v3-residential-references__grid">
+            {RESIDENTIAL_STORAGE_PROJECTS.map((project) => (
+              <article className="v3-residential-reference" key={project.location}>
+                <div className={`v3-residential-reference__media${project.images.length > 1 ? " v3-residential-reference__media--pair" : ""}`}>
+                  {project.images.map((projectImage) => (
+                    <div className="v3-residential-reference__image" key={projectImage.src}>
+                      <Image
+                        src={projectImage.src}
+                        alt={projectImage.alt}
+                        fill
+                        sizes="(max-width: 720px) 100vw, (max-width: 1180px) 50vw, 33vw"
+                        style={{ objectFit: "cover", objectPosition: projectImage.position ?? "center" }}
+                      />
+                    </div>
+                  ))}
+                </div>
+                <div className="v3-residential-reference__body">
+                  <span className="v3-residential-reference__location">{project.location}</span>
+                  <h3>A1 Solar napelem + energiatároló referencia – {project.location}</h3>
+                  <dl>
+                    <div><dt>Napelem</dt><dd>{project.solar}</dd></div>
+                    <div><dt>Inverter</dt><dd>{project.inverter}</dd></div>
+                    <div><dt>Akkumulátor</dt><dd>{project.battery}</dd></div>
+                    <div><dt>Backup</dt><dd>{project.backup}</dd></div>
+                    <div><dt>Projekt célja</dt><dd>{project.goal}</dd></div>
+                  </dl>
+                </div>
+              </article>
+            ))}
+          </div>
+          <RenderItems items={referenceLinks} />
+        </section>
+      );
+    }
+  }
+
+  if (page.number === 7) {
+    if (section.id === "nem-minden-napelemes-rendszert-ugyanugy-kell-boviteni") {
+      return (
+        <section className="v3-section v3-residential-text-section">
+          <Section id={section.id} eyebrow="01" title={section.title}>
+            <RenderItems items={section.items} paragraphFlow="wide" />
+          </Section>
+        </section>
+      );
+    }
+
+    if (section.id === "meglevo-hibrid-inverter-akkumulator") {
+      const inverterChange = page.sections.find((candidate) => candidate.id === "invertercsere-akkumulator");
+      const customSystem = page.sections.find((candidate) => candidate.id === "egyedi-rendszerkialakitas");
+      const featureText = (candidate: CopySection | undefined) => candidate?.items
+        .filter((item): item is Extract<CopyItem, { kind: "paragraph" }> => item.kind === "paragraph")
+        .map((item) => item.text)
+        .join(" ") ?? "";
+
+      return (
+        <section id={section.id} className="v3-section v3-retrofit-paths">
+          <div className="v3-section__heading">
+            <span className="v3-section__number">02</span>
+            <h2>Meglévő napelemes rendszer akkumulátoros bővítésének lehetséges útjai</h2>
+          </div>
+          <FeatureGrid
+            items={[
+              { title: "Meglévő inverter megtartása", text: featureText(section) },
+              { title: "Invertercsere", text: featureText(inverterChange) },
+              { title: "Egyedi kialakítás", text: featureText(customSystem) },
+            ]}
+          />
+        </section>
+      );
+    }
+
+    if (section.id === "invertercsere-akkumulator" || section.id === "egyedi-rendszerkialakitas") return null;
+
+    if (section.id === "backup-is-kialakithato") {
+      const paragraphs = section.items.filter((item): item is Extract<CopyItem, { kind: "paragraph" }> => item.kind === "paragraph");
+      const backupText = paragraphs.slice(0, 2).map((item) => item.text).join(" ");
+      const sizingText = paragraphs.slice(3).map((item) => item.text).join(" ");
+
+      return (
+        <section id={section.id} className="v3-section v3-retrofit-backup">
+          <div className="v3-section__heading">
+            <span className="v3-section__number">03</span>
+            <h2>{section.title}</h2>
+          </div>
+          <FeatureGrid
+            items={[
+              { title: "Tartalék energiaellátás", text: backupText },
+              { title: paragraphs[2]?.text ?? "Mekkora akkumulátort érdemes telepíteni?", text: sizingText },
+            ]}
+          />
+          <div className="v3-retrofit-backup__cta">
+            <CtaButton href="/lakossagi/backup-aramszuneti-megoldasok/">Backup megoldások</CtaButton>
+          </div>
+        </section>
+      );
+    }
+
+    if (section.id === "valodi-bovitesi-referenciak") {
+      const references = [
+        {
+          title: "Meglévő inverter megtartása",
+          project: RESIDENTIAL_STORAGE_PROJECTS[7],
+          image: RESIDENTIAL_STORAGE_PROJECTS[7].images[1],
+        },
+        {
+          title: "Invertercsere + akkumulátor",
+          project: RESIDENTIAL_STORAGE_PROJECTS[4],
+          image: RESIDENTIAL_STORAGE_PROJECTS[4].images[1],
+        },
+        {
+          title: "Más kivitelező rendszerének bővítése",
+          project: RESIDENTIAL_STORAGE_PROJECTS[11],
+          image: RESIDENTIAL_STORAGE_PROJECTS[11].images[0],
+        },
+      ];
+
+      return (
+        <section id={section.id} className="v3-section v3-retrofit-references">
+          <h2>{section.title}</h2>
+          <div className="v3-retrofit-references__grid">
+            {references.map(({ title, project, image: projectImage }) => (
+              <article className="v3-retrofit-reference" key={title}>
+                <div className="v3-retrofit-reference__image">
+                  <Image
+                    src={projectImage.src}
+                    alt={projectImage.alt}
+                    fill
+                    sizes="(max-width: 720px) 100vw, (max-width: 1180px) 50vw, 33vw"
+                    style={{ objectFit: "cover", objectPosition: projectImage.position ?? "center" }}
+                  />
+                </div>
+                <div className="v3-retrofit-reference__body">
+                  <span>{project.location}</span>
+                  <h3>{title}</h3>
+                  <p>{project.inverter} · {project.battery} akkumulátor</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+      );
+    }
+
+    if (
+      section.id === "meglevo-inverter-megtartasa-helyszin"
+      || section.id === "invertercsere-akkumulator-helyszin"
+      || section.id === "mas-kivitelezo-rendszerenek-bovitese-helyszin"
+    ) return null;
+  }
+
+  if ((page.number === 8 || page.number === 9) && editorials.length === 0) {
+    return (
+      <section className="v3-section v3-residential-text-section">
+        <Section id={section.id} eyebrow={number} title={section.title}>
+          <RenderItems items={section.items} paragraphFlow="wide" />
+        </Section>
+      </section>
+    );
   }
 
   if (page.number === 2) {
@@ -416,7 +802,7 @@ const V3Section = ({ page, section, index, layout }: { page: CopyPage; section: 
             <h2>{section.title}</h2>
             <RenderItems items={textItems} paragraphFlow="wide" />
           </div>
-          <ProjectMosaic items={editorials.map((item, mediaIndex) => mosaicItemFor(page, section, item, index, mediaIndex))} />
+          <ProjectMosaic items={editorials.map((item, mediaIndex) => mosaicItemFor(page, section, item, mediaIndex))} />
         </section>
       );
     }
@@ -428,12 +814,14 @@ const V3Section = ({ page, section, index, layout }: { page: CopyPage; section: 
             <span className="v3-section__number">{number}</span>
             <h2>{section.title}</h2>
             <RenderItems items={textItems} />
-            <div className="v3-about-timeline__video" data-video-embed-slot>
-              <span className="v3-about-timeline__play" aria-hidden="true"><Play size={24} fill="currentColor" /></span>
-              <div>
-                <strong>Videó beillesztési helye</strong>
-                <p>A mérföldkövekhez kapcsolódó videó ebben a blokkban jelenhet meg.</p>
-              </div>
+            <div className="v3-about-timeline__video">
+              <iframe
+                src="https://www.youtube-nocookie.com/embed/a-3vU7MlPTU?start=2&rel=0"
+                title="Az A1 Solar története és fontosabb mérföldkövei"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              />
             </div>
           </div>
           <StepTimeline
@@ -453,10 +841,19 @@ const V3Section = ({ page, section, index, layout }: { page: CopyPage; section: 
     }
 
     if (index === 2) {
+      const serviceLinks = section.items.find((item) => item.kind === "linkList");
+      const serviceTiles = serviceLinks?.kind === "linkList"
+        ? serviceLinks.links.map((link, tileIndex) => ({
+            icon: featureIcon(tileIndex),
+            title: link.label,
+            text: "",
+            href: link.href,
+          }))
+        : [];
       return (
         <div className="v3-section v3-section--dark v3-about-system">
-          <DarkFeature id={section.id} eyebrow={number} title={section.title}>
-            <RenderItems items={section.items} />
+          <DarkFeature id={section.id} eyebrow={number} title={section.title} items={serviceTiles} className="v3-about-system__services">
+            <RenderItems items={section.items.filter((item) => item.kind !== "linkList")} />
           </DarkFeature>
         </div>
       );
@@ -472,7 +869,7 @@ const V3Section = ({ page, section, index, layout }: { page: CopyPage; section: 
             <h2>{section.title}</h2>
             <RenderItems items={textItems} paragraphFlow="wide" />
           </div>
-          <ProjectMosaic items={imageEditorials.map((item, mediaIndex) => mosaicItemFor(page, section, item, index, mediaIndex))} />
+          <ProjectMosaic items={imageEditorials.map((item, mediaIndex) => mosaicItemFor(page, section, item, mediaIndex))} />
           <div className="v3-about-manufacturers__video">
             {videoEditorials.map((item) => <Fragment key={item.details}>{mediaBrief(item)}</Fragment>)}
           </div>
@@ -485,20 +882,20 @@ const V3Section = ({ page, section, index, layout }: { page: CopyPage; section: 
       const leadItems = section.items.slice(0, firstEditorialIndex).filter((item) => item.kind !== "editorial");
       const laterItems = section.items.slice(firstEditorialIndex + 1).filter((item) => item.kind !== "editorial" && item.kind !== "link");
       const laterEditorials = editorials.slice(1);
+      const serviceTitle = laterItems[0]?.kind === "paragraph" ? laterItems[0].text : "Nem csak telepítjük. Hosszú távon is mögötte állunk.";
+      const serviceBody = laterItems[0]?.kind === "paragraph" ? laterItems.slice(1) : laterItems;
       const continuation = (
-        <div className="v3-section__copy v3-section__copy--continuation">
+        <div className="v3-about-service-card">
           <Eyebrow><Link href="/rolunk/szerviz-es-garancia/">Szerviz és garancia</Link></Eyebrow>
-          <RenderItems items={laterItems} paragraphFlow="wide" />
-          {laterEditorials.length ? (
-            <ProjectMosaic items={laterEditorials.map((item, mediaIndex) => mosaicItemFor(page, section, item, index, mediaIndex + 1))} />
-          ) : null}
+          <h3>{serviceTitle}</h3>
+          <RenderItems items={serviceBody} paragraphFlow="wide" />
         </div>
       );
       return (
         <section id={section.id} className="v3-section v3-section--overlap v3-about-international">
           <ImageOverlapLeftGraphite
-            image={sectionImageFor(page, index)}
-            imageAlt={`${page.h1} – ${section.title}`}
+            image={sectionImageFor(page, section.id)}
+            imageAlt={sectionMedia.alt}
             continuation={continuation}
           >
             <div className="v3-section__copy">
@@ -507,6 +904,12 @@ const V3Section = ({ page, section, index, layout }: { page: CopyPage; section: 
               <RenderItems items={leadItems} />
             </div>
           </ImageOverlapLeftGraphite>
+          {laterEditorials.length ? (
+            <ProjectMosaic
+              className="v3-about-international__gallery"
+              items={laterEditorials.map((item, mediaIndex) => mosaicItemFor(page, section, item, mediaIndex + 1))}
+            />
+          ) : null}
         </section>
       );
     }
@@ -527,7 +930,7 @@ const V3Section = ({ page, section, index, layout }: { page: CopyPage; section: 
               { icon: <img src="/wp-content/uploads/brands/foxess.png" alt="FoxESS" />, title: "", text: "" },
             ]}
           >
-            <RenderItems items={section.items} />
+            <RenderItems items={section.items.filter((item) => item.kind !== "link" && item.kind !== "linkList")} />
             {supplement}
           </DarkFeature>
         </div>
@@ -536,13 +939,12 @@ const V3Section = ({ page, section, index, layout }: { page: CopyPage; section: 
 
     return (
       <section id={section.id} className="v3-section v3-section--overlap">
-        <ImageOverlap image={image} imageAlt={imageAlt} side={index % 2 ? "left" : "right"} tone="red">
+        <ImageOverlap image={image} imageAlt={imageAlt} video={sectionVideo} side={index % 2 ? "left" : "right"} tone="red">
           <div className="v3-section__copy">
             <span className="v3-section__number">{number}</span>
             <h2>{section.title}</h2>
             <RenderItems items={textItems} />
             {supplement}
-            {editorials[0] ? mediaBrief(editorials[0]) : null}
           </div>
         </ImageOverlap>
       </section>
@@ -558,7 +960,7 @@ const V3Section = ({ page, section, index, layout }: { page: CopyPage; section: 
           <RenderItems items={textItems} paragraphFlow="wide" />
           {supplement}
         </div>
-        <ProjectMosaic items={editorials.map((item, mediaIndex) => mosaicItemFor(page, section, item, index, mediaIndex))} />
+        <ProjectMosaic items={editorials.map((item, mediaIndex) => mosaicItemFor(page, section, item, mediaIndex))} />
       </section>
     );
   }
@@ -574,7 +976,7 @@ const V3Section = ({ page, section, index, layout }: { page: CopyPage; section: 
 
     return (
       <section id={section.id} className="v3-section v3-section--overlap">
-        <ImageOverlap image={image} imageAlt={imageAlt} side={index % 2 ? "left" : "right"} tone={tone} continuation={continuation}>
+        <ImageOverlap image={image} imageAlt={imageAlt} video={sectionVideo} side={index % 2 ? "left" : "right"} tone={tone} continuation={continuation}>
           <div className="v3-section__copy">
             <span className="v3-section__number">{number}</span>
             <h2>{section.title}</h2>
@@ -662,10 +1064,9 @@ export const CopydeckPage = ({ page }: { page: CopyPage }) => {
   return (
     <article className={`v3-page v3-page--${layout} v3-family--${visualFamilyFor(page)}`}>
       <header className="v3-hero">
-        <FramedHero
+        <FramedHeroBadges
           className="v3-hero__frame"
           media={heroMedia}
-          notch={page.number === 2 ? <img src="/images/brand/a1solar-badges.svg" alt="A1 Solar szakmai és pénzügyi minősítései" /> : undefined}
         >
           <div className="container v3-hero__inner">
             <Breadcrumbs value={page.breadcrumb} />
@@ -677,7 +1078,7 @@ export const CopydeckPage = ({ page }: { page: CopyPage }) => {
               </div>
             </div>
           </div>
-        </FramedHero>
+        </FramedHeroBadges>
       </header>
 
       <CopydeckBody page={page} />
@@ -784,7 +1185,14 @@ export const CopydeckBody = ({ page }: { page: CopyPage }) => {
           </div>
         </section>
       ) : null}
-      {page.number === 1 || page.number === 2 ? <GoogleReviews /> : null}
+      {[7, 8, 9].includes(page.number) ? (
+        <section className="v3-residential-proof" aria-label="A1 Solar számokban">
+          <div className="container">
+            <BigStats />
+          </div>
+        </section>
+      ) : null}
+      {page.number === 1 || page.number === 2 || [7, 8, 9].includes(page.number) ? <GoogleReviews /> : null}
     </>
   );
 };

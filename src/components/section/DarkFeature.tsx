@@ -5,6 +5,7 @@ export type DarkFeatureItem = {
   icon: ReactNode;
   title: string;
   text: string;
+  href?: string;
 };
 
 export type DarkFeatureProps = {
@@ -51,19 +52,26 @@ export const DarkFeature = ({
 
     {items.length ? (
       <div className="dark-feature__grid">
-        {items.map((item, index) => (
-          <article className={`dark-feature__item${!item.title && !item.text ? " dark-feature__item--brand" : ""}`} key={`${item.title}-${index}`}>
-            <div className="dark-feature__icon" aria-hidden="true">
-              {item.icon}
-            </div>
-            {item.title || item.text ? (
-              <div>
-                {item.title ? <h3>{item.title}</h3> : null}
-                {item.text ? <p>{item.text}</p> : null}
-              </div>
-            ) : null}
-          </article>
-        ))}
+        {items.map((item, index) => {
+          const className = `dark-feature__item${!item.title && !item.text ? " dark-feature__item--brand" : ""}`;
+          const content = (
+            <>
+              <div className="dark-feature__icon" aria-hidden="true">{item.icon}</div>
+              {item.title || item.text ? (
+                <div>
+                  {item.title ? <h3>{item.title}</h3> : null}
+                  {item.text ? <p>{item.text}</p> : null}
+                </div>
+              ) : null}
+            </>
+          );
+
+          return item.href ? (
+            <a className={className} href={item.href} key={`${item.title}-${index}`}>{content}</a>
+          ) : (
+            <article className={className} key={`${item.title}-${index}`}>{content}</article>
+          );
+        })}
       </div>
     ) : null}
   </section>

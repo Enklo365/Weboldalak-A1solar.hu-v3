@@ -4,6 +4,7 @@ import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { CookieConsent } from "@/components/CookieConsent";
+import { ScrollToTop } from "@/components/ScrollToTop";
 import { SITE } from "@/lib/site";
 
 const inter = Inter({
@@ -58,6 +59,7 @@ export default function RootLayout({
         <Header />
         <main>{children}</main>
         <Footer />
+        <ScrollToTop />
         <CookieConsent />
       </body>
     </html>

@@ -10,6 +10,7 @@ import { FramedHeroBadges } from "@/components/hero/FramedHero";
 import {
   Body,
   BigStats,
+  BrandBadges,
   BrandRow,
   Bullets,
   CheckList,
@@ -99,7 +100,7 @@ const FEATURE_TILE_ITEMS = [
 
 const COMPONENTS = [
   "Typography", "Eyebrow", "Body", "CtaButton", "Bullets", "CheckList", "TagList", "FactorGridCompact", "FeatureGrid",
-  "NumberedList", "StepTimeline", "InfoCard", "CompareCards", "InfoCallout", "BrandRow",
+  "NumberedList", "StepTimeline", "InfoCard", "CompareCards", "InfoCallout", "BrandRow", "BrandBadges",
   "FeatureTilesEqualRed", "FeatureTilesEqualGraphite", "FeatureTilesMosaicRed", "FeatureTilesMosaicGraphite",
   "DarkFeature",
   "ProjectMosaic",
@@ -428,10 +429,15 @@ const KomponensekPage = () => (
         <BrandRow
           items={[
             { name: "Deye", logo: "/wp-content/uploads/brands/deye.png" },
+            { name: "Huawei", logo: "/wp-content/uploads/brands/huawei.webp" },
             { name: "FoxESS", logo: "/wp-content/uploads/brands/foxess.png" },
             { name: "Sigenergy", logo: "/wp-content/uploads/brands/sigenergy.svg" },
           ]}
         />
+      </Demo>
+
+      <Demo name="BrandBadges" full>
+        <BrandBadges />
       </Demo>
 
       <Demo name="StatHighlight">
@@ -471,7 +477,7 @@ const KomponensekPage = () => (
       </Demo>
 
       <Demo name="Reveal">
-        <Reveal>
+        <Reveal animated={false}>
           <div style={{ background: "var(--surface-3)", borderRadius: "16px", padding: "24px" }}>
             <Body>Ez a doboz a Reveal wrapperben van — görgetéskor fade + felúszik. (Ha már látszik, lehet, hogy azonnal megjelent.)</Body>
           </div>
@@ -493,7 +499,7 @@ const KomponensekPage = () => (
 
       <Demo name="BackupLeadForm"><BackupLeadForm /></Demo>
 
-      <Demo name="ReferenceGallery" full><ReferenceGallery images={REF_IMAGES} /></Demo>
+      <Demo name="ReferenceGallery" full><ReferenceGallery images={REF_IMAGES} animated={false} /></Demo>
     </div>
 
     {/* Full-width hero components */}

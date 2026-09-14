@@ -4,6 +4,7 @@ import type { ReactNode } from "react";
 export type ImageOverlapProps = {
   image: string;
   imageAlt: string;
+  video?: string;
   children: ReactNode;
   /** Optional overflow copy rendered in a full-width box below the image. */
   continuation?: ReactNode;
@@ -23,6 +24,7 @@ export type ImageOverlapProps = {
 export const ImageOverlap = ({
   image,
   imageAlt,
+  video,
   children,
   continuation,
   side = "right",
@@ -32,13 +34,17 @@ export const ImageOverlap = ({
 }: ImageOverlapProps) => (
   <div className={`image-overlap image-overlap--${side} image-overlap--${tone}${className ? ` ${className}` : ""}`}>
     <div className="image-overlap__media">
-      <Image
-        src={image}
-        alt={imageAlt}
-        fill
-        sizes="(max-width: 1024px) 100vw, 75vw"
-        style={{ objectFit: "cover", objectPosition: imagePosition }}
-      />
+      {video ? (
+        <video src={video} poster={image} controls playsInline preload="metadata" aria-label={imageAlt} />
+      ) : (
+        <Image
+          src={image}
+          alt={imageAlt}
+          fill
+          sizes="(max-width: 1024px) 100vw, 75vw"
+          style={{ objectFit: "cover", objectPosition: imagePosition }}
+        />
+      )}
     </div>
     <div className="image-overlap__card">{children}</div>
     {continuation ? <div className="image-overlap__continuation">{continuation}</div> : null}

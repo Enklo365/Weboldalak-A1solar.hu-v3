@@ -334,9 +334,9 @@ export const StatHighlight = ({ stats, note }: { stats: Stat[]; note?: string })
   </div>
 );
 
-// Client components (need scroll / interaction) — re-exported so the section kit
-// stays the single import surface.
+// Re-exported components keep the section kit as the single import surface.
 export { FaqList, type FaqItem } from "./FaqList";
+export { BrandBadges, type BrandBadgesProps } from "./BrandBadges";
 export { BIG_STATS_ITEMS, BigStats, type BigStatItem, type BigStatsProps } from "./BigStats";
 export { DarkFeature, type DarkFeatureItem, type DarkFeatureProps } from "./DarkFeature";
 export { ProjectMosaic, type ProjectMosaicItem, type ProjectMosaicProps } from "./ProjectMosaic";

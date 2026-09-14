@@ -7,11 +7,22 @@ import { type ReactNode, useEffect, useRef, useState } from "react";
  * the viewport. Respects prefers-reduced-motion (shows instantly, no motion) and
  * degrades to visible when IntersectionObserver is unavailable.
  */
-export const Reveal = ({ children, className }: { children: ReactNode; className?: string }) => {
+export const Reveal = ({
+  children,
+  className,
+  animated = true,
+}: {
+  children: ReactNode;
+  className?: string;
+  /** Disable motion when the content must be visible in server-rendered previews. */
+  animated?: boolean;
+}) => {
   const ref = useRef<HTMLDivElement | null>(null);
-  const [shown, setShown] = useState(false);
+  const [shown, setShown] = useState(!animated);
 
   useEffect(() => {
+    if (!animated) return undefined;
+
     const el = ref.current;
     if (!el) return undefined;
 
@@ -34,7 +45,7 @@ export const Reveal = ({ children, className }: { children: ReactNode; className
     );
     io.observe(el);
     return () => io.disconnect();
-  }, []);
+  }, [animated]);
 
   return (
     <div

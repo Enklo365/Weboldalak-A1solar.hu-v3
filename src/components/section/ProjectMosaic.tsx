@@ -4,6 +4,7 @@ import Image from "next/image";
 export type ProjectMosaicItem = {
   image: string;
   imageAlt: string;
+  video?: string;
   location: string;
   title: string;
   meta?: string;
@@ -21,13 +22,25 @@ export const ProjectMosaic = ({ items, className = "" }: ProjectMosaicProps) => 
   <div className={`project-mosaic project-mosaic--${Math.min(items.length, 5)}${className ? ` ${className}` : ""}`}>
     {items.map((item, index) => (
       <article className="project-mosaic__item" key={`${item.location}-${item.title}-${index}`}>
-        <Image
-          src={item.image}
-          alt={item.imageAlt}
-          fill
-          sizes="(max-width: 639px) 100vw, (max-width: 1024px) 50vw, 58vw"
-          style={{ objectFit: "cover", objectPosition: item.imagePosition ?? "center" }}
-        />
+        {item.video ? (
+          <video
+            className="project-mosaic__video"
+            src={item.video}
+            poster={item.image}
+            controls
+            playsInline
+            preload="metadata"
+            aria-label={item.imageAlt}
+          />
+        ) : (
+          <Image
+            src={item.image}
+            alt={item.imageAlt}
+            fill
+            sizes="(max-width: 639px) 100vw, (max-width: 1024px) 50vw, 58vw"
+            style={{ objectFit: "cover", objectPosition: item.imagePosition ?? "center" }}
+          />
+        )}
         <div className="project-mosaic__shade" aria-hidden="true" />
         <div className="project-mosaic__caption">
           <span>{item.location}</span>
