@@ -1,6 +1,6 @@
 # A1 Solar v3 – aktuális átadás
 
-Frissítve: 2026-09-13. Ez az egyetlen folyamatosan frissített
+Frissítve: 2026-09-14. Ez az egyetlen folyamatosan frissített
 állapotfájl; a dátumozott HANDOFF- és QA-fájlok változatlan archívumok.
 
 ## Holnapi indulás
@@ -13,10 +13,10 @@ korábbi beszélgetést ne dolgozd fel újra. Eltérés esetén mindig a tényle
 ## Aktuális állapot
 
 - Fejlesztési ág: `codex/feature-v3-visual-refactor`
-- Utolsó alkalmazáskód-commit: `e2bda28ce7c4b0bd3a696848114c1259450e0e84`
+- Utolsó alkalmazáskód-commit: `2cfd8eef59672cffcbdee3810b28ea21099748d8`
 - Staging: [https://teszta1solar.homokozo.uk/](https://teszta1solar.homokozo.uk/)
-- Staging image: `a1solar-nextjs:v3-e2bda28`
-- Staging OCI revision: `e2bda28ce7c4b0bd3a696848114c1259450e0e84`
+- Staging image: `a1solar-nextjs:v3-2cfd8ee`
+- Staging OCI revision: `2cfd8eef59672cffcbdee3810b28ea21099748d8`
 - Staging állapot: `healthy`, read-only, `noindex, nofollow, noarchive`
 - `main`: `c3e41bac88e381939720aa09f4309c604852b464`
 - Production (`a1solar.hu`, `www.a1solar.hu`): nem módosult.
@@ -73,10 +73,34 @@ korábbi beszélgetést ne dolgozd fel újra. Eltérés esetén mindig a tényle
 - A hat kiemelt jogi/OEP oldal oldalsáv nélküli, teljes konténerszélességű
   tartalmat és külön kompakt hero-fejlécet használ (300 px desktop, 230 px
   mobil).
-- Az `e2bda28` release production buildje sikeres volt: 345 statikusan
-  generált oldal. A staging smoke tesztben a főoldal, szolgáltatási oldal,
-  cikklista, jogi oldal és mindhárom új SVG asset `200` választ adott; az
-  `X-Robots-Tag` változatlanul `noindex, nofollow, noarchive`.
+- A globális tipográfia, a hero alatti teljes szélességű sorkizárt
+  bevezetők, a bekezdések sortörései és az egymást követő szakaszok
+  távolságai egységesek lettek. A `BigStats`-on kívüli régi, csőjellel
+  tagolt statisztikasorok kikerültek.
+- A katalógusban külön, egyértelmű néven szerepelnek a lebegő jobb/bal
+  oldali `ImageOverlap` változatok, a kompakt faktorrács és a nagy
+  `FeatureGrid`; a `BigStats` a jóváhagyott, egységes tipográfiájú ötös
+  sablonként is elérhető.
+- A főoldal megkapta a jóváhagyott `FeatureTilesEqualRed` tartalmat, a
+  világosabb grafit `DarkFeature` gyártói logókat, valamint a kattintással
+  lapozható Google-értékelés helyőrző szakaszt.
+- A cégünkről oldal teljes szélességű, sorkizárt tartalmi blokkokat,
+  frissített `StepTimeline` mérföldköveket, világosabb `DarkFeature`
+  szakaszt, videóhelyet, gyártói médiablokkot és Google-sávot kapott.
+- A médiaoldalon a kiemelt megjelenések `FeatureTilesEqualRed`, a szakmai
+  témák a nagy `FeatureGrid` sablont használják; a felesleges további
+  szakasz kikerült, a hét megjelenést kattintható `FaqList` foglalja össze.
+- A karrieroldal egyetlen, horgonyokkal címezhető oldallá alakult: a
+  szakterületek háromoszlopos `FactorGrid`, a pozíciók
+  `FeatureTilesEqualGraphite` megjelenítést kaptak, a három korábbi URL
+  tartós átirányítással a megfelelő horgonyra vezet.
+- A `2cfd8ee` release production buildje sikeres volt: 345 statikusan
+  generált oldal. A tartalom- és URL-validáció eredménye:
+  `35` oldal, `35` egyedi URL, `15` megerősített redirect.
+- A staging smoke tesztben a főoldal, a karrier-, média-, cikk- és
+  komponenskatalógus oldal `200` választ adott; a régi villanyszerelő URL
+  `308` válasszal a `#villanyszerelo` horgonyra vezet. A konténer `healthy`,
+  read-only, az `X-Robots-Tag` pedig `noindex, nofollow, noarchive`.
 
 ## Nyitott ellenőrzés és következő lépés
 
@@ -84,7 +108,8 @@ korábbi beszélgetést ne dolgozd fel újra. Eltérés esetén mindig a tényle
 - A felhasználó az összes új sablont jóváhagyta; azok későbbi natív oldalakba
   szabadon beilleszthetők és tovább finomíthatók.
 - Következő lépésként a felhasználó a stagingen ellenőrizheti a 35 refaktorált
-  oldalt, a `/komponensek/` katalógust és a kompakt jogi oldalfejléceket.
+  oldalt, a `/komponensek/` katalógust, az összevont karrieroldalt, a
+  médiaoldalt és a kompakt jogi oldalfejléceket.
 - A változatlan nagy médiacsomag staging feltöltésének gyorsítását külön
   feladatban először csak elemezni kell, 2–3 KISS megoldási lehetőséggel;
   implementációra ez önmagában nem ad engedélyt.
