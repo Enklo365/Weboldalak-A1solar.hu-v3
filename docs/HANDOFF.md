@@ -13,10 +13,10 @@ korábbi beszélgetést ne dolgozd fel újra. Eltérés esetén mindig a tényle
 ## Aktuális állapot
 
 - Fejlesztési ág: `codex/feature-v3-visual-refactor`
-- Utolsó alkalmazáskód-commit: `2cfd8eef59672cffcbdee3810b28ea21099748d8`
+- Utolsó alkalmazáskód-commit: `086fef3cd05c7f875f92850652898c6e9fda2841`
 - Staging: [https://teszta1solar.homokozo.uk/](https://teszta1solar.homokozo.uk/)
-- Staging image: `a1solar-nextjs:v3-2cfd8ee`
-- Staging OCI revision: `2cfd8eef59672cffcbdee3810b28ea21099748d8`
+- Staging image: `a1solar-nextjs:v3-086fef3`
+- Staging OCI revision: `086fef3cd05c7f875f92850652898c6e9fda2841`
 - Staging állapot: `healthy`, read-only, `noindex, nofollow, noarchive`
 - `main`: `c3e41bac88e381939720aa09f4309c604852b464`
 - Production (`a1solar.hu`, `www.a1solar.hu`): nem módosult.
@@ -26,7 +26,7 @@ korábbi beszélgetést ne dolgozd fel újra. Eltérés esetén mindig a tényle
 - A Draft PR #1 ága (`codex/feature-site-v3`) és az önálló
   `codex/feature-image-overlap` ág is tartalmazza a jóváhagyott sabloncommitot.
 - A `codex/feature-v3-visual-refactor` ág fel van pusholva az originre; a mostani
-  staging release közvetlenül ennek az alkalmazáskód-commitjából készült.
+  staging release közvetlenül a `086fef3` alkalmazáskód-commitból készült.
 - A lezáró dokumentációs commit miatt a fejlesztési ág HEAD-je a fenti
   alkalmazáskód-commit dokumentációs leszármazottja lesz; az aktuális SHA-t
   Gitből olvasd ki.
@@ -101,15 +101,116 @@ korábbi beszélgetést ne dolgozd fel újra. Eltérés esetén mindig a tényle
   komponenskatalógus oldal `200` választ adott; a régi villanyszerelő URL
   `308` válasszal a `#villanyszerelo` horgonyra vezet. A konténer `healthy`,
   read-only, az `X-Robots-Tag` pedig `noindex, nofollow, noarchive`.
+- A `Z:\Marketing\A1 weboldal újragondolás` forrásból 474 kép vizuális
+  átnézése után 62 releváns projekt-, gyártói, technológiai és csapatfotó
+  került kiválasztásra. A forrásfájlok érintetlenek maradtak; a webes másolatok
+  legfeljebb 2000×1600 px-es, 80-as minőségű WebP fájlok a
+  `public/media/v3/images/` mappában (összesen 17,4 MB).
+- Négy saját videó webre optimalizált H.264/AAC MP4 változata készült el a
+  `public/media/v3/videos/` mappában: FoxESS G-MAX beüzemelés, két Deye
+  termék-/oktatási részlet és egy 90 másodperces Sigenergy bemutató. A négy
+  fájl együttes mérete kb. 33 MB; a G-MAX forrás 297 MB-ról 12,4 MB-ra
+  csökkent.
+- A `src/lib/v3-curated-media.ts` oldal- és szakaszszintű kurátori térképe
+  szolgáltatja a képeket, magyar alt szövegeket, fókuszpontokat, videókat és
+  poster képeket. A közös v3 hero-k és tartalmi mozaikok már ezt használják;
+  a nyers Google-értékelés képernyőképek, magánjellegű képek, duplikátumok és
+  hibafotók nem kerültek be.
+- A helyi médiafrissítés QA-ja: TypeScript `--noEmit` sikeres, `git diff
+  --check` sikeres, mind a 35 v3 útvonal HTTP `200`, friss böngészőbetöltés
+  után nincs konzolhiba. A 768, 820 és 1024 px-es hero-elrendezések, valamint
+  a Deye, Sigenergy és BESS médiaelemek helyben ellenőrizve lettek.
+- A főoldal első három szolgáltatási szakasza megkapta a felhasználó által
+  kijelölt lakossági, Huawei energiatárolós és Deye backup fotót; a „Nem
+  egyetlen terméket adunk. Rendszert tervezünk.” szakaszban a komplett
+  energetikai rendszer ábrája látható. A négy PNG-ből 64–245 KB-os WebP
+  változat készült, a szerkesztői KÉP/VIDEÓ helyőrző szövegek és a gyártói
+  belsőlink-lista kikerültek, a négy gyártói logócsempe megmaradt.
+- A főoldali médiacsere helyi QA-ja: TypeScript `--noEmit` és `git diff
+  --check` sikeres, a főoldal HTTP `200`, tiszta újratöltés után nincs
+  böngészőkonzol-hiba. A négy célzott szakasz képfájljai és alt szövegei,
+  valamint a Deye, Huawei, Sigenergy és FoxESS csempék DOM-szinten is
+  ellenőrizve lettek.
+- Minden oldalon megjelent a görgetés után látható, jobb alsó „Ugrás az oldal
+  tetejére” gomb. A cégünkről oldal mérföldkőszakasza megkapta az A1 Solar
+  YouTube-videót, az öt tevékenység 2×2 + teljes szélességű csemperácsba
+  került, a szervizszöveg és a hozzá tartozó két kép külön blokk lett, az „A1
+  Solar a médiában” gomb középre került.
+- A cégünkről oldalon a szerkesztői `KÉP` és `Képcím:` jelölések helyett csak
+  a tiszta képcímek láthatók. Bekerült a tömörített csapatépítő-, zanzibári és
+  nemzetközi partnerfotó (102–309 KB), valamint a tíz csatolt, valódi Google-
+  értékelés a helykitöltők helyére.
+- A médiaoldal hét kiemelt cikkének kivonata legfeljebb négy sorban jelenik
+  meg. A „Hol jelent meg az A1 Solar?” szakasz új, fehér médiapaneljén 19
+  sajtóorgánum helyben tárolt logója és 44 cikklinkje szerepel; a több
+  megjelenéssel rendelkező orgánumok címei lenyitható listában érhetők el. A
+  korábbi „Összes médiamegjelenés” blokk kikerült.
+- A cégünkről oldalon a Google-értékelések szövege legfeljebb 12 soros, a
+  „Nemzetközi tapasztalat, stabil magyar háttér” blokk főképe a tömörített
+  kenyai napelempark-fotó (kb. 254 KB), az „Ugrás az oldal tetejére” gomb pedig
+  a lebegő PDF-gomb fölé került.
+- A legutóbbi célzott helyi QA során a média- és cégünkről oldal HTTP `200`
+  választ adott, mind a 19 médialogó betöltött, a lenyitható cikklista, a
+  négy- és tizenkét soros korlátozás, a kenyai kép és a feljebb helyezett
+  görgetőgomb böngészőben is ellenőrizve lett. A TypeScript `--noEmit` és a
+  `git diff --check` sikeres.
+- A szerviz és garancia oldal első szakasza a szerverről átvett, 192 KB-os
+  műszeres szervizfotót és külön folytatásblokkot kapott; a monitoringos
+  képhelyőrző szöveg kikerült. A szervizfolyamat a bal oldali lebegő grafit
+  képsablont és a meglévő inverter-diagnosztikai fotót használja, a régi
+  grafikacím nélkül.
+- A „Közvetlen gyártói háttér” alól minden képgaléria kikerült, a stabilitási
+  blokk képe helyére a `BrandBadges` minősítési sáv került. A 05–07-es
+  szervizbejelentési tartalom egyetlen 05-ös grafit blokkba került, kattintható
+  e-mail-címmel és levélküldő gombbal.
+- A lakossági napelem + energiatároló oldal hero-képe 40 px-szel feljebb
+  fókuszál. Az első szakasz a jobb oldali lebegő grafit képsablont, a
+  mezőtárkányi fotót és a külön A1 Solar tervezési folyamatgrafikát használja.
+  A 02–04-es, valamint a záró 06-os tartalom teljes szélességű `Section`
+  blokkokba került, a négy gyártó pedig linkelt logókártyát kapott.
+- Ugyanezen az oldalon 12 valós projektből álló referenciarács készült 14
+  fotóval. Minden kártyán megjelenik a helyszín, a napelem teljesítménye és
+  darabszáma, az inverter, az akkumulátor, a backup állapota és a projekt
+  célja; a fájlnévből nem igazolható adat „Nincs feltüntetve” jelölést kapott.
+  A 15 új forrásképből 82-es minőségű, legfeljebb 1800 px-es WebP készült.
+- A médiaoldal sajtókapcsolati szakasza fölötti és alatti térköz 20 px-re
+  csökkent. A szervizoldalon a „Miben segít…” és a „Közvetlen gyártói háttér”
+  szövege teljes szélességű, a stabilitási szöveg és a badge-sáv egyetlen
+  világos panelt alkot, a bejelentési cím, e-mail és leírás pedig egységes
+  törzsszöveg-méretet használ.
+- A lakossági energiatárolós oldal 02–03-as szakasza közös, reszponzív
+  kétoszlopos kártyapárt alkot. A gyártói szakasz széles képernyőn a szöveg
+  mellett 2×2 linkelt logócsempét jelenít meg. A csatolt Huawei-logó 13 KB-os,
+  átlátszó WebP-ként bekerült a gyártói eszközök és a `BrandRow`
+  komponenskatalógus-példa közé.
+- A meglévő napelem energiatárolós bővítési oldal első tartalmi szakasza teljes
+  szélességű lett. A három műszaki út egy közös `FeatureGrid` blokkban jelenik
+  meg, a backup rész két egymás melletti csempét és középre igazított gombot
+  kapott, a kitöltetlen referenciakártyák helyére pedig három korábbi, valós
+  lakossági projektfotó és a hozzájuk tartozó alapadatok kerültek.
+- A meglévő rendszer bővítése, a backup és a szigetüzem oldal alján is
+  megjelenik a közös `BigStats` és Google-értékelés blokk. A backup- és
+  szigetüzem-oldalak kép nélküli tartalmi szakaszai teljes szélességű `Section`
+  elrendezést használnak.
+- A három oldal célzott helyi QA-ja sikeres: TypeScript `--noEmit`, `git diff
+  --check` és mindhárom URL HTTP `200`; a szakaszok, a három referenciafotó, a
+  statisztikák és az értékelések böngészőben is ellenőrizve lettek.
 
 ## Nyitott ellenőrzés és következő lépés
 
 - A felhasználó a telefonos megjelenést később, kézzel ellenőrzi.
+- A teljes 2026-09-14-i vizuális és médiacsomag a `086fef3` commitban van,
+  originre pusholva és a `teszta1solar.homokozo.uk` stagingen telepítve.
 - A felhasználó az összes új sablont jóváhagyta; azok későbbi natív oldalakba
   szabadon beilleszthetők és tovább finomíthatók.
-- Következő lépésként a felhasználó a stagingen ellenőrizheti a 35 refaktorált
-  oldalt, a `/komponensek/` katalógust, az összevont karrieroldalt, a
-  médiaoldalt és a kompakt jogi oldalfejléceket.
+- A production build 345 oldalt generált. A staging konténer `healthy`,
+  read-only; a főoldal, az érintett cég-, média-, szerviz- és lakossági oldalak,
+  a cikklista, továbbá reprezentatív új kép-, videó-, logó- és médialogó assetek
+  `200` választ adtak. Az `X-Robots-Tag` változatlanul
+  `noindex, nofollow, noarchive`.
+- A helyi preview szerver a napi etap lezárásakor le lett állítva. Holnap új
+  munkamenetben a tényleges Git/staging állapot rövid ellenőrzése után lehet
+  folytatni a következő körülhatárolt feladattal.
 - A változatlan nagy médiacsomag staging feltöltésének gyorsítását külön
   feladatban először csak elemezni kell, 2–3 KISS megoldási lehetőséggel;
   implementációra ez önmagában nem ad engedélyt.
