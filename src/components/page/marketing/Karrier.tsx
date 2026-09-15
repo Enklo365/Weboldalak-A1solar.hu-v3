@@ -26,7 +26,7 @@ const PinIcon = () => (
 /**
  * Native "Karrier" page — notch hero (intro seated in the notch), a "why join
  * us" icon-card grid, and the open positions as one-per-row cards linking to
- * each position's own /karrier/<slug> subpage.
+ * each position's anchor on the consolidated career page.
  */
 export const Karrier = () => (
   <>
@@ -67,7 +67,7 @@ export const Karrier = () => (
               {KARRIER_POSITIONS.map((position) => (
                 <Link
                   key={position.slug}
-                  href={`/karrier/${position.slug}`}
+                  href={`/rolunk/karrier/#${position.slug}`}
                   className="group flex items-center justify-between gap-6 rounded-[20px] p-6 transition-colors md:p-8"
                   style={{ background: "var(--surface-3)" }}
                 >

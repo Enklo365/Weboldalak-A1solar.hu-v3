@@ -79,7 +79,7 @@ export const NotchFormHero = ({
             >
               {eyebrow}
             </span>
-            <h1 style={{ color: "#fff", fontSize: "clamp(28px, 3.2vw, 40px)", fontWeight: 300, lineHeight: 1.18, marginBottom: "24px" }}>
+            <h1 style={{ color: "#fff", fontSize: "var(--type-primary-title)", fontWeight: 300, lineHeight: "var(--type-primary-title-leading)", letterSpacing: "-0.025em", marginBottom: "24px" }}>
               {titleLight ? (
                 <>
                   {titleLight}
@@ -107,7 +107,7 @@ export const NotchFormHero = ({
             <span className="inline-block rounded-full text-xs font-medium uppercase tracking-[1px]" style={{ background: "rgba(255,255,255,0.2)", padding: "6px 12px" }}>
               {eyebrow}
             </span>
-            <h1 style={{ marginTop: "20px", color: "#fff", fontSize: "clamp(24px, 6vw, 30px)", fontWeight: 300, lineHeight: 1.2 }}>
+            <h1 style={{ marginTop: "20px", color: "#fff", fontSize: "var(--type-primary-title)", fontWeight: 300, lineHeight: "var(--type-primary-title-leading)", letterSpacing: "-0.025em" }}>
               {titleLight ? <>{titleLight} </> : null}
               <strong style={{ fontWeight: 700 }}>{titleStrong}</strong>
             </h1>

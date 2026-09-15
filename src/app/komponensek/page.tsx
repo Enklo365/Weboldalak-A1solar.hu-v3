@@ -1,4 +1,4 @@
-import { Clock, Gauge, Maximize2, Network, Plug, Zap } from "lucide-react";
+import { BatteryCharging, CircleGauge, Clock, Gauge, Headphones, HousePlug, Maximize2, Network, Plug, ShieldCheck, WalletCards, Wrench, Zap } from "lucide-react";
 import type { ReactNode } from "react";
 
 import { ContactForm } from "@/components/ContactForm";
@@ -6,22 +6,37 @@ import { BackupLeadForm } from "@/components/page/campaign/BackupLeadForm";
 import { LandingHero } from "@/components/page/LandingHero";
 import { NotchBanner, NotchHero } from "@/components/page/NotchHero";
 import { NotchFormHero } from "@/components/page/NotchFormHero";
+import { FramedHeroBadges } from "@/components/hero/FramedHero";
 import {
   Body,
+  BigStats,
+  BrandBadges,
   BrandRow,
   Bullets,
   CheckList,
   CompareCards,
   CtaBanner,
   CtaButton,
+  DarkFeature,
   Eyebrow,
-  FactorGrid,
+  FactorGridCompact,
   FaqList,
+  FeatureTilesEqualGraphite,
+  FeatureTilesEqualRed,
+  FeatureTilesMosaicGraphite,
+  FeatureTilesMosaicRed,
   FeatureGrid,
   InfoCallout,
   InfoCard,
+  ImageOverlapLeftFloatingGraphite,
+  ImageOverlapLeftGraphite,
+  ImageOverlapLeftRed,
+  ImageOverlapRightGraphite,
+  ImageOverlapRightFloatingGraphite,
+  ImageOverlapRightRed,
   NumberedList,
   OfferCallout,
+  ProjectMosaic,
   Reveal,
   RowDivider,
   Section,
@@ -29,9 +44,11 @@ import {
   StatHighlight,
   StepTimeline,
   TagList,
+  Typography,
 } from "@/components/section/SectionKit";
 import { ReferenceGallery } from "@/components/service/ReferenceGallery";
 import { SupportWidget } from "@/components/service/SupportWidget";
+import { GoogleReviews } from "@/components/section/GoogleReviews";
 
 export const metadata = {
   title: "Komponens katalógus | A1 Solar",
@@ -50,12 +67,49 @@ const REF_IMAGES = [
 
 const ITEMS = ["Első pont a listában", "Második pont", "Harmadik, kicsit hosszabb pont a sortöréshez"];
 
+const FEATURE_TILE_ITEMS = [
+  {
+    icon: <HousePlug size={24} strokeWidth={1.8} />,
+    eyebrow: "Komplett megoldás",
+    title: "Energia, ami hozzád igazodik",
+    text: "A fogyasztási szokásaidra és az ingatlan adottságaira méretezett rendszert tervezünk.",
+    href: "#",
+    linkLabel: "Megoldások",
+  },
+  {
+    icon: <ShieldCheck size={24} strokeWidth={1.8} />,
+    eyebrow: "Biztonság",
+    title: "Megbízható működés",
+    text: "Bevált komponensek, szakszerű kivitelezés és átlátható garanciális háttér.",
+  },
+  {
+    icon: <WalletCards size={24} strokeWidth={1.8} />,
+    eyebrow: "Megtérülés",
+    title: "Kiszámíthatóbb költségek",
+    text: "A saját termelés csökkenti a hálózati energiaáraknak való kitettséget.",
+  },
+  {
+    icon: <Headphones size={24} strokeWidth={1.8} />,
+    eyebrow: "Támogatás",
+    title: "Végig melletted maradunk",
+    text: "A felméréstől az üzembe helyezésig egy kézben tartjuk a teljes folyamatot.",
+    href: "#",
+    linkLabel: "Kapcsolat",
+  },
+];
+
 const COMPONENTS = [
-  "Eyebrow", "Body", "CtaButton", "Bullets", "CheckList", "TagList", "FactorGrid", "FeatureGrid",
-  "NumberedList", "StepTimeline", "InfoCard", "CompareCards", "InfoCallout", "BrandRow",
+  "Typography", "Eyebrow", "Body", "CtaButton", "Bullets", "CheckList", "TagList", "FactorGridCompact", "FeatureGrid",
+  "NumberedList", "StepTimeline", "InfoCard", "CompareCards", "InfoCallout", "BrandRow", "BrandBadges",
+  "FeatureTilesEqualRed", "FeatureTilesEqualGraphite", "FeatureTilesMosaicRed", "FeatureTilesMosaicGraphite",
+  "DarkFeature",
+  "ProjectMosaic",
+  "BigStats", "GoogleReviews",
+  "ImageOverlapRightFloatingGraphite", "ImageOverlapLeftFloatingGraphite",
+  "ImageOverlapRightRed", "ImageOverlapLeftRed", "ImageOverlapRightGraphite", "ImageOverlapLeftGraphite",
   "StatHighlight", "StatBanner", "OfferCallout", "CtaBanner", "FaqList", "Reveal", "RowDivider",
   "Section", "SupportWidget", "ContactForm", "BackupLeadForm", "ReferenceGallery",
-  "NotchHero", "NotchBanner", "NotchFormHero", "LandingHero",
+  "FramedHeroBadges", "NotchHero", "NotchBanner", "NotchFormHero", "LandingHero",
 ];
 
 /** Labeled demo wrapper. */
@@ -80,8 +134,8 @@ const KomponensekPage = () => (
   <div>
     <div className="container" style={{ paddingTop: "40px", paddingBottom: "80px" }}>
       <Eyebrow>Katalógus</Eyebrow>
-      <h1 style={{ fontSize: "34px", fontWeight: 700, color: "var(--ink)", margin: "16px 0 0" }}>Komponens katalógus</h1>
-      <p style={{ fontSize: "16px", color: "var(--ink-soft)", margin: "12px 0 0", maxWidth: "680px" }}>
+      <h1 className="type-primary-title" style={{ fontWeight: 700, color: "var(--ink)", margin: "16px 0 0" }}>Komponens katalógus</h1>
+      <p className="type-body-copy" style={{ color: "var(--ink-soft)", margin: "12px 0 0", maxWidth: "680px" }}>
         Az összes újrahasználható komponens élőben, mintaadatokkal. A kliens-komponensek (StepTimeline, FaqList,
         űrlapok) interaktívak.
       </p>
@@ -99,6 +153,23 @@ const KomponensekPage = () => (
         ))}
       </div>
 
+      <Demo name="Typography">
+        <Typography title="Mérnöki energiarendszerek, egységes vizuális nyelven">
+          <Body>Ez a közös törzsszöveg-méret jelenik meg a kép melletti szövegdobozokban, a bevezetőkben és a tartalmi szakaszokban is.</Body>
+        </Typography>
+      </Demo>
+
+      <Demo name="FramedHeroBadges" full>
+        <FramedHeroBadges media={{ type: "image", src: HERO_IMG, position: "center" }}>
+          <div style={{ position: "relative", zIndex: 1, padding: "54px", color: "#fff", maxWidth: "660px" }}>
+            <Eyebrow>Prémium hero</Eyebrow>
+            <h2 className="type-primary-title" style={{ margin: "18px 0 0", color: "#fff", fontWeight: 600 }}>
+              Keretezett hero szakmai badge-sorral
+            </h2>
+          </div>
+        </FramedHeroBadges>
+      </Demo>
+
       <Demo name="Eyebrow"><Eyebrow>Címke szöveg</Eyebrow></Demo>
 
       <Demo name="Body"><Body>Ez egy standard bekezdés (16px, #4b5563). Több sornyi kifejtő szöveghez használjuk a szakaszokban.</Body></Demo>
@@ -111,8 +182,8 @@ const KomponensekPage = () => (
 
       <Demo name="TagList"><TagList items={["Csúcsterhelés", "Háromfázisú kialakítás", "Áthidalási idő", "Hálózat állapota"]} /></Demo>
 
-      <Demo name="FactorGrid">
-        <FactorGrid
+      <Demo name="FactorGridCompact">
+        <FactorGridCompact
           items={[
             { icon: <Gauge size={20} strokeWidth={1.9} />, label: "Pillanatnyi csúcsterhelés" },
             { icon: <Plug size={20} strokeWidth={1.9} />, label: "Egy- vagy háromfázisú kialakítás" },
@@ -133,6 +204,111 @@ const KomponensekPage = () => (
             { title: "Országos lefedettség", text: "Szakértőink egész Magyarországon elérhetők." },
           ]}
         />
+      </Demo>
+
+      <Demo name="FeatureTilesEqualRed" full>
+        <FeatureTilesEqualRed items={FEATURE_TILE_ITEMS} />
+      </Demo>
+
+      <Demo name="FeatureTilesEqualGraphite" full>
+        <FeatureTilesEqualGraphite items={FEATURE_TILE_ITEMS} />
+      </Demo>
+
+      <Demo name="FeatureTilesMosaicRed" full>
+        <FeatureTilesMosaicRed items={FEATURE_TILE_ITEMS} />
+      </Demo>
+
+      <Demo name="FeatureTilesMosaicGraphite" full>
+        <FeatureTilesMosaicGraphite items={FEATURE_TILE_ITEMS} />
+      </Demo>
+
+      <Demo name="DarkFeature" full>
+        <DarkFeature
+          eyebrow="Prémium rendszer"
+          title="Intelligens energia, kompromisszumok nélkül"
+          intro="A termelést, tárolást és fogyasztást egyetlen összehangolt rendszer kezeli — elegáns technológia a háttérben, egyszerű használat a mindennapokban."
+          ctaLabel="Személyes konzultáció"
+          ctaHref="#"
+          note="Díjmentes műszaki egyeztetés, kötelezettségek nélkül."
+          items={[
+            {
+              icon: <BatteryCharging size={23} strokeWidth={1.8} />,
+              title: "Energiatárolás",
+              text: "A napközben megtermelt energia este is rendelkezésre áll.",
+            },
+            {
+              icon: <CircleGauge size={23} strokeWidth={1.8} />,
+              title: "Okos vezérlés",
+              text: "Automatikus optimalizálás az aktuális termelés és fogyasztás alapján.",
+            },
+            {
+              icon: <ShieldCheck size={23} strokeWidth={1.8} />,
+              title: "Biztonságos tartalék",
+              text: "A fontos fogyasztók áramszünet esetén is működésben maradhatnak.",
+            },
+            {
+              icon: <Wrench size={23} strokeWidth={1.8} />,
+              title: "Teljes körű háttér",
+              text: "Tervezés, kivitelezés és támogatás tapasztalt szakemberektől.",
+            },
+          ]}
+        />
+      </Demo>
+
+      <Demo name="ProjectMosaic" full>
+        <ProjectMosaic
+          items={[
+            {
+              image: REF_IMAGES[0],
+              imageAlt: "Családi ház napelemes rendszerrel Szuhán",
+              location: "Szuha",
+              title: "Energiatudatos otthon a Mátra lábánál",
+              meta: "10,4 kWp · hibrid rendszer",
+              href: "#",
+              imagePosition: "center 58%",
+            },
+            {
+              image: REF_IMAGES[1],
+              imageAlt: "Napelemes rendszer Esztergomban",
+              location: "Esztergom",
+              title: "Modern családi ház",
+              meta: "8,2 kWp",
+              href: "#",
+            },
+            {
+              image: REF_IMAGES[2],
+              imageAlt: "Budapesti napelemes referencia",
+              location: "Budapest",
+              title: "Városi energiafüggetlenség",
+              meta: "6,8 kWp · energiatároló",
+              href: "#",
+            },
+            {
+              image: REF_IMAGES[3],
+              imageAlt: "Napelemes rendszer Pécelen",
+              location: "Pécel",
+              title: "Tetőre szabott teljesítmény",
+              meta: "12,1 kWp",
+              href: "#",
+            },
+            {
+              image: REF_IMAGES[4],
+              imageAlt: "Budapesti családi ház napelemekkel",
+              location: "Budapest",
+              title: "Fenntartható otthon hosszú távra",
+              meta: "9,6 kWp · intelligens vezérlés",
+              href: "#",
+            },
+          ]}
+        />
+      </Demo>
+
+      <Demo name="BigStats" full>
+        <BigStats />
+      </Demo>
+
+      <Demo name="GoogleReviews" full>
+        <GoogleReviews />
       </Demo>
 
       <Demo name="NumberedList">
@@ -168,6 +344,74 @@ const KomponensekPage = () => (
         </div>
       </Demo>
 
+      <Demo name="ImageOverlapRightFloatingGraphite" full>
+        <ImageOverlapRightFloatingGraphite image={HERO_IMG} imageAlt="Napelemes rendszer – jobbról belógó kompakt szövegdoboz">
+          <Section
+            eyebrow="Jobb oldali lebegő változat"
+            title="A szöveg jobbról, kissé lejjebb lóg a képbe"
+            intro="A doboz csak a tartalom magasságát veszi fel, így a fotó nagyobb része látható marad."
+          />
+        </ImageOverlapRightFloatingGraphite>
+      </Demo>
+
+      <Demo name="ImageOverlapLeftFloatingGraphite" full>
+        <ImageOverlapLeftFloatingGraphite image={REF_IMAGES[0]} imageAlt="Napelemes rendszer – balról belógó kompakt szövegdoboz" imagePosition="center 58%">
+          <Section
+            eyebrow="Bal oldali lebegő változat"
+            title="A szöveg balról, kissé lejjebb lóg a képbe"
+            intro="A tükrözött, tartalommagasságú változat váltakozó szakaszritmushoz használható."
+          />
+        </ImageOverlapLeftFloatingGraphite>
+      </Demo>
+
+      <Demo name="ImageOverlapRightRed" full>
+        <ImageOverlapRightRed image={HERO_IMG} imageAlt="Hibrid napelemes rendszer energiatárolóval">
+          <Section
+            eyebrow="Energiafüggetlenség"
+            title="A saját energiád akkor is rendelkezésre áll, amikor szükséged van rá"
+            intro="A jobbról belógó szövegdoboz kiemeli a legfontosabb üzenetet anélkül, hogy megtörné a kép vizuális erejét."
+          >
+            <CtaButton href="#">Részletek</CtaButton>
+          </Section>
+        </ImageOverlapRightRed>
+      </Demo>
+
+      <Demo name="ImageOverlapLeftRed" full>
+        <ImageOverlapLeftRed image={REF_IMAGES[0]} imageAlt="A1 Solar napelemes referencia" imagePosition="center 58%">
+          <Section
+            eyebrow="Megvalósult rendszer"
+            title="Tervezéstől az átadásig egy kézben"
+            intro="A bal oldali változat tükrözi a kompozíciót, így váltakozó oldalritmushoz is használható."
+          >
+            <CtaButton href="#">Referenciák</CtaButton>
+          </Section>
+        </ImageOverlapLeftRed>
+      </Demo>
+
+      <Demo name="ImageOverlapRightGraphite" full>
+        <ImageOverlapRightGraphite image={HERO_IMG} imageAlt="Hibrid napelemes rendszer energiatárolóval">
+          <Section
+            eyebrow="Grafit változat"
+            title="Nyugodtabb hangsúly, változatlanul erős kompozíció"
+            intro="Az arculati grafit CTA és szürke címke visszafogottabb alternatívát ad a piros kiemelések helyett."
+          >
+            <CtaButton href="#">Részletek</CtaButton>
+          </Section>
+        </ImageOverlapRightGraphite>
+      </Demo>
+
+      <Demo name="ImageOverlapLeftGraphite" full>
+        <ImageOverlapLeftGraphite image={REF_IMAGES[0]} imageAlt="A1 Solar napelemes referencia" imagePosition="center 58%">
+          <Section
+            eyebrow="Grafit változat"
+            title="Bal oldali szövegdoboz semleges hangsúlyokkal"
+            intro="A tükrözött változat ugyanazokat a grafit és világosszürke arculati tónusokat használja."
+          >
+            <CtaButton href="#">Referenciák</CtaButton>
+          </Section>
+        </ImageOverlapLeftGraphite>
+      </Demo>
+
       <Demo name="CompareCards" full>
         <CompareCards
           items={[
@@ -185,10 +429,15 @@ const KomponensekPage = () => (
         <BrandRow
           items={[
             { name: "Deye", logo: "/wp-content/uploads/brands/deye.png" },
+            { name: "Huawei", logo: "/wp-content/uploads/brands/huawei.webp" },
             { name: "FoxESS", logo: "/wp-content/uploads/brands/foxess.png" },
             { name: "Sigenergy", logo: "/wp-content/uploads/brands/sigenergy.svg" },
           ]}
         />
+      </Demo>
+
+      <Demo name="BrandBadges" full>
+        <BrandBadges />
       </Demo>
 
       <Demo name="StatHighlight">
@@ -228,7 +477,7 @@ const KomponensekPage = () => (
       </Demo>
 
       <Demo name="Reveal">
-        <Reveal>
+        <Reveal animated={false}>
           <div style={{ background: "var(--surface-3)", borderRadius: "16px", padding: "24px" }}>
             <Body>Ez a doboz a Reveal wrapperben van — görgetéskor fade + felúszik. (Ha már látszik, lehet, hogy azonnal megjelent.)</Body>
           </div>
@@ -238,7 +487,7 @@ const KomponensekPage = () => (
       <Demo name="RowDivider"><RowDivider /></Demo>
 
       <Demo name="Section" full>
-        <Section eyebrow="Szakasz" title="Szakasz-cím (30px / 500)" intro="Opcionális bevezető szöveg a cím alatt.">
+        <Section eyebrow="Szakasz" title="Szakaszcím a közös főcímmérettel" intro="Opcionális bevezető szöveg a cím alatt.">
           <Body>A Section összefogja az eyebrow-t, címet, bevezetőt és a gyerek-tartalmat.</Body>
           <CheckList items={["Beágyazott lista is mehet", "És bármi más"]} />
         </Section>
@@ -250,7 +499,7 @@ const KomponensekPage = () => (
 
       <Demo name="BackupLeadForm"><BackupLeadForm /></Demo>
 
-      <Demo name="ReferenceGallery" full><ReferenceGallery images={REF_IMAGES} /></Demo>
+      <Demo name="ReferenceGallery" full><ReferenceGallery images={REF_IMAGES} animated={false} /></Demo>
     </div>
 
     {/* Full-width hero components */}

@@ -15,7 +15,7 @@ const ZoomIcon = () => (
  * The lightbox is keyboard-navigable (Esc / ← / →), locks background scroll and
  * respects reduced-motion.
  */
-export function ReferenceGallery({ images }: { images: string[] }) {
+export function ReferenceGallery({ images, animated = true }: { images: string[]; animated?: boolean }) {
   const [index, setIndex] = useState<number | null>(null);
   const open = index !== null;
 
@@ -32,6 +32,9 @@ export function ReferenceGallery({ images }: { images: string[] }) {
   useEffect(() => {
     const grid = gridRef.current;
     if (!grid) return undefined;
+
+    if (!animated) return undefined;
+
     grid.querySelectorAll<HTMLImageElement>("img[data-fade]").forEach((img) => {
       if (img.complete && img.naturalWidth > 0) img.classList.add("loaded");
     });
@@ -54,7 +57,7 @@ export function ReferenceGallery({ images }: { images: string[] }) {
     );
     tiles.forEach((t) => io.observe(t));
     return () => io.disconnect();
-  }, []);
+  }, [animated]);
 
   useEffect(() => {
     if (!open) return;
@@ -80,14 +83,14 @@ export function ReferenceGallery({ images }: { images: string[] }) {
             key={src}
             type="button"
             onClick={() => setIndex(i)}
-            data-animate="up"
+            data-animate={animated ? "up" : undefined}
             style={{ transitionDelay: `${(i % 3) * 80}ms` }}
             className="ref-tile"
             aria-label="Referencia megnyitása"
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              data-fade
+              data-fade={animated ? true : undefined}
               src={src}
               alt="A1 Solar telepített napelemes rendszer"
               onLoad={(e) => e.currentTarget.classList.add("loaded")}

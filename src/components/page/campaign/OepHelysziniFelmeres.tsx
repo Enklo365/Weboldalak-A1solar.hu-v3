@@ -104,7 +104,7 @@ export const OepHelysziniFelmeres = () => (
         </div>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="/wp-content/uploads/2025/07/a1solar_badgek-1024x127.png"
+          src="/images/brand/a1solar-badges.svg"
           alt="A1 Solar minősítések"
           loading="lazy"
           className="mx-auto mt-12"

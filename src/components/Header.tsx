@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { LANDING_PATHS, MAIN_NAV, MEGA_MENUS, SITE, type NavEntry } from "@/lib/site";
 
-const LOGO = "/wp-content/uploads/2022/09/A1solar-logo.svg";
+const LOGO = "/images/brand/a1solar-logo.svg";
 
 const PhoneIcon = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden>

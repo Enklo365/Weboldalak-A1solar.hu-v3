@@ -19,7 +19,7 @@ const readAsBase64 = (file: File): Promise<string> =>
   });
 
 /**
- * Job-application form for the position subpages — single column, with a CV
+ * Job-application form for the position sections — single column, with a CV
  * upload and a required GDPR consent checkbox. Posts to /api/contact with the
  * CV as a base64 attachment and the position name.
  */

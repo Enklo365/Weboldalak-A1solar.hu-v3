@@ -76,10 +76,10 @@ export const LandingHero = ({
           <h1
             style={{
               color: "#fff",
-              fontSize: "clamp(30px, 4.4vw, 56px)",
+              fontSize: "var(--type-primary-title)",
               fontWeight: 300,
-              lineHeight: 1.1,
-              letterSpacing: "-0.5px",
+              lineHeight: "var(--type-primary-title-leading)",
+              letterSpacing: "-0.025em",
               margin: 0,
               textShadow: "0 2px 24px rgba(0,0,0,0.35)",
             }}
@@ -97,8 +97,8 @@ export const LandingHero = ({
               style={{
                 marginTop: "20px",
                 maxWidth: "560px",
-                fontSize: "clamp(15px, 1.4vw, 18px)",
-                lineHeight: 1.55,
+                fontSize: "var(--type-body-copy)",
+                lineHeight: "var(--type-body-leading)",
                 color: "rgba(255,255,255,0.88)",
               }}
             >
