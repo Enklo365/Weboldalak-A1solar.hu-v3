@@ -65,7 +65,6 @@ export const MAIN_NAV: NavEntry[] = [
       { href: "/vallalati/meglevo-rendszer-bovitese-energiataroloval/", label: "Meglévő rendszer bővítése" },
       { href: "/vallalati/energetikai-optimalizacio-om/", label: "Energetikai optimalizáció / O&M" },
       { href: "/vallalati/ppa-finanszirozott-projektek/", label: "Finanszírozott / PPA projektek" },
-      { href: "/vallalati/szerviz-tavfelugyelet/", label: "Szerviz és távfelügyelet" },
       { href: "/vallalati/palyazatok-tamogatasok/", label: "Pályázatok és támogatások" },
     ],
   },
@@ -240,7 +239,6 @@ export const FOOTER_RESIDENTIAL: NavChild[] = [
 export const FOOTER_COMMERCIAL: NavChild[] = [
   { href: "/vallalati/napelem/", label: "Napelem" },
   { href: "/vallalati/napelem-energiatarolassal/", label: "Energiatárolás" },
-  { href: "/vallalati/szerviz-tavfelugyelet/", label: "Szerviz és távfelügyelet" },
 ];
 
 const OEP_PDF =

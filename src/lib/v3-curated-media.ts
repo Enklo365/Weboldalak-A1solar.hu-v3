@@ -107,6 +107,10 @@ const sectionMedia: Record<string, V3CuratedMedia[]> = {
   "/lakossagi/napelem-energiataroloval/#nem-kulon-napelemet-es-akkumulatort-valasztunk-rendszert-tervezunk": [image("residential-storage-mezotarkany-deye", "Deye napelemes és energiatároló rendszer Mezőtárkányban", "center 50%")],
   "/lakossagi/napelem-energiataroloval/#lakossagi-referenciak-nem-csak-igeretek": residential,
   "/lakossagi/meglevo-napelem-bovitese-energiataroloval/#valodi-bovitesi-referenciak": [residential[2], image("huawei-torokbalint-installation", "Huawei energiatárolós bővítés Törökbálinton")],
+  "/lakossagi/backup-aramszuneti-megoldasok/#az-akkumulator-onmagaban-nem-backup": [
+    image("backup-system-architecture-infographic", "Egy valódi backup rendszer működését bemutató A1 Solar infografika"),
+    image("backup-deye-orange-wall", "Deye inverter, akkumulátor és leválasztás egy A1 Solar backup rendszerben"),
+  ],
   "/lakossagi/backup-aramszuneti-megoldasok/#backup-referencia-helyszin": [image("backup-harta-pharmacy", "Backup rendszer egy hartai gyógyszertárban")],
   "/lakossagi/szigetuzemu-napelemes-rendszer/#szigetuzemu-referenciak": [residential[4], image("backup-mosonszolnok-deye", "Deye energiatároló és backup rendszer Mosonszolnokon")],
   "/lakossagi/szerviz-karbantartas/#miben-tudunk-segiteni": [image("a1-solar-service-diagnostics", "A1 Solar műszeres rendszerdiagnosztika")],

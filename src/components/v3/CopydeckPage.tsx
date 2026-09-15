@@ -7,10 +7,12 @@ import {
   Bullets,
   BigStats,
   BrandBadges,
+  BrandRow,
   CtaButton,
   DarkFeature,
   Eyebrow,
   FactorGrid,
+  FactorGridCompact,
   FeatureGrid,
   FeatureTiles,
   FeatureTilesEqualRed,
@@ -19,6 +21,7 @@ import {
   ImageOverlapLeftGraphite,
   ImageOverlapRightFloatingGraphite,
   ProjectMosaic,
+  NumberedList,
   Section,
   StepTimeline,
   StatementSection,
@@ -33,7 +36,7 @@ import { hasV3HeroSupplement, hasV3Supplement, V3HeroSupplement, V3Supplement } 
 import { getV3HeroMedia } from "@/lib/v3-hero-media";
 import { getV3SectionMedia } from "@/lib/v3-curated-media";
 import { MEDIA_OUTLETS } from "@/lib/media-outlets";
-import { RESIDENTIAL_STORAGE_PROJECTS } from "@/lib/residential-storage-projects";
+import { RESIDENTIAL_STORAGE_PROJECTS, type ResidentialStorageProject } from "@/lib/residential-storage-projects";
 import { getV3Layout, type CopyItem, type CopyPage, type CopySection } from "@/lib/v3-pages";
 
 type ParagraphFlow = "wide" | "column" | "preserve";
@@ -189,6 +192,128 @@ const MEDIA_ARTICLES = [
 ] as const;
 
 const TILE_ICONS = [SunMedium, BatteryCharging, ShieldCheck, Gauge, Wrench, Cpu, Building2];
+
+const capitalizeFirst = (value: string) => value.charAt(0).toLocaleUpperCase("hu-HU") + value.slice(1);
+
+const STORAGE_TECHNOLOGY_BRANDS = [
+  { name: "Deye", logo: "/wp-content/uploads/brands/deye.png" },
+  { name: "Huawei", logo: "/wp-content/uploads/brands/huawei.webp" },
+  { name: "FoxESS", logo: "/wp-content/uploads/brands/foxess.png" },
+  { name: "Sigenergy", logo: "/wp-content/uploads/brands/sigenergy.svg" },
+];
+
+const BACKUP_REFERENCE_PROJECTS: ResidentialStorageProject[] = [
+  RESIDENTIAL_STORAGE_PROJECTS[8],
+  {
+    location: "Harta · Deye",
+    solar: "Nincs feltüntetve",
+    inverter: "Deye",
+    battery: "Nincs feltüntetve",
+    backup: "Igen",
+    goal: "Kritikus fogyasztók áramszüneti tartalékellátása.",
+    images: [
+      { src: "/media/v3/images/backup-harta-deye-system.webp", alt: "Deye backup rendszer A1 Solar kivitelezésben Hartán" },
+      { src: "/media/v3/images/backup-harta-pharmacy.webp", alt: "Backup rendszer egy hartai gyógyszertárnál" },
+    ],
+  },
+  {
+    location: "Mosonszolnok · Deye",
+    solar: "Nincs feltüntetve",
+    inverter: "Deye",
+    battery: "Nincs feltüntetve",
+    backup: "Igen",
+    goal: "Lakossági energiatárolás és áramszüneti tartalékellátás.",
+    images: [{ src: "/media/v3/images/backup-mosonszolnok-deye.webp", alt: "Deye energiatároló és backup rendszer Mosonszolnokon" }],
+  },
+  {
+    location: "Helyszín nincs feltüntetve · Deye",
+    solar: "Nincs feltüntetve",
+    inverter: "Deye",
+    battery: "Nincs feltüntetve",
+    backup: "Igen",
+    goal: "Lakossági backup és energiabiztonság.",
+    images: [{ src: "/media/v3/images/backup-deye-orange-wall.webp", alt: "Deye inverter, akkumulátor és leválasztás egy A1 Solar backup rendszerben" }],
+  },
+];
+
+const TEMPORARY_OFF_GRID_REFERENCE_PROJECTS = [
+  RESIDENTIAL_STORAGE_PROJECTS[4],
+  RESIDENTIAL_STORAGE_PROJECTS[8],
+  RESIDENTIAL_STORAGE_PROJECTS[10],
+  RESIDENTIAL_STORAGE_PROJECTS[11],
+];
+
+const COMMERCIAL_PROJECT_STEPS = [
+  { num: "01", title: "Felmérés", text: "A telephely, a villamos infrastruktúra és a rendelkezésre álló felületek műszaki felmérése." },
+  { num: "02", title: "Fogyasztási elemzés", text: "A napi és szezonális fogyasztási profil, valamint a várható jövőbeni energiaigény értékelése." },
+  { num: "03", title: "Tervezés", text: "A vállalati célokhoz illeszkedő napelemes rendszer és szükség esetén energiatárolás megtervezése." },
+  { num: "04", title: "Engedélyezés", text: "A projekthez szükséges hálózati és hatósági dokumentáció összeállítása és koordinálása." },
+  { num: "05", title: "Kivitelezés", text: "A jóváhagyott műszaki tartalom szakszerű, ütemezett helyszíni megvalósítása." },
+  { num: "06", title: "Monitoring", text: "A rendszer működésének és teljesítményének folyamatos követhetősége." },
+  { num: "07", title: "Szerviz", text: "Hosszú távú műszaki háttér, karbantartás és célzott hibafeltárás." },
+];
+
+const ResidentialReferenceGrid = ({
+  projects,
+  titlePrefix = "A1 Solar napelem + energiatároló referencia",
+}: {
+  projects: ResidentialStorageProject[];
+  titlePrefix?: string;
+}) => (
+  <div className="v3-residential-references__grid">
+    {projects.map((project) => (
+      <article className="v3-residential-reference" key={project.location}>
+        <div className={`v3-residential-reference__media${project.images.length > 1 ? " v3-residential-reference__media--pair" : ""}`}>
+          {project.images.map((projectImage) => (
+            <div className="v3-residential-reference__image" key={projectImage.src}>
+              <Image
+                src={projectImage.src}
+                alt={projectImage.alt}
+                fill
+                sizes="(max-width: 720px) 100vw, (max-width: 1180px) 50vw, 33vw"
+                style={{ objectFit: "cover", objectPosition: projectImage.position ?? "center" }}
+              />
+            </div>
+          ))}
+        </div>
+        <div className="v3-residential-reference__body">
+          <span className="v3-residential-reference__location">{project.location}</span>
+          <h3>{titlePrefix} – {project.location}</h3>
+          <dl>
+            <div><dt>Napelem</dt><dd>{project.solar}</dd></div>
+            <div><dt>Inverter</dt><dd>{project.inverter}</dd></div>
+            <div><dt>Akkumulátor</dt><dd>{project.battery}</dd></div>
+            <div><dt>Backup</dt><dd>{project.backup}</dd></div>
+            <div><dt>Projekt célja</dt><dd>{project.goal}</dd></div>
+          </dl>
+        </div>
+      </article>
+    ))}
+  </div>
+);
+
+const CommercialReferenceGrid = ({ count = 6 }: { count?: number }) => (
+  <div className="v3-residential-references__grid v3-commercial-references__grid">
+    {Array.from({ length: count }, (_, index) => ({ number: String(index + 1).padStart(2, "0") })).map((project) => (
+      <article className="v3-residential-reference v3-commercial-reference" key={project.number}>
+        <div className="v3-commercial-reference__placeholder" aria-label={`Vállalati referenciakép ${project.number} feltöltésre vár`}>
+          <span>KÉP {project.number}</span>
+        </div>
+        <div className="v3-residential-reference__body">
+          <span className="v3-residential-reference__location">VÁLLALATI REFERENCIA {project.number}</span>
+          <h3>Helyszín és projektadatok feltöltésre várnak</h3>
+          <dl>
+            <div><dt>Helyszín</dt><dd>Feltöltés alatt</dd></div>
+            <div><dt>Rendszer</dt><dd>Feltöltés alatt</dd></div>
+            <div><dt>Üzemi cél</dt><dd>Feltöltés alatt</dd></div>
+            <div><dt>Inverter</dt><dd>Feltöltés alatt</dd></div>
+            <div><dt>A1 Solar feladata</dt><dd>Feltöltés alatt</dd></div>
+          </dl>
+        </div>
+      </article>
+    ))}
+  </div>
+);
 
 const visualFamilyFor = (page: CopyPage): VisualFamily => {
   if (page.number === 1) return "home";
@@ -632,36 +757,7 @@ const V3Section = ({ page, section, index, layout }: { page: CopyPage; section: 
             <h2>{section.title}</h2>
             <p>Valós A1 Solar projektek a telepített rendszer legfontosabb műszaki adataival.</p>
           </div>
-          <div className="v3-residential-references__grid">
-            {RESIDENTIAL_STORAGE_PROJECTS.map((project) => (
-              <article className="v3-residential-reference" key={project.location}>
-                <div className={`v3-residential-reference__media${project.images.length > 1 ? " v3-residential-reference__media--pair" : ""}`}>
-                  {project.images.map((projectImage) => (
-                    <div className="v3-residential-reference__image" key={projectImage.src}>
-                      <Image
-                        src={projectImage.src}
-                        alt={projectImage.alt}
-                        fill
-                        sizes="(max-width: 720px) 100vw, (max-width: 1180px) 50vw, 33vw"
-                        style={{ objectFit: "cover", objectPosition: projectImage.position ?? "center" }}
-                      />
-                    </div>
-                  ))}
-                </div>
-                <div className="v3-residential-reference__body">
-                  <span className="v3-residential-reference__location">{project.location}</span>
-                  <h3>A1 Solar napelem + energiatároló referencia – {project.location}</h3>
-                  <dl>
-                    <div><dt>Napelem</dt><dd>{project.solar}</dd></div>
-                    <div><dt>Inverter</dt><dd>{project.inverter}</dd></div>
-                    <div><dt>Akkumulátor</dt><dd>{project.battery}</dd></div>
-                    <div><dt>Backup</dt><dd>{project.backup}</dd></div>
-                    <div><dt>Projekt célja</dt><dd>{project.goal}</dd></div>
-                  </dl>
-                </div>
-              </article>
-            ))}
-          </div>
+          <ResidentialReferenceGrid projects={RESIDENTIAL_STORAGE_PROJECTS} />
           <RenderItems items={referenceLinks} />
         </section>
       );
@@ -734,16 +830,19 @@ const V3Section = ({ page, section, index, layout }: { page: CopyPage; section: 
       const references = [
         {
           title: "Meglévő inverter megtartása",
+          locationLabel: "Budapest · Huawei",
           project: RESIDENTIAL_STORAGE_PROJECTS[7],
           image: RESIDENTIAL_STORAGE_PROJECTS[7].images[1],
         },
         {
           title: "Invertercsere + akkumulátor",
+          locationLabel: "Nagymaros · Sigenergy",
           project: RESIDENTIAL_STORAGE_PROJECTS[4],
           image: RESIDENTIAL_STORAGE_PROJECTS[4].images[1],
         },
         {
           title: "Más kivitelező rendszerének bővítése",
+          locationLabel: "Atkár · Deye",
           project: RESIDENTIAL_STORAGE_PROJECTS[11],
           image: RESIDENTIAL_STORAGE_PROJECTS[11].images[0],
         },
@@ -753,7 +852,7 @@ const V3Section = ({ page, section, index, layout }: { page: CopyPage; section: 
         <section id={section.id} className="v3-section v3-retrofit-references">
           <h2>{section.title}</h2>
           <div className="v3-retrofit-references__grid">
-            {references.map(({ title, project, image: projectImage }) => (
+            {references.map(({ title, locationLabel, project, image: projectImage }) => (
               <article className="v3-retrofit-reference" key={title}>
                 <div className="v3-retrofit-reference__image">
                   <Image
@@ -765,7 +864,7 @@ const V3Section = ({ page, section, index, layout }: { page: CopyPage; section: 
                   />
                 </div>
                 <div className="v3-retrofit-reference__body">
-                  <span>{project.location}</span>
+                  <span>{locationLabel}</span>
                   <h3>{title}</h3>
                   <p>{project.inverter} · {project.battery} akkumulátor</p>
                 </div>
@@ -781,6 +880,602 @@ const V3Section = ({ page, section, index, layout }: { page: CopyPage; section: 
       || section.id === "invertercsere-akkumulator-helyszin"
       || section.id === "mas-kivitelezo-rendszerenek-bovitese-helyszin"
     ) return null;
+  }
+
+  if (page.number === 8) {
+    if (section.id === "tobb-vezeto-backup-technologiaval-dolgozunk") {
+      return (
+        <section className="v3-section v3-residential-text-section v3-backup-brands">
+          <Section id={section.id} eyebrow={number} title={section.title}>
+            <RenderItems items={section.items} paragraphFlow="wide" />
+            <div className="v3-backup-brands__logos">
+              <BrandRow items={STORAGE_TECHNOLOGY_BRANDS} />
+            </div>
+          </Section>
+        </section>
+      );
+    }
+
+    if (section.id === "backup-referencia-helyszin") {
+      return (
+        <section id={section.id} className="v3-section v3-residential-references v3-reference-section">
+          <div className="v3-section__heading">
+            <span className="v3-section__number">05</span>
+            <h2>Backup referenciák</h2>
+            <p>Valós A1 Solar projektek a rendelkezésre álló műszaki adatokkal.</p>
+          </div>
+          <ResidentialReferenceGrid projects={BACKUP_REFERENCE_PROJECTS} titlePrefix="A1 Solar backup referencia" />
+          <div className="v3-reference-section__cta"><CtaButton href="/kapcsolat/">Backup rendszerre kérek ajánlatot</CtaButton></div>
+        </section>
+      );
+    }
+  }
+
+  if (page.number === 9) {
+    if (section.id === "mibol-all-egy-szigetuzemu-rendszer") {
+      return (
+        <section className="v3-section v3-residential-text-section">
+          <Section id={section.id} eyebrow={number} title={section.title}>
+            <RenderItems items={section.items.filter((item) => item.kind !== "editorial")} paragraphFlow="wide" />
+          </Section>
+        </section>
+      );
+    }
+
+    if (section.id === "szigetuzemu-referenciak") {
+      return (
+        <section id={section.id} className="v3-section v3-residential-references v3-reference-section">
+          <div className="v3-section__heading">
+            <span className="v3-section__number">04</span>
+            <h2>{section.title}</h2>
+            <p>Korábbi A1 Solar projektek a végleges szigetüzemű referenciafotók beérkezéséig.</p>
+          </div>
+          <ResidentialReferenceGrid projects={TEMPORARY_OFF_GRID_REFERENCE_PROJECTS} titlePrefix="Korábbi A1 Solar projekt" />
+          <div className="v3-reference-section__cta"><CtaButton href="/kapcsolat/">Szigetüzemű rendszerre kérek ajánlatot</CtaButton></div>
+        </section>
+      );
+    }
+  }
+
+  if (page.number === 10) {
+    if (section.id === "miben-tudunk-segiteni") {
+      const bulletItem = section.items.find((item) => item.kind === "bullets");
+      const tiles = bulletItem?.kind === "bullets"
+        ? bulletItem.items.map((title, tileIndex) => ({ icon: featureIcon(tileIndex), title: capitalizeFirst(title) }))
+        : [];
+      return (
+        <section id={section.id} className="v3-section v3-section--tiles v3-maintenance-services">
+          <div className="v3-section__heading">
+            <span className="v3-section__number">{number}</span>
+            <h2>{section.title}</h2>
+          </div>
+          <FeatureTiles items={tiles} layout="mosaic" tone={tone} className="v3-maintenance-services__tiles" />
+        </section>
+      );
+    }
+
+    if (section.id === "tavoli-monitoring-es-diagnosztika") {
+      return (
+        <section className="v3-section v3-residential-text-section">
+          <Section id={section.id} eyebrow={number} title={section.title}>
+            <RenderItems items={section.items} paragraphFlow="wide" />
+          </Section>
+        </section>
+      );
+    }
+  }
+
+  if (page.number === 11) {
+    if (section.id === "nem-csak-a-palyazatot-kell-megnyerni-a-rendszernek-mukodnie-is-kell") {
+      return (
+        <section className="v3-section v3-residential-text-section">
+          <Section id={section.id} eyebrow={number} title={section.title}>
+            <RenderItems items={section.items} paragraphFlow="wide" />
+          </Section>
+        </section>
+      );
+    }
+
+    if (section.id === "mire-figyelj-palyazati-rendszer-valasztasakor") {
+      const bulletIndex = section.items.findIndex((item) => item.kind === "bullets");
+      const bulletItem = section.items[bulletIndex];
+      const factors = bulletItem?.kind === "bullets"
+        ? bulletItem.items.map((label, factorIndex) => ({ icon: featureIcon(factorIndex), label: capitalizeFirst(label) }))
+        : [];
+      return (
+        <section className="v3-section v3-residential-text-section v3-grant-factors">
+          <Section id={section.id} eyebrow={number} title={section.title}>
+            <FactorGridCompact items={factors} columns={2} />
+            <RenderItems items={section.items.slice(bulletIndex + 1)} paragraphFlow="wide" />
+          </Section>
+        </section>
+      );
+    }
+  }
+
+  if (page.number === 12) {
+    if (section.id === "napelem-onmagaban-vagy-energiatarolassal") {
+      return (
+        <section className="v3-section v3-residential-text-section">
+          <Section id={section.id} eyebrow={number} title={section.title}>
+            <RenderItems items={section.items} paragraphFlow="wide" />
+          </Section>
+        </section>
+      );
+    }
+
+    if (section.id === "teljes-projektfolyamat") {
+      return (
+        <section className="v3-section v3-commercial-process">
+          <Section id={section.id} eyebrow={number} title={section.title}>
+            <NumberedList items={COMMERCIAL_PROJECT_STEPS} />
+          </Section>
+        </section>
+      );
+    }
+
+    if (section.id === "vallalati-referenciak") {
+      return (
+        <section id={section.id} className="v3-section v3-residential-references v3-reference-section v3-commercial-references">
+          <div className="v3-section__heading">
+            <span className="v3-section__number">{number}</span>
+            <h2>{section.title}</h2>
+            <p>A hat vállalati referenciakártya elkészült; a végleges képek és projektadatok később tölthetők fel.</p>
+          </div>
+          <CommercialReferenceGrid />
+          <div className="v3-reference-section__cta"><CtaButton href="/kapcsolat/">Vállalati napelemes ajánlatot kérek</CtaButton></div>
+        </section>
+      );
+    }
+  }
+
+  if (page.number === 13) {
+    if (section.id === "mikor-lehet-indokolt-az-energiatarolas") {
+      const bulletItem = section.items.find((item) => item.kind === "bullets");
+      const factors = bulletItem?.kind === "bullets"
+        ? bulletItem.items.map((label, factorIndex) => ({ icon: featureIcon(factorIndex), label: capitalizeFirst(label) }))
+        : [];
+      return (
+        <section className="v3-section v3-residential-text-section v3-commercial-factors">
+          <Section id={section.id} eyebrow={number} title={section.title}>
+            <FactorGridCompact items={factors} columns={2} />
+          </Section>
+        </section>
+      );
+    }
+
+    if (section.id === "nem-akkumulatorkapacitassal-kezdunk-hanem-adatokkal") {
+      return (
+        <section className="v3-section v3-residential-text-section v3-commercial-data-profile">
+          <Section id={section.id} eyebrow={number} title={section.title}>
+              <RenderItems items={section.items.filter((item) => item.kind !== "editorial")} paragraphFlow="wide" />
+            <div className="v3-commercial-data-profile__image">
+              <Image
+                src="/media/v3/images/commercial-pv-storage-data-profile.png"
+                alt="Vállalati napelem és energiatárolás adatalapú méretezése napi fogyasztási és termelési profillal"
+                width={1680}
+                height={909}
+                sizes="(max-width: 1280px) 100vw, 1200px"
+              />
+            </div>
+          </Section>
+        </section>
+      );
+    }
+
+    if (section.id === "mikor-kell-inkabb-ipari-bess-megoldas") {
+      return (
+        <section className="v3-section v3-residential-text-section">
+          <Section id={section.id} eyebrow={number} title={section.title}>
+            <RenderItems items={section.items} paragraphFlow="wide" />
+          </Section>
+        </section>
+      );
+    }
+
+    if (section.id === "referenciak") {
+      return (
+        <section id={section.id} className="v3-section v3-residential-references v3-reference-section v3-commercial-references">
+          <div className="v3-section__heading">
+            <span className="v3-section__number">{number}</span>
+            <h2>{section.title}</h2>
+            <p>A négy vállalati napelem- és energiatároló-referenciakártya elkészült; a végleges képek és leírások később tölthetők fel.</p>
+          </div>
+          <CommercialReferenceGrid count={4} />
+          <div className="v3-reference-section__cta"><CtaButton href="/kapcsolat/">Vállalati napelem + energiatároló ajánlatot kérek</CtaButton></div>
+        </section>
+      );
+    }
+  }
+
+  if (page.number === 14) {
+    if (section.id === "mit-vizsgalunk-meg") {
+      const bulletItem = section.items.find((item) => item.kind === "bullets");
+      const factors = bulletItem?.kind === "bullets"
+        ? bulletItem.items.map((label, factorIndex) => ({ icon: featureIcon(factorIndex), label: capitalizeFirst(label) }))
+        : [];
+      return (
+        <section className="v3-section v3-residential-text-section v3-commercial-factors">
+          <Section id={section.id} eyebrow={number} title={section.title}>
+            <FactorGridCompact items={factors} columns={2} />
+          </Section>
+        </section>
+      );
+    }
+
+    if (section.id === "nem-automatikusan-csereljuk-le-a-meglevo-rendszert") {
+      return (
+        <section className="v3-section v3-residential-text-section">
+          <Section id={section.id} eyebrow={number} title={section.title}>
+            <RenderItems items={section.items.filter((item) => item.kind !== "editorial")} paragraphFlow="wide" />
+          </Section>
+        </section>
+      );
+    }
+  }
+
+  if (page.number === 15) {
+    if (section.id === "mire-terjedhet-ki-az-o-m") {
+      const bulletItem = section.items.find((item) => item.kind === "bullets");
+      const factors = bulletItem?.kind === "bullets"
+        ? bulletItem.items.map((label, factorIndex) => ({ icon: featureIcon(factorIndex), label: capitalizeFirst(label) }))
+        : [];
+      return (
+        <section className="v3-section v3-residential-text-section v3-commercial-factors">
+          <Section id={section.id} eyebrow={number} title={section.title}>
+            <FactorGridCompact items={factors} columns={2} />
+          </Section>
+        </section>
+      );
+    }
+
+    if (section.id === "energetikai-optimalizacio") {
+      return (
+        <section className="v3-section v3-residential-text-section">
+          <Section id={section.id} eyebrow={number} title={section.title}>
+            <RenderItems items={section.items.filter((item) => item.kind !== "editorial" && item.kind !== "link")} paragraphFlow="wide" />
+          </Section>
+        </section>
+      );
+    }
+  }
+
+  if (page.number === 16 && section.id === "mivel-kezdunk") {
+    return (
+      <section className="v3-section v3-residential-text-section">
+        <Section id={section.id} eyebrow={number} title={section.title}>
+          <RenderItems items={section.items.filter((item) => item.kind !== "editorial")} paragraphFlow="wide" />
+        </Section>
+      </section>
+    );
+  }
+
+  if (page.number === 18 && section.id === "a-muszaki-projektet-a-palyazattol-fuggetlenul-is-jol-kell-megtervezni") {
+    return (
+      <section className="v3-section v3-residential-text-section">
+        <Section id={section.id} eyebrow={number} title={section.title}>
+          <div className="v3-copy v3-copy--wide">
+            <p>A pályázati kiírás meghatározhatja a támogatható elemeket, de a rendszer méretezésének továbbra is a vállalat fogyasztásából, termelési profiljából, hálózati adottságaiból és üzleti céljaiból kell kiindulnia.</p>
+            <p>Egy támogatott beruházás akkor jelent valódi üzleti előnyt, ha nemcsak megfelel a pályázati feltételeknek, hanem hosszú távon is illeszkedik a telephely energetikai működéséhez. Ezért a napelem, az energiatároló és az egyéb energetikai elemek műszaki tartalmát mindig az adott vállalkozás valós igényeihez érdemes igazítani.</p>
+            <p>Az A1 Solar célja, hogy a támogatási lehetőség és a műszakilag indokolt rendszer ne két külön szempont legyen, hanem egy jól működő beruházásban találkozzon.</p>
+          </div>
+        </Section>
+      </section>
+    );
+  }
+
+  if (page.number === 18 && section.id === "a1-solar-szerepe") {
+    const roles = [
+      { title: "Műszaki felmérés és koncepció", text: "A telephely adottságainak és a fejlesztési céloknak megfelelő műszaki alapok meghatározása." },
+      { title: "Napelem és energiatárolás méretezése", text: "A fogyasztási profilhoz és a pályázati keretekhez illeszkedő rendszer kialakítása." },
+      { title: "Projektköltség és műszaki tartalom összehangolása", text: "A támogatható elemek és a valóban szükséges műszaki megoldás egyeztetése." },
+      { title: "Kivitelezés, beüzemelés, monitoring és szerviz", text: "A projekt megvalósítása és hosszú távú műszaki támogatása egy kézből." },
+    ];
+    return (
+      <section className="v3-section v3-residential-text-section v3-commercial-role">
+        <Section id={section.id} eyebrow={number} title={section.title}>
+          <FeatureGrid items={roles} />
+          <RenderItems items={section.items.filter((item) => item.kind === "cta")} />
+        </Section>
+      </section>
+    );
+  }
+
+  if (page.number === 19) {
+    if (section.id === "naperomu-energiatarolas") {
+      return (
+        <section className="v3-section v3-residential-text-section">
+          <Section id={section.id} eyebrow={number} title={section.title}>
+            <div className="v3-copy v3-copy--wide">
+              <p>A megújuló termelés és az energiatárolás integrációja olyan projektekben lehet fontos, ahol a hálózati korlátok, a termelési profil, az energiapiaci cél vagy a flexibilitás indokolja a tároló alkalmazását.</p>
+              <p>Az energiatároló szerepe projektenként eltérő lehet: segítheti a termelés időbeli áthelyezését, a hálózati csatlakozás jobb kihasználását vagy az energiapiaci működés optimalizálását.</p>
+              <p>A megfelelő műszaki kialakítást ezért mindig a naperőmű várható termelése, a csatlakozási adottságok és a projekt üzleti céljai alapján kell meghatározni.</p>
+              <Link className="v3-inline-link" href="/ipari/pv-storage/">PV + storage<ArrowRight size={15} /></Link>
+            </div>
+          </Section>
+        </section>
+      );
+    }
+
+    if (section.id === "projektfolyamat") {
+      return (
+        <section className="v3-section v3-industrial-process">
+          <Section id={section.id} eyebrow={number} title={section.title}>
+            <StepTimeline
+              items={[
+                { num: "01", title: "Helyszín és hálózat", text: "A terület, a csatlakozási adottságok és a projektcél feltérképezése." },
+                { num: "02", title: "Koncepció", text: "A műszaki architektúra és a megvalósítási út meghatározása." },
+                { num: "03", title: "Tervezés és engedélyezés", text: "Részletes tervek, egyeztetések és szükséges engedélyek előkészítése." },
+                { num: "04", title: "Kivitelezés", text: "A naperőmű szakszerű, koordinált megvalósítása." },
+                { num: "05", title: "Beüzemelés", text: "Mérések, próbaüzem és dokumentált műszaki átadás." },
+                { num: "06", title: "Monitoring és O&M", text: "Folyamatos felügyelet, üzemeltetés és karbantartási támogatás." },
+              ]}
+            />
+          </Section>
+        </section>
+      );
+    }
+
+    if (section.id === "naperomu-referenciak") {
+      return (
+        <section id={section.id} className="v3-section v3-industrial-reference">
+          <div className="v3-section__heading">
+            <span className="v3-section__number">{number}</span>
+            <h2>Naperőmű referencia</h2>
+          </div>
+          <article className="v3-industrial-reference__card">
+            <div className="v3-industrial-reference__image">
+              <Image
+                src="/media/v3/images/tompa-2-2mw-solar-park.png"
+                alt="Tompa 2,2 MW napelempark Huawei inverterekkel"
+                fill
+                sizes="(max-width: 1280px) 100vw, 1200px"
+              />
+            </div>
+            <div className="v3-industrial-reference__body">
+              <span>Tompa</span>
+              <h3>Tompa, 2,2 MW napelempark Huawei inverterekkel</h3>
+              <dl>
+                <div><dt>Teljesítmény</dt><dd>2,2 MW</dd></div>
+                <div><dt>Technológia</dt><dd>Huawei inverterek</dd></div>
+              </dl>
+              <div className="v3-industrial-reference__actions">
+                <Link className="v3-inline-link" href="/referenciak/naperomu/">Naperőmű referenciák<ArrowRight size={15} /></Link>
+                <CtaButton href="/kapcsolat/">Naperőmű projektről egyeztetek</CtaButton>
+              </div>
+            </div>
+          </article>
+        </section>
+      );
+    }
+  }
+
+  if (page.number === 20) {
+    if (section.id === "mikor-lehet-indokolt-a-bess") {
+      const factors = ["Peak shaving", "PV-többlet", "Energiaoptimalizálás", "Backup", "Flexibilitás"]
+        .map((label, factorIndex) => ({ icon: featureIcon(factorIndex), label }));
+      return (
+        <section className="v3-section v3-residential-text-section v3-industrial-factors">
+          <Section id={section.id} eyebrow={number} title={section.title}>
+            <RenderItems items={section.items.filter((item) => item.kind === "paragraph")} paragraphFlow="wide" />
+            <FactorGridCompact items={factors} columns={2} />
+          </Section>
+        </section>
+      );
+    }
+
+    if (section.id === "nem-akkumulatorkapacitassal-kezdunk-hanem-adatokkal") {
+      return (
+        <section className="v3-section v3-residential-text-section v3-commercial-data-profile">
+          <Section id={section.id} eyebrow={number} title={section.title}>
+            <RenderItems items={section.items.filter((item) => item.kind !== "editorial")} paragraphFlow="wide" />
+            <div className="v3-commercial-data-profile__image">
+              <Image
+                src="/media/v3/images/commercial-pv-storage-data-profile.png"
+                alt="Adatalapú ipari energiatároló-méretezés fogyasztási, termelési és akkumulátorprofillal"
+                width={1680}
+                height={909}
+                sizes="(max-width: 1280px) 100vw, 1200px"
+              />
+            </div>
+          </Section>
+        </section>
+      );
+    }
+
+    if (section.id === "mi-az-a-bess") {
+      return (
+        <section className="v3-section v3-residential-text-section">
+          <Section id={section.id} eyebrow={number} title={section.title}>
+            <div className="v3-copy v3-copy--wide">
+              <p>A BESS – Battery Energy Storage System – olyan akkumulátoros energiatároló rendszer, amely az akkumulátor mellett teljesítményelektronikából, vezérlésből, biztonsági rendszerekből és jellemzően EMS-ből áll.</p>
+              <p>A BESS értéke nem önmagában az eltárolható energiamennyiségből adódik, hanem abból, hogy a rendszer mikor, milyen teljesítménnyel és milyen üzleti cél szerint tölti vagy süti az akkumulátort. Ezért a vezérlés legalább olyan fontos része a rendszernek, mint maga az akkumulátor. A jól beállított EMS a termelési, fogyasztási és hálózati adatok alapján optimalizálja a működést.</p>
+              <p>Ipari környezetben a BESS rendszer méretezését mindig az adott telephely működéséhez kell igazítani. Más rendszer szükséges peak shavinghez, más a napelemes többlet jobb felhasználásához, backuphoz vagy későbbi flexibilitási szolgáltatásokhoz. Ezért minden projektet egyedi energetikai és műszaki elemzésből indítunk.</p>
+            </div>
+          </Section>
+        </section>
+      );
+    }
+
+    if (section.id === "magyarorszag-elso-foxess-g-max-projektje") {
+      return (
+        <section className="v3-section v3-bess-project">
+          <Section id={section.id} eyebrow={number} title="Magyarország első FoxESS G-MAX energiatároló rendszere">
+            <div className="v3-copy v3-copy--wide">
+              <p>Magyarország első FoxESS G-MAX energiatároló rendszerének telepítése az A1 Solar közreműködésével valósult meg.</p>
+              <p>Kapacitás: 2x100 kW<br />Teljesítmény: 2x215 kWh<br />Projekt célja: Önogyasztás optimalizálása</p>
+            </div>
+            <div className="v3-bess-project-media">
+              <div className="v3-bess-project-media__item">
+                <Image src="/media/v3/images/bess-foxess-gmax-team.webp" alt="Magyarország első FoxESS G-MAX energiatároló rendszere" fill sizes="(max-width: 900px) 100vw, 50vw" />
+              </div>
+              <div className="v3-bess-project-media__item">
+                <video controls playsInline preload="metadata" poster="/media/v3/images/bess-foxess-gmax-team.webp">
+                  <source src="/media/v3/videos/foxess-gmax-ferod-commissioning.mp4" type="video/mp4" />
+                </video>
+              </div>
+            </div>
+          </Section>
+        </section>
+      );
+    }
+
+    if (section.id === "7-mwh-energiatarolasi-projekt") {
+      return (
+        <section className="v3-section v3-bess-project">
+          <Section id={section.id} eyebrow={number} title={section.title}>
+            <div className="v3-copy v3-copy--wide">
+              <p>Jelenlegi legnagyobb energiatárolási projektünk 7 MWh tárolókapacitású vállalati/ipari BESS rendszer.</p>
+              <p>Helyszín: Miskol és Albertirsa<br />Tárolókapacitás: 2x3,5 MWh<br />Technológia: Sigenergy SigenStack<br />A1 Solar szerepe: generálkivitelező<br />Státusz: építés alatt</p>
+            </div>
+            <div className="v3-bess-centered-media">
+              <Image src="/media/v3/images/sigenergy-7mwh-project-team.webp" alt="Az A1 Solar 7 MWh energiatárolási projektje" fill sizes="(max-width: 980px) 100vw, 900px" />
+            </div>
+          </Section>
+        </section>
+      );
+    }
+
+    if (section.id === "mennyi-ido-alatt-terul-meg") {
+      return (
+        <section className="v3-section v3-residential-text-section">
+          <Section id={section.id} eyebrow={number} title={section.title}>
+            <div className="v3-copy v3-copy--wide">
+              <p>Erre nincs minden projektre érvényes válasz. A megtérülés függ a fogyasztási és termelési profiltól, az energiaáraktól, a teljesítménycsúcsoktól, a hálózati korlátoktól, a rendszer kihasználtságától és attól, milyen feladatokat lát el a BESS.</p>
+              <p>Ezért megtérülést csak konkrét telephelyi adatok és valós üzemeltetési feltételek alapján érdemes számolni. A cél nem egy általános megtérülési ígéret, hanem annak meghatározása, hogy az adott rendszer milyen üzleti értéket tud teremteni.</p>
+              <CtaButton href="/kapcsolat/">Műszaki és gazdasági BESS elemzést kérek</CtaButton>
+            </div>
+          </Section>
+        </section>
+      );
+    }
+  }
+
+  if (page.number === 21) {
+    if (section.id === "mire-hasznalhato") {
+      const bulletItem = section.items.find((item) => item.kind === "bullets");
+      const factors = bulletItem?.kind === "bullets"
+        ? bulletItem.items.map((label, factorIndex) => ({ icon: featureIcon(factorIndex), label: capitalizeFirst(label) }))
+        : [];
+      return (
+        <section className="v3-section v3-residential-text-section v3-industrial-factors">
+          <Section id={section.id} eyebrow={number} title={section.title}>
+            <FactorGridCompact items={factors} columns={2} />
+          </Section>
+        </section>
+      );
+    }
+
+    if (section.id === "a-rendszer-nem-csak-akkumulator") {
+      return (
+        <section className="v3-section v3-residential-text-section">
+          <Section id={section.id} eyebrow={number} title={section.title}>
+            <div className="v3-copy v3-copy--wide">
+              <p>Egy standalone BESS az akkumulátormodulokon túl teljesítményelektronikát, EMS-t, védelmi és biztonsági rendszereket, kommunikációt, hálózati csatlakozást és megfelelő műszaki környezetet igényel.</p>
+              <p>A rendszer valódi képességeit az határozza meg, hogyan működnek együtt ezek az elemek. Nem elég a megfelelő kapacitás: a töltési és kisütési teljesítmény, a hálózati kapcsolat, a vezérlés, a reakcióidő és a biztonsági logika együtt határozza meg, mire lesz képes a BESS a gyakorlatban.</p>
+              <p>Ezért a standalone energiatárolót komplett energetikai infrastruktúraként kezeljük. A cél az, hogy a rendszer műszakilag stabilan, biztonságosan és az adott projekt üzleti vagy hálózati céljaihoz igazítva működjön.</p>
+            </div>
+          </Section>
+        </section>
+      );
+    }
+
+    if (section.id === "projektelokeszites") {
+      return (
+        <section className="v3-section v3-residential-text-section">
+          <Section id={section.id} eyebrow={number} title={section.title}>
+            <div className="v3-copy v3-copy--wide">
+              <p>A tervezés a projektcél, a szükséges MW teljesítmény, MWh kapacitás, ciklusszám, csatlakozási feltételek, helyszíni adottságok és üzemeltetési modell meghatározásával kezdődik.</p>
+              <p>Az első lépés annak tisztázása, hogy a rendszer pontosan milyen feladatot fog ellátni. Más műszaki kialakítás lehet indokolt energiapiaci működéshez, hálózati szolgáltatáshoz, teljesítménykezeléshez vagy több funkció együttes kiszolgálásához.</p>
+              <p>Ezután következik a hálózati és helyszíni adottságok vizsgálata. Ilyen többek között a csatlakozási pont, a rendelkezésre álló kapacitás, a transzformátor és középfeszültségű infrastruktúra, a telepítési terület, valamint a tűzvédelmi és üzemeltetési környezet.</p>
+              <p>A műszaki és üzleti paraméterekből áll össze a rendszer koncepciója: teljesítmény, kapacitás, PCS, akkumulátortechnológia, EMS, védelmi rendszer és csatlakozási architektúra. Csak ezután érdemes konkrét berendezést és szállítót választani.</p>
+            </div>
+          </Section>
+        </section>
+      );
+    }
+  }
+
+  if (page.number === 22) {
+    if (section.id === "a-meretezes-ket-rendszer-osszehangolasa") {
+      return (
+        <section className="v3-section v3-residential-text-section">
+          <Section id={section.id} eyebrow={number} title={section.title}>
+            <div className="v3-copy v3-copy--wide">
+              <p>Megvizsgáljuk a PV-termelési profilt, a hálózati csatlakozást, a tárolás célját, a szükséges MW/MWh arányt, az EMS vezérlést, a töltési-kisütési logikát és a projekt üzemeltetési modelljét.</p>
+              <p>A megfelelő rendszer kialakításánál nem elég külön meghatározni a naperőmű és az energiatároló méretét. A két rendszer működését együtt kell modellezni, hogy látható legyen, mikor keletkezik többlettermelés, mikor érdemes tölteni vagy kisütni az akkumulátort, és milyen hálózati vagy üzleti korlátokat kell figyelembe venni.</p>
+              <p>Az EMS feladata, hogy ezt az összehangolt működést a gyakorlatban is megvalósítsa. A vezérlési logika a projekt céljaihoz igazodhat: például termelési csúcsok kisimításához, visszatáplálási korlátok kezeléséhez vagy az energia későbbi időpontra történő áthelyezéséhez.</p>
+            </div>
+          </Section>
+        </section>
+      );
+    }
+
+    if (section.id === "uj-es-meglevo-naperomu-melle-is-vizsgalhato") {
+      return (
+        <section className="v3-section v3-residential-text-section">
+          <Section id={section.id} eyebrow={number} title={section.title}>
+            <div className="v3-copy v3-copy--wide">
+              <p>Az energiatárolás új naperőművi projekt részeként és meglévő PV-rendszer kiegészítéseként is vizsgálható. A műszaki megoldás a csatlakozási és projektfeltételektől függ.</p>
+              <p>Meglévő naperőmű esetén különösen fontos a jelenlegi inverterek, transzformátorok, védelmek, mérési rendszer és hálózati csatlakozás vizsgálata. Ezek határozzák meg, hogy az energiatároló milyen módon és milyen korlátok mellett illeszthető a rendszerhez.</p>
+              <p>Új projekt esetén a PV-rendszer és a BESS már a tervezés kezdetétől közös architektúrában kezelhető. Ez nagyobb szabadságot ad a teljesítmény, a kapacitás, a csatlakozás és a vezérlés optimalizálásában.</p>
+              <p>Mindkét esetben ugyanaz az alapelv: előbb a projektcél és a rendelkezésre álló adatok, utána a konkrét technológia és rendszerkialakítás.</p>
+            </div>
+          </Section>
+        </section>
+      );
+    }
+  }
+
+  if (page.number === 23) {
+    if (section.id === "mi-kell-a-flexibilitashoz") {
+      return (
+        <section className="v3-section v3-residential-text-section">
+          <Section id={section.id} eyebrow={number} title={section.title}>
+            <div className="v3-copy v3-copy--wide">
+              <p>A flexibilitás nem attól jön létre, hogy van egy akkumulátor vagy más vezérelhető eszköz. A rendszernek mérhetőnek, kommunikációképesnek és megfelelően vezérelhetőnek kell lennie ahhoz, hogy egy külső jelre vagy előre meghatározott logika alapján módosítani tudja a működését.</p>
+              <p>A műszaki alkalmasság mellett fontos az adatkapcsolat megbízhatósága, a vezérlés reakcióideje, a rendelkezésre álló teljesítmény és energia, valamint az, hogy a rendszer mennyi ideig és milyen gyakran képes beavatkozásra. Ezek együtt határozzák meg, hogy az adott eszköz milyen flexibilitási feladatokra lehet alkalmas.</p>
+              <p>A piaci részvételhez ezen felül megfelelő szerződéses és üzemeltetési modell is szükséges. Az elérhető lehetőségek és bevételi modellek konstrukciónként változhatnak, ezért ezeket mindig az aktuális partneri és piaci feltételek alapján kell vizsgálni.</p>
+            </div>
+          </Section>
+        </section>
+      );
+    }
+
+    if (section.id === "az-a1-solar-szerepe") {
+      return (
+        <section className="v3-section v3-residential-text-section">
+          <Section id={section.id} eyebrow={number} title={section.title}>
+            <div className="v3-copy v3-copy--wide">
+              <p>Az A1 Solar a műszaki oldalon a napelem, energiatároló, mérés, vezérlés és kapcsolódó rendszerek integrációját tudja támogatni. Az adott aggregációs vagy flexibilitási konstrukció pontos keretei mindig a konkrét projekt és piaci partner függvényei.</p>
+              <p>A feladatunk annak biztosítása, hogy az energetikai rendszer műszakilag mérhető, vezérelhető és megfelelően integrálható legyen. Ez magában foglalhatja a mérési pontok, kommunikáció, EMS, inverterek, energiatárolók és egyéb vezérelhető eszközök összehangolását.</p>
+              <p>Már a rendszer tervezésekor érdemes figyelembe venni a későbbi aggregációs vagy flexibilitási lehetőségeket. Így elkerülhető, hogy egy későbbi piaci csatlakozáshoz jelentős műszaki átalakításra legyen szükség.</p>
+              <p>A konkrét energiapiaci részvételt, elszámolást és bevételi modellt mindig az adott aggregátorral vagy piaci partnerrel együtt kell kialakítani. Az A1 Solar szerepe elsősorban az ehhez szükséges műszaki alap megteremtése.</p>
+            </div>
+          </Section>
+        </section>
+      );
+    }
+  }
+
+  if (page.number === 24 && section.id === "lakossagi-napelem-energiatarolo-helyszin") {
+    const firstTwoRows = RESIDENTIAL_STORAGE_PROJECTS.slice(0, 6);
+    const remainingProjects = RESIDENTIAL_STORAGE_PROJECTS.slice(6);
+    return (
+      <section id={section.id} className="v3-section v3-residential-references v3-reference-library">
+        <div className="v3-section__heading">
+          <span className="v3-section__number">{number}</span>
+          <h2>Lakossági referenciák, nem csak ígéretek</h2>
+          <p>Valós A1 Solar projektek a telepített rendszer legfontosabb műszaki adataival.</p>
+        </div>
+        <ResidentialReferenceGrid projects={firstTwoRows} />
+        <div className="v3-reference-library__stats" aria-label="A1 Solar számokban">
+          <BigStats />
+        </div>
+        {remainingProjects.length ? <ResidentialReferenceGrid projects={remainingProjects} /> : null}
+        <div className="v3-reference-section__cta"><CtaButton href="/kapcsolat/">Hasonló lakossági rendszert szeretnék</CtaButton></div>
+      </section>
+    );
   }
 
   if ((page.number === 8 || page.number === 9) && editorials.length === 0) {
@@ -1097,6 +1792,7 @@ export const CopydeckBody = ({ page }: { page: CopyPage }) => {
     index !== heroSlotIndex
     && index !== ctaIndex
     && !(heroSupplement && item.kind === "editorial")
+    && !(page.number === 24 && item.kind === "editorial")
   ));
   const aboutIntro = page.number === 2
     ? introRemainder.filter((item) => item.kind === "paragraph" && !item.text.startsWith("13 év szakmai múlt |"))
@@ -1185,14 +1881,19 @@ export const CopydeckBody = ({ page }: { page: CopyPage }) => {
           </div>
         </section>
       ) : null}
-      {[7, 8, 9].includes(page.number) ? (
-        <section className="v3-residential-proof" aria-label="A1 Solar számokban">
+      {[7, 8, 9, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23].includes(page.number) ? (
+        <section className={page.number >= 19 && page.number <= 23 ? "v3-industrial-proof" : "v3-residential-proof"} aria-label="A1 Solar számokban">
           <div className="container">
             <BigStats />
           </div>
         </section>
       ) : null}
-      {page.number === 1 || page.number === 2 || [7, 8, 9].includes(page.number) ? <GoogleReviews /> : null}
+      {page.number === 24 ? (
+        <section className="v3-reference-brand-badges" aria-label="A1 Solar díjak és szakmai minősítések">
+          <div className="container"><BrandBadges /></div>
+        </section>
+      ) : null}
+      {page.number === 1 || page.number === 2 || [7, 8, 9, 12, 13, 14, 15, 16, 17, 18, 24].includes(page.number) ? <GoogleReviews /> : null}
     </>
   );
 };
