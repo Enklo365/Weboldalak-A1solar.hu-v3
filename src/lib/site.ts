@@ -87,8 +87,6 @@ export const MAIN_NAV: NavEntry[] = [
       { href: "/referenciak/energiatarolas/", label: "Energiatárolás" },
       { href: "/referenciak/backup/", label: "Backup" },
       { href: "/referenciak/vallalati/", label: "Vállalati" },
-      { href: "/referenciak/bess-ipari/", label: "Ipari / BESS" },
-      { href: "/referenciak/naperomu/", label: "Naperőmű" },
     ],
   },
   {

@@ -13,6 +13,8 @@ type ContactFormProps = {
   bare?: boolean;
   /** Submit button label. */
   submitLabel?: string;
+  /** Extra postcode and inquiry-type fields used on the dedicated contact page. */
+  detailed?: boolean;
 };
 
 /**
@@ -28,6 +30,7 @@ export const ContactForm = ({
   compact = false,
   bare = false,
   submitLabel = "Ajánlatkérő űrlap küldése",
+  detailed = false,
 }: ContactFormProps) => {
   const cardClass = bare ? "contact-card contact-card--bare" : "contact-card";
   const [status, setStatus] = useState<"idle" | "sending" | "ok" | "error">(
@@ -54,12 +57,23 @@ export const ContactForm = ({
     setStatus("sending");
     setError("");
 
+    const postcode = String(data.get("postcode") ?? "").trim();
+    const inquiryType = String(data.get("inquiryType") ?? "").trim();
+    const message = String(data.get("message") ?? "");
+    const detailedMessage = detailed
+      ? [
+          inquiryType ? `Érdeklődés típusa: ${inquiryType}` : "",
+          postcode ? `Irányítószám: ${postcode}` : "",
+          message,
+        ].filter(Boolean).join("\n\n")
+      : message;
+
     const res = await submitContact({
       formName,
       name: String(data.get("name") ?? ""),
       email: String(data.get("email") ?? ""),
       phone: String(data.get("phone") ?? ""),
-      message: String(data.get("message") ?? ""),
+      message: detailedMessage,
     });
 
     if (res.ok) {
@@ -118,6 +132,31 @@ export const ContactForm = ({
         <span>E-mail cím *</span>
         <input name="email" type="email" required maxLength={120} autoComplete="email" placeholder="pelda@email.hu" />
       </label>
+      {detailed ? (
+        <>
+          <label className="field">
+            <span>Településed irányítószáma *</span>
+            <input name="postcode" required inputMode="numeric" pattern="[0-9]{4}" maxLength={4} autoComplete="postal-code" placeholder="1234" />
+          </label>
+          <fieldset className="contact-interest">
+            <legend>Milyen témában keresel minket? *</legend>
+            <div>
+              {[
+                "Lakossági érdeklődés",
+                "Vállalati érdeklődés",
+                "Ipari / BESS projekt",
+                "Finanszírozás",
+                "Szerviz / garancia",
+              ].map((option) => (
+                <label key={option}>
+                  <input type="radio" name="inquiryType" value={option} required />
+                  <span>{option}</span>
+                </label>
+              ))}
+            </div>
+          </fieldset>
+        </>
+      ) : null}
       {compact ? (
         <input type="hidden" name="message" value={`Ajánlatkérés a(z) „${formName}” űrlapról.`} />
       ) : (

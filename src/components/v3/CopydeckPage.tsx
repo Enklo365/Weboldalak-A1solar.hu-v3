@@ -30,16 +30,25 @@ import {
   type ProjectMosaicItem,
 } from "@/components/section/SectionKit";
 import { GoogleReviews } from "@/components/section/GoogleReviews";
+import { ContactForm } from "@/components/ContactForm";
 import { Breadcrumbs } from "@/components/v3/Breadcrumbs";
+import { ArticleArchive } from "@/components/v3/ArticleArchive";
 import { EditorialSlot } from "@/components/v3/EditorialSlot";
 import { hasV3HeroSupplement, hasV3Supplement, V3HeroSupplement, V3Supplement } from "@/components/v3/V3Supplement";
 import { getV3HeroMedia } from "@/lib/v3-hero-media";
 import { getV3SectionMedia } from "@/lib/v3-curated-media";
 import { MEDIA_OUTLETS } from "@/lib/media-outlets";
+import { getPosts, postCard } from "@/lib/content";
 import { RESIDENTIAL_STORAGE_PROJECTS, type ResidentialStorageProject } from "@/lib/residential-storage-projects";
 import { getV3Layout, type CopyItem, type CopyPage, type CopySection } from "@/lib/v3-pages";
 
 type ParagraphFlow = "wide" | "column" | "preserve";
+
+const consolidatedReferenceHref = (href: string) => {
+  if (href === "/referenciak/naperomu/") return "/referenciak/vallalati/#naperomu-referenciak";
+  if (href === "/referenciak/bess-ipari/") return "/referenciak/vallalati/#bess-ipari-referenciak";
+  return href;
+};
 
 const isLegacyInlineStats = (item: CopyItem) => (
   item.kind === "paragraph"
@@ -91,11 +100,11 @@ const RenderItems = ({ items, compact = false, paragraphFlow = "column" }: { ite
       if (item.kind === "cta") return <Link key={index} className="btn btn-primary" href="/kapcsolat/">{item.label}<ArrowRight size={17} /></Link>;
       if (item.kind === "link") {
         const props = item.external ? { target: "_blank", rel: "noopener noreferrer" } : {};
-        return <a key={index} className="v3-inline-link" href={item.href} {...props}>{item.label}<ArrowRight size={15} /></a>;
+        return <a key={index} className="v3-inline-link" href={consolidatedReferenceHref(item.href)} {...props}>{item.label}<ArrowRight size={15} /></a>;
       }
       if (item.kind === "linkList") return (
         <div key={index} className="v3-link-list">
-          {item.links.map((link) => <a key={`${link.href}-${link.label}`} className="v3-inline-link" href={link.href} target={item.external ? "_blank" : undefined} rel={item.external ? "noopener noreferrer" : undefined}>{link.label}<ArrowRight size={15} /></a>)}
+          {item.links.map((link) => <a key={`${link.href}-${link.label}`} className="v3-inline-link" href={consolidatedReferenceHref(link.href)} target={item.external ? "_blank" : undefined} rel={item.external ? "noopener noreferrer" : undefined}>{link.label}<ArrowRight size={15} /></a>)}
         </div>
       );
       return <p key={index} className="v3-editor-note">{item.text}</p>;
@@ -243,6 +252,56 @@ const TEMPORARY_OFF_GRID_REFERENCE_PROJECTS = [
   RESIDENTIAL_STORAGE_PROJECTS[11],
 ];
 
+const RESIDENTIAL_REFERENCE_INTRO = "A fotók mellett a projekt legfontosabb műszaki adatait és célját is megmutatjuk, hogy látható legyen, milyen rendszer milyen feladatra készült. A referenciák között különböző méretű és kialakítású napelemes, energiatárolós és kapcsolódó lakossági rendszerek szerepelnek. Az egyes projektek adatai segítenek összehasonlítani, hogy eltérő fogyasztási igényekhez és felhasználási célokhoz milyen műszaki megoldásokat valósítottunk meg.";
+
+const STORAGE_REFERENCE_MOSAIC = [
+  {
+    src: "/media/v3/images/residential-reference-balatonalmadi-sigenergy.webp",
+    alt: "Sigenergy SigenStor energiatároló Balatonalmádiban",
+    title: "Balatonalmádi · Sigenergy",
+    text: "4,10 kWp napelem · 5 kW inverter · 10 kWh energiatároló",
+  },
+  {
+    src: "/media/v3/images/home-retrofit-huawei-jaszszentlaszlo.webp",
+    alt: "Huawei inverter és energiatároló Jászszentlászlón",
+    title: "Jászszentlászló · Huawei",
+    text: "5 kW inverter · 10 kWh energiatároló · 14 × 410 W napelem",
+  },
+  {
+    src: "/media/v3/images/commercial-balatonlelle-sigenergy.webp",
+    alt: "Sigenergy vállalati energiatároló rendszer Balatonlellén",
+    title: "Balatonlelle · Sigenergy",
+    text: "50 kW-os rendszer · 102 × 630 W napelem",
+  },
+  {
+    src: "/media/v3/images/bess-foxess-gmax-team.webp",
+    alt: "Magyarország első FoxESS G-MAX energiatároló rendszere Fertődön",
+    title: "Fertőd · FoxESS G-MAX",
+    text: "2 × 100 kW teljesítmény · 2 × 215 kWh kapacitás",
+  },
+] as const;
+
+const COMMERCIAL_REFERENCE_MOSAIC = [
+  {
+    src: "/media/v3/images/commercial-allee-rooftop.webp",
+    alt: "Az Allee Center tetőre szerelt napelemes rendszere",
+    title: "Allee Center · Budapest",
+    text: "Vállalati tetőre szerelt napelemes rendszer",
+  },
+  {
+    src: "/media/v3/images/commercial-pecel-industrial-roof.webp",
+    alt: "Ipari napelemes rendszer Pécelen",
+    title: "Pécel · ipari telephely",
+    text: "Nagy felületű vállalati napelemes projekt",
+  },
+  {
+    src: "/media/v3/images/commercial-balatonlelle-sigenergy.webp",
+    alt: "Sigenergy vállalati energiatároló rendszer Balatonlellén",
+    title: "Balatonlelle · Sigenergy",
+    text: "Napelem és vállalati energiatárolás egy rendszerben",
+  },
+] as const;
+
 const COMMERCIAL_PROJECT_STEPS = [
   { num: "01", title: "Felmérés", text: "A telephely, a villamos infrastruktúra és a rendelkezésre álló felületek műszaki felmérése." },
   { num: "02", title: "Fogyasztási elemzés", text: "A napi és szezonális fogyasztási profil, valamint a várható jövőbeni energiaigény értékelése." },
@@ -325,6 +384,50 @@ const visualFamilyFor = (page: CopyPage): VisualFamily => {
   if (page.number >= 30 && page.number <= 33) return "technology";
   if (page.number === 34) return "articles";
   return "contact";
+};
+
+const IndustrialContactSection = ({ pageNumber }: { pageNumber: number }) => {
+  const copy = pageNumber === 21
+    ? {
+        eyebrow: "STANDALONE BESS",
+        title: "Önálló energiatárolási projektet tervez?",
+        text: "Írja meg, milyen műszaki, hálózati vagy üzleti célt szeretne elérni. Szakértőink az alapadatok áttekintése után felveszik Önnel a kapcsolatot, és segítenek kijelölni a következő lépést.",
+        formName: "Standalone energiatárolás érdeklődés",
+      }
+    : pageNumber === 22
+      ? {
+          eyebrow: "PV + STORAGE",
+          title: "Naperőművét energiatárolással egészítené ki?",
+          text: "Küldje el a meglévő vagy tervezett PV-rendszer fő adatait és a tárolás célját. Segítünk megvizsgálni, milyen műszaki kialakítás illeszkedhet a projekthez.",
+          formName: "PV + storage érdeklődés",
+        }
+      : {
+          eyebrow: "AGGREGÁCIÓ ÉS FLEXIBILITÁS",
+          title: "Flexibilitási vagy aggregációs lehetőséget vizsgál?",
+          text: "Írja meg, milyen vezérelhető fogyasztó, termelő vagy energiatároló kapcsolódna a projekthez. Műszaki oldalról segítünk felmérni az integráció és a vezérelhetőség feltételeit.",
+          formName: "Aggregáció és flexibilitás érdeklődés",
+        };
+
+  return (
+    <section className="v3-industrial-contact" aria-labelledby={`industrial-contact-${pageNumber}`}>
+      <div className="container v3-industrial-contact__layout">
+        <div className="v3-industrial-contact__copy">
+          <span>{copy.eyebrow}</span>
+          <h2 id={`industrial-contact-${pageNumber}`}>{copy.title}</h2>
+          <p>{copy.text}</p>
+        </div>
+        <div className="v3-industrial-contact__form">
+          <ContactForm
+            formName={copy.formName}
+            heading="Vegye fel velünk a kapcsolatot"
+            intro="Adja meg elérhetőségét és a projekt rövid leírását; munkatársunk hamarosan jelentkezik."
+            submitLabel="Kapcsolatfelvétel küldése"
+            bare
+          />
+        </div>
+      </div>
+    </section>
+  );
 };
 
 const sectionImageFor = (page: CopyPage, sectionId: string, mediaIndex = 0) => {
@@ -1234,13 +1337,13 @@ const V3Section = ({ page, section, index, layout }: { page: CopyPage; section: 
             </div>
             <div className="v3-industrial-reference__body">
               <span>Tompa</span>
-              <h3>Tompa, 2,2 MW napelempark Huawei inverterekkel</h3>
+              <h3 className="v3-industrial-reference__title--compact">Tompa, 2,2 MW napelempark Huawei inverterekkel</h3>
               <dl>
                 <div><dt>Teljesítmény</dt><dd>2,2 MW</dd></div>
                 <div><dt>Technológia</dt><dd>Huawei inverterek</dd></div>
               </dl>
               <div className="v3-industrial-reference__actions">
-                <Link className="v3-inline-link" href="/referenciak/naperomu/">Naperőmű referenciák<ArrowRight size={15} /></Link>
+                <Link className="v3-inline-link" href="/referenciak/vallalati/#naperomu-referenciak">Naperőmű referenciák<ArrowRight size={15} /></Link>
                 <CtaButton href="/kapcsolat/">Naperőmű projektről egyeztetek</CtaButton>
               </div>
             </div>
@@ -1782,18 +1885,274 @@ export const CopydeckPage = ({ page }: { page: CopyPage }) => {
 };
 
 export const CopydeckBody = ({ page }: { page: CopyPage }) => {
+  if (page.number === 34) {
+    const intro = page.intro.find((item): item is Extract<CopyItem, { kind: "paragraph" }> => item.kind === "paragraph");
+    return (
+      <div className="container v3-article-listing">
+        {intro ? <p className="v3-article-listing__intro">{intro.text}</p> : null}
+        <ArticleArchive posts={getPosts().map(postCard)} />
+      </div>
+    );
+  }
+
+  const renderReferenceSection = (section: CopySection, index: number) => {
+    const number = String(index + 1).padStart(2, "0");
+    if (page.number === 25) {
+    if (section.id === "lakossagi-rendszerektol-a-tobb-mwh-s-ipari-energiatarolasig") {
+      return (
+        <section id={section.id} className="v3-section v3-storage-reference-intro">
+          <div className="v3-section__heading v3-section__heading--full">
+            <span className="v3-section__number">{number}</span>
+            <h2>{section.title}</h2>
+            <RenderItems items={section.items.filter((item) => item.kind === "paragraph")} paragraphFlow="wide" />
+          </div>
+          <div className="v3-storage-reference-mosaic">
+            {STORAGE_REFERENCE_MOSAIC.map((item) => (
+              <figure className="v3-storage-reference-mosaic__item" key={item.src}>
+                <div className="v3-storage-reference-mosaic__image">
+                  <Image src={item.src} alt={item.alt} fill sizes="(max-width: 720px) 100vw, 50vw" />
+                </div>
+                <figcaption>
+                  <strong>{item.title}</strong>
+                  <span>{item.text}</span>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </section>
+      );
+    }
+
+    if (section.id === "magyarorszag-elso-foxess-g-max-energiatarolo-rendszere") {
+      return (
+        <section className="v3-section v3-bess-project">
+          <Section id={section.id} eyebrow={number} title={section.title}>
+            <div className="v3-copy v3-copy--wide">
+              <p>Magyarország első FoxESS G-MAX energiatároló rendszerének telepítése az A1 Solar közreműködésével valósult meg.</p>
+              <p>Helyszín: Fertőd<br />Teljesítmény: 2 × 100 kW<br />Tárolókapacitás: 2 × 215 kWh<br />Projekt célja: önfogyasztás optimalizálása</p>
+            </div>
+            <div className="v3-bess-project-media">
+              <div className="v3-bess-project-media__item">
+                <Image src="/media/v3/images/bess-foxess-gmax-team.webp" alt="Magyarország első FoxESS G-MAX energiatároló rendszere Fertődön" fill sizes="(max-width: 900px) 100vw, 50vw" />
+              </div>
+              <div className="v3-bess-project-media__item">
+                <video controls playsInline preload="metadata" poster="/media/v3/images/bess-foxess-gmax-team.webp">
+                  <source src="/media/v3/videos/foxess-gmax-ferod-commissioning.mp4" type="video/mp4" />
+                </video>
+              </div>
+            </div>
+          </Section>
+        </section>
+      );
+    }
+
+    if (section.id === "7-mwh-energiatarolasi-projekt") {
+      return (
+        <section className="v3-section v3-bess-project">
+          <Section id={section.id} eyebrow={number} title={section.title}>
+            <div className="v3-copy v3-copy--wide">
+              <p>Jelenlegi legnagyobb energiatárolási projektünk 7 MWh tárolókapacitású vállalati és ipari BESS rendszer.</p>
+              <p>Helyszín: Miskol és Albertirsa<br />Tárolókapacitás: 2 × 3,5 MWh<br />Technológia: Sigenergy SigenStack<br />A1 Solar szerepe: generálkivitelező<br />Státusz: építés alatt</p>
+            </div>
+            <div className="v3-bess-centered-media">
+              <Image src="/media/v3/images/sigenergy-7mwh-project-team.webp" alt="Az A1 Solar 7 MWh energiatárolási projektje" fill sizes="(max-width: 980px) 100vw, 900px" />
+            </div>
+          </Section>
+        </section>
+      );
+    }
+
+    if (section.id === "lakossagi-energiatarolo-referencia-helyszin") {
+      const nagymaros = {
+        ...RESIDENTIAL_STORAGE_PROJECTS[4],
+        images: [{
+          src: "/media/v3/images/residential-reference-nagymaros-sigenergy-storage.webp",
+          alt: "Sigenergy SigenHybrid inverter és 10 kWh energiatároló Nagymaroson",
+        }],
+      };
+      return (
+        <section id={section.id} className="v3-section v3-residential-references v3-reference-section">
+          <div className="v3-section__heading">
+            <span className="v3-section__number">{number}</span>
+            <h2>Lakossági energiatároló referencia – Nagymaros</h2>
+            <p>A 8,2 kWp napelemes rendszerhez Sigenergy SigenHybrid inverter és 10 kWh energiatároló készült, backup funkció nélkül.</p>
+          </div>
+          <ResidentialReferenceGrid projects={[nagymaros]} titlePrefix="Lakossági energiatároló referencia" />
+        </section>
+      );
+    }
+
+    if (section.id === "backup-referencia-helyszin") {
+      return (
+        <section id={section.id} className="v3-section v3-residential-references v3-reference-section">
+          <div className="v3-section__heading">
+            <span className="v3-section__number">{number}</span>
+            <h2>Backup referencia – Harta</h2>
+            <p>A rendszer célja a kritikus fogyasztók tartalékellátása áramszünet esetén. A Deye inverterrel kialakított megoldás a korábban bemutatott hartai A1 Solar referencia.</p>
+          </div>
+          <ResidentialReferenceGrid projects={[BACKUP_REFERENCE_PROJECTS[1]]} titlePrefix="A1 Solar backup referencia" />
+        </section>
+      );
+    }
+
+    if (section.id === "deye-referenciak") {
+      const technologySections = page.sections.slice(5, 9);
+      const tiles: FeatureTileItem[] = technologySections.map((technologySection, technologyIndex) => {
+        const link = technologySection.items.find((item): item is Extract<CopyItem, { kind: "link" }> => item.kind === "link");
+        const text = technologySection.items
+          .filter((item): item is Extract<CopyItem, { kind: "paragraph" }> => item.kind === "paragraph")
+          .map((item) => item.text)
+          .join(" ");
+        return {
+          icon: featureIcon(technologyIndex),
+          eyebrow: `0${technologyIndex + 6}`,
+          title: technologySection.title,
+          text,
+          href: link?.href,
+          linkLabel: link?.label,
+        };
+      });
+      return (
+        <section className="v3-section v3-storage-technologies" aria-label="Energiatároló technológiai referenciák">
+          <FeatureTiles items={tiles} layout="mosaic" tone="graphite" />
+        </section>
+      );
+    }
+
+    if (["foxess-referenciak", "sigenergy-referenciak", "huawei-referenciak"].includes(section.id)) return null;
+  }
+
+    if (page.number === 26 && section.id === "backup-rendszer-helyszin") {
+    return (
+      <section id={section.id} className="v3-section v3-residential-references v3-reference-section">
+        <div className="v3-section__heading">
+          <span className="v3-section__number">{number}</span>
+          <h2>Megvalósult backup rendszerek</h2>
+          <p>Négy korábbi A1 Solar projekt a jelenleg rendelkezésre álló rendszeradatokkal. A végleges fotókat és műszaki adatokat a későbbi frissítéskor cseréljük.</p>
+        </div>
+        <ResidentialReferenceGrid projects={BACKUP_REFERENCE_PROJECTS} titlePrefix="A1 Solar backup referencia" />
+        <div className="v3-reference-section__cta"><CtaButton href="/kapcsolat/">Backup rendszerre kérek ajánlatot</CtaButton></div>
+      </section>
+    );
+    }
+
+    if (page.number === 27 && section.id === "vallalati-projekt-helyszin") {
+      return (
+        <>
+          <section id={section.id} className="v3-section v3-unified-commercial-references">
+            <div className="v3-section__heading v3-section__heading--full">
+              <span className="v3-section__number">01</span>
+              <h2>Vállalati napelemes és energiatárolós projektek</h2>
+              <p>Vállalati referenciáink között tetőre szerelt napelemes rendszerek, ipari telephelyek és energiatárolással kiegészített megoldások egyaránt szerepelnek.</p>
+            </div>
+            <div className="v3-unified-reference-grid">
+              {COMMERCIAL_REFERENCE_MOSAIC.map((project) => (
+                <article className="v3-unified-reference-card" key={project.src}>
+                  <div className="v3-unified-reference-card__image">
+                    <Image src={project.src} alt={project.alt} fill sizes="(max-width: 760px) 100vw, 33vw" />
+                  </div>
+                  <div className="v3-unified-reference-card__body">
+                    <h3>{project.title}</h3>
+                    <p>{project.text}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </section>
+
+          <section id="naperomu-referenciak" className="v3-section v3-industrial-reference v3-unified-reference-section">
+            <div className="v3-section__heading v3-section__heading--full">
+              <span className="v3-section__number">02</span>
+              <h2>Naperőmű referenciák</h2>
+              <p>Nagy naperőművi projektjeinknél a projektméret, a technológia, a megvalósítás státusza és az A1 Solar szerepe is meghatározó.</p>
+            </div>
+            <article className="v3-industrial-reference__card">
+              <div className="v3-industrial-reference__image">
+                <Image src="/media/v3/images/tompa-2-2mw-solar-park.png" alt="Tompa 2,2 MW napelempark Huawei inverterekkel" fill sizes="(max-width: 1280px) 100vw, 1200px" />
+              </div>
+              <div className="v3-industrial-reference__body">
+                <span>Tompa</span>
+                <h3 className="v3-industrial-reference__title--compact">Tompa, 2,2 MW napelempark Huawei inverterekkel</h3>
+                <dl>
+                  <div><dt>Teljesítmény</dt><dd>2,2 MW</dd></div>
+                  <div><dt>Technológia</dt><dd>Huawei inverterek</dd></div>
+                </dl>
+                <div className="v3-industrial-reference__actions">
+                  <Link className="v3-inline-link" href="/ipari/naperomuvek/">Nagy naperőművek<ArrowRight size={15} /></Link>
+                  <CtaButton href="/kapcsolat/">Naperőmű projektről egyeztetek</CtaButton>
+                </div>
+              </div>
+            </article>
+          </section>
+
+          <section id="bess-ipari-referenciak" className="v3-section v3-unified-reference-section">
+            <div className="v3-section__heading v3-section__heading--full">
+              <span className="v3-section__number">03</span>
+              <h2>Ipari és BESS referenciák</h2>
+              <p>A nagyobb energiatárolási projekteknél a kapacitás és teljesítmény mellett a vezérlési logika, a hálózati környezet és a projektcél is fontos.</p>
+            </div>
+
+            <div className="v3-unified-bess-projects">
+              <article className="v3-unified-bess-card">
+                <div className="v3-unified-bess-card__media">
+                  <Image src="/media/v3/images/bess-foxess-gmax-team.webp" alt="Magyarország első FoxESS G-MAX energiatároló rendszere Fertődön" fill sizes="(max-width: 900px) 100vw, 50vw" />
+                </div>
+                <div className="v3-unified-bess-card__body">
+                  <span>FERTŐD · FOXESS</span>
+                  <h3>Magyarország első FoxESS G-MAX energiatároló rendszere</h3>
+                  <p>Magyarország első FoxESS G-MAX rendszerének telepítése az A1 Solar közreműködésével valósult meg.</p>
+                  <dl>
+                    <div><dt>Teljesítmény</dt><dd>2 × 100 kW</dd></div>
+                    <div><dt>Tárolókapacitás</dt><dd>2 × 215 kWh</dd></div>
+                    <div><dt>Projekt célja</dt><dd>Önfogyasztás optimalizálása</dd></div>
+                  </dl>
+                </div>
+              </article>
+
+              <article className="v3-unified-bess-card">
+                <div className="v3-unified-bess-card__media">
+                  <Image src="/media/v3/images/sigenergy-7mwh-project-team.webp" alt="Az A1 Solar 7 MWh energiatárolási projektje" fill sizes="(max-width: 900px) 100vw, 50vw" />
+                </div>
+                <div className="v3-unified-bess-card__body">
+                  <span>MISKOL ÉS ALBERTIRSA · SIGENERGY</span>
+                  <h3>7 MWh energiatárolási projekt</h3>
+                  <p>Jelenlegi legnagyobb energiatárolási projektünk egy vállalati és ipari BESS rendszer.</p>
+                  <dl>
+                    <div><dt>Tárolókapacitás</dt><dd>2 × 3,5 MWh</dd></div>
+                    <div><dt>Technológia</dt><dd>Sigenergy SigenStack</dd></div>
+                    <div><dt>A1 Solar szerepe</dt><dd>Generálkivitelező</dd></div>
+                    <div><dt>Státusz</dt><dd>Építés alatt</dd></div>
+                  </dl>
+                </div>
+              </article>
+            </div>
+            <div className="v3-reference-section__cta"><CtaButton href="/kapcsolat/">Vállalati vagy ipari projektről egyeztetek</CtaButton></div>
+          </section>
+        </>
+      );
+    }
+
+    return undefined;
+  };
+
   const layout = getV3Layout(page);
   const heroSupplement = hasV3HeroSupplement(page.number);
   const heroSlotIndex = page.intro.findIndex(
     (item) => item.kind === "editorial" && item.placement.trim().toUpperCase() === "HERO",
   );
   const ctaIndex = page.intro.findIndex((item) => item.kind === "cta");
-  const introRemainder = page.intro.filter((item, index) => (
-    index !== heroSlotIndex
-    && index !== ctaIndex
-    && !(heroSupplement && item.kind === "editorial")
-    && !(page.number === 24 && item.kind === "editorial")
-  ));
+  const introRemainder = page.intro
+    .filter((item, index) => (
+      index !== heroSlotIndex
+      && index !== ctaIndex
+      && !(heroSupplement && item.kind === "editorial")
+      && !([23, 24, 27].includes(page.number) && item.kind === "editorial")
+    ))
+    .map((item, index) => (
+      page.number === 24 && index === 0 && item.kind === "paragraph"
+        ? { ...item, text: RESIDENTIAL_REFERENCE_INTRO }
+        : item
+    ));
   const aboutIntro = page.number === 2
     ? introRemainder.filter((item) => item.kind === "paragraph" && !item.text.startsWith("13 év szakmai múlt |"))
     : [];
@@ -1860,12 +2219,15 @@ export const CopydeckBody = ({ page }: { page: CopyPage }) => {
               {heroSupplement ? <div className="v3-intro-supplement"><V3HeroSupplement pageNumber={page.number} /></div> : null}
             </section>
           ) : null}
-          {page.sections.map((section, index) => (
-            <Fragment key={section.id}>
-              <V3Section page={page} section={section} index={index} layout={layout} />
-              {index === 2 ? homeFactors : null}
-            </Fragment>
-          ))}
+          {page.sections.map((section, index) => {
+            const referenceSection = renderReferenceSection(section, index);
+            return (
+              <Fragment key={section.id}>
+                {referenceSection !== undefined ? referenceSection : <V3Section page={page} section={section} index={index} layout={layout} />}
+                {index === 2 ? homeFactors : null}
+              </Fragment>
+            );
+          })}
         </div>
       </div>
       {page.number === 2 ? (
@@ -1888,12 +2250,18 @@ export const CopydeckBody = ({ page }: { page: CopyPage }) => {
           </div>
         </section>
       ) : null}
+      {[21, 22, 23].includes(page.number) ? <IndustrialContactSection pageNumber={page.number} /> : null}
+      {page.number === 26 ? (
+        <section className="v3-residential-proof" aria-label="A1 Solar számokban">
+          <div className="container"><BigStats /></div>
+        </section>
+      ) : null}
       {page.number === 24 ? (
         <section className="v3-reference-brand-badges" aria-label="A1 Solar díjak és szakmai minősítések">
           <div className="container"><BrandBadges /></div>
         </section>
       ) : null}
-      {page.number === 1 || page.number === 2 || [7, 8, 9, 12, 13, 14, 15, 16, 17, 18, 24].includes(page.number) ? <GoogleReviews /> : null}
+      {page.number === 1 || page.number === 2 || [7, 8, 9, 12, 13, 14, 15, 16, 17, 18, 24, 26].includes(page.number) ? <GoogleReviews /> : null}
     </>
   );
 };

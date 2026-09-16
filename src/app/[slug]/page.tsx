@@ -150,6 +150,10 @@ export default async function DynamicPage({
   const { slug } = await params;
   if (RESERVED_SLUGS.has(slug)) notFound();
 
+  // The contact page intentionally uses the bespoke native form-led layout.
+  const ContactPage = slug === "kapcsolat" ? MARKETING_PAGES[slug] : undefined;
+  if (ContactPage) return <ContactPage />;
+
   const v3Page = getV3Page(`/${slug}/`);
   if (v3Page) return <CopydeckPage page={v3Page} />;
 
