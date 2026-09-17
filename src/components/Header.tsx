@@ -205,9 +205,14 @@ export const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const activeMega = mega ? MEGA_MENUS[mega] : null;
 
-  // Shrink the sticky nav bar once the page is scrolled past the top.
+  // Keep separate enter/exit thresholds because changing the nav height also
+  // changes scrollY. A single threshold can otherwise make the sticky header
+  // oscillate while the user scrolls back to the top.
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
+    const onScroll = () => {
+      const scrollY = window.scrollY;
+      setScrolled((current) => (current ? scrollY > 4 : scrollY > 80));
+    };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
