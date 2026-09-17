@@ -52,7 +52,7 @@ const company = [
 export const heroMediaByPath: Record<string, V3CuratedMedia> = {
   "https://a1solar.hu/": image("residential-budapest-huawei-storage", "Komplett A1 Solar napelemes és energiatároló rendszer"),
   "/rolunk/cegunkrol/": company[0],
-  "/rolunk/media/": image("a1-solar-kossuth-radio", "Szényán Endre, az A1 Solar ügyvezetője a Kossuth Rádióban", "center 38%"),
+  "/rolunk/media/": image("a1-solar-index-interview", "Az A1 Solar vezetői az Index interjúján", "center 42%"),
   "/rolunk/szerviz-es-garancia/": image("a1-solar-service-diagnostics", "A1 Solar műszaki diagnosztika és szerviz"),
   "/rolunk/karrier/": company[1],
   "/lakossagi/napelem-energiataroloval/": image("residential-budapest-home", "Budapesti családi ház A1 Solar napelemes rendszerrel", "center calc(50% - 40px)"),

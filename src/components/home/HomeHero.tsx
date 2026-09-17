@@ -4,6 +4,7 @@ import { A1_SERVICE_CARDS } from "@/components/home/serviceCards.data";
 
 const HERO_BG = "/wp-content/uploads/2026/03/otthoni_energiatarolo_program-1.png";
 const HERO_BG_MOBILE = "/wp-content/uploads/2026/03/ChatGPT-Image-2026.-marc.-13.-21_20_16.png";
+const HERO_VIDEO = "/wp-content/uploads/2022/10/60f04491c9ac97ea22b72cf9_IMG_245735588-transcode-1.mp4";
 const CTA_PRIO_MASK = "/wp-content/uploads/2025/07/cta_prio.svg";
 const CTA_NORMAL_MASK = "/wp-content/uploads/2025/07/cta_normal.svg";
 /* The WP mobile card mask — a rounded rectangle with a step-notch scooped out of
@@ -81,7 +82,7 @@ export function HomeHero() {
           at every width — otherwise narrow viewports crop less off the top and
           the image's sky shows as empty space above the subject. */}
       <div className="mx-auto hidden w-full max-w-[1290px] lg:block">
-        <FramedHero media={{ type: "image", src: HERO_BG, position: "50% 100%" }}>
+        <FramedHero media={{ type: "video", src: HERO_VIDEO, poster: HERO_BG, position: "50% 50%" }}>
           {/* Headline content, bottom-left — equal inset from the bottom and the
               left of the hero shape (40px / 40px). */}
           <div className="hero-copy absolute bottom-0 left-0 z-10 text-white" style={{ padding: "40px", maxWidth: "600px" }}>
@@ -139,14 +140,19 @@ export function HomeHero() {
         {/* Rounded hero card using the original mobile artwork. */}
         <div className="px-4">
           <div className="relative flex min-h-[340px] flex-col justify-end overflow-hidden rounded-[24px] p-6 text-white">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={HERO_BG_MOBILE}
-              alt=""
-              aria-hidden
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="metadata"
+              poster={HERO_BG_MOBILE}
+              aria-hidden="true"
               className="absolute inset-0"
               style={{ width: "100%", height: "100%", objectFit: "cover" }}
-            />
+            >
+              <source src={HERO_VIDEO} type="video/mp4" />
+            </video>
             <div className="absolute inset-0" style={{ background: GRADIENT }} />
             <div className="relative z-10">
               <span
