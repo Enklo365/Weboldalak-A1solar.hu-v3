@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { getPosts } from "@/lib/content";
+import { NOINDEX_LEGAL_SLUGS, RETIRED_SLUGS } from "@/lib/route-policy";
 import { FOOTER_LEGAL, SITE } from "@/lib/site";
 import { V3_PAGES } from "@/lib/v3-pages";
 
@@ -14,11 +15,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
   const seen = new Set(entries.map((entry) => entry.url.replace(/\/$/, "")));
   for (const post of getPosts()) {
+    if (RETIRED_SLUGS.has(post.slug)) continue;
     const url = `${SITE.url}/${post.slug}/`;
     if (!seen.has(url.replace(/\/$/, ""))) entries.push({ url, lastModified: post.date, priority: 0.6 });
   }
   for (const legal of FOOTER_LEGAL) {
     if (legal.external) continue;
+    const slug = legal.href.replace(/^\//, "").replace(/\/$/, "");
+    if (NOINDEX_LEGAL_SLUGS.has(slug)) continue;
     const url = `${SITE.url}${legal.href.replace(/\/$/, "")}/`;
     if (!seen.has(url.replace(/\/$/, ""))) entries.push({ url, priority: 0.3 });
   }

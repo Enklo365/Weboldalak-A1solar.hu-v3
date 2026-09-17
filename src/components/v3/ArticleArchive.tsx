@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import type { PostCard } from "@/lib/content";
 
 const FALLBACK = "/wp-content/uploads/2022/08/Esztergom-napelem-scaled-blog1024.jpg";
@@ -23,17 +23,26 @@ export const FeaturedArticles = ({ posts }: { posts: PostCard[] }) => (
 );
 
 export const ArticleArchive = ({ posts }: { posts: PostCard[] }) => {
-  const categories = ["Összes", ...Array.from(new Set(posts.map((post) => post.category))).slice(0, 8)];
-  const [active, setActive] = useState("Összes");
   const [visible, setVisible] = useState(12);
-  const filtered = useMemo(() => active === "Összes" ? posts : posts.filter((post) => post.category === active), [active, posts]);
   return (
     <div className="v3-archive">
-      <div className="v3-filter" aria-label="Cikk-kategóriák">
-        {categories.map((category) => <button key={category} type="button" className={active === category ? "is-active" : ""} onClick={() => { setActive(category); setVisible(12); }}>{category}</button>)}
+      <div className="v3-archive__main">
+        <div className="v3-article-grid">{posts.slice(0, visible).map((post) => <ArticleCard key={post.slug} post={post} />)}</div>
+        {visible < posts.length ? <button className="btn btn-outline" type="button" onClick={() => setVisible((value) => value + 12)}>További cikkek</button> : null}
       </div>
-      <div className="v3-article-grid">{filtered.slice(0, visible).map((post) => <ArticleCard key={post.slug} post={post} />)}</div>
-      {visible < filtered.length ? <button className="btn btn-outline" type="button" onClick={() => setVisible((value) => value + 12)}>További cikkek</button> : null}
+      <aside className="v3-article-sidebar" aria-label="Legfrissebb cikkek">
+        <span className="v3-article-sidebar__eyebrow">Tudástár</span>
+        <h2>Legfrissebb cikkek</h2>
+        <div className="v3-article-sidebar__list">
+          {posts.slice(0, 6).map((post) => (
+            <Link key={post.slug} href={`/${post.slug}/`}>
+              <small>{post.category} · {post.dateDisplay}</small>
+              <strong>{post.title}</strong>
+              <span>Tovább olvasom</span>
+            </Link>
+          ))}
+        </div>
+      </aside>
     </div>
   );
 };

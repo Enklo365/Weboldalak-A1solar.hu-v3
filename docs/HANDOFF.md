@@ -1,6 +1,6 @@
 # A1 Solar v3 – aktuális átadás
 
-Frissítve: 2026-09-14. Ez az egyetlen folyamatosan frissített
+Frissítve: 2026-09-17. Ez az egyetlen folyamatosan frissített
 állapotfájl; a dátumozott HANDOFF- és QA-fájlok változatlan archívumok.
 
 ## Holnapi indulás
@@ -12,26 +12,46 @@ korábbi beszélgetést ne dolgozd fel újra. Eltérés esetén mindig a tényle
 
 ## Aktuális állapot
 
-- Fejlesztési ág: `codex/feature-v3-visual-refactor`
-- Utolsó alkalmazáskód-commit: `086fef3cd05c7f875f92850652898c6e9fda2841`
+- Fejlesztési ág: `codex/fix-v3-ipari-kapcsolat-cikkek`
+- Staging release commit: `8f88e8b5b5985dfb5da47212bd0100f3a0a0dc9f`
+- Biztonsági és alkalmazáskód-commit: `3835b25fdf953a63f87a2dec72e9964c5b53d12d`
+- Pull request: [#4](https://github.com/Enklo365/Weboldalak-A1solar.hu-v3/pull/4)
 - Staging: [https://teszta1solar.homokozo.uk/](https://teszta1solar.homokozo.uk/)
-- Staging image: `a1solar-nextjs:v3-086fef3`
-- Staging OCI revision: `086fef3cd05c7f875f92850652898c6e9fda2841`
+- Staging image: `a1solar-nextjs:v3-8f88e8b`
+- Staging OCI revision: `8f88e8b5b5985dfb5da47212bd0100f3a0a0dc9f`
 - Staging állapot: `healthy`, read-only, `noindex, nofollow, noarchive`
 - `main`: `c3e41bac88e381939720aa09f4309c604852b464`
 - Production (`a1solar.hu`, `www.a1solar.hu`): nem módosult.
 - A projekt új alapértelmezett munkamódja: kis vizuális változtatás először
   csak helyi preview és célzott QA; staging kizárólag külön „Mehet stagingre”
   utasításra indul.
-- A Draft PR #1 ága (`codex/feature-site-v3`) és az önálló
-  `codex/feature-image-overlap` ág is tartalmazza a jóváhagyott sabloncommitot.
-- A `codex/feature-v3-visual-refactor` ág fel van pusholva az originre; a mostani
-  staging release közvetlenül a `086fef3` alkalmazáskód-commitból készült.
+- A fejlesztési ág fel van pusholva az originre; a staging release közvetlenül
+  a fenti release commitból készült.
 - A lezáró dokumentációs commit miatt a fejlesztési ág HEAD-je a fenti
   alkalmazáskód-commit dokumentációs leszármazottja lesz; az aktuális SHA-t
   Gitből olvasd ki.
 
 ## Ma elkészült
+
+- A teljes kódbázis első körös release- és biztonsági felülvizsgálása
+  elkészült. A Next.js `16.3.3` verzióra frissült; a production dependency
+  audit eredménye: nincs ismert sérülékenység.
+- A kapcsolat API same-origin ellenőrzést, kérésméret-korlátot, IP-alapú rate
+  limitet, kötelező szerveroldali hozzájárulás-ellenőrzést, honeypotot és
+  fájlszignatúra-ellenőrzést kapott.
+- Biztonsági HTTP headerek, CSP, HSTS, JSON-LD escape és az importált legacy
+  HTML végrehajtható tartalmainak szűrése került be.
+- A build többé nem tölt le Google Fontot: a webhely a meglévő helyi változó
+  fontot használja. A Docker build-context titok- és zajszűrt lett.
+- A production build 340 statikus oldalt generált. A TypeScript, a diff-check,
+  a 35 oldalas v3 validáció, a célzott API-tesztek és a 390/820/1440 px-es
+  vizuális QA sikeres.
+- A staging image próbakonténerben, majd a dokumentált
+  `teszta1solar-staging` Compose-projektben is ellenőrzött. A főoldal, egy v3
+  szolgáltatási oldal, a cikklista, a kapcsolat oldal és a font asset `200`;
+  a megszüntetett URL `404`, a jóváhagyott átirányítás `301`, az idegen eredetű
+  API-kérés `403`. A konténer `healthy`, read-only, az `X-Robots-Tag` értéke
+  `noindex, nofollow, noarchive`.
 
 - Az elfogadott, 1290 px-es kép- és videóképes hero közös sablon lett, és mind a
   további 34 v3 oldal használja.
@@ -196,10 +216,22 @@ korábbi beszélgetést ne dolgozd fel újra. Eltérés esetén mindig a tényle
   --check` és mindhárom URL HTTP `200`; a szakaszok, a három referenciafotó, a
   statisztikák és az értékelések böngészőben is ellenőrizve lettek.
 
+- A lakossági, vállalati és ipari v3 oldalak újabb tartalmi és vizuális
+  finomításai elkészültek: egységesebb szakasztávolságok, teljes szélességű
+  szövegblokkok, kompakt faktor- és folyamatkomponensek, valós lakossági és
+  Tompa naperőmű-referenciák, BESS projektblokkok, valamint az egységes
+  BigStats, BrandBadges és Google-értékelés sávok kerültek a kijelölt oldalakra.
+- A `0d1c622` release validációja 35 egyedi v3 URL-t és 15 megerősített
+  redirectet talált; a production build 345 statikus oldalt generált. A
+  staging konténer `healthy`, read-only, a főoldal, a három legutóbb módosított
+  ipari oldal, a lakossági referenciaoldal, a cikklista és a kijelölt új
+  képassetek `200` választ adtak. Az `X-Robots-Tag` változatlanul
+  `noindex, nofollow, noarchive`.
+
 ## Nyitott ellenőrzés és következő lépés
 
 - A felhasználó a telefonos megjelenést később, kézzel ellenőrzi.
-- A teljes 2026-09-14-i vizuális és médiacsomag a `086fef3` commitban van,
+- A teljes 2026-09-15-i vizuális és tartalmi csomag a `0d1c622` commitban van,
   originre pusholva és a `teszta1solar.homokozo.uk` stagingen telepítve.
 - A felhasználó az összes új sablont jóváhagyta; azok későbbi natív oldalakba
   szabadon beilleszthetők és tovább finomíthatók.

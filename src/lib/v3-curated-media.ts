@@ -74,7 +74,7 @@ export const heroMediaByPath: Record<string, V3CuratedMedia> = {
   "/ipari/pv-storage/": industrial[2],
   "/ipari/aggregacio-flexibilitas/": industrial[3],
   "/referenciak/lakossagi/": residential[3],
-  "/referenciak/energiatarolas/": residential[2],
+  "/referenciak/energiatarolas/": industrial[0],
   "/referenciak/backup/": image("backup-harta-deye-system", "A1 Solar backup referencia Hartán"),
   "/referenciak/vallalati/": commercial[0],
   "/referenciak/bess-ipari/": industrial[0],

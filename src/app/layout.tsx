@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { CookieConsent } from "@/components/CookieConsent";
 import { ScrollToTop } from "@/components/ScrollToTop";
+import { serializeJsonLd } from "@/lib/json-ld";
 import { SITE } from "@/lib/site";
 
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin", "latin-ext"],
+const overusedGrotesk = localFont({
+  src: "../../public/fonts/OverusedGrotesk-VF.woff2",
+  variable: "--font-overused",
+  weight: "100 900",
   display: "swap",
 });
 
@@ -53,9 +55,9 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="hu" className={inter.variable}>
+    <html lang="hu" className={overusedGrotesk.variable}>
       <body>
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationLd) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(organizationLd) }} />
         <Header />
         <main>{children}</main>
         <Footer />
