@@ -205,9 +205,8 @@ export const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const activeMega = mega ? MEGA_MENUS[mega] : null;
 
-  // Keep separate enter/exit thresholds because changing the nav height also
-  // changes scrollY. A single threshold can otherwise make the sticky header
-  // oscillate while the user scrolls back to the top.
+  // Keep separate enter/exit thresholds so the cosmetic scrolled state stays
+  // stable while the user approaches the top of the page.
   useEffect(() => {
     const onScroll = () => {
       const scrollY = window.scrollY;

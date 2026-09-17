@@ -768,10 +768,8 @@ img {
     padding-inline: 0;
   }
 }
-/* Scrolled state — condense the sticky nav bar. */
-.mainbar.scrolled .container {
-  min-height: 62px;
-}
+/* Keep the sticky bar's block height stable: changing it while scrolling
+   shifts scrollY and can trap the page just below the top. */
 .brand-logo img {
   transition: height 0.25s ease;
 }
