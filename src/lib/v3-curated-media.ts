@@ -54,7 +54,6 @@ export const heroMediaByPath: Record<string, V3CuratedMedia> = {
   "/rolunk/cegunkrol/": {
     type: "video",
     src: "/wp-content/uploads/2022/10/60f04491c9ac97ea22b72cf9_IMG_245735588-transcode-1.mp4",
-    poster: "/media/v3/images/a1-solar-team.webp",
     alt: "Az A1 Solar bemutatkozó videója",
     position: "center",
   },
