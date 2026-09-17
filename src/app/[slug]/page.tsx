@@ -27,6 +27,8 @@ import {
   RESERVED_SLUGS,
 } from "@/lib/content";
 import { getMirror } from "@/lib/mirror";
+import { serializeJsonLd } from "@/lib/json-ld";
+import { NOINDEX_LEGAL_SLUGS, RETIRED_SLUGS } from "@/lib/route-policy";
 import { SITE } from "@/lib/site";
 import { getV3Page, V3_PAGES } from "@/lib/v3-pages";
 
@@ -42,8 +44,12 @@ const APPEND_CONTACT_FORM = new Set(["kapcsolat"]);
 
 export function generateStaticParams(): Params[] {
   const slugs = new Set<string>();
-  for (const p of getPages()) if (!RESERVED_SLUGS.has(p.slug)) slugs.add(p.slug);
-  for (const p of getPosts()) if (!slugs.has(p.slug)) slugs.add(p.slug);
+  for (const p of getPages()) {
+    if (!RESERVED_SLUGS.has(p.slug) && !RETIRED_SLUGS.has(p.slug)) slugs.add(p.slug);
+  }
+  for (const p of getPosts()) {
+    if (!slugs.has(p.slug) && !RETIRED_SLUGS.has(p.slug)) slugs.add(p.slug);
+  }
   for (const page of V3_PAGES) {
     const parts = new URL(page.url, "https://a1solar.hu").pathname.split("/").filter(Boolean);
     if (parts.length === 1) slugs.add(parts[0]);
@@ -102,6 +108,8 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
 
+  if (RETIRED_SLUGS.has(slug)) return {};
+
   const v3Page = getV3Page(`/${slug}/`);
   if (v3Page) {
     return {
@@ -137,6 +145,7 @@ export async function generateMetadata({
   return {
     title,
     description,
+    ...(NOINDEX_LEGAL_SLUGS.has(slug) ? { robots: { index: false, follow: true } } : {}),
     alternates: { canonical: `/${slug}/` },
     openGraph: { title, description },
   };
@@ -148,7 +157,7 @@ export default async function DynamicPage({
   params: Promise<Params>;
 }) {
   const { slug } = await params;
-  if (RESERVED_SLUGS.has(slug)) notFound();
+  if (RESERVED_SLUGS.has(slug) || RETIRED_SLUGS.has(slug)) notFound();
 
   // The contact page intentionally uses the bespoke native form-led layout.
   const ContactPage = slug === "kapcsolat" ? MARKETING_PAGES[slug] : undefined;
@@ -185,6 +194,7 @@ export default async function DynamicPage({
       return (
         <TextPage
           content={{ eyebrow: textEyebrow, title: textPage.title, html: processHtml(textPage.content) }}
+          showPrivacyRequest={slug === "adatvedelmi-nyilatkozat"}
         />
       );
     }
@@ -260,7 +270,7 @@ export default async function DynamicPage({
 
   return (
     <article className="pb-6 md:pb-8">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(articleLd) }} />
       {/* Content-less notch banner (same shape as other subpages); the article
           badge + title live in the main column below (no divider). The lower-right
           notch holds the meta, reading time and share icons. */}

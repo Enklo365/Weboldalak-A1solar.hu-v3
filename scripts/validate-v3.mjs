@@ -18,10 +18,17 @@ for (const page of pages) {
 
 const redirects = fs.readFileSync("docs/migration/redirect-candidate-map.csv", "utf8").trim().split(/\r?\n/).slice(1);
 const confirmed = redirects.filter((row) => row.split(",")[2] === "confirmed");
-if (confirmed.length !== 15) errors.push(`Expected 15 confirmed redirects, found ${confirmed.length}`);
+const retired = redirects.filter((row) => row.split(",")[2] === "retired");
+if (confirmed.length !== 18) errors.push(`Expected 18 confirmed redirects, found ${confirmed.length}`);
+if (retired.length !== 6) errors.push(`Expected 6 retired URLs, found ${retired.length}`);
 
 if (errors.length) {
   console.error(errors.join("\n"));
   process.exit(1);
 }
-console.log(JSON.stringify({ pages: pages.length, uniqueUrls: new Set(urls).size, confirmedRedirects: confirmed.length }));
+console.log(JSON.stringify({
+  pages: pages.length,
+  uniqueUrls: new Set(urls).size,
+  confirmedRedirects: confirmed.length,
+  retiredUrls: retired.length,
+}));

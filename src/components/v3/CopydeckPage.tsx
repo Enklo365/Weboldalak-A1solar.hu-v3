@@ -31,7 +31,6 @@ import {
 } from "@/components/section/SectionKit";
 import { GoogleReviews } from "@/components/section/GoogleReviews";
 import { ContactForm } from "@/components/ContactForm";
-import { Breadcrumbs } from "@/components/v3/Breadcrumbs";
 import { ArticleArchive } from "@/components/v3/ArticleArchive";
 import { EditorialSlot } from "@/components/v3/EditorialSlot";
 import { hasV3HeroSupplement, hasV3Supplement, V3HeroSupplement, V3Supplement } from "@/components/v3/V3Supplement";
@@ -1429,7 +1428,7 @@ const V3Section = ({ page, section, index, layout }: { page: CopyPage; section: 
           <Section id={section.id} eyebrow={number} title={section.title}>
             <div className="v3-copy v3-copy--wide">
               <p>Jelenlegi legnagyobb energiatárolási projektünk 7 MWh tárolókapacitású vállalati/ipari BESS rendszer.</p>
-              <p>Helyszín: Miskol és Albertirsa<br />Tárolókapacitás: 2x3,5 MWh<br />Technológia: Sigenergy SigenStack<br />A1 Solar szerepe: generálkivitelező<br />Státusz: építés alatt</p>
+              <p>Helyszín: Miskolc és Albertirsa<br />Tárolókapacitás: 2x3,5 MWh<br />Technológia: Sigenergy SigenStack<br />A1 Solar szerepe: generálkivitelező<br />Státusz: építés alatt</p>
             </div>
             <div className="v3-bess-centered-media">
               <Image src="/media/v3/images/sigenergy-7mwh-project-team.webp" alt="Az A1 Solar 7 MWh energiatárolási projektje" fill sizes="(max-width: 980px) 100vw, 900px" />
@@ -1867,7 +1866,6 @@ export const CopydeckPage = ({ page }: { page: CopyPage }) => {
           media={heroMedia}
         >
           <div className="container v3-hero__inner">
-            <Breadcrumbs value={page.breadcrumb} />
             <div className="v3-hero__grid">
               <div className="v3-hero__copy">
                 <span className="v3-kicker">{page.name}</span>
@@ -1952,7 +1950,7 @@ export const CopydeckBody = ({ page }: { page: CopyPage }) => {
           <Section id={section.id} eyebrow={number} title={section.title}>
             <div className="v3-copy v3-copy--wide">
               <p>Jelenlegi legnagyobb energiatárolási projektünk 7 MWh tárolókapacitású vállalati és ipari BESS rendszer.</p>
-              <p>Helyszín: Miskol és Albertirsa<br />Tárolókapacitás: 2 × 3,5 MWh<br />Technológia: Sigenergy SigenStack<br />A1 Solar szerepe: generálkivitelező<br />Státusz: építés alatt</p>
+              <p>Helyszín: Miskolc és Albertirsa<br />Tárolókapacitás: 2 × 3,5 MWh<br />Technológia: Sigenergy SigenStack<br />A1 Solar szerepe: generálkivitelező<br />Státusz: építés alatt</p>
             </div>
             <div className="v3-bess-centered-media">
               <Image src="/media/v3/images/sigenergy-7mwh-project-team.webp" alt="Az A1 Solar 7 MWh energiatárolási projektje" fill sizes="(max-width: 980px) 100vw, 900px" />

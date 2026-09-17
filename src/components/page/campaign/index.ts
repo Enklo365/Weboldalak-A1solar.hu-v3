@@ -2,7 +2,6 @@ import type { ComponentType } from "react";
 import { EnergetikaiPalyazatok2024 } from "@/components/page/campaign/EnergetikaiPalyazatok2024";
 import { ErtekesitoEloszuro } from "@/components/page/campaign/ErtekesitoEloszuro";
 import { FalusiCsok } from "@/components/page/campaign/FalusiCsok";
-import { Ft1000 } from "@/components/page/campaign/Ft1000";
 import { HibridNapelemBackup } from "@/components/page/campaign/HibridNapelemBackup";
 import { JedlikAnyosEnergetikaiProgram } from "@/components/page/campaign/JedlikAnyosEnergetikaiProgram";
 import { JedlikAnyosFinanszirozasiSegitseg } from "@/components/page/campaign/JedlikAnyosFinanszirozasiSegitseg";
@@ -11,7 +10,6 @@ import { LakossagiEnergiataroloTamogatas } from "@/components/page/campaign/Lako
 import { NapelemReszletfizetes } from "@/components/page/campaign/NapelemReszletfizetes";
 import { RegiovezetoEloszures } from "@/components/page/campaign/RegiovezetoEloszures";
 import { OepHelysziniFelmeres } from "@/components/page/campaign/OepHelysziniFelmeres";
-import { OepNyeremenyjatek } from "@/components/page/campaign/OepNyeremenyjatek";
 import { SzakmaiNapRegisztracio } from "@/components/page/campaign/SzakmaiNapRegisztracio";
 import { NapelemTarsashazaknak } from "@/components/page/campaign/NapelemTarsashazaknak";
 import { NapenergiaPluszProgram } from "@/components/page/campaign/NapenergiaPluszProgram";
@@ -23,7 +21,6 @@ import { OtthonfelujitasiTamogatasAjanlatIII } from "@/components/page/campaign/
 
 /** Slug → bespoke native campaign / landing page component. */
 export const CAMPAIGN_PAGES: Record<string, ComponentType> = {
-  ft1000: Ft1000,
   kepzeseink: Kepzeseink,
   "napelem-tarsashazaknak": NapelemTarsashazaknak,
   "napenergia-plusz-program": NapenergiaPluszProgram,
@@ -37,7 +34,6 @@ export const CAMPAIGN_PAGES: Record<string, ComponentType> = {
   "otthonfelujitasi-tamogatas-ajanlat-ii": OtthonfelujitasiTamogatasAjanlatII,
   "otthonfelujitasi-tamogatas-ajanlat-iii": OtthonfelujitasiTamogatasAjanlatIII,
   "lakossagi-energiatarolo-tamogatas": LakossagiEnergiataroloTamogatas,
-  "oep-nyeremenyjatek": OepNyeremenyjatek,
   "oep-helyszini-felmeres": OepHelysziniFelmeres,
   "szakmai-nap-regisztracio": SzakmaiNapRegisztracio,
   "hibrid-napelem-backup": HibridNapelemBackup,

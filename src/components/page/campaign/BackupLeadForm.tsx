@@ -158,7 +158,7 @@ export const BackupLeadForm = ({
         <input name="consent" type="checkbox" required className="mt-1 h-4 w-4 shrink-0" style={{ accentColor: "var(--brand)" }} />
         <span>
           Elfogadom az{" "}
-          <Link href="/adatvedelmi-nyilatkozat" className="text-[var(--brand)] underline" target="_blank">
+          <Link href="/adatvedelmi-nyilatkozat" className="text-[var(--brand)] underline" target="_blank" rel="noopener noreferrer">
             adatvédelmi nyilatkozatban
           </Link>{" "}
           foglaltakat. *

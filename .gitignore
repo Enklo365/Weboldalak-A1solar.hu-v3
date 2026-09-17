@@ -20,8 +20,11 @@ yarn-debug.log*
 yarn-error.log*
 
 # env
-.env
-.env*.local
+.env*
+!.env.example
+
+# local staging artifacts
+/.staging-*.tar.gz
 
 # vercel
 .vercel

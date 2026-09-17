@@ -185,7 +185,7 @@ export const KarrierApplyForm = ({ positionTitle }: KarrierApplyFormProps) => {
         <input name="consent" type="checkbox" required className="mt-1 h-4 w-4 shrink-0" style={{ accentColor: "var(--brand)" }} />
         <span>
           Elolvastam és elfogadom az{" "}
-          <Link href="/adatvedelmi-nyilatkozat" className="text-[var(--brand)] underline" target="_blank">
+          <Link href="/adatvedelmi-nyilatkozat" className="text-[var(--brand)] underline" target="_blank" rel="noopener noreferrer">
             adatvédelmi nyilatkozatot
           </Link>
           , és hozzájárulok adataim kezeléséhez. *

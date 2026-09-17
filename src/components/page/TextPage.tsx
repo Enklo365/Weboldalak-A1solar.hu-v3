@@ -1,3 +1,5 @@
+import { ContactForm } from "@/components/ContactForm";
+
 export type TextPageContent = {
   eyebrow: string;
   title: string;
@@ -11,6 +13,16 @@ const INTRO_BY_EYEBROW: Record<string, string> = {
   "Jogi nyilatkozatok":
     "Átlátható működés és felelős adatkezelés – az A1 Solar Kft. hivatalos jogi tájékoztatói egy helyen.",
   "Promóciós szabályzat": "Promócióink hivatalos, mindenkor hatályos részvételi feltételei és szabályai.",
+};
+
+const stripLegacyLegalHero = (html: string) => {
+  let cleaned = html
+    .replace(/<!--[^]*?-->/g, "")
+    .replace(/<style[^>]*>[^]*?<\/style>/gi, "");
+
+  const duplicatedHeading = /^\s*(?:Jogi nyilatkozatok|Promóciós szabályzat)\s*<h1[^>]*>[^]*?<\/h1>/i;
+  while (duplicatedHeading.test(cleaned)) cleaned = cleaned.replace(duplicatedHeading, "");
+  return cleaned.trim();
 };
 
 export const CompactLegalHero = ({ eyebrow, title, intro }: { eyebrow: string; title: string; intro: string }) => (
@@ -35,7 +47,7 @@ export const CompactLegalHero = ({ eyebrow, title, intro }: { eyebrow: string; t
 /**
  * Native full-width long-form text page for legal and policy content.
  */
-export function TextPage({ content }: { content: TextPageContent }) {
+export function TextPage({ content, showPrivacyRequest = false }: { content: TextPageContent; showPrivacyRequest?: boolean }) {
   const intro = INTRO_BY_EYEBROW[content.eyebrow] ?? "Az A1 Solar Kft. hivatalos dokumentuma és tájékoztatója.";
 
   return (
@@ -53,10 +65,23 @@ export function TextPage({ content }: { content: TextPageContent }) {
           </p>
         ) : null}
         <div
+          id="a1-aszf-top"
           className="prose prose--flush text-page__prose"
           // eslint-disable-next-line react/no-danger -- migrated CMS content
-          dangerouslySetInnerHTML={{ __html: content.html }}
+          dangerouslySetInnerHTML={{ __html: stripLegacyLegalHero(content.html) }}
         />
+        {showPrivacyRequest ? (
+          <section id="adatkezelesi-igenyles" className="text-page__request" aria-label="Adatkezelési igénylés">
+            <ContactForm
+              bare
+              privacyRequest
+              formName="Adatkezelési igénylés"
+              heading="Adattörlés, adatigénylés vagy adatkorlátozás"
+              intro="Az alábbi űrlapon jelezheted, milyen adatkezelési intézkedést kérsz tőlünk."
+              submitLabel="Igénylés küldése"
+            />
+          </section>
+        ) : null}
       </div>
     </div>
   );

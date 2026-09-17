@@ -122,17 +122,16 @@ const LEGACY_MEGA_MENUS: Record<string, MegaMenu> = {
       {
         heading: "Lakossági",
         links: [
-          { href: "/lakossagi-napelem", label: "Napelem", desc: "Otthonod energiájáért.", icon: "panel" },
+          { href: "/lakossagi/napelem-energiataroloval/", label: "Napelem", desc: "Otthonod energiájáért.", icon: "panel" },
           { href: "/lakossagi-energiatarolo-tamogatas", label: "Energiatárolás", desc: "Tárold a zöld energiát.", icon: "battery" },
-          { href: "/lakossagi-napelem-tisztitas-es-karbantartas", label: "Tisztítás & karbantartás", desc: "Csúcson a rendszered.", icon: "care" },
+          { href: "/lakossagi/szerviz-karbantartas/", label: "Tisztítás & karbantartás", desc: "Csúcson a rendszered.", icon: "care" },
         ],
       },
       {
         heading: "Vállalati",
         links: [
-          { href: "/vallalati-napelem", label: "Napelem", desc: "Kevesebb energiaköltség.", icon: "panel" },
+          { href: "/vallalati/napelem/", label: "Napelem", desc: "Kevesebb energiaköltség.", icon: "panel" },
           { href: "/vallalati-energiatarolas", label: "Energiatárolás", desc: "Tárold a zöld energiát.", icon: "battery" },
-          { href: "/vallalati-napelem-tisztitas-es-karbantartas", label: "Tisztítás & karbantartás", desc: "Céges rendszerekhez.", icon: "care" },
         ],
       },
     ],
@@ -148,13 +147,13 @@ const LEGACY_MEGA_MENUS: Record<string, MegaMenu> = {
       image: "/wp-content/uploads/2025/06/jedlik-anyos-energetikai-program-2-1-1024x667.png",
       title: "Aktuális pályázatok",
       text: "Nézd meg, milyen támogatás illik hozzád!",
-      href: "/palyazatok",
+      href: "/lakossagi/palyazatok-tamogatasok/",
     },
     groups: [
       {
         heading: "Pályázatok & támogatások",
         links: [
-          { href: "/palyazatok", label: "Pályázatok", desc: "Elérhető támogatások.", icon: "doc" },
+          { href: "/lakossagi/palyazatok-tamogatasok/", label: "Pályázatok", desc: "Elérhető támogatások.", icon: "doc" },
           { href: "/lakossagi-energiatarolo-tamogatas", label: "Otthoni Energiatároló Program", desc: "Kiemelt lakossági pályázat.", icon: "battery" },
         ],
       },
@@ -220,9 +219,9 @@ export const FOOTER_NAV: NavChild[] = [
 ];
 
 export const FOOTER_SERVICES: NavChild[] = [
-  { href: "/vallalati-napelem", label: "Vállalati napelem" },
-  { href: "/lakossagi-napelem", label: "Lakossági napelem" },
-  { href: "/palyazatok", label: "Pályázatok" },
+  { href: "/vallalati/napelem/", label: "Vállalati napelem" },
+  { href: "/lakossagi/napelem-energiataroloval/", label: "Lakossági napelem" },
+  { href: "/lakossagi/palyazatok-tamogatasok/", label: "Pályázatok" },
   { href: "/kepzeseink", label: "Képzések" },
 ];
 
@@ -239,13 +238,9 @@ export const FOOTER_COMMERCIAL: NavChild[] = [
   { href: "/vallalati/napelem-energiatarolassal/", label: "Energiatárolás" },
 ];
 
-const OEP_PDF =
-  "/wp-content/uploads/2026/06/A1_Solar_Ajanlat_otthoni_energiatarolas_vegleges-0529.pdf";
-
 export const FOOTER_USEFUL: NavChild[] = [
-  { href: "/palyazatok", label: "Aktuális pályázatok" },
+  { href: "/lakossagi/palyazatok-tamogatasok/", label: "Aktuális pályázatok" },
   { href: "/lakossagi-energiatarolo-tamogatas", label: "Otthoni Energiatároló Program" },
-  { href: OEP_PDF, label: "OEP csomagajánlatok", external: true },
   { href: "https://energrosso.hu/", label: "Nagykereskedelem", external: true },
 ];
 
@@ -257,7 +252,6 @@ export const FOOTER_LEGAL: NavChild[] = [
     href: "/lakossagi-napelemes-rendszerek-tamogatasa-promocios-szabalyzat",
     label: "Promóciós szabályzat",
   },
-  { href: "/oepszigeteles", label: "OEP szigetelés" },
   {
     href: "/panelmosas-karbantartas-aszf",
     label: "Panelmosás-karbantartás ÁSZF",
