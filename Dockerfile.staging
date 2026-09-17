@@ -16,8 +16,11 @@ COPY --chown=nextjs:nodejs .next/static ./.next/static
 COPY --chown=nextjs:nodejs public ./public
 
 # A pnpm standalone trace built on Windows can keep complete runtime packages
-# only in its store, leaving incomplete top-level package copies.
-RUN cp -R /app/node_modules/.pnpm/node_modules/. /app/node_modules/ \
+# only in its store, leaving incomplete top-level package copies. Yarn builds
+# do not contain that store, so keep the repair conditional.
+RUN if [ -d /app/node_modules/.pnpm/node_modules ]; then \
+      cp -R /app/node_modules/.pnpm/node_modules/. /app/node_modules/; \
+    fi \
     && chown -R nextjs:nodejs /app/node_modules
 
 USER nextjs
