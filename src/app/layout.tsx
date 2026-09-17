@@ -1,14 +1,17 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { CookieConsent } from "@/components/CookieConsent";
+import { ScrollToTop } from "@/components/ScrollToTop";
+import { serializeJsonLd } from "@/lib/json-ld";
 import { SITE } from "@/lib/site";
 
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin", "latin-ext"],
+const overusedGrotesk = localFont({
+  src: "../../public/fonts/OverusedGrotesk-VF.woff2",
+  variable: "--font-overused",
+  weight: "100 900",
   display: "swap",
 });
 
@@ -29,7 +32,10 @@ export const metadata: Metadata = {
     url: SITE.url,
     siteName: SITE.name,
   },
-  icons: { icon: "/favicon.ico" },
+  icons: {
+    icon: [{ url: "/images/brand/a1solar-favicon.svg", type: "image/svg+xml" }],
+    shortcut: "/images/brand/a1solar-favicon.svg",
+  },
 };
 
 const organizationLd = {
@@ -38,7 +44,7 @@ const organizationLd = {
   name: SITE.legalName,
   alternateName: SITE.name,
   url: SITE.url,
-  logo: `${SITE.url}/wp-content/uploads/2024/11/A1solar-logo.svg`,
+  logo: `${SITE.url}/images/brand/a1solar-logo.svg`,
   email: SITE.email,
   telephone: SITE.phoneDisplay,
   address: { "@type": "PostalAddress", streetAddress: SITE.address, addressCountry: "HU" },
@@ -49,12 +55,13 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="hu" className={inter.variable}>
+    <html lang="hu" className={overusedGrotesk.variable}>
       <body>
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationLd) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(organizationLd) }} />
         <Header />
         <main>{children}</main>
         <Footer />
+        <ScrollToTop />
         <CookieConsent />
       </body>
     </html>

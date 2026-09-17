@@ -27,11 +27,11 @@
     "on-danger": { "$type": "color", "$value": "#ffffff" }
   },
   "font": {
-    "display": { "$type": "fontFamily", "$value": "Inter", "$extensions": { "cssStack": "var(--font-inter), system-ui, -apple-system, \"Segoe UI\", Roboto, Arial, sans-serif" } },
-    "body": { "$type": "fontFamily", "$value": "Inter", "$extensions": { "cssStack": "var(--font-inter), system-ui, -apple-system, \"Segoe UI\", Roboto, Arial, sans-serif" } },
+    "display": { "$type": "fontFamily", "$value": "Overused Grotesk", "$extensions": { "cssStack": "var(--font-overused), system-ui, -apple-system, \"Segoe UI\", Roboto, Arial, sans-serif" } },
+    "body": { "$type": "fontFamily", "$value": "Overused Grotesk", "$extensions": { "cssStack": "var(--font-overused), system-ui, -apple-system, \"Segoe UI\", Roboto, Arial, sans-serif" } },
     "mono": { "$type": "fontFamily", "$value": "ui-monospace", "$extensions": { "cssStack": "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" } },
     "mono-brand": { "$type": "fontFamily", "$value": "ui-monospace", "$extensions": { "cssStack": "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" } },
-    "dot": { "$type": "fontFamily", "$value": "Inter", "$extensions": { "cssStack": "var(--font-inter), system-ui, -apple-system, \"Segoe UI\", Roboto, Arial, sans-serif" } }
+    "dot": { "$type": "fontFamily", "$value": "Overused Grotesk", "$extensions": { "cssStack": "var(--font-overused), system-ui, -apple-system, \"Segoe UI\", Roboto, Arial, sans-serif" } }
   },
   "fontSize": {
     "xs": { "$type": "dimension", "$value": "0.75rem" },

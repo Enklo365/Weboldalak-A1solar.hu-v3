@@ -1,4 +1,5 @@
 import type { MirrorPage } from "@/lib/mirror";
+import { sanitizeLegacyHtml } from "@/lib/content";
 
 type MirrorContentProps = {
   page: MirrorPage;
@@ -18,12 +19,12 @@ export const MirrorContent = ({ page }: MirrorContentProps) => (
     {page.inline ? (
       <style
         // eslint-disable-next-line react/no-danger -- captured critical CSS
-        dangerouslySetInnerHTML={{ __html: page.inline }}
+        dangerouslySetInnerHTML={{ __html: page.inline.replace(/<\/style/gi, "<\\/style") }}
       />
     ) : null}
     <div
       // eslint-disable-next-line react/no-danger -- captured CMS markup
-      dangerouslySetInnerHTML={{ __html: page.main ?? "" }}
+      dangerouslySetInnerHTML={{ __html: sanitizeLegacyHtml(page.main ?? "") }}
     />
   </div>
 );

@@ -164,6 +164,22 @@ function rewriteUrls(html: string): string {
   return html.replace(LEGACY_HOST, "");
 }
 
+/**
+ * Remove executable markup from the committed WordPress export before it is
+ * passed to React. The source is trusted editorial content, but it must never
+ * be able to introduce scripts, inline event handlers or javascript: URLs.
+ */
+export function sanitizeLegacyHtml(html: string): string {
+  return html
+    .replace(/<script\b[^>]*>[\s\S]*?<\/script\s*>/gi, "")
+    .replace(/<script\b[^>]*\/?\s*>/gi, "")
+    .replace(/<(object|embed)\b[^>]*>[\s\S]*?<\/\1\s*>/gi, "")
+    .replace(/<(object|embed)\b[^>]*\/?\s*>/gi, "")
+    .replace(/\s+on[a-z][a-z0-9_-]*\s*=\s*(?:"[^"]*"|'[^']*'|[^\s>]+)/gi, "")
+    .replace(/\s+srcdoc\s*=\s*(?:"[^"]*"|'[^']*'|[^\s>]+)/gi, "")
+    .replace(/\s+(href|src)\s*=\s*(["'])\s*javascript:[\s\S]*?\2/gi, ' $1="#"');
+}
+
 /** Full processing pipeline for page/post body HTML. */
 export function processHtml(html: string): string {
   if (!html) return "";
@@ -171,6 +187,7 @@ export function processHtml(html: string): string {
   out = normaliseCaptions(out);
   out = normaliseShortcodes(out);
   out = rewriteUrls(out);
+  out = sanitizeLegacyHtml(out);
   return out.trim();
 }
 
@@ -181,7 +198,20 @@ export function processHtml(html: string): string {
 export function firstImage(html: string): string | null {
   const m = html.match(/<img[^>]+src=["']([^"']+)["']/i);
   if (!m) return null;
-  return m[1].replace(LEGACY_HOST, "");
+  const source = m[1];
+  if (/^https?:\/\//i.test(source) && !/^https?:\/\/(www\.)?a1solar\.hu(?:\/|$)/i.test(source)) {
+    return null;
+  }
+
+  const localPath = source.replace(LEGACY_HOST, "");
+  if (!localPath.startsWith("/wp-content/uploads/")) return localPath;
+
+  const mirroredAsset = path.join(process.cwd(), "public", ...localPath.split("/").filter(Boolean));
+  if (fs.existsSync(mirroredAsset)) return localPath;
+
+  const restoredCover = `/article-covers/${path.posix.basename(localPath)}`;
+  const restoredAsset = path.join(process.cwd(), "public", ...restoredCover.split("/").filter(Boolean));
+  return fs.existsSync(restoredAsset) ? restoredCover : localPath;
 }
 
 export function plainExcerpt(html: string, max = 160): string {

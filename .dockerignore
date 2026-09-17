@@ -1,0 +1,10 @@
+# The staging image only needs the standalone build output and public assets.
+*
+!.next/
+!.next/standalone/
+!.next/standalone/**
+!.next/static/
+!.next/static/**
+!public/
+!public/**
+!Dockerfile.staging

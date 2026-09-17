@@ -23,6 +23,7 @@ export async function submitContact(input: ContactInput): Promise<ContactResult>
       headers: { "Content-Type": "application/json", Accept: "application/json" },
       body: JSON.stringify({
         ...input,
+        consent: true,
         pageUrl: typeof window !== "undefined" ? window.location.href : "",
       }),
     });

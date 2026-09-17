@@ -13,6 +13,10 @@ type ContactFormProps = {
   bare?: boolean;
   /** Submit button label. */
   submitLabel?: string;
+  /** Extra postcode and inquiry-type fields used on the dedicated contact page. */
+  detailed?: boolean;
+  /** Data-subject request fields used on the privacy-policy page. */
+  privacyRequest?: boolean;
 };
 
 /**
@@ -28,6 +32,8 @@ export const ContactForm = ({
   compact = false,
   bare = false,
   submitLabel = "Ajánlatkérő űrlap küldése",
+  detailed = false,
+  privacyRequest = false,
 }: ContactFormProps) => {
   const cardClass = bare ? "contact-card contact-card--bare" : "contact-card";
   const [status, setStatus] = useState<"idle" | "sending" | "ok" | "error">(
@@ -54,12 +60,26 @@ export const ContactForm = ({
     setStatus("sending");
     setError("");
 
+    const postcode = String(data.get("postcode") ?? "").trim();
+    const inquiryType = String(data.get("inquiryType") ?? "").trim();
+    const privacyPurpose = String(data.get("privacyPurpose") ?? "").trim();
+    const message = String(data.get("message") ?? "");
+    const detailedMessage = privacyRequest
+      ? `Igénylés célja: ${privacyPurpose}`
+      : detailed
+      ? [
+          inquiryType ? `Érdeklődés típusa: ${inquiryType}` : "",
+          postcode ? `Irányítószám: ${postcode}` : "",
+          message,
+        ].filter(Boolean).join("\n\n")
+      : message;
+
     const res = await submitContact({
       formName,
       name: String(data.get("name") ?? ""),
       email: String(data.get("email") ?? ""),
-      phone: String(data.get("phone") ?? ""),
-      message: String(data.get("message") ?? ""),
+      phone: privacyRequest ? "Nincs megadva" : String(data.get("phone") ?? ""),
+      message: detailedMessage,
     });
 
     if (res.ok) {
@@ -96,29 +116,68 @@ export const ContactForm = ({
         style={{ position: "absolute", left: "-9999px", width: "1px", height: "1px", opacity: 0 }}
       />
 
-      <div className="field-row">
+      <div className={privacyRequest ? "" : "field-row"}>
         <label className="field">
           <span>Név *</span>
           <input name="name" required minLength={2} maxLength={80} autoComplete="name" placeholder="Teljes név" />
         </label>
-        <label className="field">
-          <span>Telefonszám *</span>
-          <input
-            name="phone"
-            type="tel"
-            required
-            pattern="[0-9+()\-\s]{6,20}"
-            title="Adjon meg egy érvényes telefonszámot."
-            autoComplete="tel"
-            placeholder="+36 …"
-          />
-        </label>
+        {!privacyRequest ? (
+          <label className="field">
+            <span>Telefonszám *</span>
+            <input
+              name="phone"
+              type="tel"
+              required
+              pattern="[0-9+()\-\s]{6,20}"
+              title="Adjon meg egy érvényes telefonszámot."
+              autoComplete="tel"
+              placeholder="+36 …"
+            />
+          </label>
+        ) : null}
       </div>
       <label className="field">
         <span>E-mail cím *</span>
         <input name="email" type="email" required maxLength={120} autoComplete="email" placeholder="pelda@email.hu" />
       </label>
-      {compact ? (
+      {privacyRequest ? (
+        <fieldset className="contact-interest">
+          <legend>Igénylés célja *</legend>
+          <div>
+            {["Adatok törlése", "Adatok módosítása", "Adatok gyűjtésének korlátozása", "Gyűjtött adatok kikérése"].map((option) => (
+              <label key={option}>
+                <input type="radio" name="privacyPurpose" value={option} required />
+                <span>{option}</span>
+              </label>
+            ))}
+          </div>
+        </fieldset>
+      ) : detailed ? (
+        <>
+          <label className="field">
+            <span>Településed irányítószáma *</span>
+            <input name="postcode" required inputMode="numeric" pattern="[0-9]{4}" maxLength={4} autoComplete="postal-code" placeholder="1234" />
+          </label>
+          <fieldset className="contact-interest">
+            <legend>Milyen témában keresel minket? *</legend>
+            <div>
+              {[
+                "Lakossági érdeklődés",
+                "Vállalati érdeklődés",
+                "Ipari / BESS projekt",
+                "Finanszírozás",
+                "Szerviz / garancia",
+              ].map((option) => (
+                <label key={option}>
+                  <input type="radio" name="inquiryType" value={option} required />
+                  <span>{option}</span>
+                </label>
+              ))}
+            </div>
+          </fieldset>
+        </>
+      ) : null}
+      {privacyRequest ? null : compact ? (
         <input type="hidden" name="message" value={`Ajánlatkérés a(z) „${formName}” űrlapról.`} />
       ) : (
         <label className="field">
@@ -130,8 +189,8 @@ export const ContactForm = ({
       <label className="mt-1 flex items-start gap-3 text-sm text-[var(--ink-soft)]">
         <input name="consent" type="checkbox" required className="mt-1 h-4 w-4 shrink-0" style={{ accentColor: "var(--brand)" }} />
         <span>
-          Elfogadom az{" "}
-          <Link href="/adatvedelmi-nyilatkozat" className="text-[var(--brand)] underline" target="_blank">
+          {privacyRequest ? "Beleegyezem az adataim gyűjtésébe, hogy a kért információkat megkaphassam. Elfogadom az " : "Elfogadom az "}
+          <Link href="/adatvedelmi-nyilatkozat" className="text-[var(--brand)] underline" target="_blank" rel="noopener noreferrer">
             adatvédelmi nyilatkozatban
           </Link>{" "}
           foglaltakat. *

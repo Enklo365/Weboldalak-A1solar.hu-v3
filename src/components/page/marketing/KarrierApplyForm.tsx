@@ -19,7 +19,7 @@ const readAsBase64 = (file: File): Promise<string> =>
   });
 
 /**
- * Job-application form for the position subpages — single column, with a CV
+ * Job-application form for the position sections — single column, with a CV
  * upload and a required GDPR consent checkbox. Posts to /api/contact with the
  * CV as a base64 attachment and the position name.
  */
@@ -185,7 +185,7 @@ export const KarrierApplyForm = ({ positionTitle }: KarrierApplyFormProps) => {
         <input name="consent" type="checkbox" required className="mt-1 h-4 w-4 shrink-0" style={{ accentColor: "var(--brand)" }} />
         <span>
           Elolvastam és elfogadom az{" "}
-          <Link href="/adatvedelmi-nyilatkozat" className="text-[var(--brand)] underline" target="_blank">
+          <Link href="/adatvedelmi-nyilatkozat" className="text-[var(--brand)] underline" target="_blank" rel="noopener noreferrer">
             adatvédelmi nyilatkozatot
           </Link>
           , és hozzájárulok adataim kezeléséhez. *

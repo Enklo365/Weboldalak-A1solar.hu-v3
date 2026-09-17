@@ -1,12 +1,28 @@
 # A1 Solar — WordPress → Next.js migráció
 
-Az `a1solar.hu` WordPress (Elementor + Blocksy) oldal hű átültetése
-**React / Next.js 16 / Vercel** alapokra.
+> **Aktuális v3 állapot:** a folytatás előtt kötelező elolvasni a
+> [`docs/HANDOFF.md`](docs/HANDOFF.md) fájlt. A staging
+> címe `https://teszta1solar.homokozo.uk/`. A valódi production cím
+> `https://a1solar.hu/` és annak `www` változata. A `main` merge és a production
+> deploy külön döntési pont; production módosítás csak külön emberi
+> jóváhagyással történhet.
+> Az alábbi Vercel-adatok örökölt történeti információk, nem jelentenek aktuális
+> production célt vagy deployengedélyt.
 
-- **Éles URL:** https://a1solar.vercel.app
-- **Vercel projekt:** `webbysteps-projects/a1solar`
+Az `a1solar.hu` WordPress (Elementor + Blocksy) oldal hű átültetése
+**React / Next.js 16** alapokra, saját Git repositoryban és fokozatosan a saját
+AX41 infrastruktúrán üzemeltetve.
+
+- **Örökölt Vercel preview:** https://a1solar.vercel.app
+- **Örökölt Vercel projekt:** `webbysteps-projects/a1solar`
 
 ## Architektúra
+
+A v3 réteg 35 copy deck oldalát a `src/content/v3-pages.generated.json`, a
+`src/lib/v3-pages.ts`, valamint a `src/components/v3/` egyszerű komponensei
+szolgálják ki. Az egy szegmensű v3 URL-eket a `src/app/[slug]/page.tsx`, a
+többszegmenseseket a `src/app/[slug]/[...subslug]/page.tsx` kezeli. Ez a réteg
+a lent dokumentált örökölt natív/mirror tartalommal együtt él.
 
 | Terület | Megoldás |
 |---|---|
@@ -27,7 +43,11 @@ hozzá tartozó CSS-t (`content/mirror.json` + `public/wp-content/.../*.css`).
 A teljes WP/Elementor/Blocksy CSS-t `.mirror-root`-ra **scope-oltuk**, így nem
 ütközik a saját React fejléc/lábléc stílusaival.
 
-## Teendők élesítéshez
+## Örökölt Vercel-jegyzetek – nem aktuális élesítési runbook
+
+Az alábbi pontok a korábbi Vercel-változathoz tartoztak. Nem adnak engedélyt
+deployra, és a jelenlegi AX41 stagingből nem szabad ezek alapján productiont
+képezni.
 
 1. **Resend e-mail (ajánlatkérő űrlapok):** add meg a Vercel projekt
    env változóit — enélkül az űrlap „nincs konfigurálva" hibát ad:
@@ -42,17 +62,25 @@ A teljes WP/Elementor/Blocksy CSS-t `.mirror-root`-ra **scope-oltuk**, így nem
    alapú előszűrők jelenleg branded placeholder + CTA (`/kapcsolat`). Ezek valós
    backend-implementációt igényelnek (lásd `src/lib/content.ts` shortcode-kezelő).
 
-## Fejlesztés
+## Helyi fejlesztési parancsok
 
 ```bash
-npm install
-npm run dev      # http://localhost:3000
-npm run build    # éles build (299 statikus oldal)
-vercel deploy --prod --yes
+yarn install
+yarn dev      # http://localhost:3000
+yarn build    # production build; jelenlegi ellenőrzött eredmény: 346 útvonal
 ```
 
 ## Ismert korlátok
-- Néhány blog-borítókép üres (a poszt első képe külső domainről hivatkozott, vagy hiányzik).
 - A Google-vélemények (`[trustindex]`) widget nincs migrálva (külső script).
 - A mirror-oldalakon lévő eredeti WP-űrlapok statikusak; a működő űrlap a
   `/kapcsolat` oldalon és minden cikk alján érhető el.
+
+## Jelenlegi fejlesztési fókusz
+
+A technikai alap nagy része elkészült. A következő szakasz feladata a jelenlegi
+új oldal vizuális minőségének javítása, a régi WordPress oldalhoz képest legalább
+azonos vagy jobb megjelenés elérése, valamint a 35 új oldal tartalmi és vizuális
+finomítása. A képek, videók, referenciák és más hiányzó tartalmak fokozatosan
+kerülnek a kijelölt helyükre. Ezt követheti az Avora bekötése, végül a WordPress
+kontrollált leváltása. Új infrastruktúra vagy általános framework építése nem
+önálló cél.

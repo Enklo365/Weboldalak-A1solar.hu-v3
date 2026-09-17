@@ -1,9 +1,7 @@
 import type { LucideIcon } from "lucide-react";
-import { Mail, MapPin, Wrench } from "lucide-react";
+import { Mail, MapPin, Phone, Wrench } from "lucide-react";
 import { ContactForm } from "@/components/ContactForm";
-import { NotchHero } from "@/components/page/NotchHero";
-import { HeroDivider, SidebarLayout } from "@/components/service/SidebarLayout";
-import { SupportWidget } from "@/components/service/SupportWidget";
+import { NotchFormHero } from "@/components/page/NotchFormHero";
 import { SITE } from "@/lib/site";
 
 type ContactCardProps = {
@@ -41,38 +39,51 @@ const ContactCard = ({ icon: Icon, label, value, href }: ContactCardProps) => (
 );
 
 /**
- * Native bespoke "Kapcsolat" marketing page on the sidebar + notch-hero layout:
- * a shaped hero, three contact-detail cards + the {@link ContactForm} in the
- * main column and the customer-service widget in a sticky sidebar.
+ * Native contact page adapted from the original A1 Solar layout: a shaped photo
+ * hero, an overlapping red form and the complete contact-detail set.
  */
 export const Kapcsolat = () => (
-  <div className="pb-6 md:pb-8">
-    <NotchHero
+  <div className="contact-page pb-6 md:pb-8">
+    <NotchFormHero
       eyebrow="Kapcsolat"
       titleLight="Vedd fel velünk"
       titleStrong="a kapcsolatot!"
-      image="/wp-content/uploads/2023/11/210363746_m_normal_none.jpg"
-      imageAlt="A1 Solar ügyfélszolgálat"
-      intro="Írj nekünk egy üzenetet az űrlapunkon, és kollégánk 24 órán belül felveszi veled a kapcsolatot."
+      image="/wp-content/uploads/2025/07/18792.jpg"
+      imageAlt="Napelemek mellett dolgozó ügyfél"
+      imagePosition="50% 50%"
+      ctaLabel="Üzenetet írok"
+      ctaHref="#kapcsolati-urlap"
+      intro="Írj nekünk egy üzenetet az űrlapunkon keresztül, és kollégánk legfeljebb 3 munkanapon belül felveszi veled a kapcsolatot a megadott elérhetőségeid egyikén."
+      guaranteesTitle="Keress minket elérhetőségeinken:"
+      guarantees={[
+        SITE.email,
+        SITE.phoneDisplay,
+        SITE.address,
+        `Telefonos ügyfélszolgálat: hétköznap ${SITE.supportHours}`,
+        "Hibabejelentés: szerviz@a1solar.hu",
+      ]}
+      badges="/images/brand/a1solar-badges.svg"
+      formId="kapcsolati-urlap"
+      form={(
+        <div className="contact-page-form">
+          <ContactForm
+            bare
+            detailed
+            formName="Kapcsolati űrlap"
+            heading="Írj nekünk üzenetet!"
+            intro="Mondd el röviden, miben segíthetünk."
+            submitLabel="Üzenet küldése"
+          />
+        </div>
+      )}
     />
-
-    <HeroDivider />
-
-    <SidebarLayout sidebar={<SupportWidget />}>
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+    <section className="container contact-page-details" aria-label="Elérhetőségeink">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <ContactCard icon={Phone} label="Telefon" value={SITE.phoneDisplay} href={`tel:${SITE.phone}`} />
         <ContactCard icon={Mail} label="E-mail" value={SITE.email} href={`mailto:${SITE.email}`} />
         <ContactCard icon={Wrench} label="Szerviz" value="szerviz@a1solar.hu" href="mailto:szerviz@a1solar.hu" />
         <ContactCard icon={MapPin} label="Cím" value={SITE.address} />
       </div>
-      <div className="mt-6">
-        <ContactForm
-          bare
-          formName="Kapcsolati űrlap"
-          heading="Írj nekünk üzenetet!"
-          intro="Kollégánk 24 órán belül felveszi veled a kapcsolatot."
-          submitLabel="Üzenet küldése"
-        />
-      </div>
-    </SidebarLayout>
+    </section>
   </div>
 );

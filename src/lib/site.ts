@@ -35,34 +35,72 @@ export type NavEntry = {
 
 export const MAIN_NAV: NavEntry[] = [
   {
-    href: "/cegunkrol",
-    label: "Cégünkről",
-    children: [{ href: "/karrier", label: "Karrier" }],
-  },
-  {
     href: "#",
-    label: "Szolgáltatásaink",
+    label: "Rólunk",
     children: [
-      { href: "/lakossagi-napelem", label: "Lakossági napelem" },
-      { href: "/lakossagi-energiatarolo-tamogatas", label: "Lakossági energiatárolás" },
-      { href: "/lakossagi-napelem-tisztitas-es-karbantartas", label: "Lakossági napelem tisztítás és karbantartás" },
-      { href: "/vallalati-napelem", label: "Vállalati napelem" },
-      { href: "/vallalati-energiatarolas", label: "Vállalati energiatárolás" },
-      { href: "/vallalati-napelem-tisztitas-es-karbantartas", label: "Vállalati napelem tisztítás és karbantartás" },
+      { href: "/rolunk/cegunkrol/", label: "Cégünkről" },
+      { href: "/rolunk/media/", label: "A1 Solar a médiában" },
+      { href: "/rolunk/szerviz-es-garancia/", label: "Szerviz és garancia" },
+      { href: "/rolunk/karrier/", label: "Karrier" },
     ],
   },
   {
     href: "#",
-    label: "Finanszírozás",
+    label: "Lakosságnak",
     children: [
-      { href: "/napelem-energiatarolo-reszletfizetes", label: "Kamatmentes részletfizetés" },
-      { href: "/palyazatok", label: "Pályázatok" },
-      { href: "/jedlik-anyos-energetikai-program", label: "Jedlik Ányos Energetikai Program" },
-      { href: "/jedlik-anyos-finanszirozasi-segitseg", label: "Jedlik Ányos finanszírozási segítség" },
+      { href: "/lakossagi/napelem-energiataroloval/", label: "Napelem + energiatároló" },
+      { href: "/lakossagi/meglevo-napelem-bovitese-energiataroloval/", label: "Meglévő rendszer bővítése" },
+      { href: "/lakossagi/backup-aramszuneti-megoldasok/", label: "Backup megoldások" },
+      { href: "/lakossagi/szigetuzemu-napelemes-rendszer/", label: "Szigetüzemű rendszer" },
+      { href: "/lakossagi/szerviz-karbantartas/", label: "Szerviz és karbantartás" },
+      { href: "/lakossagi/palyazatok-tamogatasok/", label: "Pályázatok és támogatások" },
     ],
   },
-  { href: "/tudastar-blog", label: "Híreink" },
-  { href: "https://energrosso.hu/", label: "Nagykereskedelem", external: true },
+  {
+    href: "#",
+    label: "Cégeknek",
+    children: [
+      { href: "/vallalati/napelem/", label: "Vállalati napelem" },
+      { href: "/vallalati/napelem-energiatarolassal/", label: "Napelem + energiatárolás" },
+      { href: "/vallalati/meglevo-rendszer-bovitese-energiataroloval/", label: "Meglévő rendszer bővítése" },
+      { href: "/vallalati/energetikai-optimalizacio-om/", label: "Energetikai optimalizáció / O&M" },
+      { href: "/vallalati/ppa-finanszirozott-projektek/", label: "Finanszírozott / PPA projektek" },
+      { href: "/vallalati/palyazatok-tamogatasok/", label: "Pályázatok és támogatások" },
+    ],
+  },
+  {
+    href: "#",
+    label: "Ipari projektek",
+    children: [
+      { href: "/ipari/naperomuvek/", label: "Nagy naperőművek" },
+      { href: "/ipari/bess-ipari-energiatarolas/", label: "BESS / ipari energiatárolás" },
+      { href: "/ipari/standalone-energiatarolas/", label: "Standalone energiatárolás" },
+      { href: "/ipari/pv-storage/", label: "PV + storage" },
+      { href: "/ipari/aggregacio-flexibilitas/", label: "Aggregáció / flexibilitás" },
+    ],
+  },
+  {
+    href: "#",
+    label: "Referenciák",
+    children: [
+      { href: "/referenciak/lakossagi/", label: "Lakossági" },
+      { href: "/referenciak/energiatarolas/", label: "Energiatárolás" },
+      { href: "/referenciak/backup/", label: "Backup" },
+      { href: "/referenciak/vallalati/", label: "Vállalati" },
+    ],
+  },
+  {
+    href: "#",
+    label: "Technológiák",
+    children: [
+      { href: "/technologiak/deye/", label: "Deye" },
+      { href: "/technologiak/huawei/", label: "Huawei" },
+      { href: "/technologiak/sigenergy/", label: "Sigenergy" },
+      { href: "/technologiak/foxess/", label: "FoxESS" },
+    ],
+  },
+  { href: "/cikkek/", label: "Cikkek" },
+  { href: "/kapcsolat/", label: "Kapcsolat" },
 ];
 
 /** Mega-menu content, keyed by the MAIN_NAV label it belongs to. */
@@ -72,7 +110,7 @@ export type MegaFeature = { image: string; title: string; text: string; href: st
 export type MegaFooter = { title: string; text: string; ctaLabel: string; ctaHref: string };
 export type MegaMenu = { feature: MegaFeature; groups: MegaGroup[]; footer: MegaFooter };
 
-export const MEGA_MENUS: Record<string, MegaMenu> = {
+const LEGACY_MEGA_MENUS: Record<string, MegaMenu> = {
   Szolgáltatásaink: {
     feature: {
       image: "/wp-content/uploads/2026/03/otthoni_energiatarolo_program-1.png",
@@ -84,17 +122,16 @@ export const MEGA_MENUS: Record<string, MegaMenu> = {
       {
         heading: "Lakossági",
         links: [
-          { href: "/lakossagi-napelem", label: "Napelem", desc: "Otthonod energiájáért.", icon: "panel" },
+          { href: "/lakossagi/napelem-energiataroloval/", label: "Napelem", desc: "Otthonod energiájáért.", icon: "panel" },
           { href: "/lakossagi-energiatarolo-tamogatas", label: "Energiatárolás", desc: "Tárold a zöld energiát.", icon: "battery" },
-          { href: "/lakossagi-napelem-tisztitas-es-karbantartas", label: "Tisztítás & karbantartás", desc: "Csúcson a rendszered.", icon: "care" },
+          { href: "/lakossagi/szerviz-karbantartas/", label: "Tisztítás & karbantartás", desc: "Csúcson a rendszered.", icon: "care" },
         ],
       },
       {
         heading: "Vállalati",
         links: [
-          { href: "/vallalati-napelem", label: "Napelem", desc: "Kevesebb energiaköltség.", icon: "panel" },
+          { href: "/vallalati/napelem/", label: "Napelem", desc: "Kevesebb energiaköltség.", icon: "panel" },
           { href: "/vallalati-energiatarolas", label: "Energiatárolás", desc: "Tárold a zöld energiát.", icon: "battery" },
-          { href: "/vallalati-napelem-tisztitas-es-karbantartas", label: "Tisztítás & karbantartás", desc: "Céges rendszerekhez.", icon: "care" },
         ],
       },
     ],
@@ -110,13 +147,13 @@ export const MEGA_MENUS: Record<string, MegaMenu> = {
       image: "/wp-content/uploads/2025/06/jedlik-anyos-energetikai-program-2-1-1024x667.png",
       title: "Aktuális pályázatok",
       text: "Nézd meg, milyen támogatás illik hozzád!",
-      href: "/palyazatok",
+      href: "/lakossagi/palyazatok-tamogatasok/",
     },
     groups: [
       {
         heading: "Pályázatok & támogatások",
         links: [
-          { href: "/palyazatok", label: "Pályázatok", desc: "Elérhető támogatások.", icon: "doc" },
+          { href: "/lakossagi/palyazatok-tamogatasok/", label: "Pályázatok", desc: "Elérhető támogatások.", icon: "doc" },
           { href: "/lakossagi-energiatarolo-tamogatas", label: "Otthoni Energiatároló Program", desc: "Kiemelt lakossági pályázat.", icon: "battery" },
         ],
       },
@@ -168,43 +205,42 @@ export const MEGA_MENUS: Record<string, MegaMenu> = {
   },
 };
 
+// KISS: the v3 starts with the Header's existing simple dropdowns. The former
+// mega-menu data stays local during the transition but is not exposed to UI.
+export const MEGA_MENUS: Record<string, MegaMenu> = {};
+void LEGACY_MEGA_MENUS;
+
 export const FOOTER_NAV: NavChild[] = [
-  { href: "/cegunkrol", label: "Cégünkről" },
-  { href: "/szolgaltatasaink", label: "Szolgáltatásaink" },
-  { href: "/palyazatok", label: "Pályázatok" },
-  { href: "/karrier", label: "Karrier" },
-  { href: "/tudastar-blog", label: "Tudástár" },
-  { href: "/kapcsolat", label: "Kapcsolat" },
+  { href: "/rolunk/cegunkrol/", label: "Cégünkről" },
+  { href: "/referenciak/lakossagi/", label: "Referenciák" },
+  { href: "/rolunk/karrier/", label: "Karrier" },
+  { href: "/cikkek/", label: "Cikkek" },
+  { href: "/kapcsolat/", label: "Kapcsolat" },
 ];
 
 export const FOOTER_SERVICES: NavChild[] = [
-  { href: "/vallalati-napelem", label: "Vállalati napelem" },
-  { href: "/lakossagi-napelem", label: "Lakossági napelem" },
-  { href: "/palyazatok", label: "Pályázatok" },
+  { href: "/vallalati/napelem/", label: "Vállalati napelem" },
+  { href: "/lakossagi/napelem-energiataroloval/", label: "Lakossági napelem" },
+  { href: "/lakossagi/palyazatok-tamogatasok/", label: "Pályázatok" },
   { href: "/kepzeseink", label: "Képzések" },
 ];
 
 /** Residential service links — mirrors the header mega-menu "Lakossági" group. */
 export const FOOTER_RESIDENTIAL: NavChild[] = [
-  { href: "/lakossagi-napelem", label: "Napelem" },
-  { href: "/lakossagi-energiatarolo-tamogatas", label: "Energiatárolás" },
-  { href: "/lakossagi-napelem-tisztitas-es-karbantartas", label: "Tisztítás & karbantartás" },
+  { href: "/lakossagi/napelem-energiataroloval/", label: "Napelem + energiatároló" },
+  { href: "/lakossagi/backup-aramszuneti-megoldasok/", label: "Backup megoldások" },
+  { href: "/lakossagi/szerviz-karbantartas/", label: "Szerviz és karbantartás" },
 ];
 
 /** Commercial service links — mirrors the header mega-menu "Vállalati" group. */
 export const FOOTER_COMMERCIAL: NavChild[] = [
-  { href: "/vallalati-napelem", label: "Napelem" },
-  { href: "/vallalati-energiatarolas", label: "Energiatárolás" },
-  { href: "/vallalati-napelem-tisztitas-es-karbantartas", label: "Tisztítás & karbantartás" },
+  { href: "/vallalati/napelem/", label: "Napelem" },
+  { href: "/vallalati/napelem-energiatarolassal/", label: "Energiatárolás" },
 ];
 
-const OEP_PDF =
-  "/wp-content/uploads/2026/06/A1_Solar_Ajanlat_otthoni_energiatarolas_vegleges-0529.pdf";
-
 export const FOOTER_USEFUL: NavChild[] = [
-  { href: "/palyazatok", label: "Aktuális pályázatok" },
+  { href: "/lakossagi/palyazatok-tamogatasok/", label: "Aktuális pályázatok" },
   { href: "/lakossagi-energiatarolo-tamogatas", label: "Otthoni Energiatároló Program" },
-  { href: OEP_PDF, label: "OEP csomagajánlatok", external: true },
   { href: "https://energrosso.hu/", label: "Nagykereskedelem", external: true },
 ];
 
@@ -216,7 +252,6 @@ export const FOOTER_LEGAL: NavChild[] = [
     href: "/lakossagi-napelemes-rendszerek-tamogatasa-promocios-szabalyzat",
     label: "Promóciós szabályzat",
   },
-  { href: "/oepszigeteles", label: "OEP szigetelés" },
   {
     href: "/panelmosas-karbantartas-aszf",
     label: "Panelmosás-karbantartás ÁSZF",

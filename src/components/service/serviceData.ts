@@ -5,10 +5,7 @@
  * `SERVICE_PAGES` (used by the [slug] route) gates which slugs render natively.
  * Per-service objects live under ./data.
  */
-import { lakossagiTisztitas } from "@/components/service/data/lakossagiTisztitas";
 import { vallalatiEnergiatarolas } from "@/components/service/data/vallalatiEnergiatarolas";
-import { vallalatiNapelem } from "@/components/service/data/vallalatiNapelem";
-import { vallalatiTisztitas } from "@/components/service/data/vallalatiTisztitas";
 
 export type ServiceStep = { num: string; title: string; body: string };
 
@@ -169,10 +166,7 @@ const lakossagiNapelem: ServicePageData = {
 
 export const SERVICE_PAGES: Record<string, ServicePageData> = {
   "lakossagi-napelem": lakossagiNapelem,
-  "vallalati-napelem": vallalatiNapelem,
   "vallalati-energiatarolas": vallalatiEnergiatarolas,
-  "lakossagi-napelem-tisztitas-es-karbantartas": lakossagiTisztitas,
-  "vallalati-napelem-tisztitas-es-karbantartas": vallalatiTisztitas,
 };
 
 /** Sidebar service navigation (grouped), current page highlighted by slug. */
@@ -181,17 +175,16 @@ export const SERVICE_NAV: ServiceNavGroup[] = [
   {
     heading: "Lakossági",
     links: [
-      { href: "/lakossagi-napelem", label: "Napelem" },
+      { href: "/lakossagi/napelem-energiataroloval/", label: "Napelem" },
       { href: "/lakossagi-energiatarolo-tamogatas", label: "Energiatárolás" },
-      { href: "/lakossagi-napelem-tisztitas-es-karbantartas", label: "Tisztítás & karbantartás" },
+      { href: "/lakossagi/szerviz-karbantartas/", label: "Tisztítás & karbantartás" },
     ],
   },
   {
     heading: "Vállalati",
     links: [
-      { href: "/vallalati-napelem", label: "Napelem" },
+      { href: "/vallalati/napelem/", label: "Napelem" },
       { href: "/vallalati-energiatarolas", label: "Energiatárolás" },
-      { href: "/vallalati-napelem-tisztitas-es-karbantartas", label: "Tisztítás & karbantartás" },
     ],
   },
 ];

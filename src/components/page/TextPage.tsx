@@ -1,6 +1,4 @@
-import { NotchHero } from "@/components/page/NotchHero";
-import { HeroDivider, SidebarLayout } from "@/components/service/SidebarLayout";
-import { SupportWidget } from "@/components/service/SupportWidget";
+import { ContactForm } from "@/components/ContactForm";
 
 export type TextPageContent = {
   eyebrow: string;
@@ -17,38 +15,74 @@ const INTRO_BY_EYEBROW: Record<string, string> = {
   "Promóciós szabályzat": "Promócióink hivatalos, mindenkor hatályos részvételi feltételei és szabályai.",
 };
 
+const stripLegacyLegalHero = (html: string) => {
+  let cleaned = html
+    .replace(/<!--[^]*?-->/g, "")
+    .replace(/<style[^>]*>[^]*?<\/style>/gi, "");
+
+  const duplicatedHeading = /^\s*(?:Jogi nyilatkozatok|Promóciós szabályzat)\s*<h1[^>]*>[^]*?<\/h1>/i;
+  while (duplicatedHeading.test(cleaned)) cleaned = cleaned.replace(duplicatedHeading, "");
+  return cleaned.trim();
+};
+
+export const CompactLegalHero = ({ eyebrow, title, intro }: { eyebrow: string; title: string; intro: string }) => (
+  <header className="legal-hero">
+    <div className="container">
+      <div className="legal-hero__panel">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src={HERO_IMAGE} alt={title} className="legal-hero__image" />
+        <div className="legal-hero__overlay" aria-hidden="true" />
+        <div className="legal-hero__content">
+          <div>
+            <span className="legal-hero__eyebrow">{eyebrow}</span>
+            <h1>{title}</h1>
+          </div>
+          <p>{intro}</p>
+        </div>
+      </div>
+    </div>
+  </header>
+);
+
 /**
- * Native long-form text page (legal / policy / prose) on the sidebar +
- * notch-hero layout: a shaped hero, then the migrated CMS body in the shared
- * `.prose` container with a sticky customer-service sidebar.
+ * Native full-width long-form text page for legal and policy content.
  */
-export function TextPage({ content }: { content: TextPageContent }) {
+export function TextPage({ content, showPrivacyRequest = false }: { content: TextPageContent; showPrivacyRequest?: boolean }) {
   const intro = INTRO_BY_EYEBROW[content.eyebrow] ?? "Az A1 Solar Kft. hivatalos dokumentuma és tájékoztatója.";
 
   return (
     <div className="pb-6 md:pb-8">
-      <NotchHero
+      <CompactLegalHero
         eyebrow={content.eyebrow}
-        titleStrong={content.title}
-        image={HERO_IMAGE}
-        imageAlt={content.title}
+        title={content.title}
         intro={intro}
       />
 
-      <HeroDivider />
-
-      <SidebarLayout sidebar={<SupportWidget />}>
+      <div className="container text-page__layout">
         {content.updated ? (
           <p className="post-meta" style={{ marginBottom: 16 }}>
             Utolsó frissítés: {content.updated}
           </p>
         ) : null}
         <div
-          className="prose prose--flush"
+          id="a1-aszf-top"
+          className="prose prose--flush text-page__prose"
           // eslint-disable-next-line react/no-danger -- migrated CMS content
-          dangerouslySetInnerHTML={{ __html: content.html }}
+          dangerouslySetInnerHTML={{ __html: stripLegacyLegalHero(content.html) }}
         />
-      </SidebarLayout>
+        {showPrivacyRequest ? (
+          <section id="adatkezelesi-igenyles" className="text-page__request" aria-label="Adatkezelési igénylés">
+            <ContactForm
+              bare
+              privacyRequest
+              formName="Adatkezelési igénylés"
+              heading="Adattörlés, adatigénylés vagy adatkorlátozás"
+              intro="Az alábbi űrlapon jelezheted, milyen adatkezelési intézkedést kérsz tőlünk."
+              submitLabel="Igénylés küldése"
+            />
+          </section>
+        ) : null}
+      </div>
     </div>
   );
 }

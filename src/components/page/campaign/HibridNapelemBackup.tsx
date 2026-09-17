@@ -118,7 +118,7 @@ export const HibridNapelemBackup = () => (
       intro="Egy hagyományos napelemes rendszer áramszünetkor biztonsági okból leáll. Megfelelő hibrid inverterrel, energiatárolóval és szabályosan kialakított backuppal viszont otthonod legfontosabb berendezései tovább működhetnek."
       guaranteesTitle="Amit az A1 Solar biztosít:"
       guarantees={REASONS.map((r) => r.title)}
-      badges="/wp-content/uploads/2025/07/a1solar_badgek-1024x127.png"
+      badges="/images/brand/a1solar-badges.svg"
       formId="ajanlatkeres-fej"
       form={<BackupLeadForm />}
     />

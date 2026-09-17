@@ -1,22 +1,30 @@
 import type { MetadataRoute } from "next";
-import { SUCCESS_PAGES } from "@/components/page/SuccessPage";
-import { getPages, getPosts, RESERVED_SLUGS } from "@/lib/content";
-import { SITE } from "@/lib/site";
+import { getPosts } from "@/lib/content";
+import { NOINDEX_LEGAL_SLUGS, RETIRED_SLUGS } from "@/lib/route-policy";
+import { FOOTER_LEGAL, SITE } from "@/lib/site";
+import { V3_PAGES } from "@/lib/v3-pages";
 
 /**
- * XML sitemap for the native site. Lists the home + blog index + every page and
- * post slug, but EXCLUDES confirmation ("sikeres…") pages (they are noindex) and
- * reserved routes.
+ * The v3 sitemap contains the 35 approved copy-deck pages, unchanged article
+ * URLs and retained legal documents. Legacy and confirmation pages stay out.
  */
 export default function sitemap(): MetadataRoute.Sitemap {
-  const slugs = new Set<string>();
-  for (const p of getPages()) if (!RESERVED_SLUGS.has(p.slug) && !SUCCESS_PAGES[p.slug]) slugs.add(p.slug);
-  for (const p of getPosts()) if (!slugs.has(p.slug) && !SUCCESS_PAGES[p.slug]) slugs.add(p.slug);
-
-  const entries: MetadataRoute.Sitemap = [
-    { url: SITE.url, priority: 1 },
-    { url: `${SITE.url}/tudastar-blog`, priority: 0.8 },
-  ];
-  for (const slug of slugs) entries.push({ url: `${SITE.url}/${slug}`, priority: 0.6 });
+  const entries: MetadataRoute.Sitemap = V3_PAGES.map((page) => ({
+    url: page.number === 1 ? SITE.url : new URL(page.url, SITE.url).toString(),
+    priority: page.number === 1 ? 1 : page.number === 34 ? 0.8 : 0.7,
+  }));
+  const seen = new Set(entries.map((entry) => entry.url.replace(/\/$/, "")));
+  for (const post of getPosts()) {
+    if (RETIRED_SLUGS.has(post.slug)) continue;
+    const url = `${SITE.url}/${post.slug}/`;
+    if (!seen.has(url.replace(/\/$/, ""))) entries.push({ url, lastModified: post.date, priority: 0.6 });
+  }
+  for (const legal of FOOTER_LEGAL) {
+    if (legal.external) continue;
+    const slug = legal.href.replace(/^\//, "").replace(/\/$/, "");
+    if (NOINDEX_LEGAL_SLUGS.has(slug)) continue;
+    const url = `${SITE.url}${legal.href.replace(/\/$/, "")}/`;
+    if (!seen.has(url.replace(/\/$/, ""))) entries.push({ url, priority: 0.3 });
+  }
   return entries;
 }
